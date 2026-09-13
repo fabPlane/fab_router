@@ -40,16 +40,17 @@ requiredConnections(layout: Layout): Connection[]
 | Field | Meaning |
 |---|---|
 | `items.pads, .barrels, .tracks, .pours, .fences` | counts of items on the Layout |
-| `connections.maximum` | number of required connections (sum over nets of components − 1 at load) |
+| `connections.maximum` | sum over nets of `max(0, Pads + Pours − 1)`; independent of wiring (`spec/rules/connectivity.md` K-10) |
 | `connections.incomplete` | connections not realised now |
 | `barrels.total, .through, .blind, .buried` | Barrel counts by span |
 | `tracks.totalLengthLu, .totalLengthMm, .legs, .bends90, .bends45, .bendsOther` | Track geometry totals |
 | `violations.total, .byRule` | DRC violations now |
 | `fanout.smdPads, .escaped` | SMD Pads and how many have a Barrel escape |
 
-Counting rules: a violation is one unordered item pair on one Sheet (never counted twice);
-`connections.maximum` is measured on the Layout as read (before any routing) and does not change
-when routing adds Tracks; `incomplete` uses the connectivity rules of `spec/rules/connectivity.md`.
+Counting rules: a violation is one unordered item pair on one Sheet (never counted twice) and
+same-net pairs are exempt (`spec/rules/drc.md` DR-02); `connections.maximum` depends only on the
+file's Pads and Pours and does not change when routing adds Tracks; `incomplete` counts terminal
+components − 1 per net under the connectivity rules of `spec/rules/connectivity.md` (K-08).
 
 ## Routing
 
