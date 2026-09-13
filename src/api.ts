@@ -19,7 +19,7 @@ import type { RouteSettings } from "../spec/types/settings.ts";
 import type { SimpleRouteJson, SrjRouteResult } from "../spec/types/srj.ts";
 import * as drc from "./drc/index.ts";
 import { emptyReport } from "./route/index.ts";
-import { notImplemented, resolveSettings } from "./pipeline/index.ts";
+import { notImplemented, resolveSettings, runRoute } from "./pipeline/index.ts";
 import * as dsn from "./dsn/index.ts";
 import * as ses from "./ses/index.ts";
 import type { RulesResult } from "./dsn/index.ts";
@@ -84,8 +84,8 @@ export function requiredConnections(layout: Layout): Connection[] {
 
 export function route(layout: Layout, settings?: Partial<RouteSettings>, hooks?: RouteHooks): RouteReport {
   const effective = resolveSettings(settings, layout.settingsFromFile, layout.angleMode);
-  hooks?.onLog?.("warn", "route is not implemented yet");
-  return emptyReport(effective, "maxPasses");
+  if (layout.nets.length === 0) return emptyReport(effective, "complete");
+  return runRoute(layout, effective, hooks);
 }
 
 export function routeDsn(dsnText: string, settings?: Partial<RouteSettings>, hooks?: RouteHooks): RouteDsnResult {

@@ -39,3 +39,12 @@ export function emptyReport(effectiveSettings: RouteSettings, stoppedBy: RouteRe
 // Task I3: the per-connection Profile and the exact clearance queries.
 export * from "./profile.ts";
 export * from "./clear.ts";
+
+// Task I4: Journal, Quilt, search, pull, legalise, rip-up and the pass loop.
+export * from "./journal.ts";
+export * from "./quilt.ts";
+export * from "./search.ts";
+export * from "./pull.ts";
+export * from "./legalise.ts";
+export * from "./ripup.ts";
+export * from "./passes.ts";
