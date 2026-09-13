@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue649-kicad-ecc83-pp-input-board-v1",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue649-kicad_ecc83-pp_input_board_v1.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue649-kicad_ecc83-pp_input_board_v1.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue649-kicad_ecc83-pp_input_board_v1.dsn.unrouted.sexp.json (34916 bytes, fast tier)."
+}

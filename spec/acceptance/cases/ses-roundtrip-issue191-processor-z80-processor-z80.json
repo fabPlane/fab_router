@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue191-processor-z80-processor-z80",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue191-processor.Z80-processor.Z80.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue191-processor.Z80-processor.Z80.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue191-processor.Z80-processor.Z80.dsn.unrouted.sexp.json (1900096 bytes, slow tier)."
+}

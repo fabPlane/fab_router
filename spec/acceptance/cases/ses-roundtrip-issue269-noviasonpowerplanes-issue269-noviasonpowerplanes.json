@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.unrouted.sexp.json (19380 bytes, fast tier)."
+}

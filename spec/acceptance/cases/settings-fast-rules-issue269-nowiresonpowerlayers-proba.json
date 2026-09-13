@@ -1,0 +1,84 @@
+{
+  "id": "settings-fast-rules-issue269-nowiresonpowerlayers-proba",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "rules": "Issue269-NoWiresOnPowerLayers-proba.rules",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1.8
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 3.1
+    },
+    "layers/GND/active": {
+      "exact": true
+    },
+    "layers/GND/preferDir": {
+      "exact": "v"
+    },
+    "layers/GND/alongCost": {
+      "exact": 1
+    },
+    "layers/GND/againstCost": {
+      "exact": 1.8
+    },
+    "layers/PWR/active": {
+      "exact": true
+    },
+    "layers/PWR/preferDir": {
+      "exact": "h"
+    },
+    "layers/PWR/alongCost": {
+      "exact": 1
+    },
+    "layers/PWR/againstCost": {
+      "exact": 2.3
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1.8
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 2.6
+    }
+  },
+  "note": "useFileSettings: true with a rules file: the rules file's settings block is applied the same way as a DSN settings block (and replaces the DSN's block when both exist). Four Sheets including the plane Sheets GND and PWR; the file marks all four active with directions h/v/h/v and costs 1.8/3.1, 1.0/1.8, 1.0/2.3, 1.8/2.6. Its router-enable line is mis-spelled and ignored."
+}

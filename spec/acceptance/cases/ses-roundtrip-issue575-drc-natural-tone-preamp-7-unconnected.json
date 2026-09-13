@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue575-drc-natural-tone-preamp-7-unconnected",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn.unrouted.sexp.json (245870 bytes, fast tier)."
+}

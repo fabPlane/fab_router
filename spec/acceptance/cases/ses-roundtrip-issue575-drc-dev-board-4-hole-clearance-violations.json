@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue575-drc-dev-board-4-hole-clearance-violations",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue575-drc_dev-board_4_hole_clearance_violations.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue575-drc_dev-board_4_hole_clearance_violations.dsn.unrouted.sexp.json (62524 bytes, fast tier)."
+}

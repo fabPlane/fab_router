@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue199-stackoverflow-signale-vor-block",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue199-StackOverflow-Signale_Vor+Block.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue199-StackOverflow-Signale_Vor+Block.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue199-StackOverflow-Signale_Vor+Block.dsn.unrouted.sexp.json (20043 bytes, fast tier)."
+}

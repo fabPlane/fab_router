@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue269-min-fr-test-min-fr-test",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-min_fr_test-min_fr_test.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue269-min_fr_test-min_fr_test.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue269-min_fr_test-min_fr_test.dsn.unrouted.sexp.json (2536 bytes, fast tier)."
+}

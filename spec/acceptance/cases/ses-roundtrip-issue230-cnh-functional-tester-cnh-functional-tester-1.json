@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue230-cnh-functional-tester-cnh-functional-tester-1",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn.unrouted.sexp.json (163673 bytes, fast tier)."
+}

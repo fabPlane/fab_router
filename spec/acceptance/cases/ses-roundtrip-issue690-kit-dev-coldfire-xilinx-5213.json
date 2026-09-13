@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue690-kit-dev-coldfire-xilinx-5213",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue690-kit-dev-coldfire-xilinx_5213.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue690-kit-dev-coldfire-xilinx_5213.dsn.unrouted.sexp.json (412181 bytes, fast tier)."
+}

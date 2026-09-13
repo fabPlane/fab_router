@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05-unrouted",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-DAC2020-DAC2020_bm05-FRv2.1.0-DAC2020_bm05.unrouted.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm05-FRv2.1.0-DAC2020_bm05.unrouted.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue508-DAC2020-DAC2020_bm05-FRv2.1.0-DAC2020_bm05.unrouted.dsn.unrouted.sexp.json (16723 bytes, fast tier)."
+}

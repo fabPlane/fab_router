@@ -1,0 +1,44 @@
+{
+  "id": "settings-fast-issue313-fasttest-no-block",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue313-FastTest.dsn",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 100
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "bendCost": {
+      "exact": 0
+    },
+    "preferredDirectionCost": {
+      "exact": 1.5
+    },
+    "layers": {
+      "exact": {}
+    }
+  },
+  "note": "useFileSettings: true on a board with no settings block: layout.settingsFromFile is absent/empty and report.effectiveSettings equals the built-in defaults."
+}

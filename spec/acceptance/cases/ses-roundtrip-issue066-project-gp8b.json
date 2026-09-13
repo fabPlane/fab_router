@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue066-project-gp8b",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue066-Project_GP8B.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue066-Project_GP8B.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue066-Project_GP8B.dsn.unrouted.sexp.json (110326 bytes, fast tier)."
+}

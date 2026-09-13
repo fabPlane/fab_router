@@ -1,0 +1,41 @@
+{
+  "id": "rules-fast-issue269-nowiresonpowerlayers-proba",
+  "kind": "rules",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "rules": "Issue269-NoWiresOnPowerLayers-proba.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 150
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 75
+    },
+    "spacingUm:default:default": {
+      "min": 150.2,
+      "max": 150.4
+    },
+    "spacingUm:smd:smd": {
+      "min": 37.6,
+      "max": 37.8
+    },
+    "spacingUm:GND:PWR": {
+      "min": 150.2,
+      "max": 150.4
+    },
+    "groupWidthUm:GND": {
+      "exact": 200
+    },
+    "groupWidthUm:PWR": {
+      "exact": 200
+    }
+  },
+  "note": "A four-Sheet board with two plane Sheets (GND, PWR). The rules file names a design (\"proba\") other than the board; tolerated. Its untyped (clear 150.2) raises every pair from 150.0 to 150.2; NetGroup widths GND/PWR (200) come from the file's class scopes."
+}

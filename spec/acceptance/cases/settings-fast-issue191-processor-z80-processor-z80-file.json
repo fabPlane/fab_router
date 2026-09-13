@@ -1,0 +1,59 @@
+{
+  "id": "settings-fast-issue191-processor-z80-processor-z80-file",
+  "kind": "settings",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue191-processor.Z80-processor.Z80.dsn",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 2.5
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 1.7
+    }
+  },
+  "note": "useFileSettings: true. Same settings block as Issue187-processor.Z80.dsn (the board is a later revision of the same design)."
+}

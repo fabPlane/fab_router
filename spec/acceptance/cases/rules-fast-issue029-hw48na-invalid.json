@@ -1,0 +1,31 @@
+{
+  "id": "rules-fast-issue029-hw48na-invalid",
+  "kind": "rules",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue029-hw48na_invalid.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 400
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 101.6
+    },
+    "spacingUm:default:default": {
+      "min": 152.6,
+      "max": 152.8
+    },
+    "spacingUm:smd:smd": {
+      "min": 38.2,
+      "max": 38.4
+    }
+  },
+  "note": "Same content as Issue029-hw48na.rules (underscore-joined pair names with quoted second names). Both references accept it (readRules ok: true) and apply the untyped width and clearance; the malformed pair lines are accepted without error and their effect is unspecified."
+}

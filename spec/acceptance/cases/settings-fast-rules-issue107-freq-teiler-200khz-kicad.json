@@ -1,0 +1,60 @@
+{
+  "id": "settings-fast-rules-issue107-freq-teiler-200khz-kicad",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue107-freq_teiler_200kHz_kicad.dsn",
+  "rules": "Issue107-freq_teiler_200kHz_kicad.rules",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": false
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 100
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 102.6
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 1.6
+    }
+  },
+  "note": "useFileSettings: true with a rules file: the rules file's settings block is applied the same way as a DSN settings block (and replaces the DSN's block when both exist). F.Cu is switched off (active off) with along/against costs 100.0/102.6, B.Cu on with 1.0/1.6. The router-enable line uses a mis-spelled keyword and is ignored (routerEnabled is false here only because the case passes router: false)."
+}

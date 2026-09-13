@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue756-minimal-hang",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue756-minimal-hang.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue756-minimal-hang.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue756-minimal-hang.dsn.unrouted.sexp.json (864 bytes, fast tier)."
+}

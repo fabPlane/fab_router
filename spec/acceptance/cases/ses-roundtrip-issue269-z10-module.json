@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue269-z10-module",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-z10_module.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue269-z10_module.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue269-z10_module.dsn.unrouted.sexp.json (169729 bytes, fast tier)."
+}

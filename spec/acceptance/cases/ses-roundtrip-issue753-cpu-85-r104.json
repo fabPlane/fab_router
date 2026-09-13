@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue753-cpu-85-r104",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue753-CPU-85_r104.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue753-CPU-85_r104.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue753-CPU-85_r104.dsn.unrouted.sexp.json (151418 bytes, fast tier)."
+}

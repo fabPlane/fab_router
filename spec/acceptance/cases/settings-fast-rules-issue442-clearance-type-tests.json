@@ -1,0 +1,60 @@
+{
+  "id": "settings-fast-rules-issue442-clearance-type-tests",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue442-clearance_type_tests.rules",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 51
+    },
+    "planeViaCost": {
+      "exact": 6
+    },
+    "startRipupCost": {
+      "exact": 103
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1.56
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 2.78
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1.91
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 2.23
+    }
+  },
+  "note": "useFileSettings: true with a rules file: the rules file's settings block is applied the same way as a DSN settings block (and replaces the DSN's block when both exist). Non-default numbers: via cost 51, plane via cost 6, start rip-up cost 103; F.Cu vertical 1.56/2.78, B.Cu horizontal 1.91/2.23."
+}

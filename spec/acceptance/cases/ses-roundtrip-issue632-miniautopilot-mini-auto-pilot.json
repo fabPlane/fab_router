@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue632-miniautopilot-mini-auto-pilot",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue632-MiniAutoPilot-Mini Auto Pilot.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue632-MiniAutoPilot-Mini Auto Pilot.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue632-MiniAutoPilot-Mini Auto Pilot.dsn.unrouted.sexp.json (46276 bytes, fast tier)."
+}

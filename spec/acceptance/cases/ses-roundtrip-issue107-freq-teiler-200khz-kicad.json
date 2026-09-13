@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue107-freq-teiler-200khz-kicad",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue107-freq_teiler_200kHz_kicad.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue107-freq_teiler_200kHz_kicad.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue107-freq_teiler_200kHz_kicad.dsn.unrouted.sexp.json (69307 bytes, fast tier)."
+}

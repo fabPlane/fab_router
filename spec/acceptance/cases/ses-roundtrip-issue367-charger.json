@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue367-charger",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue367-Charger.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue367-Charger.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue367-Charger.dsn.unrouted.sexp.json (74628 bytes, fast tier)."
+}

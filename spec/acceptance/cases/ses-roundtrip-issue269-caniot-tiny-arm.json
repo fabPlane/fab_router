@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue269-caniot-tiny-arm",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-caniot-tiny-arm.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue269-caniot-tiny-arm.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue269-caniot-tiny-arm.dsn.unrouted.sexp.json (109348 bytes, fast tier)."
+}

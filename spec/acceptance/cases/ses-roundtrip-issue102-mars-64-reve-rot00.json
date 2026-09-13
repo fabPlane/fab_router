@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue102-mars-64-reve-rot00",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue102-Mars-64-revE-rot00.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue102-Mars-64-revE-rot00.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue102-Mars-64-revE-rot00.dsn.unrouted.sexp.json (49787 bytes, fast tier)."
+}

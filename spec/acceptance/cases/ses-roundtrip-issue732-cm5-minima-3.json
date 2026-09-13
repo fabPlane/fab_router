@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue732-cm5-minima-3",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue732-CM5_MINIMA_3.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue732-CM5_MINIMA_3.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue732-CM5_MINIMA_3.dsn.unrouted.sexp.json (147437 bytes, fast tier)."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue756-tomu-fpga8",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue756-tomu-fpga8.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue756-tomu-fpga8.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue756-tomu-fpga8.dsn.unrouted.sexp.json (345765 bytes, fast tier)."
+}
