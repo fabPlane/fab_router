@@ -817,3 +817,74 @@ Verification, run from the worktree root:
 | `bun run test` | green — 791 pass, 0 fail (2 pre-existing routing-quality advisories, unrelated) |
 | `bun run acceptance -- --tier all --case 'srj-*'` | 4 cases, 4 passed, 0 failed; `violations.preExisting 0` and `violations.maxAdded 0` hard on all four; `incomplete` advisory (14/15/15/15 vs targets 3/6/6/15) |
 | `requiredConnections` per J802 Layout | 15 on all four boards; `violationsBefore` 0 on all four |
+
+## Status (task I7 — M7 quality: dense-board and J802 completion gaps)
+
+Write set `src/route/`, `src/srj/`, `test/`. Tuning and algorithm strength only; the public API and
+the spec are unchanged.
+
+### What changed
+
+Both mechanisms named in gap 1 of the task are now implemented:
+
+1. **Cross-Sheet Prior connectivity (gap 1 point 1).** `src/srj/build.ts` now emits an inert
+   **bridging Barrel** for every net-owned obstacle that spans two or more Sheets (a physical via of
+   the existing route). The Barrel is `kind: 0`, drill-less, `hold: "locked"`, `origin: "prior"`,
+   with a small disk on each of the obstacle's Sheets at the obstacle centroid. It joins the
+   per-Sheet Prior Pours of that via into a single connectivity component through its span
+   (`rules/connectivity.md` K-02), so a net's Prior copper is one cross-Sheet blob rather than a
+   fragment per Sheet. Being Kind 0 it is never a DRC spacing/hole subject and never blocks the
+   router (`clear.ts`), and same-net copper is exempt anyway, so it changes **only** connectivity:
+   `violationsBefore`/`preExisting` stay 0 and R-1 is untouched. It is not a terminal (only Pads and
+   non-prior Pours are), so `requiredConnections` stays **15** on every J802 board. Covered by
+   `test/srj.test.ts` "srj cross-Sheet Prior copper bridging".
+
+2. **Attach-as-target search (gap 1 point 2).** `src/route/passes.ts` `tryAttachPrior` treats
+   same-net Prior copper as an explicit reachable target. A required connection joins two terminal
+   components; when one already holds the net's Prior copper, the router routes the *other* endpoint
+   onto that Prior copper (nearest Pours first, journalled), which joins the components and completes
+   the connection (K-16, `spec/formats/srj.md` J-34). A two-sided variant attaches both endpoints to
+   a common Prior-only component. Prior copper is same-net (never blocks its own net in `clear.ts`),
+   so the attach leg lands on a large, reachable target. The pass connectivity is cached on
+   `ctx.conn` for the component lookup. This path is a no-op on DSN boards (no `origin:"prior"`
+   copper), so nothing off the SRJ path changes.
+
+### Honest outcome — completion is search-limited, not representation-limited
+
+With the representation now correct, the remaining gap is the strength of the grid A* + negotiated
+congestion, which this milestone's coarse-grid router cannot close on these boards. Measured
+directly (worktree root, 60 s budget unless noted):
+
+- **J802 SRJ boards.** `srj-*` still pass (R-1 and `preExisting` 0 hard on all four); `incomplete`
+  advisory unchanged at **14 / 15 / 15 / 15** vs the reference's 3 / 6 / 6 / 15. Diagnosis: on the
+  2-layer board every connection's two Pads are ~50–65 mm apart and the net's Prior copper is bunched
+  near *one* Pad (nearest Prior Pour to the other Pad is ~53 mm away), so each connection is a
+  genuine full-length cross-board route through **locked** other-net Prior copper (not rippable). The
+  gaps between locked fragments are ~1 clearance wide (~150 µm); the 300 µm routing grid cannot thread
+  them over that distance. Raising `MAX_POPS` 5×, forcing the ÷4 fine grid on long spans, and a 90 s
+  budget all left completion at 1 — confirming search resolution, not targeting or budget, is the
+  wall. Reaching the reference needs a gridless/fine detailed router, out of scope for this
+  milestone.
+- **Dense DSN boards.** `Issue508-DAC2020_bm07.dsn` (`routing-slow-dac2020-bm07-complete`, target
+  exact 0): reaches **6** incomplete (86→6), R-1 clean, stopping on **stagnation** at ~9 s with 50 s
+  of budget unused. Relaxing the stagnation limit to 30 (57 passes, 55 s) moved it only 6→**5**: the
+  negotiated-congestion loop plateaus — the last handful of nets are boxed in by committed copper the
+  budget's rip-up cannot renegotiate. The marginal 6→5 gain costs 6× the time and would balloon the
+  fast-tier suite (which shares the default `maxStagnantPasses`), so it is not adopted. This matches
+  the I5 assessment: closing it needs a stronger global rip-up/reroute or a gridless detailed router.
+  The other named dense boards (`cm5-carrier` ≤2, `dac2020-bm01-p2` ≤28, `issue034-green14seg` ≤1,
+  the exact-0 `bm06`/`bm10`/`558` fanout-route cases, `bm11-fanout-only` ≥154 reaching 145) are the
+  same class of quality gap; none is a regression and all keep `violations.maxAdded 0` (R-1).
+
+No advisory `incomplete`/`completed` bound could be turned hard this milestone: each remaining miss
+is a genuine router-quality limit recorded above with the number reached, per the task's fallback.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 57 files, 0 violations |
+| `bun run test` | green — 794 pass, 0 fail (the 2 pre-existing fast-tier barrel advisories are unchanged and unrelated) |
+| `bun run acceptance -- --tier all --case 'srj-*'` | 4 / 4 pass; `violations.preExisting 0` and `violations.maxAdded 0` hard on all four; `incomplete` advisory 14/15/15/15 |
+| `bun run acceptance -- --tier all --case 'routing-*'` | fast tier 16/16 pass; the densest slow boards miss their (hard, non-advisory) `incomplete`/exact-0 bounds as recorded above, R-1 (`violations.maxAdded 0`) and R-6 hold on every one |
