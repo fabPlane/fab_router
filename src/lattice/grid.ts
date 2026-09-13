@@ -10,7 +10,9 @@
  *
  * Layout of the index:
  *   - Every indexed thing is a *slot*: (item id, leg or −1, Sheet, 8-DOP), stored struct-of-arrays.
- *     Track legs and Rim edges are one slot each; a Pad is one slot per Sheet it has copper on.
+ *     Track legs and Rim edges are one slot each; a Pad or Barrel is one slot per Sheet it has
+ *     copper on or that its drill passes through (spec/rules/drc.md DR-06a: the hole is checked
+ *     on every Sheet of its span, copper or not), with the union of both bounds.
  *   - Per Sheet: a hash of cell key → slot list, plus the shelf for slots spanning more than
  *     SHELF_CELLS cells. Cells are `floor(coord / cellSize)`; the grid is unbounded.
  *   - A query stamps each slot it sees with the query generation, so a slot reachable from
@@ -31,10 +33,11 @@
  */
 import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
 import type { Box, Dop8, Shape } from "../geom/index.ts";
-import type { ItemCat } from "./shapes.ts";
+import { dop8OfPts, dop8Union } from "../geom/index.ts";
+import type { DrillDisk, ItemCat } from "./shapes.ts";
 import {
-  barrelBoundsOn, barrelShapesOn, barrelSheets, fenceBounds, fenceShape, padBoundsOn, padShapesOn, pourBounds, pourShape,
-  rimLegBounds, rimLegCount, rimLegShape, trackLegBounds, trackLegCount, trackLegShape,
+  barrelBoundsOn, barrelShapesOn, barrelSheets, drillOfBarrel, drillOfPad, fenceBounds, fenceShape, padBoundsOn, padShapesOn,
+  pourBounds, pourShape, rimLegBounds, rimLegCount, rimLegShape, trackLegBounds, trackLegCount, trackLegShape,
 } from "./shapes.ts";
 
 /** What a query returns: the item id and, for a Track or the Rim, the index of the leg hit. */
@@ -66,7 +69,7 @@ export interface Lattice {
   insert(ref: LatticeItemRef, sheet: number, bounds: Dop8): void;
   /** Drop one slot; a no-op when absent. */
   remove(ref: LatticeItemRef, sheet: number): void;
-  /** Index a Layout item on every Sheet it has copper on (Track legs and Rim edges individually). */
+  /** Index a Layout item on every Sheet it has copper on — or, for a Pad / Barrel, a drill through (Track legs and Rim edges individually). */
   insertItem(cat: ItemCat, item: LatticeItem): void;
   /** Drop every slot of an item id (all legs, all Sheets) and forget it. */
   removeItem(id: number): void;
@@ -299,18 +302,12 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
     switch (cat) {
       case "pad": {
         const pad = item as Pad;
-        for (const sheet of pad.sheets) {
-          const b = padBoundsOn(layout, pad, sheet);
-          if (b) insertRaw(id, NO_LEG, sheet, b);
-        }
+        insertDrilled(id, pad.sheets, (sheet) => padBoundsOn(layout, pad, sheet), drillOfPad(layout, pad));
         break;
       }
       case "barrel": {
         const barrel = item as Barrel;
-        for (const sheet of barrelSheets(layout, barrel)) {
-          const b = barrelBoundsOn(layout, barrel, sheet);
-          if (b) insertRaw(id, NO_LEG, sheet, b);
-        }
+        insertDrilled(id, barrelSheets(layout, barrel), (sheet) => barrelBoundsOn(layout, barrel, sheet), drillOfBarrel(layout, barrel));
         break;
       }
       case "track": {
@@ -343,6 +340,17 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
         }
         break;
       }
+    }
+  }
+
+  /** A Pad or Barrel: one slot per Sheet with copper or with the drill passing through (DR-06a). */
+  function insertDrilled(id: number, copperSheets: readonly number[], boundsOn: (sheet: number) => Dop8 | undefined, drill: DrillDisk | undefined): void {
+    const drillBounds = drill ? dop8OfPts([drill.c], drill.r) : undefined;
+    for (const s of layout.stack) {
+      const sheet = s.id;
+      let b = copperSheets.includes(sheet) ? boundsOn(sheet) : undefined;
+      if (drillBounds && drill && sheet >= drill.fromSheet && sheet <= drill.toSheet) b = b ? dop8Union(b, drillBounds) : drillBounds;
+      if (b) insertRaw(id, NO_LEG, sheet, b);
     }
   }
 

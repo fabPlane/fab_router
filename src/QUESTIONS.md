@@ -77,6 +77,34 @@ Delivered: `src/lattice/grid.ts` (bucket grid, shelf, generation-stamp dedup, me
 amortised rebuild, item directory with lazy shape cache), `src/lattice/shapes.ts` (per-Sheet
 copper of every item category), `src/route/profile.ts`, `src/route/clear.ts`, READMEs, tests.
 
+## Status (task I3b — adopt rulings Q-I3-15…25)
+
+Verification, run from the worktree root (`checkDrc` is still the I2 stub in this checkout, so
+step 3 of the task — asserting `checkDrc(layout).violations` against the oracle — does not apply;
+the brute-force oracle in `test/clear-vs-drc.test.ts` stays):
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green (the 8 errors of I1's status table are gone) |
+| `bun run check:layers` | green — 35 files, 0 violations |
+| `bun run test` (with `FAB_ROUTER_ACCEPT_STUBS=1`) | 614 pass, 13 fail — the same 13 as I1's status: 7 parse cases (questions 27–29) and 6 `drc-load` cases the `checkDrc` stub answers with zero counts (question 42); none in this task's write set |
+| `bun run acceptance` (fast tier, in the suite) | 401 cases, 388 passed, 13 failed (as above), 198 stubbed |
+| `test/clear-vs-drc.test.ts` | 6 synthetic boards × 4 settings variants: 1 432 Track legs and 258 Barrels each, `sweepClear` / `barrelFits` equal the oracle's verdict *and* partner-id list on every one (925–984 legs and 171–209 Barrels blocked per variant; 91 items per variant off the board under DR-11); hand-built cases for DR-11 (far outside, inside a cut-out, crossing the outline / a cut-out edge, touching with a zero edge clearance, degenerate outline), DR-06a (hole on a copper-less Sheet, drill-to-drill with disjoint spans), `Fence.kind`, net-owned Fences, `categoryKinds` and `ViaRule.entries` in the Profile |
+| `test/lattice.test.ts` | as before, plus Pads / Barrels indexed on every Sheet of their drill span (empty `shapesOf` there) |
+
+Changes: `src/route/profile.ts` reads `categoryKinds.track` / `.barrel` and `ViaRule.entries[]`
+(`kind`, `attach`; a rule with `forms` but empty `entries` falls back to the group's barrel Kind
+and the PadForm's attach flag). `src/route/clear.ts` reads `Fence.kind` directly (`fenceKind`
+removed), applies DR-06a (the drill-to-drill check no longer requires a shared Sheet; `barrelFits`
+with hole clearance scans every Sheet of the Stack so a drill with a disjoint span is found) and
+DR-11 (an outline / cut-out edge the copper's interior crosses blocks like a `rim` hit; when no
+edge blocks, one core point per convex part — every point for a sharp part — is tested with the
+crossing-number predicate against the outline and each cut-out; exported as `crossesEdge` /
+`withinRim`). `src/lattice/grid.ts` indexes a Pad or Barrel on every Sheet its drill passes
+through, copper or not, with the union of copper and drill bounds. `test/helpers/synth.ts` carries
+the new fields, a PadForm with a through drill but outer-Sheet copper only, two blind via forms
+with disjoint spans, a notched outline and deliberately off-board items.
+
 ## Questions
 
 1. **Wall hook false positive on relative imports.** `tools/wall/pretooluse.ts` (rule
@@ -285,7 +313,31 @@ copper of every item category), `src/route/profile.ts`, `src/route/clear.ts`, RE
     and retained in `placement.other`, and the writer emits `(place_control (flip_style …))` only
     when no retained `place_control` exists. Network `(via …)` definitions live in `network.other`
     because `DocNetwork` has no field for them (V-02 reads them from there).
-42. **`drc-load` stub detection.** `checkDrc`'s stub returns zero counts without a diagnostic, so
+42. **`drc-load` stub detection.**
+
+### Task I3b
+
+43. **DR-11 for sharp copper (r = 0 cores).** "Lies entirely inside" is decided exactly as: no
+    outline / cut-out edge meets the copper's interior — `dist²(core, edge) < r²` for a rounded
+    core; for a polygon or segment core with r = 0, a *proper* crossing of a core edge (strict on
+    both sides) or an edge endpoint strictly inside the core — and every remaining probe point is
+    not outside the outline / not inside a cut-out. Touching an edge (distance 0) is on the board
+    (the parenthetical of DR-11 is read as: with a copper-to-edge spacing > 0 the spacing rule
+    already blocks touching). A Rim whose outline has fewer than three vertices constrains nothing
+    beyond its zero-width edges' spacing. A sharp core whose edges pass through outline *vertices*
+    only (no proper crossing, no endpoint inside) is decided by its probe points; that is the one
+    measure-zero configuration where a sharp polygon could straddle the outline undetected. Confirm
+    or say whether DRC (I2) should use a different exact rule.
+44. **DR-06a on copper-less Sheets within a drill's span.** A PadForm can have a through drill but
+    copper on the outer Sheets only; the hole still exists on the inner Sheets. The Lattice now
+    indexes such a Pad / Barrel on every Sheet of its drill span (empty copper there) and the router
+    keeps the hole clearance from it on those Sheets. DRC should count the same pairs; confirm.
+45. **Informational.** `barrelFits` with a hole clearance queries every Sheet of the Stack (not
+    only the drill's span) so that an other-net drill whose span is disjoint from the new Barrel's
+    is still found (DR-06a "regardless of Sheet"); the extra Sheets contribute nothing else.
+46. **Informational.** `src/route/README.md` (outside this task's write set) still says the Track
+    and Barrel Kinds are "the group's Kind"; the header comments of `profile.ts` and `clear.ts` are
+    the current description (category Kinds, via-definition Kinds, DR-06a, DR-11). `checkDrc`'s stub returns zero counts without a diagnostic, so
     six `drc-load` cases fail (not stub) now that `readDsn` is real; the runner cannot distinguish
     the stub from a clean board. Either the I2 stub should carry `not-implemented`, or the cases
     should be accepted as stubbed until I2 lands.

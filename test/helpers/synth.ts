@@ -1,9 +1,12 @@
 /**
  * Synthetic Layouts for tests that need a board before the DSN reader lands: a seeded generator
  * producing a 4-Sheet board (two outer signal Sheets, one plane, one inner signal) with Pads of
- * several PadForms on rotated / back-side Parts, Barrels, Tracks, Pours, Fences of every scope
- * and a Rim with a cut-out. Ids are unique across every item category. Coordinates are LU at
- * 10 LU per µm (0.1 µm), board 50 × 40 mm centred on the origin.
+ * several PadForms on rotated / back-side Parts (one form has a through drill but copper on the
+ * outer Sheets only), Barrels of through, blind and disjoint-span forms, Tracks, Pours, Fences of
+ * every scope and Kind, and a Rim whose outline has a notch and one cut-out, with a few items
+ * deliberately off the board (in the notch, in the cut-out, across the outline) so that DR-11 is
+ * exercised. Ids are unique across every item category. Coordinates are LU at 10 LU per µm
+ * (0.1 µm), board 50 × 40 mm centred on the origin.
  */
 import type {
   Barrel, Fence, Layout, Net, NetGroup, Pad, PadForm, Part, Pour, Pt, Rim, ShapeOnSheet, Sheet, Track,
@@ -38,8 +41,6 @@ export interface SynthOptions {
   /** Angle mode of the generated Tracks: "45" makes octilinear legs, "any" random directions. */
   angleMode?: "45" | "any";
 }
-
-export interface SynthFence extends Fence { kind: number }
 
 export function synthLayout(opts: SynthOptions = {}): Layout {
   const rnd = mulberry32(opts.seed ?? 1);
@@ -88,15 +89,21 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
     { id: 4, name: "via-through", perSheet: perSheet(all, disk(3000)), drill: { diameter: 3000, fromSheet: 0, toSheet: 3 }, attachAllowed: true },
     { id: 5, name: "via-blind", perSheet: perSheet([0, 1, 2], disk(2500)), drill: { diameter: 2000, fromSheet: 0, toSheet: 2 }, attachAllowed: false },
     { id: 6, name: "smd-path", perSheet: perSheet([0], { kind: "path", pts: [{ x: -6000, y: -3000 }, { x: 0, y: 3000 }, { x: 6000, y: -3000 }], halfWidth: 2000 }), attachAllowed: false },
+    // a through drill with copper on the outer Sheets only: the hole alone is on Sheets 1 and 2 (DR-06a)
+    { id: 7, name: "th-outer", perSheet: perSheet([0, 3], disk(7000)), drill: { diameter: 7000, fromSheet: 0, toSheet: 3 }, attachAllowed: false },
+    // two blind forms with disjoint spans: their drills never share a Sheet (DR-06a drill-to-drill)
+    { id: 8, name: "via-top", perSheet: perSheet([0, 1], disk(2500)), drill: { diameter: 2000, fromSheet: 0, toSheet: 1 }, attachAllowed: false },
+    { id: 9, name: "via-bottom", perSheet: perSheet([2, 3], disk(2500)), drill: { diameter: 2000, fromSheet: 2, toSheet: 3 }, attachAllowed: false },
   ];
 
   // ---- nets and groups ----
   const netCount = 12;
   const nets: Net[] = [];
   for (let i = 0; i < netCount; i++) nets.push({ id: i, name: i === NET_GND ? "GND" : `N${i}`, group: i < 3 ? GROUP_POWER : GROUP_DEFAULT, pads: [] });
+  const allKinds = (k: number) => ({ track: k, barrel: k, pin: k, smd: k, area: k });
   const netGroups: NetGroup[] = [
-    { id: GROUP_DEFAULT, name: "default", nets: nets.filter((n) => n.group === 0).map((n) => n.id), trackWidth: 2500, kind: KIND_DEFAULT, viaRule: 0 },
-    { id: GROUP_POWER, name: "power", nets: nets.filter((n) => n.group === 1).map((n) => n.id), trackWidth: 5000, kind: KIND_POWER, viaRule: 1, usableSheets: [0, 3] },
+    { id: GROUP_DEFAULT, name: "default", nets: nets.filter((n) => n.group === 0).map((n) => n.id), trackWidth: 2500, kind: KIND_DEFAULT, categoryKinds: allKinds(KIND_DEFAULT), viaRule: 0 },
+    { id: GROUP_POWER, name: "power", nets: nets.filter((n) => n.group === 1).map((n) => n.id), trackWidth: 5000, kind: KIND_POWER, categoryKinds: allKinds(KIND_POWER), viaRule: 1, usableSheets: [0, 3] },
   ];
   const kindOfNet = (net: number | null) => (net === null ? KIND_DEFAULT : netGroups[nets[net]!.group]!.kind);
   const widthOfNet = (net: number | null) => (net === null ? 2500 : netGroups[nets[net]!.group]!.trackWidth);
@@ -104,7 +111,7 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
   // ---- parts, pads, part-owned hole Fences ----
   const parts: Part[] = [];
   const pads: Pad[] = [];
-  const fences: SynthFence[] = [];
+  const fences: Fence[] = [];
   const partCount = opts.parts ?? 40;
   const rotations = [0, 90, 180, 270, 37.5, 123];
   for (let i = 0; i < partCount; i++) {
@@ -114,7 +121,7 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
     const part: Part = { id: id(), ref: `U${i}`, package: "pkg", side, at, rotationDeg: R };
     parts.push(part);
     const pinCount = int(2, 4);
-    const form = pick([0, 1, 2, 3, 6]);
+    const form = pick([0, 1, 2, 3, 6, 7]);
     for (let p = 0; p < pinCount; p++) {
       const off: Pt = { x: (p - (pinCount - 1) / 2) * 20000, y: 0 };
       const m = side === "back" ? { x: -off.x, y: off.y } : off;
@@ -122,7 +129,7 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
       const net = rnd() < 0.15 ? null : int(0, netCount - 1);
       const pf = padForms[form]!;
       const smd = pf.perSheet.size === 1;
-      const sheets = smd ? [side === "back" ? 3 : 0] : all.slice();
+      const sheets = smd ? [side === "back" ? 3 : 0] : [...pf.perSheet.keys()].sort((a, b) => a - b);
       const pad: Pad = { id: id(), part: part.id, pinName: `${p + 1}`, net, form, at: { x: at.x + r.x, y: at.y + r.y }, rotationDeg: R, side, sheets, kind: kindOfNet(net), hold: "locked" };
       pads.push(pad);
       if (net !== null) (nets[net]!.pads as number[]).push(pad.id);
@@ -173,7 +180,7 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
   const barrelCount = opts.barrels ?? 40;
   for (let i = 0; i < barrelCount; i++) {
     const net = rnd() < 0.05 ? null : int(0, netCount - 1);
-    const form = rnd() < 0.7 ? 4 : 5;
+    const form = rnd() < 0.6 ? 4 : pick([5, 8, 9]);
     const pf = padForms[form]!;
     const sheets = [...pf.perSheet.keys()];
     let at: Pt;
@@ -192,11 +199,27 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
     { id: id(), net: 5, sheet: 2, outline: rect(-200000, -150000, 0, 0), holes: [rect(-150000, -100000, -100000, -50000)], kind: KIND_DEFAULT, hold: "free" },
   ];
 
+  // The outline is the board rectangle with a 10 × 10 mm notch out of its top-right corner
+  // (x > 150000, y > 100000 is off the board) and a 4 × 4 mm cut-out near the middle right.
   const rim: Rim = {
-    outline: rect(-BOARD_W / 2, -BOARD_H / 2, BOARD_W / 2, BOARD_H / 2),
-    cutouts: [rect(180000, 120000, 220000, 160000)],
+    outline: [
+      { x: -BOARD_W / 2, y: -BOARD_H / 2 }, { x: BOARD_W / 2, y: -BOARD_H / 2 }, { x: BOARD_W / 2, y: 100000 },
+      { x: 150000, y: 100000 }, { x: 150000, y: BOARD_H / 2 }, { x: -BOARD_W / 2, y: BOARD_H / 2 },
+    ],
+    cutouts: [rect(180000, 20000, 220000, 60000)],
     kind: KIND_AREA,
   };
+
+  // ---- items deliberately off the board (DR-11) ----
+  // a Track inside the cut-out, one inside the notch, one crossing the outline, one crossing a cut-out edge
+  tracks.push({ id: id(), net: 4, sheet: 0, pts: [{ x: 190000, y: 30000 }, { x: 210000, y: 50000 }], width: 2500, kind: KIND_DEFAULT, hold: "free" });
+  tracks.push({ id: id(), net: 6, sheet: 2, pts: [{ x: 170000, y: 120000 }, { x: 230000, y: 180000 }], width: 2500, kind: KIND_DEFAULT, hold: "free" });
+  tracks.push({ id: id(), net: 7, sheet: 3, pts: [{ x: 100000, y: 150000 }, { x: 200000, y: 150000 }], width: 2500, kind: KIND_DEFAULT, hold: "held" });
+  tracks.push({ id: id(), net: 8, sheet: 0, pts: [{ x: 160000, y: 40000 }, { x: 200000, y: 40000 }], width: 2500, kind: KIND_DEFAULT, hold: "free" });
+  // a Barrel in the notch, one inside the cut-out, one straddling a cut-out edge
+  barrels.push({ id: id(), net: 9, at: { x: 200000, y: 150000 }, form: 4, fromSheet: 0, toSheet: 3, kind: KIND_DEFAULT, hold: "free" });
+  barrels.push({ id: id(), net: 10, at: { x: 200000, y: 40000 }, form: 5, fromSheet: 0, toSheet: 2, kind: KIND_DEFAULT, hold: "free" });
+  barrels.push({ id: id(), net: 11, at: { x: 180000, y: 40000 }, form: 4, fromSheet: 0, toSheet: 3, kind: KIND_DEFAULT, hold: "free" });
 
   return {
     name: `synth-${opts.seed ?? 1}`,
@@ -214,7 +237,10 @@ export function synthLayout(opts: SynthOptions = {}): Layout {
     nets,
     netGroups,
     spacing,
-    viaRules: [{ id: 0, name: "default", forms: [4, 5] }, { id: 1, name: "power", forms: [4] }],
+    viaRules: [
+      { id: 0, name: "default", forms: [4, 5], entries: [{ form: 4, kind: KIND_DEFAULT, attach: true }, { form: 5, kind: KIND_DEFAULT, attach: false }] },
+      { id: 1, name: "power", forms: [4], entries: [{ form: 4, kind: KIND_POWER, attach: true }] },
+    ],
     pinEdgeToTurnLu: 1250,
     warnings: [],
   };

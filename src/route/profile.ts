@@ -6,17 +6,19 @@
  *   width           the group's Track width (spec/rules/nets.md N-06)
  *   neckWidth       the narrowest width the final leg into a Pad may use (`neckWidthUm`,
  *                   spec/api/settings.md), never wider than `width`
- *   trackKind       the group's Kind (spec/rules/clearance.md C-11 `track` category)
- *   barrelKind      the Kind a Barrel of this connection carries (C-11: the group's `barrel`
- *                   category; the public Layout exposes one Kind per group, so it is the same)
+ *   trackKind       the group's `track` category Kind (spec/rules/clearance.md C-11,
+ *                   `NetGroup.categoryKinds.track`; ruling Q-I3-18)
+ *   barrelKind      the group's `barrel` category Kind (C-11): what a Barrel carries when its via
+ *                   definition names no Kind of its own
  *   spacingByKind   for every Kind k: the largest `spacing(trackKind, k, s)` over the usable
  *                   Sheets — a conservative per-Kind margin for the search; exact checks read
  *                   the SpacingTable per Sheet
  *   sheets          usable Sheet ids, ascending: the group's `use_layer` set ∩ signal role ∩
  *                   active (Sheet flag and `settings.layers[name].active`, spec/rules/layers.md
  *                   L-04, L-08)
- *   barrelForms     Barrel candidates in via-rule order (spec/rules/vias.md V-03, V-06); empty
- *                   when `viasAllowed` is false (V-09)
+ *   barrelForms     Barrel candidates in via-rule order (spec/rules/vias.md V-03, V-06), each
+ *                   with the via definition's Kind and attach flag (`ViaRule.entries`, V-02,
+ *                   V-08); empty when `viasAllowed` is false (V-09)
  *   angleMode       settings override, else the Layout's
  *   planeNet        the net owns a plane Sheet (L-06): `planeViaCost` applies
  *   holeClearance   `holeClearanceUm` in LU (0 = off), edgeClearance `copperToEdgeClearanceUm`
@@ -73,6 +75,7 @@ function groupOf(layout: Layout, net: number | null): NetGroup {
   const gid = n?.group ?? 0;
   return layout.netGroups.find((g) => g.id === gid) ?? layout.netGroups[0] ?? {
     id: 0, name: "default", nets: [], trackWidth: 3000, kind: 1,
+    categoryKinds: { track: 1, barrel: 1, pin: 1, smd: 1, area: 1 },
   };
 }
 
@@ -97,8 +100,8 @@ export function resolveProfile(layout: Layout, net: number | null, settings: Rou
   const halfWidth = width / 2;
   const neckSetting = settings.neckWidthUm;
   const neckWidth = neckSetting !== undefined && neckSetting > 0 ? Math.min(width, toWidthLu(neckSetting, luPerUm)) : width;
-  const trackKind = group.kind;
-  const barrelKind = group.kind;
+  const trackKind = group.categoryKinds.track;
+  const barrelKind = group.categoryKinds.barrel;
 
   // usable Sheets
   const active = (name: string, flag: boolean): boolean => {
@@ -126,17 +129,22 @@ export function resolveProfile(layout: Layout, net: number | null, settings: Rou
     if (v > maxSpacing) maxSpacing = v;
   }
 
-  // Barrel candidates
+  // Barrel candidates: the via rule's entries in order (V-03, V-06), each carrying its via
+  // definition's Kind and attach flag (V-02); a rule with `forms` but no `entries` (a hand-built
+  // Layout) falls back to the group's barrel Kind and the PadForm's attach flag.
   const barrelForms: BarrelCandidate[] = [];
   if (settings.viasAllowed) {
     const rule = viaRuleOf(layout, group);
-    for (const formId of rule?.forms ?? []) {
-      const form = formOf(layout, formId);
+    const entries = rule && rule.entries.length > 0
+      ? rule.entries
+      : (rule?.forms ?? []).map((form) => ({ form, kind: barrelKind, attach: formOf(layout, form)?.attachAllowed ?? false }));
+    for (const e of entries) {
+      const form = formOf(layout, e.form);
       if (!form) continue;
       const ids = [...form.perSheet.keys()].sort((a, b) => a - b);
       if (ids.length === 0) continue;
-      if (barrelForms.some((c) => c.form === formId)) continue;
-      barrelForms.push({ form: formId, kind: barrelKind, attach: form.attachAllowed, fromSheet: ids[0]!, toSheet: ids[ids.length - 1]! });
+      if (barrelForms.some((c) => c.form === e.form && c.kind === e.kind && c.attach === e.attach)) continue;
+      barrelForms.push({ form: e.form, kind: e.kind, attach: e.attach, fromSheet: ids[0]!, toSheet: ids[ids.length - 1]! });
     }
   }
 
