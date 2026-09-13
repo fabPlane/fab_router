@@ -16,6 +16,7 @@ writeSes(layout: Layout, opts?: SesWriteOptions): string
 applySes(layout: Layout, sesText: string): ApplyResult      // { ok, applied: { tracks, barrels }, diagnostics }
 readRules(text: string): RulesResult                          // { ok, rules: RulesFile, diagnostics }
 applyRules(layout: Layout, rules: RulesFile): Layout          // returns the same Layout, mutated
+parseSummary(read: ReadResult & { ok: true }): ParseSummary  // the normalised summary of spec/acceptance/parse/README.md
 ```
 
 - `readDsn` never throws on malformed input; it returns `ok: false` with a `ParseError { line,
@@ -120,3 +121,32 @@ the same object with `traces` filled (`pcb_trace` elements with `wire` and `via`
 
 `bun run src/cli.ts route <in.dsn> -o <out.ses> [--rules f] [--set k=v]... [--json report.json]`,
 `… drc <in.dsn>`, `… stats <in.dsn>`. Exit 0 on success, 2 on parse failure, 3 on R-1 breach.
+
+## Rulings on implementer questions
+
+Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTIONS.md`.
+
+- **Q-I0-2** `RulesResult` is `{ ok: true, rules, diagnostics } | { ok: false, error: ParseError,
+  diagnostics }` (`types/results.ts`).
+- **Q-I0-3** The parse summary is public: `parseSummary(read)` in `src/api.ts`, computed from the
+  Layout and the document together; its shape is `spec/acceptance/parse/README.md`.
+- **Q-I0-4** `SpacingTable.kinds[0]` is the empty string in the Layout and is printed as `null`
+  in the summary.
+- **Q-I0-5** Every case carries its own `tier`; the manifest tier is the curators' default only.
+- **Q-I0-6** The default preferred direction is applied when the router builds per-Sheet costs
+  and is **not** materialised into `effectiveSettings.layers`.
+- **Q-I0-7** The routing metric is `barrels`; `vias` is accepted as an alias.
+- **Q-I0-8** SRJ inputs are `boards/*.srj.json`. `SrjRouteResult` gains `violationsBefore` and
+  `violationsAdded` (copied from the report); the `srj` kind's `violations` metric with
+  `maxAdded` compares `violationsAdded`.
+- **Q-I0-9** For `drc-load`, only `copperToEdgeClearanceUm`, `holeClearanceUm`,
+  `ignoreNetGroups` reach `DrcOptions`; other settings are ignored.
+- **Q-I0-10** `spacingUm:<A>:<B>` is measured on Sheet 0 with pair type `default`.
+- **Q-I0-11** Without `FAB_ROUTER_ACCEPT_STUBS`, a case whose board, rules, session, reference
+  or expected file is missing **fails**.
+- **Q-I0-12** The float64-exactness requirement covers the predicates (`orient`, `onSeg`,
+  `segsIntersect`, squared distances). Polygon area is not a predicate: an implementation must
+  return the exact doubled area for any simple ring within the coordinate bound and may use
+  arbitrary-precision arithmetic to do so.
+- **Q-I0-13** `writeDsn` / `writeSes` return strings; they are defined only for documents and
+  Layouts obtained from a successful `readDsn`, so no `ok` envelope is needed.

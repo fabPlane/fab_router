@@ -1,7 +1,7 @@
 /** Result shapes for spec/api/contract.md. */
 import type { Diagnostic, Layout, ParseError, Pt } from "./layout.ts";
 import type { RouteSettings } from "./settings.ts";
-import type { DsnDocument } from "./dsn.ts";
+import type { DsnDocument, RulesFile } from "./dsn.ts";
 
 export type ReadResult =
   | { ok: true; layout: Layout; document: DsnDocument; diagnostics: Diagnostic[] }
@@ -60,3 +60,7 @@ export type RouteDsnResult =
 
 export interface ApplyResult { ok: boolean; applied: { tracks: number; barrels: number }; diagnostics: Diagnostic[] }
 export interface SesWriteOptions { hostCad?: string; hostVersion?: string; includeFileWiring?: boolean }
+
+export type RulesResult =
+  | { ok: true; rules: RulesFile; diagnostics: Diagnostic[] }
+  | { ok: false; error: ParseError; diagnostics: Diagnostic[] };

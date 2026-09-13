@@ -28,6 +28,7 @@ export interface SrjRouteResult {
   ok: boolean;
   srj: SimpleRouteJson;
   report: import("./results.ts").RouteReport;
+  violationsBefore: number; violationsAdded: number;
   pairs?: Array<{ p: string; n: string; lengthP: number; lengthN: number; skewMm: number; withinTolerance: boolean }>;
   diagnostics: import("./layout.ts").Diagnostic[];
 }

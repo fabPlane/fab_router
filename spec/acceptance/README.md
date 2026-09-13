@@ -31,7 +31,7 @@ Kinds and what `expect` may name:
 | `drc-load` | `readDsn` → `checkDrc` | `violations`, `incomplete` |
 | `settings` | `readDsn` (+ rules) → `route` with `routerEnabled:false` | a metric is a slash-separated path into `report.effectiveSettings` (`viaCost`, `layers/F.Cu/active`, …); `layers` alone compares the whole map (`exact: {}` = no per-Sheet entry) |
 | `routing` | `readDsn` (+ rules) → stats → `route` → stats | `incomplete`, `completed`, `violations` (`maxAdded`), `passes`, `barrels`, `traceLengthMm`, `addedTracks`, `addedBarrels`, `wallClockMs`, `stoppedBy` |
-| `srj` | `routeSrj` | `incomplete`, `violations`, per-pair `skewMm` |
+| `srj` | `routeSrj` on `boards/<name>.srj.json` | `incomplete`, `violations` (`maxAdded` on `violationsAdded`), per-pair `skewMm` |
 
 Expectation operators: `exact`, `max`, `min` compare the measured number; `maxAdded` compares
 (after − before) for violations; `maxRatioToReference` compares measured / reference value from
