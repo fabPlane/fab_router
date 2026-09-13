@@ -74,9 +74,12 @@ observations and the spec's ruling are recorded inline.
 - **J-23 Net-owned copper vs. keepout.** An obstacle's `connectedTo` is a list of the connection
   names (or net aliases, `J-20`) whose copper the obstacle is.
   - When `connectedTo` names exactly one connection, unambiguously (every listed name resolves
-    to the same single Net), the obstacle is that Net's own **fixed (held) copper**: the router
-    may attach the Net's routes to it, and it is an obstacle (keepout) to every other Net. It is
-    *not* an independent connectivity terminal (Q-68, section 7).
+    to the same single Net), the obstacle is that Net's own **Prior copper** (`glossary.md`):
+    the router may attach the Net's routes to it (it is connective same-net copper,
+    `spec/rules/connectivity.md` K-14/K-16), and it is an obstacle (keepout) to every other Net's
+    router-added copper. It is silent under design-rule checking against all other Prior copper
+    (`spec/rules/drc.md` DR-13, and Q-69 in section 7). It is *not* an independent connectivity
+    terminal (Q-68, section 7).
   - When `connectedTo` is empty, the obstacle is a plain keepout that blocks every Net
     (a Fence, `glossary.md`).
   - When `connectedTo` names an owner that resolves to **no** routed connection, the name is
@@ -214,6 +217,63 @@ routing and none is added: `violationsAdded` is 0 throughout, upholding R-1
 (`spec/api/contract.md`). Completion is via-dependent: it improves once the barrel-aware search
 (milestone I5) lands, because most links join endpoints on different Sheets and so need a via.
 
+### Q-69 — pre-existing coupled copper, DRC, and completion by attachment
+
+Each J802 board carries pre-existing copper — MIPI D-PHY differential pairs and an I2C bus among
+them — routed side by side at gaps below the board's declared default clearance
+(`defaultObstacleMargin`, `J-28`). On the two-layer board the default clearance is 0.15 mm, yet
+**84** distinct different-net owner pairs carry pre-existing copper closer than 0.15 mm somewhere on
+a shared layer (measured directly; `spec/acceptance/reference/b223-j802.srj.coupling.json`),
+including `SDA`/`SCL` coupled at 0.0054 mm. Two behaviours must be reconciled with `violationsBefore
+= 0`: the coupled copper is below clearance, and the connections still complete to 3 / 6 incomplete.
+
+- **J-33 Pre-existing coupled copper is DRC-silent among itself.** Prior copper (`J-23`) is never in
+  a spacing or fence Violation with other Prior copper, at any distance, whatever their nets or
+  Kinds; it is design-rule-checked only against copper the router adds
+  (`spec/rules/drc.md` DR-13). This is why every J802 board loads with `violationsBefore = 0`
+  despite the coupling. The exemption is **not** differential-pair-specific: `SDA`/`SCL` is not a
+  declared `differentialPairs` entry (`J-30`) yet is exempt, and 84 mostly-unrelated owner pairs are
+  exempt, so a `differentialPairs` entry's `traceGap` never lowers a clearance and never affects
+  Violation counting (its only observable effect is the per-pair skew report, `J-32`/`J-44`).
+  Router-added copper of another net still keeps the full declared clearance from Prior copper
+  (R-1 holds), and router-added copper of the *owning* net attaches to it (`J-23`,
+  `spec/rules/connectivity.md` K-14/K-16).
+
+- **J-34 Completion is by attachment to Prior copper.** A connection completes when its two declared
+  points are electrically joined, and a route reaches its target either directly or by touching the
+  net's Prior copper, which the router attaches to for free
+  (`spec/rules/connectivity.md` K-16). The sealed reference completes 12 / 15 (two-layer) and 9 / 15
+  (six-layer v2/v3) this way. A representation of Prior copper that is a keepout the router cannot
+  attach to (electrically inert) leaves incomplete-after at 15 on every board — it upholds
+  `violationsBefore = 0` and R-1 but cannot reach the reference's completion, because the declared
+  endpoints, mostly on different Sheets, are bridged only by the board's own copper. Reaching 3 / 6
+  requires Prior copper to be connective as well as obstructive and DRC-silent.
+
+**Proposed `spec/types/layout.ts` primitive** (for the orchestrator to apply — `spec/types` is not
+in this task's write set). The three behaviours above — obstacle to other nets, connective to the
+owner net, silent among Prior copper, and never a terminal — belong to one copper class. No existing
+primitive carries all four: held Tracks/Barrels/Pours are DRC-checked against each other (they would
+report the 84 pairs); a Kind-`null` item is DRC-silent but is not an obstacle either; a keepout
+region is an obstacle but is electrically inert (not connective) and not same-net-exempt. The
+recommended shape is a per-item flag on the copper primitives — a boolean or an `origin` value, e.g.
+`origin: "prior"` alongside the existing `"file" | "session" | "router"` — meaning, behaviourally:
+
+  1. **Obstacle to other nets.** For design-rule checking against router-added copper of a
+     *different* net, and for the router's own pre-commit checks, the item behaves as held copper of
+     its net at its net's Kind (`spec/rules/clearance.md` C-16): router-added copper of other nets
+     must keep the declared clearance from it (R-1).
+  2. **Connective and same-net-exempt.** For connectivity (K-01) and same-net DRC (DR-02) the item
+     is ordinary copper of its net: the router may end a route on it, and doing so is a connection,
+     not a Violation.
+  3. **Silent among Prior copper.** Two items both carrying this flag are never a spacing or fence
+     Violation pair, regardless of net (`spec/rules/drc.md` DR-13).
+  4. **Never a terminal.** The item is excluded from `connections.maximum` and from `incomplete`
+     and never originates a required link (`spec/rules/connectivity.md` K-14); it counts toward a
+     connection only by joining the connection's declared points.
+
+  Only SRJ import (`J-23`) produces items with this flag; DSN-derived Layouts never do, so DSN DRC
+  and connectivity are unchanged.
+
 ## 8. Output: the routed document
 
 - **J-40 Same object, copper attached.** `routeSrj` returns the input SimpleRouteJson with a
@@ -239,11 +299,18 @@ routing and none is added: `violationsAdded` is 0 throughout, upholding R-1
 ## 9. Acceptance
 
 The `srj-*` cases (`spec/acceptance/cases/srj-*.json`, kind `srj`) run `routeSrj` on the four
-J802 boards. On every case `violations.maxAdded` is **0** (hard, R-1). The `incomplete` bound is
-a via-dependent completion target drawn from the reference numbers above and is marked so it
-becomes reachable once the barrel-aware search (I5) lands; per-pair `skewMm` bounds are advisory
+J802 boards. On every case `violations.maxAdded` is **0** (hard, R-1) and `violations.preExisting`
+is **0** (hard): the reference loads all four boards with no Violation (`J-33`, DR-13), so the
+correct implementation, treating Prior copper as DRC-silent among itself, reads 0 before routing on
+every board. An implementation that instead spacing-checks Prior copper against Prior copper reads
+tens (two-layer) to hundreds (six-layer) of Violations before routing and fails this hard metric —
+that is the intended signal. The `incomplete` bound is set to the reference's completion figure per
+board (**3** / **6** / **6** / **15**, `spec/rules/connectivity.md` K-16) and is marked reachable
+only once Prior copper is connective (`J-34`): until the implementation can attach to Prior copper,
+incomplete-after stays at 15, so the bound is advisory. Per-pair `skewMm` bounds are advisory
 because neither reference couples pairs (`J-32`). Reference numbers are recorded in
-`spec/acceptance/reference/b223-j802*.srj.default.json`.
+`spec/acceptance/reference/b223-j802*.srj.default.json`; the coupling evidence for `J-33` is in
+`spec/acceptance/reference/b223-j802.srj.coupling.json`.
 
 ## Citations
 

@@ -45,6 +45,7 @@
 | **Pour ruling** | The spec's decision that a Pour connects every same-net item it overlaps, following the CAD tool's DRC (`rules/connectivity.md`) |
 | **Parse summary** | The normalised, reader-independent description of a board that `readDsn` must reproduce (`acceptance/parse/README.md`) |
 | **Dangling** | A Track or Barrel connected to nothing of its net; never counted as a terminal component |
+| **Prior copper** | Pre-existing net-owned copper carried in from an SRJ document's obstacles (`formats/srj.md` J-23): connective same-net copper the router may attach its routes to, an obstacle to router-added copper of every other net, never a connectivity terminal, and silent under design-rule checking against all other prior copper (same-net or not) — checked only against copper the router adds (`rules/drc.md` DR-13, `rules/connectivity.md` K-14/K-16) |
 | **Turn gap** | The `smd_to_turn_gap` distance: how far a Track must leave an SMD Pad before its first bend (`rules/clearance.md` C-12) |
 
 ## Literature (design from these; cite them in module headers)

@@ -12,12 +12,13 @@
   },
   "expect": {
     "violations": {
-      "maxAdded": 0
+      "maxAdded": 0,
+      "preExisting": 0
     },
     "incomplete": {
       "max": 15,
       "advisory": true
     }
   },
-  "note": "Six-layer J802 SimpleRouteJson board (spec/formats/srj.md). 15 declared connections; required-connection count is 15 (Q-68 ruling (b), rules/connectivity.md K-13..K-15). violations.maxAdded 0 is hard (R-1). This board carries seven GND-owned pads that cover declared endpoints and whose owner matches no routed connection: a faithful import refuses it (formats/srj.md J-25), and it routes only under the context-net reading. It is also a congestion/timeout board -- the sealed reference exhausted a 60 s budget having joined 0 of 15 -- so the incomplete bound is advisory and set to 15 (non-gating); completion here is not reachable within budget even for the reference. Reference numbers: spec/acceptance/reference/b223-j802-six-layer.srj.default.json."
+  "note": "Six-layer J802 SimpleRouteJson board (spec/formats/srj.md). 15 declared connections; required-connection count is 15 (Q-68 ruling (b), rules/connectivity.md K-13..K-15). violations.maxAdded 0 is hard (R-1); violations.preExisting 0 is hard: the reference loads 0 violations because Prior copper is DRC-silent among itself (formats/srj.md J-33, rules/drc.md DR-13). This board carries seven GND-owned pads that cover declared endpoints and whose owner matches no routed connection: a faithful import refuses it (formats/srj.md J-25), and it routes only under the context-net reading. Those GND pads are Prior copper and are silent against other Prior copper, so a reading that spacing-checks Prior-vs-Prior over-reports before routing and fails this metric. It is also a congestion/timeout board -- the sealed reference exhausted a 60 s budget having joined 0 of 15 -- so the incomplete bound is advisory and set to 15 (non-gating); completion here is not reachable within budget even for the reference. Reference numbers: spec/acceptance/reference/b223-j802-six-layer.srj.default.json."
 }

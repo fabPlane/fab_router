@@ -135,3 +135,31 @@ declared points are electrically joined, whether directly or through the net-own
 fragment; reading each owned fragment as its own terminal would instead have yielded on the order
 of 52 (two-layer) / 188 (six-layer). The spec follows the observed 15 (K-13, K-14). No Violation
 is present before routing and none is added on any of the four boards.
+
+**K-16 — completion by attachment (Q-69 ruling).** Prior copper is *connective*: a connection
+completes (K-12) the moment its two declared points are joined to a common component, and a route
+reaches that component either directly or by touching the net's Prior copper (K-01), which is
+same-net copper the router attaches to for free (DR-02). This attachment is what lets completion
+rise above zero on a board whose declared endpoints sit on different Sheets and are otherwise only
+joined through the copper the board already carries. Prior copper thus wears two hats at once
+without contradiction: an obstacle to other nets (`spec/rules/drc.md` DR-13) and connective helper
+copper for its own net (this clause). It remains a non-terminal (K-14): attaching to it completes a
+declared link but never adds one.
+
+**Observed completion** (the sealed reference, 60 s budget; the six-layer boards under the
+context-net import of `spec/formats/srj.md` J-25):
+
+| Board | Sheets | Required | Complete | Incomplete after | Passes | Status |
+|---|---|---|---|---|---|---|
+| `b223-j802.srj.json` | 2 | 15 | 12 | **3** | 3 | ok |
+| `b223-j802-six-layer.srj.json` | 6 | 15 | 0 | **15** | 1 | budget exhausted |
+| `b223-j802-six-layer-v2.srj.json` | 6 | 15 | 9 | **6** | 3 | ok |
+| `b223-j802-six-layer-v3.srj.json` | 6 | 15 | 9 | **6** | 3 | ok |
+
+(`v2` and `v3` are byte-identical inputs; the six-layer v1 exhausts the budget on congestion, not
+on any Violation.) A representation that models Prior copper as a keepout the router cannot attach
+to leaves incomplete-after at 15 on every board, because each declared link would then need its two
+endpoints joined end-to-end across Sheets without the board's own copper as a bridge; the observed
+3 / 6 completion is reachable only when Prior copper is connective. These completion figures are
+recorded per board in `spec/acceptance/reference/b223-j802*.srj.default.json` and are the
+`incomplete` targets of the `srj-*` acceptance cases (`spec/formats/srj.md` §9).
