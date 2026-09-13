@@ -188,3 +188,9 @@ Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTI
 - **Q-I1-37**, **Q-I1-38**, **Q-I1-40**, **Q-I1-41** Confirmed as implemented.
 - **Q-I1-39** `Sheet.preferDir` is `null` at read time unless the file sets it; the router's
   default is the longer-side rule of `settings.md` (L-09 amended).
+- **Q-I3b-43** DR-11's exact rule is as implemented: for a rounded core, no outline or cut-out
+  edge within the core radius; for a sharp core, no proper crossing and no edge endpoint strictly
+  inside; remaining probe points not outside / not in a cut-out; touching is on the board. DRC
+  (I2) uses the same rule via the shared predicates in `src/route/clear.ts`.
+- **Q-I3b-44** Confirmed: a drill exists on every Sheet of its span whether or not the form has
+  copper there; DRC counts the same pairs the router avoids.
