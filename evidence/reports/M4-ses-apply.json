@@ -1,0 +1,1307 @@
+{
+  "taken": "2026-09-13T19:29:32.679Z",
+  "head": "c8357a84372abefeaf9757efdcdd7d3712decad5",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "ses-apply-issue026-j2-reference",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 1
+        },
+        "barrels": {
+          "exact": 10
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 89
+        }
+      },
+      "board": "Issue026-J2_reference.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 1,
+        "barrels": 10,
+        "vias": 10,
+        "violations": 0,
+        "tracks": 89,
+        "appliedTracks": 89,
+        "appliedBarrels": 10
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 13.069375
+    },
+    {
+      "id": "ses-apply-issue191-processor-z80-processor",
+      "kind": "ses-apply",
+      "tier": "slow",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 223
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 1921
+        }
+      },
+      "board": "Issue191-processor.Z80-processor.Z80.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 223,
+        "vias": 223,
+        "violations": 0,
+        "tracks": 1921,
+        "appliedTracks": 1921,
+        "appliedBarrels": 223
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 115.778208
+    },
+    {
+      "id": "ses-apply-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 3
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 16
+        }
+      },
+      "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 3,
+        "vias": 3,
+        "violations": 0,
+        "tracks": 16,
+        "appliedTracks": 16,
+        "appliedBarrels": 3
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.676333999999997
+    },
+    {
+      "id": "ses-apply-issue283-unconnectedtracesunderpads-natural-tone-preamp",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 94
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 459
+        }
+      },
+      "board": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 94,
+        "vias": 94,
+        "violations": 0,
+        "tracks": 459,
+        "appliedTracks": 403,
+        "appliedBarrels": 94
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 12.246749999999992
+    },
+    {
+      "id": "ses-apply-issue313-fasttest",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 3
+        },
+        "barrels": {
+          "exact": 21
+        },
+        "violations": {
+          "exact": 1
+        },
+        "tracks": {
+          "exact": 129
+        }
+      },
+      "board": "Issue313-FastTest.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 3,
+        "barrels": 21,
+        "vias": 21,
+        "violations": 1,
+        "tracks": 129,
+        "appliedTracks": 129,
+        "appliedBarrels": 21
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.946416999999997
+    },
+    {
+      "id": "ses-apply-issue368-corneyislandwireless-corney-island-wireless-gui",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 5
+        }
+      },
+      "board": "Issue368-CorneyIslandWireless-corney_island_wireless.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 5,
+        "appliedTracks": 5,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.5357910000000174
+    },
+    {
+      "id": "ses-apply-issue368-corneyislandwireless-corney-island-wireless-no-gui",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 3
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 0
+        }
+      },
+      "board": "Issue368-CorneyIslandWireless-corney_island_wireless.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 3,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 0,
+        "appliedTracks": 0,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.4044580000000053
+    },
+    {
+      "id": "ses-apply-issue368-corneyislandwireless-output-session",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 7
+        }
+      },
+      "board": "Issue368-CorneyIslandWireless_input_design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 7,
+        "appliedTracks": 7,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.482500000000016
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-bm05",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 30
+        },
+        "barrels": {
+          "exact": 31
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 198
+        }
+      },
+      "board": "Issue508-DAC2020_bm05.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 30,
+        "barrels": 31,
+        "vias": 31,
+        "violations": 0,
+        "tracks": 198,
+        "appliedTracks": 198,
+        "appliedBarrels": 31
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.054333000000014
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-bm07-current",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 2
+        },
+        "barrels": {
+          "exact": 40
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 188
+        }
+      },
+      "board": "Issue508-DAC2020_bm07.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 2,
+        "barrels": 40,
+        "vias": 40,
+        "violations": 0,
+        "tracks": 188,
+        "appliedTracks": 188,
+        "appliedBarrels": 40
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.9627499999999998
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-bm07-v190",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 25
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 175
+        }
+      },
+      "board": "Issue508-DAC2020_bm07.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 25,
+        "vias": 25,
+        "violations": 0,
+        "tracks": 175,
+        "appliedTracks": 175,
+        "appliedBarrels": 25
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.923334000000011
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm01-frv1-9-0-dac2020-bm01",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 71
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 418
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm01-DAC2020_bm01.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 71,
+        "vias": 71,
+        "violations": 0,
+        "tracks": 418,
+        "appliedTracks": 418,
+        "appliedBarrels": 71
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 9.773833000000025
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm01-frv2-1-0-dac2020-bm01",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 25
+        },
+        "barrels": {
+          "exact": 89
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 480
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm01-DAC2020_bm01.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 25,
+        "barrels": 89,
+        "vias": 89,
+        "violations": 0,
+        "tracks": 480,
+        "appliedTracks": 480,
+        "appliedBarrels": 89
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 10.845375000000018
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm02-frv1-9-0-dac2020-bm02",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 5
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 65
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 5,
+        "vias": 5,
+        "violations": 0,
+        "tracks": 65,
+        "appliedTracks": 65,
+        "appliedBarrels": 5
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.3240000000000123
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm02-frv2-1-0-dac2020-bm02",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 7
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 73
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 7,
+        "vias": 7,
+        "violations": 0,
+        "tracks": 73,
+        "appliedTracks": 73,
+        "appliedBarrels": 7
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.2872500000000002
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm04-frv1-9-0-dac2020-bm04",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 28
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 339
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm04-DAC2020_bm04.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 28,
+        "vias": 28,
+        "violations": 0,
+        "tracks": 339,
+        "appliedTracks": 339,
+        "appliedBarrels": 28
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.629791999999981
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm04-frv2-1-0-dac2020-bm04",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 22
+        },
+        "barrels": {
+          "exact": 15
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 288
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm04-DAC2020_bm04.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 22,
+        "barrels": 15,
+        "vias": 15,
+        "violations": 0,
+        "tracks": 288,
+        "appliedTracks": 288,
+        "appliedBarrels": 15
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.177667000000014
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm05-frv1-9-0-dac2020-bm05",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 46
+        },
+        "barrels": {
+          "exact": 3
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 124
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm05-DAC2020_bm05.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 46,
+        "barrels": 3,
+        "vias": 3,
+        "violations": 0,
+        "tracks": 124,
+        "appliedTracks": 124,
+        "appliedBarrels": 3
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.2990000000000066
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 81
+        },
+        "barrels": {
+          "exact": 6
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 49
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm05-DAC2020_bm05.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 81,
+        "barrels": 6,
+        "vias": 6,
+        "violations": 0,
+        "tracks": 49,
+        "appliedTracks": 49,
+        "appliedBarrels": 6
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.7445419999999956
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm06-frv1-9-0-dac2020-bm06",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 9
+        },
+        "barrels": {
+          "exact": 11
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 225
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm06-DAC2020_bm06.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 9,
+        "barrels": 11,
+        "vias": 11,
+        "violations": 0,
+        "tracks": 225,
+        "appliedTracks": 225,
+        "appliedBarrels": 11
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.388416999999976
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm06-frv2-1-0-dac2020-bm06",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 20
+        },
+        "barrels": {
+          "exact": 3
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 174
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm06-DAC2020_bm06.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 20,
+        "barrels": 3,
+        "vias": 3,
+        "violations": 0,
+        "tracks": 174,
+        "appliedTracks": 174,
+        "appliedBarrels": 3
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.462707999999992
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm07-frv1-9-0-dac2020-bm07",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 10
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 168
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm07-DAC2020_bm07.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 10,
+        "vias": 10,
+        "violations": 0,
+        "tracks": 168,
+        "appliedTracks": 168,
+        "appliedBarrels": 10
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.4665829999999858
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 12
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 177
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm07-DAC2020_bm07.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 12,
+        "vias": 12,
+        "violations": 0,
+        "tracks": 177,
+        "appliedTracks": 177,
+        "appliedBarrels": 12
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.570625000000007
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm08-frv1-9-0-dac2020-bm08",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 57
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm08-DAC2020_bm08.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 57,
+        "appliedTracks": 57,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7740420000000086
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm08-frv2-1-0-dac2020-bm08",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 63
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm08-DAC2020_bm08.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 63,
+        "appliedTracks": 63,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7285830000000146
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm09-frv1-9-0-dac2020-bm09",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 1
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 172
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm09-DAC2020_bm09.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 1,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 172,
+        "appliedTracks": 172,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.93941700000002
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm09-frv2-1-0-dac2020-bm09",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 168
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm09-DAC2020_bm09.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 168,
+        "appliedTracks": 168,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.471333999999985
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 80
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 478
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm10-DAC2020_bm10.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 80,
+        "vias": 80,
+        "violations": 0,
+        "tracks": 478,
+        "appliedTracks": 478,
+        "appliedBarrels": 80
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.514624999999995
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm10-frv2-1-0-dac2020-bm10",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 10
+        },
+        "barrels": {
+          "exact": 65
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 476
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm10-DAC2020_bm10.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 10,
+        "barrels": 65,
+        "vias": 65,
+        "violations": 0,
+        "tracks": 476,
+        "appliedTracks": 476,
+        "appliedBarrels": 65
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.101958000000025
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm11-frv1-9-0-dac2020-bm11",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 14
+        },
+        "barrels": {
+          "exact": 21
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 264
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm11-DAC2020_bm11.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 14,
+        "barrels": 21,
+        "vias": 21,
+        "violations": 0,
+        "tracks": 264,
+        "appliedTracks": 264,
+        "appliedBarrels": 21
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.302084000000036
+    },
+    {
+      "id": "ses-apply-issue508-dac2020-dac2020-bm11-frv2-1-0-dac2020-bm11",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 25
+        },
+        "barrels": {
+          "exact": 19
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 247
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm11-DAC2020_bm11.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 25,
+        "barrels": 19,
+        "vias": 19,
+        "violations": 0,
+        "tracks": 247,
+        "appliedTracks": 247,
+        "appliedBarrels": 19
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.619250000000022
+    },
+    {
+      "id": "ses-apply-issue555-bbd-mars-64-current",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 106
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 1
+        },
+        "tracks": {
+          "exact": 41
+        }
+      },
+      "board": "Issue555-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 106,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 1,
+        "tracks": 41,
+        "appliedTracks": 41,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.9217080000000237
+    },
+    {
+      "id": "ses-apply-issue555-bbd-mars-64-v190",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 106
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 1
+        },
+        "tracks": {
+          "exact": 33
+        }
+      },
+      "board": "Issue555-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 106,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 1,
+        "tracks": 33,
+        "appliedTracks": 33,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.307707999999991
+    },
+    {
+      "id": "ses-apply-issue593-bbd-mars-64",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 47
+        },
+        "barrels": {
+          "exact": 51
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 215
+        }
+      },
+      "board": "Issue593-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 47,
+        "barrels": 51,
+        "vias": 51,
+        "violations": 0,
+        "tracks": 215,
+        "appliedTracks": 215,
+        "appliedBarrels": 51
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.50245799999999
+    },
+    {
+      "id": "ses-apply-issue690-ecc83",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 0
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 61
+        }
+      },
+      "board": "Issue690-ecc83.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 0,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 61,
+        "appliedTracks": 61,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.8463750000000232
+    },
+    {
+      "id": "ses-apply-issue733-kicad-complex-hierarchy-output-session",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 16
+        },
+        "barrels": {
+          "exact": 0
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 172
+        }
+      },
+      "board": "Issue733-kicad_complex_hierarchy_input_design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 16,
+        "barrels": 0,
+        "vias": 0,
+        "violations": 0,
+        "tracks": 172,
+        "appliedTracks": 172,
+        "appliedBarrels": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.8584999999999923
+    },
+    {
+      "id": "ses-apply-issue742-tastexx-pcb",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 3
+        },
+        "barrels": {
+          "exact": 7
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 37
+        }
+      },
+      "board": "Issue742-tastexx-pcb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 3,
+        "barrels": 7,
+        "vias": 7,
+        "violations": 0,
+        "tracks": 37,
+        "appliedTracks": 37,
+        "appliedBarrels": 7
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.9057090000000017
+    },
+    {
+      "id": "ses-apply-issue742-tastexx-pcb-tastexx-pcb",
+      "kind": "ses-apply",
+      "tier": "fast",
+      "expected": {
+        "incomplete": {
+          "exact": 3
+        },
+        "barrels": {
+          "exact": 6
+        },
+        "violations": {
+          "exact": 0
+        },
+        "tracks": {
+          "exact": 36
+        }
+      },
+      "board": "Issue742-tastexx-pcb-tastexx-pcb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "incomplete": 3,
+        "barrels": 6,
+        "vias": 6,
+        "violations": 0,
+        "tracks": 36,
+        "appliedTracks": 36,
+        "appliedBarrels": 6
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.591875000000016
+    }
+  ],
+  "summary": {
+    "total": 38,
+    "passed": 38,
+    "failed": 0,
+    "advisory": 0,
+    "stubbed": 0
+  }
+}

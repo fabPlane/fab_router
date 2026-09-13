@@ -1,0 +1,2827 @@
+{
+  "taken": "2026-09-13T19:29:27.463Z",
+  "head": "c8357a84372abefeaf9757efdcdd7d3712decad5",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "ses-roundtrip-cm5-carrier",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/cm5-carrier.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "cm5-carrier.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 13.461125
+    },
+    {
+      "id": "ses-roundtrip-empty-board",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/empty_board.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "empty_board.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.18925000000000125
+    },
+    {
+      "id": "ses-roundtrip-issue015-stackoverflow",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue015-StackOverflow.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue015-StackOverflow.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 13.892375000000001
+    },
+    {
+      "id": "ses-roundtrip-issue022-autorouter-interrupted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue022-AutoRouter_interrupted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue022-AutoRouter_interrupted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 14.270042000000004
+    },
+    {
+      "id": "ses-roundtrip-issue026-j2-reference",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue026-J2_reference.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue026-J2_reference.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6117500000000007
+    },
+    {
+      "id": "ses-roundtrip-issue027-zmretestfixture",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue027-zMRETestFixture.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue027-zMRETestFixture.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.1787080000000003
+    },
+    {
+      "id": "ses-roundtrip-issue029-hw48na",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue029-hw48na.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue029-hw48na.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.323999999999998
+    },
+    {
+      "id": "ses-roundtrip-issue034-green14segled",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue034-Green14SegLED.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue034-Green14SegLED.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.3846249999999998
+    },
+    {
+      "id": "ses-roundtrip-issue035-readplacescope",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue035-ReadPlaceScope.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue035-ReadPlaceScope.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.7877090000000067
+    },
+    {
+      "id": "ses-roundtrip-issue039-bug-design",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue039-bug-design.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue039-bug-design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.249959000000004
+    },
+    {
+      "id": "ses-roundtrip-issue054-tairakb",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue054-tairakb.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue054-tairakb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.377750000000006
+    },
+    {
+      "id": "ses-roundtrip-issue066-project-gp8b",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue066-Project_GP8B.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue066-Project_GP8B.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.639541999999992
+    },
+    {
+      "id": "ses-roundtrip-issue069-testsensel-testsensel",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue069-TestSensel-TestSensel.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue069-TestSensel-TestSensel.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.3505830000000003
+    },
+    {
+      "id": "ses-roundtrip-issue069-testsensel-testsensel-kicad6",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue069-TestSensel-TestSensel-KiCad6.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue069-TestSensel-TestSensel-KiCad6.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.2794590000000028
+    },
+    {
+      "id": "ses-roundtrip-issue070-autorouter-fq101-pcb-2022-05-13",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 9.323290999999998
+    },
+    {
+      "id": "ses-roundtrip-issue093-interf-u",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue093-interf_u.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue093-interf_u.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 7.234416999999993
+    },
+    {
+      "id": "ses-roundtrip-issue102-mars-64-reve-rot00",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue102-Mars-64-revE-rot00.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue102-Mars-64-revE-rot00.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.4488339999999909
+    },
+    {
+      "id": "ses-roundtrip-issue103-board-routed",
+      "kind": "ses-roundtrip",
+      "tier": "slow",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue103-Board-Routed.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue103-Board-Routed.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 37.239667
+    },
+    {
+      "id": "ses-roundtrip-issue103-board-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue103-Board-Unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue103-Board-Unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.3649999999999807
+    },
+    {
+      "id": "ses-roundtrip-issue107-freq-teiler-200khz-kicad",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue107-freq_teiler_200kHz_kicad.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue107-freq_teiler_200kHz_kicad.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.00408299999998
+    },
+    {
+      "id": "ses-roundtrip-issue107-freq-teiler-200khz-kicad-bad",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue107-freq_teiler_200kHz_kicad_bad.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue107-freq_teiler_200kHz_kicad_bad.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.7677920000000142
+    },
+    {
+      "id": "ses-roundtrip-issue110-non-ascii-name",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-Паяльная станция.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-Паяльная станция.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.780541999999997
+    },
+    {
+      "id": "ses-roundtrip-issue110-pajalnaja-stancija",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-Pajalnaja_stancija.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-Pajalnaja_stancija.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.743458000000004
+    },
+    {
+      "id": "ses-roundtrip-issue110-relaymodule",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-RelayModule.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-RelayModule.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.6774159999999938
+    },
+    {
+      "id": "ses-roundtrip-issue110-testpcbspecctrafile",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-testPCBSpecctraFile.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-testPCBSpecctraFile.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.7686669999999935
+    },
+    {
+      "id": "ses-roundtrip-issue110-testprojectfromrouterbugtest",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-testProjectFromRouterBugTest.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-testProjectFromRouterBugTest.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.2724580000000003
+    },
+    {
+      "id": "ses-roundtrip-issue110-testprojectfromrouterbugtest01",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue110-testProjectFromRouterBugTest01.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue110-testProjectFromRouterBugTest01.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.2418750000000216
+    },
+    {
+      "id": "ses-roundtrip-issue113-protein",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue113-Protein.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue113-Protein.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.387957999999998
+    },
+    {
+      "id": "ses-roundtrip-issue143-rpi-splitter",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue143-rpi_splitter.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue143-rpi_splitter.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.42408399999999347
+    },
+    {
+      "id": "ses-roundtrip-issue143-rpi-splitter-mod",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue143-rpi_splitter_mod.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue143-rpi_splitter_mod.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.31074999999998454
+    },
+    {
+      "id": "ses-roundtrip-issue145-smoothieboard",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue145-smoothieboard.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue145-smoothieboard.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.803750000000008
+    },
+    {
+      "id": "ses-roundtrip-issue153-wavefolder",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue153-wavefolder.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue153-wavefolder.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.232500000000016
+    },
+    {
+      "id": "ses-roundtrip-issue155-ch376-mcp795-module",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue155-CH376_MCP795_Module.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue155-CH376_MCP795_Module.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7634999999999934
+    },
+    {
+      "id": "ses-roundtrip-issue157-teamadapt-linepcb",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue157-TeamAdapt-LinePCB.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue157-TeamAdapt-LinePCB.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.011082999999985
+    },
+    {
+      "id": "ses-roundtrip-issue159-setonix-2hp-pcb",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue159-setonix_2hp-pcb.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue159-setonix_2hp-pcb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.5508749999999907
+    },
+    {
+      "id": "ses-roundtrip-issue163-pic-programmer",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue163-pic_programmer.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue163-pic_programmer.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.9791250000000105
+    },
+    {
+      "id": "ses-roundtrip-issue178-keebmaker-sofle-choc",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue178-KeebMaker_Sofle_Choc.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue178-KeebMaker_Sofle_Choc.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 9.405166000000008
+    },
+    {
+      "id": "ses-roundtrip-issue179-autorouter-pcb1-2023-3-24",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue179-Autorouter_PCB1_2023-3-24.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue179-Autorouter_PCB1_2023-3-24.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6057500000000005
+    },
+    {
+      "id": "ses-roundtrip-issue187-processor-z80",
+      "kind": "ses-roundtrip",
+      "tier": "slow",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue187-processor.Z80.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue187-processor.Z80.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 56.335583000000014
+    },
+    {
+      "id": "ses-roundtrip-issue190-processor-z80",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue190-processor.Z80.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue190-processor.Z80.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 40.67562499999997
+    },
+    {
+      "id": "ses-roundtrip-issue191-processor-z80-processor-z80",
+      "kind": "ses-roundtrip",
+      "tier": "slow",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue191-processor.Z80-processor.Z80.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue191-processor.Z80-processor.Z80.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 46.545500000000004
+    },
+    {
+      "id": "ses-roundtrip-issue199-stackoverflow-signale-vor-block",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue199-StackOverflow-Signale_Vor+Block.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue199-StackOverflow-Signale_Vor+Block.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.791499999999985
+    },
+    {
+      "id": "ses-roundtrip-issue208-router",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue208-router.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue208-router.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.291583000000003
+    },
+    {
+      "id": "ses-roundtrip-issue209-split05",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue209-split05.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue209-split05.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.2574579999999855
+    },
+    {
+      "id": "ses-roundtrip-issue209-split10",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue209-split10.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue209-split10.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.1272500000000036
+    },
+    {
+      "id": "ses-roundtrip-issue214-router",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue214-router.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue214-router.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 9.258290999999986
+    },
+    {
+      "id": "ses-roundtrip-issue217-8088sbc",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue217-8088sbc.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue217-8088sbc.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.4856249999999704
+    },
+    {
+      "id": "ses-roundtrip-issue219-logicboard-smt",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue219-LogicBoard_smt.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue219-LogicBoard_smt.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.1229999999999905
+    },
+    {
+      "id": "ses-roundtrip-issue229-display-8-digit-hc595",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue229-display-8-digit-hc595.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue229-display-8-digit-hc595.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.3123749999999745
+    },
+    {
+      "id": "ses-roundtrip-issue230-cnh-functional-tester-1",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue230-CNH_Functional_Tester_1.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue230-CNH_Functional_Tester_1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.430707999999981
+    },
+    {
+      "id": "ses-roundtrip-issue230-cnh-functional-tester-cnh-functional-tester-1",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 8.382999999999981
+    },
+    {
+      "id": "ses-roundtrip-issue269-caniot-tiny-arm",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue269-caniot-tiny-arm.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue269-caniot-tiny-arm.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.4848330000000374
+    },
+    {
+      "id": "ses-roundtrip-issue269-min-fr-test-min-fr-test",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue269-min_fr_test-min_fr_test.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue269-min_fr_test-min_fr_test.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.22370900000004212
+    },
+    {
+      "id": "ses-roundtrip-issue269-min-fr-test-min-fr-test-no-quotes",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue269-min_fr_test-min_fr_test_no_quotes.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue269-min_fr_test-min_fr_test_no_quotes.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.17808399999995572
+    },
+    {
+      "id": "ses-roundtrip-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.448332999999991
+    },
+    {
+      "id": "ses-roundtrip-issue269-z10-module",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue269-z10_module.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue269-z10_module.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 7.142166999999972
+    },
+    {
+      "id": "ses-roundtrip-issue270-non-ansi-bracket",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue270-non-ansi_bracket.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue270-non-ansi_bracket.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.32858299999998053
+    },
+    {
+      "id": "ses-roundtrip-issue283-unconnectedtracesunderpads-natural-tone-preamp",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.6326250000000186
+    },
+    {
+      "id": "ses-roundtrip-issue289-autorouter-pcb-fht-8086-2024-03-08",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.920708000000047
+    },
+    {
+      "id": "ses-roundtrip-issue289-autorouter-pcb-fht-vga-2024-03-25",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 14.17454200000003
+    },
+    {
+      "id": "ses-roundtrip-issue297-myboard",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue297-myboard.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue297-myboard.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.863540999999998
+    },
+    {
+      "id": "ses-roundtrip-issue313-fasttest",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue313-FastTest.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue313-FastTest.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.5107499999999732
+    },
+    {
+      "id": "ses-roundtrip-issue326-mars-64-reve",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue326-Mars-64-revE.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue326-Mars-64-revE.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.2361660000000256
+    },
+    {
+      "id": "ses-roundtrip-issue367-charger",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue367-Charger.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue367-Charger.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.816583000000037
+    },
+    {
+      "id": "ses-roundtrip-issue367-ultraflactyl-ultraflactyl",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue367-UltraFlactyl-UltraFlactyl.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue367-UltraFlactyl-UltraFlactyl.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 3.393333000000041
+    },
+    {
+      "id": "ses-roundtrip-issue368-corneyislandwireless-corney-island-wireless",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue368-CorneyIslandWireless-corney_island_wireless.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue368-CorneyIslandWireless-corney_island_wireless.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.21137499999997544
+    },
+    {
+      "id": "ses-roundtrip-issue368-corneyislandwireless-input-design",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue368-CorneyIslandWireless_input_design.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue368-CorneyIslandWireless_input_design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.1636249999999677
+    },
+    {
+      "id": "ses-roundtrip-issue413-test",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue413-test.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue413-test.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.43325000000004366
+    },
+    {
+      "id": "ses-roundtrip-issue420-contribution-board",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue420-contribution-board.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue420-contribution-board.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.520832999999982
+    },
+    {
+      "id": "ses-roundtrip-issue433-my-board",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue433-my-board.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue433-my-board.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.24883299999999053
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm01",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm01.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm01.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.8630420000000072
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm02",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm02.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm02.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.1269169999999917
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm04",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm04.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm04.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7985419999999976
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm05",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm05.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm05.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.5024169999999799
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm06",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm06.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm06.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.5452080000000024
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm07",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm07.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm07.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.40850000000000364
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm08",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm08.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm08.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.18029200000000856
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm09",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm09.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm09.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6653330000000324
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm10",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm10.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm10.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7653750000000059
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-bm11",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020_bm11.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020_bm11.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6701669999999922
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm01-dac2020-bm01-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm01-DAC2020_bm01.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm01-DAC2020_bm01.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7946249999999964
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm01-frv1-9-0-dac2020-bm01-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm01-FRv1.9.0-DAC2020_bm01.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm01-FRv1.9.0-DAC2020_bm01.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7726660000000152
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm01-frv2-1-0-dac2020-bm01-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm01-FRv2.1.0-DAC2020_bm01.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm01-FRv2.1.0-DAC2020_bm01.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7669589999999857
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm02-dac2020-bm02-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.001542000000029
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm02-frv1-9-0-dac2020-bm02-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm02-FRv1.9.0-DAC2020_bm02.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm02-FRv1.9.0-DAC2020_bm02.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.2910830000000146
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm02-frv2-1-0-dac2020-bm02-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm02-FRv2.1.0-DAC2020_bm02.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm02-FRv2.1.0-DAC2020_bm02.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.0522499999999582
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm04-dac2020-bm04-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm04-DAC2020_bm04.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm04-DAC2020_bm04.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7280840000000239
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm04-frv1-9-0-dac2020-bm04-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm04-FRv1.9.0-DAC2020_bm04.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm04-FRv1.9.0-DAC2020_bm04.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6796249999999873
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm04-frv2-1-0-dac2020-bm04-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm04-FRv2.1.0-DAC2020_bm04.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm04-FRv2.1.0-DAC2020_bm04.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6444169999999758
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm05-dac2020-bm05-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm05-DAC2020_bm05.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm05-DAC2020_bm05.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.46358299999997143
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm05-frv1-9-0-dac2020-bm05-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm05-FRv1.9.0-DAC2020_bm05.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm05-FRv1.9.0-DAC2020_bm05.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.453125
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm05-FRv2.1.0-DAC2020_bm05.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm05-FRv2.1.0-DAC2020_bm05.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.430417000000034
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm06-dac2020-bm06-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm06-DAC2020_bm06.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm06-DAC2020_bm06.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.46770799999995916
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm06-frv1-9-0-dac2020-bm06-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm06-FRv1.9.0-DAC2020_bm06.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm06-FRv1.9.0-DAC2020_bm06.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.4944580000000087
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm06-frv2-1-0-dac2020-bm06-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm06-FRv2.1.0-DAC2020_bm06.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm06-FRv2.1.0-DAC2020_bm06.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.49124999999997954
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm07-dac2020-bm07-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm07-DAC2020_bm07.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm07-DAC2020_bm07.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.40904199999999946
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm07-frv1-9-0-dac2020-bm07-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm07-FRv1.9.0-DAC2020_bm07.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm07-FRv1.9.0-DAC2020_bm07.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.36899999999997135
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm07-FRv2.1.0-DAC2020_bm07.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm07-FRv2.1.0-DAC2020_bm07.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.37941699999998946
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm08-dac2020-bm08-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm08-DAC2020_bm08.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm08-DAC2020_bm08.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.17504199999996217
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm08-frv1-9-0-dac2020-bm08-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm08-FRv1.9.0-DAC2020_bm08.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm08-FRv1.9.0-DAC2020_bm08.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.18533300000001418
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm08-frv2-1-0-dac2020-bm08-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm08-FRv2.1.0-DAC2020_bm08.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm08-FRv2.1.0-DAC2020_bm08.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.202083000000016
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm09-dac2020-bm09-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm09-DAC2020_bm09.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm09-DAC2020_bm09.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.705916000000002
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm09-frv1-9-0-dac2020-bm09-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm09-FRv1.9.0-DAC2020_bm09.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm09-FRv1.9.0-DAC2020_bm09.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6489169999999831
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm09-frv2-1-0-dac2020-bm09-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm09-FRv2.1.0-DAC2020_bm09.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm09-FRv2.1.0-DAC2020_bm09.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6592500000000427
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm10-dac2020-bm10-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm10-DAC2020_bm10.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm10-DAC2020_bm10.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7532909999999902
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm10-FRv1.9.0-DAC2020_bm10.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm10-FRv1.9.0-DAC2020_bm10.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7690830000000233
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm10-frv2-1-0-dac2020-bm10-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm10-FRv2.1.0-DAC2020_bm10.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm10-FRv2.1.0-DAC2020_bm10.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7312499999999886
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm11-dac2020-bm11-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm11-DAC2020_bm11.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm11-DAC2020_bm11.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6062080000000378
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm11-frv1-9-0-dac2020-bm11-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm11-FRv1.9.0-DAC2020_bm11.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm11-FRv1.9.0-DAC2020_bm11.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6158329999999523
+    },
+    {
+      "id": "ses-roundtrip-issue508-dac2020-dac2020-bm11-frv2-1-0-dac2020-bm11-unrouted",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-DAC2020-DAC2020_bm11-FRv2.1.0-DAC2020_bm11.unrouted.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-DAC2020-DAC2020_bm11-FRv2.1.0-DAC2020_bm11.unrouted.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6175420000000145
+    },
+    {
+      "id": "ses-roundtrip-issue508-smd-routing-issue-demo",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue508-SMD-routing-issue-demo.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue508-SMD-routing-issue-demo.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.13900000000001
+    },
+    {
+      "id": "ses-roundtrip-issue555-bbd-mars-64",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue555-BBD_Mars-64.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue555-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.0230829999999855
+    },
+    {
+      "id": "ses-roundtrip-issue555-cnh-functional-tester-1",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue555-CNH_Functional_Tester_1.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue555-CNH_Functional_Tester_1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.763041000000044
+    },
+    {
+      "id": "ses-roundtrip-issue558-dev-board",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue558-dev-board.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue558-dev-board.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.8476670000000013
+    },
+    {
+      "id": "ses-roundtrip-issue575-drc-bbd-mars-64-6-track-1-hole-clearance-violations",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.6947079999999914
+    },
+    {
+      "id": "ses-roundtrip-issue575-drc-dev-board-4-hole-clearance-violations",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue575-drc_dev-board_4_hole_clearance_violations.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.549792000000025
+    },
+    {
+      "id": "ses-roundtrip-issue575-drc-natural-tone-preamp-7-unconnected",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 10.310583000000008
+    },
+    {
+      "id": "ses-roundtrip-issue593-bbd-mars-64",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue593-BBD_Mars-64.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue593-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.2450420000000122
+    },
+    {
+      "id": "ses-roundtrip-issue632-miniautopilot-mini-auto-pilot",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue632-MiniAutoPilot-Mini Auto Pilot.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue632-MiniAutoPilot-Mini Auto Pilot.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.2161249999999768
+    },
+    {
+      "id": "ses-roundtrip-issue649-kicad-ecc83-pp-input-board-v1",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue649-kicad_ecc83-pp_input_board_v1.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue649-kicad_ecc83-pp_input_board_v1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6122499999999604
+    },
+    {
+      "id": "ses-roundtrip-issue649-kicad-ecc83-pp-input-board-v2",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue649-kicad_ecc83-pp_input_board_v2.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue649-kicad_ecc83-pp_input_board_v2.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.8993750000000205
+    },
+    {
+      "id": "ses-roundtrip-issue676-ch32v-tx118s",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue676-ch32v-tx118s.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue676-ch32v-tx118s.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6442499999999995
+    },
+    {
+      "id": "ses-roundtrip-issue684-autorouter-pcb1-2026-5-8",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue684-Autorouter_PCB1_2026-5-8.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.0039580000000115
+    },
+    {
+      "id": "ses-roundtrip-issue689-bbd-mars-64",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue689-BBD_Mars-64.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue689-BBD_Mars-64.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.1400830000000042
+    },
+    {
+      "id": "ses-roundtrip-issue690-ecc83",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue690-ecc83.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue690-ecc83.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.8659159999999702
+    },
+    {
+      "id": "ses-roundtrip-issue690-kit-dev-coldfire-xilinx-5213",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue690-kit-dev-coldfire-xilinx_5213.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 19.581624999999974
+    },
+    {
+      "id": "ses-roundtrip-issue690-sonde-xilinx",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue690-sonde_xilinx.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue690-sonde_xilinx.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.7963750000000118
+    },
+    {
+      "id": "ses-roundtrip-issue721-autorouter-ce2632-harrymu-2026-6-15",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.139082999999971
+    },
+    {
+      "id": "ses-roundtrip-issue723-combinestackoverflow",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue723-CombineStackOverflow.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue723-CombineStackOverflow.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 15.802875000000029
+    },
+    {
+      "id": "ses-roundtrip-issue730-dac2020-bm11",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue730-DAC2020_bm11.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue730-DAC2020_bm11.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7735000000000127
+    },
+    {
+      "id": "ses-roundtrip-issue732-cm5-minima-3",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue732-CM5_MINIMA_3.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue732-CM5_MINIMA_3.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 4.962791999999922
+    },
+    {
+      "id": "ses-roundtrip-issue732-dac2020-bm10",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue732-DAC2020_bm10.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue732-DAC2020_bm10.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.8143330000000333
+    },
+    {
+      "id": "ses-roundtrip-issue732-royalblue54l-feather",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue732-RoyalBlue54L-Feather.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue732-RoyalBlue54L-Feather.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 1.5730409999999893
+    },
+    {
+      "id": "ses-roundtrip-issue733-kicad-complex-hierarchy-input-design",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue733-kicad_complex_hierarchy_input_design.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue733-kicad_complex_hierarchy_input_design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.9259170000000267
+    },
+    {
+      "id": "ses-roundtrip-issue733-kicad-interf-u-input-design",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue733-kicad_interf_u_input_design.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue733-kicad_interf_u_input_design.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 5.91495800000007
+    },
+    {
+      "id": "ses-roundtrip-issue742-tastexx-pcb",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue742-tastexx-pcb.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue742-tastexx-pcb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.7422500000000127
+    },
+    {
+      "id": "ses-roundtrip-issue742-tastexx-pcb-tastexx-pcb",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue742-tastexx-pcb-tastexx-pcb.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue742-tastexx-pcb-tastexx-pcb.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.6116250000000036
+    },
+    {
+      "id": "ses-roundtrip-issue753-cpu-85-r104",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue753-CPU-85_r104.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue753-CPU-85_r104.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 2.937332999999967
+    },
+    {
+      "id": "ses-roundtrip-issue754-avionics-hub",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue754-avionics_hub.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue754-avionics_hub.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.398957999999993
+    },
+    {
+      "id": "ses-roundtrip-issue756-minimal-hang",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-minimal-hang.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-minimal-hang.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.13545799999997143
+    },
+    {
+      "id": "ses-roundtrip-issue756-minimal-ok",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-minimal-ok.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-minimal-ok.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.10874999999998636
+    },
+    {
+      "id": "ses-roundtrip-issue756-tomu-fpga",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-tomu-fpga.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-tomu-fpga.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.854082999999946
+    },
+    {
+      "id": "ses-roundtrip-issue756-tomu-fpga11",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-tomu-fpga11.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-tomu-fpga11.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.919874999999934
+    },
+    {
+      "id": "ses-roundtrip-issue756-tomu-fpga7",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-tomu-fpga7.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-tomu-fpga7.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 14.870916999999963
+    },
+    {
+      "id": "ses-roundtrip-issue756-tomu-fpga8",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-tomu-fpga8.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-tomu-fpga8.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 11.491125000000011
+    },
+    {
+      "id": "ses-roundtrip-issue756-tomu-fpga9",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue756-tomu-fpga9.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue756-tomu-fpga9.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 9.827125000000024
+    },
+    {
+      "id": "ses-roundtrip-issue757-minimal-soe",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue757-minimal-soe.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue757-minimal-soe.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.13708300000007512
+    },
+    {
+      "id": "ses-roundtrip-issue757-minimal-soe-ok",
+      "kind": "ses-roundtrip",
+      "tier": "fast",
+      "expected": {
+        "treeEquals": {
+          "equalsFile": "ses/Issue757-minimal-soe-ok.dsn.unrouted.sexp.json"
+        }
+      },
+      "board": "Issue757-minimal-soe-ok.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "treeEquals": "equal"
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.12366599999995742
+    }
+  ],
+  "summary": {
+    "total": 148,
+    "passed": 148,
+    "failed": 0,
+    "advisory": 0,
+    "stubbed": 0
+  }
+}
