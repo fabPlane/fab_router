@@ -142,8 +142,10 @@ describe("settings resolution (settings.md)", () => {
 describe("API stubs", () => {
   test("every contract function exists and returns a well-typed value", () => {
     const L = emptyLayout("x");
-    expect(api.readDsn("(pcb x)").ok).toBe(false);
-    expect(api.writeDsn({} as never)).toBe("");
+    expect(api.readDsn("not a design file").ok).toBe(false);
+    const read = api.readDsn("(pcb x (structure (layer F.Cu (type signal)) (boundary (rect pcb 0 0 1 1))))");
+    expect(read.ok).toBe(true);
+    if (read.ok) expect(api.readDsn(api.writeDsn(read.document)).ok).toBe(true);
     expect(api.writeSes(L)).toBe("");
     expect(api.applySes(L, "").ok).toBe(false);
     expect(api.readRules("").ok).toBe(false);
@@ -155,7 +157,7 @@ describe("API stubs", () => {
     expect(report.effectiveSettings.viaCost).toBe(7);
     expect(report.effectiveSettings.angleMode).toBe("45");
     expect(report.added).toEqual({ tracks: 0, barrels: 0 });
-    expect(api.routeDsn("(pcb x)").ok).toBe(false);
+    expect(api.routeDsn("not a design file").ok).toBe(false);
     expect(api.routeSrj({ layerCount: 2, minTraceWidth: 0.2, bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, obstacles: [], connections: [] }).ok).toBe(false);
   });
   test("SpacingTable is symmetric, per Sheet and per pair type, with a max per Kind", () => {
@@ -181,7 +183,7 @@ describe("API stubs", () => {
       const r2 = runCase(c);
       expect(r2.stub).toBe(true);
       expect(r2.pass).toBe(true);
-      expect(r2.reason).toContain("readDsn not implemented");
+      expect(r2.reason).toContain("board corpus file missing");
     } finally {
       if (prev === undefined) delete process.env.FAB_ROUTER_ACCEPT_STUBS; else process.env.FAB_ROUTER_ACCEPT_STUBS = prev;
     }

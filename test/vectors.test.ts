@@ -1,7 +1,7 @@
 /**
  * Behaviour vectors: every `spec/behaviour/**\/*.jsonl` record is asserted. Geometry ops are
- * dispatched to src/geom; ops without an implementation yet (the DSN lexeme vectors) are
- * reported as skipped with a count, never silently ignored.
+ * dispatched to src/geom, the DSN lexeme vectors to src/dsn/lex; ops without an implementation
+ * are reported as skipped with a count, never silently ignored.
  */
 import { describe, expect, test } from "bun:test";
 import { readdirSync, readFileSync, statSync } from "node:fs";
@@ -10,6 +10,7 @@ import {
   area2, area2Exact, dist2PtSeg, footExact, fracToNumber, fracToStrings, hullOf, lineIntersectExact,
   orient, pointInRing, pointSegDist2Exact, segsIntersect, type Pt,
 } from "../src/geom/index.ts";
+import { lex } from "../src/dsn/lex.ts";
 
 const ROOT = resolve(import.meta.dir, "..");
 const BEHAVIOUR = join(ROOT, "spec", "behaviour");
@@ -36,7 +37,8 @@ function load(file: string): Vectors {
   }
   const rel = relative(BEHAVIOUR, file);
   // Geometry records carry `op`; other vector families are named by their directory.
-  const op = records[0]?.op ?? rel.replace(/\.jsonl$/, "").replace(/\//g, ":");
+  const dir = rel.split("/")[0]!;
+  const op = records[0]?.op ?? (dir === "dsn-tokens" ? "dsn-tokens" : rel.replace(/\.jsonl$/, "").replace(/\//g, ":"));
   return { file: rel, op, records };
 }
 
@@ -45,6 +47,11 @@ const P = (a: number[]): Pt => ({ x: a[0]!, y: a[1]! });
 type Checker = (input: any, expected: any) => void;
 
 const CHECKERS: Record<string, Checker> = {
+  // spec/behaviour/dsn-tokens: the whole record is passed; it carries `input` and `lexemes`.
+  "dsn-tokens": (rec: { input: string; lexemes: Array<{ kind: string; text: string; glued?: boolean }> }) => {
+    const got: Array<{ kind: string; text: string; glued?: boolean }> = lex(rec.input).map((l) => (l.glued ? { kind: l.kind, text: l.text, glued: true } : { kind: l.kind, text: l.text }));
+    expect(got).toEqual(rec.lexemes);
+  },
   "orientation": (i, e) => {
     expect(orient(P(i.a), P(i.b), P(i.c))).toBe(e);
   },
@@ -102,7 +109,8 @@ describe("behaviour vectors", () => {
       let n = 0;
       for (const rec of v.records) {
         try {
-          checker(rec.input, rec.expected);
+          if (v.op === "dsn-tokens") checker(rec, undefined);
+          else checker(rec.input, rec.expected);
         } catch (err) {
           throw new Error(`${v.file} record ${n + 1} (${rec.note ?? "no note"}): ${String((err as Error).message)}\ninput=${JSON.stringify(rec.input)}`);
         }
