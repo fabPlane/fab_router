@@ -14,7 +14,7 @@
     "incompleteBefore": 8,
     "incompleteAfter": 8,
     "vias": 24,
-    "traceLengthMm": 189.691,
+    "traceLengthMm": 1896.91,
     "violationsBefore": 0,
     "violationsAfter": 0,
     "passes": 1,
@@ -28,7 +28,7 @@
     "incompleteBefore": 8,
     "incompleteAfter": 0,
     "vias": 29,
-    "traceLengthMm": 211.114,
+    "traceLengthMm": 2111.14,
     "violationsBefore": 0,
     "violationsAfter": 0,
     "passes": 1,
@@ -37,5 +37,5 @@
     "status": "ok",
     "host": "reference B"
   },
-  "notes": "reference A: 3 run(s). reference A's own counts are incomplete 20 before / 20 after; the recorded values are recomputed on its Layout under the spec's connectivity rules K-01..K-03 (the pour ruling: same-net copper that overlaps is connected, only groups holding a Pad or Pour count) and DR-02 (same-net pairs are never spacing violations), see rules/connectivity.md and rules/drc.md. reference B: 1 run(s). reference B's own counts are incomplete 13 before / 1 after; the recorded values are recomputed on its Layout under the spec's connectivity rules K-01..K-03 (the pour ruling: same-net copper that overlaps is connected, only groups holding a Pad or Pour count) and DR-02 (same-net pairs are never spacing violations), see rules/connectivity.md and rules/drc.md. reference B's numbers are one routing pass followed by its optimiser, with its post-pass completion stage disabled. reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file."
+  "notes": "reference A: 3 run(s). reference A's own counts are incomplete 20 before / 20 after; the recorded values are recomputed on its Layout under the spec's connectivity rules K-01..K-03 (the pour ruling: same-net copper that overlaps is connected, only groups holding a Pad or Pour count) and DR-02 (same-net pairs are never spacing violations), see rules/connectivity.md and rules/drc.md. reference B: 1 run(s). reference B's own counts are incomplete 13 before / 1 after; the recorded values are recomputed on its Layout under the spec's connectivity rules K-01..K-03 (the pour ruling: same-net copper that overlaps is connected, only groups holding a Pad or Pour count) and DR-02 (same-net pairs are never spacing violations), see rules/connectivity.md and rules/drc.md. reference B's numbers are one routing pass followed by its optimiser, with its post-pass completion stage disabled. reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file. Correction (Q-I2-58): traceLengthMm on this board is expressed in true millimetres; the value was multiplied by ten because this board's resolution units are one ten-thousandth of a millimetre and the earlier figure was one tenth of the true routed length."
 }

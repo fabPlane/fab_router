@@ -15,7 +15,7 @@
     "incompleteBefore": 34,
     "incompleteAfter": 1,
     "vias": 0,
-    "traceLengthMm": 34.974,
+    "traceLengthMm": 349.74,
     "violationsBefore": 0,
     "violationsAfter": 0,
     "passes": 1,
@@ -29,7 +29,7 @@
     "incompleteBefore": 34,
     "incompleteAfter": 4,
     "vias": 0,
-    "traceLengthMm": 103.717,
+    "traceLengthMm": 1037.17,
     "violationsBefore": 0,
     "violationsAfter": 1,
     "passes": 10,
@@ -38,5 +38,5 @@
     "status": "ok",
     "host": "reference B"
   },
-  "notes": "This file is byte-identical to Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn; the numbers were measured on that copy. reference A: 3 run(s). reference B: 1 run(s). reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file."
+  "notes": "This file is byte-identical to Issue508-DAC2020-DAC2020_bm02-DAC2020_bm02.unrouted.dsn; the numbers were measured on that copy. reference A: 3 run(s). reference B: 1 run(s). reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file. Correction (Q-I2-58): traceLengthMm on this board is expressed in true millimetres; the value was multiplied by ten because this board's resolution units are one ten-thousandth of a millimetre and the earlier figure was one tenth of the true routed length."
 }

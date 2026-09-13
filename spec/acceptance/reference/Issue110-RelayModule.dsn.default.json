@@ -14,7 +14,7 @@
     "incompleteBefore": 88,
     "incompleteAfter": 3,
     "vias": 27,
-    "traceLengthMm": 123.733,
+    "traceLengthMm": 1237.33,
     "violationsBefore": 4,
     "violationsAfter": 4,
     "passes": 17,
@@ -28,7 +28,7 @@
     "incompleteBefore": 88,
     "incompleteAfter": 37,
     "vias": 38,
-    "traceLengthMm": 99.316,
+    "traceLengthMm": 993.16,
     "violationsBefore": 4,
     "violationsAfter": 5,
     "passes": 2,
@@ -37,5 +37,5 @@
     "status": "timeout",
     "host": "reference B"
   },
-  "notes": "reference A: 1 run(s). reference B: 1 run(s). reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file."
+  "notes": "reference A: 1 run(s). reference B: 1 run(s). reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file. Correction (Q-I2-58): traceLengthMm on this board is expressed in true millimetres; the value was multiplied by ten because this board's resolution units are one ten-thousandth of a millimetre and the earlier figure was one tenth of the true routed length."
 }
