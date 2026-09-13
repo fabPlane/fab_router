@@ -134,6 +134,30 @@ through, copper or not, with the union of copper and drill bounds. `test/helpers
 the new fields, a PadForm with a through drill but outer-Sheet copper only, two blind via forms
 with disjoint spans, a notched outline and deliberately off-board items.
 
+## Status (task I2 — session writer/reader, DRC, connectivity, statistics)
+
+Verification, run from the worktree root after merging `main` at `f1bbfa4` (rulings Q-I3b-43/44):
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 43 files, 0 violations |
+| `bun run test` (with `FAB_ROUTER_ACCEPT_STUBS=1`) | 715 pass, 10 fail: the 7 parse cases of questions 27–29 (I1), `drc-load-issue575-bbd-mars64` (question 48), `ses-apply-issue313-fasttest` and `ses-apply-issue690-ecc83` (question 50); 16 routing cases stub on `route` (I4) |
+| `bun run test` (without the variable) | additionally the 16 fast routing cases fail as stubs |
+| `bun run acceptance -- --tier all --case 'drc-*'` | 9 cases: **8 passed, 1 failed** (`drc-load-issue575-bbd-mars64`: 11 measured, 12 expected — the 12th pair is 200.009 µm apart, question 48) |
+| `bun run acceptance -- --tier all --case 'ses-roundtrip-*'` | 148 cases: **145 passed, 3 failed** (`Issue103-Board-Routed`, `Issue187`, `Issue191`: one `polyline_path` corner per board whose exact intersection is a half-LU, question 51) |
+| `bun run acceptance -- --tier all --case 'ses-apply-*'` | 38 cases: **35 passed, 3 failed** (`Issue191`: question 49; `Issue313`, `Issue690`: question 50) |
+| `bun run acceptance -- --tier all` | 460 cases, 387 passed, 73 failed (59 of them routing stubs, 7 parse of I1, the 7 above), 59 stubbed |
+| `test/drc.test.ts` | 43 tests: a brute-force oracle (every pair on every Sheet with `src/geom` `dist2`, DR-11 through the router's `crossesEdge` / `withinRim`) gives the same multiset of `(rule, a, b, sheet)` as `checkDrc` on 3 seeds × 45°/any × 4 clearance variants of the synthetic boards (hundreds of Violations per variant); hand-built boards for K-01…K-11, DR-01…DR-11, C-15, N-07 and every `LayoutStats` field |
+| `test/ses.test.ts` | 16 tests: F-S2/S20/S21/S22/S30/S31/S34/S40…S44 on hand-built names and three unit systems; `normaliseSes` equals the runner's canonicaliser on all 148 readable boards and is the identity on all 148 expected trees; `applySes` diagnostics, units, replacement, polygons and polyline corners; the contract's round trip (`writeSes` → `applySes` on a fresh `readDsn`: same Track / Barrel / Pour counts, connections, violations by rule, Track length) holds on all 148 readable boards |
+| `test/applied-ses.test.ts` | all 38 `applied-ses` references: `connections`, `incompleteBefore/After`, `vias`, `tracks`, `violationsBefore/After` reproduced (the three documented deviations pinned to the spec's values), Track length equal to the session text's |
+| `layoutStats` on the whole corpus | 148 boards in 0.7 s (the largest, `Issue103-Board-Routed` with 4 000 wires, 47 ms) |
+
+Delivered: `src/drc/{exact,pour,connect,spacing,stats,index}.ts`, `src/ses/{write,normalise,apply,
+index}.ts`, the API bodies `writeSes`, `applySes`, `checkDrc`, `layoutStats`, `requiredConnections`
+(and one line in `readDsn`, question 47), `src/drc/README.md`, `src/ses/README.md`, the three test
+files, `test/acceptance-tools.test.ts` (the `writeSes` stub expectation replaced).
+
 ## Questions
 
 1. **Wall hook false positive on relative imports.** `tools/wall/pretooluse.ts` (rule
@@ -373,3 +397,106 @@ with disjoint spans, a notched outline and deliberately off-board items.
     six `drc-load` cases fail (not stub) now that `readDsn` is real; the runner cannot distinguish
     the stub from a clean board. Either the I2 stub should carry `not-implemented`, or the cases
     should be accepted as stubbed until I2 lands.
+
+### Task I2
+
+47. **`writeSes` needs what the public Layout does not carry.** F-S20/F-S21 (the design file's
+    `resolution`), F-S30 (the quote character), F-S31 (`host_cad` / `host_version`) and F-S32
+    (`lock_type position`) are document facts absent from `spec/types/layout.ts`, yet `writeSes`
+    takes only the Layout. `readDsn` in `src/api.ts` now attaches the `DsnDocument` to the Layout as
+    a non-enumerable `document` property (`src/ses/write.ts` `attachDocument` / `documentOf`);
+    without it the writer falls back to the Frame's unit and scale, `"`, and an empty `(parser)`.
+    That one-line addition to `readDsn` is outside the task's write set (bodies of the five I2
+    functions) but is the smallest change that makes the contract hold; if the Layout should carry
+    these fields itself (`resolution`, `quote`, `hostCad`, `hostVersion`, `Part.locked`), please
+    add them to `types/layout.ts` and I1's builder.
+48. **`drc-load-issue575-bbd-mars64` expects 12; the exact geometry gives 11.** The Track–Track
+    pair `Net-(TP213-Pad1)` / `Net-(TP214-Pad1)` on `B.Cu` (legs `(931041,-1166780)–(789500,
+    -1308330)` and `(926537,-1164920)–(784500,-1306960)` LU, width 2500) is 2000.087 LU =
+    200.0087 µm apart by exact rational arithmetic — reference A's report lists it at "0,1999 mm"
+    (its octagonal approximation). DR-01 says strictly less than 200 µm and DR-07 says a
+    Violation "must not be reported when the exact distance is ≥ required", so the spec's own
+    clauses give 8 spacing + 3 fence = 11. Please amend the case to 11 (or rule that the
+    references' rounding is normative, which DR-07 currently rejects).
+49. **`ses-apply-issue191-processor-z80-processor` reproduces reference A's tokenizer failure.**
+    The session names 44 nets bare as `~{WR}`, `~{RD}`, … (as the design file does); D-10 rules
+    `{` and `}` ordinary characters and F-S62 looks nets up by exact name, so all 1921 wires and
+    223 vias apply (0 incomplete). The reference imported "1664 wires, 183 vias, 44 errors" — it
+    dropped exactly the 44 brace-named nets (257 wires, 40 vias) — and the case pins 1664 / 183 /
+    92. Please regenerate the case from the clauses (1921 / 223 / 0 incomplete / 0 violations).
+50. **`ses-apply-issue313-fasttest` and `ses-apply-issue690-ecc83` add the session to the file's
+    held wiring.** F-S61 removes every free or held Track, Barrel and Pour before inserting (and the
+    reference notes say "file wiring removed … (127 Tracks, 20 Barrels not locked)"), but the
+    recorded numbers are file + session: 127 `protect` Tracks + 129 session wires = 256, 20 + 21 =
+    41 Barrels (Issue313); 55 `route` Tracks + 61 = 116 (Issue690). The other 35 sessions have no
+    held file wiring, so they cannot tell the two readings apart; `Issue191` (all `shove_fixed` =
+    free) confirms that free wiring was removed. Implemented F-S61 as written (the contract's
+    round trip depends on it: `writeSes` → `applySes` on a fresh `readDsn` gives the same counts on
+    all 148 boards). Please regenerate the two cases (129 / 21 and 61 / 0) or amend F-S61.
+51. **Three `ses-roundtrip` expectations round a half-LU `polyline_path` corner by float noise.**
+    F-54 says corners are intersected exactly and rounded to LU (F-43: halves toward +∞). The
+    corners in question are exact halves: `Issue187` `(668581.5, −1610819.5)` → expected
+    `(668581, −1610819)` (toward zero), `Issue103` `(963950.5, −844636.5)` → expected `(963951,
+    −844637)` (away from zero), `Issue191` `(2587517.5, −2127588.5)` → expected `(2587518,
+    −2127589)` (away from zero). No rounding rule reproduces all three; the expectations were
+    evidently computed in floating point in file units and scaled. `polylineCorners` (I1's
+    `src/layout/shapes.ts`) rounds the exact fraction per F-43, so the three cases differ by one
+    unit in one coordinate each. Please regenerate the three trees from the exact rule.
+52. **Wiring Pours are written without `window` scopes.** F-S42 writes a Pour's holes as
+    `(window (polygon …))`, but every expected tree omits them (`Issue756-tomu-fpga8/9` carry
+    windows in the design file and their trees have none), so `writeSes` omits them (the cases are
+    the final word). On re-import the CAD tool re-fills the pour anyway; for `applySes` the holes
+    would matter to K-03 only. Please either add the windows to the trees or amend F-S42.
+53. **`Top` / `Bottom` as Sheet names in a session.** The `ses-apply-issue555-bbd-mars-64-*`
+    sessions were written for a board revision with layers `Top` / `Bottom` and are applied to a
+    board with `F.Cu` / `B.Cu`; the references mapped the names to the outer Sheets (F-57 notes this
+    behaviour for design files and says no board needs it) and the cases expect 41 / 33 Tracks.
+    `applySes` accepts `Top` / `Bottom` as the first / last Sheet only when no Sheet has that exact
+    name (an `info` diagnostic `layer-aliased`), which is harmless and lets such sessions load;
+    F-S62 says "exact name". Confirm or amend F-S62.
+54. **Pads against a Part's own Fences.** KiCad exports a footprint's non-plated holes as
+    Part-owned circular keepouts at the NPTH *pad* size (`(circle F.Cu 1100 …)` for a 0.6 mm hole
+    on the dev-board, 0.4 mm circles inside a 5.8 mm pad on `cm5-carrier`'s `M701`), so those
+    keepouts overlap the footprint's own Pads by design; DR-03 / KO-06 checked literally would add
+    4 (dev-board) and 72 (cm5-carrier) `fence` Violations where the cases expect 0 and 25. Rule
+    implemented: a Part-owned Fence is not checked against Pads, except under `holeClearanceUm`,
+    when a Part-owned circular Fence is a `hole_edge` Fence (C-15) checked against everything —
+    which gives the dev-board's 4 at 250 µm. A precise "same Part" rule would need the owning
+    Part on the Fence (`FenceX.owner` says only `part`); please add `Fence.part` or bless the
+    coarser rule.
+55. **Rim Violations count per (item, Sheet).** DR-03 says "the item's copper on any Sheet", which
+    could be read as once per item, but `cm5-carrier`'s 14 Pad–Rim Violations are 2 SMD Pads + 2
+    through Pads × 6 Sheets, so DR-04's per-Sheet counting applies to `rim` too. Implemented so;
+    please state it in DR-03.
+56. **DR-11 in `checkDrc` applies to Hold `free` copper only.** DR-11 is stated for copper "added
+    by the router"; the Mars-64 sessions place 41 held Tracks wholly off the board and the cases
+    expect 1 Violation (the one Track that crosses the outline, DR-03). `checkDrc` therefore
+    applies the DR-11 predicates to free Tracks and Barrels only; held and locked copper is
+    measured by DR-03. R-1 is unaffected (router copper is free). Confirm.
+57. **Hole Violations are counted once per (drill, item) pair.** DR-04 counts pairs per Sheet; a
+    through drill against a through Pad would then count on every Sheet of the span. No case pins a
+    `hole` count, so the (drill, item) pair is counted once with `a` = the drilled item and
+    `b: "hole"`. Confirm or say per Sheet.
+58. **`traceLengthMm` in the reference files is one tenth of the length in millimetres.** On every
+    `applied-ses` board (`resolution um 10`) the reference's `traceLengthMm` equals the summed leg
+    length in resolution units divided by 10⁵ — e.g. `Issue026-J2_reference.ses`: 4 192 823
+    resolution units = 419.28 mm, recorded as 41.928. `LayoutStats.tracks.totalLengthMm` is the
+    true millimetre value, so the ten routing cases that compare `traceLengthMm` with
+    `maxRatioToReference` (all advisory) will read ≈ 10× the reference. Please multiply the
+    reference figures by 10 (or state their unit).
+59. **DR-11 predicates are duplicated.** Ruling Q-I3b-43 says DRC uses the shared predicates in
+    `src/route/clear.ts`, but `docs/DESIGN.md` §8 layers `drc` below `route`, so `src/drc/exact.ts`
+    restates `crossesEdge` / `withinRim` in the same words and `test/drc.test.ts` uses the
+    `src/route` copies as the oracle. Moving the two functions down to `src/geom` (or `src/drc`,
+    re-exported by `route`) would leave one copy; that is outside this task's write set.
+60. **`includeFileWiring: false` needs a marker.** Nothing on a Track or Barrel says whether the
+    router or the file put it there. `src/ses/write.ts` treats an own property `origin ===
+    ROUTER_ADDED` (`"router"`) as the mark; the router (I4) should set it on inserted items. If the
+    contract prefers a Hold value or a Layout-level list, say so.
+61. **`Incomplete.from` / `to` are the anchor items.** K-11's distance runs between Pad centres,
+    Barrel centres and Pour vertices; `from` / `to` are the ids of the two items (of either
+    category) realising the minimum, lower id first, so a connection to a Pour names the Pour.
+    Confirm.
+62. **Informational.** `applySes` looks a net up by exact name and takes the first Layout net of
+    that name (subnet 1) — N-03 subnets share a name and F-S41 writes no subnet number; no corpus
+    board has subnets. `writeSes` merges the items of all subnets of a name into one `(net NAME …)`.
