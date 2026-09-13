@@ -27,6 +27,8 @@ const PAIR_RATIO = 0.15;
 const IDENT_MIN = 8;
 const MIN_DISTINCT = 10;   // distinct normalised tokens a flagged run must contain
 const MIN_FP = 24;         // fingerprints a file must have before PAIR overlap is meaningful
+const MIN_STRUCTURAL = 4;  // distinct keyword/operator tokens a flagged run must contain
+const PLAIN = new Set(["ID", "NUM", "STR", "(", ")", "{", "}", "[", "]", ",", ";", ":", ".", "=>"]);
 
 const argv = process.argv.slice(2);
 const opt = (name: string, def: string) => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1]! : def; };
@@ -135,7 +137,10 @@ for (const dir of candidateDirs) {
     // base; a run only counts when its window uses a reasonable variety of tokens.
     const runWindow = toks.slice(runStart, runStart + runTokens);
     const distinct = new Set(runWindow).size;
-    if (runTokens >= RUN_TOKENS && distinct >= MIN_DISTINCT) findings.push({ kind: "RUN", file: rel, ref: refs[bestRef]!.id, score: runTokens, detail: `shared run of ${runTokens} normalised tokens (${distinct} distinct) starting near token ${runStart}`, snippet: stripped.slice(pos[runStart] ?? 0, pos[Math.min(runStart + runTokens, pos.length - 1)] ?? 0).replace(/\s+/g, " ").slice(0, 400) });
+    // Structural tokens are keywords and operators; identifiers, literals and punctuation alone
+    // (expect-chains, object literals, argument lists) do not make a run distinctive.
+    const structural = new Set(runWindow.filter((t) => !PLAIN.has(t))).size;
+    if (runTokens >= RUN_TOKENS && distinct >= MIN_DISTINCT && structural >= MIN_STRUCTURAL) findings.push({ kind: "RUN", file: rel, ref: refs[bestRef]!.id, score: runTokens, detail: `shared run of ${runTokens} normalised tokens (${distinct} distinct, ${structural} structural) starting near token ${runStart}`, snippet: stripped.slice(pos[runStart] ?? 0, pos[Math.min(runStart + runTokens, pos.length - 1)] ?? 0).replace(/\s+/g, " ").slice(0, 400) });
     // CONST
     for (const c of consts) {
       const hit = refs.find((r) => r.consts.has(c));
@@ -144,7 +149,7 @@ for (const dir of candidateDirs) {
   }
 }
 
-const out = { milestone, taken: new Date().toISOString(), k: K, w: W, thresholds: { RUN_TOKENS, PAIR_RATIO, IDENT_MIN, MIN_DISTINCT, MIN_FP },
+const out = { milestone, taken: new Date().toISOString(), k: K, w: W, thresholds: { RUN_TOKENS, PAIR_RATIO, IDENT_MIN, MIN_DISTINCT, MIN_FP, MIN_STRUCTURAL },
   referenceFiles: refs.length, candidateFiles: scanned, findings };
 mkdirSync(resolve(root, "evidence/similarity"), { recursive: true });
 writeFileSync(resolve(root, `evidence/similarity/${milestone}.json`), JSON.stringify(out, null, 2));
