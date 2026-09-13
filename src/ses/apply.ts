@@ -14,6 +14,9 @@
  *          units of the session's `routes` resolution (default: the Layout's)
  *   F-S63  applied items take their net's NetGroup category Kinds (track / barrel / area)
  *
+ * Applied Tracks and Barrels carry `origin: "session"` (Q-I2-60), so a later `writeSes` with
+ * `includeFileWiring: false` (which writes only `origin: "router"` items) leaves them out.
+ *
  * Public surface: applySes.
  */
 import type { Barrel, Diagnostic, Layout, NetGroup, Pour, Pt, Track } from "../../spec/types/layout.ts";
@@ -129,7 +132,7 @@ export function applySes(layout: Layout, text: string): ApplyResult {
           const pts = collapse(shape.head === "polyline_path" ? polylineCorners(raw) : raw);
           if (pts.length < 2) { skip("wire-degenerate", `net '${netName}': wire with fewer than two distinct points; skipped`); continue; }
           const half = Math.max(0, Math.round((width * scale) / 2));
-          L.tracks.push({ id: id(), net, sheet, pts, width: 2 * half, kind: kinds.track, hold: "held" });
+          L.tracks.push({ id: id(), net, sheet, pts, width: 2 * half, kind: kinds.track, hold: "held", origin: "session" });
           tracks++;
         } else if (shape.head === "polygon") {
           const outline = ringOf(pointsOf(shape, 2));
@@ -155,7 +158,7 @@ export function applySes(layout: Layout, text: string): ApplyResult {
         const nums = lx.slice(1).map((l) => numberOf(l)).filter((v): v is number => v !== undefined);
         if (nums.length < 2) { skip("malformed-via", `net '${netName}': via without coordinates; skipped`); continue; }
         for (let i = 0; i + 1 < nums.length; i += 2) {
-          L.barrels.push({ id: id(), net, at: { x: lu(nums[i]!), y: lu(nums[i + 1]!) }, form, fromSheet: sheets[0] ?? 0, toSheet: sheets[sheets.length - 1] ?? 0, kind: kinds.barrel, hold: "held" });
+          L.barrels.push({ id: id(), net, at: { x: lu(nums[i]!), y: lu(nums[i + 1]!) }, form, fromSheet: sheets[0] ?? 0, toSheet: sheets[sheets.length - 1] ?? 0, kind: kinds.barrel, hold: "held", origin: "session" });
           barrels++;
         }
       }

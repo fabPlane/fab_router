@@ -158,6 +158,34 @@ index}.ts`, the API bodies `writeSes`, `applySes`, `checkDrc`, `layoutStats`, `r
 (and one line in `readDsn`, question 47), `src/drc/README.md`, `src/ses/README.md`, the three test
 files, `test/acceptance-tools.test.ts` (the `writeSes` stub expectation replaced).
 
+## Status (task I2b — populate the new Layout fields; move DR-11 predicates to geom)
+
+Verification, run from the worktree root:
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 44 files, 0 violations |
+| `bun run test` | 732 tests, 716 pass, 16 fail (all the fast routing cases, which stub on the not-yet-built `route`; no non-routing test fails) |
+| `bun run acceptance` | 401 cases, 385 passed, 16 failed, 16 stubbed (the 16 are the routing cases; every parse / ses-roundtrip / ses-apply / drc / settings case passes) |
+| `test/layout-fields.test.ts` | 7 new tests: `Layout.file`, `Part.locked`, `Fence.part`, and the `origin` marks on file wiring, applied session items and `includeFileWiring: false` |
+
+Delivered:
+- The builder (`src/layout/build.ts`) now populates `Layout.file` (unit, perUnit, quote, hostCad,
+  hostVersion from the document — Q-I2-47), `Part.locked` (from `(lock_type position)`) and
+  `Fence.part` for image keepouts (DR-12 / Q-I2-54); it also stamps `origin: "file"` on file
+  wiring Tracks and Barrels (Q-I2-60).
+- `src/ses/write.ts` reads `Layout.file` and `Part.locked` first, falling back to the attached
+  DsnDocument for Layouts built before the fields existed; `includeFileWiring: false` still writes
+  only `origin: "router"` items (unchanged).
+- `src/ses/apply.ts` stamps `origin: "session"` on the Tracks and Barrels it applies.
+- `crossesEdge` / `withinRim` moved to `src/geom/onboard.ts` (Q-I2-59); `src/route/clear.ts` and
+  `src/drc/exact.ts` import and re-export the single copy, so their public surfaces are unchanged.
+
+Note: DRC's DR-12 exemption in `src/drc/spacing.ts` still uses the "not checked against any Pad"
+approximation (via `FenceX.owner`), which stays exact for every current case; now that `Fence.part`
+is populated a later task may tighten it to "not checked against that Part's own Pads".
+
 ## Questions
 
 1. **Wall hook false positive on relative imports.** `tools/wall/pretooluse.ts` (rule

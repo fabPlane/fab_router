@@ -16,10 +16,12 @@
  *
  * Numbers are integer counts of resolution units (F-S20): LU × (resolution units per LU), the
  * factor being 1 unless the Frame coarsened the layout unit. Names follow F-S30. What the
- * session needs beyond the public Layout — the design file's resolution, quote character,
- * parser entries and lock types — comes from the DsnDocument that `readDsn` attaches to the
- * Layout through `attachDocument` (a non-enumerable property; see src/QUESTIONS.md); without it
- * the Frame's unit and scale stand in and the parser scope is empty.
+ * session needs beyond the geometry — the design file's resolution, quote character, host_cad /
+ * host_version and per-Part lock flags — is read from `Layout.file` and `Part.locked` (Q-I2-47),
+ * which the builder populates; the DsnDocument that `readDsn` attaches through `attachDocument`
+ * (a non-enumerable property; see src/QUESTIONS.md) is a fallback for Layouts built before those
+ * fields existed. Without either, the Frame's unit and scale stand in and the parser scope is
+ * empty.
  *
  * Public surface: attachDocument, documentOf, resolutionOf, sesName, formatRotation, writeSes,
  * ROUTER_ADDED.
@@ -54,8 +56,12 @@ export function resolutionOf(layout: Layout): SesResolution {
   const doc = documentOf(layout);
   const frame = layout.frame;
   const fileUnit = (frame.fileUnit as DimensionUnit) in UM_PER_UNIT ? (frame.fileUnit as DimensionUnit) : "um";
-  const unit: DimensionUnit = doc?.resolution.unit ?? fileUnit;
-  const perUnit = doc?.resolution.perUnit ?? frame.luPerUnit;
+  // The design-file facts the builder recorded on the Layout (Q-I2-47) are authoritative; the
+  // attached DsnDocument is a fallback for Layouts built before the fields were populated.
+  const facts = layout.file;
+  const factUnit = facts && (facts.unit as DimensionUnit) in UM_PER_UNIT ? (facts.unit as DimensionUnit) : undefined;
+  const unit: DimensionUnit = factUnit ?? doc?.resolution.unit ?? fileUnit;
+  const perUnit = facts?.perUnit ?? doc?.resolution.perUnit ?? frame.luPerUnit;
   // LU = file units × luPerUnit; resolution units = file units × perUnit × UM[fileUnit] / UM[unit].
   const perLu = (perUnit * UM_PER_UNIT[fileUnit]) / UM_PER_UNIT[unit] / frame.luPerUnit;
   return { unit, perUnit, perLu };
@@ -92,7 +98,7 @@ function collapse(pts: readonly Pt[]): Pt[] {
 
 export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
   const doc = documentOf(layout);
-  const quote = doc?.parser.stringQuote ?? "\"";
+  const quote = layout.file?.quote ?? doc?.parser.stringQuote ?? "\"";
   const res = resolutionOf(layout);
   const num = (lu: number): string => String(Math.round(lu * res.perLu));
   const name = (s: string): string => sesName(s, quote);
@@ -115,8 +121,11 @@ export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
   // ---- placement (F-S32) ----
   open("(placement");
   line(`(resolution ${res.unit} ${res.perUnit})`);
-  const locked = new Set<string>();
-  if (doc) for (const c of doc.placement.components) for (const p of c.places) if (p.lockType?.some((t) => t.toLowerCase() === "position")) locked.add(p.ref);
+  // A Part is written `(lock_type position)` when the builder recorded `part.locked` (Q-I2-47);
+  // the DsnDocument is the fallback when the Layout carries no such flag.
+  const lockedFromDoc = new Set<string>();
+  if (doc) for (const c of doc.placement.components) for (const p of c.places) if (p.lockType?.some((t) => t.toLowerCase() === "position")) lockedFromDoc.add(p.ref);
+  const isLocked = (p: typeof layout.parts[number]): boolean => (p.locked !== undefined ? p.locked : lockedFromDoc.has(p.ref));
   const byImage = new Map<string, typeof layout.parts[number][]>();
   for (const part of layout.parts) {
     const list = byImage.get(part.package) ?? [];
@@ -126,7 +135,7 @@ export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
   for (const [image, parts] of byImage) {
     open(`(component ${name(image)}`);
     for (const p of parts) {
-      const lock = locked.has(p.ref) ? " (lock_type position)" : "";
+      const lock = isLocked(p) ? " (lock_type position)" : "";
       line(`(place ${name(p.ref)} ${num(p.at.x)} ${num(p.at.y)} ${p.side} ${formatRotation(p.rotationDeg)}${lock})`);
     }
     close();
@@ -138,8 +147,10 @@ export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
   open("(routes");
   line(`(resolution ${res.unit} ${res.perUnit})`);
   const parserEntries: string[] = [];
-  if (doc?.parser.hostCad !== undefined) parserEntries.push(`(host_cad ${name(doc.parser.hostCad)})`);
-  if (doc?.parser.hostVersion !== undefined) parserEntries.push(`(host_version ${name(doc.parser.hostVersion)})`);
+  const hostCad = layout.file?.hostCad ?? doc?.parser.hostCad;
+  const hostVersion = layout.file?.hostVersion ?? doc?.parser.hostVersion;
+  if (hostCad !== undefined) parserEntries.push(`(host_cad ${name(hostCad)})`);
+  if (hostVersion !== undefined) parserEntries.push(`(host_version ${name(hostVersion)})`);
   if (parserEntries.length === 0) line("(parser)");
   else { open("(parser"); for (const e of parserEntries) line(e); close(); }
 

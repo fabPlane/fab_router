@@ -184,7 +184,9 @@ class Builder {
     if (this.partByRef.has(pl.ref)) { warn(this.diags, "part-duplicate", `part '${pl.ref}' placed twice; second dropped`); return; }
     const side = pl.side ?? "front";
     const rot = norm360(pl.rotation ?? 0);
-    const part = { id: L.parts.length, ref: pl.ref, package: packageName, side, at: { x: toLu(L.frame, pl.x), y: toLu(L.frame, pl.y) }, rotationDeg: rot };
+    // F-S32 / Q-I2-47: a Part the design file pins with `(lock_type position)`.
+    const locked = pl.lockType?.some((t) => t.toLowerCase() === "position") ?? false;
+    const part = { id: L.parts.length, ref: pl.ref, package: packageName, side, at: { x: toLu(L.frame, pl.x), y: toLu(L.frame, pl.y) }, rotationDeg: rot, locked };
     L.parts.push(part);
     this.partByRef.set(pl.ref, part.id);
     const pinMap = new Map<string, number[]>();
@@ -223,7 +225,7 @@ class Builder {
       counters[kindKey] = (counters[kindKey] ?? 0) + 1;
       const name = k.name ?? `${kindKey}_${counters[kindKey]}`;
       const cls = pl.keepoutClearance.find((x) => x.name === name)?.clearanceClass ?? k.clearanceClass;
-      this.addFences(k, "part", (s) => (side === "back" ? n - 1 - s : s), placeRigid, cls);
+      this.addFences(k, "part", (s) => (side === "back" ? n - 1 - s : s), placeRigid, cls, part.id);
     }
   }
 
@@ -491,7 +493,7 @@ class Builder {
       if (wire.shape.kind === "path" || wire.shape.kind === "polyline_path") {
         if (shape.kind !== "path" || shape.pts.length < 2) { warn(this.diags, "wire-degenerate", "wire path with fewer than two distinct vertices dropped"); continue; }
         if (L.stack[sheet]!.role === "plane") info(this.diags, "wire-on-plane", `wire on plane Sheet '${L.stack[sheet]!.name}' kept`);
-        const t = { id: this.id(), net, sheet, pts: shape.pts, width: 2 * shape.halfWidth, kind: 1, hold };
+        const t = { id: this.id(), net, sheet, pts: shape.pts, width: 2 * shape.halfWidth, kind: 1, hold, origin: "file" as const };
         L.tracks.push(t);
         if (wire.clearanceClass !== undefined) this.explicitItemKinds.push({ id: t.id, kind: wire.clearanceClass });
       } else {
@@ -520,7 +522,7 @@ class Builder {
       for (let i = 0; i + 1 < via.points.length; i += 2) {
         const b = {
           id: this.id(), net, at: { x: toLu(L.frame, via.points[i]!), y: toLu(L.frame, via.points[i + 1]!) }, form: form.id,
-          fromSheet: form.sheets[0]!, toSheet: form.sheets[form.sheets.length - 1]!, kind: 1, hold,
+          fromSheet: form.sheets[0]!, toSheet: form.sheets[form.sheets.length - 1]!, kind: 1, hold, origin: "file" as const,
         };
         L.barrels.push(b);
         if (clsName !== undefined) this.explicitItemKinds.push({ id: b.id, kind: clsName });
@@ -530,7 +532,7 @@ class Builder {
 
   // ---- Fences (F-66, F-67, KO-01 … KO-05) ------------------------------------------------------
 
-  private addFences(k: DocKeepout, owner: "board" | "part", mapSheet: (s: number) => number, rigid: Rigid | undefined, cls: string | undefined): void {
+  private addFences(k: DocKeepout, owner: "board" | "part", mapSheet: (s: number) => number, rigid: Rigid | undefined, cls: string | undefined, partId?: number): void {
     const L = this.L;
     const scope: Fence["scope"] = k.kind === "via_keepout" ? "barrel" : k.kind === "place_keepout" ? "place" : "track";
     const sheets = this.sheetsOf(k.shape.layer);
@@ -540,7 +542,10 @@ class Builder {
     if (isDegenerate(shape)) { warn(this.diags, "keepout-degenerate", `${k.kind} '${k.name ?? ""}' has no area; dropped`); return; }
     if (rigid) shape = transformShape(shape, rigid);
     for (const s of sheets) {
-      const f: FenceX = { id: this.id(), sheet: mapSheet(s), scope, shape, owner, kind: 1, hold: "locked" };
+      // DR-12 / Q-I2-54: an image keepout carries its owning Part id in `part`.
+      const f: FenceX = owner === "part" && partId !== undefined
+        ? { id: this.id(), sheet: mapSheet(s), scope, shape, owner, kind: 1, hold: "locked", part: partId }
+        : { id: this.id(), sheet: mapSheet(s), scope, shape, owner, kind: 1, hold: "locked" };
       L.fences.push(f);
       if (cls !== undefined) this.explicitFenceKinds.push({ id: f.id, kind: cls });
     }
@@ -635,6 +640,15 @@ class Builder {
     if (!L.turnGapSet) {
       L.pinEdgeToTurnLu = L.defaultWidthSet ? Math.min(...L.structureWidth.map((w) => w / 2)) : BUILTIN_TURN_GAP_LU;
     }
+    // Facts the session writer needs (Q-I2-47, F-S20/21/30/31): the file's resolution scope,
+    // quote character and host_cad / host_version.
+    L.file = {
+      unit: doc.resolution.unit,
+      perUnit: doc.resolution.perUnit,
+      quote: doc.parser.stringQuote,
+      ...(doc.parser.hostCad !== undefined ? { hostCad: doc.parser.hostCad } : {}),
+      ...(doc.parser.hostVersion !== undefined ? { hostVersion: doc.parser.hostVersion } : {}),
+    };
     // Settings from the file (F-73, settings.md).
     if (doc.structure.autorouteSettings) L.settingsFromFile = settingsFromDoc(L, doc.structure.autorouteSettings, this.diags);
     // NetGroup usable Sheets: signal Sheets, restricted by use_layer (L-04, N-06).

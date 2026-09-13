@@ -9,3 +9,4 @@ export * from "./bounds.ts";
 export * from "./pieces.ts";
 export * from "./path.ts";
 export * from "./rational.ts";
+export * from "./onboard.ts";
