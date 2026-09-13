@@ -1,5 +1,11 @@
 # Review of the API contract against the acceptance cases (S4)
 
+> **Applied 2026-09-13 (orchestrator).** RV-01…RV-14, RV-16…RV-22 applied to `contract.md`,
+> `settings.md`, `types/*.ts`, `acceptance/README.md`, `schema/case.schema.json`; the four
+> no-file `planeViaCost` expectations changed to 5. RV-15.7 and RV-15.8 stay as ruled by
+> `formats/rules.md` F-R12 / `rules/clearance.md` C-09 (single name = diagonal; malformed pairs
+> create harmless Kinds). RV-14 is already pinned by C-04. RV-23 is recorded for S3.
+
 Scope: `spec/api/contract.md`, `spec/api/settings.md`, `spec/types/*.ts` and
 `spec/acceptance/README.md` / `schema/case.schema.json`, checked against every field the cases
 under `spec/acceptance/cases/` reference (settings-*, rules-*, ses-roundtrip-*, and the routing,

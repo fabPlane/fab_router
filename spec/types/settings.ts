@@ -4,6 +4,9 @@ export type AngleMode = "90" | "45" | "any";
 export interface SheetOverride {
   active?: boolean;
   preferDir?: "h" | "v";
+  /** Cost per LU of a leg running along the Sheet's preferred direction. Default 1. */
+  alongCost?: number;
+  /** Cost per LU of a leg running against it. Default `preferredDirectionCost`. */
   againstCost?: number;
 }
 
@@ -20,9 +23,12 @@ export interface RouteSettings {
   startRipupCost: number;
   ripupEnabled: boolean;
   fanoutEnabled: boolean;
+  fanoutMaxPasses?: number;
+  fanoutMaxItems?: number;
   routerEnabled: boolean;
   optimizerEnabled: boolean;
   optimizerPasses?: number;
+  optimizerMaxItems?: number;
   strictDrc: boolean;
   neckWidthUm?: number;
   copperToEdgeClearanceUm?: number;
@@ -40,7 +46,7 @@ export const DEFAULT_ROUTE_SETTINGS: RouteSettings = {
   maxPasses: 100,
   maxStagnantPasses: 3,
   viaCost: 50,
-  planeViaCost: 100,
+  planeViaCost: 5,
   bendCost: 0,
   preferredDirectionCost: 1.5,
   startRipupCost: 100,

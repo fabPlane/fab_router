@@ -60,7 +60,8 @@ export interface Rim { outline: readonly Pt[]; cutouts: readonly (readonly Pt[])
 export interface Net { id: number; name: string; group: number; pads: readonly number[] }
 export interface NetGroup {
   id: number; name: string; nets: readonly number[];
-  trackWidth?: number; kind: number; viaRule?: number; usableSheets?: readonly number[];
+  /** Always present: a NetGroup without its own width rule inherits the Layout default. */
+  trackWidth: number; kind: number; viaRule?: number; usableSheets?: readonly number[];
 }
 export interface SpacingTable {
   kinds: readonly string[];
@@ -88,6 +89,8 @@ export interface Layout {
   netGroups: readonly NetGroup[];
   spacing: SpacingTable;
   viaRules: readonly ViaRule[];
+  /** SMD pad-edge-to-first-turn distance (`smd_to_turn_gap`), 0 when the file gives none. */
+  pinEdgeToTurnLu: number;
   settingsFromFile?: Partial<import("./settings.ts").RouteSettings>;
   warnings: readonly Diagnostic[];
 }

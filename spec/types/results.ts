@@ -27,7 +27,9 @@ export interface LayoutStats {
   barrels: { total: number; through: number; blind: number; buried: number };
   tracks: { totalLengthLu: number; totalLengthMm: number; legs: number; bends90: number; bends45: number; bendsOther: number };
   violations: { total: number; byRule: Record<string, number> };
-  fanout: { smdPads: number; escaped: number };
+  /** escaped: SMD Pads touched without violation by a same-net Track or Barrel, or lying in a same-net Pour;
+   *  viaEscaped: of those, touched by a Barrel directly or through one Track. */
+  fanout: { smdPads: number; escaped: number; viaEscaped?: number };
 }
 
 export interface RouteReport {
@@ -40,7 +42,8 @@ export interface RouteReport {
   stoppedBy: "complete" | "maxPasses" | "stagnant" | "maxItems" | "timeBudget" | "abort";
   effectiveSettings: RouteSettings;
   wallClockMs: number;
-  perNet?: Array<{ net: string; incomplete: number }>;
+  /** One entry per net with at least one required connection. */
+  perNet: Array<{ net: string; incomplete: number }>;
 }
 
 export interface RouteHooks {

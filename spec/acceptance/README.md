@@ -25,18 +25,22 @@ Kinds and what `expect` may name:
 | kind | runs | metrics |
 |---|---|---|
 | `parse` | `readDsn` | `status` (`ok`/`error`), `summaryEquals` (path under `parse/`), item counts from the summary |
-| `ses-roundtrip` | `readDsn` → `writeSes` → normalise → compare with `ses/<board>.unrouted.sexp.json` | `treeEquals` |
+| `ses-roundtrip` | `readDsn` → `writeSes` → normalise → compare | `treeEquals` with `equalsFile: "ses/<board file name>.unrouted.sexp.json"` |
 | `ses-apply` | `readDsn` → `applySes(reference .ses)` → `checkDrc` / `layoutStats` | `incomplete`, `barrels`, `violations`, `tracks` |
-| `rules` | `readDsn` → `readRules` → `applyRules` | `accepted`, effective values by name |
+| `rules` | `readDsn` → `readRules` → `applyRules` | `accepted` (= `readRules().ok`), `angleMode`, `defaultWidthUm` (Track width of NetGroup `default`), `pinEdgeToTurnUm`, `spacingUm:<KindA>:<KindB>` (pair type `default`, any Sheet), `groupWidthUm:<NetGroup>` — all µm |
 | `drc-load` | `readDsn` → `checkDrc` | `violations`, `incomplete` |
-| `settings` | `readDsn` (+ rules) → `route` with `routerEnabled:false` | fields of `report.effectiveSettings` |
+| `settings` | `readDsn` (+ rules) → `route` with `routerEnabled:false` | a metric is a slash-separated path into `report.effectiveSettings` (`viaCost`, `layers/F.Cu/active`, …); `layers` alone compares the whole map (`exact: {}` = no per-Sheet entry) |
 | `routing` | `readDsn` (+ rules) → stats → `route` → stats | `incomplete`, `violations` (`maxAdded`), `passes`, `barrels`, `traceLengthMm`, `addedTracks`, `addedBarrels`, `wallClockMs`, `stoppedBy` |
 | `srj` | `routeSrj` | `incomplete`, `violations`, per-pair `skewMm` |
 
 Expectation operators: `exact`, `max`, `min` compare the measured number; `maxAdded` compares
 (after − before) for violations; `maxRatioToReference` compares measured / reference value from
 the `reference/` file for the case's settings profile; `preExisting` asserts the before-value.
-`advisory: true` records a mismatch in the report without failing the case (used for wall clock).
+`equalsFile` paths resolve relative to `spec/acceptance/`. `advisory: true` records a mismatch in
+the report without failing the case (used for wall clock).
+
+Case setting names map to `RouteSettings` as listed in `spec/api/settings.md` (`router`,
+`optimizer`, `fanout`, `timeoutSeconds`, `optimizerMaxPasses` are the short forms).
 
 ## Tiers
 

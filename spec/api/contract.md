@@ -24,7 +24,12 @@ applyRules(layout: Layout, rules: RulesFile): Layout          // returns the sam
   `Diagnostic { level: "warning" | "info", code, message, where? }` and the read still succeeds.
 - `writeDsn(readDsn(t).document)` re-read must deep-equal the original document (`F-ROUNDTRIP`).
 - `writeSes` output re-read by `applySes` on a fresh `readDsn` of the same board yields the same
-  Track and Barrel counts and the same DRC statistics (`spec/formats/ses.md`).
+  Track and Barrel counts and the same DRC statistics (`spec/formats/ses.md`). `writeSes` is
+  defined only for a Layout obtained from a successful `readDsn` (RV-21).
+- `readRules` returns `ok: false` only when the text has no `(rules pcb <name> …)` head. A header
+  name that differs from the Layout's name is a `warning` diagnostic, not a rejection (RV-05).
+- `applyRules` sets `layout.settingsFromFile` to the rules file's settings block when it has one;
+  otherwise the DSN's block stays (RV-11).
 
 ## Checking and measuring
 
@@ -45,7 +50,7 @@ requiredConnections(layout: Layout): Connection[]
 | `barrels.total, .through, .blind, .buried` | Barrel counts by span |
 | `tracks.totalLengthLu, .totalLengthMm, .legs, .bends90, .bends45, .bendsOther` | Track geometry totals |
 | `violations.total, .byRule` | DRC violations now |
-| `fanout.smdPads, .escaped` | SMD Pads and how many have a Barrel escape |
+| `fanout.smdPads, .escaped, .viaEscaped?` | SMD Pads; how many are *escaped* — touched without violation by a same-net Track or Barrel, or lying in a same-net Pour; optionally how many are touched by a Barrel directly or through one Track (RV-18) |
 
 Counting rules: a violation is one unordered item pair on one Sheet (never counted twice) and
 same-net pairs are exempt (`spec/rules/drc.md` DR-02); `connections.maximum` depends only on the
@@ -71,9 +76,9 @@ interface RouteReport {
   ripped: number;                       // items removed by rip-up (counted once per removal)
   violationsBefore: number; violationsAdded: number;   // violationsAdded must be 0 unless strictDrc is false and the input already violated in the same region
   timedOut: boolean; aborted: boolean; stoppedBy: "complete" | "maxPasses" | "stagnant" | "maxItems" | "timeBudget" | "abort";
-  effectiveSettings: RouteSettings;
+  effectiveSettings: RouteSettings;     // fully resolved: angleMode is never absent here (RV-22)
   wallClockMs: number;                  // advisory
-  perNet?: Array<{ net: string; incomplete: number }>;
+  perNet: Array<{ net: string; incomplete: number }>;   // one entry per net with a required connection
 }
 ```
 
@@ -82,8 +87,11 @@ Invariants (`R-1`…`R-5`, tested by every routing case):
 - **R-1** `violationsAdded === 0` for every case, on every board, at every setting.
 - **R-2** Items with `hold: "held"` or `"locked"` are never moved or removed.
 - **R-3** `report.added` equals the difference in item counts before and after.
-- **R-4** With `viasAllowed: false`, no Barrel is added.
+- **R-4** With `viasAllowed: false`, no Barrel is added; Barrels already in the file stay, and a
+  connection whose ends lie on different Sheets with no pre-existing Barrel path is left incomplete.
 - **R-5** With `maxItems: n`, `added.tracks + added.barrels ≤ n`.
+- **R-6** After the optimiser, the Barrel count and the total Track length do not exceed their
+  pre-optimiser values, no complete connection becomes incomplete, and R-1/R-2 still hold.
 
 ## Hooks and cancellation
 
