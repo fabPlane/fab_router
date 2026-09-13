@@ -11,7 +11,7 @@ import type { AngleMode, RouteSettings, SheetOverride } from "../../spec/types/s
 import { DEFAULT_ROUTE_SETTINGS } from "../../spec/types/settings.ts";
 import type { RouteHooks, RouteReport } from "../../spec/types/results.ts";
 import { checkDrc } from "../drc/index.ts";
-import { createCtx, runPasses, totalIncomplete, perNetIncomplete } from "../route/index.ts";
+import { createCtx, runPasses, runFanout, runOptimise, totalIncomplete, perNetIncomplete } from "../route/index.ts";
 
 /** Diagnostic code carried by every stubbed API function; the acceptance runner recognises it. */
 export const NOT_IMPLEMENTED = "not-implemented";
@@ -93,7 +93,10 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
   }
   const incompleteBefore = totalIncomplete(ctx);
 
+  // Stage sequence (docs/DESIGN.md §7): fanout pre-pass → routing passes → optimiser.
+  runFanout(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored);
   const outcome = runPasses(ctx);
+  if (!outcome.aborted) runOptimise(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored, ctx.deadline);
 
   const incompleteAfter = totalIncomplete(ctx);
   const violationsAfter = checkDrc(layout).counts.violations;

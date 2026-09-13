@@ -205,3 +205,174 @@ function collectRip(space: SearchSpace, path: readonly Pt[]): number[] {
   }
   return [...set].sort((a, b) => a - b);
 }
+
+// ---- multi-Sheet A* with Barrel (via) moves (task I5) -----------------------------------------
+
+/**
+ * The graph the layered search walks: a shared uniform grid over `layers` usable Sheets, with a
+ * horizontal Seam crossing on one Sheet and a vertical Barrel drop at a cell joining two Sheets
+ * (docs/DESIGN.md §6: the A* state is `(sheet, patch)`; a Barrel move costs `viaCost` /
+ * `planeViaCost`). A `layer` is an index into the connection's usable-Sheet list.
+ */
+export interface LayeredSpace {
+  readonly step: number;
+  readonly layers: number;
+  pointOf(gx: number, gy: number): Pt;
+  nodeFree(layer: number, gx: number, gy: number): boolean;
+  edgeCost(layer: number, a: Pt, b: Pt): EdgeCost;
+  /** A Barrel at `(gx, gy)` joining layers `li` and `lj`; `null` when none fits there. */
+  viaMove(li: number, lj: number, gx: number, gy: number): { extra: number; rip: readonly number[] } | null;
+}
+
+export interface LayeredOptions {
+  starts: ReadonlyArray<{ layer: number; gx: number; gy: number }>;
+  goalCell: { gx: number; gy: number };
+  goalLayers: readonly number[];
+  region: { gx0: number; gy0: number; gx1: number; gy1: number };
+  dirs: readonly (readonly [number, number])[];
+  /** Cost multiplier per LU for a step on `layer`; `d` indexes `dirs`. */
+  stepCost(layer: number, d: number): number;
+  minCost: number;
+  bendCost: number;
+  /** Smallest possible Barrel cost, for the heuristic (admissible when ≤ every `viaMove.extra`). */
+  viaFloor: number;
+  maxPops: number;
+  deadline?: number;
+  signal?: AbortSignal;
+  /** Optional Theta*-style goal test: clear straight line-of-sight from `(gx,gy)` on `layer` to
+   *  the goal point on a goal layer. Lets the search finish near a goal buried in a pin field. */
+  reachGoal?(layer: number, gx: number, gy: number): boolean;
+}
+
+export interface LayeredStep { layer: number; pt: Pt; via: boolean }
+export interface LayeredResult { ok: boolean; path: LayeredStep[]; rip: number[]; pops: number; aborted: boolean }
+
+/** Run A* over `space`'s layered grid from any start to the goal cell on any goal layer. */
+export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredResult {
+  const { region, dirs } = o;
+  const width = region.gx1 - region.gx0 + 1;
+  const layers = space.layers;
+  const inRegion = (gx: number, gy: number): boolean => gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  const cellIndex = (gx: number, gy: number): number => (gy - region.gy0) * width + (gx - region.gx0);
+  const gxOf = (cell: number): number => region.gx0 + (cell % width);
+  const gyOf = (cell: number): number => region.gy0 + Math.floor(cell / width);
+  const stateOf = (cell: number, layer: number, dir: number): number => (cell * layers + layer) * NDIR + dir;
+  const cellOfState = (s: number): number => Math.floor(s / (layers * NDIR));
+  const layerOfState = (s: number): number => Math.floor(s / NDIR) % layers;
+  const dirOfState = (s: number): number => s % NDIR;
+
+  const goalSet = new Set(o.goalLayers);
+  const heuristic = (gx: number, gy: number, layer: number): number => {
+    const dx = Math.abs(gx - o.goalCell.gx), dy = Math.abs(gy - o.goalCell.gy);
+    const diag = dirs.length > 4 ? Math.min(dx, dy) : 0;
+    const straight = dirs.length > 4 ? Math.abs(dx - dy) : dx + dy;
+    const cells = diag * Math.SQRT2 + straight;
+    return cells * space.step * o.minCost + (goalSet.has(layer) ? 0 : o.viaFloor);
+  };
+
+  const gScore = new Map<number, number>();
+  const cameFrom = new Map<number, number>();
+  const heap = new Heap();
+  let seq = 0;
+  for (const s of o.starts) {
+    if (!inRegion(s.gx, s.gy)) continue;
+    const st = stateOf(cellIndex(s.gx, s.gy), s.layer, 8);
+    if ((gScore.get(st) ?? Infinity) <= 0) continue;
+    gScore.set(st, 0);
+    const h = heuristic(s.gx, s.gy, s.layer);
+    heap.push({ f: h, h, seq: seq++, state: st });
+  }
+
+  let pops = 0;
+  let aborted = false;
+
+  const reconstruct = (endState: number): LayeredStep[] => {
+    const chain: number[] = [];
+    let s: number | undefined = endState;
+    while (s !== undefined) { chain.push(s); s = cameFrom.get(s); }
+    chain.reverse();
+    const out: LayeredStep[] = [];
+    for (let i = 0; i < chain.length; i++) {
+      const st = chain[i]!;
+      const cell = cellOfState(st), layer = layerOfState(st);
+      const prev = i > 0 ? chain[i - 1]! : undefined;
+      const via = prev !== undefined && cellOfState(prev) === cell && layerOfState(prev) !== layer;
+      out.push({ layer, pt: space.pointOf(gxOf(cell), gyOf(cell)), via });
+    }
+    return out;
+  };
+
+  while (heap.size > 0) {
+    if ((pops & 255) === 0) {
+      if (o.signal?.aborted) { aborted = true; break; }
+      if (o.deadline !== undefined && Date.now() > o.deadline) break;
+    }
+    const node = heap.pop();
+    pops++;
+    if (pops > o.maxPops) break;
+    const cell = cellOfState(node.state);
+    const layer = layerOfState(node.state);
+    const cgx = gxOf(cell), cgy = gyOf(cell);
+    const atGoal = cgx === o.goalCell.gx && cgy === o.goalCell.gy && goalSet.has(layer);
+    // Line-of-sight goal test only near the goal (bounded cost).
+    const near = Math.max(Math.abs(cgx - o.goalCell.gx), Math.abs(cgy - o.goalCell.gy)) <= 8;
+    if (atGoal || (near && goalSet.has(layer) && o.reachGoal?.(layer, cgx, cgy))) {
+      const path = reconstruct(node.state);
+      const rip = collectLayeredRip(space, path);
+      return { ok: true, path, rip, pops, aborted };
+    }
+    const gCur = gScore.get(node.state) ?? Infinity;
+    if (node.f - node.h > gCur + 1e-6) continue;
+    const inDir = dirOfState(node.state);
+    const from = space.pointOf(cgx, cgy);
+
+    // Horizontal Seam crossings on the same Sheet.
+    for (let d = 0; d < dirs.length; d++) {
+      const [dx, dy] = dirs[d]!;
+      const ngx = cgx + dx, ngy = cgy + dy;
+      if (!inRegion(ngx, ngy)) continue;
+      const isGoalCell = ngx === o.goalCell.gx && ngy === o.goalCell.gy;
+      if (!isGoalCell && !space.nodeFree(layer, ngx, ngy)) continue;
+      const to = space.pointOf(ngx, ngy);
+      const ec = space.edgeCost(layer, from, to);
+      if (ec.blocked) continue;
+      const legLen = Math.hypot(to.x - from.x, to.y - from.y);
+      const bend = inDir !== 8 && inDir !== d ? o.bendCost : 0;
+      const stepG = gCur + legLen * o.stepCost(layer, d) + bend + ec.extra;
+      const nState = stateOf(cellIndex(ngx, ngy), layer, d);
+      const prev = gScore.get(nState);
+      if (prev !== undefined && prev <= stepG) continue;
+      gScore.set(nState, stepG);
+      cameFrom.set(nState, node.state);
+      const h = heuristic(ngx, ngy, layer);
+      heap.push({ f: stepG + h, h, seq: seq++, state: nState });
+    }
+
+    // Barrel drops to another Sheet at the same cell.
+    for (let lj = 0; lj < layers; lj++) {
+      if (lj === layer) continue;
+      const vm = space.viaMove(layer, lj, cgx, cgy);
+      if (!vm) continue;
+      const stepG = gCur + vm.extra;
+      const nState = stateOf(cell, lj, 8);
+      const prev = gScore.get(nState);
+      if (prev !== undefined && prev <= stepG) continue;
+      gScore.set(nState, stepG);
+      cameFrom.set(nState, node.state);
+      const h = heuristic(cgx, cgy, lj);
+      heap.push({ f: stepG + h, h, seq: seq++, state: nState });
+    }
+  }
+  return { ok: false, path: [], rip: [], pops, aborted };
+}
+
+function collectLayeredRip(space: LayeredSpace, path: readonly LayeredStep[]): number[] {
+  const set = new Set<number>();
+  for (let i = 1; i < path.length; i++) {
+    const a = path[i - 1]!, b = path[i]!;
+    // Barrel moves are only permitted by `viaMove` when they fit against hard obstacles, so they
+    // rip nothing; only same-Sheet Seam crossings carry rip ids.
+    if (!b.via && a.layer === b.layer) for (const id of space.edgeCost(a.layer, a.pt, b.pt).rip) set.add(id);
+  }
+  return [...set].sort((x, y) => x - y);
+}
