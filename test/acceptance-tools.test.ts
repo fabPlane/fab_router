@@ -161,7 +161,12 @@ describe("API stubs", () => {
     expect(report.effectiveSettings.angleMode).toBe("45");
     expect(report.added).toEqual({ tracks: 0, barrels: 0 });
     expect(api.routeDsn("not a design file").ok).toBe(false);
-    expect(api.routeSrj({ layerCount: 2, minTraceWidth: 0.2, bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, obstacles: [], connections: [] }).ok).toBe(false);
+    // routeSrj is implemented (task I6): a valid board with nothing to route succeeds and echoes
+    // an empty `traces` array; the result carries a report and the (unchanged) srj document.
+    const srjRes = api.routeSrj({ layerCount: 2, minTraceWidth: 0.2, bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, obstacles: [], connections: [] });
+    expect(srjRes.ok).toBe(true);
+    expect(srjRes.srj.traces).toEqual([]);
+    expect(srjRes.report.effectiveSettings.angleMode).toBe("45");
   });
   test("SpacingTable is symmetric, per Sheet and per pair type, with a max per Kind", () => {
     const t = makeSpacingTable(["", "default", "smd"], 2, ["smd_smd"], (a, b, s, p) => (a === 0 || b === 0 ? 0 : (p === "smd_smd" ? 5 : 10) + s + a + b));

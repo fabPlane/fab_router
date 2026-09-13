@@ -19,9 +19,10 @@ import type { RouteSettings } from "../spec/types/settings.ts";
 import type { SimpleRouteJson, SrjRouteResult } from "../spec/types/srj.ts";
 import * as drc from "./drc/index.ts";
 import { emptyReport } from "./route/index.ts";
-import { notImplemented, resolveSettings, runRoute } from "./pipeline/index.ts";
+import { resolveSettings, runRoute } from "./pipeline/index.ts";
 import * as dsn from "./dsn/index.ts";
 import * as ses from "./ses/index.ts";
+import * as srj from "./srj/index.ts";
 import type { RulesResult } from "./dsn/index.ts";
 
 export type { RulesResult } from "./dsn/index.ts";
@@ -97,8 +98,23 @@ export function routeDsn(dsnText: string, settings?: Partial<RouteSettings>, hoo
   return { ok: true, ses: writeSes(read.layout), report, statsBefore, statsAfter, diagnostics: read.diagnostics };
 }
 
-export function routeSrj(srj: SimpleRouteJson, settings?: Partial<RouteSettings>, hooks?: RouteHooks): SrjRouteResult {
-  const effective = resolveSettings(settings, undefined, undefined);
-  hooks?.onLog?.("warn", "routeSrj is not implemented yet");
-  return { ok: false, srj, report: emptyReport(effective, "maxPasses"), violationsBefore: 0, violationsAdded: 0, diagnostics: [notImplemented("routeSrj")] };
+export function routeSrj(input: SimpleRouteJson, settings?: Partial<RouteSettings>, hooks?: RouteHooks): SrjRouteResult {
+  const built = srj.buildSrjLayout(input);
+  const { layout, netByConnection, connectionByNet, layerBySheet } = built;
+  // Underlay the board's copper-to-edge clearance beneath the caller's settings (contract R-1;
+  // spec/api/settings.md copperToEdgeClearanceUm).
+  const merged: Partial<RouteSettings> = { ...(built.edgeClearanceUm !== undefined ? { copperToEdgeClearanceUm: built.edgeClearanceUm } : {}), ...settings };
+  const report = route(layout, merged, hooks);
+  const traces = srj.extractTraces(layout, connectionByNet, layerBySheet);
+  const pairs = srj.measurePairs(layout, srj.normalisePairs((input as { differentialPairs?: unknown }).differentialPairs), netByConnection);
+  const outSrj: SimpleRouteJson = { ...input, traces };
+  return {
+    ok: report.incompleteAfter === 0 && report.violationsAdded === 0,
+    srj: outSrj,
+    report,
+    violationsBefore: report.violationsBefore,
+    violationsAdded: report.violationsAdded,
+    pairs,
+    diagnostics: built.diagnostics,
+  };
 }

@@ -600,3 +600,53 @@ left for the stronger search + rip-up + fanout of I5.
     met with one Track per connection), the legaliser inserts a single full-width Track per
     connection and does not neck the final leg; `neckWidthUm` is resolved into the Profile but not
     yet used by the pass loop. Planned for I5 with fanout. Confirm this is acceptable for I4.
+
+66. **No `spec/formats/srj.md` and no `srj-*` acceptance cases exist yet.** Task I6 names both, but
+    the checkout has neither; I built the SimpleRouteJson↔Layout mapping from `spec/types/srj.ts`,
+    `spec/api/contract.md` ("SimpleRouteJson", Q-I0-8) and `docs/DESIGN.md` §7's `src/srj` row. If a
+    `formats/srj.md` or `srj-*` cases are added, point me at them.
+
+67. **The corpus `differentialPairs` use `connectionNames`, not `{p, n}`.** `spec/types/srj.ts`
+    declares `SrjDifferentialPair { p, n, gapMm?, skewToleranceMm? }`, but every
+    `boards/*.srj.json` writes `{ connectionNames: [<_N>, <_P>], lengthTolerance, traceGap,
+    maxUncoupledLength }`. `normalisePairs` accepts both: `p`/`n` when present, else the `_P`-suffixed
+    member of `connectionNames` as `p` and the `_N` member as `n` (falling back to index 1 / index 0),
+    and `lengthTolerance` as the skew tolerance. Confirm the intended field names.
+
+68. **Net-owned obstacles become held Pours and are therefore extra connectivity terminals.** Per
+    the task ("obstacles→held Pours net-owned when `connectedTo` names a connection"), an obstacle
+    whose `connectedTo` matches a connection's name / `netConnectionName` / `netName` becomes a held
+    Pour on that net. Because a Pour is a terminal component (connectivity K-08), each J802 net's
+    pre-existing copper fragments become terminals that must be re-joined; on the J802 corpus that
+    yields 52 (2-layer) / 188 (six-layer) required connections, most spanning two Sheets and so
+    needing a Barrel. The single-Sheet routing milestone defers cross-Sheet connections
+    (`src/route/passes.ts`), so few complete today; R-1 (`violationsAdded === 0`) holds throughout
+    and the adapter passes `viasAllowed`, the via PadForm and all signal Sheets through, so
+    completion improves for free once the barrel-aware search (I5) lands. If net-owned copper should
+    instead be a same-net keepout (not a terminal), say so.
+
+## Status (task I6 — SimpleRouteJson adapter and differential-pair measurement)
+
+Verification, from the worktree root:
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 53 files, 0 violations |
+| `bun run test` | green — 773 pass, 0 fail (the 4 case-level acceptance misses are the documented I4 routing-completion cases; the srj suite adds 8 tests) |
+| `bun run acceptance -- --tier all --case 'srj-*'` | 0 cases, 0 failed (no `srj-*` case files exist yet; the runner's `srj` kind and metrics are wired and consume the `SrjRouteResult` this task returns) |
+
+What is real: `src/srj/build.ts` (SimpleRouteJson → Layout: mm↔LU Frame at 1 LU = 1 µm, `bounds`→a
+Rim grown 1 mm, `layerCount`→a top/inner/bottom signal Stack, `connections`→one Net per connection
+with a locked one-pad Part per `pointToConnect`, `obstacles`→net-owned held Pours or Kind-1 keepout
+Fences with rotated-rect / oval / polygon shapes, via sizes → a through-Barrel PadForm offered by a
+`default` via rule, `differentialPairs` carried through); `src/srj/traces.ts` (router copper →
+`pcb_trace` `wire`/`via` steps in mm, and per-pair `{lengthP, lengthN, skewMm, withinTolerance}`
+measuring both members); `src/api.ts` `routeSrj` (build → core `route()` → extract + measure,
+copying `violationsBefore` / `violationsAdded` per Q-I0-8). Depends only on the public `route()` and
+the Layout/DRC APIs, staying within `src/srj` and the `routeSrj` body (I5 strengthens `route()`
+concurrently).
+
+R-1 holds on both J802 boards. A clean synthetic board routes end to end, avoids its obstacle and
+keeps every wire point inside its bounds; on the congested J802 corpus the single-Sheet milestone
+completes little (see question 68) but never adds a violation.
