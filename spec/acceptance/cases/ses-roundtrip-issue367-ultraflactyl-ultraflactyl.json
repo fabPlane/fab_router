@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue367-ultraflactyl-ultraflactyl",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue367-UltraFlactyl-UltraFlactyl.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue367-UltraFlactyl-UltraFlactyl.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue367-UltraFlactyl-UltraFlactyl.dsn.unrouted.sexp.json (102541 bytes, fast tier)."
+}

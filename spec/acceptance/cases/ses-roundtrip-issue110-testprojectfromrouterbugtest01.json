@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue110-testprojectfromrouterbugtest01",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue110-testProjectFromRouterBugTest01.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue110-testProjectFromRouterBugTest01.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue110-testProjectFromRouterBugTest01.dsn.unrouted.sexp.json (8703 bytes, fast tier)."
+}

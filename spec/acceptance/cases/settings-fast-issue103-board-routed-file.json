@@ -1,0 +1,59 @@
+{
+  "id": "settings-fast-issue103-board-routed-file",
+  "kind": "settings",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue103-Board-Routed.dsn",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": false
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 2.1
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 1.9
+    }
+  },
+  "note": "useFileSettings: true. The settings block turns the optimiser off (postroute off), keeps vias on with via cost 50, plane via cost 5, start rip-up cost 100, and gives both Sheets an active flag, a preferred direction and along/against costs (F.Cu horizontal 1.0/2.1, B.Cu vertical 1.0/1.9). The block also says (fanout on): both references ignore the fanout flag of a file, so fanoutEnabled stays false. Its router-enable line uses a mis-spelled keyword and is ignored. routerEnabled is false because the case itself passes router: false and the caller always wins over the file."
+}

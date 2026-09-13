@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue163-pic-programmer",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue163-pic_programmer.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue163-pic_programmer.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue163-pic_programmer.dsn.unrouted.sexp.json (86334 bytes, fast tier)."
+}

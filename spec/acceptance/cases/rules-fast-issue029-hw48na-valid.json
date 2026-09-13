@@ -1,0 +1,51 @@
+{
+  "id": "rules-fast-issue029-hw48na-valid",
+  "kind": "rules",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue029-hw48na_valid.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 400
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 101.6
+    },
+    "spacingUm:default:default": {
+      "min": 152.6,
+      "max": 152.8
+    },
+    "spacingUm:smd:smd": {
+      "min": 38.2,
+      "max": 38.4
+    },
+    "spacingUm:default:1A EXTERNAL 1oz": {
+      "min": 190.6,
+      "max": 190.8
+    },
+    "spacingUm:smd:3,5A EXT HIGH VOLTAGE": {
+      "min": 1016.2,
+      "max": 1016.4
+    },
+    "spacingUm:1A EXTERNAL 1oz:3,5A EXT HIGH VOLTAGE": {
+      "min": 1016.2,
+      "max": 1016.4
+    },
+    "spacingUm:3,5A EXT HIGH VOLTAGE:3,5A EXT HIGH VOLTAGE": {
+      "min": 1016.2,
+      "max": 1016.4
+    },
+    "spacingUm:default:kicad_default": {
+      "min": 152.6,
+      "max": 152.8
+    }
+  },
+  "note": "Pair names written as \"A\"-\"B\" (quoted, hyphen-joined) are applied to the named Kinds; a Kind named in a type that the board did not define is created. Pairs the file does not name keep the untyped (clear 152.6) value, e.g. default/kicad_default."
+}

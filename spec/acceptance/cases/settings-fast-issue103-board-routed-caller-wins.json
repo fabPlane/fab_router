@@ -1,0 +1,66 @@
+{
+  "id": "settings-fast-issue103-board-routed-caller-wins",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue103-Board-Routed.dsn",
+  "settings": {
+    "router": false,
+    "useFileSettings": true,
+    "viaCost": 77,
+    "optimizer": true,
+    "layers": {
+      "B.Cu": {
+        "active": false
+      }
+    }
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 77
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 2.1
+    },
+    "layers/B.Cu/active": {
+      "exact": false
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1.0
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 1.9
+    }
+  },
+  "note": "Precedence: built-in defaults, then the file settings (useFileSettings: true), then the caller. The caller's viaCost 77 replaces the file's 50, optimizer: true overrides the file's postroute off, and the per-Sheet override layers.B.Cu.active false replaces the file's active on while the file's other B.Cu fields (preferDir v, alongCost 1.0, againstCost 1.9) and all F.Cu fields survive."
+}

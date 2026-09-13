@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue754-avionics-hub",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue754-avionics_hub.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue754-avionics_hub.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue754-avionics_hub.dsn.unrouted.sexp.json (166245 bytes, fast tier)."
+}

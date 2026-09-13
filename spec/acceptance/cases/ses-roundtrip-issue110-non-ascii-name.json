@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue110-non-ascii-name",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue110-Паяльная станция.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue110-Паяльная станция.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue110-Паяльная станция.dsn.unrouted.sexp.json (27461 bytes, fast tier)."
+}

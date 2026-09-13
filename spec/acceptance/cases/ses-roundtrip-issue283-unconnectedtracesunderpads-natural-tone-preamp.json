@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue283-unconnectedtracesunderpads-natural-tone-preamp",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn.unrouted.sexp.json (97283 bytes, fast tier)."
+}

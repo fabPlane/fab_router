@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue155-ch376-mcp795-module",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue155-CH376_MCP795_Module.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue155-CH376_MCP795_Module.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue155-CH376_MCP795_Module.dsn.unrouted.sexp.json (50353 bytes, fast tier)."
+}

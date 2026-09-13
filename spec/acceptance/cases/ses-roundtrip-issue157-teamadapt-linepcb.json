@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue157-teamadapt-linepcb",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue157-TeamAdapt-LinePCB.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue157-TeamAdapt-LinePCB.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue157-TeamAdapt-LinePCB.dsn.unrouted.sexp.json (201061 bytes, fast tier)."
+}

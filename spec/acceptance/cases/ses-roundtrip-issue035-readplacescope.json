@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue035-readplacescope",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue035-ReadPlaceScope.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue035-ReadPlaceScope.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue035-ReadPlaceScope.dsn.unrouted.sexp.json (58509 bytes, fast tier)."
+}

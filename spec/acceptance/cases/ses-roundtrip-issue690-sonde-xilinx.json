@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue690-sonde-xilinx",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue690-sonde_xilinx.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue690-sonde_xilinx.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue690-sonde_xilinx.dsn.unrouted.sexp.json (49750 bytes, fast tier)."
+}

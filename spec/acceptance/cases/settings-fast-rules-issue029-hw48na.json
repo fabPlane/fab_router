@@ -1,0 +1,60 @@
+{
+  "id": "settings-fast-rules-issue029-hw48na",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue029-hw48na.rules",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 2
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 2
+    }
+  },
+  "note": "useFileSettings: true with a rules file: the rules file's settings block is applied the same way as a DSN settings block (and replaces the DSN's block when both exist). Settings block from the rules file: vias on, via cost 50, plane via cost 5, start rip-up cost 100; F.Cu vertical 1.0/2.0, B.Cu horizontal 1.0/2.0; optimiser on. The (start_pass_no ...) entry has no counterpart in RouteSettings and is ignored."
+}

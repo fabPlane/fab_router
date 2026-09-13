@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue270-non-ansi-bracket",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue270-non-ansi_bracket.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue270-non-ansi_bracket.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue270-non-ansi_bracket.dsn.unrouted.sexp.json (3892 bytes, fast tier)."
+}

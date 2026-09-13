@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue179-autorouter-pcb1-2023-3-24",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue179-Autorouter_PCB1_2023-3-24.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue179-Autorouter_PCB1_2023-3-24.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue179-Autorouter_PCB1_2023-3-24.dsn.unrouted.sexp.json (12967 bytes, fast tier)."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "rules-fast-issue742-tastexx-pcb-tastexx-pcb",
+  "kind": "rules",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue742-tastexx-pcb-tastexx-pcb.dsn",
+  "rules": "Issue742-tastexx-pcb-tastexx-pcb.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 250
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 125
+    },
+    "spacingUm:default:default": {
+      "min": 200,
+      "max": 200.2
+    },
+    "spacingUm:smd:smd": {
+      "min": 200,
+      "max": 200.2
+    }
+  },
+  "note": "Same shape as Issue593-BBD_Mars-64.rules: untyped (clearance 200.0) resets every pair; the single-name (type smd) entry has no effect on smd/smd."
+}

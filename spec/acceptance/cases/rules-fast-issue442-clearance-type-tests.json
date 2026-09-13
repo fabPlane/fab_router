@@ -1,0 +1,76 @@
+{
+  "id": "rules-fast-issue442-clearance-type-tests",
+  "kind": "rules",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue442-clearance_type_tests.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 400
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 145.6
+    },
+    "spacingUm:default:default": {
+      "min": 153.4,
+      "max": 153.6
+    },
+    "spacingUm:smd:smd": {
+      "min": 38.2,
+      "max": 38.4
+    },
+    "spacingUm:default:1A EXTERNAL 1oz": {
+      "min": 199.2,
+      "max": 199.4
+    },
+    "spacingUm:default:2.5A EXTERNAL": {
+      "min": 192.4,
+      "max": 192.6
+    },
+    "spacingUm:default:3,5A EXT HIGH VOLTAGE": {
+      "min": 1456.7,
+      "max": 1456.9
+    },
+    "spacingUm:default:3.5A EXTERNAL 1oz": {
+      "min": 198.9,
+      "max": 199.1
+    },
+    "spacingUm:default:5A EXTERNAL 1oz": {
+      "min": 191.2,
+      "max": 191.4
+    },
+    "spacingUm:smd:1A EXTERNAL 1oz": {
+      "min": 194.5,
+      "max": 194.7
+    },
+    "spacingUm:smd:2.5A EXTERNAL": {
+      "min": 196.7,
+      "max": 196.9
+    },
+    "spacingUm:smd:3,5A EXT HIGH VOLTAGE": {
+      "min": 1891.2,
+      "max": 1891.4
+    },
+    "spacingUm:1A EXTERNAL 1oz:3,5A EXT HIGH VOLTAGE": {
+      "min": 1016.2,
+      "max": 1016.4
+    },
+    "groupWidthUm:2.5A EXTERNAL": {
+      "exact": 1066.8
+    },
+    "groupWidthUm:CUSTOM 0.6": {
+      "exact": 600
+    },
+    "groupWidthUm:MIN_EXTERN_241A": {
+      "exact": 216
+    }
+  },
+  "note": "The rules header names a different design than the board; the mismatch is tolerated. Precedence within one file: the last entry for the same pair wins ((clear 57.8 (type smd_smd)) then (clear 38.2 (type \"smd\"-\"smd\")) gives 38.2; two smd_to_turn_gap entries 112.3 then 145.6 give 145.6). The top-level (width 456.7) is superseded by the (class default ... (rule (width 400))) scope later in the file. Spacing values are bracketed because an implementation may round them up to an even number of layout units."
+}

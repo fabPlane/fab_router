@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue730-dac2020-bm11",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue730-DAC2020_bm11.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue730-DAC2020_bm11.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue730-DAC2020_bm11.dsn.unrouted.sexp.json (26248 bytes, fast tier)."
+}

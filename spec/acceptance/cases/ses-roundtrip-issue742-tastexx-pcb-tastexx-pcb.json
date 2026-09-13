@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue742-tastexx-pcb-tastexx-pcb",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue742-tastexx-pcb-tastexx-pcb.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue742-tastexx-pcb-tastexx-pcb.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue742-tastexx-pcb-tastexx-pcb.dsn.unrouted.sexp.json (35242 bytes, fast tier)."
+}

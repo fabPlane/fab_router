@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue022-autorouter-interrupted",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue022-AutoRouter_interrupted.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue022-AutoRouter_interrupted.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue022-AutoRouter_interrupted.dsn.unrouted.sexp.json (178467 bytes, fast tier)."
+}

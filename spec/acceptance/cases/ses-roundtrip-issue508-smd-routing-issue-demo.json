@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue508-smd-routing-issue-demo",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-SMD-routing-issue-demo.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue508-SMD-routing-issue-demo.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue508-SMD-routing-issue-demo.dsn.unrouted.sexp.json (2335 bytes, fast tier)."
+}

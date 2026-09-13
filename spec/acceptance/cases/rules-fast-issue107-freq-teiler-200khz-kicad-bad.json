@@ -1,0 +1,38 @@
+{
+  "id": "rules-fast-issue107-freq-teiler-200khz-kicad-bad",
+  "kind": "rules",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue107-freq_teiler_200kHz_kicad_bad.dsn",
+  "rules": "Issue107-freq_teiler_200kHz_kicad_bad.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 250
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 125
+    },
+    "spacingUm:default:default": {
+      "min": 200.2,
+      "max": 200.4
+    },
+    "spacingUm:smd:smd": {
+      "min": 50,
+      "max": 50.2
+    },
+    "spacingUm:Breiter:Breiter": {
+      "min": 200.2,
+      "max": 200.4
+    },
+    "groupWidthUm:Breiter": {
+      "exact": 500
+    }
+  },
+  "note": "Identical rules content to Issue107-freq_teiler_200kHz_kicad.rules applied to the _bad variant of the board; same outcome."
+}

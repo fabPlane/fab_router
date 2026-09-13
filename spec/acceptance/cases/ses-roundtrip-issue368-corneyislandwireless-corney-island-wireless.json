@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue368-corneyislandwireless-corney-island-wireless",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue368-CorneyIslandWireless-corney_island_wireless.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue368-CorneyIslandWireless-corney_island_wireless.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue368-CorneyIslandWireless-corney_island_wireless.dsn.unrouted.sexp.json (4103 bytes, fast tier)."
+}

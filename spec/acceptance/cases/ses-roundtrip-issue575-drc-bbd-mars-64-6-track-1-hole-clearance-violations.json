@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue575-drc-bbd-mars-64-6-track-1-hole-clearance-violations",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn.unrouted.sexp.json (92769 bytes, fast tier)."
+}

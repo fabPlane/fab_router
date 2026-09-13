@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue029-hw48na",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue029-hw48na.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue029-hw48na.dsn.unrouted.sexp.json (147099 bytes, fast tier)."
+}

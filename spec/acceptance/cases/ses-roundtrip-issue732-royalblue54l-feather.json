@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue732-royalblue54l-feather",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue732-RoyalBlue54L-Feather.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue732-RoyalBlue54L-Feather.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue732-RoyalBlue54L-Feather.dsn.unrouted.sexp.json (102246 bytes, fast tier)."
+}

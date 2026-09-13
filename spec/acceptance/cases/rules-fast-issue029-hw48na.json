@@ -1,0 +1,31 @@
+{
+  "id": "rules-fast-issue029-hw48na",
+  "kind": "rules",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "rules": "Issue029-hw48na.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 400
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 101.6
+    },
+    "spacingUm:default:default": {
+      "min": 152.6,
+      "max": 152.8
+    },
+    "spacingUm:smd:smd": {
+      "min": 38.2,
+      "max": 38.4
+    }
+  },
+  "note": "The top-level (rule (width 400.0)) replaces the default NetGroup width (203.2 before). (clear 152.6) sets the spacing of every Kind pair; (clear 38.2 (type smd_smd)) then sets smd/smd. The file also carries typed clearances whose Kind pairs are written as bare_name_\"quoted name\" (underscore-joined with a quoted second name); both references accept the file without error but the Kinds those lines create are not meaningful and are left unspecified."
+}

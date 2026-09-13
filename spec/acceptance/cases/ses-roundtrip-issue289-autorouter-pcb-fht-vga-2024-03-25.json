@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue289-autorouter-pcb-fht-vga-2024-03-25",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn.unrouted.sexp.json (204425 bytes, fast tier)."
+}

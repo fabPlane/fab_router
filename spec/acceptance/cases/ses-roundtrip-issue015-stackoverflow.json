@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue015-stackoverflow",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue015-StackOverflow.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue015-StackOverflow.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue015-StackOverflow.dsn.unrouted.sexp.json (149669 bytes, fast tier)."
+}

@@ -1,0 +1,44 @@
+{
+  "id": "settings-fast-issue187-processor-z80-nofile",
+  "kind": "settings",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue187-processor.Z80.dsn",
+  "settings": {
+    "router": false,
+    "useFileSettings": false
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 100
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": true
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "bendCost": {
+      "exact": 0
+    },
+    "preferredDirectionCost": {
+      "exact": 1.5
+    },
+    "layers": {
+      "exact": {}
+    }
+  },
+  "note": "useFileSettings: false (the default). The board carries a settings block but it must not be applied: every field of report.effectiveSettings equals the built-in default (routerEnabled false because the case passes router: false)."
+}

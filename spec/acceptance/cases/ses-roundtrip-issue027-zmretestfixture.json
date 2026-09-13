@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue027-zmretestfixture",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue027-zMRETestFixture.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue027-zMRETestFixture.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue027-zMRETestFixture.dsn.unrouted.sexp.json (71309 bytes, fast tier)."
+}

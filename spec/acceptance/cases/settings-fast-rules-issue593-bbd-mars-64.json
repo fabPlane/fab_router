@@ -1,0 +1,60 @@
+{
+  "id": "settings-fast-rules-issue593-bbd-mars-64",
+  "kind": "settings",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue593-BBD_Mars-64.dsn",
+  "rules": "Issue593-BBD_Mars-64.rules",
+  "settings": {
+    "router": false,
+    "useFileSettings": true
+  },
+  "expect": {
+    "viaCost": {
+      "exact": 50
+    },
+    "planeViaCost": {
+      "exact": 5
+    },
+    "startRipupCost": {
+      "exact": 100
+    },
+    "viasAllowed": {
+      "exact": true
+    },
+    "optimizerEnabled": {
+      "exact": false
+    },
+    "fanoutEnabled": {
+      "exact": false
+    },
+    "routerEnabled": {
+      "exact": false
+    },
+    "layers/F.Cu/active": {
+      "exact": true
+    },
+    "layers/F.Cu/preferDir": {
+      "exact": "v"
+    },
+    "layers/F.Cu/alongCost": {
+      "exact": 1
+    },
+    "layers/F.Cu/againstCost": {
+      "exact": 4.7
+    },
+    "layers/B.Cu/active": {
+      "exact": true
+    },
+    "layers/B.Cu/preferDir": {
+      "exact": "h"
+    },
+    "layers/B.Cu/alongCost": {
+      "exact": 1
+    },
+    "layers/B.Cu/againstCost": {
+      "exact": 3
+    }
+  },
+  "note": "useFileSettings: true with a rules file: the rules file's settings block is applied the same way as a DSN settings block (and replaces the DSN's block when both exist). postroute off gives optimizerEnabled false; F.Cu vertical 1.0/4.7, B.Cu horizontal 1.0/3.0."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "rules-fast-issue191-processor-z80-processor",
+  "kind": "rules",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue191-processor.Z80-processor.Z80.dsn",
+  "rules": "Issue191-processor.Z80-processor.rules",
+  "expect": {
+    "accepted": {
+      "exact": true
+    },
+    "angleMode": {
+      "exact": "45"
+    },
+    "defaultWidthUm": {
+      "exact": 250
+    },
+    "pinEdgeToTurnUm": {
+      "exact": 125
+    },
+    "spacingUm:default:default": {
+      "min": 200.2,
+      "max": 200.4
+    },
+    "spacingUm:smd:smd": {
+      "min": 50,
+      "max": 50.2
+    },
+    "groupWidthUm:G_PLCC": {
+      "exact": 700
+    },
+    "groupWidthUm:Power": {
+      "exact": 1000
+    }
+  },
+  "note": "A rules file that restates the board's own rules: applying it is a fixpoint (no effective value changes)."
+}

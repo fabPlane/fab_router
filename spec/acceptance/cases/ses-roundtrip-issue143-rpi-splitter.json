@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue143-rpi-splitter",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue143-rpi_splitter.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue143-rpi_splitter.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue143-rpi_splitter.dsn.unrouted.sexp.json (3891 bytes, fast tier)."
+}

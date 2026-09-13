@@ -1,0 +1,13 @@
+{
+  "id": "ses-roundtrip-issue153-wavefolder",
+  "kind": "ses-roundtrip",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue153-wavefolder.dsn",
+  "expect": {
+    "treeEquals": {
+      "equalsFile": "ses/Issue153-wavefolder.dsn.unrouted.sexp.json"
+    }
+  },
+  "note": "readDsn then writeSes on the unrouted board; the normalised session tree must deep-equal ses/Issue153-wavefolder.dsn.unrouted.sexp.json (123558 bytes, fast tier)."
+}
