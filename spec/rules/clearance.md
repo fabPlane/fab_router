@@ -168,6 +168,16 @@ without them.
 Rim's spacing for every pair, even when the boundary names a clearance class; the exception above
 applies only to the file's own default.)
 
+**C-16 — SRJ Prior copper carries its net's Kind, but is spacing-silent among Prior copper.**
+Pre-existing net-owned copper imported from a SimpleRouteJson document (Prior copper,
+`spec/formats/srj.md` J-23, `glossary.md`) carries its owner net's Kind — the default group's
+category Kind unless the document declares otherwise — so that copper the router later adds keeps
+the declared clearance away from it. That Kind governs a Prior-vs-router-added-copper check only:
+by `spec/rules/drc.md` DR-13 a Prior-copper piece is never in a spacing or fence Violation with
+another Prior-copper piece, at any distance, whatever their Kinds or nets. This is why the J802
+boards, whose Prior copper couples below the declared 0.15 mm default clearance in dozens of
+different-net places, load with `violationsBefore = 0`.
+
 ## Reference observations
 
 Both references agree on every value above on every corpus board (the parse summaries'

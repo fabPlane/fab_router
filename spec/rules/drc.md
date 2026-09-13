@@ -49,7 +49,9 @@ Sheet; each Track leg separately but a Track–Track pair is still one Violation
 **DR-05 — pre-existing violations.** Whatever the file contains is checked as-is: held or locked
 Tracks too close to Pads, Pads too close to the Rim, Pads inside Fences. `violationsBefore` is
 `checkDrc` on the Layout as read (after `applyRules` and after the settings of C-15 when the run
-sets them); the router must never remove file items to "fix" them (R-2).
+sets them); the router must never remove file items to "fix" them (R-2). One exception applies only
+to Layouts built from a SimpleRouteJson document: pre-existing net-owned copper (Prior copper,
+`spec/formats/srj.md` J-23) is not spacing- or fence-checked against other Prior copper (DR-13).
 
 **DR-06 — hole clearance.** With `holeClearanceUm` > 0 (C-15): for every Pad or Barrel with a
 drill, the drill circle enlarged by the clearance must not intersect other-net copper (Pads,
@@ -157,3 +159,42 @@ footprint's non-plated holes as Part-owned circular keepouts at pad size, overla
 footprint's pads by design. Under `holeClearanceUm` such a circular Fence is a `hole_edge` Fence
 (C-15) checked against everything. Until `Fence.part` is populated, "not checked against any Pad"
 is the accepted approximation.
+
+**DR-13 — Prior copper is silent against Prior copper (SRJ; Q-69 ruling).** In a Layout built
+from a SimpleRouteJson document, pre-existing net-owned copper (Prior copper, `spec/formats/srj.md`
+J-23, `glossary.md`) is checked for spacing and fence Violations **only against copper the router
+adds** — never against other Prior copper, whether or not the two pieces share a net. Consequences
+an implementation must reproduce:
+
+- **A pair of Prior-copper pieces is never a Violation**, at any distance, on any Sheet — even
+  overlapping, even of different nets. This holds whether the file states the two pieces as a
+  differential pair, an unrelated bus, or unrelated nets.
+- **Prior copper of net *m* is an obstacle to router-added copper of every other net.** Router-added
+  copper that comes closer to it than `spacing(kind(prior), kind(added), sheet)` is a Violation
+  (DR-01/DR-03), so R-1 (DR-08) is enforced against Prior copper exactly as against any held
+  item. Prior copper carries its owner net's Kind for this purpose (the default group's category
+  Kinds unless the document sets otherwise).
+- **Prior copper of net *m* is same-net-exempt to router-added copper of net *m*** (DR-02): the
+  router joins its route to the net's Prior copper, which is a connection, not a Violation
+  (`spec/rules/connectivity.md` K-14).
+
+*Why it is not a differential-pair rule.* The distinguishing observation is recorded in
+`spec/acceptance/reference/b223-j802.srj.coupling.json`: on the two-layer J802 board the default
+clearance is 0.15 mm, yet **84** distinct different-net owner pairs carry Prior copper closer than
+0.15 mm somewhere on a shared layer — including `SDA`/`SCL` (an I2C bus, coupled at 0.0054 mm and
+**not** a declared `differentialPairs` entry), the declared MIPI clock pair `…C_N`/`…C_P`
+(0.0403 mm), the declared data pair `…D2_N`/`…D2_P` (0.1344 mm), and many unrelated-net pairs
+(`GND`/`PANEL_ID1` at 0.0003 mm, `GPIO26`/`MOSI_GPIO20` at 0.0064 mm). A reader that checked Prior
+copper against Prior copper as ordinary conductors would report a spacing Violation for each; the
+sealed reference reports `violationsBefore = 0`. Because `SDA`/`SCL` — a non-pair — and dozens of
+unrelated-net pairs are all silent, the zero count is **not** a differential-pair clearance rule, a
+per-pair `traceGap` rule, or a same-net-plus-paired-net exemption: it is the blanket carve-out
+above. The `traceGap` and skew figures of a `differentialPairs` entry (`spec/formats/srj.md` J-30)
+therefore have no effect on Violation counting.
+
+**Observed `violationsBefore`** (the sealed reference, four J802 boards, six-layer boards under
+the context-net import of `spec/formats/srj.md` J-25): **0** on all four
+(`spec/acceptance/reference/b223-j802*.srj.default.json`). Under DR-13 the corrected reading of
+every J802 board loads with 0 Violations; a reading that spacing-checks Prior copper against Prior
+copper would report on the order of 84 (two-layer) or hundreds (six-layer) — see the coupling
+evidence file — which is the wrong answer.
