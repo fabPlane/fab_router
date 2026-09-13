@@ -42,7 +42,7 @@ plus network `(via …)` definitions naming the same padstacks.
 structure list first, then each class's `use_via` names in file order, then padstacks named only
 by network `via` definitions — with every repeated name dropped.
 
-*Boards.* 116 boards (every KiCad export with a `use_via` list), e.g. `Issue026-J2_reference.dsn`
+*Boards.* 136 of the 149 board files (every KiCad export with a `use_via` list), e.g. `Issue026-J2_reference.dsn`
 (listed twice by reference A, once in the ruling).
 
 *References.* Reference A concatenates the lists and keeps repeats; reference B keeps distinct
@@ -60,7 +60,7 @@ NetGroup (`kicad_default` *is* the default group, `spec/rules/nets.md` N-05). Th
 when the file has no `via_rule` scope at all is named `default` and is created first
 (`spec/rules/vias.md` V-03).
 
-*Boards.* 106 boards — every KiCad export.
+*Boards.* 126 of the 149 board files — every KiCad export.
 
 *References.* Reference A names the class-derived rule `default` (because it has already merged
 the class into the default group); reference B keeps `kicad_default`. Ruling: B — the name is
