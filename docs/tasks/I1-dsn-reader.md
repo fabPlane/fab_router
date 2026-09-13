@@ -12,6 +12,11 @@ Read first: `docs/DESIGN.md` §2–3, `spec/README.md`, `spec/glossary.md`, `spe
 
 ## Deliverables
 
+0. **First**: `bun run typecheck` currently reports one error in `src/api.ts` — the `routeSrj`
+   stub lacks the `violationsBefore` / `violationsAdded` fields added by ruling Q-I0-8
+   (`spec/api/contract.md`). Fix the stub so the tree is green before anything else. Also
+   implement `parseSummary` as a public API function (Q-I0-3) and read the other `Q-I0-*` rulings.
+
 1. **Lexer** (`src/dsn/lex.ts`): the lexical rules of `dsn.md` §1–2, driven by the `parser`
    scope as it is encountered; every record in `spec/behaviour/dsn-tokens/*.jsonl` passes in
    `test/vectors.test.ts` (extend the dispatcher for op `dsn-tokens`).

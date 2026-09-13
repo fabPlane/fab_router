@@ -10,6 +10,9 @@ small synthetic Layouts in memory).
 
 ## Deliverables
 
+Note: `bun run typecheck` may report one error in `src/api.ts` (the `routeSrj` stub); task I1
+owns that file and is fixing it concurrently — ignore that single error, do not edit `src/api.ts`.
+
 1. **Lattice** (`src/lattice/`): per-Sheet uniform bucket grid with an oversize shelf as
    `docs/DESIGN.md` §4 describes: `build(layout)`, `insert(item)`, `remove(id)`,
    `hits(sheet, box, filter) → ids ascending`, `sweepHits(sheet, dop8, filter)`, Track legs indexed
