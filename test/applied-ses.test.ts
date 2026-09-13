@@ -10,8 +10,9 @@
  *     F-S62 every entry applies (1921 Tracks, 223 Barrels, 0 incomplete).
  *   - `Issue313-FastTest.ses`, `Issue690-ecc83.ses`: the references *added* the session to the
  *     file's `protect` / `route` wiring; F-S61 replaces it (129 / 61 Tracks, 21 / 0 Barrels).
- *   - `traceLengthMm`: the references record LU / 10⁵ on these `um 10` boards, one tenth of the
- *     true length in millimetres; the test asserts the true length against the session text.
+ *
+ * `traceLengthMm` is the true millimetre length (Q-I2-58): the references were corrected so the
+ * test asserts `after.tracks.totalLengthMm ≈ want.traceLengthMm` directly.
  */
 import { describe, expect, test } from "bun:test";
 import { readdirSync } from "node:fs";
@@ -74,8 +75,7 @@ describe("applied-ses references", () => {
       if (!DEVIATIONS[ref.settings.ses]) {
         if (applied.diagnostics.length === 0) expect(after.tracks.totalLengthLu).toBeCloseTo(sessionLength(sesText) + lockedLu, 3);
         expect(after.tracks.totalLengthMm).toBeCloseTo(after.tracks.totalLengthLu / 10000, 6);
-        // The reference figure is one tenth of that (question in src/QUESTIONS.md).
-        expect(after.tracks.totalLengthMm / 10).toBeCloseTo(want.traceLengthMm, 2);
+        expect(after.tracks.totalLengthMm).toBeCloseTo(want.traceLengthMm, 2);
       }
     });
   }
