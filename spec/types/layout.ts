@@ -51,11 +51,13 @@ export interface Pad {
   id: number; part: number; pinName: string; net: number | null; form: number;
   at: Pt; rotationDeg: number; side: Side; sheets: readonly number[]; kind: number; hold: "locked";
 }
-/** origin: who put the item there — "file" (design wiring), "session" (applySes), "router" (route). */
-export type Origin = "file" | "session" | "router";
+/** origin: who put the item there — "file" (design wiring), "session" (applySes), "router" (route),
+ *  "prior" (pre-existing SRJ net copper: obstacle to other nets, connective to its own net,
+ *  DRC-silent against other "prior" copper — spec/rules/drc.md DR-13, clearance.md C-16, connectivity.md K-16). */
+export type Origin = "file" | "session" | "router" | "prior";
 export interface Barrel { id: number; net: number | null; at: Pt; form: number; fromSheet: number; toSheet: number; kind: number; hold: Hold; origin?: Origin }
 export interface Track { id: number; net: number | null; sheet: number; pts: readonly Pt[]; width: number; kind: number; hold: Hold; origin?: Origin }
-export interface Pour { id: number; net: number | null; sheet: number; outline: readonly Pt[]; holes: readonly (readonly Pt[])[]; kind: number; hold: Hold }
+export interface Pour { id: number; net: number | null; sheet: number; outline: readonly Pt[]; holes: readonly (readonly Pt[])[]; kind: number; hold: Hold; origin?: Origin }
 /** Fence.kind: the Kind of the keepout (`rules/keepouts.md` KO-05, `clearance.md` C-11); 0 = no Kind ("must merely not overlap"). */
 export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; kind: number; net?: number; /** Owning Part for image keepouts (DR-12). */ part?: number }
 export interface Rim { outline: readonly Pt[]; cutouts: readonly (readonly Pt[])[]; kind: number }
