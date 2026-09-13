@@ -35,3 +35,7 @@ export function emptyReport(effectiveSettings: RouteSettings, stoppedBy: RouteRe
     perNet: [],
   };
 }
+
+// Task I3: the per-connection Profile and the exact clearance queries.
+export * from "./profile.ts";
+export * from "./clear.ts";
