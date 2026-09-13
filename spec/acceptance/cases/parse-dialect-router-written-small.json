@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-router-written-small",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue413-test.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 10
+    },
+    "pads": {
+      "exact": 10
+    },
+    "nets": {
+      "exact": 5
+    },
+    "padstacks": {
+      "exact": 2
+    },
+    "tracks": {
+      "exact": 11
+    },
+    "vias": {
+      "exact": 4
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 11
+    }
+  },
+  "note": "A small router-written file (D-20): a boundary polygon on the signal pseudo-layer, an unnamed keepout (D-29) and image keepouts instantiated per Part (11 Fences), (clearance 200.0 (type kicad)) naming a class the board never defines, 11 polyline_path Tracks and 4 Barrels."
+}

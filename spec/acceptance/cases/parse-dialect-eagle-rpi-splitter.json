@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-eagle-rpi-splitter",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue143-rpi_splitter.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 3
+    },
+    "pads": {
+      "exact": 24
+    },
+    "nets": {
+      "exact": 5
+    },
+    "padstacks": {
+      "exact": 6
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 8
+    }
+  },
+  "note": "Eagle dialect (D-15): mil 2540 resolution, circ alias, rect pcb bounding rectangle plus path signal outline ring, flip_style rotate_first, control via_at_smd, unquoted host_cad."
+}

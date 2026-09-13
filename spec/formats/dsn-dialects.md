@@ -232,7 +232,8 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
 - **D-32 Collinear micro-wires.** `Issue723-CombineStackOverflow.dsn` (hand-made) has 4 000
   collinear 200 µm `GND` wires end to end on one Sheet. Required: F-110 — 4 000 Tracks are read;
   whether a router merges collinear same-net Tracks is its own business (`ses.md` F-S50 makes
-  the session comparison insensitive to it). Both references merge them into 29 Tracks.
+  the session comparison insensitive to it). Both references merge them while reading (their
+  boards hold a single Track); the Layout as read holds 4 000.
 - **D-33 Locked (`fix`) wiring only.** `Issue753-CPU-85_r104.dsn` carries 65 wires and 19 vias
   all `(type fix)`. Required: F-112 (`locked`), `ses.md` F-S43 (not written back).
 - **D-34 Wire types across KiCad versions.** KiCad 4/5 write `(type protect)` on every track;
@@ -253,6 +254,12 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   `Issue433-my-board.dsn`). Required: F-32 (an empty string); the session writes it back as
   `(host_version "")` (`ses.md` F-S31 — reference A writes `(host_version )`, reference B
   `(host_version "")`; ruling: B).
+- **D-39 Wires that double back.** KiCad 5 exports contain a few wires whose path returns to an
+  earlier vertex (`A → B → A`): 3 in `Issue022-AutoRouter_interrupted.dsn`, 2 in
+  `Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn`. Required: F-110 — each is one
+  Track with two overlapping legs (724 and 1 346 Tracks respectively). Both references drop
+  such wires while normalising (721 and 1 344). The same boards carry a handful of wires that
+  repeat an earlier wire exactly; those are Tracks too.
 - **D-38 Padstack names with decimals.** Every KiCad board: `RoundRect[T]Pad_875x950_219.582_um`,
   `Round[A]Pad_1320.800000_um`, `Via[0-1]_685.8:330.2_um`,
   `RoundRect[T]Pad_3199.9935999999993x1599.9967999999997_um` (`Issue420-contribution-board.dsn`).

@@ -1,0 +1,37 @@
+{
+  "id": "parse-lex-issue754-numeric-part-number",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue754-avionics_hub.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 6
+    },
+    "components": {
+      "exact": 81
+    },
+    "pads": {
+      "exact": 761
+    },
+    "nets": {
+      "exact": 368
+    },
+    "tracks": {
+      "exact": 954
+    },
+    "vias": {
+      "exact": 11
+    },
+    "pours": {
+      "exact": 1
+    },
+    "fences": {
+      "exact": 1
+    }
+  },
+  "note": "Image name 15pin:09561617712 and part number (PN 09561617712) spell as numbers and keep their text (F-7, D-8); a wire_keepout on a named signal layer is one Fence (F-66, D-29); one plane is a Pour (F-68)."
+}

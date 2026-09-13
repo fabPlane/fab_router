@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-kicad8-empty-net-removed",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-min_fr_test-min_fr_test_no_quotes.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 4
+    },
+    "pads": {
+      "exact": 4
+    },
+    "nets": {
+      "exact": 2
+    },
+    "padstacks": {
+      "exact": 2
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 1
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "The same board with the \"\" entry removed by hand: identical counts to parse-dialect-kicad8-empty-net-in-class (D-27)."
+}

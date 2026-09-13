@@ -1,0 +1,25 @@
+{
+  "id": "parse-lex-issue110-cyrillic-bare-layer-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue110-Pajalnaja_stancija.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 54
+    },
+    "pads": {
+      "exact": 175
+    },
+    "nets": {
+      "exact": 64
+    }
+  },
+  "note": "Bare Cyrillic layer names and part numbers are kept verbatim (F-1, F-5, F-61, D-2): two Sheets, 54 Parts."
+}

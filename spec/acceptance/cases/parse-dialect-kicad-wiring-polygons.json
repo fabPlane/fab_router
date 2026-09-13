@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-kicad-wiring-polygons",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue756-tomu-fpga7.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 62
+    },
+    "pads": {
+      "exact": 257
+    },
+    "nets": {
+      "exact": 69
+    },
+    "padstacks": {
+      "exact": 23
+    },
+    "tracks": {
+      "exact": 861
+    },
+    "vias": {
+      "exact": 162
+    },
+    "pours": {
+      "exact": 14
+    },
+    "fences": {
+      "exact": 1
+    }
+  },
+  "note": "KiCad 10.99 writes filled zones as (wire (polygon …) (window …)) in the wiring section: 14 Pours with holes (F-110, D-31), next to 861 Tracks and 162 Barrels."
+}

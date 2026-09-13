@@ -1,0 +1,22 @@
+{
+  "id": "parse-dialect-fix-only-wiring",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue753-CPU-85_r104.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "tracks": {
+      "exact": 65
+    },
+    "vias": {
+      "exact": 19
+    },
+    "pours": {
+      "exact": 3
+    }
+  },
+  "note": "Every wire and via carries (type fix): they are Tracks and Barrels with Hold locked, present in the Layout (65 and 19) and absent from any session written for the board (F-112, ses.md F-S43, D-33)."
+}

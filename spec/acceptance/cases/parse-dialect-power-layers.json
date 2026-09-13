@@ -1,0 +1,28 @@
+{
+  "id": "parse-dialect-power-layers",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 8
+    },
+    "pads": {
+      "exact": 21
+    },
+    "nets": {
+      "exact": 12
+    },
+    "pours": {
+      "exact": 0
+    }
+  },
+  "note": "A 4-layer board whose inner layers are (type power) with use_net and no plane shape (F-60, D-30): four Sheets; no Pour comes from the design file itself (plane Sheets are the business of spec/rules/layers.md)."
+}

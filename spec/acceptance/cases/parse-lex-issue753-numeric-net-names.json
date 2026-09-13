@@ -1,0 +1,37 @@
+{
+  "id": "parse-lex-issue753-numeric-net-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue753-CPU-85_r104.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 132
+    },
+    "pads": {
+      "exact": 774
+    },
+    "nets": {
+      "exact": 208
+    },
+    "tracks": {
+      "exact": 65
+    },
+    "vias": {
+      "exact": 19
+    },
+    "pours": {
+      "exact": 3
+    },
+    "fences": {
+      "exact": 12
+    }
+  },
+  "note": "Net names 100, 94 and \" 1\" (a quoted name with a leading space) are names (F-7, D-8); every wire and via is (type fix) and therefore a locked Track / Barrel that is still counted (F-112, D-33)."
+}

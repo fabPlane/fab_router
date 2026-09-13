@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-pinless-parts-are-parts",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue015-StackOverflow.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 135
+    },
+    "pads": {
+      "exact": 762
+    },
+    "nets": {
+      "exact": 186
+    },
+    "padstacks": {
+      "exact": 23
+    },
+    "tracks": {
+      "exact": 657
+    },
+    "vias": {
+      "exact": 12
+    },
+    "pours": {
+      "exact": 2
+    },
+    "fences": {
+      "exact": 22
+    }
+  },
+  "note": "A logo image with no pins is still a placed Part (F-80): 135 Parts, 762 Pads; two planes are Pours; 22 Fences are the signal-layer keepouts on two Sheets plus image keepouts per Part."
+}

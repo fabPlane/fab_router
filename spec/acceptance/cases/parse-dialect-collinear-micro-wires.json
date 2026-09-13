@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-collinear-micro-wires",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue723-CombineStackOverflow.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 0
+    },
+    "pads": {
+      "exact": 0
+    },
+    "nets": {
+      "exact": 1
+    },
+    "padstacks": {
+      "exact": 1
+    },
+    "tracks": {
+      "exact": 4000
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "4 000 collinear 200 µm wires of one net: one Track per wire entry (F-110, D-32). Both references merge them into a single Track; the spec counts what the file says."
+}

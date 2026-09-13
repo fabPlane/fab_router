@@ -1,0 +1,13 @@
+{
+  "id": "parse-lex-issue006-not-a-design-file",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue006-LPC18XX_43XX_SCH.dsn",
+  "expect": {
+    "status": {
+      "exact": "error"
+    }
+  },
+  "note": "A binary OLE document with a .dsn extension: readDsn returns ok:false with a ParseError (dsn.md F-20, dsn-dialects.md D-1). Both reference suites reject it."
+}

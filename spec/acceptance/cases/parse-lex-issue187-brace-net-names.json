@@ -1,0 +1,31 @@
+{
+  "id": "parse-lex-issue187-brace-net-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue187-processor.Z80.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 143
+    },
+    "pads": {
+      "exact": 1365
+    },
+    "nets": {
+      "exact": 529
+    },
+    "tracks": {
+      "exact": 2026
+    },
+    "vias": {
+      "exact": 324
+    }
+  },
+  "note": "Router-written file with bare net names ~{WAIT}, ~{BAI} (braces are ordinary characters, F-5, D-10), explicit subnet numbers (F-100) and polyline_path wiring (F-54): 529 nets, 2026 Tracks, 324 Barrels."
+}

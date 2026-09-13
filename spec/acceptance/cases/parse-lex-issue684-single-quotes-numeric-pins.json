@@ -1,0 +1,40 @@
+{
+  "id": "parse-lex-issue684-single-quotes-numeric-pins",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 1
+    },
+    "pads": {
+      "exact": 164
+    },
+    "nets": {
+      "exact": 52
+    },
+    "padstacks": {
+      "exact": 32
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "EasyEDA Pro: no string_quote declaration, single-quoted class names ('' and '$1N4396'), pin names 0e29 / 2e7 that spell as numbers, layers named 1 2 15 16 (F-4, F-7, D-8, D-11, D-16, D-17)."
+}

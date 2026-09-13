@@ -1,0 +1,28 @@
+{
+  "id": "parse-lex-issue110-cyrillic-image-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue110-RelayModule.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 33
+    },
+    "pads": {
+      "exact": 152
+    },
+    "nets": {
+      "exact": 64
+    },
+    "vias": {
+      "exact": 22
+    },
+    "fences": {
+      "exact": 8
+    }
+  },
+  "note": "Bare and quoted Cyrillic image names (F-90, D-2): every placed Part finds its image (33 Parts, 152 Pads). The references lose the non-Latin-1 characters of bare image names."
+}

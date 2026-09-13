@@ -1,0 +1,22 @@
+{
+  "id": "parse-dialect-duplicate-padstack-definitions",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue034-Green14SegLED.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "padstacks": {
+      "exact": 13
+    },
+    "pads": {
+      "exact": 278
+    },
+    "components": {
+      "exact": 37
+    }
+  },
+  "note": "KiCad 5 writes the custom pad name Cust[T]Pad_1000x500_1000x_1500_23_um twice with different polygons: the first definition wins and the count of PadForms is the count of distinct normalised names (F-97, P-5, D-28)."
+}

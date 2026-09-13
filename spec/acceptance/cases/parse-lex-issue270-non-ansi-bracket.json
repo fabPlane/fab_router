@@ -1,0 +1,40 @@
+{
+  "id": "parse-lex-issue270-non-ansi-bracket",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue270-non-ansi_bracket.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 3
+    },
+    "pads": {
+      "exact": 24
+    },
+    "nets": {
+      "exact": 5
+    },
+    "padstacks": {
+      "exact": 6
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 8
+    }
+  },
+  "note": "Eagle file with a quoted net name \"~{WE}\" and 1#Top / 16#Bottom layer names (F-5, D-10, D-15)."
+}

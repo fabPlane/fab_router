@@ -1,0 +1,28 @@
+{
+  "id": "parse-dialect-easyeda-pro-four-layers",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 1
+    },
+    "pads": {
+      "exact": 164
+    },
+    "nets": {
+      "exact": 52
+    },
+    "padstacks": {
+      "exact": 32
+    }
+  },
+  "note": "EasyEDA Pro (D-16): layers 1 2 15 16 in file order are Sheets 0..3 (F-60); padstacks p0e29-style names with polygon shapes on layer 1."
+}
