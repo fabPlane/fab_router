@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue022-autorouter-interrupted",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue022-AutoRouter_interrupted.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue022-AutoRouter_interrupted.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue022-AutoRouter_interrupted.dsn.json (178467 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "parse-summary-issue006-lpc18xx-43xx-sch",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue006-LPC18XX_43XX_SCH.dsn",
+  "expect": {
+    "status": {
+      "exact": "error"
+    }
+  },
+  "note": "readDsn must fail with ok:false (parse-error); the file is not a DSN text file. No diagnostics are required beyond the ParseError."
+}

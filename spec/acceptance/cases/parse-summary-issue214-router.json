@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue214-router",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue214-router.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue214-router.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue214-router.dsn.json (195335 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue034-green14segled",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue034-Green14SegLED.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue034-Green14SegLED.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue034-Green14SegLED.dsn.json (33706 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

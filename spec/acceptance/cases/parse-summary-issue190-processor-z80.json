@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue190-processor-z80",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue190-processor.Z80.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue190-processor.Z80.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue190-processor.Z80.dsn.json (927624 bytes, slow tier). The summary's notes list where the references disagreed and which ruling applies."
+}

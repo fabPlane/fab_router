@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue069-testsensel-testsensel-kicad6",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue069-TestSensel-TestSensel-KiCad6.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue069-TestSensel-TestSensel-KiCad6.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue069-TestSensel-TestSensel-KiCad6.dsn.json (5183 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

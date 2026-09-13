@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue289-autorouter-pcb-fht-8086-2024-03-08",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn.json (159885 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

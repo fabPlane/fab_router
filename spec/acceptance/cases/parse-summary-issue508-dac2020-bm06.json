@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue508-dac2020-bm06",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm06.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue508-DAC2020_bm06.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue508-DAC2020_bm06.dsn.json (22879 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

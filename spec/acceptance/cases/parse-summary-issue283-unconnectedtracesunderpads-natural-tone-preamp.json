@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue283-unconnectedtracesunderpads-natural-tone-preamp",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn.json (97283 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

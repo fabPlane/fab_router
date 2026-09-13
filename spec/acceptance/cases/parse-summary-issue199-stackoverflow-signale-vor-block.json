@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue199-stackoverflow-signale-vor-block",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue199-StackOverflow-Signale_Vor+Block.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue199-StackOverflow-Signale_Vor+Block.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue199-StackOverflow-Signale_Vor+Block.dsn.json (20043 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

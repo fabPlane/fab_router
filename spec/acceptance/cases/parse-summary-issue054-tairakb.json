@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue054-tairakb",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue054-tairakb.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue054-tairakb.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue054-tairakb.dsn.json (43344 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

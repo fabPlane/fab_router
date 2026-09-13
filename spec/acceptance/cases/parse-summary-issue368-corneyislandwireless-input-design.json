@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue368-corneyislandwireless-input-design",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue368-CorneyIslandWireless_input_design.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue368-CorneyIslandWireless_input_design.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue368-CorneyIslandWireless_input_design.dsn.json (3147 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

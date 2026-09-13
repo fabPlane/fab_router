@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue721-autorouter-ce2632-harrymu-2026-6-15",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn.json (46638 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

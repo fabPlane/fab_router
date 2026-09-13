@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue690-sonde-xilinx",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue690-sonde_xilinx.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue690-sonde_xilinx.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue690-sonde_xilinx.dsn.json (49750 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

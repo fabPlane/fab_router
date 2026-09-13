@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue143-rpi-splitter-mod",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue143-rpi_splitter_mod.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue143-rpi_splitter_mod.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue143-rpi_splitter_mod.dsn.json (3907 bytes, fast tier). Both references agree on every field."
+}

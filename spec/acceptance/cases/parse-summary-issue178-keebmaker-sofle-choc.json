@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue178-keebmaker-sofle-choc",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue178-KeebMaker_Sofle_Choc.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue178-KeebMaker_Sofle_Choc.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue178-KeebMaker_Sofle_Choc.dsn.json (526135 bytes, slow tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue219-logicboard-smt",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue219-LogicBoard_smt.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue219-LogicBoard_smt.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue219-LogicBoard_smt.dsn.json (108029 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

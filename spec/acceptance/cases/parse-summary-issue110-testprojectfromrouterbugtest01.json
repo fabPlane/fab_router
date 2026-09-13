@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue110-testprojectfromrouterbugtest01",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue110-testProjectFromRouterBugTest01.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue110-testProjectFromRouterBugTest01.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue110-testProjectFromRouterBugTest01.dsn.json (8703 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue575-drc-natural-tone-preamp-7-unconnected",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn.json (245870 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

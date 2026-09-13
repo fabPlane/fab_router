@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue730-dac2020-bm11",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue730-DAC2020_bm11.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue730-DAC2020_bm11.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue730-DAC2020_bm11.dsn.json (26248 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

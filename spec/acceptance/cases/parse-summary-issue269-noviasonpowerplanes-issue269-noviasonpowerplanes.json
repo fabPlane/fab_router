@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.json (19380 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

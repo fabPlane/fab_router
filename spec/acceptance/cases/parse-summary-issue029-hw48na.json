@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue029-hw48na",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue029-hw48na.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue029-hw48na.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue029-hw48na.dsn.json (147099 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

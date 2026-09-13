@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue093-interf-u",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue093-interf_u.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue093-interf_u.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue093-interf_u.dsn.json (148760 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

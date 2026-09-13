@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue733-kicad-complex-hierarchy-input-design",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue733-kicad_complex_hierarchy_input_design.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue733-kicad_complex_hierarchy_input_design.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue733-kicad_complex_hierarchy_input_design.dsn.json (53403 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

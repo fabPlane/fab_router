@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10-unrouted",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-DAC2020-DAC2020_bm10-FRv1.9.0-DAC2020_bm10.unrouted.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue508-DAC2020-DAC2020_bm10-FRv1.9.0-DAC2020_bm10.unrouted.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue508-DAC2020-DAC2020_bm10-FRv1.9.0-DAC2020_bm10.unrouted.dsn.json (31332 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue756-minimal-ok",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue756-minimal-ok.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue756-minimal-ok.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue756-minimal-ok.dsn.json (781 bytes, fast tier). Both references agree on every field."
+}

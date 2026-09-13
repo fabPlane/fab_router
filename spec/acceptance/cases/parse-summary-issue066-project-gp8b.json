@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue066-project-gp8b",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue066-Project_GP8B.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue066-Project_GP8B.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue066-Project_GP8B.dsn.json (110326 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

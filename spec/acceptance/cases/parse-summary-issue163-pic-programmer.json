@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue163-pic-programmer",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue163-pic_programmer.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue163-pic_programmer.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue163-pic_programmer.dsn.json (86334 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

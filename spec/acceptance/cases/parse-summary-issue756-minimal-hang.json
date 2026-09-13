@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue756-minimal-hang",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue756-minimal-hang.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue756-minimal-hang.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue756-minimal-hang.dsn.json (864 bytes, fast tier). Both references agree on every field."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue026-j2-reference",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue026-J2_reference.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue026-J2_reference.dsn.json (7925 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue269-caniot-tiny-arm",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-caniot-tiny-arm.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue269-caniot-tiny-arm.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue269-caniot-tiny-arm.dsn.json (109348 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}
