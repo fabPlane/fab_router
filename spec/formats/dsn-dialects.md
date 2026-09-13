@@ -79,7 +79,7 @@ with a diagnostic; if that leaves the rule empty the NetGroup has no Barrel cand
 
 *Boards.* 13 boards: `Issue015-StackOverflow.dsn` (6 class rules), `Issue022-AutoRouter_interrupted.dsn`,
 `Issue027-zMRETestFixture.dsn`, `Issue029-hw48na.dsn`, `Issue208-router.dsn`,
-`Issue230-CNH_Functional_Tester_1.dsn` (and its two copies), `Issue555-CNH_Functional_Tester_1.dsn`,
+`Issue230-CNH_Functional_Tester_1.dsn` (and its copy `Issue230-CNH_Functional_Tester-CNH_Functional_Tester_1.dsn`), `Issue555-CNH_Functional_Tester_1.dsn`,
 `Issue756-tomu-fpga.dsn`, `-fpga7`, `-fpga8`, `-fpga9`, `-fpga11`.
 
 *References.* Reference A normalises the structure `via` list but compares `use_via` names
