@@ -155,10 +155,17 @@ if (isolated && cfg) {
   // against the worktree root, not the main root.
   const wtRootRaw = safe(() => { const r = spawnSync("git", ["rev-parse", "--show-toplevel"], { cwd, encoding: "utf8" }); return r.status === 0 ? r.stdout.trim() : cwd; }, cwd);
   const wtRoot = safe(() => realpathSync(wtRootRaw), wtRootRaw);
-  for (const s of allStrings) {
+  // Relative tokens inside file *content* (imports like "../geom/x.ts") are judged from the file's
+  // own directory, not from cwd; everything else is judged from cwd.
+  const CONTENT_KEYS = new Set(["content", "new_string", "old_string", "edits"]);
+  const fileDir = ti.file_path ? dirname(resolve(cwd, String(ti.file_path))) : cwd;
+  const fieldStrings: Array<[string, string]> = [];
+  for (const [k, v] of Object.entries(ti)) for (const str of strings(v)) fieldStrings.push([k, str]);
+  for (const [key, s] of fieldStrings) {
+    const base = CONTENT_KEYS.has(key) ? fileDir : cwd;
     for (const tokRaw of pathTokens(s)) {
       const tok = expand(tokRaw);
-      const abs = isAbsolute(tok) ? resolve(tok) : resolve(cwd, tok);
+      const abs = isAbsolute(tok) ? resolve(tok) : resolve(base, tok);
       if (tokRaw.includes("..")) {
         const real = safe(() => realpathSync(abs), abs);
         if (!(real === wtRoot || real.startsWith(wtRoot + "/"))) deny("B-TRAVERSE", tokRaw);
