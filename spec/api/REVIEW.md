@@ -177,10 +177,13 @@ alternate, and the first signal Sheet prefers the direction of the board's longe
 settings block).
 
 **RV-18 — `fanout.escaped` definition.** `LayoutStats.fanout.escaped` is "how many have a Barrel
-escape" but no definition of "escape" exists. The fanout scenario needs: an SMD Pad has a Barrel
-escape when a Barrel of its net touches the Pad directly or through one Track that touches the Pad.
-Proposed: add this definition to `contract.md` (counting rules) and note that a Pad touching a
-Pour of its net does not count.
+escape" but no definition of "escape" exists, and the observed fanout stage of both references
+often escapes an SMD Pad with a Track alone (on a two-Sheet board the stub can end on same-net
+copper without any Barrel). The fanout scenario therefore uses the definition both references
+report: an SMD Pad is escaped when a Track or Barrel of its net touches it without a violation, or
+when it lies in a Pour of its net. Proposed: replace "how many have a Barrel escape" in the
+`LayoutStats` table with that sentence, and add `fanout.viaEscaped` (touched by a Barrel directly
+or through one Track) as a separate, optional count.
 
 **RV-19 — optimiser guarantees.** The contract has no invariant for the optimiser. The scenario
 `optimizer-monotonicity.md` requires: after the optimiser, Barrel count and total Track length do
@@ -198,6 +201,18 @@ say `writeSes` is only defined for a Layout obtained from a successful `readDsn`
 **RV-22 — `angleMode` in `effectiveSettings`.** `RouteSettings.angleMode` is optional ("from
 file, else 45"); for `report.effectiveSettings` state that it is always resolved (the Layout's
 angle mode when the caller passes none).
+
+**RV-23 — reference A's command-line entry point and Barrels (observation for S3/orchestrator).**
+Every scenario run of reference A through its command-line interface (this build, single- or
+multi-threaded, fanout on or off) produced a session with zero added Barrels on every board of the
+scenario list, while S3's reference numbers, produced through a programmatic entry, show Barrels
+added on the same boards (e.g. 12 on `Issue026-J2_reference.dsn`). Its fanout stage likewise
+reports "+0 extra vias" and escapes Pads with Tracks alone. Consequences: the `novia` scenario is
+unaffected (no Barrels by construction, and A's numbers there match a genuine no-via run); the
+fanout and optimiser scenarios use A's numbers only where they are conservative (minimum of both
+references) and otherwise lean on reference B; nothing in the spec should be derived from A's
+command-line Barrel counts. Also observed: A's command-line defaults enable the fanout pre-pass
+(the spec's `default` profile disables it explicitly, which S3's harness does).
 
 ## C. Type-level nits
 

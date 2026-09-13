@@ -48,6 +48,6 @@ Notes:
 
 - "Incomplete" counts follow the connectivity rules of `spec/rules/connectivity.md`; a net with n
   connected components at load contributes n − 1 required connections.
-- Reference B stops early once passes stop making progress; reference A runs until its score
-  stops improving. Both were given the same pass limit.
+- Both references were given the same pass limit; each stops earlier when a pass makes no
+  further progress, so the pass counts differ.
 - Boards whose reference runs failed or timed out on both sides are omitted.
