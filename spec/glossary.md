@@ -36,6 +36,16 @@
 | **Fanout** | Giving an SMD Pad a short stub and a Barrel so its net can leave the Pad's Sheet |
 | **Angle mode** | `90` (orthogonal legs only), `45` (orthogonal and diagonal), `any` |
 | **Session** | The SPECCTRA SES file: the routed wiring to be imported back into the CAD tool |
+| **Plane net** | A net named by a `plane` scope or by a plane Sheet's `use_net` list (`rules/layers.md` L-06); routes to its Pour count as complete and its Barrels cost `planeViaCost` |
+| **Item category** | One of `track`, `barrel`, `pin` (multi-Sheet Pad), `smd` (single-Sheet Pad), `area` (Pour, Fence, Rim); each NetGroup maps every category to a Kind (`rules/clearance.md` C-11) |
+| **Via rule** | A named, ordered list of PadForms a NetGroup may instantiate as Barrels (`rules/vias.md`) |
+| **Via definition** | A network `via` entry: a name, a PadForm, a Kind and an attach flag; via rules are lists of these |
+| **Attach** | Permission for a Barrel to sit inside a same-net SMD Pad (`rules/vias.md` V-08) |
+| **Terminal component** | A connected component of a net that contains at least one Pad or Pour; `incomplete` counts terminal components − 1 per net (`rules/connectivity.md` K-08) |
+| **Pour ruling** | The spec's decision that a Pour connects every same-net item it overlaps, following the CAD tool's DRC (`rules/connectivity.md`) |
+| **Parse summary** | The normalised, reader-independent description of a board that `readDsn` must reproduce (`acceptance/parse/README.md`) |
+| **Dangling** | A Track or Barrel connected to nothing of its net; never counted as a terminal component |
+| **Turn gap** | The `smd_to_turn_gap` distance: how far a Track must leave an SMD Pad before its first bend (`rules/clearance.md` C-12) |
 
 ## Literature (design from these; cite them in module headers)
 

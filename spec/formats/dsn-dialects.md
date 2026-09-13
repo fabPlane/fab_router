@@ -17,7 +17,8 @@ all `(type signal)`; or a `(layer X (type power) (use_net N))` layer.
 
 *Required interpretation.* The net named by a `plane` scope, or by a power layer's `use_net`
 list, is a **plane net** (`nets[].plane: true` in the parse summary; `spec/rules/layers.md`
-L-06). The Pour itself is inserted on the named Sheet, held (`hold: "held"`), owned by that net.
+L-06). The Pour itself is inserted on the named Sheet, locked (`hold: "locked"`), owned by that
+net.
 A net named only by a `plane` scope and by no `net` scope is still created (with zero Pads).
 
 *Boards.* 34 boards, e.g. `Issue015-StackOverflow.dsn` (GND), `Issue367-Charger.dsn` (9 nets),
