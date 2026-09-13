@@ -195,7 +195,7 @@ const WRITE_TOOLS = new Set(["Edit", "Write", "MultiEdit", "NotebookEdit"]);
 const writeSet: Record<Role, { allow: RegExp[]; denyAll?: boolean }> = {
   implementer: { allow: [/^src\//, /^test\//, /^tools\/acceptance\//] },
   verifier: { allow: [/^evidence\/(?:reports|similarity)\//] },
-  "spec-curator": { allow: [/^spec\//, /^docs\/tasks\/S-/] },
+  "spec-curator": { allow: [/^spec\//, /^docs\/tasks\/S[0-9]*-/] },
   orchestrator: { allow: [/^(?!src\/|test\/|tools\/acceptance\/)/] },
 };
 function checkWritePath(rel: string, rule: string) {
