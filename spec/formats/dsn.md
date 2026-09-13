@@ -38,7 +38,7 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
 - **F-5 Bare lexemes.** Any other character starts a bare lexeme, which extends up to (not
   including) the next separator, parenthesis or end of input. Quote characters that occur *inside*
   a bare lexeme are ordinary characters: `A'`, `SW1-A'`, `-"D+"` are single bare lexemes. Every
-  non-separator Unicode character is allowed in a bare lexeme (`D-12`, `D-13`); the DLR's
+  non-separator Unicode character is allowed in a bare lexeme (`D-10`, `D-12`); the DLR's
   `<special_character>` set (p. 120) is a subset of this.
 - **F-6 Numbers.** A bare lexeme whose whole text matches `[+-]?(\d+\.?\d*|\.\d+)([eE][+-]?\d+)?`
   is of kind `number`; its value is the usual decimal / scientific value (`1e-07` is 10⁻⁷, `.5`
@@ -96,7 +96,7 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
   `<design_descriptor>`, p. 8). `structure` also nests: `structure` scopes found inside
   `placement`, `library`, `network` or `wiring`, and `library` / `network` / `wiring` scopes found
   inside `placement`, are read as if they were at the top level (a lost parenthesis in a
-  placement entry must not swallow the rest of the board; `D-18`). Each recognised section may
+  placement entry must not swallow the rest of the board; no corpus board exercises this). Each recognised section may
   appear once; a repeated section merges its entries into the first (diagnostic
   `duplicate-section`).
 - **F-22 Unknown scopes.** Any scope whose head is not recognised at its position is skipped as a
@@ -192,7 +192,9 @@ Sheet) are accepted where section 6 says so.
   `shape-unsupported` (warning). No corpus board contains one.
 - **F-56** `(window <shape>)` inside a keepout, plane or wiring polygon subtracts the shape from
   its parent (DLR `<window_descriptor>`, p. 140).
-- **F-57 Layer name lookup** is case-insensitive against the Sheet names (`D-20`). A shape whose
+- **F-57 Layer name lookup** is an exact, case-sensitive match against the Sheet names (every
+  layer reference in the corpus matches exactly; reference A additionally maps an unknown name
+  containing `Top` or `Bottom` to the first or last Sheet, which no board needs). A shape whose
   layer name is neither a Sheet nor `pcb`/`signal` makes its entry dropped with diagnostic
   `layer-unknown` (warning).
 
@@ -236,7 +238,7 @@ DLR `<keepout_descriptor>`, p. 48. Semantics: `spec/rules/keepouts.md`.
 - **F-66** `(keepout|via_keepout|wire_keepout|place_keepout|bend_keepout|elongate_keepout [NAME]
   <shape> {(window <shape>)} [(clearance_class K)] …)`. `NAME` is an optional bare or quoted
   name (an empty string means unnamed: `(keepout "" (circle F.Cu 4000 …))` in
-  `Issue054-tairakb.dsn`); it is present when the item after the head is not a scope.
+  `Issue054-tairakb.dsn`, `D-29`); it is present when the item after the head is not a scope.
   `keepout` and `wire_keepout` are Fences of scope `track`; `via_keepout` scope `barrel`;
   `place_keepout` scope `place`; `bend_keepout` and `elongate_keepout` are retained in `other`
   and ignored. A keepout on layer `signal` is one Fence on every signal Sheet; on `pcb` one Fence
@@ -311,7 +313,7 @@ DLR `<library_descriptor>` p. 58, `<image_descriptor>` p. 43, `<padstack_descrip
 
 - **F-90** `(image NAME …)` defines a package. `NAME` is taken verbatim, including any `::N`
   suffix KiCad appends to distinguish footprint variants; images are never merged or renamed
-  (`D-22`: both references merge same-named images whose pins coincide and re-number the rest).
+  (`D-23`: both references merge same-named images whose pins coincide and re-number the rest).
   Two images with the same name: the second is dropped with diagnostic `image-duplicate`.
 - **F-91** `(pin PADSTACK [(rotate R)] NAME x y [(rotate R)])`: a pin of the image with
   padstack reference `PADSTACK` (resolved per `padstack-names.md`), pin name `NAME` (F-7),
@@ -347,7 +349,7 @@ DLR `<library_descriptor>` p. 58, `<image_descriptor>` p. 43, `<padstack_descrip
   a shape by one LU instead (`D-25`).
 - **F-97** Duplicate definitions: a second padstack whose normalised name equals an earlier one's
   is dropped with diagnostic `padstack-duplicate` (warning), even when its shapes differ
-  (`D-23`: KiCad 5 writes distinct custom pads under one name).
+  (`D-28`: KiCad 5 writes distinct custom pads under one name).
 - **F-98** Pad copper is the exact shape (polygons may be concave). Reference A replaces a
   concave pad polygon by its convex hull; a router may do the same as a conservative
   approximation for routing, but DRC measures the exact shape (`D-26`).
