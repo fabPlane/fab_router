@@ -1,0 +1,23 @@
+{
+  "id": "srj-j802-six-layer-v3",
+  "kind": "srj",
+  "origin": "refB-suite",
+  "tier": "slow",
+  "board": "b223-j802-six-layer-v3.srj.json",
+  "reference": "b223-j802-six-layer-v3.srj.default.json",
+  "referenceSide": "B",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 8,
+      "advisory": true
+    }
+  },
+  "note": "Six-layer J802 SimpleRouteJson board (byte-identical input to srj-j802-six-layer-v2). 15 declared connections; required-connection count is 15 (Q-68 ruling (b), rules/connectivity.md K-13..K-15). violations.maxAdded 0 is hard (R-1). Requires the context-net import reading (GND-owned pads cover endpoints, formats/srj.md J-25). incomplete is a via-dependent completion bound (advisory): the sealed reference joins 9 of 15 (incomplete 6) using vias, reachable once the barrel-aware search (I5) lands; the bound 8 leaves headroom. Reference numbers: spec/acceptance/reference/b223-j802-six-layer-v3.srj.default.json."
+}

@@ -109,3 +109,29 @@ copper the CAD tool then flags as redundant.
 Consequence for the reference numbers in `spec/acceptance/reference/`: reference A's
 `incompleteBefore`/`incompleteAfter` are inflated on boards with pours; S3 records them as
 observed and applies this ruling when a case sets an `incomplete` expectation.
+
+## SRJ inputs: what counts as a terminal (K-13..K-15)
+
+These clauses specialise the counting above for a Layout built from a SimpleRouteJson document
+(`spec/formats/srj.md`). They resolve Q-68.
+
+**K-13 — required links come only from `pointsToConnect`.** For an SRJ connection with *k*
+declared points, the required links are the `max(0, k − 1)` edges of a minimum spanning tree over
+those points, exactly as K-11 chooses edges among terminal components. Each J802 connection has
+two points, so it contributes one required link; a whole J802 board contributes 15.
+
+**K-14 — pre-existing net-owned copper is attachable, not a terminal.** Copper an SRJ obstacle
+declares as a connection's own copper (`spec/formats/srj.md` J-23) is same-net copper the router
+may attach its routes to, but it is **not** an independent terminal component: it does not add to
+`connections.maximum` or to `incomplete`, and it never creates a required link of its own. This
+overrides, for SRJ-derived Layouts only, the general rule (K-08, K-10) that a Pour is a terminal
+component — SRJ pre-existing copper stands in for wiring the board already has, and re-stitching
+it would demand joins the board does not need. A connection is complete (K-12) as soon as its
+declared points are electrically joined, whether directly or through the net-owned copper.
+
+**K-15 — observed counts.** Run as a sealed program, the reference autorouter evaluates exactly
+15 required connections on each J802 board (`b223-j802.srj.json`, and the six-layer
+`b223-j802-six-layer{,-v2,-v3}.srj.json`), one per declared connection, never one per copper
+fragment; reading each owned fragment as its own terminal would instead have yielded on the order
+of 52 (two-layer) / 188 (six-layer). The spec follows the observed 15 (K-13, K-14). No Violation
+is present before routing and none is added on any of the four boards.
