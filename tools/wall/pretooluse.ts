@@ -144,10 +144,18 @@ if (isolated && cfg) {
     for (const s of systemOk) if (abs === s || abs.startsWith(s + "/")) return true;
     return false;
   }
+  // The agent's own checkout: a worktree lives under the main checkout, so `..` must be judged
+  // against the worktree root, not the main root.
+  const wtRootRaw = safe(() => { const r = spawnSync("git", ["rev-parse", "--show-toplevel"], { cwd, encoding: "utf8" }); return r.status === 0 ? r.stdout.trim() : cwd; }, cwd);
+  const wtRoot = safe(() => realpathSync(wtRootRaw), wtRootRaw);
   for (const s of allStrings) {
     for (const tokRaw of pathTokens(s)) {
       const tok = expand(tokRaw);
       const abs = isAbsolute(tok) ? resolve(tok) : resolve(cwd, tok);
+      if (tokRaw.includes("..")) {
+        const real = safe(() => realpathSync(abs), abs);
+        if (!(real === wtRoot || real.startsWith(wtRoot + "/"))) deny("B-TRAVERSE", tokRaw);
+      }
       const isHomeOrVolume = abs.startsWith("/Users/") || abs.startsWith("/Volumes/") || abs.startsWith("/home/");
       if (isHomeOrVolume && !inAllowed(abs)) deny(tokRaw.includes("..") ? "B-TRAVERSE" : "P-OUT", tokRaw);
       const real = safe(() => realpathSync(abs), abs);

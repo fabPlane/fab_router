@@ -10,14 +10,16 @@ dest="$private/evidence/transcripts/$m"
 mkdir -p "$dest"
 # Claude Code keeps per-project transcripts under ~/.claude/projects/<slug>/ ; the slug is the
 # project path with '/' replaced by '-'.
-slug=$(printf '%s' "$root" | sed 's#/#-#g')
-src="$HOME/.claude/projects/$slug"
+# Both '/' and '_' become '-'; worktree sessions live in sibling directories with the same prefix.
+slug=$(printf '%s' "$root" | sed 's#[/_]#-#g')
 n=0
-if [ -d "$src" ]; then
-  for f in $(find "$src" -name '*.jsonl' -type f); do
-    cp "$f" "$dest/"; n=$((n+1))
+for src in "$HOME/.claude/projects/$slug"*; do
+  [ -d "$src" ] || continue
+  for f in $(cd "$src" && find . \( -name '*.jsonl' -o -name '*.meta.json' \) -type f); do
+    mkdir -p "$dest/$(basename "$src")/$(dirname "$f")"
+    cp "$src/$f" "$dest/$(basename "$src")/$f"; n=$((n+1))
   done
-fi
+done
 manifest="$root/evidence/transcripts.manifest.json"
 tmp=$(mktemp)
 {
@@ -25,10 +27,9 @@ tmp=$(mktemp)
   echo "  \"milestone\": \"$m\", \"taken\": \"$(date -u +%Y-%m-%dT%H:%M:%SZ)\", \"head\": \"$(git rev-parse HEAD 2>/dev/null || echo none)\","
   echo "  \"files\": ["
   first=1
-  for f in "$dest"/*.jsonl; do
-    [ -f "$f" ] || continue
+  for f in $(cd "$dest" && find . -type f | sort); do
     [ $first -eq 1 ] || echo ","; first=0
-    printf '    {"name": "%s", "sha256": "%s", "bytes": %s}' "$(basename "$f")" "$(shasum -a 256 "$f" | cut -d' ' -f1)" "$(stat -f%z "$f")"
+    printf '    {"name": "%s", "sha256": "%s", "bytes": %s}' "${f#./}" "$(shasum -a 256 "$dest/$f" | cut -d' ' -f1)" "$(stat -f%z "$dest/$f")"
   done
   echo; echo "  ]"; echo "}"
 } > "$tmp"
