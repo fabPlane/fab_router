@@ -85,6 +85,9 @@ cases.push(["verifier redirect into src", "deny", call("verifier", "Bash", { com
 cases.push(["orch cat read src", "allow", call(undefined, "Bash", { command: "cat src/api.ts | head" })]);
 cases.push(["impl bun test file read", "allow", call("implementer", "Bash", { command: "bun test test/geom.test.ts" })]);
 cases.push(["impl redirect into spec", "deny", call("implementer", "Bash", { command: "echo x " + ">" + " spec/x.md" }), "W-SCOPE"]);
+cases.push(["impl commit with trailer heredoc", "allow", call("implementer", "Bash", { command: "git commit -q -F - <<EOF\nfix\n\nWall-Role: implementer\nAgent-Id: x\nSpec-Tree: abc\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF" })]);
+cases.push(["impl cat into src heredoc", "allow", call("implementer", "Bash", { command: "cat " + ">" + " src/x.ts <<EOF\nx\nEOF" })]);
+cases.push(["impl cat into spec heredoc", "deny", call("implementer", "Bash", { command: "cat " + ">" + " spec/x.md <<EOF\nx\nEOF" }), "W-SCOPE"]);
 // The denylist itself is private; add its first path and word as cases when the config is reachable.
 const cfgPath = process.env.FAB_ROUTER_WALL_CONFIG;
 if (cfgPath && existsSync(cfgPath)) {

@@ -212,14 +212,25 @@ if (tool === "Bash") {
   // Extract only the WRITE TARGETS of a command — the path a redirect, tee, cp/mv destination,
   // mkdir, touch, sed -i, or rm acts on. A path that merely appears as an argument to a reader
   // (ls, cat, bun test <file>) is not a write and is never flagged here.
+  // Strip heredoc bodies first: a commit message passed as `<<'EOF' … EOF` is data, not shell, and
+  // its content (e.g. a `Co-Authored-By: … <noreply@anthropic.com>` trailer) must not be parsed for
+  // redirects. A real `cat > file <<EOF` keeps its `> file` (it precedes the heredoc marker).
+  const scan = cmd.replace(/<<-?\s*(['"]?)([A-Za-z_]\w*)\1[\s\S]*?\n\s*\2\b/g, " <<HEREDOC ");
   const targets: string[] = [];
-  const push = (t: string | undefined) => { if (t) targets.push(t.replace(/^["']|["']$/g, "").replace(/^\.\//, "")); };
-  for (const m of cmd.matchAll(/(?:>>?|(?<![0-9])>)\s*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of cmd.matchAll(/\btee\s+(?:-a\s+)?("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of cmd.matchAll(/\b(?:mkdir|touch|rmdir)\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of cmd.matchAll(/\brm\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of cmd.matchAll(/\b(?:cp|mv|install)\s+(?:-\S+\s+)*(?:"[^"]+"|'[^']+'|[^\s"';|&<>()]+)\s+("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of cmd.matchAll(/\bsed\s+-i\S*\s+(?:-e\s+\S+\s+|'[^']*'\s+|"[^"]*"\s+|\S+\s+)("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  const push = (t: string | undefined) => {
+    if (!t) return;
+    const c = t.replace(/^["']|["']$/g, "").replace(/^\.\//, "");
+    // A redirect/copy target is a path. An email address fragment (`…@…>`) and a bare all-caps
+    // heredoc delimiter are not; ignore them so a commit trailer never trips W-SCOPE.
+    if (/@/.test(c) || /^[A-Z][A-Z0-9_]*$/.test(c)) return;
+    targets.push(c);
+  };
+  for (const m of scan.matchAll(/(?:>>?|(?<![0-9])>)\s*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/\btee\s+(?:-a\s+)?("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/\b(?:mkdir|touch|rmdir)\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/\brm\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/\b(?:cp|mv|install)\s+(?:-\S+\s+)*(?:"[^"]+"|'[^']+'|[^\s"';|&<>()]+)\s+("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/\bsed\s+-i\S*\s+(?:-e\s+\S+\s+|'[^']*'\s+|"[^"]*"\s+|\S+\s+)("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
   for (const t of targets) {
     if (t === "/dev/null" || t.startsWith("$") || t.startsWith("/dev/")) continue;
     const rel = relToProject(t);
