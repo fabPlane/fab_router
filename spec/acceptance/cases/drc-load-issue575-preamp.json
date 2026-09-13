@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-issue575-preamp",
+  "kind": "drc-load",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn",
+  "expect": {
+    "violations": {
+      "exact": 0
+    },
+    "incomplete": {
+      "exact": 7
+    }
+  },
+  "note": "Spec numbers: 0 violations and 7 incomplete, equal to the CAD tool's own report (7 unconnected items). Suite A pins 145 incomplete (its endpoint model sees the thermal-relief Pads as disconnected); suite B pins 8 (one Track through a Pad's copper, Net-(U4-Pad22), is a K-01 join). Both references, measured under K-01..K-03, give 7."
+}

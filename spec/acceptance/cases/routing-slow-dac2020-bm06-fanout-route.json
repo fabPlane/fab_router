@@ -1,0 +1,38 @@
+{
+  "id": "routing-slow-dac2020-bm06-fanout-route",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm06.dsn",
+  "settings": {
+    "fanout": true,
+    "maxPasses": 10,
+    "timeoutSeconds": 120
+  },
+  "reference": "Issue508-DAC2020_bm06.dsn.fanout.json",
+  "referenceSide": "A",
+  "expect": {
+    "incomplete": {
+      "max": 8
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 10
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 84000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: with the fanout pre-pass and 10 passes at most 8 incomplete. The suite's bound (8) is looser than the measured reference (A: 2); the suite's bound is kept."
+}

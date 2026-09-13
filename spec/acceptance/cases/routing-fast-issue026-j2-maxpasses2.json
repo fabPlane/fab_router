@@ -1,0 +1,27 @@
+{
+  "id": "routing-fast-issue026-j2-maxpasses2",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "maxPasses": 2,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "passes": {
+      "max": 2
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 6
+    },
+    "wallClockMs": {
+      "max": 90000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A asserts the run stops at exactly pass 2 with maxPasses 2 (its fanout pre-pass on). Under the spec a run may also stop earlier when nothing is incomplete, so the case bounds passes from above only. Measured with the 'p1' profile: reference A left 6, reference B 5; the bound is the looser of the two."
+}

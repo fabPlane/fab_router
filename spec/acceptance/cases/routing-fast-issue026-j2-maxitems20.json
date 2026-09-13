@@ -1,0 +1,28 @@
+{
+  "id": "routing-fast-issue026-j2-maxitems20",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "maxItems": 20,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 20
+    },
+    "addedBarrels": {
+      "max": 20
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 14000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: the run with an item cap of 20 reaches a terminal state. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

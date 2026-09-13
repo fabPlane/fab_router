@@ -1,0 +1,28 @@
+{
+  "id": "routing-slow-issue230-cnh-plane-layers",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue230-CNH_Functional_Tester_1.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 300
+  },
+  "expect": {
+    "incomplete": {
+      "max": 5
+    },
+    "passes": {
+      "max": 20
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 16
+    },
+    "wallClockMs": {
+      "max": 300000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: at most 5 incomplete within 20 passes and 5 min, and no Track on the two plane Sheets (indices 1 and 2). Suite B: every connection completes in 4 passes and the 16 pre-existing violations stay 16. Tracks on plane Sheets are forbidden by rules/layers.md. Under the 'default' profile reference A hit the profile's 60 s budget with 2 incomplete; reference B hit the profile's 60 s budget with 29 incomplete (see the reference file); the case's own budget is what its settings say."
+}

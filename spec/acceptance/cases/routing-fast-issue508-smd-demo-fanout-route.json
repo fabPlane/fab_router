@@ -1,0 +1,38 @@
+{
+  "id": "routing-fast-issue508-smd-demo-fanout-route",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue508-SMD-routing-issue-demo.dsn",
+  "settings": {
+    "fanout": true,
+    "maxPasses": 10,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue508-SMD-routing-issue-demo.dsn.fanout.json",
+  "referenceSide": "B",
+  "expect": {
+    "incomplete": {
+      "max": 2
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 10
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: with the fanout pre-pass and 10 passes at most 2 incomplete. The suite's bound (2) is looser than the measured reference (B: 0); the suite's bound is kept."
+}

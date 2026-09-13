@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue733-kicad-complex-hierarchy-output-session",
+  "kind": "ses-apply",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue733-kicad_complex_hierarchy_input_design.dsn",
+  "ses": "Issue733-kicad_complex_hierarchy_output_session.ses",
+  "reference": "Issue733-kicad_complex_hierarchy_output_session.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 16
+    },
+    "barrels": {
+      "exact": 0
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 172
+    }
+  },
+  "note": "Both suites: applying this session yields the same Layout as importing the JSON rendering of the same session that ships beside it."
+}

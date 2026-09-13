@@ -1,0 +1,24 @@
+{
+  "id": "routing-fast-issue269-min-fr-test-planes",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-min_fr_test-min_fr_test.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 2
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Plane-Sheet board: a small board whose plane Sheets carry pours of one net each. The incomplete bound is filled from the measured reference; every plane-net connection whose both ends already sit in the plane is counted but not attempted (K-07). Measured with the 'default' profile: reference A left 2, reference B 2; the bound is the looser of the two."
+}

@@ -1,0 +1,31 @@
+{
+  "id": "routing-slow-issue026-j2-p1-optimizer-limits",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "fanout": false,
+    "optimizer": true,
+    "optimizerMaxPasses": 1,
+    "optimizerMaxItems": 2,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "passes": {
+      "max": 1
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 6
+    },
+    "wallClockMs": {
+      "max": 94000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: one routing pass then one optimiser pass over at most 2 items returns a Layout. Measured with the 'p1' profile: reference A left 6, reference B 5; the bound is the looser of the two."
+}

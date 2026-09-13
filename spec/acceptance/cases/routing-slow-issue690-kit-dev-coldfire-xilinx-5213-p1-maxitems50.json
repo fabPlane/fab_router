@@ -1,0 +1,32 @@
+{
+  "id": "routing-slow-issue690-kit-dev-coldfire-xilinx-5213-p1-maxitems50",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 50,
+    "timeoutSeconds": 120,
+    "fanout": false
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 50
+    },
+    "addedBarrels": {
+      "max": 50
+    },
+    "passes": {
+      "max": 1
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 44000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: the run completes without error on a board whose padstack references once broke a reference. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

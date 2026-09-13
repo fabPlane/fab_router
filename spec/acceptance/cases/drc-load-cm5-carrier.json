@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-cm5-carrier",
+  "kind": "drc-load",
+  "origin": "new",
+  "tier": "fast",
+  "board": "cm5-carrier.dsn",
+  "expect": {
+    "violations": {
+      "exact": 25
+    },
+    "incomplete": {
+      "exact": 129
+    }
+  },
+  "note": "rules/drc.md: 25 pre-existing violations (14 Pad-Rim, 11 Pad-Pad; reference A's own count is 37, of which 12 are same-net pairs exempt under DR-02; reference B's own count is 25). Both references measured under K-01..K-03 leave 129 of 284 connections incomplete at load (the hand-routed differential pairs are present)."
+}

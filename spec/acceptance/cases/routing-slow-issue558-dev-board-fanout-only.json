@@ -1,0 +1,29 @@
+{
+  "id": "routing-slow-issue558-dev-board-fanout-only",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue558-dev-board.dsn",
+  "settings": {
+    "fanout": true,
+    "router": false,
+    "optimizer": false,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "addedBarrels": {
+      "min": 1
+    },
+    "passes": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 36000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: fanout-only mode runs zero routing passes and inserts at least one Barrel."
+}

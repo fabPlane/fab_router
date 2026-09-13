@@ -1,0 +1,26 @@
+{
+  "id": "routing-slow-issue229-display-anyangle-p1",
+  "kind": "routing",
+  "origin": "refB-suite",
+  "tier": "slow",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "settings": {
+    "angleMode": "any",
+    "maxPasses": 1,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "passes": {
+      "max": 1
+    },
+    "wallClockMs": {
+      "max": 82000,
+      "advisory": true
+    }
+  },
+  "note": "Suite B: in any-angle mode one pass leaves at least 28 nets whole (parity with the 45-degree mode) with 0 violations; the file's own 45-degree wiring is legal under no restriction."
+}

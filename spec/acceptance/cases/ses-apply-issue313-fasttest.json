@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue313-fasttest",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue313-FastTest.dsn",
+  "ses": "Issue313-FastTest.ses",
+  "reference": "Issue313-FastTest.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 3
+    },
+    "barrels": {
+      "exact": 41
+    },
+    "violations": {
+      "exact": 1
+    },
+    "tracks": {
+      "exact": 256
+    }
+  },
+  "note": "A session for the fast-test board."
+}

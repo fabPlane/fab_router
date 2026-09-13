@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-issue229-display-unrouted",
+  "kind": "drc-load",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "expect": {
+    "violations": {
+      "exact": 0
+    },
+    "incomplete": {
+      "exact": 8
+    }
+  },
+  "note": "Both suites: the unrouted board loads with 0 violations and a non-empty set of incomplete connections; per net the count is (terminal components - 1), K-09. The incomplete count is filled from the measured references. Measured at load: 8 incomplete."
+}

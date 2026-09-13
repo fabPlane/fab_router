@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "ses": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.ses",
+  "reference": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "barrels": {
+      "exact": 3
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 16
+    }
+  },
+  "note": "A session for a board with plane Sheets on which no Barrel may land."
+}

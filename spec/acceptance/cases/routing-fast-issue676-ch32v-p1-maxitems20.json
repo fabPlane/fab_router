@@ -1,0 +1,31 @@
+{
+  "id": "routing-fast-issue676-ch32v-p1-maxitems20",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue676-ch32v-tx118s.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 20,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 20
+    },
+    "addedBarrels": {
+      "max": 20
+    },
+    "passes": {
+      "max": 1
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: the run completes without exceptions. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

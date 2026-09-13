@@ -1,0 +1,32 @@
+{
+  "id": "routing-slow-dac2020-bm05-p1-maxitems5",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm05.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 5,
+    "timeoutSeconds": 30
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 5
+    },
+    "addedBarrels": {
+      "max": 5
+    },
+    "incomplete": {
+      "max": 104,
+      "advisory": true
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 60000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: one pass capped at 5 routed connections leaves at most 104 incomplete. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. The suite's bound (104) is looser than the measured reference (B: 34); the suite's bound is kept."
+}

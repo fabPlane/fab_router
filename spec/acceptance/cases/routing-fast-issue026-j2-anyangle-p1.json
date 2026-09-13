@@ -1,0 +1,26 @@
+{
+  "id": "routing-fast-issue026-j2-anyangle-p1",
+  "kind": "routing",
+  "origin": "refB-suite",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "angleMode": "any",
+    "maxPasses": 1,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "passes": {
+      "max": 1
+    },
+    "wallClockMs": {
+      "max": 90000,
+      "advisory": true
+    }
+  },
+  "note": "Suite B: in any-angle mode one pass leaves at least 4 of 12 nets whole with 0 violations."
+}

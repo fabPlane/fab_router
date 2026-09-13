@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue283-unconnectedtracesunderpads-natural-tone-preamp",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn",
+  "ses": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.ses",
+  "reference": "Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "barrels": {
+      "exact": 94
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 459
+    }
+  },
+  "note": "A session whose Tracks end under Pads without touching their centres; under rules/connectivity.md they connect."
+}

@@ -1,0 +1,37 @@
+{
+  "id": "routing-fast-dac2020-bm08-complete",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm08.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue508-DAC2020_bm08.dsn.default.json",
+  "referenceSide": "B",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 2
+    },
+    "wallClockMs": {
+      "max": 20000,
+      "advisory": true
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: exactly 0 incomplete within 2 passes and 20 s. Suite B: every attempted net whole."
+}

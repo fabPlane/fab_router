@@ -1,0 +1,38 @@
+{
+  "id": "routing-slow-dac2020-bm10-fanout-route",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm10.dsn",
+  "settings": {
+    "fanout": true,
+    "maxPasses": 10,
+    "timeoutSeconds": 120
+  },
+  "reference": "Issue508-DAC2020_bm10.dsn.fanout.json",
+  "referenceSide": "A",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 10
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 140000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: with the fanout pre-pass and 10 passes every connection completes."
+}

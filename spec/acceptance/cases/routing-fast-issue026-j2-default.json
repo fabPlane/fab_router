@@ -1,0 +1,38 @@
+{
+  "id": "routing-fast-issue026-j2-default",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue026-J2_reference.dsn.default.json",
+  "referenceSide": "B",
+  "expect": {
+    "incomplete": {
+      "max": 3
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "passes": {
+      "max": 99
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 14000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: at most 3 incomplete, no violations, at most 99 passes. Suite B: at least 9 of the 12 nets whole (its default pipeline leaves none open). The reference files record both references completing to 0 or 3. The suite's bound (3) is looser than the measured reference (B: 0); the suite's bound is kept."
+}

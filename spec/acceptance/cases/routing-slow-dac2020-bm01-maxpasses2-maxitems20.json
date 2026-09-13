@@ -1,0 +1,27 @@
+{
+  "id": "routing-slow-dac2020-bm01-maxpasses2-maxitems20",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm01.dsn",
+  "settings": {
+    "maxPasses": 2,
+    "maxItems": 20,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 20
+    },
+    "addedBarrels": {
+      "max": 20
+    },
+    "passes": {
+      "max": 2
+    },
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Suite A: 2 passes with an item cap of 20 reach a terminal state. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. Under the 'default' profile reference A hit the profile's 60 s budget with 7 incomplete; reference B hit the profile's 60 s budget with 60 incomplete (see the reference file); the case's own budget is what its settings say."
+}

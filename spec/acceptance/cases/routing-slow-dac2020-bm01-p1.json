@@ -1,0 +1,27 @@
+{
+  "id": "routing-slow-dac2020-bm01-p1",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm01.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "timeoutSeconds": 270
+  },
+  "expect": {
+    "passes": {
+      "max": 1
+    },
+    "incomplete": {
+      "max": 56
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 58000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: after one pass at most 56 incomplete (of 196 connections), within 4 min 30 s. The suite's bound (56) is looser than the measured reference (A: 53); the suite's bound is kept."
+}

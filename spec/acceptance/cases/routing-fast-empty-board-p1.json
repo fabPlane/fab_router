@@ -1,0 +1,31 @@
+{
+  "id": "routing-fast-empty-board-p1",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "empty_board.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "timeoutSeconds": 30
+  },
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "addedTracks": {
+      "exact": 0
+    },
+    "addedBarrels": {
+      "exact": 0
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: routing a board with no nets reaches a terminal state without error."
+}

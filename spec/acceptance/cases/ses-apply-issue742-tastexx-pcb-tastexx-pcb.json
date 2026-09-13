@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue742-tastexx-pcb-tastexx-pcb",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue742-tastexx-pcb-tastexx-pcb.dsn",
+  "ses": "Issue742-tastexx-pcb-tastexx-pcb.ses",
+  "reference": "Issue742-tastexx-pcb-tastexx-pcb.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 3
+    },
+    "barrels": {
+      "exact": 6
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 36
+    }
+  },
+  "note": "The nested copy of the tastexx session."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "routing-slow-issue555-bbd-mars64-timebudget",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue555-BBD_Mars-64.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 2
+  },
+  "expect": {
+    "stoppedBy": {
+      "exact": "timeBudget"
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 4000,
+      "advisory": true
+    }
+  },
+  "note": "A 2 s budget on a board that needs minutes: the run stops by its time budget, returns the best snapshot, and R-1..R-5 hold. Under the 'default' profile reference A hit the profile's 60 s budget with 31 incomplete; reference B hit the profile's 60 s budget with 57 incomplete (see the reference file); the case's own budget is what its settings say."
+}

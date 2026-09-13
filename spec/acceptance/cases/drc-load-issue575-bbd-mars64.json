@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-issue575-bbd-mars64",
+  "kind": "drc-load",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn",
+  "expect": {
+    "violations": {
+      "exact": 12
+    },
+    "incomplete": {
+      "exact": 0
+    }
+  },
+  "note": "Spec numbers (rules/drc.md load-time table): 12 violations (9 spacing Track-Track pairs of different nets at 199.8-199.9 um against 200 um, 3 Track-Fence pairs at mounting holes) and 0 incomplete. Suite A pins (3 incomplete, 76 violations) and suite B (1, 76) under their own models: 64 of the 76 are same-net Barrel-in-Pad test points, exempt under DR-02; the extra incompletes are K-01 copper-overlap joins. Both references, measured under K-01..K-03 and DR-02, give 12 and 0. The CAD tool's report lists 6 clearance findings against footprint graphics not present in the file, 1 hole-clearance finding (the H4 Track-Fence pair), 17 dangling vias and no unconnected items."
+}

@@ -1,0 +1,38 @@
+{
+  "id": "routing-slow-issue558-dev-board-fanout-route",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue558-dev-board.dsn",
+  "settings": {
+    "fanout": true,
+    "maxPasses": 10,
+    "timeoutSeconds": 120
+  },
+  "reference": "Issue558-dev-board.dsn.fanout.json",
+  "referenceSide": "A",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 10
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 36000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: with the fanout pre-pass and 10 passes every connection completes on this SMD-heavy board."
+}

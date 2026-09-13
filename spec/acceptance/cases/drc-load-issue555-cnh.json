@@ -1,0 +1,13 @@
+{
+  "id": "drc-load-issue555-cnh",
+  "kind": "drc-load",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue555-CNH_Functional_Tester_1.dsn",
+  "expect": {
+    "violations": {
+      "exact": 16
+    }
+  },
+  "note": "Suite A: the fixture ships with 16 violations (all Pad-Pad or Track-Pad of different nets at the power classes' 635.2 um requirement, rules/drc.md DR-09); its strict-DRC case requires them to remain exactly 16 after routing."
+}

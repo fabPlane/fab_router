@@ -1,0 +1,23 @@
+{
+  "id": "routing-slow-dac2020-bm01-p2",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm01.dsn",
+  "settings": {
+    "maxPasses": 2,
+    "timeoutSeconds": 300
+  },
+  "expect": {
+    "passes": {
+      "max": 2
+    },
+    "incomplete": {
+      "max": 28
+    },
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Suite A: after two passes at most 28 incomplete, within 5 min. Under the 'default' profile reference A hit the profile's 60 s budget with 7 incomplete; reference B hit the profile's 60 s budget with 60 incomplete (see the reference file); the case's own budget is what its settings say."
+}

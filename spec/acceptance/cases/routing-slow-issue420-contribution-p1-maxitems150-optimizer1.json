@@ -1,0 +1,32 @@
+{
+  "id": "routing-slow-issue420-contribution-p1-maxitems150-optimizer1",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue420-contribution-board.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 150,
+    "timeoutSeconds": 300,
+    "fanout": false,
+    "optimizer": true,
+    "optimizerMaxPasses": 1
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 150
+    },
+    "addedBarrels": {
+      "max": 150
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "wallClockMs": {
+      "max": 187000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: routing plus one optimiser pass reaches a terminal state with exactly 0 violations. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

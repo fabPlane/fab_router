@@ -1,0 +1,17 @@
+{
+  "id": "routing-slow-issue269-caniot-tiny-arm-planes",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue269-caniot-tiny-arm.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Plane-Sheet board: a dense 4-Sheet board with two plane Sheets. The incomplete bound is filled from the measured reference; every plane-net connection whose both ends already sit in the plane is counted but not attempted (K-07). Under the 'default' profile reference A hit the profile's 60 s budget with 89 incomplete; reference B hit the profile's 60 s budget with 84 incomplete (see the reference file); the case's own budget is what its settings say."
+}

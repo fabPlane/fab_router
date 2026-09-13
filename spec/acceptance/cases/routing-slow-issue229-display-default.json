@@ -1,0 +1,35 @@
+{
+  "id": "routing-slow-issue229-display-default",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue229-display-8-digit-hc595.dsn.default.json",
+  "referenceSide": "B",
+  "expect": {
+    "incomplete": {
+      "max": 20
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 48000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: at most 20 incomplete and exactly 0 violations after routing (the board loads with 0). Suite B: at least 29 nets whole. The board carries a keepout that an earlier exporter got wrong; routing must respect it. The suite's bound (20) is looser than the measured reference (B: 0); the suite's bound is kept."
+}

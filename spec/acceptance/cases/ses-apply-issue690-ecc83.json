@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue690-ecc83",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue690-ecc83.dsn",
+  "ses": "Issue690-ecc83.ses",
+  "reference": "Issue690-ecc83.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "barrels": {
+      "exact": 0
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 116
+    }
+  },
+  "note": "A session for the ecc83 board."
+}

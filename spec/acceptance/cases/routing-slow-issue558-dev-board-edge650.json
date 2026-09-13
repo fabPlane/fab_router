@@ -1,0 +1,22 @@
+{
+  "id": "routing-slow-issue558-dev-board-edge650",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue558-dev-board.dsn",
+  "settings": {
+    "copperToEdgeClearanceUm": 650,
+    "maxPasses": 300,
+    "timeoutSeconds": 180
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 171000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: with a 650 um copper-to-Rim clearance every inserted Barrel spans the whole 2-Sheet Stack and uses the board's smallest via PadForm; the Rim's clearance is 650 um on every Sheet (a settings case covers the effective value)."
+}
