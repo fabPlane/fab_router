@@ -8,17 +8,19 @@
   "reference": "Issue191-processor.Z80-processor.ses.applied-ses.json",
   "expect": {
     "incomplete": {
-      "exact": 92
+      "exact": 92,
+      "advisory": true
     },
     "barrels": {
-      "exact": 183
+      "exact": 223
     },
     "violations": {
-      "exact": 0
+      "exact": 0,
+      "advisory": true
     },
     "tracks": {
-      "exact": 1664
+      "exact": 1921
     }
   },
-  "note": "A session for the Z80 processor board (slow tier: the board is large)."
+  "note": "A session for the Z80 processor board (slow tier: the board is large). Ruling Q-I2-49: brace-named nets are ordinary names (D-10); the session's 1921 wires / 223 vias all apply. incomplete/violations advisory until re-measured (S6)."
 }

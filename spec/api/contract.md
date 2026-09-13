@@ -194,3 +194,16 @@ Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTI
   (I2) uses the same rule via the shared predicates in `src/route/clear.ts`.
 - **Q-I3b-44** Confirmed: a drill exists on every Sheet of its span whether or not the form has
   copper there; DRC counts the same pairs the router avoids.
+- **Q-I2-47** `Layout.file` (unit, perUnit, quote, hostCad, hostVersion) and `Part.locked` added
+  to the public Layout; until the builder populates them the document attachment is acceptable.
+- **Q-I2-48** Case amended to 11: exact arithmetic governs (DR-01/DR-07).
+- **Q-I2-49**, **Q-I2-50** Cases amended to the sessions' own counts; F-S61 stands.
+- **Q-I2-51** The three trees are being regenerated with exact half-toward-+∞ rounding (F-43).
+- **Q-I2-52** F-S42 amended: windows are not written. **Q-I2-53** F-S62 amended: `Top`/`Bottom` aliases.
+- **Q-I2-54** DR-12 added; `Fence.part` added to the Layout.
+- **Q-I2-55**, **Q-I2-56**, **Q-I2-57** DR-03 / DR-06a amended as proposed.
+- **Q-I2-58** Reference `traceLengthMm` values are being corrected (×10).
+- **Q-I2-59** `crossesEdge` / `withinRim` belong in `src/geom`; a follow-up moves them.
+- **Q-I2-60** `Track.origin` / `Barrel.origin` (`"file" | "session" | "router"`) added; the router
+  sets `"router"` on everything it inserts; `includeFileWiring: false` writes only `"router"` items.
+- **Q-I2-61**, **Q-I2-62** Confirmed.

@@ -23,6 +23,9 @@ violations (76 and 2 respectively); the CAD tool counts neither; and R-1 must no
 the router legitimately dropping a Barrel into a same-net Pad or joining a Track to one.
 
 **DR-03 — checked pairs.**
+*Amended (Q-I2-55):* `rim` Violations are counted per (item, Sheet), like DR-04.
+*Amended (Q-I2-56):* in `checkDrc`, DR-11 applies to `free` copper only; held and locked copper
+is measured by this clause alone.
 
 | A \ B | Pad | Barrel | Track | Pour | Fence (track) | Fence (barrel) | Rim |
 |---|---|---|---|---|---|---|---|
@@ -146,3 +149,11 @@ rule `rim`, whether or not it is near an outline segment. (Ruling Q-I3-23.)
 on every Sheet within the drill's span (all Sheets for a through drill) against other-net copper,
 and against every other-net drill (drill-to-drill distance ≥ the hole clearance) regardless of
 Sheet. DRC and the router apply the same rule.
+*Amended (Q-I2-57):* a hole Violation is counted once per (drill, item) pair, not per Sheet.
+
+**DR-12 — Part-owned Fences and the Part's own Pads (ruling Q-I2-54).** A Fence that belongs to
+a Part (an image keepout) is not checked against that Part's own Pads: CAD exporters write a
+footprint's non-plated holes as Part-owned circular keepouts at pad size, overlapping the
+footprint's pads by design. Under `holeClearanceUm` such a circular Fence is a `hole_edge` Fence
+(C-15) checked against everything. Until `Fence.part` is populated, "not checked against any Pad"
+is the accepted approximation.

@@ -45,17 +45,19 @@ export interface PadForm {
   attachAllowed: boolean;
 }
 
-export interface Part { id: number; ref: string; package: string; side: Side; at: Pt; rotationDeg: number }
+export interface Part { id: number; ref: string; package: string; side: Side; at: Pt; rotationDeg: number; /** `lock_type position` in the file. */ locked?: boolean }
 
 export interface Pad {
   id: number; part: number; pinName: string; net: number | null; form: number;
   at: Pt; rotationDeg: number; side: Side; sheets: readonly number[]; kind: number; hold: "locked";
 }
-export interface Barrel { id: number; net: number | null; at: Pt; form: number; fromSheet: number; toSheet: number; kind: number; hold: Hold }
-export interface Track { id: number; net: number | null; sheet: number; pts: readonly Pt[]; width: number; kind: number; hold: Hold }
+/** origin: who put the item there — "file" (design wiring), "session" (applySes), "router" (route). */
+export type Origin = "file" | "session" | "router";
+export interface Barrel { id: number; net: number | null; at: Pt; form: number; fromSheet: number; toSheet: number; kind: number; hold: Hold; origin?: Origin }
+export interface Track { id: number; net: number | null; sheet: number; pts: readonly Pt[]; width: number; kind: number; hold: Hold; origin?: Origin }
 export interface Pour { id: number; net: number | null; sheet: number; outline: readonly Pt[]; holes: readonly (readonly Pt[])[]; kind: number; hold: Hold }
 /** Fence.kind: the Kind of the keepout (`rules/keepouts.md` KO-05, `clearance.md` C-11); 0 = no Kind ("must merely not overlap"). */
-export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; kind: number; net?: number }
+export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; kind: number; net?: number; /** Owning Part for image keepouts (DR-12). */ part?: number }
 export interface Rim { outline: readonly Pt[]; cutouts: readonly (readonly Pt[])[]; kind: number }
 
 export interface Net { id: number; name: string; group: number; pads: readonly number[] }
@@ -102,6 +104,8 @@ export interface Layout {
   viaRules: readonly ViaRule[];
   /** SMD pad-edge-to-first-turn distance (`smd_to_turn_gap`), 0 when the file gives none. */
   pinEdgeToTurnLu: number;
+  /** Facts of the design file a session writer needs (F-S20/21/30/31). */
+  file?: { unit: string; perUnit: number; quote: string; hostCad?: string; hostVersion?: string };
   settingsFromFile?: Partial<import("./settings.ts").RouteSettings>;
   warnings: readonly Diagnostic[];
 }

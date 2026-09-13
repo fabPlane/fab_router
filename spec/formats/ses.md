@@ -110,6 +110,8 @@ freshly read board with that file.
   reads a design file, so its unrouted session differs from the design file's wiring on a
   dozen corpus boards; section 5 defines the comparison so that only a genuinely different
   centreline counts.
+*Amended (Q-I2-52):* a Pour's holes are **not** written (`window` scopes omitted); the CAD tool
+re-fills pours on import.
 
 ## 5. Canonical tree and the `ses-roundtrip` case
 
@@ -187,3 +189,5 @@ strings, numbers or nested arrays. The expected trees are produced with the same
   skipped item. Pours count in neither.
 - **F-S63 Kinds.** Applied items take the Kind (clearance class) of their net's NetGroup, per
   `spec/rules/clearance.md`.
+*Amended (Q-I2-53):* when no Sheet has the exact name, `Top` / `Bottom` are accepted as the
+first / last Sheet with an `info` diagnostic `layer-aliased`.

@@ -8,17 +8,19 @@
   "reference": "Issue690-ecc83.ses.applied-ses.json",
   "expect": {
     "incomplete": {
-      "exact": 0
+      "exact": 0,
+      "advisory": true
     },
     "barrels": {
       "exact": 0
     },
     "violations": {
-      "exact": 0
+      "exact": 0,
+      "advisory": true
     },
     "tracks": {
-      "exact": 116
+      "exact": 61
     }
   },
-  "note": "A session for the ecc83 board."
+  "note": "A session for the ecc83 board. Ruling Q-I2-50: F-S61 replaces held file wiring; counts are the session's own. incomplete/violations advisory until re-measured (S6)."
 }
