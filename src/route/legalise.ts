@@ -39,13 +39,56 @@ export function shapeToAngle(pts: readonly Pt[], mode: AngleMode): Pt[] {
 }
 
 /**
+ * One or two candidate shapings of a centreline for the angle mode. The primary corners the
+ * diagonal (45) / horizontal (90) leg first; the alternate corners the other leg first, so a
+ * short skewed connection blocked one way can still be found the other. "any" has one variant.
+ */
+export function shapeVariants(pts: readonly Pt[], mode: AngleMode): Pt[][] {
+  const s = simplifyCollinear(pts);
+  if (s.length <= 1) return [s];
+  if (mode === "any") return [s];
+  const primary = mode === "45" ? snap45(s) : stairs90(s);
+  const alt: Pt[] = [];
+  for (let i = 0; i < s.length; i++) {
+    const p = s[i]!;
+    if (i === 0) { alt.push(p); continue; }
+    const a = alt[alt.length - 1]!;
+    const dx = p.x - a.x, dy = p.y - a.y;
+    if (mode === "45") {
+      const m = Math.min(Math.abs(dx), Math.abs(dy));
+      if (m > 0 && Math.abs(dx) !== Math.abs(dy)) {
+        // Orthogonal run first (along the longer axis), then the 45° leg into p.
+        if (Math.abs(dx) > Math.abs(dy)) alt.push({ x: p.x - Math.sign(dx) * m, y: a.y });
+        else alt.push({ x: a.x, y: p.y - Math.sign(dy) * m });
+      }
+    } else if (dx !== 0 && dy !== 0) {
+      alt.push({ x: a.x, y: p.y }); // vertical first
+    }
+    alt.push(p);
+  }
+  const altS = simplifyCollinear(alt);
+  const same = altS.length === primary.length && altS.every((q, i) => q.x === primary[i]!.x && q.y === primary[i]!.y);
+  return same ? [primary] : [primary, altS];
+}
+
+/**
  * Legalise a single-Sheet centreline: shape it, then check every leg at full width, necking the
  * end legs to `profile.neckWidth` only where the full width is blocked. Returns `ok: false` when
  * any leg is still blocked at the neck width — the caller then leaves the connection incomplete
  * (never inserts a violating leg).
  */
 export function legaliseTrail(layout: Layout, lattice: Lattice, sheet: number, centre: readonly Pt[], profile: Profile, ignore: IgnoreSet, allowNeck = true): LegaliseResult {
-  const pts = shapeToAngle(centre, profile.angleMode);
+  const variants = shapeVariants(centre, profile.angleMode);
+  let last: LegaliseResult = { ok: false, pts: [], widths: [] };
+  for (const pts of variants) {
+    last = legaliseShaped(layout, lattice, sheet, pts, profile, ignore, allowNeck);
+    if (last.ok) return last;
+  }
+  return last;
+}
+
+/** Check (and neck) one already-shaped polyline; the caller supplies the shaping. */
+function legaliseShaped(layout: Layout, lattice: Lattice, sheet: number, pts: readonly Pt[], profile: Profile, ignore: IgnoreSet, allowNeck: boolean): LegaliseResult {
   const n = pts.length - 1;
   if (n < 1) return { ok: false, pts: [], widths: [] };
   const widths: number[] = new Array(n).fill(profile.width);
@@ -60,7 +103,7 @@ export function legaliseTrail(layout: Layout, lattice: Lattice, sheet: number, c
     }
     return { ok: false, pts: [], widths: [] };
   }
-  return { ok: true, pts, widths };
+  return { ok: true, pts: pts.slice(), widths };
 }
 
 /** One Track's worth of a legalised centreline: a maximal run of legs sharing a width. */

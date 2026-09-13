@@ -2,28 +2,51 @@
  * Rip-up — negotiated-congestion soft obstacles (docs/DESIGN.md §6 `ripup.ts`). Literature: Dees
  * & Karger (1982) rip-up and reroute; McMurchie & Ebeling (1995) PathFinder history cost. When a
  * connection cannot be routed against hard obstacles, the search is re-run treating `free`
- * other-net copper as passable at a price `startRipupCost × (1 + history)`, where `history` is how
- * many times that item has already been ripped this run; the winning Trail then rips exactly those
- * items (through the Journal) and their connections are re-queued. Only `free` Tracks and Barrels
- * of other nets may be ripped — never Pads, Pours, Fences, the Rim, or `held`/`locked` items
- * (contract R-2). A per-connection budget bounds how many items one attempt may rip.
+ * other-net copper as passable at a price; the winning Trail then rips exactly those items (through
+ * the Journal) and their connections are re-queued. Only `free` Tracks and Barrels of other nets
+ * may be ripped — never Pads, Pours, Fences, the Rim, or `held`/`locked` items (contract R-2). A
+ * per-connection budget bounds how many items one attempt may rip.
  *
- * Public surface: RipupHistory, createRipupHistory, isRippable, ripCost.
+ * History is keyed by a coarse **resource** cell `(sheet, cx, cy)` rather than by an item id: a
+ * ripped Track is re-inserted with a fresh id, so per-id history would never accumulate on a
+ * contested region and the negotiation would oscillate. Bumping the cells a ripped Track occupied
+ * makes repeatedly-contested regions progressively expensive, which is what makes PathFinder
+ * converge (McMurchie & Ebeling 1995).
+ *
+ * Public surface: RipupHistory, createRipupHistory, isRippable, ripCost, cellHistory.
  */
-import type { Layout } from "../../spec/types/layout.ts";
+import type { Layout, Pt } from "../../spec/types/layout.ts";
 import type { Lattice } from "../lattice/index.ts";
 
-/** Per-item rip counts, keyed by item id (PathFinder history term). */
+/** Per-item rip counts and per-resource-cell congestion history. */
 export interface RipupHistory {
   count(id: number): number;
   bump(id: number): void;
+  /** Accumulated congestion at a coarse cell on a Sheet. */
+  cell(sheet: number, x: number, y: number): number;
+  /** Bump the coarse cells a segment crosses (called when its Track is ripped). */
+  bumpSeg(sheet: number, a: Pt, b: Pt): void;
+  readonly cellSize: number;
 }
 
-export function createRipupHistory(): RipupHistory {
+export function createRipupHistory(cellSize = 10_000): RipupHistory {
   const h = new Map<number, number>();
+  const cells = new Map<number, number>();
+  const size = Math.max(1, Math.round(cellSize));
+  const key = (sheet: number, cx: number, cy: number): number => ((sheet * 100003 + (cx + 0x40000)) * 0x80000) + (cy + 0x40000);
   return {
     count: (id) => h.get(id) ?? 0,
     bump: (id) => h.set(id, (h.get(id) ?? 0) + 1),
+    cell: (sheet, x, y) => cells.get(key(sheet, Math.floor(x / size), Math.floor(y / size))) ?? 0,
+    bumpSeg: (sheet, a, b) => {
+      const steps = Math.max(1, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y) / size));
+      for (let i = 0; i <= steps; i++) {
+        const x = a.x + ((b.x - a.x) * i) / steps, y = a.y + ((b.y - a.y) * i) / steps;
+        const k = key(sheet, Math.floor(x / size), Math.floor(y / size));
+        cells.set(k, (cells.get(k) ?? 0) + 1);
+      }
+    },
+    cellSize: size,
   };
 }
 
@@ -44,4 +67,9 @@ export function isRippable(layout: Layout, lattice: Lattice, id: number, net: nu
 /** The soft-obstacle cost of stepping through `id` given the run's settings and history. */
 export function ripCost(startRipupCost: number, history: RipupHistory, id: number): number {
   return startRipupCost * (1 + history.count(id));
+}
+
+/** Congestion cost of stepping through a location (resource history), for the soft search. */
+export function cellHistory(startRipupCost: number, history: RipupHistory, sheet: number, at: Pt): number {
+  return startRipupCost * history.cell(sheet, at.x, at.y);
 }

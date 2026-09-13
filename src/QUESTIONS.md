@@ -628,6 +628,9 @@ left for the stronger search + rip-up + fanout of I5.
 ## Status (task I6 — SimpleRouteJson adapter and differential-pair measurement)
 
 Verification, from the worktree root:
+## Status (task I5 — vias, multilayer, rip-up, fanout, nudge, optimiser, strict DRC, neck-down)
+
+Verification, run from the worktree root:
 
 | Command | Result |
 |---|---|
@@ -650,3 +653,65 @@ concurrently).
 R-1 holds on both J802 boards. A clean synthetic board routes end to end, avoids its obstacle and
 keeps every wire point inside its bounds; on the congested J802 corpus the single-Sheet milestone
 completes little (see question 68) but never adds a violation.
+| `bun run check:layers` | green — 55 files, 0 violations |
+| `bun run test` | green — 771 pass, 0 fail (17 files); `acceptance (fast)` 401 / 401, `DEFERRED_TO_I5` **empty** |
+| `bun run acceptance -- --tier fast --case 'routing-*'` | **16 / 16 pass**; `violations.maxAdded: 0` on every case (R-1); bm08 completes to 0 incomplete in 1 pass; the plane board (`no-vias-on-planes`) and j2-default now meet their bounds |
+| `test/route-vias.test.ts` | 6 tests: multilayer Barrel routing completes bm08 (R-1/R-3), R-4 (no Barrel with `viasAllowed:false`), plane-net completion (K-07), fanout raises `escaped` and adds Barrels with `passes:0`, optimiser monotonicity (R-6: Barrels/length/incomplete never increase) on two boards |
+| `test/route-core.test.ts`, `test/scenario-routing.test.ts`, `test/drc.test.ts` | green (76 tests; held-items R-2 and novia R-1/R-4 hold) |
+
+Slow tier (`--tier all --case 'routing-slow-*'`), spot-checked case by case (the whole tier is slow
+to run because a board the router cannot finish uses its full `timeBudgetMs`):
+
+- **Pass:** every feature case — optimiser (`j2-p1-optimizer-limits`, `issue229-display-p1-optimizer`,
+  `issue420-…-optimizer1`), plane (`issue269-z10-module`, `issue269-caniot-tiny-arm`), all 11
+  `maxitems`/`maxpasses` item-cap cases, `issue289-fht8086-6layer`, `issue066-gp8b-4layer`,
+  `issue555-cnh-strict` (strictDrc), `issue558-dev-board-edge650` (copper-to-edge override),
+  `issue555-bbd-mars64-timebudget` (`stoppedBy:"timeBudget"`), `issue039`, `issue159-setonix`,
+  `issue229-display-default`, `issue229-display-anyangle-p1`, `issue676-ch32v-maxpasses3`,
+  `dac2020-bm05-maxpasses20`, `issue558-dev-board-fanout-only`, `issue558-dev-board-fanout-limits`.
+- **Miss the completion bound (R-1 still 0 on every one):** the largest, densest boards under a
+  tight `incomplete`/exact-0 bound — `cm5-carrier-complete` (≤2), `dac2020-bm01-p2` (≤28),
+  `dac2020-bm07-complete` (=0, reaches 6), `issue034-green14seg` (≤1), `issue230-cnh-plane` (≤5),
+  the three exact-0/`≤8` fanout-route cases (`bm10`, `558`, `bm06`), and `bm11-fanout-only`
+  (≥154 Barrels, reaches 145 — the rest are pins in a fine-pitch cluster a 600 µm via cannot enter).
+  These are a router-*quality* gap, not a correctness one: `violations.maxAdded` is 0 on all of them.
+
+What is real now (task write set `src/route/`, `src/pipeline/`, `src/api.ts` bodies, `test/`):
+- `src/route/search.ts` — `aStarLayered`, the multi-Sheet A* whose state is `(sheet, cell, dir)`
+  with Barrel drops between Sheets and a Theta*-style line-of-sight goal test for goals buried in a
+  pin field.
+- `src/route/via.ts` — Barrel-candidate selection (`pickBarrel`, span cover per V-06) and
+  `dropViaNear` (a ring search for a clear escape spot with a straight-or-L stub).
+- `src/route/passes.ts` — cross-Sheet routing through one Barrel or the layered A*, a two-Barrel jog
+  fallback, plane-net completion (K-07), the R-5 item cap on Tracks+Barrels, keep-best rewind, and
+  the fanout/optimiser wiring path.
+- `src/route/ripup.ts` — PathFinder history keyed by a coarse **resource cell** (a ripped Track's
+  re-insertion gets a fresh id, so per-id history never accumulated and the negotiation oscillated).
+- `src/route/fanout.ts`, `src/route/nudge.ts`, `src/route/optimise.ts` — the fanout pre-pass, the
+  rip-local-reroute nudge, and the monotone optimiser (Barrel elimination + bend straightening,
+  R-6 by construction).
+- `src/route/legalise.ts` — two-orientation shaping (`shapeVariants`) so a short skewed connection
+  blocked one way is found the other, and neck-down enabled on the end legs (no-op unless
+  `neckWidthUm` is set).
+- `src/pipeline/index.ts` — the fanout → passes → optimiser stage sequence.
+
+66. **`maxItems` bounds inserted Tracks + Barrels, not connections.** `spec/api/settings.md` reads
+    "completes at most this many connections … however many Tracks and Barrels that takes", but the
+    routing cases' notes and `tools/acceptance/run-case.ts`'s `invariant:R-5` compare
+    `added.tracks + added.barrels ≤ maxItems`. I follow the cases (precedence #1): a connection whose
+    copper would push the item total over the cap is journaled-rolled-back and skipped, so a single
+    Barrel-jog connection never overshoots. Please reconcile the prose with the cases if the
+    connection reading was intended.
+
+67. **`strictDrc` is a no-op relaxation here.** The router inserts nothing that fails the exact
+    clearance predicate, so it never adds a violation regardless of `strictDrc`; `strictDrc:true` is
+    therefore already satisfied and `strictDrc:false` is not used to permit a router-added violation
+    in an already-violating region (R-1's "unless" clause is never taken). Confirm this is
+    acceptable, or specify a board/case where `strictDrc:false` must route *through* a pre-existing
+    violation that `strictDrc:true` would refuse.
+
+68. **Completion quality on the largest boards.** The greedy-plus-negotiated-congestion router
+    reaches R-1-clean completions well below the reference on the densest corpus boards (see the
+    "miss the completion bound" list above). Closing that gap needs a stronger global rip-up/reroute
+    or a gridless detailed router than this milestone builds; flagged so the spec side knows the
+    remaining `incomplete`/exact-0 slow bounds are a known quality gap, not a regression.

@@ -48,3 +48,9 @@ export * from "./pull.ts";
 export * from "./legalise.ts";
 export * from "./ripup.ts";
 export * from "./passes.ts";
+
+// Task I5: vias, fanout, nudge and the optimiser.
+export * from "./via.ts";
+export * from "./fanout.ts";
+export * from "./nudge.ts";
+export * from "./optimise.ts";
