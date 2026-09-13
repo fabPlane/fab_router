@@ -1,0 +1,178 @@
+{
+  "taken": "2026-09-13T22:45:58.707Z",
+  "head": "80d8e57fd1f5a22040f1b1f957ddc3b32eebdc9f",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "srj-j802-2layer",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0,
+          "preExisting": 0
+        },
+        "incomplete": {
+          "max": 4,
+          "advisory": true
+        },
+        "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": {
+          "max": 0.15,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 3,
+        "wallClockMs": 21773,
+        "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": 0,
+        "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": 0,
+        "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": 0,
+        "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": 0,
+        "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 4, got 15"
+      ],
+      "ms": 21776.188583
+    },
+    {
+      "id": "srj-j802-six-layer",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0
+        },
+        "incomplete": {
+          "max": 15,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 29,
+        "violationsBefore": 29,
+        "passes": 3,
+        "wallClockMs": 703,
+        "skewMm:J802_3_CM5_DPHY0_P_D0_P:J802_2_CM5_DPHY0_P_D0_N": 0,
+        "skewMm:J802_6_CM5_DPHY0_P_D1_P:J802_5_CM5_DPHY0_P_D1_N": 0,
+        "skewMm:J802_9_CM5_DPHY0_P_C_P:J802_8_CM5_DPHY0_P_C_N": 0,
+        "skewMm:J802_12_CM5_DPHY0_P_D2_P:J802_11_CM5_DPHY0_P_D2_N": 0,
+        "skewMm:J802_15_CM5_DPHY0_P_D3_P:J802_14_CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 709.2361669999991
+    },
+    {
+      "id": "srj-j802-six-layer-v2",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0
+        },
+        "incomplete": {
+          "max": 8,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer-v2.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 3,
+        "wallClockMs": 41228,
+        "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+        "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+        "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+        "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+        "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 8, got 15"
+      ],
+      "ms": 41234.144291000004
+    },
+    {
+      "id": "srj-j802-six-layer-v3",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0
+        },
+        "incomplete": {
+          "max": 8,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer-v3.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 3,
+        "wallClockMs": 39563,
+        "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+        "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+        "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+        "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+        "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 8, got 15"
+      ],
+      "ms": 39567.657084000006
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "advisory": 3,
+    "stubbed": 0
+  }
+}
