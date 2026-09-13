@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-kicad8-empty-net-in-class",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-min_fr_test-min_fr_test.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 4
+    },
+    "components": {
+      "exact": 4
+    },
+    "pads": {
+      "exact": 4
+    },
+    "nets": {
+      "exact": 2
+    },
+    "padstacks": {
+      "exact": 2
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 1
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "KiCad 8 writes the empty string as the first net of the default class; it is ignored (F-102, D-27). Same counts as the copy without it."
+}

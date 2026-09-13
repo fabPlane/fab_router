@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-router-written-polyline-paths",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue103-Board-Routed.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 55
+    },
+    "pads": {
+      "exact": 984
+    },
+    "nets": {
+      "exact": 282
+    },
+    "padstacks": {
+      "exact": 7
+    },
+    "tracks": {
+      "exact": 2326
+    },
+    "vias": {
+      "exact": 443
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "A design file written by a router (D-20): PCB head in upper case (F-10), autoroute_settings and snap_angle in the structure (F-72, F-73), a duplicated name in the via list (F-69), 2326 polyline_path wires read as Tracks through their line intersections (F-54), 443 vias."
+}

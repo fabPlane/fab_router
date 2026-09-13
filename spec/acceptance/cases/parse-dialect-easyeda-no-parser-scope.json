@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-easyeda-no-parser-scope",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 1
+    },
+    "pads": {
+      "exact": 564
+    },
+    "nets": {
+      "exact": 75
+    },
+    "padstacks": {
+      "exact": 62
+    },
+    "tracks": {
+      "exact": 613
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "EasyEDA-style file without a parser scope (D-16): (PCB '' header, mil 1000, boundary path on the signal pseudo-layer only (F-63), grid scopes ignored (F-75), clear alias, one image u1 holding 564 pins, 613 wires."
+}

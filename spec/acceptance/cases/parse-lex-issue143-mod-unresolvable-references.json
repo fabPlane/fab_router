@@ -1,0 +1,40 @@
+{
+  "id": "parse-lex-issue143-mod-unresolvable-references",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue143-rpi_splitter_mod.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 3
+    },
+    "pads": {
+      "exact": 24
+    },
+    "nets": {
+      "exact": 5
+    },
+    "padstacks": {
+      "exact": 6
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 8
+    }
+  },
+  "note": "A hand-edited copy whose pin references name components that do not exist (\"J3-\", \"J3{\", \"J2(--)\", \"J1 + - ( )\"): each unresolvable entry is dropped with a diagnostic and the board still reads with the same counts (F-101, D-35)."
+}

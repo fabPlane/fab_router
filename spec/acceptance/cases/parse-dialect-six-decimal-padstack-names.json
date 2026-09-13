@@ -1,0 +1,25 @@
+{
+  "id": "parse-dialect-six-decimal-padstack-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue420-contribution-board.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 745
+    },
+    "pads": {
+      "exact": 1536
+    },
+    "padstacks": {
+      "exact": 6
+    },
+    "nets": {
+      "exact": 411
+    }
+  },
+  "note": "KiCad export with padstack names such as RoundRect[T]Pad_3199.9935999999993x1599.9967999999997_um and an empty host_version (D-37, D-38): 6 distinct PadForms after normalisation, 745 Parts, 1536 Pads."
+}

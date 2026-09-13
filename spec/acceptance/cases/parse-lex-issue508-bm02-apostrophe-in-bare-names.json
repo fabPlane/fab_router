@@ -1,0 +1,22 @@
+{
+  "id": "parse-lex-issue508-bm02-apostrophe-in-bare-names",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm02.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 18
+    },
+    "pads": {
+      "exact": 75
+    },
+    "nets": {
+      "exact": 34
+    }
+  },
+  "note": "Pin names A' and B' and pin references SW1-A' are single bare lexemes (F-5, D-11); every pin resolves (75 Pads)."
+}

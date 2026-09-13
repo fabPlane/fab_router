@@ -1,0 +1,25 @@
+{
+  "id": "parse-dialect-image-variants-not-merged",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue297-myboard.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 66
+    },
+    "pads": {
+      "exact": 228
+    },
+    "padstacks": {
+      "exact": 41
+    },
+    "fences": {
+      "exact": 7
+    }
+  },
+  "note": "Images easyeda2kicad:LED-SMD_6P-L5.0-W5.0-TL and its ::1 variant differ by 0.001 file units in two pins; both stay distinct packages and every placed Part keeps the image the file named (F-90, D-23). The references merge them."
+}

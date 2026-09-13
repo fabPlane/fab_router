@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-librepcb-ch32v",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue676-ch32v-tx118s.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 9
+    },
+    "pads": {
+      "exact": 26
+    },
+    "nets": {
+      "exact": 9
+    },
+    "padstacks": {
+      "exact": 7
+    },
+    "tracks": {
+      "exact": 48
+    },
+    "vias": {
+      "exact": 6
+    },
+    "pours": {
+      "exact": 1
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "LibrePCB 2.0 (D-18): mm 1000000 resolution, every number with a decimal point, a pinless BOARD image (still a Part, F-80), a plane on a signal Sheet (Pour), 48 wires and 6 vias of file wiring, a via padstack whose name yields no drill (P-10)."
+}

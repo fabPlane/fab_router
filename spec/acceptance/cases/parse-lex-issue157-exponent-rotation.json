@@ -1,0 +1,25 @@
+{
+  "id": "parse-lex-issue157-exponent-rotation",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue157-TeamAdapt-LinePCB.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 122
+    },
+    "pads": {
+      "exact": 291
+    },
+    "tracks": {
+      "exact": 47
+    },
+    "fences": {
+      "exact": 14
+    }
+  },
+  "note": "(rotate 1e-07) on image pins is one number lexeme worth 1e-7 degrees (F-6, F-91, D-7); all 291 Pads read."
+}

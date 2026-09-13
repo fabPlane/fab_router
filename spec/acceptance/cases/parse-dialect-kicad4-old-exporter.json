@@ -1,0 +1,22 @@
+{
+  "id": "parse-dialect-kicad4-old-exporter",
+  "kind": "parse",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "fences": {
+      "exact": 0
+    },
+    "padstacks": {
+      "exact": 8
+    },
+    "vias": {
+      "exact": 24
+    }
+  },
+  "note": "KiCad 4.0.7 export (D-36): the degenerate keepout is dropped (0 Fences), via padstack names with decimals normalise (8 PadForms), 24 vias of file wiring."
+}

@@ -1,0 +1,40 @@
+{
+  "id": "parse-lex-issue229-stray-quote",
+  "kind": "parse",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 22
+    },
+    "pads": {
+      "exact": 103
+    },
+    "nets": {
+      "exact": 30
+    },
+    "padstacks": {
+      "exact": 8
+    },
+    "tracks": {
+      "exact": 218
+    },
+    "vias": {
+      "exact": 24
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "Part numbers \"DISPLAY 7-SEG 0.5\"\" carry an inch mark: the doubled quote swallows the next place entry (F-4, F-14), so 22 of the 26 placed Parts remain (DP3, DP5, DP6, DP8 lost); the KiCad 4.0.7 degenerate keepout is dropped (F-67), so fences is 0. Both references read the same 22 Parts."
+}

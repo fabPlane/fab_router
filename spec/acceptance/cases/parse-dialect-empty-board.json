@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-empty-board",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "empty_board.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 0
+    },
+    "pads": {
+      "exact": 0
+    },
+    "nets": {
+      "exact": 0
+    },
+    "padstacks": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 0
+    }
+  },
+  "note": "Two Sheets, a boundary, nothing else: status ok with zero items everywhere (F-23)."
+}

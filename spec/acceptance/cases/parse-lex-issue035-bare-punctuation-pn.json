@@ -1,0 +1,25 @@
+{
+  "id": "parse-lex-issue035-bare-punctuation-pn",
+  "kind": "parse",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue035-ReadPlaceScope.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "components": {
+      "exact": 141
+    },
+    "pads": {
+      "exact": 346
+    },
+    "nets": {
+      "exact": 101
+    },
+    "fences": {
+      "exact": 404
+    }
+  },
+  "note": "Bare part numbers \\ , . / [ ] 7 0.1u nice!nano and quoted \"#\" / \"Caps Lock\" (F-5, F-7, F-81, D-9): all 141 placed Parts read; 404 Fences are the image keepouts of the key switches instantiated per Part and per signal Sheet (F-93)."
+}

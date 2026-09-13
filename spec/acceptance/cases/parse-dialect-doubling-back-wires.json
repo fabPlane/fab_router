@@ -1,0 +1,40 @@
+{
+  "id": "parse-dialect-doubling-back-wires",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue022-AutoRouter_interrupted.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 171
+    },
+    "pads": {
+      "exact": 1133
+    },
+    "nets": {
+      "exact": 205
+    },
+    "padstacks": {
+      "exact": 28
+    },
+    "tracks": {
+      "exact": 724
+    },
+    "vias": {
+      "exact": 39
+    },
+    "pours": {
+      "exact": 2
+    },
+    "fences": {
+      "exact": 32
+    }
+  },
+  "note": "KiCad 5 export with three wires whose path doubles back on itself (A→B→A): each is still one Track (F-110, D-39): 724 Tracks. The references drop them and report 721."
+}

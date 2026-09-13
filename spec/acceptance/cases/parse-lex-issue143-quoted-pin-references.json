@@ -1,0 +1,40 @@
+{
+  "id": "parse-lex-issue143-quoted-pin-references",
+  "kind": "parse",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue143-rpi_splitter.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "layers": {
+      "exact": 2
+    },
+    "components": {
+      "exact": 3
+    },
+    "pads": {
+      "exact": 24
+    },
+    "nets": {
+      "exact": 5
+    },
+    "padstacks": {
+      "exact": 6
+    },
+    "tracks": {
+      "exact": 0
+    },
+    "vias": {
+      "exact": 0
+    },
+    "pours": {
+      "exact": 0
+    },
+    "fences": {
+      "exact": 8
+    }
+  },
+  "note": "Eagle pin references \"J1\"-\"D+\": a quoted component, a hyphen and a quoted pin as adjacent lexemes (F-9, F-101). 5 nets with 24 Pads; the 8 Fences are two image keepouts on the signal pseudo-layer instantiated for two Parts on two Sheets."
+}
