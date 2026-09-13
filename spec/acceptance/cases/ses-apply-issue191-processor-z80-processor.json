@@ -8,19 +8,17 @@
   "reference": "Issue191-processor.Z80-processor.ses.applied-ses.json",
   "expect": {
     "incomplete": {
-      "exact": 92,
-      "advisory": true
+      "exact": 0
     },
     "barrels": {
       "exact": 223
     },
     "violations": {
-      "exact": 0,
-      "advisory": true
+      "exact": 0
     },
     "tracks": {
       "exact": 1921
     }
   },
-  "note": "A session for the Z80 processor board (slow tier: the board is large). Ruling Q-I2-49: brace-named nets are ordinary names (D-10); the session's 1921 wires / 223 vias all apply. incomplete/violations advisory until re-measured (S6)."
+  "note": "A session for the Z80 processor board (slow tier: the board is large). Ruling Q-I2-49: brace-named nets are ordinary names (D-10); the session's 1921 wires / 223 vias all apply. Re-measured under F-S61 (S6): with the held file wiring removed and every session item applied, all connections close, leaving 0 incomplete and 0 violations. The reference data records 92 incomplete because both references skipped 44 brace-named items on import; D-10 accepts them, so the spec's count is 0."
 }
