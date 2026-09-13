@@ -68,6 +68,14 @@ const cases: Case[] = [
   ["verifier Bash tee src", "deny", call("verifier", "Bash", { command: "bun test | tee src/out.txt" }), "V-RO"],
   ["verifier Bash tee evidence", "allow", call("verifier", "Bash", { command: "bun test 2>&1 | tee evidence/reports/M2.log" })],
 ];
+// Worktree simulation: an agent whose cwd is a worktree under .claude/worktrees/ must see its own
+// spec/ and src/ as spec/ and src/, not as .claude/worktrees/<name>/spec/.
+const WT = `${P}/.claude/worktrees/selftest-sim`;
+const wcall = (agent_type: string, tool_name: string, tool_input: Record<string, unknown>) => ({ agent_type, cwd: WT, tool_name, tool_input });
+cases.push(["impl worktree Write src", "allow", wcall("implementer", "Write", { file_path: `${WT}/src/geom/x.ts`, content: "x" })]);
+cases.push(["impl worktree Write spec", "deny", wcall("implementer", "Write", { file_path: `${WT}/spec/x.md`, content: "x" }), "W-SCOPE"]);
+cases.push(["curator worktree Edit spec", "allow", wcall("spec-curator", "Edit", { file_path: `${WT}/spec/formats/dsn.md`, old_string: "a", new_string: "b" })]);
+cases.push(["curator worktree Write src", "deny", wcall("spec-curator", "Write", { file_path: `${WT}/src/x.ts`, content: "x" }), "W-SCOPE"]);
 // The denylist itself is private; add its first path and word as cases when the config is reachable.
 const cfgPath = process.env.FAB_ROUTER_WALL_CONFIG;
 if (cfgPath && existsSync(cfgPath)) {

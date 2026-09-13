@@ -119,8 +119,15 @@ function pathTokens(s: string): string[] {
 }
 function relToProject(p: string): string {
   const abs = isAbsolute(p) ? p : resolve(cwd, p);
-  const roots = [safe(() => realpathSync(projectDir), projectDir), projectDir, safe(() => realpathSync(cwd), cwd), cwd];
-  for (const r of roots) if (abs === r || abs.startsWith(r + "/")) return abs.slice(r.length + 1);
+  // A worktree lives under the main checkout (.claude/worktrees/<name>/), so match the longest
+  // root first; otherwise a worktree's spec/x would read as .claude/worktrees/<name>/spec/x.
+  const gitTop = safe(() => { const r = spawnSync("git", ["rev-parse", "--show-toplevel"], { cwd, encoding: "utf8" }); return r.status === 0 ? r.stdout.trim() : cwd; }, cwd);
+  const roots = [...new Set([gitTop, safe(() => realpathSync(gitTop), gitTop), cwd, safe(() => realpathSync(cwd), cwd), projectDir, safe(() => realpathSync(projectDir), projectDir)])]
+    .sort((a, b) => b.length - a.length);
+  for (const r of roots) if (abs === r || abs.startsWith(r + "/")) {
+    const rel = abs.slice(r.length + 1);
+    return rel.replace(/^\.claude\/worktrees\/[^/]+\//, "");
+  }
   return abs; // outside: return absolute
 }
 
