@@ -232,6 +232,7 @@ function measureSettings(c: AcceptCase, m: Measured): void {
 function fillRoutingMeasures(m: Measured, before: LayoutStats, after: LayoutStats, report: RouteReport): void {
   m.incomplete = after.connections.incomplete;
   m.incompleteBefore = before.connections.incomplete;
+  m.completed = report.completed;
   m.violations = after.violations.total;
   m.violationsBefore = before.violations.total;
   m.violationsAdded = report.violationsAdded;
