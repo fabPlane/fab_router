@@ -1,8 +1,8 @@
 /**
  * Session-file canonicalisation for the `ses-roundtrip` case (spec/formats/ses.md F-S50), with a
  * self-contained s-expression lexer following spec/formats/dsn.md F-1 … F-13 (separators,
- * parentheses, quoted strings with no escapes, bare lexemes, the `string_quote` exception, tree
- * folding). Kept independent of src/dsn so the runner checks the writer with its own eyes.
+ * parentheses, quoted strings with no escapes using only the declared quote character, bare
+ * lexemes, the `string_quote` exception, tree folding). Kept independent of src/dsn so the runner checks the writer with its own eyes.
  *
  * Public surface: lex, toTree, normaliseSession, canon.
  */
@@ -19,6 +19,7 @@ export function lex(text: string): Lexeme[] {
   let i = 0;
   if (text.charCodeAt(0) === 0xfeff) i = 1;
   let afterStringQuoteHead = false;
+  let quote = '"'; // F-4 / Q-I1-29: only the declared quote character quotes (default `"`)
   const isSep = (c: number) => c === 0x20 || c === 0x09 || c === 0x0a || c === 0x0d || c === 0x0c || c === 0x0b || c < 0x20;
   while (i < n) {
     const c = text.charCodeAt(i);
@@ -26,7 +27,7 @@ export function lex(text: string): Lexeme[] {
     const ch = text[i]!;
     if (ch === "(") { out.push({ kind: "open", text: "(" }); i++; afterStringQuoteHead = false; continue; }
     if (ch === ")") { out.push({ kind: "close", text: ")" }); i++; afterStringQuoteHead = false; continue; }
-    if ((ch === '"' || ch === "'") && !afterStringQuoteHead) {
+    if (ch === quote && !afterStringQuoteHead) {
       const end = text.indexOf(ch, i + 1);
       const body = end < 0 ? text.slice(i + 1) : text.slice(i + 1, end);
       out.push({ kind: "string", text: body });
@@ -42,6 +43,7 @@ export function lex(text: string): Lexeme[] {
     const tok = text.slice(i, j);
     out.push({ kind: NUMBER.test(tok) ? "number" : "ident", text: tok });
     // F-11: the lexeme after the head `string_quote` is read bare even if it starts with a quote.
+    if (afterStringQuoteHead && tok.length === 1) quote = tok; // F-30: declared from here on
     const prev = out[out.length - 2];
     afterStringQuoteHead = prev?.kind === "open" && tok.toLowerCase() === "string_quote";
     i = j;

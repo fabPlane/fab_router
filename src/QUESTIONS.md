@@ -31,6 +31,35 @@ Not in this checkout: `spec/acceptance/boards/` (and `reference/`), so every cas
 stubs on "board corpus file missing" before it can reach the (stubbed) reader; the runner names
 both blockers in its `reason`.
 
+## Status (task I1b — follow rulings Q-I1-27…29)
+
+Verification, run from the worktree root (on `main` at `8fe5bf2`; `checkDrc` is still the I2 stub
+here, so the six `drc-load` cases of question 42 fail exactly as before — outside this task's
+write set):
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 35 files, 0 violations |
+| `bun run test` (with `FAB_ROUTER_ACCEPT_STUBS=1`) | 621 pass, 6 fail (the six `drc-load` cases of question 42; the 7 parse failures of questions 27–29 are gone) |
+| `bun run acceptance -- --tier all --case 'parse-*'` | **182 / 182 passed** |
+| `bun run acceptance -- --tier all` (with the variable) | 460 cases, 454 passed, 6 failed (`drc-load`, question 42), 245 stubbed |
+| `test/vectors.test.ts` | all 4 `dsn-tokens` files pass, including the regenerated `quotes.jsonl` (each record lexed with its `parser.stringQuote` as the initial quote character) |
+| `test/dsn-roundtrip.test.ts` | F-ROUNDTRIP holds on all 149 readable corpus boards |
+
+Changes: `src/dsn/lex.ts` — exactly one quote character is in effect (`"` unless `lex(text,
+{ stringQuote })` says otherwise), switching to the character declared by `(string_quote c)` from
+that declaration onward; every other quote-like character is ordinary (F-4, F-11, F-30, Q-I1-29).
+`src/dsn/read.ts` — F-101 strips only the document's quote character from around pin-reference
+parts. `src/dsn/write.ts` — a name holding the document's quote character loses it (no fallback to
+the other character); the design name in the `pcb` header, which precedes any declaration, is
+written with `"`; the declared character (`"`, `'` or `$`) is used after the `parser` scope.
+`src/layout/summary.ts` — the summary-only image-name merge rule is removed; `components[].package`
+is `Part.package` as written. `tools/acceptance/sexp.ts` — the runner's independent session lexer
+(F-S50 step 1 "the DSN rules") follows the same one-quote-character rule. Tests updated:
+`test/vectors.test.ts`, `test/acceptance-tools.test.ts`, `test/dsn-roundtrip.test.ts`
+(`(class '' …)` is the two-character name `''`).
+
 ## Status (task I1 — DSN reader, Layout builder, DSN writer, rules file)
 
 Verification, run from the worktree root (after merging `main` at `1e66d51`, which brought the
@@ -249,7 +278,7 @@ with disjoint spans, a notched outline and deliberately off-board items.
     Layout object (snapshots) must build a new Lattice; the Journal (I4) should keep one Lattice
     per live Layout.
 
-27. **Parse summaries record merged image names, contradicting `parse/README.md` and D-S2-05.**
+27. ~~**Parse summaries record merged image names, contradicting `parse/README.md` and D-S2-05.**
     `components[].package` in `spec/acceptance/parse/*.json` is the base name for 1 717 Parts on
     66 boards whose `component` scope names a `NAME::n` image, although the README says "the image
     name exactly as the component scope writes it, including any ::n suffix" and D-23/D-S2-05 rule
@@ -260,15 +289,18 @@ with disjoint spans, a notched outline and deliberately off-board items.
     The four boards the references disagreed on (`Issue066-Project_GP8B`, `Issue153-wavefolder`,
     `Issue157-TeamAdapt-LinePCB`, `Issue283-…Natural_Tone_Preamp`) record a mixture no rule
     reproduces (identical images kept, differing ones merged) and fail on that field alone. Please
-    regenerate the `package` fields as written (the README's own definition) or bless the rule.
-28. **`Issue110-RelayModule` expects reference A's Cyrillic stripping.** Its summary records the
+    regenerate the `package` fields as written (the README's own definition) or bless the rule.~~
+28. ~~**`Issue110-RelayModule` expects reference A's Cyrillic stripping.** Its summary records the
     packages `:` and `:PinSocket_1x08_P2.54mm_Horizontal` for bare Cyrillic image names, which D-2
-    explicitly overrules ("names are kept verbatim in every position"). Not reproduced; 1 case fails.
-29. **`Issue684` / `Issue721` summaries treat `'` as an ordinary character.** They expect a NetGroup
+    explicitly overrules ("names are kept verbatim in every position"). Not reproduced; 1 case fails.~~
+29. ~~**`Issue684` / `Issue721` summaries treat `'` as an ordinary character.** They expect a NetGroup
     named `''` and nets `$1N4396` etc. in the default group although `(class $1N4396 '$1N4396' …)`
     lists them; F-4, D-11 and the `dsn-tokens/quotes` vectors (which pass) say `'…'` is a string
     whatever the parser scope declares. Not reproduced; 2 cases fail. If the intended rule is "only
-    the declared `string_quote` quotes", the vectors need the same change.
+    the declared `string_quote` quotes", the vectors need the same change.~~
+    *Resolved (task I1b):* Q-I1-27 / Q-I1-28 — `package` is the name as written; the summaries were
+    regenerated and the merge rule removed. Q-I1-29 — only the declared quote character quotes;
+    the lexer, writer and `quotes.jsonl` vectors are aligned.
 30. **Special `type` names and lone names (C-09, F-R12).** The summary of `Issue676` shows Kinds
     `via_same_net` and `via` created by `smd_via_same_net` / `via_via_same_net`, i.e. the first-`_`
     split, while C-09 says those names are recognised and not split; `Issue413`'s summary has no

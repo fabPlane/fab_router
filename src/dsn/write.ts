@@ -4,9 +4,11 @@
  * the modelled entries of their scope. Names are quoted with the document's quote character when
  * they are empty, contain a separator, a parenthesis, the other quote character or one of
  * `; - _ / ~ { }`, would lex as a number, or begin with a quote character; a name holding the
- * document's own quote character is written with the other one, and one holding both loses the
- * document's. Numbers are written in the shortest form that reproduces their value. The layout of
- * the text (indentation, line breaks) is not specified and is chosen for readability.
+ * document's own quote character is written with that character removed (no escape exists and
+ * only the declared character quotes, F-4 / ruling Q-I1-29). The design name in the `pcb` header
+ * precedes the `parser` scope and is therefore written with `"`. Numbers are written in the
+ * shortest form that reproduces their value. The layout of the text (indentation, line breaks) is
+ * not specified and is chosen for readability.
  *
  * Public surface: writeDsn, formatName, formatNumber.
  */
@@ -18,14 +20,13 @@ import { isNumberText } from "./lex.ts";
 
 const FORCE_QUOTE = /[\s\x00-\x1f();\-_/~{}]/;
 
-/** Write a name (F-ROUNDTRIP quoting rules). */
+const QUOTE_LIKE = ["\"", "'", "$"];
+
+/** Write a name (F-ROUNDTRIP quoting rules) with `quote` as the quote character in effect. */
 export function formatName(name: string, quote: string): string {
+  if (name.includes(quote)) return `${quote}${name.split(quote).join("")}${quote}`;
   const other = quote === "\"" ? "'" : "\"";
-  const hasOwn = name.includes(quote);
-  const hasOther = name.includes(other);
-  if (hasOwn && hasOther) return `${quote}${name.split(quote).join("")}${quote}`;
-  if (hasOwn) return `${other}${name}${other}`;
-  const needs = name.length === 0 || FORCE_QUOTE.test(name) || hasOther || isNumberText(name) || name[0] === "\"" || name[0] === "'";
+  const needs = name.length === 0 || FORCE_QUOTE.test(name) || name.includes(other) || isNumberText(name) || QUOTE_LIKE.includes(name[0]!);
   return needs ? `${quote}${name}${quote}` : name;
 }
 
@@ -180,8 +181,9 @@ function padstack(o: Out, p: DocPadstack): void {
 
 /** Write a document as text (spec/api/contract.md `writeDsn`). */
 export function writeDsn(doc: DsnDocument): string {
-  const o = new Out(doc.parser.stringQuote === "'" ? "'" : "\"");
-  o.open(`(pcb ${o.name(doc.name)}`);
+  const o = new Out(doc.parser.present && doc.parser.stringQuote.length === 1 ? doc.parser.stringQuote : "\"");
+  // F-4: the design name precedes any declaration, so `"` is the quote character there.
+  o.open(`(pcb ${formatName(doc.name, "\"")}`);
   if (doc.parser.present) {
     const p = doc.parser;
     o.open("(parser");

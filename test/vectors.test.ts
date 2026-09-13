@@ -48,8 +48,8 @@ type Checker = (input: any, expected: any) => void;
 
 const CHECKERS: Record<string, Checker> = {
   // spec/behaviour/dsn-tokens: the whole record is passed; it carries `input` and `lexemes`.
-  "dsn-tokens": (rec: { input: string; lexemes: Array<{ kind: string; text: string; glued?: boolean }> }) => {
-    const got: Array<{ kind: string; text: string; glued?: boolean }> = lex(rec.input).map((l) => (l.glued ? { kind: l.kind, text: l.text, glued: true } : { kind: l.kind, text: l.text }));
+  "dsn-tokens": (rec: { input: string; lexemes: Array<{ kind: string; text: string; glued?: boolean }>; parser?: { stringQuote?: string } }) => {
+    const got: Array<{ kind: string; text: string; glued?: boolean }> = lex(rec.input, rec.parser?.stringQuote !== undefined ? { stringQuote: rec.parser.stringQuote } : {}).map((l) => (l.glued ? { kind: l.kind, text: l.text, glued: true } : { kind: l.kind, text: l.text }));
     expect(got).toEqual(rec.lexemes);
   },
   "orientation": (i, e) => {

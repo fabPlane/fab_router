@@ -2,7 +2,8 @@
  * The normalised parse summary of a board (spec/acceptance/parse/README.md), computed from the
  * Layout and the document. Lengths are reported in the file's coordinate unit after LU rounding
  * (clearance.md C-04), rounded to six decimals; padstack names in their normalised form
- * (padstack-names.md P-7); Kind 0 prints as "null" (contract ruling Q-I0-4).
+ * (padstack-names.md P-7); Kind 0 prints as "null" (contract ruling Q-I0-4); a Part's package is
+ * the image name as written in its `component` scope (ruling Q-I1-27).
  *
  * Public surface: ParseSummary, summarise.
  */
@@ -18,28 +19,6 @@ function kindName(L: LayoutX, k: number): string {
 
 function byString<T>(key: (x: T) => string): (a: T, b: T) => number {
   return (a, b) => { const ka = key(a), kb = key(b); return ka < kb ? -1 : ka > kb ? 1 : 0; };
-}
-
-/**
- * The package name the parse summaries record for an image (see QUESTIONS.md, task I1): the
- * corpus summaries report the base name for a `NAME::n` image whose pins coincide, in order, with
- * the pins of an earlier `NAME` or `NAME::k` image (pin name, padstack, coordinates and rotation
- * rounded to the file unit), and the name as written otherwise. The Layout itself keeps every
- * Part's package exactly as the `component` scope wrote it (dsn.md F-90, D-S2-05).
- */
-function summaryPackageNames(doc: DsnDocument): Map<string, string> {
-  const out = new Map<string, string>();
-  const signatures = new Map<string, Set<string>>(); // base name → signatures seen so far
-  for (const im of doc.library.images) {
-    const m = /^(.*)::\d+$/.exec(im.name);
-    const base = m ? m[1]! : im.name;
-    const sig = JSON.stringify(im.pins.map((p) => [p.name, p.padstack, Math.round(p.x), Math.round(p.y), Math.round(p.rotation)]));
-    const seen = signatures.get(base) ?? new Set<string>();
-    if (m && seen.has(sig)) out.set(im.name, base);
-    seen.add(sig);
-    signatures.set(base, seen);
-  }
-  return out;
 }
 
 /** Compute the summary; `status` is derived from the Rim (`outline-missing` when null). */
@@ -70,8 +49,8 @@ export function summarise(L: LayoutX, doc: DsnDocument, boardName: string): Pars
       return ((a.subnet as number | undefined) ?? 1) - ((b.subnet as number | undefined) ?? 1);
     });
 
-  const pkg = summaryPackageNames(doc);
-  const comps: Array<Record<string, unknown>> = L.parts.map((p) => ({ ref: p.ref, package: pkg.get(p.package) ?? p.package, side: p.side }));
+  // Q-I1-27 / D-S2-05: the package is the image name exactly as the `component` scope wrote it.
+  const comps: Array<Record<string, unknown>> = L.parts.map((p) => ({ ref: p.ref, package: p.package, side: p.side }));
   for (const c of doc.placement.components) {
     for (const pl of c.places) if (pl.x === undefined || pl.y === undefined) comps.push({ ref: pl.ref, package: c.image, side: pl.side ?? "front", placed: false });
   }

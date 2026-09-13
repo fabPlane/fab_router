@@ -104,7 +104,7 @@ function readPcb(pcb: Node, diags: Diagnostic[]): DsnDocument {
       case "structure": return section(node, "structure", () => readStructure(node, doc.structure, diags));
       case "placement": return section(node, "placement", () => readPlacement(node, doc.placement, diags, visit));
       case "library": return section(node, "library", () => readLibrary(node, doc.library, diags, visit));
-      case "network": return section(node, "network", () => readNetwork(node, doc.network, diags, visit));
+      case "network": return section(node, "network", () => readNetwork(node, doc.network, diags, visit, doc.parser.stringQuote));
       case "wiring": return section(node, "wiring", () => {
         if (!doc.wiring) doc.wiring = { wires: [], vias: [], other: [] };
         readWiring(node, doc.wiring, diags, visit);
@@ -684,11 +684,11 @@ export function readPadstack(node: Node, diags: Diagnostic[]): DocPadstack | und
 
 // ---- network ----------------------------------------------------------------------------------
 
-function readNetwork(node: Node, net: DocNetwork, diags: Diagnostic[], visit: Visit): void {
+function readNetwork(node: Node, net: DocNetwork, diags: Diagnostic[], visit: Visit, quote: string): void {
   for (const c of nodesOf(node)) {
     switch (c.head) {
       case "net": {
-        const n = readNet(c, diags);
+        const n = readNet(c, diags, quote);
         if (n) net.nets.push(n);
         break;
       }
@@ -715,14 +715,16 @@ function readNetwork(node: Node, net: DocNetwork, diags: Diagnostic[], visit: Vi
 /**
  * F-101: the pin references of a `pins` / `order` / `fromto` scope. Entries are runs of glued
  * lexemes; each is split at the first `-` of a bare lexeme (quoted segments are never split).
+ * `quote` is the document's quote character (F-4): only that character is removed from around
+ * either part; any other quote-like character is part of the name.
  */
-export function readPinRefs(node: Node, diags: Diagnostic[]): DocPinRef[] {
+export function readPinRefs(node: Node, diags: Diagnostic[], quote = "\""): DocPinRef[] {
   const out: DocPinRef[] = [];
   const lx = lexemesOf(node);
   let run: Lexeme[] = [];
   const flush = () => {
     if (run.length === 0) return;
-    const ref = splitPinRef(run);
+    const ref = splitPinRef(run, quote);
     if (ref) out.push(ref);
     else warn(diags, "pin-reference-malformed", `pin reference '${run.map((l) => l.text).join("")}' has no '-'`, run[0]);
     run = [];
@@ -735,13 +737,13 @@ export function readPinRefs(node: Node, diags: Diagnostic[]): DocPinRef[] {
   return out;
 }
 
-function stripQuotes(s: string): string {
-  if (s.length >= 2 && (s[0] === "\"" || s[0] === "'") && s[s.length - 1] === s[0]) return s.slice(1, -1);
-  if (s.length >= 1 && (s[0] === "\"" || s[0] === "'")) return s.slice(1);
+function stripQuotes(s: string, quote: string): string {
+  if (s.length >= 2 && s[0] === quote && s[s.length - 1] === quote) return s.slice(1, -1);
+  if (s.length >= 1 && s[0] === quote) return s.slice(1);
   return s;
 }
 
-function splitPinRef(run: Lexeme[]): DocPinRef | undefined {
+function splitPinRef(run: Lexeme[], quote: string): DocPinRef | undefined {
   let before = "";
   for (let i = 0; i < run.length; i++) {
     const l = run[i]!;
@@ -751,12 +753,12 @@ function splitPinRef(run: Lexeme[]): DocPinRef | undefined {
     const component = before + l.text.slice(0, k);
     let after = l.text.slice(k + 1);
     for (let j = i + 1; j < run.length; j++) after += run[j]!.text;
-    return { component: stripQuotes(component), pin: stripQuotes(after) };
+    return { component: stripQuotes(component, quote), pin: stripQuotes(after, quote) };
   }
   return undefined;
 }
 
-function readNet(node: Node, diags: Diagnostic[]): DocNet | undefined {
+function readNet(node: Node, diags: Diagnostic[], quote: string): DocNet | undefined {
   const first = node.items[0];
   if (!first || isNode(first)) { warn(diags, "malformed-net", "net without a name", node); return undefined; }
   const n: DocNet = { name: nameOf(first), subnet: 1, pins: [], ordered: false, fromtos: [], rules: [], layerRules: [], other: [] };
@@ -764,9 +766,9 @@ function readNet(node: Node, diags: Diagnostic[]): DocNet | undefined {
   if (second && !isNode(second) && second.kind === "number" && second.value !== undefined && Number.isInteger(second.value)) n.subnet = second.value;
   for (const c of nodesOf(node)) {
     switch (c.head) {
-      case "pins": n.pins.push(...readPinRefs(c, diags)); break;
-      case "order": n.ordered = true; n.pins.push(...readPinRefs(c, diags)); break;
-      case "fromto": n.fromtos.push(readPinRefs(c, diags)); break;
+      case "pins": n.pins.push(...readPinRefs(c, diags, quote)); break;
+      case "order": n.ordered = true; n.pins.push(...readPinRefs(c, diags, quote)); break;
+      case "fromto": n.fromtos.push(readPinRefs(c, diags, quote)); break;
       case "rule": n.rules.push(...readRuleEntries(c, diags)); break;
       case "layer_rule": n.layerRules.push(readLayerRule(c, diags)); break;
       case "circuit": n.circuit = readCircuit(c); break;

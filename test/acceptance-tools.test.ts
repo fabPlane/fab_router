@@ -48,7 +48,10 @@ function toText(node: Node): string {
 describe("session canonicalisation (F-S50)", () => {
   test("lexer: quotes, string_quote exception, numbers, glued tokens", () => {
     const lx = lex(`(a "b c" 'd' 1 -2.5 .5 x)(string_quote ")`);
-    expect(lx.map((l) => l.kind + ":" + l.text)).toEqual(["open:(", "ident:a", "string:b c", "string:d", "number:1", "number:-2.5", "number:.5", "ident:x", "close:)", "open:(", "ident:string_quote", "ident:\"", "close:)"]);
+    expect(lx.map((l) => l.kind + ":" + l.text)).toEqual(["open:(", "ident:a", "string:b c", "ident:'d'", "number:1", "number:-2.5", "number:.5", "ident:x", "close:)", "open:(", "ident:string_quote", "ident:\"", "close:)"]);
+    // F-4 / Q-I1-29: only the declared character quotes, from its declaration onward.
+    const sw = lex(`(string_quote ') (a 'b c' "d e")`);
+    expect(sw.map((l) => l.kind + ":" + l.text)).toEqual(["open:(", "ident:string_quote", "ident:'", "close:)", "open:(", "ident:a", "string:b c", "ident:\"d", "ident:e\"", "close:)"]);
     expect(toTree(lex("(a (b 1) c) )"))).toEqual([["a", ["b", "1"], "c"]]);
   });
 
