@@ -4,10 +4,10 @@
  * (`ok: false` plus diagnostics), never exceptions.
  *
  * Status: readDsn, writeDsn, readRules, applyRules and parseSummary are real (task I1, src/dsn and
- * src/layout). Every other body is a stub returning a well-typed "not implemented" result carrying
- * the diagnostic code `not-implemented` (src/pipeline). Later tasks replace bodies, not
- * signatures: I2 writeSes/applySes/checkDrc/layoutStats/requiredConnections, I4+ route/routeDsn,
- * I6 routeSrj.
+ * src/layout); writeSes, applySes, checkDrc, layoutStats and requiredConnections are real (task I2,
+ * src/ses and src/drc). route / routeDsn / routeSrj are stubs returning a well-typed "not
+ * implemented" result (src/pipeline). Later tasks replace bodies, not signatures: I4+ route /
+ * routeDsn, I6 routeSrj.
  */
 import type { Layout } from "../spec/types/layout.ts";
 import type { DsnDocument, RulesFile } from "../spec/types/dsn.ts";
@@ -17,10 +17,11 @@ import type {
 } from "../spec/types/results.ts";
 import type { RouteSettings } from "../spec/types/settings.ts";
 import type { SimpleRouteJson, SrjRouteResult } from "../spec/types/srj.ts";
-import { emptyDrcResult, emptyStats } from "./drc/index.ts";
+import * as drc from "./drc/index.ts";
 import { emptyReport } from "./route/index.ts";
 import { notImplemented, resolveSettings } from "./pipeline/index.ts";
 import * as dsn from "./dsn/index.ts";
+import * as ses from "./ses/index.ts";
 import type { RulesResult } from "./dsn/index.ts";
 
 export type { RulesResult } from "./dsn/index.ts";
@@ -28,7 +29,12 @@ export type { RulesResult } from "./dsn/index.ts";
 // ---- reading and writing --------------------------------------------------------------------
 
 export function readDsn(text: string, opts?: { name?: string }): ReadResult {
-  return dsn.readDsn(text, opts);
+  const r = dsn.readDsn(text, opts);
+  // The session writer needs the design file's resolution, quote character and parser entries
+  // (spec/formats/ses.md F-S20, F-S30, F-S31), which the public Layout does not carry: keep the
+  // document on the Layout as a non-enumerable property (src/QUESTIONS.md, task I2).
+  if (r.ok) ses.attachDocument(r.layout, r.document);
+  return r;
 }
 
 export function writeDsn(document: DsnDocument): string {
@@ -36,13 +42,11 @@ export function writeDsn(document: DsnDocument): string {
 }
 
 export function writeSes(layout: Layout, opts?: SesWriteOptions): string {
-  void layout; void opts;
-  return "";
+  return ses.writeSes(layout, opts);
 }
 
 export function applySes(layout: Layout, sesText: string): ApplyResult {
-  void layout; void sesText;
-  return { ok: false, applied: { tracks: 0, barrels: 0 }, diagnostics: [notImplemented("applySes")] };
+  return ses.applySes(layout, sesText);
 }
 
 export function readRules(text: string): RulesResult {
@@ -65,18 +69,15 @@ export function parseSummary(read: ReadResult & { ok: true }): ParseSummary {
 // ---- checking and measuring -----------------------------------------------------------------
 
 export function checkDrc(layout: Layout, opts?: DrcOptions): DrcResult {
-  void layout; void opts;
-  return emptyDrcResult();
+  return drc.checkDrc(layout, opts);
 }
 
 export function layoutStats(layout: Layout, opts?: StatsOptions): LayoutStats {
-  void layout; void opts;
-  return emptyStats();
+  return drc.layoutStats(layout, opts);
 }
 
 export function requiredConnections(layout: Layout): Connection[] {
-  void layout;
-  return [];
+  return drc.requiredConnections(layout);
 }
 
 // ---- routing --------------------------------------------------------------------------------

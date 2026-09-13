@@ -146,7 +146,7 @@ describe("API stubs", () => {
     const read = api.readDsn("(pcb x (structure (layer F.Cu (type signal)) (boundary (rect pcb 0 0 1 1))))");
     expect(read.ok).toBe(true);
     if (read.ok) expect(api.readDsn(api.writeDsn(read.document)).ok).toBe(true);
-    expect(api.writeSes(L)).toBe("");
+    expect(api.writeSes(L)).toContain("(session x.ses");
     expect(api.applySes(L, "").ok).toBe(false);
     expect(api.readRules("").ok).toBe(false);
     expect(api.applyRules(L, { name: "x", body: [] })).toBe(L);
