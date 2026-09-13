@@ -715,3 +715,55 @@ What is real now (task write set `src/route/`, `src/pipeline/`, `src/api.ts` bod
     "miss the completion bound" list above). Closing that gap needs a stronger global rip-up/reroute
     or a gridless detailed router than this milestone builds; flagged so the spec side knows the
     remaining `incomplete`/exact-0 slow bounds are a known quality gap, not a regression.
+
+69. **SRJ net-owned copper is a same-net Fence, not a held Track/Barrel — a three-way tension.**
+    Q-68 reading (b) / K-14 call pre-existing net-owned copper "attachable same-net copper" that is
+    an obstacle to other nets (R-1) yet not a connectivity terminal, and the sealed reference records
+    `violationsBefore = 0` on every J802 board (`formats/srj.md` J-15, section 7). Under this
+    codebase's DRC (`rules/drc.md` DR-05: the file is checked as-is, every DR-03 pair) those three
+    goals cannot all hold for a copper item: the J802 boards route their differential pairs and I2C
+    bus at gaps below the board's declared clearance, so representing that copper as DRC-participating
+    Tracks/Barrels reports ~20 (two-layer) pre-existing spacing Violations between fixed fragments —
+    breaking `violationsBefore = 0` (measured directly). A Kind-0 copper item is DRC-clean but, by
+    C-01/the `kind !== 0` guard in `clear.ts`, is not an obstacle to the router either. The only
+    single primitive that is an obstacle to other nets, is same-net exempt for its owner (Q-I3-25),
+    is never a terminal (K-06/K-08), and whose pairs DR-03 does not mutually check (Fence–Fence and
+    Fence–Rim are never checked) is a **Fence carrying the owner's net**. I use that: `src/srj/build.ts`
+    now emits one such Fence per net-owned obstacle Sheet, giving requiredConnections = 15 and
+    `violationsBefore = 0` (two-layer/v2/v3; the six-layer v1's 29 are the J-25 GND-pads-over-endpoints
+    conflict, pre-existing and non-gating). The cost: a Fence is a keepout, not electrically
+    connective, so the router cannot *complete a connection by attaching to* the pre-existing copper
+    the way the reference does — so on the J802 boards `incompleteAfter` stays 15 rather than falling
+    to the reference's 3/6. Those `incomplete` bounds are advisory in the `srj-*` cases and the cases
+    pass. If the spec wants the reference's attachment-driven completion, either DR needs an SRJ
+    carve-out that exempts pre-existing-vs-pre-existing copper from spacing (so the copper can be a
+    connective Barrel/Track), or connectivity/`clear.ts` needs an "attachable but DRC-silent" copper
+    class; both are outside this task's write set (`src/srj/`, `src/route/fanout.ts` rename, `test/`).
+
+## Status (task I6b — SRJ connectivity reading (b): net-owned copper attachable, not a terminal)
+
+Changes: `src/srj/build.ts` now maps a net-owned obstacle (its `connectedTo` resolves to a routed
+connection) to a **Fence carrying that net** — an obstacle to other nets, same-net exempt, and not a
+connectivity terminal — instead of a held Pour, so each J802 Layout has exactly **15** required
+connections (Q-68 reading (b); `rules/connectivity.md` K-13..K-15). Unowned obstacles stay plain
+keepout Fences. `normalisePairs` already reads `connectionNames` (`_N` first, `_P` second) and
+`lengthTolerance` as the skew tolerance (J-30), covered by tests. `src/route/fanout.ts`'s result type
+was renamed `FanoutResult → FanoutOutcome` (task point 4); no `src/` file contains the old name.
+
+I5's barrel-aware router **is** on `main` (commit `be326d7`). Per task point 3 the advisory
+`incomplete` bounds should then "turn hard where they now match" — but the `srj-*` case files live in
+`spec/acceptance/cases/`, outside this task's write set, so I cannot edit them, and in any case they
+do **not** yet match: with net-owned copper represented as keepout Fences the router cannot attach to
+it, so `incompleteAfter` is 15 on all four boards versus the reference 3/6/6 (question 69). I have
+left the bounds advisory; the cases pass on every hard metric. Turning them hard is a spec-side action
+and should wait until an attachment-capable representation is possible (question 69).
+
+Verification, run from the worktree root:
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 57 files, 0 violations |
+| `bun run test` | green — 784 pass, 0 fail (2 pre-existing routing-quality advisories, unrelated) |
+| `bun run acceptance -- --tier all --case 'srj-*'` | 4 cases, 4 passed, 0 failed; `violations.maxAdded 0` hard on all four, two-layer `preExisting 0` hard; `incomplete` advisory (15 vs targets 4/8/8/15) |
+| `requiredConnections` per J802 Layout | 15 on all four boards (was 52/188/187/187) |

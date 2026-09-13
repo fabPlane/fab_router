@@ -12,9 +12,10 @@
  *   nominalTraceWidth   nominalTraceWidth is honoured).
  *   connections       → one Net per connection; each pointToConnect a locked one-pad Part whose
  *                       Pad copper is a disk of the net's half-width on the point's Sheet.
- *   obstacles         → a held Pour on a net when `connectedTo` names a routed connection, else a
- *                       Fence (keepout). Rotated rects become rings; ovals a capsule; polygons
- *                       their outline.
+ *   obstacles         → a Fence carrying the owner's net when `connectedTo` names a routed
+ *                       connection (same-net-exempt copper that blocks other nets but is no
+ *                       connectivity terminal — Q-68 / rules/connectivity.md K-13..K-15), else a
+ *                       plain Fence (keepout). Rotated rects become rings; polygons their outline.
  *   minViaPadDiameter → a through-Barrel PadForm (disk per Sheet + drill from minViaHoleDiameter),
  *   minViaHoleDiameter  offered by a `default` via rule.
  *   differentialPairs   are carried through unchanged for measurement.
@@ -194,7 +195,25 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
     });
   }
 
-  // ---- Obstacles → held Pours (net-owned) or Fences (keepouts). ------------------------------
+  // ---- Obstacles → net-owned same-net Fences (attachable copper) or plain Fences (keepouts). --
+  // Q-68 / K-13..K-15 (spec/rules/connectivity.md; spec/formats/srj.md J-23): pre-existing
+  // net-owned copper must be an obstacle to every OTHER net (R-1) yet must NOT be an independent
+  // connectivity terminal, and re-stitching it is forbidden (the required links come only from
+  // `pointsToConnect`, so a J802 board's count is 15). A Fence carrying the owner's `net` meets
+  // this exactly: it blocks every other Net (an obstacle, unlike a Pour, which K-05 makes no
+  // obstacle at all), it is same-net exempt for its own Net (Q-I3-25) so the router may run that
+  // Net's copper freely over it, and — being a Fence — it belongs to no net for connectivity
+  // (K-06) and so is never a terminal component (K-08): it adds nothing to
+  // `connections.maximum`/`incomplete` and creates no required link.
+  //
+  // Why a Fence rather than a held Track/Barrel (literal "attachable copper"): the J802 boards
+  // route their differential pairs and I2C bus at gaps below the board's own clearance, so
+  // representing that pre-existing copper as DRC-participating copper would report tens of
+  // pre-existing spacing Violations between fixed fragments (DR-05 checks every pair) — yet the
+  // sealed reference records `violationsBefore = 0` on every board (J-15, section 7). DR-03 never
+  // checks Fence–Fence or Fence–Rim pairs, so a Fence reproduces the reference's 0 while still
+  // guarding other nets. See src/QUESTIONS.md (task I6b): completion through the existing copper is
+  // therefore via-only, which keeps the `incomplete` targets advisory.
   const pours: Pour[] = [];
   const fences: Fence[] = [];
   const obstacles = (srj.obstacles ?? []) as RawObstacle[];
@@ -204,12 +223,10 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
     const ownerNet = (o.connectedTo ?? []).map((nm) => netByAnyName.get(nm)).find((v): v is number => v !== undefined);
     const ring = obstacleRing(o, frame, toLu);
     if (ring.length < 3) { warn("srj-obstacle", `obstacle '${o.obstacleId ?? o.type ?? "?"}' has no usable shape; dropped`); continue; }
-    if (ownerNet !== undefined) {
-      // A held Pour owned by the connection's net (same-net, so exempt for that net's copper).
-      for (const s of on) pours.push({ id: id(), net: ownerNet, sheet: s, outline: ring, holes: [], kind: 1, hold: "held" });
-    } else {
-      // A keepout the router must clear by the default spacing (Kind 1).
-      for (const s of on) fences.push({ id: id(), sheet: s, scope: "track", shape: { kind: "ring", pts: ring }, kind: 1 });
+    for (const s of on) {
+      const f: Fence = { id: id(), sheet: s, scope: "track", shape: { kind: "ring", pts: ring }, kind: 1 };
+      if (ownerNet !== undefined) f.net = ownerNet; // same-net exempt attachable copper (J-23)
+      fences.push(f);
     }
   }
 
