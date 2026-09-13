@@ -13,6 +13,7 @@ parse summary is the Stack.
 → role `signal`. A `layer` with any other `type` word is not a Sheet: it is dropped with a
 diagnostic and later Sheets close the gap in the index (no corpus board has one; every corpus
 layer is `signal` or `power`).
+*Amended (Q-I1-34):* an unknown layer `type` is kept as a signal Sheet (F-60 governs).
 
 **L-03 — Sheet names are exact.** Names are matched as written (after quote removal) when
 shapes, rules, keepouts and wiring refer to them; a reference to a name that is no Sheet and is
@@ -62,6 +63,8 @@ ones** (Sheet 0 vertical, Sheet 1 horizontal), overridden per Sheet by an
 `autoroute_settings (layer_rule NAME (preferred_direction horizontal|vertical))` scope in the
 file (when `useFileSettings` is on) or by `settings.layers[name].preferDir`. It never changes
 what is legal, only what is cheap; `Sheet.preferDir` reports the effective value.
+*Amended (Q-I1-39):* `Sheet.preferDir` is `null` at read time unless the file sets it; the
+router applies the default of `spec/api/settings.md` (longer side first, alternating).
 
 **L-10 — SMD side.** A PadForm with copper on exactly one Sheet is SMD; placed on a back-side
 Part its copper lands on the mirrored Sheet (Sheet index `count − 1 − i`), so an SMD Pad of a

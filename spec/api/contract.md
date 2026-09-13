@@ -166,3 +166,25 @@ Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTI
   attach rule.
 - **Q-I3-23** See `rules/drc.md` DR-11: copper must stay on the board.
 - **Q-I3-25** A Fence with `net` set is same-net (exempt) for that net; DSN Fences never set it.
+- **Q-I1-27** `components[].package` in a parse summary is the image name **as written** in the
+  `component` scope (`parse/README.md`); the summaries are being regenerated to that rule.
+- **Q-I1-28** Names are kept verbatim (D-2); the affected summary is being regenerated.
+- **Q-I1-29** Only the declared `string_quote` character (default `"`) quotes; the other quote
+  character is an ordinary character. F-4, D-11 and the `dsn-tokens/quotes` vectors are being
+  aligned to this (it is the published format's rule and both references' behaviour).
+- **Q-I1-30** Type-name splitting follows the data: a lone name without `_` has no effect (with a
+  diagnostic); a name with `_` splits at its first `_`; only `smd_to_turn_gap`, `pad_to_turn_gap`,
+  `buried_via_gap`, `antipad_gap` are recognised whole. F-R12 and C-09 are amended; this
+  supersedes the 2026-09-13 ruling.
+- **Q-I1-31** Confirmed as implemented (literal reading; three-item texts take first and last).
+- **Q-I1-32** C-12's half-width is the structure `rule` width's half, not the default group's.
+- **Q-I1-33** A class's `use_via` rule is appended even when a `via_rule` of that name exists;
+  `via_rule` scopes replace by name.
+- **Q-I1-34** `pcb`-layer keepouts yield one Fence per Sheet (F-66 governs; KO-03 amended).
+  Unknown layer types are kept as signal Sheets (F-60 governs; L-02 amended).
+- **Q-I1-35** A polygon with a positive aperture and fewer than three distinct vertices is its
+  stroked outline (F-52 amended).
+- **Q-I1-36** Unit conversion rounds the plain float64 product to nearest (F-43 amended).
+- **Q-I1-37**, **Q-I1-38**, **Q-I1-40**, **Q-I1-41** Confirmed as implemented.
+- **Q-I1-39** `Sheet.preferDir` is `null` at read time unless the file sets it; the router's
+  default is the longer-side rule of `settings.md` (L-09 amended).

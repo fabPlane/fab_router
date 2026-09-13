@@ -101,6 +101,9 @@ creates a Kind `boundary` like any other name; a single name that is an existing
 The published special names `smd_via_same_net`, `via_via_same_net`, `buried_via_gap`, `antipad_gap`
 are recognised as such, not split (`Issue676-ch32v-tx118s.dsn`); under DR-02 same-net pairs are
 exempt, so they are recorded and have no DRC effect. `smd_to_turn_gap` / `pad_to_turn_gap`: C-12.
+*Amended (Q-I1-30):* the splitting rule is the amended F-R12 — lone name: no effect; `_`: split at
+the first `_` (so `smd_via_same_net` creates `smd` and `via_same_net`); the four special names
+above are recognised whole. The 2026-09-13 orchestrator ruling in this clause is withdrawn.
 
 **C-10 — `class_class`.** `(class_class (classes A B …) (rule (clearance N)) (layer_rule L (rule
 (clearance M))))` sets `spacing(A', B')` for every unordered pair of the listed classes,
@@ -132,6 +135,8 @@ a 200-wide default). A file with neither a turn-gap rule nor any width rule (`em
 reports 100000 LU (10000 file units at `resolution um 10`): the "smallest half-width" is then
 the built-in upper bound, and the default width is the built-in 3000 LU (`rules.defaultWidth`
 300 there).
+*Amended (Q-I1-32):* the half-width is that of the structure `rule` width, not of the default
+NetGroup after its class rule (`Issue420-contribution-board.dsn`: 200/2 = 100).
 
 **C-13 — `.rules` files.** `applyRules` applies a rules file's `rule`, `layer <name> (rule …)`,
 `class`, `class_class`, `via`, `via_rule`, `padstack` and `snap_angle` scopes to an already-read

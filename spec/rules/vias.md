@@ -38,6 +38,7 @@ list order — every via definition whose PadForm is `Pi` (after normalisation) 
 the class's `barrel` Kind. That rule is appended after the rules of V-03 and becomes the group's
 via rule. A `use_via` list that yields no candidates leaves the group with an empty rule: the
 router then adds no Barrel for that group's nets.
+*Amended (Q-I1-33):* a class's `use_via` rule is appended even when a rule of that name exists.
 
 **V-05 — classes with their own clearance.** A class other than the default group whose `rule`
 carries a `clearance` (C-08) gets, for every via PadForm of V-01, a via definition named

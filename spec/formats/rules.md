@@ -99,3 +99,6 @@ Diagnostics are collected on `layout.warnings`.
   byte-identical to `Issue107-freq_teiler_200kHz_kicad.rules` and is accepted; its companion
   `_bad.dsn` differs from the plain board only by two extra parts (an image and its
   placements).
+  *Amended (Q-I1-30):* a single name without `_` has no effect (diagnostic); a name with `_`
+  splits at its first `_`; only `smd_to_turn_gap`, `pad_to_turn_gap`, `buried_via_gap`,
+  `antipad_gap` are recognised whole. The "existing Kind → diagonal" rule above is withdrawn.

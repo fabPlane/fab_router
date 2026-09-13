@@ -30,6 +30,7 @@ keepout and reference B drops it with a warning; the spec follows B because the 
 read, and an all-Sheet Fence invented from an ambiguous name would block routing outright. No
 corpus board carries a `pcb`-layer keepout (`polygon signal` occurs on 115 keepouts, per-Sheet
 circles on the rest).
+*Amended (Q-I1-34):* a `pcb`-layer keepout yields one Fence per Sheet (F-66 governs).
 
 **KO-04 — shapes.** `rect`, `circle`, `polygon` and `path` (a stroked path, width ≥ 0) are all
 valid Fence shapes; a `path` of width 0 with two points is a degenerate segment. A Fence whose

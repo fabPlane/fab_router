@@ -158,6 +158,8 @@ DLR `<resolution_descriptor>`, p. 108; `<unit_descriptor>`, p. 135; `<dimension_
   and *not* honoured; diagnostic `unit-in-section` (warning). No corpus board uses one.
 - **F-45 Axes.** `x` grows to the right and `y` grows upward; rotations are counter-clockwise in
   degrees (DLR `<rotation>`, p. 111). KiCad writes negative `y` values for this reason.
+*Amended (Q-I1-36):* the conversion rounds the plain float64 product to the nearest integer
+(`1.005 × 1000 / 2 = 502.49999…` → 502).
 
 ## 5. Shapes
 
@@ -197,6 +199,8 @@ Sheet) are accepted where section 6 says so.
   containing `Top` or `Bottom` to the first or last Sheet, which no board needs). A shape whose
   layer name is neither a Sheet nor `pcb`/`signal` makes its entry dropped with diagnostic
   `layer-unknown` (warning).
+*Amended (Q-I1-35):* a polygon with a positive aperture and fewer than three distinct vertices
+is its stroked outline (a capsule), not degenerate.
 
 ## 6. `structure`
 
