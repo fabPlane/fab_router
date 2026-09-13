@@ -3,10 +3,11 @@
  * acceptance runner (tools/acceptance) compiles against them. Expected failures are values
  * (`ok: false` plus diagnostics), never exceptions.
  *
- * Status: every body is a stub returning a well-typed "not implemented" result carrying the
- * diagnostic code `not-implemented` (src/pipeline). Later tasks replace bodies, not signatures:
- * I1 readDsn/writeDsn/readRules/applyRules, I2 writeSes/applySes/checkDrc/layoutStats/
- * requiredConnections, I4+ route/routeDsn, I6 routeSrj.
+ * Status: readDsn, writeDsn, readRules, applyRules and parseSummary are real (task I1, src/dsn and
+ * src/layout). Every other body is a stub returning a well-typed "not implemented" result carrying
+ * the diagnostic code `not-implemented` (src/pipeline). Later tasks replace bodies, not
+ * signatures: I2 writeSes/applySes/checkDrc/layoutStats/requiredConnections, I4+ route/routeDsn,
+ * I6 routeSrj.
  */
 import type { Layout } from "../spec/types/layout.ts";
 import type { DsnDocument, RulesFile } from "../spec/types/dsn.ts";
@@ -19,6 +20,7 @@ import type { SimpleRouteJson, SrjRouteResult } from "../spec/types/srj.ts";
 import { emptyDrcResult, emptyStats } from "./drc/index.ts";
 import { emptyReport } from "./route/index.ts";
 import { notImplemented, resolveSettings } from "./pipeline/index.ts";
+import * as dsn from "./dsn/index.ts";
 import type { RulesResult } from "./dsn/index.ts";
 
 export type { RulesResult } from "./dsn/index.ts";
@@ -26,13 +28,11 @@ export type { RulesResult } from "./dsn/index.ts";
 // ---- reading and writing --------------------------------------------------------------------
 
 export function readDsn(text: string, opts?: { name?: string }): ReadResult {
-  void text; void opts;
-  return { ok: false, error: { line: 0, column: 0, message: "readDsn is not implemented yet" }, diagnostics: [notImplemented("readDsn")] };
+  return dsn.readDsn(text, opts);
 }
 
 export function writeDsn(document: DsnDocument): string {
-  void document;
-  return "";
+  return dsn.writeDsn(document);
 }
 
 export function writeSes(layout: Layout, opts?: SesWriteOptions): string {
@@ -46,13 +46,20 @@ export function applySes(layout: Layout, sesText: string): ApplyResult {
 }
 
 export function readRules(text: string): RulesResult {
-  void text;
-  return { ok: false, error: { line: 0, column: 0, message: "readRules is not implemented yet" }, diagnostics: [notImplemented("readRules")] };
+  return dsn.readRules(text);
 }
 
 export function applyRules(layout: Layout, rules: RulesFile): Layout {
-  void rules;
-  return layout;
+  return dsn.applyRules(layout, rules);
+}
+
+/** The normalised parse summary of spec/acceptance/parse/README.md (contract ruling Q-I0-3). */
+export type ParseSummary = Record<string, unknown>;
+
+export function parseSummary(read: ReadResult & { ok: true }): ParseSummary {
+  const board = (read.layout as { boardName?: string }).boardName ?? read.layout.name;
+  const r = dsn.parseSummary(read.layout, read.document, board);
+  return r.ok ? r.summary : { board, status: "parse-error" };
 }
 
 // ---- checking and measuring -----------------------------------------------------------------
@@ -92,5 +99,5 @@ export function routeDsn(dsnText: string, settings?: Partial<RouteSettings>, hoo
 export function routeSrj(srj: SimpleRouteJson, settings?: Partial<RouteSettings>, hooks?: RouteHooks): SrjRouteResult {
   const effective = resolveSettings(settings, undefined, undefined);
   hooks?.onLog?.("warn", "routeSrj is not implemented yet");
-  return { ok: false, srj, report: emptyReport(effective, "maxPasses"), diagnostics: [notImplemented("routeSrj")] };
+  return { ok: false, srj, report: emptyReport(effective, "maxPasses"), violationsBefore: 0, violationsAdded: 0, diagnostics: [notImplemented("routeSrj")] };
 }

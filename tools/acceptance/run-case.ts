@@ -153,7 +153,8 @@ function measureParse(c: AcceptCase, m: Measured): void {
 function measureSesRoundtrip(c: AcceptCase, m: Measured): void {
   const { layout } = readLayout(c);
   const ses = api.writeSes(layout);
-  if (ses.length === 0) throw new Fail("writeSes returned empty text");
+  // Q-I0-13: writeSes returns a string with no envelope; empty text is the stub's answer.
+  if (ses.length === 0) throw new Stub("writeSes not implemented (empty text)");
   const tree = normaliseSession(ses);
   if (!tree) throw new Fail("writeSes output has no session head");
   m.treeEquals = tree;
@@ -250,7 +251,9 @@ function measureRouting(c: AcceptCase, m: Measured): void {
   const { layout: L0 } = readLayout(c);
   const L = withRules(c, L0, m);
   const before = statsOf(L, c);
-  const report = api.route(L, caseSettings(c.settings));
+  let stubbed = false;
+  const report = api.route(L, caseSettings(c.settings), { onLog: (_level, message) => { if (/not implemented/.test(message)) stubbed = true; } });
+  if (stubbed) throw new Stub("route not implemented");
   const after = statsOf(L, c);
   fillRoutingMeasures(m, before, after, report);
   // Invariants R-3 and R-5 are part of every routing case.
