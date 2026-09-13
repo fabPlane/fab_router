@@ -23,12 +23,14 @@
  * Counting (DR-04): one Violation per unordered item pair per Sheet (a Track–Track pair once per
  * Sheet whatever the number of legs, the closest legs reported); fence and rim Violations once per
  * (item, Fence, Sheet) and (item, Sheet); hole Violations once per (drill, item) pair with `a` the
- * item whose drill it is. Pours are never part of a Violation (K-05). `at` is a point in the gap
+ * item whose drill it is. Ordinary Pours are never part of a Violation (K-05); the sole exception is
+ * SRJ Prior copper (a Pour with `origin: "prior"`), which is an obstacle to router-added copper of
+ * other nets but silent against all other Prior copper (DR-13, spec/formats/srj.md J-33). `at` is a point in the gap
  * (or overlap), `actual` the exact Euclidean distance.
  *
  * Public surface: SpacingOptions, checkSpacing.
  */
-import type { Barrel, Fence, Layout, Pad, Pt, Rim, Track } from "../../spec/types/layout.ts";
+import type { Barrel, Fence, Layout, Pad, Pour, Pt, Rim, Track } from "../../spec/types/layout.ts";
 import type { Violation } from "../../spec/types/results.ts";
 import type { Box, Shape } from "../geom/index.ts";
 import { boxExpand } from "../geom/index.ts";
@@ -157,6 +159,26 @@ export function checkSpacing(layout: Layout, lattice: Lattice, opts: SpacingOpti
     }
   };
 
+  // DR-13 (spec/rules/drc.md; formats/srj.md J-33): SRJ Prior copper (a Pour with origin "prior")
+  // is an obstacle to router-added copper of every OTHER net (R-1), but is checked ONLY against
+  // copper the router adds — never against Prior copper (both `origin: "prior"`), and never against
+  // the file's own locked/held copper (endpoint Pads). Since a Pour is never a Subject, a
+  // Prior–Prior pair is never compared here, so the coupled J802 boards load with 0 Violations; a
+  // Subject that is not router-added (`!s.free`) is skipped for the same reason. Ordinary Pours are
+  // no obstacle at all (K-05).
+  const evaluatePour = (s: Subject, pour: Pour) => {
+    if (pour.origin !== "prior") return;
+    if (!s.free) return;
+    if (s.kind === 0 || pour.kind === 0) return;
+    if (sameNet(pour.net, s.net)) return; // same-net attachment, not a Violation (DR-02, K-16)
+    const other = lattice.shapesOf(pour.id, s.sheet);
+    if (s.shapes.length === 0 || other.length === 0) return;
+    const required = table.get(pour.kind, s.kind, s.sheet);
+    if (!anyCloser(s.shapes, other, required)) return;
+    const lo = Math.min(s.id, pour.id), hi = Math.max(s.id, pour.id);
+    report(`s:${lo}:${hi}:${s.sheet}`, lo, hi, s.sheet, "spacing", required, s.shapes, other);
+  };
+
   const evaluateFence = (s: Subject, f: Fence) => {
     if (f.scope === "place") return;
     if (f.scope === "barrel" && s.cat !== "barrel") return;
@@ -206,7 +228,7 @@ export function checkSpacing(layout: Layout, lattice: Lattice, opts: SpacingOpti
       const entry = lattice.itemOf(ref.id);
       if (!entry) continue;
       switch (entry.cat) {
-        case "pour": break;
+        case "pour": evaluatePour(s, entry.item as Pour); break;
         case "pad": case "barrel": case "track": evaluateCopper(s, ref, entry.cat, entry.item as Pad | Barrel | Track); break;
         case "fence": evaluateFence(s, entry.item as Fence); break;
         case "rim": evaluateRim(s, ref, entry.item as Rim); break;

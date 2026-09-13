@@ -12,10 +12,16 @@
  *   nominalTraceWidth   nominalTraceWidth is honoured).
  *   connections       → one Net per connection; each pointToConnect a locked one-pad Part whose
  *                       Pad copper is a disk of the net's half-width on the point's Sheet.
- *   obstacles         → a Fence carrying the owner's net when `connectedTo` names a routed
- *                       connection (same-net-exempt copper that blocks other nets but is no
- *                       connectivity terminal — Q-68 / rules/connectivity.md K-13..K-15), else a
- *                       plain Fence (keepout). Rotated rects become rings; polygons their outline.
+ *   obstacles         → **Prior copper** (a Pour with `origin: "prior"`) carrying the owner's net
+ *                       when `connectedTo` names an owner (spec/formats/srj.md J-23, J-33/J-34;
+ *                       rules/drc.md DR-13, clearance.md C-16, connectivity.md K-14/K-16): an
+ *                       obstacle to every other net (R-1), connective + same-net-exempt to its own
+ *                       net, silent against all other Prior copper, and never a connectivity
+ *                       terminal. An owner that resolves to no routed connection (e.g. the
+ *                       six-layer boards' `GND`) is imported as Prior copper of a synthesized
+ *                       context Net under that name (J-25 context-net reading). An obstacle with no
+ *                       `connectedTo` is a plain Fence (keepout). Rects become rings; polygons keep
+ *                       their outline.
  *   minViaPadDiameter → a through-Barrel PadForm (disk per Sheet + drill from minViaHoleDiameter),
  *   minViaHoleDiameter  offered by a `default` via rule.
  *   differentialPairs   are carried through unchanged for measurement.
@@ -153,6 +159,23 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
     for (const alias of [c.name, c.netConnectionName, c.netName]) if (alias) netByAnyName.set(alias, net.id);
   }
 
+  // A context Net for an obstacle owner that names no routed connection (spec/formats/srj.md J-25
+  // context-net reading; the six-layer J802 boards' `GND` copper covers endpoints, J-33/J-34). It
+  // carries no Pad, so it is no terminal and adds no required link (K-14); its Prior copper blocks
+  // every routed net and is silent against all other Prior copper (DR-13).
+  const contextNetByName = new Map<string, number>();
+  const contextNetFor = (name: string): number => {
+    const existing = contextNetByName.get(name);
+    if (existing !== undefined) return existing;
+    const netId = nets.length;
+    const net: Net & { pads: number[] } = { id: netId, name, group: 0, pads: [] };
+    nets.push(net);
+    netGroups[0]!.nets = [...netGroups[0]!.nets, netId];
+    contextNetByName.set(name, netId);
+    netByAnyName.set(name, netId);
+    return netId;
+  };
+
   // ---- PadForms: a disk terminal per (sheet, radius); a Barrel form for vias. ----------------
   const padForms: PadForm[] = [];
   const termFormBy = new Map<string, number>();
@@ -195,38 +218,41 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
     });
   }
 
-  // ---- Obstacles → net-owned same-net Fences (attachable copper) or plain Fences (keepouts). --
-  // Q-68 / K-13..K-15 (spec/rules/connectivity.md; spec/formats/srj.md J-23): pre-existing
-  // net-owned copper must be an obstacle to every OTHER net (R-1) yet must NOT be an independent
-  // connectivity terminal, and re-stitching it is forbidden (the required links come only from
-  // `pointsToConnect`, so a J802 board's count is 15). A Fence carrying the owner's `net` meets
-  // this exactly: it blocks every other Net (an obstacle, unlike a Pour, which K-05 makes no
-  // obstacle at all), it is same-net exempt for its own Net (Q-I3-25) so the router may run that
-  // Net's copper freely over it, and — being a Fence — it belongs to no net for connectivity
-  // (K-06) and so is never a terminal component (K-08): it adds nothing to
-  // `connections.maximum`/`incomplete` and creates no required link.
-  //
-  // Why a Fence rather than a held Track/Barrel (literal "attachable copper"): the J802 boards
-  // route their differential pairs and I2C bus at gaps below the board's own clearance, so
-  // representing that pre-existing copper as DRC-participating copper would report tens of
-  // pre-existing spacing Violations between fixed fragments (DR-05 checks every pair) — yet the
-  // sealed reference records `violationsBefore = 0` on every board (J-15, section 7). DR-03 never
-  // checks Fence–Fence or Fence–Rim pairs, so a Fence reproduces the reference's 0 while still
-  // guarding other nets. See src/QUESTIONS.md (task I6b): completion through the existing copper is
-  // therefore via-only, which keeps the `incomplete` targets advisory.
+  // ---- Obstacles → Prior copper Pours (net-owned) or plain Fences (keepouts). ----------------
+  // Task I6c / spec/formats/srj.md J-23, J-33/J-34; rules/drc.md DR-13, clearance.md C-16,
+  // connectivity.md K-14/K-16. A net-owned obstacle is Prior copper: a Pour carrying the owner's
+  // `net` with `origin: "prior"`. This one copper class carries all four required behaviours:
+  //   1. Obstacle to other nets — spacing DRC and the router's clear check keep the declared
+  //      clearance of router-added copper of a *different* net away from it (R-1; src/drc/spacing.ts,
+  //      src/route/clear.ts). An ordinary Pour would be no obstacle at all (K-05).
+  //   2. Connective + same-net-exempt — the router may end a route on it and that completes the
+  //      connection (K-16, DR-02); connectivity joins it to its net's copper like any Pour (K-03).
+  //   3. Silent among Prior copper — two `origin: "prior"` items are never a spacing/fence
+  //      Violation pair, at any distance, whatever their nets (DR-13). This is what makes
+  //      `violationsBefore = 0` on the coupled J802 boards, where 84 different-net owner pairs run
+  //      below the declared clearance. (In DRC/clear, Prior copper participates only against
+  //      router-added copper, so before routing it is in zero Violations.)
+  //   4. Never a terminal — a Prior Pour is excluded from the terminal set (K-14), so the required
+  //      links come only from `pointsToConnect` and a J802 board's count stays 15.
+  // A plain keepout (empty `connectedTo`) stays a Fence: it blocks every net and belongs to none.
   const pours: Pour[] = [];
   const fences: Fence[] = [];
   const obstacles = (srj.obstacles ?? []) as RawObstacle[];
   for (const o of obstacles) {
     const sheetsFor = (o.layers ?? []).map((l) => sheetByName.get(l)).filter((s): s is number => s !== undefined);
     const on = sheetsFor.length > 0 ? sheetsFor : signalSheets.slice();
-    const ownerNet = (o.connectedTo ?? []).map((nm) => netByAnyName.get(nm)).find((v): v is number => v !== undefined);
+    const owners = o.connectedTo ?? [];
+    let ownerNet = owners.map((nm) => netByAnyName.get(nm)).find((v): v is number => v !== undefined);
+    // An owner that resolves to no routed connection imports as a context Net (J-25).
+    if (ownerNet === undefined && owners.length > 0 && owners[0]) ownerNet = contextNetFor(owners[0]);
     const ring = obstacleRing(o, frame, toLu);
     if (ring.length < 3) { warn("srj-obstacle", `obstacle '${o.obstacleId ?? o.type ?? "?"}' has no usable shape; dropped`); continue; }
     for (const s of on) {
-      const f: Fence = { id: id(), sheet: s, scope: "track", shape: { kind: "ring", pts: ring }, kind: 1 };
-      if (ownerNet !== undefined) f.net = ownerNet; // same-net exempt attachable copper (J-23)
-      fences.push(f);
+      if (ownerNet !== undefined) {
+        pours.push({ id: id(), net: ownerNet, sheet: s, outline: ring, holes: [], kind: 1, hold: "locked", origin: "prior" });
+      } else {
+        fences.push({ id: id(), sheet: s, scope: "track", shape: { kind: "ring", pts: ring }, kind: 1 });
+      }
     }
   }
 

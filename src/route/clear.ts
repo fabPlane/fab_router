@@ -15,7 +15,9 @@
  *   - hole clearance (DR-06 / DR-06a) when the Profile carries one: other-net drills against the
  *     new copper on every Sheet of the drill's span, a Barrel's own drill against other-net copper
  *     on every Sheet of its span, and drill-to-drill distance regardless of Sheet,
- *   - Pours never block (K-05, L-07), items of Kind `null` never push copper away (C-01),
+ *   - ordinary Pours never block (K-05, L-07), but SRJ Prior copper (a Pour with `origin: "prior"`)
+ *     is an obstacle to router-added copper of other nets (DR-13) and clear to its own net (K-16);
+ *     items of Kind `null` never push copper away (C-01),
  *   - a Barrel may overlap a same-net Pad only when its form allows attach and the Pad is SMD
  *     (spec/rules/vias.md V-08); touching counts as overlap; a drill coinciding with a same-net
  *     Pad's drill is blocked.
@@ -39,7 +41,7 @@
  * Public surface: IgnoreSet, ClearResult, sweepClear, pointFree, barrelFits, closerThan,
  * overlaps, anyCloser, anyOverlap, crossesEdge, withinRim, ignoreOf, RIM_ID.
  */
-import type { Barrel, Fence, Layout, Pad, Rim, Track } from "../../spec/types/layout.ts";
+import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
 import type { Box, ConvexShape, Dop8, Pt, Seg, Shape } from "../geom/index.ts";
 import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, withinRim } from "../geom/index.ts";
 import type { DrillDisk, Lattice, LatticeItemRef } from "../lattice/index.ts";
@@ -123,7 +125,18 @@ function hitBlocks(layout: Layout, lattice: Lattice, sheet: number, ref: Lattice
   if (!entry) return false;
   const table = layout.spacing;
   switch (entry.cat) {
-    case "pour": return false;
+    case "pour": {
+      // Ordinary Pours never block (K-05, L-07). SRJ Prior copper (a Pour with origin "prior") is
+      // an obstacle to router-added copper of every OTHER net (R-1, spec/rules/drc.md DR-13); its
+      // OWN net's copper may run over and attach to it (K-16, DR-02), so a same-net Pour is clear.
+      const pour = entry.item as Pour;
+      if (pour.origin !== "prior") return false;
+      if (ignore.ids.has(ref.id) || sameNet(pour.net, ignore.net)) return false;
+      if (pour.kind === 0 || subject.kind === 0) return false;
+      const shapes = lattice.shapesOf(ref.id, sheet);
+      if (shapes.length === 0) return false;
+      return anyCloser(subject.shapes, shapes, table.get(pour.kind, subject.kind, sheet));
+    }
     case "fence": {
       const f = entry.item as Fence;
       if (f.scope === "place") return false;

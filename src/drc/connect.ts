@@ -7,7 +7,10 @@
  * (bounds on the Sheet, no expansion), the decision from the exact tests of exact.ts / pour.ts.
  * Components are the equivalence classes of the join relation under union-find with path
  * compression and union by size (Tarjan 1975); only components holding a Pad or a Pour are
- * terminal (K-08). `requiredConnectionsOf` is Kruskal's (1956) minimum spanning tree over the
+ * terminal (K-08) — except SRJ Prior copper (a Pour with origin "prior"), which is attachable
+ * helper copper and never an independent terminal (K-14/K-16, spec/formats/srj.md J-34): it joins
+ * its net's copper like any Pour but adds no required link, and a route completes a connection by
+ * touching it. `requiredConnectionsOf` is Kruskal's (1956) minimum spanning tree over the
  * terminal components of a net, edge weight = the smallest Euclidean distance between a Pad
  * centre / Barrel centre / Pour vertex of one and of the other, ties broken by the lower item
  * id pair (K-11; docs/DESIGN.md §5).
@@ -197,7 +200,9 @@ export function connectivity(layout: Layout, lattice: Lattice): Connectivity {
     const terminal: number[] = [];
     components.forEach((c, i) => {
       for (const id of c) componentOf.set(id, i);
-      if (c.some((id) => { const cat = items.get(id)!.cat; return cat === "pad" || cat === "pour"; })) terminal.push(i);
+      // A Pad or a Pour anchors a terminal component (K-08) — except SRJ Prior copper (a Pour with
+      // origin "prior"), which is attachable helper copper, never an independent terminal (K-14).
+      if (c.some((id) => { const it = items.get(id)!; return it.cat === "pad" || (it.cat === "pour" && (it.ref as Pour).origin !== "prior"); })) terminal.push(i);
     });
     nets[net.id] = { net: net.id, components, terminal };
   }
