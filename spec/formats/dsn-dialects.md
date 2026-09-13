@@ -24,7 +24,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   `Верхний_сигнальный` / `Нижний_сигнальный`, bare Cyrillic part numbers), `Issue110-Паяльная
   станция.dsn` (same content, Cyrillic file name), `Issue110-RelayModule.dsn` (bare and quoted
   Cyrillic image names, quoted Cyrillic part numbers), `Issue093-interf_u.dsn` (Chinese directory in the design
-  name), `Signale_Vor+Block.dsn` (`Schaltpläne`), `Issue676-ch32v-tx118s.dsn` (`⌀` in image
+  name), `Issue199-StackOverflow-Signale_Vor+Block.dsn` (`Schaltpläne`), `Issue676-ch32v-tx118s.dsn` (`⌀` in image
   names), `Issue742-tastexx-pcb.dsn`, `Issue367-Charger.dsn`, `Issue297-myboard.dsn`,
   `Issue163-pic_programmer.dsn`, `Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn`.
 - **D-3 Line endings and layout.** Files use LF only; KiCad indents with spaces and breaks
@@ -47,7 +47,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   `Issue179-Autorouter_PCB1_2023-3-24.dsn`, `Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn`,
   `Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn`, `Issue313-FastTest.dsn`,
   `Issue684-Autorouter_PCB1_2026-5-8.dsn`, `Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn`).
-  `(resolution um 10)` with no `unit`: `Issue187-processor.Z80.dsn`, `processor.Z80.dsn`.
+  `(resolution um 10)` with no `unit`: `Issue187-processor.Z80.dsn`, `Issue191-processor.Z80-processor.Z80.dsn`.
   Required: F-40, F-41 (a missing `unit` means the resolution unit).
 - **D-6 Keyword case.** `(PCB …` (upper case) opens Eagle, EasyEDA-style and router-written
   files (`Issue143-rpi_splitter.dsn`, `Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn`,
@@ -60,7 +60,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   Required: F-6 — the value is 10⁻⁷ / 2·10⁻⁸ degrees (F-91). Reference A's tokenizer splits
   `1e-07` into `1.0` and `7` because its exponent may not carry a leading zero, but the rotation
   is read through a separate number parser and comes out right; reference B reproduces both.
-  Boards: `Issue157-TeamAdapt-LinePCB.dsn` (`1e-07`, 2 pins), the `Issue214-…` board (its file name carries a word this repository does not spell out)
+  Boards: `Issue157-TeamAdapt-LinePCB.dsn` (`1e-07`, 2 pins), `Issue214-router.dsn`
   (`2e-08`, 4 pins).
 - **D-8 Names that lex as numbers.** Pin names `1` … `20` (every board), pin names `0e29`,
   `2e7`, `10e12`, `1221e15` and pin references `u1-1e31` (EasyEDA Pro: `Issue684-…`,
@@ -97,7 +97,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
 - **D-12 Non-ASCII bare names.** See D-2. Required: F-5.
 - **D-13 Windows paths and backslashes.** Design names such as
   `"C:\Users\…\hw72nb.dsn"` (`Issue015-StackOverflow.dsn`, `Issue022-AutoRouter_interrupted.dsn`,
-  `Issue034-Green14SegLED.dsn`, `TestSensel.dsn`, …). Required: F-4 (no escapes).
+  `Issue034-Green14SegLED.dsn`, `Issue069-TestSensel-TestSensel.dsn`, …). Required: F-4 (no escapes).
 - **D-14 `$` in names.** `ViaDefault$13.779528`, `Round1$13.779528` (Eagle padstacks),
   `$1N4396` (EasyEDA nets). Required: F-4 (`$` never quotes), F-5.
 
@@ -155,7 +155,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   `polyline_path` with `(clearance_class "kicad_default")` and `(type shove_fixed)`. Required:
   F-54 (polyline corners), F-69 (duplicate via names de-duplicated), F-73, F-100, F-112
   (`shove_fixed` is `free`), and `spec/rules/clearance.md` for a `type` that names no class.
-  Boards: `Issue103-Board-Routed.dsn`, `Issue187-processor.Z80.dsn`, `processor.Z80.dsn`,
+  Boards: `Issue103-Board-Routed.dsn`, `Issue187-processor.Z80.dsn`, `Issue191-processor.Z80-processor.Z80.dsn`,
   `Issue413-test.dsn`.
 
 ## Structure quirks
@@ -181,7 +181,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   after rounding to its grid, and re-numbers the rest from `::1` in order of appearance;
   reference B does the same with a different tie-break, so the two disagree on which Parts
   belong to which `::N` package on 14 boards (`Issue066-Project_GP8B.dsn`,
-  `Issue102-Mars-64-revE-rot00.dsn`, `Issue153-wavefolder.dsn`, `Natural_Tone_Preamp.dsn`, …).
+  `Issue102-Mars-64-revE-rot00.dsn`, `Issue153-wavefolder.dsn`, `Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn`, …).
   Ruling: no merging; the session's `placement` therefore names the file's image (`ses.md`
   F-S32).
 - **D-24 Degenerate keepout.** `(keepout "" (polygon signal 0 19220 -19695 19220 -19695 19220
@@ -199,8 +199,8 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   GND …)`: the first net of the default class is the empty string (the "no net"). Required:
   F-102 — the `""` entry is ignored. Reference A drops an empty *first* entry and would stop the
   list at a later one; reference B reproduces this. Ruling: ignored wherever it occurs.
-  Boards: `Issue269-z10_module.dsn`, `Issue297-myboard.dsn`, `min_fr_test.dsn` (and
-  `min_fr_test_no_quotes.dsn`, the same board with the `""` removed — both must read to the same
+  Boards: `Issue269-z10_module.dsn`, `Issue297-myboard.dsn`, `Issue269-min_fr_test-min_fr_test.dsn` (and
+  `Issue269-min_fr_test-min_fr_test_no_quotes.dsn`, the same board with the `""` removed — both must read to the same
   Layout).
 - **D-28 Duplicate padstack definitions.** KiCad 5 writes the same custom-pad name twice with
   different polygons (`Cust[T]Pad_1000x500_1000x_1500_23_um` in `Issue034-Green14SegLED.dsn`,
@@ -219,7 +219,7 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   `(plane NET (polygon LAYER 0 …))` on signal layers (`Issue367-Charger.dsn` has 22,
   `Issue732-CM5_MINIMA_3.dsn` 18); ten boards declare `(type power)` layers
   (`Issue145-smoothieboard.dsn`, `Issue230-CNH_Functional_Tester_1.dsn`,
-  `Issue269-NoViasOnPowerPlanes.dsn`, `Issue269-caniot-tiny-arm.dsn`, `Issue269-z10_module.dsn`,
+  `Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn`, `Issue269-caniot-tiny-arm.dsn`, `Issue269-z10_module.dsn`,
   `Issue555-CNH_Functional_Tester_1.dsn`, `Issue733-kicad_complex_hierarchy_input_design.dsn`,
   `Issue753-CPU-85_r104.dsn`), some of them with `(use_net …)` and no plane shape. Required:
   F-60, F-68 and `spec/rules/layers.md` (which also records the references' "large pour on an

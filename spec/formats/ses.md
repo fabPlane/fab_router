@@ -129,8 +129,9 @@ strings, numbers or nested arrays. The expected trees are produced with the same
      sort components by image name; within a component sort `place` entries by reference then
      by their canonical text; drop anything else.
   4. `was_is`: keep as written (it is empty).
-  5. `routes`: keep `resolution`; `parser` with its entries sorted by canonical text;
-     `library_out` with padstacks sorted by name, each padstack's `shape` entries sorted by
+  5. `routes`: keep `resolution`; `parser` reduced to the sorted list of its entry heads
+     (`["parser", "host_cad", "host_version"]`) — the values are copied from the design file
+     and are not compared; `library_out` with padstacks sorted by name, each padstack's `shape` entries sorted by
      layer name then canonical text, a 3-item `(circle L D)` expanded to `(circle L D 0 0)`,
      and its remaining entries (`attach`) sorted by canonical text; `network_out` with nets
      sorted by name, the entries of a net sorted by canonical text.
@@ -157,7 +158,7 @@ strings, numbers or nested arrays. The expected trees are produced with the same
   `Issue187-processor.Z80.dsn`, `Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn`,
   `Issue723-CombineStackOverflow.dsn`, `Issue756-tomu-fpga.dsn`, `Issue756-tomu-fpga11.dsn`,
   `Issue756-tomu-fpga7.dsn`, `Issue756-tomu-fpga8.dsn`, `Issue756-tomu-fpga9.dsn`,
-  `processor.Z80.dsn` (legs that double back removed, polygons with windows re-traced, 4 000
+  `Issue191-processor.Z80-processor.Z80.dsn` (legs that double back removed, polygons with windows re-traced, 4 000
   collinear wires merged into 29, polyline corners rounded one unit differently). Reference B's
   sessions equal reference A's after F-S50 on 101 of 115 boards; the rest differ in image
   naming (D-23), `(host_version )` (F-S30) and polygon tracing.

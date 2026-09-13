@@ -6,7 +6,7 @@ SPECCTRA language; its scopes reuse the design-file vocabulary (`dsn.md`). Claus
 The corpus contains ten rules files: `Issue029-hw48na.rules`, `Issue029-hw48na_valid.rules`,
 `Issue029-hw48na_invalid.rules`, `Issue107-freq_teiler_200kHz_kicad.rules`,
 `Issue107-freq_teiler_200kHz_kicad_bad.rules`, `Issue442-clearance_type_tests.rules`,
-`Issue593-BBD_Mars-64.rules`, `processor.rules`, `tastexx-pcb.rules`, `proba.rules` (the last
+`Issue593-BBD_Mars-64.rules`, `Issue191-processor.Z80-processor.rules`, `Issue742-tastexx-pcb-tastexx-pcb.rules`, `Issue269-NoWiresOnPowerLayers-proba.rules` (the last
 belongs to a board that is not in the corpus).
 
 ## 1. Shape
