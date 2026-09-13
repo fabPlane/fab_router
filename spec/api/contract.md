@@ -89,7 +89,7 @@ Invariants (`R-1`…`R-5`, tested by every routing case):
 - **R-3** `report.added` equals the difference in item counts before and after.
 - **R-4** With `viasAllowed: false`, no Barrel is added; Barrels already in the file stay, and a
   connection whose ends lie on different Sheets with no pre-existing Barrel path is left incomplete.
-- **R-5** With `maxItems: n`, `added.tracks + added.barrels ≤ n`.
+- **R-5** With `maxItems: n`, `report.completed ≤ n`.
 - **R-6** After the optimiser, the Barrel count and the total Track length do not exceed their
   pre-optimiser values, no complete connection becomes incomplete, and R-1/R-2 still hold.
 

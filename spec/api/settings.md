@@ -10,7 +10,7 @@ times in milliseconds; costs are dimensionless multipliers.
 |---|---|---|
 | `maxPasses` | 100 | Upper bound on router passes. A pass sweeps every incomplete connection once. The run stops early when nothing is incomplete or when `maxStagnantPasses` consecutive passes made no progress |
 | `maxStagnantPasses` | 3 | See above; 0 disables the stagnation stop |
-| `maxItems` | unset | If set, the router stops as soon as inserting the next Track or Barrel would make the Layout's routed item count (Tracks + Barrels it added) exceed this number. Used by cases to freeze a partial result |
+| `maxItems` | unset | If set, the router completes at most this many connections in the run (fanout and optimiser stages have their own `*MaxItems`); once reached it stops with `stoppedBy: "maxItems"`. A connection counts when its copper is inserted, however many Tracks and Barrels that takes. Used by the suites to freeze a partial result |
 | `timeBudgetMs` | unset | Wall-clock budget for the whole `route()` call (fanout + passes + optimiser). On expiry the best snapshot so far is returned with `report.timedOut = true` |
 | `connectionBudgetMs` | unset | Wall-clock budget per connection attempt |
 | `viaCost` | 50 | Cost of one Barrel between two signal Sheets, in units of one LU-length of track |

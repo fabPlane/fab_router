@@ -10,19 +10,16 @@
     "timeoutSeconds": 60
   },
   "expect": {
-    "addedTracks": {
-      "max": 20
-    },
-    "addedBarrels": {
-      "max": 20
-    },
     "violations": {
       "maxAdded": 0
     },
     "wallClockMs": {
       "max": 14000,
       "advisory": true
+    },
+    "completed": {
+      "max": 20
     }
   },
-  "note": "Suite A: the run with an item cap of 20 reaches a terminal state. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+  "note": "Suite A: the run with an item cap of 20 reaches a terminal state. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. maxItems caps completed connections (settings.md ruling 2026-09-13)."
 }

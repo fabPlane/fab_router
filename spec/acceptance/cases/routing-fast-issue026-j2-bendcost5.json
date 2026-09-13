@@ -11,12 +11,6 @@
     "bendCost": 5
   },
   "expect": {
-    "addedTracks": {
-      "max": 5
-    },
-    "addedBarrels": {
-      "max": 5
-    },
     "passes": {
       "max": 2
     },
@@ -26,7 +20,10 @@
     "wallClockMs": {
       "max": 14000,
       "advisory": true
+    },
+    "completed": {
+      "max": 5
     }
   },
-  "note": "Suite A: routing with a bend cost of 5 completes without error. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+  "note": "Suite A: routing with a bend cost of 5 completes without error. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. maxItems caps completed connections (settings.md ruling 2026-09-13)."
 }

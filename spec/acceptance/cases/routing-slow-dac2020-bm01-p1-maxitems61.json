@@ -10,15 +10,8 @@
     "timeoutSeconds": 60
   },
   "expect": {
-    "addedTracks": {
-      "max": 61
-    },
-    "addedBarrels": {
-      "max": 61
-    },
     "incomplete": {
-      "max": 147,
-      "advisory": true
+      "max": 147
     },
     "violations": {
       "maxAdded": 0
@@ -26,7 +19,10 @@
     "wallClockMs": {
       "max": 58000,
       "advisory": true
+    },
+    "completed": {
+      "max": 61
     }
   },
-  "note": "Suite A: one pass capped at 61 routed connections leaves at most 147 incomplete. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. The suite's bound (147) is looser than the measured reference (A: 53); the suite's bound is kept."
+  "note": "Suite A: one pass capped at 61 routed connections leaves at most 147 incomplete. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. The suite's bound (147) is looser than the measured reference (A: 53); the suite's bound is kept. maxItems caps completed connections (settings.md ruling 2026-09-13)."
 }

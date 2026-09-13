@@ -13,12 +13,6 @@
     "optimizerMaxPasses": 1
   },
   "expect": {
-    "addedTracks": {
-      "max": 150
-    },
-    "addedBarrels": {
-      "max": 150
-    },
     "violations": {
       "maxAdded": 0,
       "preExisting": 0
@@ -26,7 +20,10 @@
     "wallClockMs": {
       "max": 187000,
       "advisory": true
+    },
+    "completed": {
+      "max": 150
     }
   },
-  "note": "Suite A: routing plus one optimiser pass reaches a terminal state with exactly 0 violations. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+  "note": "Suite A: routing plus one optimiser pass reaches a terminal state with exactly 0 violations. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. maxItems caps completed connections (settings.md ruling 2026-09-13)."
 }
