@@ -1,6 +1,6 @@
 # Task I6b — SRJ connectivity model: reading (b) from the Q-68 ruling
 
-Role: implementer. Write set: `src/srj/`, `test/` (srj tests).
+Role: implementer. Write set: `src/srj/`, `src/route/fanout.ts` (rename only), `test/`.
 
 Read `spec/formats/srj.md` (J-22, J-23, J-30, section 7's Q-68 ruling), `spec/rules/connectivity.md`
 K-13…K-15, and the four `srj-*` cases.
@@ -21,6 +21,10 @@ helper copper, **not** an independent terminal.
    the reference records) once vias exist. If I5's barrel-aware router is on `main` when you run,
    turn the advisory `incomplete` bounds hard where they now match; otherwise leave them advisory
    and note it.
+
+4. **Rename one export.** `src/route/fanout.ts` exports a result type whose name is an exact
+   collision with a reference identifier (the similarity gate flags it). Rename that export — and
+   every use — to `FanoutOutcome`. After the rename no `src/` file may contain the old name.
 
 Done when `bun run typecheck`, `check:layers`, `test` green; `requiredConnections` on each J802
 Layout is 15; `bun run acceptance -- --tier all --case 'srj-*'` passes with `violations.maxAdded: 0`
