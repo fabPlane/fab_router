@@ -35,7 +35,7 @@
   ],
   "counts": {
     "pads": 0,
-    "tracks": 1,
+    "tracks": 4000,
     "vias": 0,
     "pours": 0,
     "fences": 0
@@ -89,6 +89,7 @@
     }
   },
   "notes": [
-    "both references agree on every field"
+    "both references agree on every field",
+    "tracks: both references normalise wiring while reading (1); ruling D-32 (spec/formats/dsn-dialects.md, F-110): one Track per wire path as written, 4000"
   ]
 }

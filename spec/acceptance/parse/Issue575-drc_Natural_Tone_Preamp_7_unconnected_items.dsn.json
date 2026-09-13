@@ -723,7 +723,7 @@
   ],
   "counts": {
     "pads": 278,
-    "tracks": 1344,
+    "tracks": 1346,
     "vias": 121,
     "pours": 0,
     "fences": 0
@@ -790,6 +790,7 @@
   },
   "notes": [
     "via padstack list: reference A lists 2 entries with repeats, reference B 1 distinct; ruling D-S2-02: distinct names in first-mention order",
-    "via rule names: reference A names the rule derived from the file's default-class use_via list \"default\", reference B keeps the class name as written; ruling D-S2-03 (B)"
+    "via rule names: reference A names the rule derived from the file's default-class use_via list \"default\", reference B keeps the class name as written; ruling D-S2-03 (B)",
+    "tracks: both references normalise wiring while reading (1344); ruling D-39 (spec/formats/dsn-dialects.md, F-110): one Track per wire path as written, 1346"
   ]
 }

@@ -90,15 +90,17 @@ with only a `width` creates no Kind.
 Kind name (`wire` = `default`); the rule sets `spacing(a, b)` (= `spacing(b, a)`) to N. Inside a
 class X, each half `h` other than `wire` names the Kind `X-h` (created per C-07 from X's row if
 absent) and `wire` names Kind X itself; the value is set between the two resolved Kinds. T is
-split into its halves as follows: if T contains a `-` outside quotes it is split there
-(`smd-smd`, `"default"-"1A EXTERNAL 1oz"`, the form the `.rules` writer emits) and surrounding
-quotes are stripped; otherwise T is split at its **first** `_`, the second half keeping any
-further underscores (`smd_via_same_net` yields `smd` and `via_same_net`, so reading
-`Issue676-ch32v-tx118s.dsn` creates a harmless Kind `via_same_net` that no item carries;
-`default_"1A EXTERNAL 1oz"` yields `default` and `1A EXTERNAL 1oz`). A T with neither a `-`
-nor a `_` (`(type kicad)` in `Issue413-test.dsn`) is ignored with a diagnostic and creates
-nothing. `default_boundary` (`Issue143-rpi_splitter.dsn`) creates a Kind `boundary` like any
-other name.
+split into its halves by the algorithm of `spec/formats/rules.md` F-R12, which governs both `.rules`
+files and DSN `rule` scopes (ruling 2026-09-13, orchestrator: F-R12 recognises the published special
+names and the writer's `"a"-"b"` form; the references' first-`_` split is superseded). Consequences:
+`smd-smd` and `"default"-"1A EXTERNAL 1oz"` split at the `-`; `default_"1A EXTERNAL 1oz"` splits at
+the `_` into `default` and `1A EXTERNAL 1oz`; `default_boundary` (`Issue143-rpi_splitter.dsn`)
+creates a Kind `boundary` like any other name; a single name that is an existing Kind or object type
+(`(type smd)`) is the diagonal `(X, X)`; a single unknown name without `_` (`(type kicad)` in
+`Issue413-test.dsn`) creates the Kind and sets its diagonal — an unused Kind changes no DRC result.
+The published special names `smd_via_same_net`, `via_via_same_net`, `buried_via_gap`, `antipad_gap`
+are recognised as such, not split (`Issue676-ch32v-tx118s.dsn`); under DR-02 same-net pairs are
+exempt, so they are recorded and have no DRC effect. `smd_to_turn_gap` / `pad_to_turn_gap`: C-12.
 
 **C-10 — `class_class`.** `(class_class (classes A B …) (rule (clearance N)) (layer_rule L (rule
 (clearance M))))` sets `spacing(A', B')` for every unordered pair of the listed classes,

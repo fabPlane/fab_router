@@ -40,7 +40,7 @@ Diagnostics are collected on `layout.warnings`.
   `(clearance c)` sets the default spacing; `(clearance c (type T))` sets the SpacingTable
   entries that `T` names, per `spec/rules/clearance.md`. Each entry replaces the value the
   design file (or an earlier entry) gave. `clear` is an alias of `clearance`.
-- **F-R12 `type` syntax.** The text of a `type` scope is split into *items* at separators and
+- **F-R12 `type` syntax** (governs `spec/rules/clearance.md` C-09 as well). The text of a `type` scope is split into *items* at separators and
   at `-` characters that are outside quotes; quotes are removed from each item. The result is
   one or two items. Two items are the pair `(a, b)` — this is how a router writes a pair whose
   members are quoted: `(type "default"-"1A EXTERNAL 1oz")`, `(type "smd"-"smd")`. One item is

@@ -1906,7 +1906,7 @@
   ],
   "counts": {
     "pads": 1133,
-    "tracks": 721,
+    "tracks": 724,
     "vias": 39,
     "pours": 2,
     "fences": 32
@@ -2547,6 +2547,7 @@
     "plane nets: reference A marks 1 net(s) named by plane scopes as plane nets, reference B marks none of them; ruling D-S2-01 (A): GND",
     "via padstack list: reference A lists 17 entries with repeats, reference B 6 distinct; ruling D-S2-02: distinct names in first-mention order",
     "via rule names: reference A names the rule derived from the file's default-class use_via list \"default\", reference B keeps the class name as written; ruling D-S2-03 (B)",
-    "via rule forms: reference A leaves 6 class via rule(s) empty because the use_via name carries fractional dimensions (e.g. \"685.8:330.2\") that do not match the padstack definition name; reference B resolves it by the padstack reference normalisation rule; ruling D-S2-04 (B)"
+    "via rule forms: reference A leaves 6 class via rule(s) empty because the use_via name carries fractional dimensions (e.g. \"685.8:330.2\") that do not match the padstack definition name; reference B resolves it by the padstack reference normalisation rule; ruling D-S2-04 (B)",
+    "tracks: both references normalise wiring while reading (721); ruling D-39 (spec/formats/dsn-dialects.md, F-110): one Track per wire path as written, 724"
   ]
 }
