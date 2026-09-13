@@ -1,0 +1,217 @@
+{
+  "taken": "2026-09-13T22:44:09.929Z",
+  "head": "80d8e57fd1f5a22040f1b1f957ddc3b32eebdc9f",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "drc-load-cm5-carrier",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 25
+        },
+        "incomplete": {
+          "exact": 129
+        }
+      },
+      "board": "cm5-carrier.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 25,
+        "incomplete": 129
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 26.867375
+    },
+    {
+      "id": "drc-load-empty-board",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 0
+        },
+        "incomplete": {
+          "exact": 0
+        }
+      },
+      "board": "empty_board.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 0,
+        "incomplete": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 0.30929099999999465
+    },
+    {
+      "id": "drc-load-issue229-display-unrouted",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 0
+        },
+        "incomplete": {
+          "exact": 8
+        }
+      },
+      "board": "Issue229-display-8-digit-hc595.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 0,
+        "incomplete": 8
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.109832999999995
+    },
+    {
+      "id": "drc-load-issue230-cnh",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 16
+        }
+      },
+      "board": "Issue230-CNH_Functional_Tester_1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 16,
+        "incomplete": 144
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 25.816208000000003
+    },
+    {
+      "id": "drc-load-issue555-cnh",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 16
+        }
+      },
+      "board": "Issue555-CNH_Functional_Tester_1.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 16,
+        "incomplete": 144
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 19.819457999999997
+    },
+    {
+      "id": "drc-load-issue575-bbd-mars64",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 11
+        },
+        "incomplete": {
+          "exact": 0
+        }
+      },
+      "board": "Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 11,
+        "incomplete": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 7.792999999999992
+    },
+    {
+      "id": "drc-load-issue575-dev-board",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 0
+        },
+        "incomplete": {
+          "exact": 0
+        }
+      },
+      "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 0,
+        "incomplete": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 6.609166999999999
+    },
+    {
+      "id": "drc-load-issue575-dev-board-hole250",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 4,
+          "advisory": true
+        },
+        "incomplete": {
+          "exact": 0
+        }
+      },
+      "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 4,
+        "incomplete": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 7.094166999999999
+    },
+    {
+      "id": "drc-load-issue575-preamp",
+      "kind": "drc-load",
+      "tier": "fast",
+      "expected": {
+        "violations": {
+          "exact": 0
+        },
+        "incomplete": {
+          "exact": 7
+        }
+      },
+      "board": "Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "violations": 0,
+        "incomplete": 7
+      },
+      "mismatches": [],
+      "advisoryMismatches": [],
+      "ms": 15.564916999999994
+    }
+  ],
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "advisory": 0,
+    "stubbed": 0
+  }
+}
