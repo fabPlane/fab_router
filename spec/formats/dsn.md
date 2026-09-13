@@ -480,7 +480,7 @@ export type DocShape =
 
 export type DocRuleEntry =
   | { kind: "width"; value: number }
-  | { kind: "clearance"; value: number; type?: string }     // type as spelled ("smd_smd", "default_kicad"); a quoted pair is joined as a-b
+  | { kind: "clearance"; value: number; type?: string }     // the type scope's text as written, quotes kept: "smd_smd", "\"default\"-\"1A EXTERNAL 1oz\"" (rules.md F-R12 interprets it)
   | { kind: "other"; raw: SExpr };
 
 export interface DocLayerRule { layers: string[]; rules: DocRuleEntry[] }
