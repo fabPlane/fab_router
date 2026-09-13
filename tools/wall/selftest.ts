@@ -78,6 +78,13 @@ cases.push(["curator worktree Edit spec", "allow", wcall("spec-curator", "Edit",
 cases.push(["curator worktree Write src", "deny", wcall("spec-curator", "Write", { file_path: `${WT}/src/x.ts`, content: "x" }), "W-SCOPE"]);
 cases.push(["impl Write with relative import in content", "allow", wcall("implementer", "Write", { file_path: `${WT}/test/geom.test.ts`, content: 'import { orient } from "../src/geom/predicates.ts";' })]);
 cases.push(["impl Edit with relative import climbing out", "deny", wcall("implementer", "Edit", { file_path: `${WT}/src/x.ts`, old_string: "a", new_string: 'import x from "../../../other/x.ts";' }), "B-TRAVERSE"]);
+cases.push(["verifier ls test read", "allow", call("verifier", "Bash", { command: "ls test/vectors.test.ts" })]);
+cases.push(["verifier bun test read", "allow", call("verifier", "Bash", { command: "bun test test/vectors.test.ts" })]);
+cases.push(["verifier acceptance report ok", "allow", call("verifier", "Bash", { command: "mkdir -p evidence/reports && bun run acceptance -- --report evidence/reports/M2-parse.json" })]);
+cases.push(["verifier redirect into src", "deny", call("verifier", "Bash", { command: "bun test 1" + ">" + " src/out.txt" }), "V-RO"]);
+cases.push(["orch cat read src", "allow", call(undefined, "Bash", { command: "cat src/api.ts | head" })]);
+cases.push(["impl bun test file read", "allow", call("implementer", "Bash", { command: "bun test test/geom.test.ts" })]);
+cases.push(["impl redirect into spec", "deny", call("implementer", "Bash", { command: "echo x " + ">" + " spec/x.md" }), "W-SCOPE"]);
 // The denylist itself is private; add its first path and word as cases when the config is reachable.
 const cfgPath = process.env.FAB_ROUTER_WALL_CONFIG;
 if (cfgPath && existsSync(cfgPath)) {

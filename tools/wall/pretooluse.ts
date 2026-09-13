@@ -209,18 +209,24 @@ if (WRITE_TOOLS.has(tool)) {
 }
 if (tool === "Bash") {
   const cmd = String(ti.command ?? "");
-  const writeish = /(?:^|[^<])>|\btee\b|\bcp\b|\bmv\b|\bmkdir\b|\btouch\b|\bsed\s+-i|\brm\b|\bcat\s*>|\bchmod\b|\binstall\b/.test(cmd);
-  if (writeish) {
-    const repoTokens = cmd.match(/(?:^|[\s"'=])((?:\.\/)?(?:src|test|tools|spec|docs|evidence|\.claude)\/[^\s"';|&<>()]*)/g) ?? [];
-    for (const t0 of repoTokens) {
-      const rel = t0.trim().replace(/^["'=]/, "").replace(/^\.\//, "");
-      if (role === "verifier") { if (!/^evidence\/(?:reports|similarity)\//.test(rel)) deny("V-RO", rel); continue; }
-      if (!writeSet[role].allow.some((re) => re.test(rel))) {
-        // `bun run tools/acceptance/run.ts > x` is a read of tools/; only deny when the token is a write target.
-        const isTarget = new RegExp(`(?:>\\s*|tee\\s+(?:-a\\s+)?|cp\\s+\\S+\\s+|mv\\s+\\S+\\s+|mkdir\\s+(?:-p\\s+)?|touch\\s+|sed\\s+-i[^\\s]*\\s+(?:'[^']*'|\\S+)\\s+|rm\\s+(?:-\\S+\\s+)*)(?:\\./)?${rel.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(cmd);
-        if (isTarget) deny("W-SCOPE", rel);
-      }
-    }
+  // Extract only the WRITE TARGETS of a command — the path a redirect, tee, cp/mv destination,
+  // mkdir, touch, sed -i, or rm acts on. A path that merely appears as an argument to a reader
+  // (ls, cat, bun test <file>) is not a write and is never flagged here.
+  const targets: string[] = [];
+  const push = (t: string | undefined) => { if (t) targets.push(t.replace(/^["']|["']$/g, "").replace(/^\.\//, "")); };
+  for (const m of cmd.matchAll(/(?:>>?|(?<![0-9])>)\s*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of cmd.matchAll(/\btee\s+(?:-a\s+)?("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of cmd.matchAll(/\b(?:mkdir|touch|rmdir)\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of cmd.matchAll(/\brm\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of cmd.matchAll(/\b(?:cp|mv|install)\s+(?:-\S+\s+)*(?:"[^"]+"|'[^']+'|[^\s"';|&<>()]+)\s+("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of cmd.matchAll(/\bsed\s+-i\S*\s+(?:-e\s+\S+\s+|'[^']*'\s+|"[^"]*"\s+|\S+\s+)("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const t of targets) {
+    if (t === "/dev/null" || t.startsWith("$") || t.startsWith("/dev/")) continue;
+    const rel = relToProject(t);
+    // Match the directory itself too (mkdir evidence/reports), so append a slash before testing.
+    const relDir = rel.endsWith("/") ? rel : rel + "/";
+    if (role === "verifier") { if (!/^evidence\/(?:reports|similarity)\//.test(relDir)) deny("V-RO", rel); continue; }
+    if (!writeSet[role].allow.some((re) => re.test(relDir)) && !isAbsolute(rel)) deny("W-SCOPE", rel);
   }
 }
 
