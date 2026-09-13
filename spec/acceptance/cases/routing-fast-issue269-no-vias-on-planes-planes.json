@@ -1,0 +1,34 @@
+{
+  "id": "routing-fast-issue269-no-vias-on-planes-planes",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue269-NoViasOnPowerPlanes-Issue269-NoViasOnPowerPlanes.dsn.default.json",
+  "referenceSide": "B",
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 0
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Plane-Sheet board: no Barrel may end on a plane Sheet and no Track may lie on one (rules/layers.md). The incomplete bound is filled from the measured reference; every plane-net connection whose both ends already sit in the plane is counted but not attempted (K-07). Measured with the 'default' profile: reference A left 0, reference B 0; the bound is the looser of the two."
+}

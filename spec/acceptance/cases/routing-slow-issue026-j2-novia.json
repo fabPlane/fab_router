@@ -1,0 +1,28 @@
+{
+  "id": "routing-slow-issue026-j2-novia",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "viasAllowed": false,
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "addedBarrels": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 6
+    },
+    "wallClockMs": {
+      "max": 37000,
+      "advisory": true
+    }
+  },
+  "note": "R-4: with viasAllowed false no Barrel is added; the incomplete bound is filled from the measured reference. Measured with the 'novia' profile: reference A left 6, reference B no ok result; the bound is the looser of the two."
+}

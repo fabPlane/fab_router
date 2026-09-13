@@ -1,0 +1,22 @@
+{
+  "id": "routing-slow-cm5-carrier-floor",
+  "kind": "routing",
+  "origin": "refB-suite",
+  "tier": "slow",
+  "board": "cm5-carrier.dsn",
+  "settings": {
+    "maxPasses": 10,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 25
+    },
+    "wallClockMs": {
+      "max": 120000,
+      "advisory": true
+    }
+  },
+  "note": "Suite B: the CM5 carrier with a 10-pass budget leaves at least 58 of 74 nets whole and adds no violation; the incomplete bound is filled from the measured reference. Under the 'default' profile reference A hit the profile's 60 s budget with 5 incomplete; reference B hit the profile's 60 s budget with 7 incomplete (see the reference file); the case's own budget is what its settings say."
+}

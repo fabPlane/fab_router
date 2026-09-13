@@ -1,0 +1,20 @@
+{
+  "id": "drc-load-issue575-dev-board-hole250",
+  "kind": "drc-load",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+  "settings": {
+    "holeClearanceUm": 250
+  },
+  "expect": {
+    "violations": {
+      "exact": 4,
+      "advisory": true
+    },
+    "incomplete": {
+      "exact": 0
+    }
+  },
+  "note": "rules/drc.md: with holeClearanceUm 250 the four Pads 0.2001/0.2349 mm from non-plated hole edges at J1 become fence violations, matching the CAD tool's 4 hole-clearance findings. Advisory: this number comes from the clauses and the CAD tool's report, not from a reference run (neither reference was run with the setting)."
+}

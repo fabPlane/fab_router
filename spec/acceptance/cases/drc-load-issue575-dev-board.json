@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-issue575-dev-board",
+  "kind": "drc-load",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue575-drc_dev-board_4_hole_clearance_violations.dsn",
+  "expect": {
+    "violations": {
+      "exact": 0
+    },
+    "incomplete": {
+      "exact": 0
+    }
+  },
+  "note": "Spec numbers: 0 and 0. Suite A pins (9 incomplete, 2 violations); suite B pins (0, 0). Reference A's 2 are coincident duplicate same-net SMD Pads of one Part, exempt under DR-02; its 9 incompletes are Pad joins that K-01 counts. The CAD tool's 4 hole-clearance findings at J1 come from a 0.25 mm rule that exists only in its project, not in the file (see the holeClearanceUm variant of this case)."
+}

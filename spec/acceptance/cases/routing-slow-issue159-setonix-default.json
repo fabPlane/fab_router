@@ -1,0 +1,25 @@
+{
+  "id": "routing-slow-issue159-setonix-default",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue159-setonix_2hp-pcb.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "incomplete": {
+      "max": 4
+    },
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: at most 4 incomplete and 0 violations; the board once exhausted memory in a reference. The suite's bound (4) is looser than the measured reference (B: 0); the suite's bound is kept."
+}

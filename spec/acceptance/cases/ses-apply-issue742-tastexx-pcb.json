@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue742-tastexx-pcb",
+  "kind": "ses-apply",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue742-tastexx-pcb.dsn",
+  "ses": "Issue742-tastexx-pcb.ses",
+  "reference": "Issue742-tastexx-pcb.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 3
+    },
+    "barrels": {
+      "exact": 7
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 37
+    }
+  },
+  "note": "Both suites: the CAD tool's own session imports with 0 errors, re-exports with balanced scopes and unique PadForms, and re-imports with the same wire count; fractional Part rotations survive."
+}

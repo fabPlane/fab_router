@@ -1,0 +1,31 @@
+{
+  "id": "routing-slow-issue558-dev-board-fanout-limits",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue558-dev-board.dsn",
+  "settings": {
+    "fanout": true,
+    "router": false,
+    "optimizer": false,
+    "fanoutMaxPasses": 1,
+    "fanoutMaxItems": 2,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "addedBarrels": {
+      "max": 2
+    },
+    "passes": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 150000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: fanout with one pass and an item cap of 2 escapes at most 2 Pads and returns a Layout."
+}

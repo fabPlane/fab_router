@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue191-processor-z80-processor",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue191-processor.Z80-processor.Z80.dsn",
+  "ses": "Issue191-processor.Z80-processor.ses",
+  "reference": "Issue191-processor.Z80-processor.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 92
+    },
+    "barrels": {
+      "exact": 183
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 1664
+    }
+  },
+  "note": "A session for the Z80 processor board (slow tier: the board is large)."
+}

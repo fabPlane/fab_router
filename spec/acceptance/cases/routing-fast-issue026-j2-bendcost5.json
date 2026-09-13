@@ -1,0 +1,32 @@
+{
+  "id": "routing-fast-issue026-j2-bendcost5",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "settings": {
+    "maxPasses": 2,
+    "maxItems": 5,
+    "timeoutSeconds": 30,
+    "bendCost": 5
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 5
+    },
+    "addedBarrels": {
+      "max": 5
+    },
+    "passes": {
+      "max": 2
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 14000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: routing with a bend cost of 5 completes without error. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

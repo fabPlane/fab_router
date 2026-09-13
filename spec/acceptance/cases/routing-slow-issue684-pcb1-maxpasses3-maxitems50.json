@@ -1,0 +1,27 @@
+{
+  "id": "routing-slow-issue684-pcb1-maxpasses3-maxitems50",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+  "settings": {
+    "maxPasses": 3,
+    "maxItems": 50,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 50
+    },
+    "addedBarrels": {
+      "max": 50
+    },
+    "passes": {
+      "max": 3
+    },
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Suite A: the run reaches a terminal state without exhausting memory (the board once leaked a reference's per-pass history). Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. Under the 'default' profile reference A hit the profile's 60 s budget with 9 incomplete; reference B hit the profile's 60 s budget with 44 incomplete (see the reference file); the case's own budget is what its settings say."
+}

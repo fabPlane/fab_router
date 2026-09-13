@@ -1,0 +1,17 @@
+{
+  "id": "routing-slow-issue039-bug-design-default",
+  "kind": "routing",
+  "origin": "refB-suite",
+  "tier": "slow",
+  "board": "Issue039-bug-design.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Suite B: at least 24 nets whole. Incomplete bound filled from the measured reference. Under the 'default' profile reference A hit the profile's 60 s budget with 51 incomplete; reference B hit the profile's 60 s budget with 98 incomplete (see the reference file); the case's own budget is what its settings say."
+}

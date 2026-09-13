@@ -1,0 +1,17 @@
+{
+  "id": "routing-slow-issue269-z10-module-planes",
+  "kind": "routing",
+  "origin": "new",
+  "tier": "slow",
+  "board": "Issue269-z10_module.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Plane-Sheet board: a module with plane Sheets. The incomplete bound is filled from the measured reference; every plane-net connection whose both ends already sit in the plane is counted but not attempted (K-07). Under the 'default' profile reference A hit the profile's 60 s budget with 63 incomplete; reference B hit the profile's 60 s budget with 46 incomplete (see the reference file); the case's own budget is what its settings say."
+}

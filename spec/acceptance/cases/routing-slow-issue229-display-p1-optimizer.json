@@ -1,0 +1,31 @@
+{
+  "id": "routing-slow-issue229-display-p1-optimizer",
+  "kind": "routing",
+  "origin": "refB-suite",
+  "tier": "slow",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "optimizer": true,
+    "optimizerMaxPasses": 1,
+    "optimizerMaxItems": 25,
+    "timeoutSeconds": 60
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 0
+    },
+    "passes": {
+      "max": 1
+    },
+    "incomplete": {
+      "max": 8
+    },
+    "wallClockMs": {
+      "max": 82000,
+      "advisory": true
+    }
+  },
+  "note": "Suite B: one routing pass leaves more than 20 nets whole; one optimiser pass over up to 25 items never makes the board worse (no more incomplete, no more Barrels, still 0 violations). Measured with the 'p1' profile: reference A left 8, reference B 0; the bound is the looser of the two."
+}

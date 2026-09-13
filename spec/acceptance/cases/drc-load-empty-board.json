@@ -1,0 +1,16 @@
+{
+  "id": "drc-load-empty-board",
+  "kind": "drc-load",
+  "origin": "both",
+  "tier": "fast",
+  "board": "empty_board.dsn",
+  "expect": {
+    "violations": {
+      "exact": 0
+    },
+    "incomplete": {
+      "exact": 0
+    }
+  },
+  "note": "Both suites: a board with no nets reports nothing at all."
+}

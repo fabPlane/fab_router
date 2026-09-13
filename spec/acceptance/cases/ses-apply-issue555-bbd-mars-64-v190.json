@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue555-bbd-mars-64-v190",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue555-BBD_Mars-64.dsn",
+  "ses": "Issue555-BBD_Mars-64-v190.ses",
+  "reference": "Issue555-BBD_Mars-64-v190.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 106
+    },
+    "barrels": {
+      "exact": 0
+    },
+    "violations": {
+      "exact": 1
+    },
+    "tracks": {
+      "exact": 33
+    }
+  },
+  "note": "A session for the Mars-64 board from an older reference build."
+}

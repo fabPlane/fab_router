@@ -1,0 +1,22 @@
+{
+  "id": "routing-slow-issue555-cnh-strict",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue555-CNH_Functional_Tester_1.dsn",
+  "settings": {
+    "strictDrc": true,
+    "maxPasses": 100,
+    "timeoutSeconds": 300
+  },
+  "expect": {
+    "violations": {
+      "maxAdded": 0,
+      "preExisting": 16
+    },
+    "incomplete": {
+      "max": 30
+    }
+  },
+  "note": "Suite A: with strict DRC the fixture's 16 pre-existing violations remain exactly 16 (none added) and at most 30 connections stay incomplete. Under the 'strict' profile reference A hit the profile's 60 s budget with 2 incomplete; reference B hit the profile's 60 s budget with 29 incomplete (see the reference file); the case's own budget is what its settings say."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue508-dac2020-bm05",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm05.dsn",
+  "ses": "Issue508-DAC2020_bm05.ses",
+  "reference": "Issue508-DAC2020_bm05.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 30
+    },
+    "barrels": {
+      "exact": 31
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 198
+    }
+  },
+  "note": "A session for benchmark board 05."
+}

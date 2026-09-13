@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue593-bbd-mars-64",
+  "kind": "ses-apply",
+  "origin": "refA-suite",
+  "tier": "fast",
+  "board": "Issue593-BBD_Mars-64.dsn",
+  "ses": "Issue593-BBD_Mars-64.ses",
+  "reference": "Issue593-BBD_Mars-64.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 47
+    },
+    "barrels": {
+      "exact": 51
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 215
+    }
+  },
+  "note": "Suite A: importing this session applies at least one wire with 0 errors; writing the Layout back and re-applying it on a fresh read keeps the wire count."
+}

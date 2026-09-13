@@ -1,0 +1,27 @@
+{
+  "id": "routing-slow-issue676-ch32v-maxpasses3",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue676-ch32v-tx118s.dsn",
+  "settings": {
+    "maxPasses": 3,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "passes": {
+      "max": 3
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "incomplete": {
+      "max": 0
+    },
+    "wallClockMs": {
+      "max": 10000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: the run reaches a terminal state within 3 passes and 2 min on this 2-Sheet board; no completion bound is asserted. Measured with the 'default' profile: reference A left 0, reference B 0; the bound is the looser of the two."
+}

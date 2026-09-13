@@ -1,0 +1,32 @@
+{
+  "id": "routing-slow-issue420-contribution-p1-maxitems100",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue420-contribution-board.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 100,
+    "timeoutSeconds": 120,
+    "fanout": false
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 100
+    },
+    "addedBarrels": {
+      "max": 100
+    },
+    "passes": {
+      "max": 1
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 150000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: the run reaches a terminal state without exhausting memory. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations."
+}

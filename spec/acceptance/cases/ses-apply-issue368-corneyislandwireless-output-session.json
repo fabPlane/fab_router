@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue368-corneyislandwireless-output-session",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue368-CorneyIslandWireless_input_design.dsn",
+  "ses": "Issue368-CorneyIslandWireless_output_session.ses",
+  "reference": "Issue368-CorneyIslandWireless_output_session.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "barrels": {
+      "exact": 0
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 7
+    }
+  },
+  "note": "A routed session for the input design; a JSON rendering of the same session ships beside it."
+}

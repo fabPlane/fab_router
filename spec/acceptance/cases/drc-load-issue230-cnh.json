@@ -1,0 +1,13 @@
+{
+  "id": "drc-load-issue230-cnh",
+  "kind": "drc-load",
+  "origin": "refB-suite",
+  "tier": "fast",
+  "board": "Issue230-CNH_Functional_Tester_1.dsn",
+  "expect": {
+    "violations": {
+      "exact": 16
+    }
+  },
+  "note": "Suite B: the fixture ships with 16 violations; the two inner Sheets are planes."
+}

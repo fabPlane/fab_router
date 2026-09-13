@@ -1,0 +1,33 @@
+{
+  "id": "routing-fast-dac2020-bm01-p1-maxitems2",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm01.dsn",
+  "settings": {
+    "maxPasses": 1,
+    "maxItems": 2,
+    "timeoutSeconds": 30
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 2,
+      "min": 1
+    },
+    "addedBarrels": {
+      "max": 2
+    },
+    "incomplete": {
+      "max": 194,
+      "advisory": true
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 58000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: one pass capped at 2 routed connections leaves at most 194 incomplete. Suite B: the cap routes at least one and at most 2 connections and leaves the rest untouched. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. The suite's bound (194) is looser than the measured reference (A: 53); the suite's bound is kept."
+}

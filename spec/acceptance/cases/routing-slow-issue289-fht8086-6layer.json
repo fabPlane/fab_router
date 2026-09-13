@@ -1,0 +1,28 @@
+{
+  "id": "routing-slow-issue289-fht8086-6layer",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn",
+  "settings": {
+    "fanout": false,
+    "maxPasses": 2,
+    "maxItems": 50,
+    "timeoutSeconds": 120
+  },
+  "expect": {
+    "addedTracks": {
+      "max": 50
+    },
+    "addedBarrels": {
+      "max": 50
+    },
+    "passes": {
+      "max": 2
+    },
+    "violations": {
+      "maxAdded": 0
+    }
+  },
+  "note": "Suite A: this 6-Sheet board routes with at least one Track on an inner Sheet (index 1..4); suite B: the Stack has 6 Sheets from the file. Both references count maxItems as routed connections; the spec's maxItems bounds inserted Tracks plus Barrels (settings.md), so the suite's incomplete bound is recorded as advisory and the hard expectations are the item cap (R-5) and no added violations. Under the 'default' profile reference A hit the profile's 60 s budget with 552 incomplete; reference B hit the profile's 60 s budget with 481 incomplete (see the reference file); the case's own budget is what its settings say."
+}

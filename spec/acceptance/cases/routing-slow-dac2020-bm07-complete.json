@@ -1,0 +1,37 @@
+{
+  "id": "routing-slow-dac2020-bm07-complete",
+  "kind": "routing",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue508-DAC2020_bm07.dsn",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 60
+  },
+  "reference": "Issue508-DAC2020_bm07.dsn.default.json",
+  "referenceSide": "A",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "passes": {
+      "max": 9
+    },
+    "wallClockMs": {
+      "max": 30000,
+      "advisory": true
+    },
+    "barrels": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    },
+    "traceLengthMm": {
+      "maxRatioToReference": 1.5,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: exactly 0 incomplete within 9 passes and 30 s. Suite B: every attempted net whole (its full pipeline: rip-up and shoving on, 20 passes)."
+}

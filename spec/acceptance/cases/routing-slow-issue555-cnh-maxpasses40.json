@@ -1,0 +1,28 @@
+{
+  "id": "routing-slow-issue555-cnh-maxpasses40",
+  "kind": "routing",
+  "origin": "refA-suite",
+  "tier": "slow",
+  "board": "Issue555-CNH_Functional_Tester_1.dsn",
+  "settings": {
+    "maxPasses": 40,
+    "timeoutSeconds": 180
+  },
+  "expect": {
+    "passes": {
+      "min": 1,
+      "max": 40
+    },
+    "incomplete": {
+      "max": 6
+    },
+    "violations": {
+      "maxAdded": 0
+    },
+    "wallClockMs": {
+      "max": 180000,
+      "advisory": true
+    }
+  },
+  "note": "Suite A: between 1 and 40 passes, at most 6 incomplete, within 3 min. Under the 'default' profile reference A hit the profile's 60 s budget with 1 incomplete; reference B hit the profile's 60 s budget with 24 incomplete (see the reference file); the case's own budget is what its settings say."
+}

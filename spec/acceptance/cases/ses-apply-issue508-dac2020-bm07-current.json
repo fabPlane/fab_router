@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue508-dac2020-bm07-current",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue508-DAC2020_bm07.dsn",
+  "ses": "Issue508-DAC2020_bm07-current.ses",
+  "reference": "Issue508-DAC2020_bm07-current.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 2
+    },
+    "barrels": {
+      "exact": 40
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 188
+    }
+  },
+  "note": "A session for benchmark board 07 from a current reference build."
+}

@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue026-j2-reference",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue026-J2_reference.dsn",
+  "ses": "Issue026-J2_reference.ses",
+  "reference": "Issue026-J2_reference.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 1
+    },
+    "barrels": {
+      "exact": 10
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 89
+    }
+  },
+  "note": "A session for the J2 reference board."
+}

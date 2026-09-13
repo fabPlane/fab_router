@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue508-DAC2020-DAC2020_bm07-DAC2020_bm07.unrouted.dsn",
+  "ses": "Issue508-DAC2020-DAC2020_bm07-FRv2.1.0-DAC2020_bm07.ses",
+  "reference": "Issue508-DAC2020-DAC2020_bm07-FRv2.1.0-DAC2020_bm07.ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 0
+    },
+    "barrels": {
+      "exact": 12
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 177
+    }
+  },
+  "note": "A session for benchmark board 07 produced by a reference build (current)."
+}

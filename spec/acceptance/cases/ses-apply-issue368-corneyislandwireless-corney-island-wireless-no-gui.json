@@ -1,0 +1,24 @@
+{
+  "id": "ses-apply-issue368-corneyislandwireless-corney-island-wireless-no-gui",
+  "kind": "ses-apply",
+  "origin": "new",
+  "tier": "fast",
+  "board": "Issue368-CorneyIslandWireless-corney_island_wireless.dsn",
+  "ses": "Issue368-CorneyIslandWireless-corney_island_wireless (no-GUI).ses",
+  "reference": "Issue368-CorneyIslandWireless-corney_island_wireless (no-GUI).ses.applied-ses.json",
+  "expect": {
+    "incomplete": {
+      "exact": 3
+    },
+    "barrels": {
+      "exact": 0
+    },
+    "violations": {
+      "exact": 0
+    },
+    "tracks": {
+      "exact": 0
+    }
+  },
+  "note": "A session produced headlessly for this board."
+}
