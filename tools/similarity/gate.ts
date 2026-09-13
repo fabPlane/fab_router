@@ -19,7 +19,7 @@
  *
  * Usage: bun run similarity -- --milestone M2 [--src src,test] [--k 20] [--w 8]
  */
-import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
+import { appendFileSync, existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
 
 const RUN_TOKENS = 40;
@@ -111,7 +111,12 @@ for (const dir of candidateDirs) {
     const rel = relative(root, f);
     const text = readFileSync(f, "utf8");
     const { toks, consts, pos, text: stripped } = tokenize(text);
-    for (const b of banned) if (new RegExp(`(?<![A-Za-z0-9_$])${b}(?![A-Za-z0-9_$])`).test(text)) findings.push({ kind: "IDENT", file: rel, detail: b });
+    for (const b of banned) if (new RegExp(`(?<![A-Za-z0-9_$])${b}(?![A-Za-z0-9_$])`).test(text)) {
+      // Redact the banned term itself so the committed report never reproduces it (spec-lint would
+      // otherwise flag the report). The real term stays only in the private full log.
+      findings.push({ kind: "IDENT", file: rel, detail: `banned identifier len ${b.length} #${(hash(b) % 0x10000).toString(16).padStart(4, "0")}` });
+      if (wall.fullDenyLog) { try { appendFileSync(wall.fullDenyLog, JSON.stringify({ ts: new Date().toISOString(), tool: "similarity", rule: "IDENT", file: rel, term: b }) + "\n"); } catch { /* best effort */ } }
+    }
     if (toks.length < K) continue;
     const grams = kgrams(toks);
     const fp = winnow(grams);
