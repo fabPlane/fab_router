@@ -8,7 +8,7 @@
  * copper is added and nothing is moved, so R-2 holds. Updates `LayoutStats.fanout` indirectly (the
  * escapes become same-net Track/Barrel touches).
  *
- * Public surface: FanoutResult, runFanout.
+ * Public surface: FanoutOutcome, runFanout.
  */
 import type { Layout, Pad, Pt } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
@@ -21,10 +21,10 @@ import { dropViaNear } from "./via.ts";
 import { legaliseTrail, trackPieces } from "./legalise.ts";
 import { pullPath } from "./pull.ts";
 
-export interface FanoutResult { escaped: number; addedItems: number }
+export interface FanoutOutcome { escaped: number; addedItems: number }
 
 /** Run the fanout pre-pass over `layout` (mutating through the Journal). */
-export function runFanout(layout: Layout, lattice: Lattice, journal: Journal, settings: RouteSettings, ignored: ReadonlySet<number>): FanoutResult {
+export function runFanout(layout: Layout, lattice: Lattice, journal: Journal, settings: RouteSettings, ignored: ReadonlySet<number>): FanoutOutcome {
   if (!settings.fanoutEnabled) return { escaped: 0, addedItems: 0 };
   const base = layout.tracks.length + layout.barrels.length;
   const added = (): number => layout.tracks.length + layout.barrels.length - base;
