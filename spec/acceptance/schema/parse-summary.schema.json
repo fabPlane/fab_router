@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fab_router/acceptance/parse-summary",
+  "type": "object",
+  "required": ["_generated", "board", "status"],
+  "properties": {
+    "_generated": { "type": "string" },
+    "board": { "type": "string" },
+    "status": { "enum": ["ok", "outline-missing", "parse-error"] },
+    "resolution": { "type": "object", "properties": { "unit": { "type": "string" }, "perUnit": { "type": "number" } } },
+    "unit": { "type": "string" },
+    "layers": { "type": "array", "items": { "type": "object", "properties": { "name": { "type": "string" }, "kind": { "enum": ["signal", "plane"] }, "index": { "type": "integer" } } } },
+    "nets": { "type": "array", "items": { "type": "object", "properties": { "name": { "type": "string" }, "pins": { "type": "integer" } } } },
+    "components": { "type": "array", "items": { "type": "object", "properties": { "ref": { "type": "string" }, "package": { "type": "string" }, "side": { "enum": ["front", "back"] } } } },
+    "padstacks": { "type": "array", "items": { "type": "string" } },
+    "viaPadstacks": { "type": "array", "items": { "type": "string" } },
+    "counts": { "type": "object", "properties": { "pads": { "type": "integer" }, "tracks": { "type": "integer" }, "vias": { "type": "integer" }, "pours": { "type": "integer" }, "fences": { "type": "integer" } } },
+    "rules": { "type": "object" },
+    "keepouts": { "type": "array" },
+    "outline": { "type": "object", "properties": { "vertices": { "type": "integer" }, "bbox": { "type": "object" } } }
+  }
+}

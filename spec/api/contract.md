@@ -1,0 +1,113 @@
+# Public API contract
+
+The module `src/api.ts` exports exactly the functions below (implementers may export more from
+internal modules, but the acceptance runner compiles against these). Types are in `spec/types/`.
+Expected failures are values, never exceptions: every function returns a result object with
+`ok: true | false`; exceptions are reserved for programming errors.
+
+## Reading and writing
+
+```ts
+readDsn(text: string, opts?: { name?: string }): ReadResult
+//  ok:  { ok: true, layout: Layout, document: DsnDocument, diagnostics: Diagnostic[] }
+//  err: { ok: false, error: ParseError, diagnostics: Diagnostic[] }
+writeDsn(document: DsnDocument): string
+writeSes(layout: Layout, opts?: SesWriteOptions): string
+applySes(layout: Layout, sesText: string): ApplyResult      // { ok, applied: { tracks, barrels }, diagnostics }
+readRules(text: string): RulesResult                          // { ok, rules: RulesFile, diagnostics }
+applyRules(layout: Layout, rules: RulesFile): Layout          // returns the same Layout, mutated
+```
+
+- `readDsn` never throws on malformed input; it returns `ok: false` with a `ParseError { line,
+  column, message }` only when no `pcb` scope can be recovered. Recoverable problems (unknown
+  scopes, unresolved padstack references, degenerate keepouts, missing outline) are
+  `Diagnostic { level: "warning" | "info", code, message, where? }` and the read still succeeds.
+- `writeDsn(readDsn(t).document)` re-read must deep-equal the original document (`F-ROUNDTRIP`).
+- `writeSes` output re-read by `applySes` on a fresh `readDsn` of the same board yields the same
+  Track and Barrel counts and the same DRC statistics (`spec/formats/ses.md`).
+
+## Checking and measuring
+
+```ts
+checkDrc(layout: Layout, opts?: DrcOptions): DrcResult
+//  { violations: Violation[], incompletes: Incomplete[], counts: { violations, incompletes } }
+layoutStats(layout: Layout, opts?: StatsOptions): LayoutStats
+requiredConnections(layout: Layout): Connection[]
+```
+
+`LayoutStats` (see `types/results.ts`) carries the numbers every acceptance case compares:
+
+| Field | Meaning |
+|---|---|
+| `items.pads, .barrels, .tracks, .pours, .fences` | counts of items on the Layout |
+| `connections.maximum` | number of required connections (sum over nets of components − 1 at load) |
+| `connections.incomplete` | connections not realised now |
+| `barrels.total, .through, .blind, .buried` | Barrel counts by span |
+| `tracks.totalLengthLu, .totalLengthMm, .legs, .bends90, .bends45, .bendsOther` | Track geometry totals |
+| `violations.total, .byRule` | DRC violations now |
+| `fanout.smdPads, .escaped` | SMD Pads and how many have a Barrel escape |
+
+Counting rules: a violation is one unordered item pair on one Sheet (never counted twice);
+`connections.maximum` is measured on the Layout as read (before any routing) and does not change
+when routing adds Tracks; `incomplete` uses the connectivity rules of `spec/rules/connectivity.md`.
+
+## Routing
+
+```ts
+route(layout: Layout, settings?: Partial<RouteSettings>, hooks?: RouteHooks): RouteReport
+routeDsn(dsnText: string, settings?: Partial<RouteSettings>, hooks?: RouteHooks): RouteDsnResult
+//  { ok, ses: string, report: RouteReport, statsBefore: LayoutStats, statsAfter: LayoutStats, diagnostics }
+routeSrj(srj: SimpleRouteJson, settings?: Partial<RouteSettings>, hooks?: RouteHooks): SrjRouteResult
+```
+
+`route` mutates the Layout in place (through its Journal) and returns
+
+```ts
+interface RouteReport {
+  passes: number;                       // routing passes actually run
+  attempted: number; completed: number; incompleteBefore: number; incompleteAfter: number;
+  added: { tracks: number; barrels: number };
+  ripped: number;                       // items removed by rip-up (counted once per removal)
+  violationsBefore: number; violationsAdded: number;   // violationsAdded must be 0 unless strictDrc is false and the input already violated in the same region
+  timedOut: boolean; aborted: boolean; stoppedBy: "complete" | "maxPasses" | "stagnant" | "maxItems" | "timeBudget" | "abort";
+  effectiveSettings: RouteSettings;
+  wallClockMs: number;                  // advisory
+  perNet?: Array<{ net: string; incomplete: number }>;
+}
+```
+
+Invariants (`R-1`…`R-5`, tested by every routing case):
+
+- **R-1** `violationsAdded === 0` for every case, on every board, at every setting.
+- **R-2** Items with `hold: "held"` or `"locked"` are never moved or removed.
+- **R-3** `report.added` equals the difference in item counts before and after.
+- **R-4** With `viasAllowed: false`, no Barrel is added.
+- **R-5** With `maxItems: n`, `added.tracks + added.barrels ≤ n`.
+
+## Hooks and cancellation
+
+```ts
+interface RouteHooks {
+  signal?: AbortSignal;
+  onPass?(e: { pass: number; incomplete: number; elapsedMs: number }): void;
+  onConnection?(e: { net: string; from: string; to: string; ok: boolean; elapsedMs: number }): void;
+  onProgress?(e: { done: number; total: number; elapsedMs: number }): void;
+  onLog?(level: "info" | "warn", message: string): void;
+}
+```
+
+Abort (`signal.aborted`) is observed within 250 ms of being raised on any board in the corpus,
+and `route()` returns the best-so-far Layout state with `report.aborted = true` and R-1..R-5 still
+holding.
+
+## SimpleRouteJson
+
+`types/srj.ts` mirrors the public tscircuit SimpleRouteJson format (mm units, `layerCount`,
+`bounds`, `obstacles`, `connections`, `differentialPairs`, `minTraceWidth`). `routeSrj` returns
+the same object with `traces` filled (`pcb_trace` elements with `wire` and `via` steps) and a
+`report`. `spec/formats/srj.md` defines the mapping to a Layout.
+
+## CLI
+
+`bun run src/cli.ts route <in.dsn> -o <out.ses> [--rules f] [--set k=v]... [--json report.json]`,
+`… drc <in.dsn>`, `… stats <in.dsn>`. Exit 0 on success, 2 on parse failure, 3 on R-1 breach.

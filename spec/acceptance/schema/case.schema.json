@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fab_router/acceptance/case",
+  "type": "object",
+  "required": ["id", "kind", "origin", "tier", "expect"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "kind": { "enum": ["parse", "ses-roundtrip", "ses-apply", "rules", "drc-load", "settings", "routing", "srj"] },
+    "origin": { "enum": ["refA-suite", "refB-suite", "both", "new"] },
+    "tier": { "enum": ["fast", "slow"] },
+    "board": { "type": "string" },
+    "rules": { "type": "string" },
+    "ses": { "type": "string" },
+    "reference": { "type": "string" },
+    "referenceSide": { "enum": ["A", "B"] },
+    "settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxPasses": { "type": "integer", "minimum": 0 },
+        "maxStagnantPasses": { "type": "integer", "minimum": 0 },
+        "maxItems": { "type": "integer", "minimum": 0 },
+        "timeoutSeconds": { "type": "number", "minimum": 0 },
+        "connectionBudgetMs": { "type": "number", "minimum": 0 },
+        "viaCost": { "type": "number" }, "planeViaCost": { "type": "number" }, "bendCost": { "type": "number" },
+        "preferredDirectionCost": { "type": "number" }, "startRipupCost": { "type": "number" },
+        "ripupEnabled": { "type": "boolean" },
+        "fanout": { "type": "boolean" }, "fanoutMaxPasses": { "type": "integer" }, "fanoutMaxItems": { "type": "integer" },
+        "router": { "type": "boolean" },
+        "optimizer": { "type": "boolean" }, "optimizerMaxPasses": { "type": "integer" }, "optimizerMaxItems": { "type": "integer" },
+        "strictDrc": { "type": "boolean" },
+        "neckWidthUm": { "type": "number" }, "copperToEdgeClearanceUm": { "type": "number" }, "holeClearanceUm": { "type": "number" },
+        "angleMode": { "enum": ["90", "45", "any"] },
+        "layers": { "type": "object" },
+        "viasAllowed": { "type": "boolean" },
+        "ignoreNetGroups": { "type": "array", "items": { "type": "string" } },
+        "seed": { "type": "integer" },
+        "useFileSettings": { "type": "boolean" }
+      }
+    },
+    "expect": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "exact": {}, "max": { "type": "number" }, "min": { "type": "number" }, "maxAdded": { "type": "number" },
+          "maxRatioToReference": { "type": "number" }, "preExisting": { "type": "number" },
+          "equalsFile": { "type": "string" },
+          "advisory": { "type": "boolean" }
+        }
+      }
+    },
+    "note": { "type": "string" }
+  }
+}

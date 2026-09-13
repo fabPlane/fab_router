@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "fab_router/acceptance/reference",
+  "type": "object",
+  "required": ["board", "boardSha256", "profile", "settings", "_generated"],
+  "properties": {
+    "_generated": { "type": "string", "description": "one neutral sentence on how this file was produced" },
+    "board": { "type": "string" }, "boardSha256": { "type": "string" },
+    "profile": { "enum": ["default", "p1", "fanout", "strict", "novia", "applied-ses"] },
+    "settings": { "type": "object" },
+    "refA": { "$ref": "#/$defs/stats" }, "refB": { "$ref": "#/$defs/stats" },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "stats": {
+      "type": "object",
+      "properties": {
+        "connections": { "type": "integer" }, "incompleteBefore": { "type": "integer" }, "incompleteAfter": { "type": "integer" },
+        "vias": { "type": "integer" }, "traceLengthMm": { "type": "number" },
+        "violationsBefore": { "type": "integer" }, "violationsAfter": { "type": "integer" },
+        "passes": { "type": "integer" }, "wallClockMs": { "type": "number" }, "host": { "type": "string" },
+        "status": { "enum": ["ok", "timeout", "error", "not-run"] }
+      }
+    }
+  }
+}
