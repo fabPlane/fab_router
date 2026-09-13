@@ -9,7 +9,13 @@ export interface SrjObstacle {
   connectedTo: string[];
 }
 export interface SrjConnection { name: string; pointsToConnect: SrjPoint[]; source_trace_id?: string; netName?: string }
-export interface SrjDifferentialPair { p: string; n: string; gapMm?: number; skewToleranceMm?: number }
+export interface SrjDifferentialPair {
+  /** Legacy shape. */
+  p?: string; n?: string; gapMm?: number; skewToleranceMm?: number;
+  /** Corpus shape (J-30): the two member connection names, observed [<…_N>, <…_P>]. */
+  connectionNames?: [string, string];
+  lengthTolerance?: number; traceGap?: number; maxUncoupledLength?: number; standardId?: string;
+}
 export interface SimpleRouteJson {
   layerCount: number;
   minTraceWidth: number;
