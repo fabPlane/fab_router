@@ -17,5 +17,5 @@
     "status": "error",
     "host": "reference B"
   },
-  "notes": "reference A: 1 run(s); board did not load: ParseError[location=(pcb, detail=Not a Specctra DSN file: expected '(pcb <name>' header]. reference B: 1 run(s); reference B could not read the board: not-a-dsn-file: expected a '(pcb <name>' header. reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file."
+  "notes": "reference A: 1 run(s); could not read the board (parse error). reference B: 1 run(s); could not read the board (not a DSN file). reference A ran single-threaded with its fanout pre-pass disabled for this profile unless the profile enables it, its copper-to-edge and hole clearance overrides unset (the file's own rules apply), and any settings block in the file honoured; reference B ran with rip-up and in-search shoving enabled and its optimiser on, ignoring any settings block in the file."
 }
