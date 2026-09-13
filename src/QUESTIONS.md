@@ -529,6 +529,19 @@ is populated a later task may tighten it to "not checked against that Part's own
     that name (subnet 1) — N-03 subnets share a name and F-S41 writes no subnet number; no corpus
     board has subnets. `writeSes` merges the items of all subnets of a name into one `(net NAME …)`.
 
+## Status (task I4b — drop the traceLengthMm /10 workaround)
+
+`test/applied-ses.test.ts` now asserts `after.tracks.totalLengthMm ≈ want.traceLengthMm` directly
+(both true mm after Q-I2-58); the `totalLengthMm === totalLengthLu / 10000` check is kept.
+
+| Command | Result |
+|---|---|
+| `bun test test/applied-ses.test.ts` | green — 39 pass, 0 fail |
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 51 files, 0 violations |
+| `bun run test` | green — 765 pass, 0 fail; no applied-ses failures |
+| `bun run acceptance` | 397 / 401 pass; the 4 red are `routing-*` (pre-existing, need vias/I5), no applied-ses cases |
+
 ## Status (task I4 — router core)
 
 Verification, run from the worktree root:
