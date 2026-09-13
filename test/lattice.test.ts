@@ -8,7 +8,7 @@ import { describe, expect, test } from "bun:test";
 import type { Dop8, Box } from "../src/geom/index.ts";
 import { boxIntersects, dop8Intersects, dop8OfPts } from "../src/geom/index.ts";
 import type { LatticeItemRef } from "../src/lattice/index.ts";
-import { buildLattice, createLattice, RIM_ID, SHELF_CELLS } from "../src/lattice/index.ts";
+import { barrelSheets, buildLattice, createLattice, drillOfBarrel, drillOfPad, RIM_ID, SHELF_CELLS } from "../src/lattice/index.ts";
 import { emptyLayout } from "../src/layout/index.ts";
 import { mulberry32, synthLayout } from "./helpers/synth.ts";
 
@@ -212,7 +212,7 @@ describe("Lattice property tests", () => {
 });
 
 describe("Lattice over a synthetic Layout", () => {
-  test("buildLattice indexes every item on every Sheet it has copper on; Track legs and Rim edges individually", () => {
+  test("buildLattice indexes every item on every Sheet it has copper (or a drill) on; Track legs and Rim edges individually", () => {
     const layout = synthLayout({ seed: 3 });
     const lattice = buildLattice(layout);
     const st = lattice.stats();
@@ -227,11 +227,27 @@ describe("Lattice over a synthetic Layout", () => {
         expect(lattice.hits((t.sheet + 1) % 4, { x0: m.x, y0: m.y, x1: m.x, y1: m.y }).some((r) => r.id === t.id)).toBe(false);
       }
     }
-    // every Pad on each of its Sheets, and not on others
+    // every Pad on each of its Sheets and on every Sheet its drill passes through (DR-06a), and not on others
+    let drillOnly = 0;
     for (const p of layout.pads) {
+      const d = drillOfPad(layout, p);
       for (const s of layout.stack) {
         const refs = lattice.hits(s.id, { x0: p.at.x, y0: p.at.y, x1: p.at.x, y1: p.at.y });
-        expect(refs.some((r) => r.id === p.id)).toBe(p.sheets.includes(s.id));
+        const copper = p.sheets.includes(s.id);
+        const hole = d !== undefined && s.id >= d.fromSheet && s.id <= d.toSheet;
+        expect(refs.some((r) => r.id === p.id)).toBe(copper || hole);
+        if (hole && !copper) { drillOnly++; expect(lattice.shapesOf(p.id, s.id)).toEqual([]); }
+      }
+    }
+    expect(drillOnly).toBeGreaterThan(0); // the `th-outer` form: copper on the outer Sheets, hole through the inner ones
+    // every Barrel on the Sheets of its span and of its drill, and not on others
+    for (const b of layout.barrels) {
+      const d = drillOfBarrel(layout, b);
+      const copper = barrelSheets(layout, b);
+      for (const s of layout.stack) {
+        const refs = lattice.hits(s.id, { x0: b.at.x, y0: b.at.y, x1: b.at.x, y1: b.at.y });
+        const hole = d !== undefined && s.id >= d.fromSheet && s.id <= d.toSheet;
+        expect(refs.some((r) => r.id === b.id)).toBe(copper.includes(s.id) || hole);
       }
     }
     // the Rim's edges on every Sheet, with legs

@@ -16,8 +16,10 @@ balance-free, and a grid answers in O(cells touched + hits).
 
 - Every indexed thing is a *slot*: `(item id, leg or none, Sheet, 8-DOP)`, stored struct-of-arrays.
   A Track is one slot per leg, the Rim one slot per outline / cut-out edge on every Sheet, a Pad or
-  Barrel one slot per Sheet it has copper on, a Fence on its Sheet or on every signal Sheet
-  (`"all-signal"`), a Pour on its Sheet.
+  Barrel one slot per Sheet it has copper on **or that its drill passes through** (the union of
+  both bounds; `spec/rules/drc.md` DR-06a checks the hole on every Sheet of its span, so a hole
+  query must find the item even where it has no copper — `shapesOf` is empty there), a Fence on
+  its Sheet or on every signal Sheet (`"all-signal"`), a Pour on its Sheet.
 - Per Sheet: a hash of cell key → slot list, plus the shelf for slots spanning more than
   `SHELF_CELLS` (16) cells. Cells are `floor(coord / cellSize)`; the grid is unbounded and a query
   only walks the occupied cell range.
