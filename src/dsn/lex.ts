@@ -6,7 +6,12 @@
  * every lexeme keeps its exact source text, its line/column, and whether it was glued to the
  * previous lexeme (F-9).
  *
- * Public surface: Lexeme, LexemeKind, lex, decodeDsnBytes, parseNumberText, isNumberText.
+ * Exactly one quote character is in effect at any point (F-4, ruling Q-I1-29): `"` unless the
+ * caller says otherwise, switching to the character declared by `(string_quote c)` from that
+ * declaration onward (F-11, F-30). Every other quote-like character is ordinary everywhere.
+ *
+ * Public surface: Lexeme, LexemeKind, LexOptions, lex, decodeDsnBytes, parseNumberText,
+ * isNumberText.
  */
 
 export type LexemeKind = "open" | "close" | "ident" | "number" | "string";
@@ -91,14 +96,21 @@ const CP1252: string[] = (() => {
   return t;
 })();
 
+export interface LexOptions {
+  /** The quote character in effect at the start of the text (F-4). Default `"`. */
+  stringQuote?: string;
+}
+
 /**
  * F-2 … F-11: split `text` into lexemes. Never throws. A leading BOM is dropped (F-1). The
- * `string_quote` exception (F-11) is applied by looking at the previous two lexemes.
+ * `string_quote` exception (F-11) is applied by looking at the previous two lexemes; the
+ * declared character becomes the quote character from there on (F-4, F-30).
  */
-export function lex(text: string): Lexeme[] {
+export function lex(text: string, options: LexOptions = {}): Lexeme[] {
   const out: Lexeme[] = [];
   const n = text.length;
   let i = 0;
+  let quoteCode = options.stringQuote !== undefined && options.stringQuote.length === 1 ? options.stringQuote.charCodeAt(0) : 0x22;
   if (n > 0 && text.charCodeAt(0) === 0xfeff) i = 1;
   let line = 1;
   let lineStart = i;
@@ -116,9 +128,9 @@ export function lex(text: string): Lexeme[] {
     if (c === 0x29) { out.push({ kind: "close", text: ")", line, column, glued: false }); sawSeparator = true; i++; continue; }
     const glued = !sawSeparator && out.length > 0 && out[out.length - 1]!.kind !== "open" && out[out.length - 1]!.kind !== "close";
     sawSeparator = false;
-    const isQuote = c === 0x22 || c === 0x27;
-    if (isQuote && !afterStringQuoteHead(out)) {
-      // F-4: quoted string to the next occurrence of the same character, no escapes.
+    const declaring = afterStringQuoteHead(out);
+    if (c === quoteCode && !declaring) {
+      // F-4: quoted string to the next occurrence of the quote character, no escapes.
       const q = text[i]!;
       let j = i + 1;
       const startLine = line;
@@ -142,6 +154,8 @@ export function lex(text: string): Lexeme[] {
     const v = parseNumberText(t);
     if (v !== undefined) out.push({ kind: "number", text: t, line, column, glued, value: v });
     else out.push({ kind: "ident", text: t, line, column, glued });
+    // F-11 / F-30: a one-character declaration switches the quote character from here on.
+    if (declaring && t.length === 1) quoteCode = t.charCodeAt(0);
     i = j;
   }
   return out;

@@ -57,7 +57,7 @@ describe("DSN writer quoting", () => {
     expect(doc.placement.components[0]!.places[0]!.partNumber).toBe("09561617712");
     expect(doc.library.images[0]!.pins[0]!.name).toBe("0e29");
     expect(doc.network.nets[0]!.pins).toEqual([{ component: "K1", pin: "0e29" }, { component: "J1 + - ( )", pin: "A'" }, { component: "B1", pin: "-" }]);
-    expect(doc.network.classes[0]!.name).toBe("");
+    expect(doc.network.classes[0]!.name).toBe("''"); // F-4: `'` is ordinary with `"` declared
     expect(doc.network.classes[0]!.rules[1]).toEqual({ kind: "clearance", value: 0.8, type: "\"default\"-\"1A EXTERNAL 1oz\"" });
     const again = readDsn(writeDsn(doc));
     expect(again.ok).toBe(true);
