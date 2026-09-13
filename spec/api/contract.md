@@ -150,3 +150,19 @@ Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTI
   arbitrary-precision arithmetic to do so.
 - **Q-I0-13** `writeDsn` / `writeSes` return strings; they are defined only for documents and
   Layouts obtained from a successful `readDsn`, so no `ok` envelope is needed.
+- **Q-I3-15** Item ids are one id space across Pads, Barrels, Tracks, Pours and Fences
+  (`types/layout.ts`); the Rim has none.
+- **Q-I3-16** `Fence.kind` added (0 = no Kind).
+- **Q-I3-17** For a back-side Pad, the copper is `at + rotate(rotationDeg) · mirrorX(form shape)`
+  with the form's Sheets taken in mirrored Stack order; the reader folds `flip_style` into
+  `rotationDeg` so this one convention holds for every board.
+- **Q-I3-18** `NetGroup.categoryKinds` and `ViaRule.entries[].kind` added; `NetGroup.kind` stays
+  as the Track Kind.
+- **Q-I3-19** No separate pair-type dimension on the router side: `spacing.get(a, b, sheet)`
+  with the default pair type is the whole rule (C-09/C-11 fold pair types into Kinds).
+- **Q-I3-20** See `rules/drc.md` DR-06a.
+- **Q-I3-21** See `rules/clearance.md` C-15 ruling: the setting always overrides.
+- **Q-I3-22** Touching (distance exactly 0) counts as overlap for Kind-0 Fences and for the V-08
+  attach rule.
+- **Q-I3-23** See `rules/drc.md` DR-11: copper must stay on the board.
+- **Q-I3-25** A Fence with `net` set is same-net (exempt) for that net; DSN Fences never set it.

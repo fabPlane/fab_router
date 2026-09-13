@@ -54,14 +54,20 @@ export interface Pad {
 export interface Barrel { id: number; net: number | null; at: Pt; form: number; fromSheet: number; toSheet: number; kind: number; hold: Hold }
 export interface Track { id: number; net: number | null; sheet: number; pts: readonly Pt[]; width: number; kind: number; hold: Hold }
 export interface Pour { id: number; net: number | null; sheet: number; outline: readonly Pt[]; holes: readonly (readonly Pt[])[]; kind: number; hold: Hold }
-export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; net?: number }
+/** Fence.kind: the Kind of the keepout (`rules/keepouts.md` KO-05, `clearance.md` C-11); 0 = no Kind ("must merely not overlap"). */
+export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; kind: number; net?: number }
 export interface Rim { outline: readonly Pt[]; cutouts: readonly (readonly Pt[])[]; kind: number }
 
 export interface Net { id: number; name: string; group: number; pads: readonly number[] }
 export interface NetGroup {
   id: number; name: string; nets: readonly number[];
   /** Always present: a NetGroup without its own width rule inherits the Layout default. */
-  trackWidth: number; kind: number; viaRule?: number; usableSheets?: readonly number[];
+  trackWidth: number;
+  /** The group's Track Kind (same as categoryKinds.track). */
+  kind: number;
+  /** Per-category Kinds (`rules/clearance.md` C-11). */
+  categoryKinds: { track: number; barrel: number; pin: number; smd: number; area: number };
+  viaRule?: number; usableSheets?: readonly number[];
 }
 export interface SpacingTable {
   kinds: readonly string[];
@@ -70,8 +76,13 @@ export interface SpacingTable {
   /** Largest value in the table for a given kind (used to size queries). */
   max(kind: number): number;
 }
-export interface ViaRule { id: number; name: string; forms: readonly number[] }
+/** Ordered Barrel candidates. `entries[i].form` is the PadForm; `kind` the via definition's Kind (`rules/vias.md` V-02); `attach` per V-08. `forms` lists the same PadForms in order. */
+export interface ViaRule { id: number; name: string; forms: readonly number[]; entries: readonly { form: number; kind: number; attach: boolean }[] }
 
+/**
+ * Item ids (Pad, Barrel, Track, Pour, Fence) are unique across all five arrays — one id space.
+ * The Rim has no id.
+ */
 export interface Layout {
   name: string;
   frame: Frame;

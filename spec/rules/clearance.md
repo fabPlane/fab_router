@@ -159,6 +159,9 @@ exports a non-plated hole) a Kind `hole_edge` whose spacing to Kind X is max(the
 current `area`-category spacing to X), and sets the drill-to-copper distance used by DR-06
 (`spec/rules/drc.md`). Neither is applied by `readDsn` itself; the parse summaries are recorded
 without them.
+(Ruling Q-I3-21: when the caller sets `copperToEdgeClearanceUm`, that value replaces the
+Rim's spacing for every pair, even when the boundary names a clearance class; the exception above
+applies only to the file's own default.)
 
 ## Reference observations
 

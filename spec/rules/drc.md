@@ -136,3 +136,13 @@ same-net SMD Pads, A does not); S3's `reference/*.json` files carry both referen
 does not (DR-02). Both treat a Pad with no net as an obstacle to every net (DR-01). Neither
 applies copper-to-edge or hole clearance unless the run's settings set them; the spec defaults
 are in `spec/api/settings.md`.
+
+**DR-11 — copper stays on the board.** Every Track leg and Barrel added by the router must lie
+entirely inside the Rim's outer ring and outside its cut-outs (touching the outline counts as
+outside once the copper-to-edge spacing is applied). A leg or Barrel that is not is a violation of
+rule `rim`, whether or not it is near an outline segment. (Ruling Q-I3-23.)
+
+**DR-06a — hole clearance scope (ruling Q-I3-20).** The enlarged drill circle of DR-06 is checked
+on every Sheet within the drill's span (all Sheets for a through drill) against other-net copper,
+and against every other-net drill (drill-to-drill distance ≥ the hole clearance) regardless of
+Sheet. DRC and the router apply the same rule.
