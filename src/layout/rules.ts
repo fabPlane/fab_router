@@ -229,6 +229,7 @@ export function ensureGroup(L: LayoutX, name: string): NetGroupX {
     kind: def.kind,
     categoryKinds: { ...def.categoryKinds },
     usable: def.usable.slice(),
+    usableSheets: def.usable.slice(),
     useLayerGiven: false,
     shoveFixed: false,
     pullTight: true,

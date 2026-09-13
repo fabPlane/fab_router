@@ -31,6 +31,33 @@ Not in this checkout: `spec/acceptance/boards/` (and `reference/`), so every cas
 stubs on "board corpus file missing" before it can reach the (stubbed) reader; the runner names
 both blockers in its `reason`.
 
+## Status (task I1 — DSN reader, Layout builder, DSN writer, rules file)
+
+Verification, run from the worktree root (after merging `main` at `1e66d51`, which brought the
+Q-I3-15…25 rulings and the I3 Lattice; the pre-existing typecheck errors in `src/route/profile.ts`,
+`test/clear-vs-drc.test.ts` and `test/helpers/synth.ts` are I3's adoption of the new fields, outside
+this task's write set, as the coordinator noted):
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green for every file of this task (`src/dsn`, `src/layout`, `src/api.ts`, `test/`); 8 errors remain in I3's `src/route/profile.ts` / `test/clear-vs-drc.test.ts` / `test/helpers/synth.ts` (task I3b) |
+| `bun run check:layers` | green — 35 files, 0 violations |
+| `bun run test` (with `FAB_ROUTER_ACCEPT_STUBS=1`) | 612 pass, 13 fail: the 7 parse cases of questions 27–29 and 6 `drc-load` cases that `checkDrc` (I2) answers with zero counts and no `not-implemented` diagnostic, so the runner cannot tell the stub from a measurement (question 42) |
+| `bun run test` (without the variable) | additionally the 198 `ses-roundtrip` / `ses-apply` / `routing` fast cases stub (`writeSes`, `applySes`, `route` are I2/I4) |
+| `bun run acceptance -- --case 'parse-*' --tier all` | 182 cases: **175 passed, 7 failed** (questions 27–29: package names on 5 boards, single-quote handling on 2 boards) |
+| `bun run acceptance -- --case 'rules-*' --tier all` | 10 / 10 passed |
+| `bun run acceptance -- --case 'settings-*' --tier all` | 14 / 14 passed |
+| `bun run acceptance -- --tier all` (with the variable) | 460 cases, 447 passed, 13 failed, 245 stubbed |
+| `test/vectors.test.ts` | all 4 `dsn-tokens` files pass (63 records) in addition to the 8 geometry files |
+| `test/dsn-roundtrip.test.ts` | F-ROUNDTRIP holds on all 149 readable corpus boards (`Issue006` is the `parse-error` board) |
+| `test/dsn-reader.test.ts` | 14 targeted tests: never-throws on garbage, F-14, F-21, F-101, §11 placement (Issue035 example, rotate_first), F-54, P-1/P-10, F-R1, F-R12, F-R18, F-R19, one id space, keepout fan-out |
+
+What is real: `src/dsn/{lex,tree,read,write,rules,index}.ts`, `src/layout/{model,spacing,units,
+shapes,rules,build,summary}.ts`, the API bodies `readDsn`, `writeDsn`, `readRules`, `applyRules` and
+the public `parseSummary` (Q-I0-3). The `routeSrj` stub gained `violationsBefore` / `violationsAdded`
+(Q-I0-8). `tools/acceptance/run-case.ts` now reports an empty `writeSes` text and a `route` that
+logs "not implemented" as stubs instead of failures (they became reachable once `readDsn` was real).
+
 ## Status (task I3 — Lattice and clearance queries)
 
 Verification, run from the worktree root (I1 and I2 are not on `main` in this checkout:
@@ -193,3 +220,72 @@ copper of every item category), `src/route/profile.ts`, `src/route/clear.ts`, RE
     Stack, so `createLattice(layout)` binds the index to its Layout. Callers that replace the
     Layout object (snapshots) must build a new Lattice; the Journal (I4) should keep one Lattice
     per live Layout.
+
+27. **Parse summaries record merged image names, contradicting `parse/README.md` and D-S2-05.**
+    `components[].package` in `spec/acceptance/parse/*.json` is the base name for 1 717 Parts on
+    66 boards whose `component` scope names a `NAME::n` image, although the README says "the image
+    name exactly as the component scope writes it, including any ::n suffix" and D-23/D-S2-05 rule
+    "no merging". The data follows one rule on 62 boards: a `NAME::n` image whose pins coincide, in
+    order, with an earlier `NAME` or `NAME::k` image (pin name, padstack, coordinates and rotation
+    rounded to the file unit) is reported by its base name. `summary.ts` applies exactly that rule
+    to the *summary only*; `Part.package` in the Layout stays as written (sessions need it, F-S32).
+    The four boards the references disagreed on (`Issue066-Project_GP8B`, `Issue153-wavefolder`,
+    `Issue157-TeamAdapt-LinePCB`, `Issue283-…Natural_Tone_Preamp`) record a mixture no rule
+    reproduces (identical images kept, differing ones merged) and fail on that field alone. Please
+    regenerate the `package` fields as written (the README's own definition) or bless the rule.
+28. **`Issue110-RelayModule` expects reference A's Cyrillic stripping.** Its summary records the
+    packages `:` and `:PinSocket_1x08_P2.54mm_Horizontal` for bare Cyrillic image names, which D-2
+    explicitly overrules ("names are kept verbatim in every position"). Not reproduced; 1 case fails.
+29. **`Issue684` / `Issue721` summaries treat `'` as an ordinary character.** They expect a NetGroup
+    named `''` and nets `$1N4396` etc. in the default group although `(class $1N4396 '$1N4396' …)`
+    lists them; F-4, D-11 and the `dsn-tokens/quotes` vectors (which pass) say `'…'` is a string
+    whatever the parser scope declares. Not reproduced; 2 cases fail. If the intended rule is "only
+    the declared `string_quote` quotes", the vectors need the same change.
+30. **Special `type` names and lone names (C-09, F-R12).** The summary of `Issue676` shows Kinds
+    `via_same_net` and `via` created by `smd_via_same_net` / `via_via_same_net`, i.e. the first-`_`
+    split, while C-09 says those names are recognised and not split; `Issue413`'s summary has no
+    Kind `kicad` for `(type kicad)`, and the rules cases pin that `(type smd)` leaves `smd|smd`
+    untouched, while C-09/F-R12 say a lone name is the diagonal `(X, X)`. Implemented as the data
+    says: a lone name without `_` has no effect; a name with `_` splits at its first `_`; only
+    `smd_to_turn_gap` / `pad_to_turn_gap` (C-12) and `buried_via_gap` / `antipad_gap` are
+    recognised whole.
+31. **F-R12 glued forms.** `default_"1A EXTERNAL 1oz"` is read literally as F-R12 says (the pair
+    `(default_, 1A EXTERNAL 1oz)`, creating Kind `default_`); a three-item text such as
+    `"kicad_default"_"5A EXTERNAL 1oz"` takes its first and last items (`kicad_default`,
+    `5A EXTERNAL 1oz`). Both are labelled unspecified by the cases; confirm or simplify.
+32. **C-12 "smallest default half-width".** `Issue420`'s summary (structure `(width 200)`, default
+    class `(width 100)`) reports `smdToTurnGap` 100, so the half-width is that of the *structure*
+    `rule`, not of the default NetGroup after its class rule. Implemented so (`structureWidth`).
+33. **V-04 rule for a class named `default`.** `Issue508-SMD-routing-issue-demo`'s summary lists
+    two via rules named `default` (the V-03 one and the class's `use_via` one), so a class rule is
+    appended even when a rule of that name exists; `via_rule` scopes still replace by name.
+34. **`pcb`-layer keepouts: F-66/D-21 (one Fence per Sheet) vs KO-03 (dropped).** Implemented
+    F-66. **Unknown layer types: F-60 (kept as signal) vs L-02 (dropped).** Implemented F-60.
+35. **Two-vertex polygons with an aperture.** `Issue179` defines `(padstack p7 (shape (polygon 1
+    0.01 0 -3.5 0 3.5)))` and its summary counts the pad, although F-52 calls a polygon with fewer
+    than three vertices degenerate and says the aperture is ignored. Implemented: a polygon with a
+    positive aperture and fewer than three distinct vertices is its stroked outline (a capsule).
+36. **C-04 rounding.** The summaries were produced with plain float64 products: `(width 1.005)` at
+    `(resolution mil 1000)` gives `1.005 × 1000 / 2 = 502.49999…` → 502 → width `1.004`
+    (`Issue289-…VGA`). `units.ts` therefore uses plain `Math.round` on the product; F-43's "halves
+    toward +∞" holds only when the product is exactly representable.
+37. **A Pad listed by two nets.** `Issue433` lists `R1_source_component_2-2` under two nets and its
+    summary counts it in both nets' `pins`. Implemented: the first net keeps the Pad (`Pad.net`),
+    both nets list it in `Net.pads`, diagnostic `pin-in-two-nets`.
+38. **Net-level width rules (N-06).** No corpus board has one; a net with `(rule (width W))` moves
+    into a group named `net:<name>` (a copy of its group with the width). Confirm the naming.
+39. **`Sheet.preferDir` at read time.** Left `null` (Q-I0-6: the router applies the default when it
+    builds costs). L-09 says the field "reports the effective value" and gives the default as
+    vertical on even Sheet indices, while settings.md gives the longer board side; which is it?
+40. **`clearance_class` naming an unknown Kind.** In a DSN class it is ignored (N-06 "names an
+    existing Kind"; `Issue187`'s summary has no Kind `G_PLCC`), in a rules file it creates the Kind
+    (C-13). Implemented as written; confirm the asymmetry is intended.
+41. **`writeDsn` and retained scopes.** `SExpr.line` is never set on retained scopes (it would break
+    the F-ROUNDTRIP deep-equality); a `place_control` scope is both parsed into `placement.flipStyle`
+    and retained in `placement.other`, and the writer emits `(place_control (flip_style …))` only
+    when no retained `place_control` exists. Network `(via …)` definitions live in `network.other`
+    because `DocNetwork` has no field for them (V-02 reads them from there).
+42. **`drc-load` stub detection.** `checkDrc`'s stub returns zero counts without a diagnostic, so
+    six `drc-load` cases fail (not stub) now that `readDsn` is real; the runner cannot distinguish
+    the stub from a clean board. Either the I2 stub should carry `not-implemented`, or the cases
+    should be accepted as stubbed until I2 lands.

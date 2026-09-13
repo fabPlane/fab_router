@@ -637,10 +637,8 @@ class Builder {
     }
     // Settings from the file (F-73, settings.md).
     if (doc.structure.autorouteSettings) L.settingsFromFile = settingsFromDoc(L, doc.structure.autorouteSettings, this.diags);
-    // NetGroup usable sheets (public field only when restricted).
-    for (const g of L.netGroups) {
-      if (g.useLayerGiven) g.usableSheets = g.usable.slice();
-    }
+    // NetGroup usable Sheets: signal Sheets, restricted by use_layer (L-04, N-06).
+    for (const g of L.netGroups) g.usableSheets = g.usable.slice();
     L.pinEdgeToTurnLu = Math.round(L.pinEdgeToTurnLu);
   }
 }
