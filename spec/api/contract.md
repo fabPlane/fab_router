@@ -207,3 +207,8 @@ Numbered `Q-<task>-<n>`; each answers the question of that number in `src/QUESTI
 - **Q-I2-60** `Track.origin` / `Barrel.origin` (`"file" | "session" | "router"`) added; the router
   sets `"router"` on everything it inserts; `includeFileWiring: false` writes only `"router"` items.
 - **Q-I2-61**, **Q-I2-62** Confirmed.
+- **Q-I4-63** `report.attempted` = the number of connection attempts across all passes (a
+  connection retried in a later pass counts again); `report.completed` = distinct connections
+  realised. Stated here.
+- **Q-I4-64** A 45° leg (neither along nor against) is charged `max(alongCost, againstCost)` per LU.
+- **Q-I4-65** Neck-down deferred to I5 is acceptable for the single-Track-per-connection milestone.
