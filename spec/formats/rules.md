@@ -22,7 +22,8 @@ belongs to a board that is not in the corpus).
   `autoroute_settings`, `rule`, `layer`, `padstack`, `via`, `via_rule`, `class`. Any other
   scope is skipped with diagnostic `unknown-scope` (info); it stays in `RulesFile.body` and
   `applyRules` ignores it.
-  Lexical rules are those of `dsn.md` section 1 (both quote characters, no comments, `clear` =
+  Lexical rules are those of `dsn.md` section 1 (`"` is the quote character — a rules file has
+  no `parser` scope — and `'` is an ordinary character, F-4; no comments; `clear` =
   `clearance`).
 - **F-R3 Result.** `readRules(text)` returns `{ ok, rules: RulesFile, diagnostics }` where
   `RulesFile = { name, body: SExpr[] }` (the entries in file order as retained scopes, so that

@@ -26,15 +26,23 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
   lexemes. Every other control character below `U+0020` (including `NUL`) is also a separator.
 - **F-3 Parentheses.** `(` and `)` are always single-character lexemes of kind `open` / `close`,
   except inside a quoted string (F-4).
-- **F-4 Quoted strings.** A `"` or `'` that stands at the start of a lexeme opens a quoted string
-  of kind `string`. It ends at the next occurrence of the *same* character. There is no escape
-  mechanism: a backslash is an ordinary character, the other quote character is an ordinary
-  character, and parentheses, spaces and line breaks inside the string are ordinary characters
-  (the string may span lines). The string's text excludes the two quotes and may be empty. An
-  unterminated string runs to the end of the input. Both quote characters open strings regardless
-  of what the `parser` scope declares (F-11); the DLR names `'`, `"` and `$` as candidate quote
-  characters (`<parser_descriptor>`, p. 81) — `$` is never a quote character here because it
-  appears unquoted inside identifiers throughout the corpus (`D-14`).
+- **F-4 Quoted strings.** The document has exactly one *quote character*: the one declared by
+  `(string_quote c)` in the `parser` scope (F-11, F-30), from that declaration onward, and `"`
+  before it or when nothing is declared. The DLR allows `"`, `'` and `$` as the declared
+  character (`<parser_descriptor>`, p. 81); every corpus board that declares one declares `"`.
+  The quote character standing at the start of a lexeme opens a quoted string of kind `string`,
+  which ends at the next occurrence of the same character. There is no escape mechanism: a
+  backslash is an ordinary character, and parentheses, spaces and line breaks inside the string
+  are ordinary characters (the string may span lines). The string's text excludes the two quotes
+  and may be empty. An unterminated string runs to the end of the input. **Any other quote-like
+  character is an ordinary character everywhere**: with `"` in effect, `'` starts or continues a
+  bare lexeme (`''` is a two-character bare name, `'$1N4396'` a nine-character one, `D-11`,
+  `D-17`) and is plain text inside a string (`"KiCad's Pcbnew"`); with `'` declared, `"` is
+  ordinary in the same way. Ruling Q-I1-29: this is the published format's rule, and it is how
+  both references read every name position of every corpus board (both read `(class '' …)` as
+  a NetGroup named `''`); their standalone tokenisers treat `'` as a second quote character and
+  they ignore a declared `'`, which `D-11` records, but no corpus board's observable output
+  depends on that.
 - **F-5 Bare lexemes.** Any other character starts a bare lexeme, which extends up to (not
   including) the next separator, parenthesis or end of input. Quote characters that occur *inside*
   a bare lexeme are ordinary characters: `A'`, `SW1-A'`, `-"D+"` are single bare lexemes. Every
@@ -65,8 +73,9 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
   likewise compared case-insensitively.
 - **F-11 The `string_quote` exception.** The lexeme that immediately follows the head
   `string_quote` is read as a bare lexeme even when it begins with a quote character: in
-  `(string_quote ")` the value is the one-character text `"`. This is the only place where a
-  quote character does not open a string.
+  `(string_quote ")` the value is the one-character text `"`. This is the only place where the
+  quote character in effect does not open a string; the declared character is the document's
+  quote character from there on (F-4).
 - **F-12 No comments.** There is no comment syntax. `#` and `/*` are ordinary identifier
   characters (`1#Top` is a layer name in `Issue270-non-ansi_bracket.dsn`). Reference A strips
   `#`-to-end-of-line and `/* … */` as comments; reference B and this specification do not,
@@ -89,7 +98,7 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
 
 - **F-20 Header.** The file must begin (after separators) with `(` followed by the head `pcb`
   (any case) and then the design name, which may be a bare lexeme, a quoted string (possibly
-  empty: `(PCB ''` in `D-16`) or absent. Otherwise `readDsn` fails with `ok: false` and a
+  empty) or absent; the EasyEDA `(PCB ''` of `D-16` is the two-character bare name `''` (F-4). Otherwise `readDsn` fails with `ok: false` and a
   `ParseError` positioned at the first lexeme (`D-1`). Nothing else makes `readDsn` fail.
 - **F-21 Sections.** Directly inside `pcb` the reader recognises the heads `parser`,
   `resolution`, `unit`, `structure`, `placement`, `library`, `network`, `wiring` (DLR
@@ -116,8 +125,9 @@ vectors in `spec/behaviour/dsn-tokens/*.jsonl` are the test of this section.
 
 DLR `<parser_descriptor>`, p. 81.
 
-- **F-30** `(string_quote c)` records the quote character `c` (F-11). Default `"`. It is used
-  when *writing* (`ses.md` F-S30, `writeDsn`); reading accepts both quote characters (F-4).
+- **F-30** `(string_quote c)` records the quote character `c` (F-11). Default `"`. It is the
+  document's only quote character, for reading (F-4) and for writing (`ses.md` F-S30,
+  `writeDsn`).
 - **F-31** `(space_in_quoted_tokens on|off)` is recorded; reading always allows spaces inside
   quoted strings (every KiCad file in the corpus declares `on`; the EasyEDA files declare
   nothing and contain no quoted spaces).
@@ -383,7 +393,8 @@ DLR `<network_descriptor>` p. 69, `<net_descriptor>` p. 67, `<class_descriptor>`
 - **F-102** `(class NAME net… (circuit …) (rule …) (clearance_class K) (via_rule V)
   {(layer_rule …)} …)`: a NetGroup named `NAME` containing the listed nets (bare or quoted
   names). An empty-string net name in the list is ignored (`D-27`: KiCad 8 writes `""` first);
-  a class name may itself be the empty string (`D-17`, `(class '' …)`). `circuit` holds
+  a class name may be the empty string (`(class "" …)`) or the bare two-character name `''`
+  (`D-17`, `(class '' …)`). `circuit` holds
   `(use_via padstack…)` and `(use_layer layer…)`; other circuit entries (`length`, `priority`,
   …) are retained. A net listed in two classes belongs to the last one (diagnostic
   `net-in-two-classes`); a net listed in no class belongs to the default group named `default`
@@ -598,8 +609,8 @@ deep-equality is well defined; every `other` array is present (possibly empty).
   quotes a name with the document's quote character when the name is empty, contains a
   separator, a parenthesis, the other quote character or any of `; - _ / ~ { }`, or would
   otherwise lex as a number (F-6) or begin with a quote character; a name that contains the
-  document's own quote character is written with the other quote character, and a name that
-  contains both is written with the document's quote character removed (no escape exists). It
+  document's quote character is written with that character removed (no escape exists, and the
+  other quote character does not quote, F-4; `ses.md` F-S30 does the same). It
   writes numbers in the shortest decimal form that reproduces the value (`1e-7` for `1e-07`,
   `15.75`, `-2050`) and retained `SExpr`s verbatim. Nothing else about the written text is
   specified.

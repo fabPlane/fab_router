@@ -33,9 +33,9 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   significant except as a separator; a scope head may directly follow `(`).
 - **D-4 Design name.** KiCad writes the full export path as a quoted string with backslashes
   (`"F:\Spiwocoal\Documentos\…\Main ISO.dsn"`, `Issue035-ReadPlaceScope.dsn`) or forward slashes
-  and spaces; Eagle writes `"untitled.brd"`; EasyEDA-style writes the empty single-quoted name
-  `''`; LibrePCB writes a bare name. Required: F-4 (backslashes are not escapes), F-20 (an empty
-  name is a name).
+  and spaces; Eagle writes `"untitled.brd"`; EasyEDA-style writes `''`, which with `"` as the
+  quote character is the two-character bare name `''` (D-11); LibrePCB writes a bare name.
+  Required: F-4 (backslashes are not escapes; `'` is ordinary), F-20.
 
 ## Numbers and identifiers
 
@@ -88,12 +88,28 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   splits a bare word around them; net names are read through a different path in which they
   survive (`~{WAIT}` is a net in reference A's board). Ruling: ordinary characters everywhere.
 - **D-11 Quote characters.** `"` is the declared quote character in every file that declares
-  one. `'` occurs (a) as a quote character in EasyEDA-style files that declare none: `(PCB ''`,
-  `(class '' …)`, `(class $1N4396 '$1N4396' …)` (`Issue684-…`, `Issue721-…`,
-  `Issue070-…`, `Issue313-…`); (b) *inside* bare names: pin names `A'`, `B'` and pin references
-  `SW1-A'` (`Issue508-DAC2020_bm02.dsn`); (c) inside `"`-quoted strings: `"KiCad's Pcbnew"`
-  (every KiCad board), `"2x20 pin 0.1'' female header"` (`Issue756-tomu-fpga.dsn`). Required:
-  F-4 and F-5 together — a quote character opens a string only at the start of a lexeme.
+  one (141 boards); no board declares `'` or `$`, so `"` is the quote character of every corpus
+  board (F-4). `'` occurs (a) around names in EasyEDA-style files, which declare nothing or
+  `"`: `(PCB ''` (`Issue070-…`, `Issue179-…`, `Issue289-…`, `Issue313-…`), `(class '' …)` and
+  `(class $1N4396 '$1N4396' …)` (`Issue684-…`, `Issue721-…`); (b) *inside* bare names: pin
+  names `A'`, `B'` and pin references `SW1-A'` (`Issue508-DAC2020_bm02.dsn`); (c) inside
+  `"`-quoted strings: `"KiCad's Pcbnew"` (every KiCad board), `"2x20 pin 0.1'' female header"`
+  (`Issue756-tomu-fpga.dsn`). Required: F-4 — `'` is an ordinary character in all three
+  positions: the class names are `''` and `$1N4396`, the listed member `'$1N4396'` names no net
+  (D-17), the design name of `(PCB ''` is `''`, and (b) and (c) read as they look.
+  *References.* Both read net, class, class-member, layer and pin-reference names this way on
+  every corpus board: the parse summaries of `Issue684-…` and `Issue721-…` record the NetGroup
+  `''` and the net-named NetGroups with no members. Three departures were observed by running
+  both full readers on synthetic designs: (1) the design name of `(pcb '' …)` — the D-16 boards
+  included — comes back as the empty string, and an image or component name written `'IMG1'`
+  as `IMG1`; (2) a declared `(string_quote ')` is recorded but not honoured — `(net 'Net A' …)`
+  still reads as the net `'Net` with `A'` as the first member, while `(component 'IMG 1' …)`
+  reads as `IMG 1`; (3) with `'` declared, `"NetA"` still reads as `NetA`. Their standalone
+  tokenisers also read `'…'` as a string in every position (`dsn-tokens/quotes.jsonl` notes).
+  Ruling Q-I1-29: one lexical rule everywhere, the published format's — only the declared
+  character quotes; no corpus board is affected by the departures (none declares `'`, none
+  writes an image or component name between apostrophes, and the design name of `(PCB ''` is
+  not part of any acceptance output).
 - **D-12 Non-ASCII bare names.** See D-2. Required: F-5.
 - **D-13 Windows paths and backslashes.** Design names such as
   `"C:\Users\…\hw72nb.dsn"` (`Issue015-StackOverflow.dsn`, `Issue022-AutoRouter_interrupted.dsn`,
@@ -123,16 +139,20 @@ two declare `EasyEDA Pro`, five carry no `parser` scope at all and share the sam
   one image `u1` holding every pad of the board as pins named like `887`, `0e29`; a single
   component `u1` placed at the origin; padstacks named `p887`, `p0e29`, `p38e5` with polygon
   shapes on layer `1` and aperture `0.01`; classes named by net (`(class $1N4396 '$1N4396' …)`)
-  and one class with the empty name. Required: F-33 (no parser scope is fine), F-63 (a
+  and one class named `''`. Required: F-33 (no parser scope is fine), F-63 (a
   `signal` path ring is the Rim), F-75 (grids ignored), F-10 (`clear`), F-7 (numeric layer and
-  pin names), F-102 (empty class name). Boards: `Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn`,
+  pin names), F-4 / D-11 (`'` is ordinary), F-102 (class named `''`). Boards: `Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn`,
   `Issue179-Autorouter_PCB1_2023-3-24.dsn`, `Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn`,
   `Issue289-Autorouter_PCB_FHT-VGA_2024-03-25.dsn`, `Issue313-FastTest.dsn`,
   `Issue684-Autorouter_PCB1_2026-5-8.dsn`, `Issue721-Autorouter_CE2632_HarryMu_2026-6-15.dsn`.
-- **D-17 Empty class name.** `(class '' (circuit (use_via via0)) (rule (width 15.75) (clearance
-  0.8)))` — a NetGroup whose name is the empty string and which lists no nets. Required: F-102
-  (kept as a group named `""`; it affects nothing unless a net names it). Boards: the EasyEDA
-  Pro boards of D-16.
+- **D-17 Class named `''` and members between apostrophes.** `(class '' (circuit (use_via
+  via0)) (rule (width 15.75) (clearance 0.8)))` — with `"` as the quote character (D-11) this
+  is a NetGroup named `''` (two apostrophes) that lists no nets; `(class $1N4396 '$1N4396' …)`
+  is a NetGroup named `$1N4396` whose one listed member `'$1N4396'` names no net, so the net
+  `$1N4396` stays in the default NetGroup and the group is empty. Required: F-4, F-102 (the
+  groups are kept; they affect nothing unless a net names them; the parse summary lists them
+  with no nets and every net in `default`). Both references read the boards this way. Boards:
+  the EasyEDA Pro boards of D-16 (`Issue684-…`, `Issue721-…`).
 - **D-18 LibrePCB 2.0.** Observed: `(pcb ch32v-tx118s` bare; `(resolution mm 1000000) (unit
   mm)`; every number with a decimal point (`0.0`, `21.59`); `(layer top_cu (type signal))`;
   `(boundary (path pcb 0.0 …))`; `(plane "GND" (polygon top_cu 0.0 …))`; a via named
@@ -361,12 +381,13 @@ Part's `package` is the name exactly as its `component` scope writes it (`compon
 in the parse summary). Pin resolution uses the named image; a component naming an image that does
 not exist but whose base name (suffix removed) does exist uses the base image.
 
-*Boards.* 10 boards: `Issue066-Project_GP8B.dsn` (24 parts), `Issue102-Mars-64-revE-rot00.dsn`,
-`Issue326-Mars-64-revE.dsn`, `Issue555-BBD_Mars-64.dsn`, `Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn`,
-`Issue593-BBD_Mars-64.dsn`, `Issue689-BBD_Mars-64.dsn`, `Issue153-wavefolder.dsn`,
-`Issue178-KeebMaker_Sofle_Choc.dsn`, `Issue283-UnconnectedTracesUnderPads-Natural_Tone_Preamp.dsn`.
+*Boards.* 67 boards place at least one Part through a `::n` image — 2 028 Parts in all, from 1
+(`Issue054-tairakb.dsn`) to 200 (`Issue178-KeebMaker_Sofle_Choc.dsn`); the references report
+1 717 of them (on 60 boards) by a merged name; the parse summaries record every one of them as
+written (rulings Q-I1-27/Q-I1-28).
 
-*References.* Reference A merges a suffixed image into the base image when their pins are
-identical and reports the base name; reference B keeps every image and reports the name as
-written. Ruling: B — no geometry differs either way, and the file's own name is the one a session
-writer or a diagnostic should echo.
+*References.* Both references merge a suffixed image into an earlier image whose pins coincide
+and report the earlier image's name for the Parts placed through it, re-numbering the rest
+(D-23; they disagree with each other only on the tie-break). Ruling: names as written — no
+geometry differs either way, and the file's own name is the one a session writer or a diagnostic
+should echo.
