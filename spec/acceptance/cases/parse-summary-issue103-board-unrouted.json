@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue103-board-unrouted",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue103-Board-Unrouted.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue103-Board-Unrouted.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue103-Board-Unrouted.dsn.json (43651 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

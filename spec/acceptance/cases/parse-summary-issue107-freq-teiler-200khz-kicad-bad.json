@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue107-freq-teiler-200khz-kicad-bad",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue107-freq_teiler_200kHz_kicad_bad.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue107-freq_teiler_200kHz_kicad_bad.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue107-freq_teiler_200kHz_kicad_bad.dsn.json (70139 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

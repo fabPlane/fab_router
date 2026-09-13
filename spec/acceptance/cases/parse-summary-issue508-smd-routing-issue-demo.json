@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue508-smd-routing-issue-demo",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue508-SMD-routing-issue-demo.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue508-SMD-routing-issue-demo.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue508-SMD-routing-issue-demo.dsn.json (2335 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

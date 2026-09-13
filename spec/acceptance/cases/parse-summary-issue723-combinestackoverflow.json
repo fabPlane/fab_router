@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue723-combinestackoverflow",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue723-CombineStackOverflow.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue723-CombineStackOverflow.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue723-CombineStackOverflow.dsn.json (280651 bytes, fast tier). Both references agree on every field."
+}

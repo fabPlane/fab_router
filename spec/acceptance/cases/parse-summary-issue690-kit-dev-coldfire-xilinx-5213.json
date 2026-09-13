@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue690-kit-dev-coldfire-xilinx-5213",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue690-kit-dev-coldfire-xilinx_5213.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue690-kit-dev-coldfire-xilinx_5213.dsn.json (412181 bytes, slow tier). The summary's notes list where the references disagreed and which ruling applies."
+}

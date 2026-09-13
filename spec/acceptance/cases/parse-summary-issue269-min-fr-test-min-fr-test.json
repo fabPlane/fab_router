@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue269-min-fr-test-min-fr-test",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-min_fr_test-min_fr_test.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue269-min_fr_test-min_fr_test.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue269-min_fr_test-min_fr_test.dsn.json (2536 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

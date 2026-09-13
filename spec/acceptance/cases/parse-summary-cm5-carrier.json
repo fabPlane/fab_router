@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-cm5-carrier",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "cm5-carrier.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/cm5-carrier.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/cm5-carrier.dsn.json (104703 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

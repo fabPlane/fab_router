@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue103-board-routed",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "slow",
+  "board": "Issue103-Board-Routed.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue103-Board-Routed.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue103-Board-Routed.dsn.json (1023701 bytes, slow tier). Both references agree on every field."
+}

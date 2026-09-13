@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue313-fasttest",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue313-FastTest.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue313-FastTest.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue313-FastTest.dsn.json (42235 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

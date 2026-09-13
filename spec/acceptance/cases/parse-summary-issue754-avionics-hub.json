@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue754-avionics-hub",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue754-avionics_hub.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue754-avionics_hub.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue754-avionics_hub.dsn.json (166245 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

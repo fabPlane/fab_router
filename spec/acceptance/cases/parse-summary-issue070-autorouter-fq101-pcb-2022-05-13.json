@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue070-autorouter-fq101-pcb-2022-05-13",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue070-Autorouter_FQ101_PCB_2022-05-13.dsn.json (121895 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

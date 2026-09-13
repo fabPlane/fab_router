@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue269-z10-module",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue269-z10_module.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue269-z10_module.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue269-z10_module.dsn.json (169729 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

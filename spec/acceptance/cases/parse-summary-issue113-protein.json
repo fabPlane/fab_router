@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue113-protein",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue113-Protein.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue113-Protein.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue113-Protein.dsn.json (136962 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

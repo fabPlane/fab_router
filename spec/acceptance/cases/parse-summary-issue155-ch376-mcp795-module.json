@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue155-ch376-mcp795-module",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue155-CH376_MCP795_Module.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue155-CH376_MCP795_Module.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue155-CH376_MCP795_Module.dsn.json (50353 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

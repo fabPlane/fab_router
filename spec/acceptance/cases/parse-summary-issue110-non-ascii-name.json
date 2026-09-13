@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue110-non-ascii-name",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue110-Паяльная станция.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue110-Паяльная станция.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue110-Паяльная станция.dsn.json (27461 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

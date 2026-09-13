@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue555-bbd-mars-64",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue555-BBD_Mars-64.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue555-BBD_Mars-64.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue555-BBD_Mars-64.dsn.json (54568 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

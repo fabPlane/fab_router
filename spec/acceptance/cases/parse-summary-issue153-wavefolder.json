@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue153-wavefolder",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue153-wavefolder.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue153-wavefolder.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue153-wavefolder.dsn.json (123558 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

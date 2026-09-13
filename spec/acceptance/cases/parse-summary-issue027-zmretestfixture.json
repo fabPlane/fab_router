@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue027-zmretestfixture",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue027-zMRETestFixture.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue027-zMRETestFixture.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue027-zMRETestFixture.dsn.json (71309 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

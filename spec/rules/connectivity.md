@@ -1,0 +1,111 @@
+# Connectivity: what connects, connections, incompletes
+
+Clauses `K-nn`. Observable through `checkDrc().incompletes`, `layoutStats().connections`,
+`requiredConnections`, and `RouteReport.incompleteBefore/After`.
+
+## The connection relation
+
+Two items of the **same net** are *directly connected* when one of the following holds; the
+relation is symmetric, and *connected* is its transitive closure within the net. Items of
+different nets are never connected (overlap between them is a Violation, `spec/rules/drc.md`).
+Items with no net connect to nothing.
+
+**K-01 — copper overlap on a Sheet.** Two items whose copper shapes on the same Sheet overlap
+or touch (Euclidean distance 0 between the shapes, boundary contact included) are directly
+connected. This covers: a Track end inside a Pad's copper; a Track *passing through* a Pad's
+copper (the CAD tool counts this, `Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn`,
+net `Net-(U4-Pad22)`: a Track whose middle vertex is a Pad centre connects that Pad); a Track
+end on another Track's body or end; a Track whose body crosses a same-net Barrel's copper
+(`Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn`, net `/~{SPI_CE}`); two
+Pads whose copper overlaps; a Barrel inside a Pad.
+
+**K-02 — Barrels and through Pads join Sheets.** A Barrel (or a Pad with copper on several
+Sheets) is one item: whatever it touches on any Sheet of its span is connected through it.
+
+**K-03 — Pours connect what they overlap.** A Pour is copper of its net: every same-net item
+whose copper overlaps the Pour's filled area (outline minus holes) on the Pour's Sheet is
+connected to it, and two same-net Pours whose areas overlap on a Sheet are connected. **This is
+the pour ruling** (see "Reference observations"): the CAD tool's DRC treats a pour as connecting,
+and the spec follows the CAD tool.
+
+**K-04 — plane Sheets.** A Pour on a plane Sheet follows K-03 like any Pour; because the
+synthetic board-covering Pour of L-05 spans the whole board, every same-net Barrel or through
+Pad reaching that Sheet is connected to it.
+
+**K-05 — Pours are not obstacles.** Copper of *other* nets may overlap a Pour without
+Violation, and the router may place Tracks and Barrels across Pours of other nets: the CAD tool
+re-fills the pour around them with its own clearance. (Ruling: both references behave this way;
+the alternative would forbid routing over any ground fill.) A Pour of a *different* net that
+has `hold: "locked"` and is marked as an obstacle by an adapter (SRJ only) is the exception,
+`spec/formats/srj.md`.
+
+**K-06 — Fences and the Rim connect nothing** and belong to no net.
+
+**K-07 — plane nets complete at the Pour.** For a plane net (L-06), a connection whose two
+terminal components *both* contain a Pour is not attempted by the router (it would require a
+Track on a plane Sheet or a detour the CAD tool does not want): it is still counted in
+`incomplete` (K-09) and listed by `checkDrc`, but it is not counted in `RouteReport.attempted`
+and its absence after routing is not a routing failure. A connection between a Pour-containing
+component and a Pad-only component is routed like any other: it is complete as soon as the
+Pad's component touches any Pour of the net (K-03), typically through a Barrel placed inside
+the Pour (`planeViaCost`, `spec/api/settings.md`).
+
+## Counting
+
+**K-08 — components.** The *components* of a net are the equivalence classes of the connected
+relation over the net's Pads, Barrels, Tracks and Pours. A Track or Barrel of the
+net that touches nothing else (a dangling stub) is its own component **but is not counted**:
+only components containing at least one Pad or Pour count as *terminal components*.
+
+**K-09 — `connections.incomplete`.** For each net, `max(0, terminal components − 1)`; summed
+over nets. `checkDrc().incompletes` lists one `Incomplete` per missing connection (K-11
+chooses which pairs), `counts.incompletes` equals the sum. Nets in `StatsOptions.ignoreNetGroups`
+groups are excluded (N-07).
+
+**K-10 — `connections.maximum`.** For each net, `max(0, (number of Pads + number of Pours of the
+net) − 1)`; summed over nets. It depends only on the file's Pads and Pours, so it is the same
+before and after routing (the contract's "components − 1 at load" phrasing holds for a board
+with no file wiring; this clause is the definition). Example: `Issue026-J2_reference.dsn` has
+maximum 33 and, having no wiring, incomplete 33 at load; `cm5-carrier.dsn` has maximum 284
+(both references agree on `maximum` for every board, since it ignores wiring).
+
+**K-11 — which pairs are listed.** `requiredConnections(layout)` returns, per net, the edges of
+a minimum spanning tree over the terminal components where the distance between two components
+is the smallest Euclidean distance between a Pad centre (or Pour vertex, or Barrel centre) of
+one and of the other; ties are broken by the lower item id pair. `Incomplete.airlineLu` is that
+distance in LU. `checkDrc().incompletes` lists the same edges restricted to the still-unjoined
+components. Implementations may list different but equally short edges only when distances tie.
+
+**K-12 — routing targets.** A connection is *routed* when its two components become one under
+K-01..K-07. The router's own inserted copper must satisfy K-01 exactly at joints: a Track it
+adds ends inside the target Pad's copper, on the target Track's copper, or inside the Pour.
+`RouteReport.incompleteAfter` is K-09 measured after routing; `completed` counts connections
+that went from incomplete to routed.
+
+## Reference observations and the pour ruling
+
+The two references use an *endpoint* model: a Track connects to a Pad or Barrel only when one
+of its end points equals the Pad/Barrel centre exactly, to another Track only end-to-end, and to
+a Pour only when the end point lies inside the Pour polygon (reference B additionally counts a
+Track end landing on the body of same-net copper, and overlapping same-net Pours). The CAD tool
+exports pours with thermal-relief holes around the pads, so the pad centre is *outside* the
+polygon and reference A sees pads as disconnected from the plane. Measured at load:
+
+| Board | CAD tool (its own DRC report) | reference A | reference B | spec (K-01..K-10) |
+|---|---|---|---|---|
+| `Issue575-drc_Natural_Tone_Preamp_7_unconnected_items.dsn` | 7 unconnected | 145 | 8 | **7** |
+| `Issue575-drc_BBD_Mars-64_6_track_1_hole_clearance_violations.dsn` | 0 unconnected | 3 | 1 | **0** |
+| `Issue575-drc_dev-board_4_hole_clearance_violations.dsn` | 0 unconnected | 9 | 0 | **0** |
+
+The spec numbers were checked against the CAD tool's report item by item: reference B's extra
+airline on the preamp board is the through-pad Track of `Net-(U4-Pad22)` (K-01), its extra
+airline on Mars-64 is the Barrel that `/~{SPI_CE}`'s front Track crosses mid-leg (K-01); both
+are connected in the CAD tool and under K-01. Reference A's 145 on the preamp board are the
+thermal-relief pads (K-03). **Ruling: the spec follows the CAD tool** — the board that leaves
+the router goes back to the CAD tool, whose DRC decides whether the nets are complete; an
+autorouter that reports 145 open connections on a board the CAD tool calls 7-open would route
+copper the CAD tool then flags as redundant.
+
+Consequence for the reference numbers in `spec/acceptance/reference/`: reference A's
+`incompleteBefore`/`incompleteAfter` are inflated on boards with pours; S3 records them as
+observed and applies this ruling when a case sets an `incomplete` expectation.

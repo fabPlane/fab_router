@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue230-cnh-functional-tester-1",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue230-CNH_Functional_Tester_1.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue230-CNH_Functional_Tester_1.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue230-CNH_Functional_Tester_1.dsn.json (163673 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

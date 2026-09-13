@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue753-cpu-85-r104",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue753-CPU-85_r104.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue753-CPU-85_r104.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue753-CPU-85_r104.dsn.json (151418 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

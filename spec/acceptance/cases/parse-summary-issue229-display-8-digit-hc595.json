@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue229-display-8-digit-hc595",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue229-display-8-digit-hc595.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue229-display-8-digit-hc595.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue229-display-8-digit-hc595.dsn.json (35940 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

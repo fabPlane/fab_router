@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue756-tomu-fpga11",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue756-tomu-fpga11.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue756-tomu-fpga11.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue756-tomu-fpga11.dsn.json (130791 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}

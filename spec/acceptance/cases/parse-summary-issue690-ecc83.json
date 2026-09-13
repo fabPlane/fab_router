@@ -1,0 +1,16 @@
+{
+  "id": "parse-summary-issue690-ecc83",
+  "kind": "parse",
+  "origin": "both",
+  "tier": "fast",
+  "board": "Issue690-ecc83.dsn",
+  "expect": {
+    "status": {
+      "exact": "ok"
+    },
+    "summaryEquals": {
+      "equalsFile": "parse/Issue690-ecc83.dsn.json"
+    }
+  },
+  "note": "readDsn must succeed and the normalised summary must deep-equal parse/Issue690-ecc83.dsn.json (40165 bytes, fast tier). The summary's notes list where the references disagreed and which ruling applies."
+}
