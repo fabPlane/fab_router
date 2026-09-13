@@ -21,6 +21,10 @@ per-connection budget); nudge, fanout and the optimiser are I5.
 
 ## Deliverables
 
+0. **Mark router-inserted items.** Set `origin: "router"` (spec/types/layout.ts) on every Track
+   and Barrel the router inserts, so `writeSes(..., { includeFileWiring: false })` and R-3 accounting
+   work (Q-I2-60). Read the `Q-*` rulings in `spec/api/contract.md`.
+
 1. **Journal** (`src/route/journal.ts`): `mark()`, journaled insert/remove of Tracks and Barrels
    through the Layout and the Lattice, `rewind(mark)`, `snapshot()`.
 2. **Quilt** (`src/route/quilt.ts`): lazy adaptive quadtree of free Patches per `(sheet,
