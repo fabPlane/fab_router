@@ -1,9 +1,11 @@
 /**
- * SimpleRouteJson adapter (task I6 / I6b): src/srj + api.routeSrj. Covers the mm↔LU mapping, the
- * bounds→Rim / obstacles→Fence conversion, the `pcb_trace` output, the differential-pair
- * measurement, the R-1 invariant on the J802 corpus boards, and the Q-68 connectivity reading (b):
- * net-owned copper is attachable, non-terminal, so each J802 board has exactly 15 required
- * connections (rules/connectivity.md K-13..K-15).
+ * SimpleRouteJson adapter (task I6 / I6b / I6c): src/srj + api.routeSrj. Covers the mm↔LU mapping,
+ * the bounds→Rim conversion, the obstacles→Prior-copper (Pour, origin "prior") / keepout (Fence)
+ * conversion, the `pcb_trace` output, the differential-pair measurement, the R-1 invariant on the
+ * J802 corpus boards, the Q-68 connectivity reading (b) (each J802 board has exactly 15 required
+ * connections, rules/connectivity.md K-13..K-15), and the Q-69 Prior-copper behaviours: DRC-silent
+ * among Prior copper (DR-13, violationsBefore 0), an obstacle to other nets, and connective to its
+ * own net (K-16).
  */
 import { describe, expect, test } from "bun:test";
 import { readFileSync } from "node:fs";
@@ -30,17 +32,18 @@ describe("srj build", () => {
     expect(layout.stack[0]!.name).toBe("top");
     expect(layout.stack[1]!.name).toBe("bottom");
     expect(layout.stack.every((s) => s.role === "signal")).toBe(true);
-    // one net per connection; two pads per two-point connection.
-    expect(layout.nets.length).toBe(board(J802).connections.length);
-    expect(netByConnection.size).toBe(layout.nets.length);
+    // one Net per routed connection (context Nets for owners naming no routed connection, J-25,
+    // are extra); two pads per two-point connection.
+    expect(netByConnection.size).toBe(board(J802).connections.length);
+    expect(layout.nets.length).toBeGreaterThanOrEqual(netByConnection.size);
     expect(layout.pads.length).toBeGreaterThan(0);
     // every pad is locked and carries a net.
     expect(layout.pads.every((p) => p.hold === "locked" && p.net !== null)).toBe(true);
-    // obstacles became Fences: net-owned ones carry a net (same-net exempt), keepouts do not; none
-    // became a Pour (Q-68 reading (b): net-owned copper must not be a connectivity terminal).
-    expect(layout.pours.length).toBe(0);
-    expect(layout.fences.length).toBeGreaterThan(0);
-    expect(layout.fences.some((f) => f.net !== undefined)).toBe(true);
+    // net-owned obstacles became Prior copper (Pours with origin "prior", carrying the owner net);
+    // keepouts with no owner stayed Fences and carry no net (task I6c / J-23, DR-13, K-16).
+    expect(layout.pours.length).toBeGreaterThan(0);
+    expect(layout.pours.every((p) => p.origin === "prior" && p.net !== null)).toBe(true);
+    expect(layout.fences.every((f) => f.net === undefined)).toBe(true);
     // a rectangular Rim from bounds + 1 mm.
     expect(layout.rim).not.toBeNull();
     expect(layout.rim!.outline.length).toBe(4);
@@ -69,23 +72,103 @@ describe("srj build", () => {
 
 describe("srj connectivity (Q-68 reading (b) / K-13..K-15)", () => {
   // Each J802 board declares 15 connections, every one with two pointsToConnect: the required
-  // links come only from those points (max(0,k-1) each), so requiredConnections is 15. Net-owned
-  // copper is attachable, non-terminal copper (a same-net Fence) — it never adds a required link.
+  // links come only from those points (max(0,k-1) each), so requiredConnections is 15. Prior copper
+  // (a Pour with origin "prior") is attachable, non-terminal copper (K-14) — it never adds a link.
   for (const name of [J802, J802_6, "b223-j802-six-layer-v2.srj.json", "b223-j802-six-layer-v3.srj.json"]) {
     test(`${name}: requiredConnections is 15`, () => {
       if (!has(name)) return;
-      const { layout } = buildSrjLayout(board(name));
-      expect(layout.nets.length).toBe(15);
+      const { layout, netByConnection } = buildSrjLayout(board(name));
+      expect(netByConnection.size).toBe(15);
       expect(api.requiredConnections(layout).length).toBe(15);
       expect(api.checkDrc(layout).counts.incompletes).toBe(15);
     });
   }
-  test(`${J802}: loads with zero DRC violations (violationsBefore 0)`, () => {
-    if (!has(J802)) return;
-    const { layout } = buildSrjLayout(board(J802));
-    // Fence-Fence and Fence-Rim pairs are never checked (rules/drc.md DR-03), so the board's own
-    // tightly-spaced pre-existing copper adds no Violation: the sealed reference records 0.
+  for (const name of [J802, J802_6, "b223-j802-six-layer-v2.srj.json", "b223-j802-six-layer-v3.srj.json"]) {
+    test(`${name}: loads with zero DRC violations (violationsBefore 0)`, () => {
+      if (!has(name)) return;
+      const { layout } = buildSrjLayout(board(name));
+      // DR-13 (formats/srj.md J-33): a Prior-copper pair is never a spacing/fence Violation, at any
+      // distance, whatever their nets — so the boards' tightly-coupled pre-existing copper (84
+      // different-net pairs below the 0.15 mm default on the 2-layer board) adds no Violation, and
+      // Prior copper is checked only against router-added copper, of which there is none at load.
+      expect(api.checkDrc(layout).counts.violations).toBe(0);
+    });
+  }
+});
+
+describe("srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-terminal)", () => {
+  const twoOwners: SimpleRouteJson = {
+    layerCount: 2,
+    minTraceWidth: 0.15,
+    defaultObstacleMargin: 0.2,
+    bounds: { minX: 0, maxX: 30, minY: 0, maxY: 20 },
+    obstacles: [
+      // two Prior-copper pieces of DIFFERENT owners that overlap (0 gap): DR-13 must keep them silent.
+      { type: "rect", layers: ["top"], center: { x: 15, y: 15 }, width: 4, height: 4, connectedTo: ["A"] },
+      { type: "rect", layers: ["top"], center: { x: 16, y: 15 }, width: 4, height: 4, connectedTo: ["B"] },
+    ],
+    connections: [
+      { name: "A", pointsToConnect: [{ x: 2, y: 2, layer: "top" }, { x: 2, y: 18, layer: "top" }] },
+      { name: "B", pointsToConnect: [{ x: 28, y: 2, layer: "top" }, { x: 28, y: 18, layer: "top" }] },
+    ],
+  } as unknown as SimpleRouteJson;
+
+  test("two overlapping different-net Prior pieces are never a Violation (DR-13)", () => {
+    const { layout } = buildSrjLayout(twoOwners);
+    expect(layout.pours.length).toBe(2);
+    expect(layout.pours.every((p) => p.origin === "prior" && p.net !== null)).toBe(true);
+    // overlapping copper of two different nets, yet silent among Prior copper: 0 Violations.
     expect(api.checkDrc(layout).counts.violations).toBe(0);
+    // neither piece is a terminal: A and B each keep their two Pad terminals → one required link each.
+    expect(api.requiredConnections(layout).length).toBe(2);
+  });
+
+  test("Prior copper is an obstacle to other nets (R-1) but same-net exempt (K-16, DR-02)", () => {
+    const board: SimpleRouteJson = {
+      layerCount: 2, minTraceWidth: 0.15, defaultObstacleMargin: 0.2,
+      bounds: { minX: 0, maxX: 30, minY: 0, maxY: 20 },
+      connections: [
+        { name: "A", pointsToConnect: [{ x: 2, y: 2, layer: "top" }, { x: 2, y: 18, layer: "top" }] },
+        { name: "B", pointsToConnect: [{ x: 28, y: 2, layer: "top" }, { x: 28, y: 18, layer: "top" }] },
+      ],
+      obstacles: [{ type: "rect", layers: ["top"], center: { x: 15, y: 10 }, width: 4, height: 4, connectedTo: ["A"] }],
+    } as unknown as SimpleRouteJson;
+    const { layout, netByConnection } = buildSrjLayout(board);
+    const cross = (net: number) => ({
+      id: 900001, net, sheet: 0, pts: [{ x: 13000, y: 10000 }, { x: 17000, y: 10000 }],
+      width: 150, kind: 1, hold: "free" as const, origin: "router" as const,
+    });
+    // a router-added Track of net B crossing net A's Prior copper is a spacing Violation.
+    expect(api.checkDrc({ ...layout, tracks: [cross(netByConnection.get("B")!)] }).counts.violations).toBeGreaterThan(0);
+    // the SAME Track of the OWNING net A attaches: same-net exempt, no Violation.
+    expect(api.checkDrc({ ...layout, tracks: [cross(netByConnection.get("A")!)] }).counts.violations).toBe(0);
+  });
+
+  test("Prior copper is connective: endpoints on the net's own Prior copper complete for free (K-16)", () => {
+    const board: SimpleRouteJson = {
+      layerCount: 1, minTraceWidth: 0.15, defaultObstacleMargin: 0.2,
+      bounds: { minX: 0, maxX: 20, minY: 0, maxY: 10 },
+      // Prior copper of A spans the strip between the two endpoints and covers both.
+      obstacles: [{ type: "rect", layers: ["top"], center: { x: 10, y: 5 }, width: 18, height: 2, connectedTo: ["A"] }],
+      connections: [{ name: "A", pointsToConnect: [{ x: 2, y: 5, layer: "top" }, { x: 18, y: 5, layer: "top" }] }],
+    } as unknown as SimpleRouteJson;
+    const { layout } = buildSrjLayout(board);
+    // both endpoints join the net's Prior copper, which joins them: nothing left to route.
+    expect(api.requiredConnections(layout).length).toBe(0);
+    expect(api.checkDrc(layout).counts.incompletes).toBe(0);
+  });
+
+  test("Prior copper is never a terminal: an isolated fragment adds no required link (K-14)", () => {
+    const board: SimpleRouteJson = {
+      layerCount: 1, minTraceWidth: 0.15, defaultObstacleMargin: 0.2,
+      bounds: { minX: 0, maxX: 20, minY: 0, maxY: 10 },
+      // Prior copper of A far from both endpoints.
+      obstacles: [{ type: "rect", layers: ["top"], center: { x: 10, y: 8 }, width: 2, height: 2, connectedTo: ["A"] }],
+      connections: [{ name: "A", pointsToConnect: [{ x: 2, y: 2, layer: "top" }, { x: 18, y: 2, layer: "top" }] }],
+    } as unknown as SimpleRouteJson;
+    const { layout } = buildSrjLayout(board);
+    // two Pad terminals → one required link; the isolated Prior fragment adds none (would be 2 if terminal).
+    expect(api.requiredConnections(layout).length).toBe(1);
   });
 });
 
@@ -136,10 +219,10 @@ describe("routeSrj on a clean synthetic board", () => {
 });
 
 describe("routeSrj on the J802 boards", () => {
-  // The J802 corpus boards carry each net's existing copper as net-owned same-net Fences
-  // (attachable, non-terminal keepouts — Q-68 reading (b)); most required connections span two
-  // Sheets and so need a Barrel. R-1 must hold on every board at every setting, the adapter must
-  // produce well-formed output, and any copper it does add must stay within the Rim.
+  // The J802 corpus boards carry each net's existing copper as net-owned Prior copper (Pours with
+  // origin "prior": attachable, non-terminal, an obstacle to other nets — Q-68/Q-69); most required
+  // connections span two Sheets and so need a Barrel. R-1 must hold on every board at every setting,
+  // the adapter must produce well-formed output, and any copper it does add must stay within the Rim.
   for (const name of [J802, J802_6]) {
     test(`${name}: R-1 holds, output well formed, traces within bounds`, () => {
       if (!has(name)) return;

@@ -767,3 +767,53 @@ Verification, run from the worktree root:
 | `bun run test` | green — 784 pass, 0 fail (2 pre-existing routing-quality advisories, unrelated) |
 | `bun run acceptance -- --tier all --case 'srj-*'` | 4 cases, 4 passed, 0 failed; `violations.maxAdded 0` hard on all four, two-layer `preExisting 0` hard; `incomplete` advisory (15 vs targets 4/8/8/15) |
 | `requiredConnections` per J802 Layout | 15 on all four boards (was 52/188/187/187) |
+
+## Status (task I6c — Prior copper: DRC-silent, connective, obstacle to other nets)
+
+Question 69's three-way tension is now resolved by the `origin: "prior"` primitive the spec added to
+the copper types (`spec/types/layout.ts`: `Origin` includes `"prior"`, `Pour.origin`). Prior copper
+is now a **Pour with `origin: "prior"`** — one copper class carrying all four behaviours:
+
+1. **Obstacle to other nets (R-1).** `src/drc/spacing.ts` (`evaluatePour`) and `src/route/clear.ts`
+   (the `pour` case) now treat a Prior Pour as held copper of its net at its net's Kind: router-added
+   copper of a *different* net that comes closer than `spacing(kind(prior), kind(added), sheet)` is a
+   Violation and is blocked at search time (`rules/drc.md` DR-13, clearance.md C-16).
+2. **Connective + same-net exempt (K-16, DR-02).** A Prior Pour joins its net's copper like any Pour
+   (`connect.ts`, unchanged join path); the router may end a route on it and that completes the
+   connection. Same-net copper is exempt in both DRC and `clear.ts`.
+3. **Silent among Prior copper (DR-13).** A Prior Pour is never a Subject in `spacing.ts`, and is
+   checked only against router-added copper (`!s.free` skips it), so a Prior-vs-Prior pair is never a
+   Violation at any distance, whatever their nets. This is what makes `violationsBefore = 0` on all
+   four coupled J802 boards, including the six-layer boards (was 29 with the old Fence reading of the
+   GND-owned pads that cover endpoints).
+4. **Never a terminal (K-14).** `connect.ts` excludes `origin: "prior"` Pours from the terminal set,
+   so required links come only from `pointsToConnect` and each J802 board's count stays **15**.
+
+`src/srj/build.ts` now emits a Prior Pour per net-owned obstacle Sheet (owner resolves to a routed
+connection), a Prior Pour of a synthesized **context Net** when the owner resolves to no routed
+connection (the six-layer boards' `GND`; the `formats/srj.md` J-25 context-net reading, chosen over
+the default refusal so the acceptance boards route — spec side may prefer the opt-in gate), and a
+plain keepout Fence for an obstacle with no `connectedTo`. All of `spacing.ts`/`clear.ts`/`connect.ts`
+gate strictly on `origin === "prior"`, which only SRJ import produces, so DSN-derived Layouts are
+unchanged.
+
+Completion (advisory): the two-layer board now completes 1/15 (incompleteAfter 14, was 15) by
+attaching to Prior copper; the six-layer boards stay at 15. This is short of the reference's 3/6/6/15.
+Two router-quality limitations remain (M7, not gating any hard metric):
+- **Cross-sheet Prior connectivity.** A multi-layer net-owned obstacle (the board's own vias) becomes
+  one Prior Pour *per Sheet*; two Pours on different Sheets do not join (only Barrels bridge Sheets),
+  so the Prior copper blob is fragmented per Sheet. Most J802 endpoints sit on different Sheets, so
+  reaching the reference's completion needs either cross-sheet joining of a spanning Prior obstacle
+  (a Prior Barrel, or an XY-overlap join rule) or the router to add its own bridging vias.
+- **Attach-as-target search.** The search routes pad→pad; it does not yet treat same-net Prior copper
+  as an explicit reachable target, so it only completes when a pad→pad route happens to touch it.
+
+Verification, run from the worktree root:
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 57 files, 0 violations |
+| `bun run test` | green — 791 pass, 0 fail (2 pre-existing routing-quality advisories, unrelated) |
+| `bun run acceptance -- --tier all --case 'srj-*'` | 4 cases, 4 passed, 0 failed; `violations.preExisting 0` and `violations.maxAdded 0` hard on all four; `incomplete` advisory (14/15/15/15 vs targets 3/6/6/15) |
+| `requiredConnections` per J802 Layout | 15 on all four boards; `violationsBefore` 0 on all four |
