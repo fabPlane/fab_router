@@ -1,0 +1,186 @@
+{
+  "taken": "2026-09-14T07:55:26.362Z",
+  "head": "3a6a364790309b9224e2b71f876e0eea7a8fcba8",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "srj-j802-2layer",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0,
+          "preExisting": 0
+        },
+        "incomplete": {
+          "max": 3,
+          "advisory": true
+        },
+        "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": {
+          "max": 0.15,
+          "advisory": true
+        },
+        "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": {
+          "max": 0.15,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 12,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 2,
+        "wallClockMs": 60043,
+        "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": 0,
+        "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": 57.506163,
+        "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": 0,
+        "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": 77.487175,
+        "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": 96.241321
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 3, got 12",
+        "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N: expected ≤ 0.15, got 57.506163",
+        "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N: expected ≤ 0.15, got 77.487175",
+        "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N: expected ≤ 0.15, got 96.241321"
+      ],
+      "ms": 60050.133541
+    },
+    {
+      "id": "srj-j802-six-layer",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0,
+          "preExisting": 0
+        },
+        "incomplete": {
+          "max": 14,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 5,
+        "wallClockMs": 60124,
+        "skewMm:J802_3_CM5_DPHY0_P_D0_P:J802_2_CM5_DPHY0_P_D0_N": 0,
+        "skewMm:J802_6_CM5_DPHY0_P_D1_P:J802_5_CM5_DPHY0_P_D1_N": 0,
+        "skewMm:J802_9_CM5_DPHY0_P_C_P:J802_8_CM5_DPHY0_P_C_N": 0,
+        "skewMm:J802_12_CM5_DPHY0_P_D2_P:J802_11_CM5_DPHY0_P_D2_N": 0,
+        "skewMm:J802_15_CM5_DPHY0_P_D3_P:J802_14_CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 14, got 15"
+      ],
+      "ms": 60159.93424999999
+    },
+    {
+      "id": "srj-j802-six-layer-v2",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0,
+          "preExisting": 0
+        },
+        "incomplete": {
+          "max": 6,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer-v2.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 4,
+        "wallClockMs": 60115,
+        "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+        "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+        "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+        "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+        "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 6, got 15"
+      ],
+      "ms": 60140.51270899999
+    },
+    {
+      "id": "srj-j802-six-layer-v3",
+      "kind": "srj",
+      "tier": "slow",
+      "expected": {
+        "violations": {
+          "maxAdded": 0,
+          "preExisting": 0
+        },
+        "incomplete": {
+          "max": 6,
+          "advisory": true
+        }
+      },
+      "board": "b223-j802-six-layer-v3.srj.json",
+      "pass": true,
+      "stub": false,
+      "measured": {
+        "ok": false,
+        "incomplete": 15,
+        "incompleteBefore": 15,
+        "violations": 0,
+        "violationsBefore": 0,
+        "passes": 4,
+        "wallClockMs": 60122,
+        "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+        "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+        "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+        "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+        "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+      },
+      "mismatches": [],
+      "advisoryMismatches": [
+        "incomplete: expected ≤ 6, got 15"
+      ],
+      "ms": 60151.985832999984
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "advisory": 4,
+    "stubbed": 0
+  }
+}
