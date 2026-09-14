@@ -63,3 +63,47 @@ The router is correct and DRC-clean on every board (R-1 holds through all M9+M10
 similarity-reviewed, no copying indicated), routes the large majority, and now carries a complete
 off-by-default global-planning subsystem. Full reference completion parity on the densest boards is
 the documented architectural frontier: a detailed-router rewrite, which is the user's call.
+
+---
+
+## Detailed-router spike (I17) — the go/no-go, decided NO-GO
+
+Per the user's "bound the rewrite risk first", the lowest-risk hypothesis was prototyped: a full
+**detailed** negotiated-congestion loop that rips and reroutes EVERY net each pass in detail against
+escalating present+history cost — the reference's own approach — with the exact predicate still the
+sole R-1 gate (behind `detailedNegotiation`, default off, byte-identical). Measured at a 240 s
+budget, `violationsAdded: 0` throughout:
+
+| Board | full detailed PathFinder | passes in 240 s | median pass | our floor | reference |
+|---|---|---|---|---|---|
+| bm07 | **8** (oscillates 11–17) | 136 | 1.7 s | 6 | 0 |
+| cm5-carrier | 36 | 4 | 70 s | 35 | 1 |
+| green14seg | 103 | 35 | 6.8 s | 92 | 1 |
+| bm01 | 83 | 6 | 47 s | 72 | 28/56 |
+
+**NO-GO.** Full detailed PathFinder does not beat the existing loop — on bm07 it is *worse* (8 vs 6)
+despite 136 cheap passes, so the blocker is a **convergence failure of the negotiation itself**, not
+budget; on the bigger boards a full detailed pass costs 47–70 s (the exact predicate), so only 4–6
+passes fit a budget — a **performance wall** as well.
+
+## Final conclusion (four independent negative results)
+
+The dense-board completion gap is now established, from four independent directions, to be emergent
+from the reference's *specific detailed routing algorithm* — its maze search, cost model, and
+negotiation schedule — not from any strategy layered around a generic detailed router:
+
+1. M9 — every detailed mechanism (shove, line-search, corner-stitch tiles) → plateau.
+2. I12 — every negotiated-congestion knob swept → plateau.
+3. M10 — a complete two-phase global router → parity (net-negative against the local negotiator).
+4. I17 — the reference's own full-detailed-PathFinder approach → plateau at 8, *worse* than our loop.
+
+Matching the reference's completion (bm07→0) would require replicating its detailed router far more
+faithfully than the behavioural spec captures — a deep reverse-engineering + reimplementation of the
+core routing algorithm (large; and the faithful-replication route also pushes against the
+clean-room boundary), or the topological/rubber-band rewrite that reopens the R-1 guarantee. Neither
+is a bounded next step; both are the user's explicit call.
+
+**Recommendation: accept M0–M10 as delivered.** The router is correct and DRC-clean on every board
+(R-1 held through every merge, all similarity-reviewed), routes the large majority, carries the
+global-planning subsystem, is dual-licensed and pushed. The completion frontier is exhaustively
+documented and the remaining lever is a large, risky effort with uncertain payoff.
