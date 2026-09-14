@@ -40,6 +40,7 @@ import { barrelFits } from "./clear.ts";
 import { pickBarrel, dropViaNear } from "./via.ts";
 import { nudgeClear, type RerouteFn } from "./nudge.ts";
 import { shoveClear, type ShoveBudget } from "./shove.ts";
+import { lineProbeRoute, type LineProbeOptions } from "./lineprobe.ts";
 import type { BarrelCandidate } from "./profile.ts";
 
 export interface RouteCtx {
@@ -304,7 +305,41 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
       if (tryRouteLayered(ctx, conn.net, ends.from.pt, ends.to.pt, fromUsable, toUsable, profile, ignore, deadline, true)) return true;
     }
   }
+
+  // 4) Detailed router (§9b-1): a gridless line-search last-resort rung. Reached only when every
+  // faster tier missed this connection. Off by default, so the fast tier is untouched; when enabled
+  // it is limited to previously-failed connections in later passes (contention already recorded and
+  // `ripupActive`), so fast-tier timing does not regress. R-1/R-2 hold by construction (lineprobe.ts
+  // re-checks every leg with the exact predicate and rolls back atomically).
+  if (ctx.settings.detailedRouter === "lineprobe" && ctx.ripupActive
+    && ctx.contention.has(`${conn.net}:${conn.from}:${conn.to}`)) {
+    if (tryLineprobeRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
+  }
   return false;
+}
+
+/** Per-connection options for the detailed line-search: the `detailedBudgetMs` cap and abort signal. */
+function lineProbeOptsOf(ctx: RouteCtx, deadline: number | undefined): LineProbeOptions {
+  const dl = ctx.settings.detailedBudgetMs !== undefined
+    ? Math.min(deadline ?? Infinity, now() + ctx.settings.detailedBudgetMs)
+    : deadline;
+  return {
+    ...(dl !== undefined && dl !== Infinity ? { deadline: dl } : {}),
+    ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
+    ...(ctx.settings.detailedMaxTiles !== undefined ? { maxEscapes: ctx.settings.detailedMaxTiles } : {}),
+  };
+}
+
+/** Line-search detailed rung (§9b-1): thread a locked channel the grid tier is too coarse for. */
+function tryLineprobeRoute(
+  ctx: RouteCtx, net: number | null, ends: { from: Endpoint; to: Endpoint },
+  fromUsable: number[], toUsable: number[], profile: Profile, ignore: IgnoreSet, deadline: number | undefined,
+): boolean {
+  const viasOk = ctx.settings.viasAllowed && profile.barrelForms.length > 0;
+  return lineProbeRoute(
+    ctx.layout, ctx.lattice, ctx.journal, ends.from.pt, ends.to.pt,
+    fromUsable, toUsable, viasOk, profile, ignore, lineProbeOptsOf(ctx, deadline),
+  );
 }
 
 /**

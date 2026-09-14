@@ -266,7 +266,14 @@ function measureRouting(c: AcceptCase, m: Measured): void {
 function measureSrj(c: AcceptCase, m: Measured): void {
   const b = boardText(c);
   const srj = JSON.parse(b.text);
-  const r = api.routeSrj(srj, caseSettings(c.settings));
+  // Slow-tier default for the detailed router (spec/api/settings.md: `off` fast / detailed slow).
+  // The J802 SimpleRouteJson boards are the locked-channel target of docs/DESIGN.md §9b; the S9
+  // bounds were measured with the reference's detailed router on, so exercise ours here unless the
+  // case pins it. "tiles" (§9b-2) is not yet built, so the strongest available detailed router is
+  // the line search (§9b-1). srj bounds are all advisory, so this cannot break a hard bound.
+  const s = caseSettings(c.settings);
+  if (s.detailedRouter === undefined) s.detailedRouter = "lineprobe";
+  const r = api.routeSrj(srj, s);
   if (!r.ok && isNotImplemented(r.diagnostics)) throw new Stub("routeSrj not implemented");
   m.ok = r.ok;
   m.incomplete = r.report.incompleteAfter;
