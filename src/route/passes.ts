@@ -34,11 +34,12 @@ import { createQuilt } from "./quilt.ts";
 import { aStar, aStarLayered, DIRS_4, DIRS_8, type EdgeCost, type LayeredSpace, type SearchSpace } from "./search.ts";
 import { pullPath } from "./pull.ts";
 import { legaliseTrail, trackPieces } from "./legalise.ts";
-import { createRipupHistory, isRippable, ripCost, cellHistory, type RipupHistory } from "./ripup.ts";
+import { createRipupHistory, isRippable, ripCost, cellHistory, presentFactor, type RipupHistory } from "./ripup.ts";
 import type { Track } from "../../spec/types/layout.ts";
 import { barrelFits } from "./clear.ts";
 import { pickBarrel, dropViaNear } from "./via.ts";
 import { nudgeClear, type RerouteFn } from "./nudge.ts";
+import { shoveClear, type ShoveBudget } from "./shove.ts";
 import type { BarrelCandidate } from "./profile.ts";
 
 export interface RouteCtx {
@@ -67,6 +68,9 @@ export interface RouteCtx {
   ripupActive: boolean;
   /** The connectivity computed at the start of the current pass (for Prior-copper attachment). */
   conn?: Connectivity;
+  /** Per-connection contention (times a connection failed to route): the local-congestion term of
+   *  the difficulty order (Nair 1987), keyed `${net}:${from}:${to}`. */
+  contention: Map<string, number>;
 }
 
 export interface PassOutcome {
@@ -83,6 +87,10 @@ const MAX_REGION_CELLS = 220_000;
 // cost; a bound keeps a single connection's search affordable on a large, congested board (the
 // Quilt only proposes, so a capped search can miss but never violate — docs/DESIGN.md §6).
 const MAX_POPS = 30_000;
+// Fewest incompletes a stalled board must still carry for the difficulty-ordered rescue to be worth
+// its extra passes; below it the negotiated-congestion loop has essentially converged and a rescue
+// would only add cost (protects the fast tier's timing — task I8 deliverable 5).
+const RESCUE_MIN_INCOMPLETE = 12;
 
 function now(): number { return Date.now(); }
 
@@ -278,8 +286,13 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
     if (multilayer()) return true;
     if (sameSheetAstar()) return true;
   }
-  // 3) Negotiated-congestion rip-up (soft obstacles), then local nudge.
+  // 3) Shove, then negotiated-congestion rip-up (soft obstacles), then local nudge.
   if (ctx.settings.ripupEnabled && ctx.ripupActive) {
+    // Shove rung (§9a): displace the movable free Tracks blocking the direct leg within their slack,
+    // each kept whole and DRC-clean, before resorting to ripping and rerouting them from scratch.
+    for (const sheet of common) {
+      if (tryShoveRoute(ctx, conn.net, sheet, ends.from.pt, ends.to.pt, profile, ignore, deadline)) return true;
+    }
     for (const sheet of common) {
       if (tryRouteOnSheet(ctx, conn.net, sheet, ends.from.pt, ends.to.pt, profile, ignore, deadline, true)) return true;
     }
@@ -400,6 +413,51 @@ function tryNudgeRoute(ctx: RouteCtx, net: number | null, sheet: number, from: P
   return false;
 }
 
+/** The shove budget for this connection (spec/api/settings.md `shove*`), in LU. */
+function shoveBudget(ctx: RouteCtx, profile: Profile): ShoveBudget {
+  const luPerUm = ctx.layout.frame.luPerUm;
+  const pitch = (profile.width + profile.maxSpacing) || Math.max(1, Math.round(200 * luPerUm));
+  const windowLu = ctx.settings.shoveWindowUm !== undefined
+    ? Math.max(1, Math.round(ctx.settings.shoveWindowUm * luPerUm))
+    : Math.max(1, Math.round(pitch * 3));
+  return { windowLu, maxDepth: ctx.settings.shoveMaxDepth ?? 4, maxMoved: ctx.settings.shoveMaxMoved ?? 12 };
+}
+
+/**
+ * Shove-and-route on one Sheet: displace the `free` other-net Tracks blocking the direct leg out of
+ * the way (each kept whole and DRC-clean, cascading within slack), then route the connection there.
+ * Journalled rollback on failure — the shove is a strategy-ladder rung entered before rip-up (§9a).
+ */
+function tryShoveRoute(ctx: RouteCtx, net: number | null, sheet: number, from: Pt, to: Pt, profile: Profile, ignore: IgnoreSet, deadline: number | undefined): boolean {
+  if (!ctx.settings.shoveEnabled) return false;
+  // Open a channel for the direct leg (and the two L corners it may pull into) by shoving the
+  // movable free Tracks aside — kept whole — then insert.
+  if (tryShoveTrail(ctx, net, sheet, [from, to], profile, ignore)) return true;
+  // Fall back to opening only the direct leg and letting A* find a route through the widened gap.
+  const mark = ctx.journal.mark();
+  if (shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: from, b: to }, profile, ignore, shoveBudget(ctx, profile))
+    && tryRouteOnSheet(ctx, net, sheet, from, to, profile, ignore, deadline, false)) return true;
+  ctx.journal.rewind(mark);
+  return false;
+}
+
+/**
+ * Shove every leg of a proposed centre path clear, then insert it. Used in the soft-search commit
+ * path to prefer *displacing* movable blockers over ripping and rerouting them (§9a). Returns true
+ * only when the whole trail was inserted DRC-clean without ripping; rolls back otherwise.
+ */
+function tryShoveTrail(ctx: RouteCtx, net: number | null, sheet: number, centre: readonly Pt[], profile: Profile, ignore: IgnoreSet): boolean {
+  if (!ctx.settings.shoveEnabled || centre.length < 2) return false;
+  const mark = ctx.journal.mark();
+  const budget = shoveBudget(ctx, profile);
+  for (let i = 1; i < centre.length; i++) {
+    if (!shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: centre[i - 1]!, b: centre[i]! }, profile, ignore, budget)) { ctx.journal.rewind(mark); return false; }
+  }
+  if (insertTrail(ctx, net, sheet, centre, profile, ignore)) return true;
+  ctx.journal.rewind(mark);
+  return false;
+}
+
 /** Connect a signal point to a plane Pour: a short stub and a Barrel spanning the plane Sheet. */
 function tryPlaneVia(ctx: RouteCtx, net: number | null, sigPt: Pt, sigUsable: number[], planeSheet: number, profile: Profile, ignore: IgnoreSet): boolean {
   const luPerUm = ctx.layout.frame.luPerUm;
@@ -433,6 +491,8 @@ function insertTrail(ctx: RouteCtx, net: number | null, sheet: number, centre: r
   for (const piece of pieces) {
     if (piece.pts.length < 2) continue;
     ctx.journal.addTrack({ net, sheet, pts: piece.pts, width: piece.width, kind: profile.trackKind, hold: "free" });
+    // PathFinder present-sharing: mark the resource cells this committed leg uses this pass.
+    for (let i = 1; i < piece.pts.length; i++) ctx.ripHistory.bumpPresentSeg(sheet, piece.pts[i - 1]!, piece.pts[i]!);
   }
   return true;
 }
@@ -475,7 +535,10 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
       if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
       extra += ripCost(startRipup, ctx.ripHistory, id);
     }
-    extra += cellHistory(startRipup, ctx.ripHistory, sheet, { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+    const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    extra += cellHistory(startRipup, ctx.ripHistory, sheet, mid);
+    // PathFinder present-sharing: penalise resources already used this pass (McMurchie & Ebeling).
+    extra *= presentFactor(ctx.settings.presentCongestionCost, ctx.ripHistory, sheet, mid);
     return { blocked: false, extra, rip: r.blocking };
   };
 
@@ -523,6 +586,8 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
     if (soft && res.rip.length > 0) {
       const budget = perConnRipBudget(ctx);
       if (res.rip.length > budget) continue;
+      // Prefer shoving the movable blockers aside (kept whole) over ripping and rerouting them (§9a).
+      if (tryShoveTrail(ctx, net, sheet, centre, profile, ignore)) return true;
       const mark = ctx.journal.mark();
       ripAll(ctx, res.rip);
       if (insertTrail(ctx, net, sheet, centre, profile, ignore)) { ctx.ripped += res.rip.length; return true; }
@@ -698,7 +763,9 @@ function tryRouteLayered(
         if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
         extra += ripCost(startRipup, ctx.ripHistory, id);
       }
-      extra += cellHistory(startRipup, ctx.ripHistory, usable[layer]!, { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+      const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      extra += cellHistory(startRipup, ctx.ripHistory, usable[layer]!, mid);
+      extra *= presentFactor(ctx.settings.presentCongestionCost, ctx.ripHistory, usable[layer]!, mid);
       return { blocked: false, extra, rip: r.blocking };
     };
     const fitCache = new Map<number, boolean>();
@@ -867,6 +934,36 @@ function connectionsOf(ctx: RouteCtx): Connection[] {
 }
 
 /**
+ * Order the pass's connections. By default (`orderByDifficulty`) the hardest go first: descending
+ * (airline × local congestion), where local congestion is 1 + the connection's accumulated
+ * contention (Nair 1987 difficulty-driven ordering). Ties, and the whole order when the setting is
+ * off, fall back to the legacy `(net, from, to)` order so the fast tier is deterministic and
+ * unchanged. Sorting is stable-keyed, never depending on Map iteration order (docs/DESIGN.md §7).
+ */
+function orderConnections(ctx: RouteCtx, connections: Connection[], useDifficulty: boolean): Connection[] {
+  if (!useDifficulty || !ctx.settings.orderByDifficulty) return connections;
+  // Difficulty = airline × local congestion, where local congestion is the connection's observed
+  // contention (how often it has failed to route so far). A connection routed cleanly has contention
+  // 0, so its difficulty is 0 and it keeps the legacy `(net, id)` order; only connections that are
+  // genuinely boxed in rise to the front — a gentle, self-limiting reading of Nair (1987) that does
+  // not disturb the boards a greedy order already converges.
+  const diff = (c: Connection): number => c.airlineLu * (ctx.contention.get(`${c.net}:${c.from}:${c.to}`) ?? 0);
+  // Order at the *net* level (each net's edges kept contiguous, in their legacy Kruskal order) so
+  // the difficulty order preserves the per-net routing locality that keeps rip-up churn down while
+  // still attempting the hardest nets — long airlines through congested regions — first (Nair 1987).
+  const groups = new Map<number, { conns: Connection[]; first: number; d: number }>();
+  connections.forEach((c, i) => {
+    let g = groups.get(c.net);
+    if (!g) { g = { conns: [], first: i, d: 0 }; groups.set(c.net, g); }
+    g.conns.push(c);
+    if (diff(c) > g.d) g.d = diff(c);
+  });
+  return [...groups.values()]
+    .sort((a, b) => (b.d - a.d) || (a.first - b.first))
+    .flatMap((g) => g.conns);
+}
+
+/**
  * Plane-net connections (K-07): every non-Pour terminal component is joined to its nearest Pour
  * component; Pour–Pour edges are not attempted. Returns undefined when the net has no Pour
  * component (fall back to the ordinary MST edges).
@@ -916,13 +1013,19 @@ export function runPasses(ctx: RouteCtx): PassOutcome {
   // DRC-clean (R-1) when reached, so restoring it preserves R-1.
   let bestIncomplete = Infinity;
   let bestMark = ctx.journal.mark();
+  // Difficulty ordering (Nair 1987) is a *rescue*: the passes converge in the legacy order first, so
+  // a board a greedy order already routes well is untouched; only once that order stalls
+  // (stagnation) does the hardest-first difficulty order get a bounded window to try again. Combined
+  // with keep-best rollback below, a difficulty-ordered rescue can only match or improve the legacy
+  // result — never regress it (docs/DESIGN.md §9a; task I8 no-regression requirement).
+  let rescueMode = false;
   const key = (a: number, b: number): string => `${Math.min(a, b)}:${Math.max(a, b)}`;
 
   for (let pass = 0; pass < ctx.settings.maxPasses; pass++) {
     if (abortRequested(ctx)) { aborted = true; stoppedBy = "abort"; break; }
     if (timeUp(ctx)) { timedOut = true; stoppedBy = "timeBudget"; break; }
 
-    const connections = connectionsOf(ctx);
+    const connections = orderConnections(ctx, connectionsOf(ctx), rescueMode && pass > 0);
     const cur = connections.length;
     // "Progress" is a drop in the fewest-incomplete seen (settings.md): negotiated congestion can
     // re-complete ripped nets every pass without ever improving, so counting Track insertions would
@@ -930,11 +1033,19 @@ export function runPasses(ctx: RouteCtx): PassOutcome {
     if (cur < bestIncomplete) { bestIncomplete = cur; bestMark = ctx.journal.mark(); stagnant = 0; }
     else stagnant++;
     if (cur === 0) { stoppedBy = "complete"; break; }
-    if (ctx.settings.maxStagnantPasses > 0 && stagnant >= ctx.settings.maxStagnantPasses) { stoppedBy = "stagnant"; break; }
+    if (ctx.settings.maxStagnantPasses > 0 && stagnant >= ctx.settings.maxStagnantPasses) {
+      // First stall on a still-congested board: switch on the difficulty-ordered rescue and grant it
+      // a fresh stagnation window. Boards that already routed well (few incompletes left) skip the
+      // rescue, so the fast tier — small boards that stall with little left — keeps its timing.
+      if (ctx.settings.orderByDifficulty && !rescueMode && bestIncomplete >= RESCUE_MIN_INCOMPLETE) { rescueMode = true; stagnant = 0; }
+      else { stoppedBy = "stagnant"; break; }
+    }
 
     // Pass 0 is a stabilising greedy pass (hard obstacles + vias, no rip-up), so it never breaks
     // what it lays; rip-up negotiation runs from pass 1 on. Keep-best (above) guards later churn.
     ctx.ripupActive = pass > 0;
+    // PathFinder present sharing is a within-pass term: clear it at the start of every pass.
+    ctx.ripHistory.resetPresent();
 
     passes++;
     let completedThisPass = 0;
@@ -961,6 +1072,11 @@ export function runPasses(ctx: RouteCtx): PassOutcome {
         ctx.completed++;
         completedThisPass++;
         done.set(key(conn.from, conn.to), true);
+      } else {
+        // A connection that fails to route is a locally congested one; bump its contention so the
+        // difficulty order (Nair 1987) attempts it earlier next pass, ahead of easier neighbours.
+        const ck = `${conn.net}:${conn.from}:${conn.to}`;
+        ctx.contention.set(ck, (ctx.contention.get(ck) ?? 0) + 1);
       }
       const netName = ctx.layout.nets.find((n) => n.id === conn.net)?.name ?? String(conn.net);
       ctx.hooks?.onConnection?.({ net: netName, from: String(conn.from), to: String(conn.to), ok, elapsedMs: now() - t0 });
@@ -1000,6 +1116,7 @@ export function createCtx(layout: Layout, settings: RouteSettings, hooks?: Route
     profiles: new Map(),
     preferDir: defaultPreferDirs(layout),
     planeSheets: new Set(layout.stack.filter((s) => s.role === "plane").map((s) => s.id)),
+    contention: new Map(),
   };
 }
 
