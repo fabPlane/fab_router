@@ -60,3 +60,7 @@ export * from "./shove.ts";
 
 // Task I9: gridless line-search detailed router (M9b-1).
 export * from "./lineprobe.ts";
+
+// Task I10: corner-stitched tile decomposition and the channel router (M9b-2).
+export * from "./tiles.ts";
+export * from "./channel.ts";

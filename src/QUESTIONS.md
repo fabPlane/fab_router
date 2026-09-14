@@ -998,6 +998,36 @@ their hard bounds).
     gap is attach-to-Prior-copper / gridless-tile territory (§9b-2, task I10), not single-Sheet
     channel threading. No regression, no added Violation. Recorded, not blocking.
 
+### Task I10
+
+70. **Free-tile representation: centre-valid tiles, so a positive-width portal is "wide enough for
+    the width".** docs/DESIGN.md §9b-2 says "maximal rectangular free tiles … portals wide enough
+    for the width". I expand each obstacle by `halfWidth + spacing` (not `spacing` alone), so a free
+    tile is the set of clear *centreline* positions and a portal's width already has the Track width
+    and its clearances subtracted: a portal of any positive width admits the centreline, and a
+    non-positive one does not. This keeps the width bookkeeping in one place (the expansion) and the
+    channel A* free of it, and it is safe either way because every proposed leg is still legalised
+    and re-checked with the exact `sweepClear` before insertion (R-1 by construction). Simplest
+    behaviour that satisfies the scenario; flag if `spacing`-only expansion with an explicit
+    `portal.width ≥ width` gate is wanted instead.
+
+71. **Lazy per-connection build, not a persistent keyed cache.** The deliverable text describes the
+    tile field as "keyed `(sheet, profile-hash)`, invalidated in-region on Journal changes". The
+    existing free-space structure (the Quilt) is itself rebuilt fresh per connection rather than
+    cached across connections, so — to match the codebase and keep the blast radius small — I build
+    the tile field lazily inside `channelCentre` per `(connection, sheet)` and do not persist it.
+    The field is a plain immutable snapshot; the cross-connection cache with in-region invalidation
+    is deferred. Correctness and R-1 do not depend on it. Flag if a persistent cache is required.
+
+72. **`detailedRouter: "tiles"` is defaulted only for the srj (J802) cases, not the slow DSN cases.**
+    Measured: on `Issue508-DAC2020_bm07.dsn` the tile rung leaves `incompleteAfter` at 6 either way
+    (the run converges in 8 passes; its residue is *movable* free copper the tile router treats as a
+    hard obstacle, i.e. class-(a) congestion that §9a shove/negotiation owns, not a locked channel).
+    So enabling tiles on DSN boards neither helps nor is in §9b-2's scope; `measureRouting` keeps
+    `detailedRouter` off, and `measureSrj` now defaults it to `"tiles"` (supersedes Q-I9-68's
+    `"lineprobe"` default). The dense-board exact-0 bounds (e.g. bm07) are a §9a/search limit
+    pre-existing on `main`, out of reach of this task; recorded below.
+
 ## Status (task I9 — M9b-1 gridless line-search detailed router)
 
 Implemented, R-1/R-2-safe by construction and off by default so the fast tier is unchanged:
@@ -1042,3 +1072,72 @@ Both boards keep `violations.maxAdded 0` and `preExisting 0` (hard) and never re
 | `bun run check:layers` | green — 59 files, 0 violations |
 | `bun run test` | green — 808 pass, 0 fail (adds `test/lineprobe.test.ts`, 6 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
 | `bun run acceptance -- --tier all --case 'srj-*'` | pass — advisory incomplete bounds recorded; `violations.maxAdded 0` and `preExisting 0` hard, both met |
+
+## Status (task I10 — M9b-2 corner-stitched tile detailed router)
+
+Built the gridless corner-stitched channel router (docs/DESIGN.md §9b-2; Ousterhout 1984 corner
+stitching, Dion & Monier 1995 gridless tiles, Hart et al. 1968 A*, Nash et al. 2007 Theta*,
+Hightower 1969 / Mikami & Tabuchi 1968 line search). Extends M9a/M9b-1; nothing rewritten.
+
+- **`src/route/tiles.ts`** — `buildTileField(layout, lattice, sheet, profile, region, opts)`
+  decomposes one `(Sheet, Profile)`'s free space into maximal rectangular free tiles: horizontal
+  bands cut at every obstacle edge, each band's free x-intervals maximal (the canonical corner-
+  stitching space tile), vertically-contiguous equal intervals merged. Obstacles are the
+  Dop8-expanded Lattice hits (each blocking item's copper bounds expanded by `halfWidth + spacing`,
+  mirroring `clear.ts` blocking decisions), so a free tile is clear *centreline* space. Surface:
+  `tileAt`, `freeNeighbours`, `portal`, `tiles`, `count`, `overBudget`; lazy (built only when the
+  rung fires), bounded by `detailedMaxTiles`, region clipped to the Rim's box. It only *proposes*
+  (conservative expansion can miss but never violate).
+- **`src/route/channel.ts`** — `channelCentre` runs A* over the free-tile adjacency graph (the
+  deterministic `(f,h,seq)` `Heap` now exported from `search.ts`), the centreline through portal
+  midpoints (the channel midline; a positive-width portal is wide enough — Q-I10-70). `channelRoute`
+  threads every shared usable Sheet, then a one-Barrel bridge (`dropViaNear`/`pickBarrel`/
+  `barrelFits`). Each centreline is Theta*-pulled, then legalised and exactly re-checked leg-by-leg
+  (with a line-search refinement fallback) before the Journal insert; any partial attempt is rewound
+  atomically. R-1/R-2 by construction.
+- **Ladder rung** (`passes.ts`): under `detailedRouter === "tiles"`, `tryChannelRoute` runs after
+  the line probe (`tryLineprobeRoute`), both gated to `ripupActive` + previously-failed connections
+  (`contention.has(...)`) in later passes, so the fast tier is untouched. Options from
+  `detailedBudgetMs` / `detailedMaxTiles`.
+- **Tests** — `test/tiles.test.ts` (decomposition vs a brute-force free-space check on 20 random
+  obstacle sets: tiles inside the region, interiors disjoint from obstacles and from each other,
+  `tileAt` defined exactly where free; a fixed 4-tile case with pinned adjacency/portal; the budget
+  flag) and `test/channel.test.ts` (an S-channel straight/L routes miss, threaded by the tile A*;
+  R-1-clean insert; determinism; stale-deadline / abort bail; walled-shut rollback; a route()-level
+  no-added-Violation / non-regression check).
+
+### Measured (`routeSrj`, R-1 `violationsAdded = 0` throughout; 60 s case budget)
+
+"off"/"lineprobe"/"tiles" compared; "tiles" runs the line search then the channel router.
+
+| Board | incomplete off | lineprobe | tiles | advisory target | note |
+|---|---|---|---|---|---|
+| `b223-j802.srj` (2-layer) | 14 | 14 | **12** | ≤ 3 | tile router closes 2 more locked channels; gap to 3 is attach-to-Prior (K-16), not channel threading |
+| `b223-j802-six-layer.srj` | — | — | 15 | ≤ 14 | budget-limited (2 passes/60 s); no regression |
+| `b223-j802-six-layer-v2.srj` | 15 | 15 | 15 | ≤ 6 | budget-limited; no regression |
+| `b223-j802-six-layer-v3.srj` | 15 | 15 | 15 | ≤ 6 | budget-limited; no regression |
+
+All four srj cases PASS (`violations.maxAdded 0` and `preExisting 0` hard, both met); the
+`incomplete` bounds are advisory and remain out of reach — the residual J802 gap is
+attach-to-Prior-copper depth under a 60 s budget, not gridless channel threading. The tile router
+improves the 2-layer board (14 → 12) with no added Violation and no regression (K-19).
+
+### Out of reach (recorded per the task)
+
+- **`Issue508-DAC2020_bm07.dsn` — exact 0 (hard), reached 6.** Pre-existing on `main`; unaffected by
+  this task. Measured off vs tiles: 6 either way, run converges in 8 passes (not budget-limited). Its
+  residue is *movable* free copper (class-(a) congestion, docs/DESIGN.md §9 (a)) that §9a
+  shove/negotiation owns; the tile router treats free copper as a hard obstacle, so §9b-2 cannot
+  close it. `detailedRouter` therefore stays off for slow DSN cases (Q-I10-72). `violationsAdded 0`.
+- **J802 advisory bounds (2-layer ≤ 3; six-layer 14/6/6), reached 12/15/15/15.** The remaining gap is
+  attach-to-Prior-copper depth within the 60 s budget (2–3 passes on six-layer), not channel
+  threading; docs/DESIGN.md §9b "Honest scope" calls six-layer parity a stretch for a first pass.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 61 files, 0 violations |
+| `bun run test` | green — 819 pass, 0 fail (adds `test/tiles.test.ts` + `test/channel.test.ts`, 11 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
+| `bun run acceptance -- --tier slow --case 'srj-j802*'` | 4 pass — advisory incomplete recorded; `violations.maxAdded 0` / `preExisting 0` hard, met |

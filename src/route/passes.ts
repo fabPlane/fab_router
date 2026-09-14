@@ -41,6 +41,7 @@ import { pickBarrel, dropViaNear } from "./via.ts";
 import { nudgeClear, type RerouteFn } from "./nudge.ts";
 import { shoveClear, type ShoveBudget } from "./shove.ts";
 import { lineProbeRoute, type LineProbeOptions } from "./lineprobe.ts";
+import { channelRoute, type ChannelOptions } from "./channel.ts";
 import type { BarrelCandidate } from "./profile.ts";
 
 export interface RouteCtx {
@@ -306,14 +307,19 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
     }
   }
 
-  // 4) Detailed router (§9b-1): a gridless line-search last-resort rung. Reached only when every
-  // faster tier missed this connection. Off by default, so the fast tier is untouched; when enabled
-  // it is limited to previously-failed connections in later passes (contention already recorded and
-  // `ripupActive`), so fast-tier timing does not regress. R-1/R-2 hold by construction (lineprobe.ts
-  // re-checks every leg with the exact predicate and rolls back atomically).
-  if (ctx.settings.detailedRouter === "lineprobe" && ctx.ripupActive
+  // 4) Detailed router (§9b): the gridless last-resort rungs. Reached only when every faster tier
+  // missed this connection. Off by default, so the fast tier is untouched; when enabled they are
+  // limited to previously-failed connections in later passes (contention already recorded and
+  // `ripupActive`), so fast-tier timing does not regress. R-1/R-2 hold by construction (both the
+  // line search and the channel router re-check every leg with the exact predicate and roll back
+  // atomically). `lineprobe` runs the line search (§9b-1); `tiles` runs it first, then the
+  // corner-stitched channel router (§9b-2) for the channels the line search still misses.
+  const detailed = ctx.settings.detailedRouter;
+  if ((detailed === "lineprobe" || detailed === "tiles") && ctx.ripupActive
     && ctx.contention.has(`${conn.net}:${conn.from}:${conn.to}`)) {
     if (tryLineprobeRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
+    if (detailed === "tiles"
+      && tryChannelRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
   }
   return false;
 }
@@ -339,6 +345,30 @@ function tryLineprobeRoute(
   return lineProbeRoute(
     ctx.layout, ctx.lattice, ctx.journal, ends.from.pt, ends.to.pt,
     fromUsable, toUsable, viasOk, profile, ignore, lineProbeOptsOf(ctx, deadline),
+  );
+}
+
+/** Per-connection options for the corner-stitched channel router (`detailed*` caps + abort signal). */
+function channelOptsOf(ctx: RouteCtx, deadline: number | undefined): ChannelOptions {
+  const dl = ctx.settings.detailedBudgetMs !== undefined
+    ? Math.min(deadline ?? Infinity, now() + ctx.settings.detailedBudgetMs)
+    : deadline;
+  return {
+    ...(dl !== undefined && dl !== Infinity ? { deadline: dl } : {}),
+    ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
+    ...(ctx.settings.detailedMaxTiles !== undefined ? { maxTiles: ctx.settings.detailedMaxTiles } : {}),
+  };
+}
+
+/** Channel detailed rung (§9b-2): A* over the corner-stitched free tiles of a locked channel. */
+function tryChannelRoute(
+  ctx: RouteCtx, net: number | null, ends: { from: Endpoint; to: Endpoint },
+  fromUsable: number[], toUsable: number[], profile: Profile, ignore: IgnoreSet, deadline: number | undefined,
+): boolean {
+  const viasOk = ctx.settings.viasAllowed && profile.barrelForms.length > 0;
+  return channelRoute(
+    ctx.layout, ctx.lattice, ctx.journal, ends.from.pt, ends.to.pt,
+    fromUsable, toUsable, viasOk, profile, ignore, channelOptsOf(ctx, deadline),
   );
 }
 
