@@ -1591,3 +1591,83 @@ terminates under a tight budget even with a 1000-iteration cap; two runs produce
 to the default. `negotiate` `keepHistory`: two fresh negotiations are identical (history zeroed each
 call), a bumped-then-`keepHistory` re-negotiation preserves the accumulated history, and a subsequent
 fresh negotiation zeroes it.
+
+## Status (task I17 — SPIKE: full detailed negotiated-congestion PathFinder loop; go/no-go)
+
+Experimental loop behind `detailedNegotiation` (default `false`; `RouteSettings.detailedNegotiation`
+was already declared in `spec/types/settings.ts`). When set (and `maxItems` unset), `runPasses`
+dispatches to `runDetailedNegotiation` in `src/route/passes.ts`. Each pass: **rewind the board to the
+post-fanout no-routing-copper baseline (rip ALL)**, reset the present map, then **route ALL required
+connections in detail** in the difficulty (`orderByDifficulty`, Nair 1987) order against the soft A*
+edge cost `startRipupCost·(present·pw + history·hw)` (McMurchie & Ebeling 1995 present + history
+terms), with `hw` escalated per pass; present accrues as the pass commits copper, history accrues
+across passes on the cells that rips and unroutable corridors touch. Keep-best snapshot. The exact
+`sweepClear`/`barrelFits` predicate stays the SOLE insert gate — the congestion cost only biases the
+search — so R-1 is untouched. `detailedNegotiation:false` never enters the loop; `globalPlan:"off"`
+default path is byte-identical (the soft `edgeCost` legacy branch is only skipped when
+`negHistoryWeight` is set, which happens only inside `runDetailedNegotiation`).
+
+### Measurement (`detailedNegotiation:true`, 240 s budget, `maxStagnantPasses` disabled, optimiser off)
+
+Reproduce: `bun tools/acceptance/i17-all.ts 240 dn,off` (writes `tools/acceptance/i17-logs/results.jsonl`).
+
+| Board | `dn` incomplete-after | best seen | passes in 240 s | median pass | `violationsAdded` | legacy loop (this run) | M9/M10 floor | reference |
+|---|---|---|---|---|---|---|---|---|
+| bm07 (DAC) | **8** | 8 | **136** | 1.7 s | 0 | 6 | 6 | 0 |
+| cm5-carrier | **36** | 36 | **4** | 70 s | 0 | 41 (default) | 35 (tiles) | 1 |
+| green14seg | **103** | 103 | **35** | 6.8 s | 0 | 92 | 92 | 1 |
+| bm01 (DAC) | **83** | 83 | **6** | 47 s | 0 | 72 | 72 | 28/56 |
+
+`violationsAdded === 0` and `checkDrc().counts.violations` unchanged (0 added) on every board — R-1
+holds exactly, as designed. Per-pass incomplete series (first ~14 passes):
+bm07 `[22,11,11,12,16,12,11,12,12,12,11,13,11,17]`; green14seg `[106,106,104,108,108,106,109,107,108,103,…]`;
+cm5 `[43,36,37,125]`; bm01 `[93,91,83,98,85,193]`.
+
+### GO / NO-GO: **NO-GO.** Full detailed PathFinder does **not** move bm07 below 6.
+
+Under a generous 240 s budget the full flat rip-all-reroute-all detailed loop plateaus at **8** on bm07
+— *worse* than the incomplete-only loop's floor of 6 — and is at or worse than the legacy floor on
+every other target board. The hypothesis (erasing the first-come advantage breaks the plateau) is
+**falsified**.
+
+The blocker is **both** structural causes `docs/DESIGN.md` §10 named, cleanly separated by board:
+
+- **Convergence** on the boards where passes are cheap. bm07 runs **136** full detailed passes at
+  1.7 s each — abundant iterations, so this is *not* a budget wall — and the completion oscillates in
+  a 11–17 band, best 8; it never approaches 6. green14seg runs 35 passes and oscillates 103–109
+  (plateau 103 > legacy 92). Escalating present+history negotiation does not resolve the contention;
+  it settles at a *worse* local optimum than the incremental loop.
+- **Performance** on the large boards. The exact clearance predicate makes one full detailed
+  rip-all-reroute-all pass cost **47 s (bm01)** and **70 s (cm5)**, so 240 s buys only **6** and **4**
+  passes — far below the thousands of iterations a flat PathFinder negotiation needs to converge
+  (exactly the affordability wall §10 predicted: "a true flat PathFinder … is unaffordable because
+  the R-1 predicate makes each detailed pass far too expensive to run thousands of times").
+
+**Why `dn` is worse than the incomplete-only loop, not merely equal.** The legacy loop keeps each
+greedily-good completed route and improves incrementally under keep-best, converging in <10 passes
+(bm07 → 6 in 8 s). Rewinding the whole board every pass discards all placement and forces the greedy,
+order-sensitive detailed A* to re-find every route from scratch against a soft cost field — it lands
+at a poorer configuration. The "first-come advantage" the reference erases with a *soft-overlap*
+coarse grid is, for *this* exact-gated detailed router, load-bearing structure: without it the search
+churns. This is the same finding as M10 (the corridor-confined driver was net-negative vs the free
+local negotiator) arrived at from the opposite direction — flat, corridor-free, full-detail — and it
+converges on the same conclusion: **the dense-board completion gap is a fundamental limit of the
+detailed router's local search, not of the negotiation schedule.** Closing bm07→0 needs a
+fundamentally stronger detailed router (gridless negotiated-congestion detailed routing or
+topological/rubber-band, `docs/DESIGN.md` §9b/§10.6) — a core rewrite, the user's call, not a knob.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 65 files, 0 violations |
+| `bun run test` | green (adds `test/detailed-negotiation.test.ts`) |
+| `bun tools/acceptance/i17-all.ts 240 dn,off` | the table above; `violationsAdded === 0` on all 8 runs |
+
+`test/detailed-negotiation.test.ts`: `detailedNegotiation:true` on three real boards yields
+`report.violationsAdded === 0` and `checkDrc` adds no violation (R-1), held/locked items byte-for-byte
+unmoved (R-2), and the flag off vs on leaves fixed items identical. Default behaviour is unchanged:
+`detailedNegotiation` unset never enters `runDetailedNegotiation`, and the soft `edgeCost` legacy
+branch is untouched (guarded on `negHistoryWeight`), so `globalPlan:"off"`/default routing is
+byte-identical (the wider fast acceptance tier confirms the invariance).
