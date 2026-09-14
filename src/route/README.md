@@ -78,3 +78,19 @@ the same exact clearance predicate a DRC uses, so `violationsAdded` is 0 on ever
 `locked` items are never moved or ripped (R-2); one Track is inserted per completed connection so
 `added ≤ completed ≤ maxItems` (R-5); no Barrel is ever added this milestone (R-4). Everything the
 router inserts carries `origin: "router"` (Q-I2-60).
+
+## The Mesh (task I13, M10a)
+
+`mesh.ts` builds the coarse global grid the two-phase router (docs/DESIGN.md §10) negotiates on —
+Nair (1987), Labyrinth (Kastner 2002), FastRoute (Pan/Xu/Chu), BoxRouter (Cho/Pan), with McMurchie &
+Ebeling (1995) PathFinder cost fields per Bridge. `buildMesh(layout, lattice, {binUm?})` tiles the
+Layout's bounding box with **Bins** on a `binLu` grid (`binLu` from the densest NetGroup's track
+pitch so the Mesh is ~30–120 bins across; `globalBinUm` overrides), one Bin layer per signal Sheet.
+A **Bridge** is a shared Bin boundary — in-plane East/North or an inter-Sheet via edge; `binOf`,
+`centreOf`, `bridgesOf`, `bridge` and the `capacityOf` / `usageOf` / `presentOf` / `historyOf` /
+`overflowOf` accessors expose it. A Bridge's **capacity** bakes in R-2: `floor(free / pitch)` where
+`free` is the boundary length not covered by *fixed blockage* (pads, `held`/`locked`/`prior` copper,
+`track`/`barrel` Fences, Rim, plane copper) queried through `Lattice.hits` and projected after a
+conservative AABB expansion; `free` other-net copper never reduces it. `meshCongestion(mesh)` reports
+per-Bridge overflow and a board summary. This milestone commits **no copper** and nothing routes over
+the Mesh yet, so `globalPlan:"off"` (the default) leaves every acceptance number byte-identical.
