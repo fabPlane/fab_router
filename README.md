@@ -1,5 +1,11 @@
 # fab_router
 
+[![milestones](https://img.shields.io/badge/milestones-M0%E2%80%93M10-2ea44f)](evidence/reports/)
+[![DRC-clean](https://img.shields.io/badge/R--1-DRC--clean%20by%20construction-2ea44f)]()
+[![tests](https://img.shields.io/badge/tests-857%20passing-2ea44f)]()
+[![runtime](https://img.shields.io/badge/runtime-Bun%20%E2%89%A51.4-black)](https://bun.sh)
+[![licence](https://img.shields.io/badge/licence-GPL--3.0%20OR%20FabPlane%20Commercial-blue)](LICENSE)
+
 A clean-room PCB autorouter for the FabPlane toolchain, in TypeScript for Bun. SPECCTRA DSN in,
 SES out; tscircuit SimpleRouteJson as a second adapter.
 
