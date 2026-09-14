@@ -68,6 +68,10 @@ export interface RouteSettings {
   globalHistoryWeight?: number; globalPresentWeight?: number; globalHistoryRamp?: number;
   /** Directional / per-Sheet layer assignment in the global phase. */
   globalLayerBias?: boolean;
+  /** SPIKE (I17): full detailed negotiated-congestion loop — rip and reroute ALL nets each pass
+   *  against escalating present+history cost. Experimental; default false. R-1 unchanged (exact
+   *  predicate stays the sole gate). */
+  detailedNegotiation?: boolean;
   /** Apply layout.settingsFromFile underneath the caller's settings. Default false. */
   useFileSettings?: boolean;
 }
