@@ -1141,3 +1141,74 @@ improves the 2-layer board (14 → 12) with no added Violation and no regression
 | `bun run check:layers` | green — 61 files, 0 violations |
 | `bun run test` | green — 819 pass, 0 fail (adds `test/tiles.test.ts` + `test/channel.test.ts`, 11 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
 | `bun run acceptance -- --tier slow --case 'srj-j802*'` | 4 pass — advisory incomplete recorded; `violations.maxAdded 0` / `preExisting 0` hard, met |
+
+## Status (task I11 — M9c per-pass performance, behaviour-preserving)
+
+Behaviour-PRESERVING speedup of the A* inner loop (`src/route/search.ts` `aStar` / `aStarLayered`)
+plus one allocation removed in `src/route/passes.ts`. No route changes: for the same
+Layout+settings+seed the router emits byte-identical Tracks/Barrels in the same order, same
+`incomplete`, same `violationsAdded`. Verified by restoring the pre-change `search.ts`/`passes.ts`
+from `HEAD`, fingerprinting, and confirming the four fingerprints are identical before and after
+(below).
+
+### Profiling (bun `--cpu-prof`, `Issue508-DAC2020_bm07.dsn`, 100 passes / 60 s → stops stagnant p8)
+
+Before (10.22 s wall) the A*-loop bookkeeping was a large, avoidable slice: heap `down`+`pop`
+≈ 6.6% + 1.0%, `Math.hypot` (per-neighbour leg length) 2.6%, `stepCost` closure 2.3%, plus
+`Map`/`HeapNode`/edge-object churn (GC). The exact clearance predicate + Lattice query
+(`collect`/`test`/`sweepClear`/`isFree`) is the other, larger half and was deliberately left
+untouched (it is the R-1 "DRC-clean by construction" path).
+
+Changes (all byte-identical substitutes):
+- A* frontier is a struct-of-arrays binary heap on typed arrays (no `HeapNode` per push); the visited
+  `gScore`/`cameFrom` `Map`s are one open-addressing hash store on typed arrays, both pooled and
+  reset per search by a generation stamp (no per-entry allocation, no per-connection realloc). The
+  order is unchanged: the heap keeps the same total order `(f, h, seq)` and `seq` is unique, so pop
+  order equals the sorted order regardless of internal layout.
+- Per-direction `stepCost` and leg length are cached once per search instead of a closure call and a
+  `Math.hypot` per neighbour. Leg length is filled lazily from the first real `(from, to)` it sees,
+  so it equals the original `Math.hypot(to.x-from.x, to.y-from.y)` bit-for-bit (the difference is
+  exactly `dx*step` for the linear `pointOf`, constant across the search).
+- Hard-mode `edgeCost` returns one shared frozen `CLEAR_EDGE` constant (read-only) instead of a fresh
+  `{blocked,extra,rip:[]}` object + array per neighbour.
+
+After (8.14 s wall on the same board, ≈ 20% faster): `Math.hypot` and `stepCost` are gone from the
+profile; heap `pop`(+inlined sift) drops from ≈ 0.8 s to 0.34 s; the visited store
+(`probe`/`leq`/`gOr`/`push`) totals ≈ 0.28 s replacing the `Map` churn.
+
+### Behaviour-invariance (`test/perf-invariance.test.ts`)
+
+Four boards routed to a fixed pass count with generous budgets (no time truncation → machine-
+independent): fingerprint = SHA-256 of report counters + full SES text. Two runs per board pin
+determinism; the fingerprint is pinned to a recorded constant so a future route change fails loudly.
+The recorded constants were confirmed **identical** with the pre-change code:
+
+| Board | before == after fingerprint (prefix) |
+|---|---|
+| `Issue508-DAC2020_bm08.dsn` | `a042a8fe…` ✓ |
+| `Issue026-J2_reference.dsn` (rip-up + layered vias, 9 passes) | `599df565…` ✓ |
+| `Issue269-min_fr_test.dsn` (plane Sheets) | `50e0bb0f…` ✓ |
+| `Issue690-ecc83.dsn` (fanout escape) | `6259e157…` ✓ |
+
+### Completion at a FIXED 30 s budget, before → after (serial, same machine)
+
+| Board | before | after | note |
+|---|---|---|---|
+| `Issue508-DAC2020_bm07.dsn` | 8 passes, inc 6, 9.6 s | 8 passes, inc 6, **8.1 s** | **not** budget-limited: stops *stagnant* (a pass-count stop, time-independent), so completion is unchanged by construction — only ~16% faster to reach the same stop. Honest per-board result: the speed-up does not change bm07 completion. |
+| `cm5-carrier.dsn` | 2 passes, inc 44 | 2 passes, **inc 43** | budget-limited (`timeBudget`); the faster searches complete one more connection before the 30 s cutoff lands mid-pass. |
+| `b223-j802.srj` (2-layer, tiles) | 2 passes, inc 14 | 2 passes, **inc 13** | budget-limited; one more connection within the truncated pass. |
+
+Passes-in-budget did not increment at 30 s (a J802/cm5 pass is ≈ 15 s and is dominated by the
+untouched exact-predicate/Lattice half, so a ~20% search-loop win is not a whole extra pass) — but on
+the two budget-limited boards the extra throughput does complete one more connection inside the same
+budget. bm07 is stagnation-limited, so its completion is unchanged (reported honestly). No advisory
+completion bound became reliably reachable by the speed-up alone, so none was turned hard; R-1/R-6
+hold by construction (nothing new reaches the Journal; the change is inside the proposal search).
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 61 files, 0 violations |
+| `bun run test` | green — 823 pass, 0 fail (adds `test/perf-invariance.test.ts`, 4 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |

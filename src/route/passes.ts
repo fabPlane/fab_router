@@ -89,6 +89,11 @@ const MAX_REGION_CELLS = 220_000;
 // cost; a bound keeps a single connection's search affordable on a large, congested board (the
 // Quilt only proposes, so a capped search can miss but never violate — docs/DESIGN.md §6).
 const MAX_POPS = 30_000;
+// A shared "clear, nothing ripped" edge result. The A* loop calls `edgeCost` once per neighbour and
+// only ever reads these fields, so returning one frozen constant instead of a fresh object + array
+// removes an allocation per expansion on the hard-obstacle fast path (task I11, M9c). It must never
+// be mutated by a caller; the search and `collectRip` only read it.
+const CLEAR_EDGE: EdgeCost = { blocked: false, extra: 0, rip: Object.freeze([]) as readonly number[] };
 // Fewest incompletes a stalled board must still carry for the difficulty-ordered rescue to be worth
 // its extra passes; below it the negotiated-congestion loop has essentially converged and a rescue
 // would only add cost (protects the fast tier's timing — task I8 deliverable 5).
@@ -591,9 +596,9 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
     // Hard mode: the Quilt's node-free gate is enough to *propose* a path; the exact clearance is
     // re-checked by pull + legalise before anything is inserted (docs/DESIGN.md §6, "the Quilt only
     // proposes"). Skipping the per-edge predicate here is the dominant speed-up on large boards.
-    if (!soft) return { blocked: false, extra: 0, rip: [] };
+    if (!soft) return CLEAR_EDGE;
     const r = sweepClear(ctx.layout, ctx.lattice, sheet, { a, b }, profile, ignore, profile.width);
-    if (r.ok) return { blocked: false, extra: 0, rip: [] };
+    if (r.ok) return CLEAR_EDGE;
     // Soft: passable only if every blocker is a rippable free other-net item.
     let extra = 0;
     for (const id of r.blocking) {
@@ -820,9 +825,9 @@ function tryRouteLayered(
     if (!isFinite(minCost)) minCost = 1;
 
     const edgeCost = (layer: number, a: Pt, b: Pt): EdgeCost => {
-      if (!soft) return { blocked: false, extra: 0, rip: [] };
+      if (!soft) return CLEAR_EDGE;
       const r = sweepClear(ctx.layout, ctx.lattice, usable[layer]!, { a, b }, profile, ignore, profile.width);
-      if (r.ok) return { blocked: false, extra: 0, rip: [] };
+      if (r.ok) return CLEAR_EDGE;
       let extra = 0;
       for (const id of r.blocking) {
         if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
