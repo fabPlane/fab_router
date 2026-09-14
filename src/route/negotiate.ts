@@ -58,6 +58,16 @@ export interface NegotiateOptions {
   blockedCost: number;
   /** Preferred direction per Mesh Sheet index; missing/null falls back to the alternating rule. */
   preferDir?: readonly ("h" | "v" | null | undefined)[];
+  /**
+   * Preserve the Mesh's accumulated history across this call instead of zeroing it (default
+   * false = a fresh negotiation). The global↔detailed feedback loop (task I16, M10e; docs/DESIGN.md
+   * §10.4b/§10.7 M10e) sets this so the history bumped on the Bridges an *unrealisable* Corridor
+   * could not cross survives into the re-negotiation — which is exactly what makes the coarse plan
+   * RESPOND to a detailed failure and drive the detailed router down a *different* corridor next
+   * iteration (the escalating-history property that makes PathFinder converge; McMurchie & Ebeling
+   * 1995). Usage and present are always rebuilt (Corridors are re-planned from scratch each call).
+   */
+  keepHistory?: boolean;
 }
 
 export const DEFAULT_NEGOTIATE_OPTIONS: NegotiateOptions = {
@@ -111,7 +121,14 @@ export function negotiate(mesh: Mesh, segments: readonly Segment[], opt: Partial
   });
 
   // Reset the negotiation fields (defensive: a fresh Mesh starts at 0, but a reused one may not).
-  for (let b = 0; b < mesh.bridgeCount; b++) { mesh.setUsage(b, 0); mesh.setPresent(b, 0); mesh.addHistory(b, -mesh.historyOf(b)); }
+  // Usage and present are always rebuilt (Corridors are re-planned this call); history is zeroed
+  // for a fresh negotiation but *preserved* under `keepHistory` so the feedback loop's escalating
+  // history survives into the re-negotiation (task I16, M10e — see NegotiateOptions.keepHistory).
+  for (let b = 0; b < mesh.bridgeCount; b++) {
+    mesh.setUsage(b, 0);
+    mesh.setPresent(b, 0);
+    if (!o.keepHistory) mesh.addHistory(b, -mesh.historyOf(b));
+  }
 
   const corridors: Corridor[] = segments.map((s) => ({ segment: s.id, bins: [], bridges: [], sheet: -1, realised: false }));
 

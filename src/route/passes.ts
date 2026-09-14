@@ -1087,13 +1087,25 @@ function planeConnectionsOf(ctx: RouteCtx, conn: ReturnType<typeof connectivity>
 // cause a miss, never a Violation. The whole phase is under keep-best and falls back cleanly to the
 // legacy local loop (`runPasses` below), so completion can only improve or stay equal.
 
-/** Soft Corridor cost bias: a mild discount for staying inside, a penalty for the one-Bin margin. */
+/** Soft Corridor cost bias: a mild discount for staying inside, a penalty for the margin. */
 const CORRIDOR_INSIDE_FACTOR = 0.8;
 const CORRIDOR_MARGIN_FACTOR = 1.5;
+/** How many Bins to expand the strict Corridor by for the `region` bound (task I16 widened this
+ *  from 1: a one-Bin tube choked the detailed search on the dense boards; two Bins lets it detour
+ *  around a locally full channel while still confining it to the planned neighbourhood). */
+const CORRIDOR_EXPAND_BINS = 2;
 /** History added to an unrealisable Corridor's Bridges before re-negotiation (FastRoute feedback). */
 const GLOBAL_HISTORY_BUMP = 2;
-/** Max global rip-reroute / re-negotiate feedback rounds after the first two planned sweeps. */
-const GLOBAL_FEEDBACK_ROUNDS = 2;
+/**
+ * Default cap on global↔detailed feedback ITERATIONS (task I16, M10e). Each iteration rips the whole
+ * board's planned copper, re-realises every Segment against the current (escalating-history) Plan,
+ * then bumps history on the Bridges of every still-unrealisable Corridor and re-negotiates — so the
+ * coarse plan RESPONDS to the detailed failures and drives the detailed router down a *different*
+ * corridor next iteration (the PathFinder convergence property; McMurchie & Ebeling 1995,
+ * Pan/Xu/Chu 2006–09 FastRoute). `globalMaxIterations`, when set, overrides this cap; the wall-clock
+ * `timeBudgetMs` is the real limiter on the dense boards. Bounded either way, so the loop terminates.
+ */
+const GLOBAL_FEEDBACK_ITERS = 6;
 
 /** Per-Segment Corridor membership over the Mesh, precomputed per Sheet for the detailed search. */
 interface CorridorGuide {
@@ -1125,7 +1137,7 @@ function buildGuides(mesh: Mesh, plan: Plan): Map<number, CorridorGuide> {
       const e = new Set<number>();
       for (const key of cols) {
         const bx = key % nx, by = Math.floor(key / nx);
-        for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        for (let dy = -CORRIDOR_EXPAND_BINS; dy <= CORRIDOR_EXPAND_BINS; dy++) for (let dx = -CORRIDOR_EXPAND_BINS; dx <= CORRIDOR_EXPAND_BINS; dx++) {
           const nbx = bx + dx, nby = by + dy;
           if (nbx < 0 || nbx >= nx || nby < 0 || nby >= ny) continue;
           e.add(nby * nx + nbx);
@@ -1195,17 +1207,23 @@ function routeSegmentPlanned(ctx: RouteCtx, seg: Segment, guide: CorridorGuide, 
     for (const sheet of common) if (tryRouteOnSheet(ctx, seg.net, sheet, from, to, profile, ignore, deadline, true, guide)) return true;
     if (viasOk && tryRouteLayered(ctx, seg.net, from, to, fromUsable, toUsable, profile, ignore, deadline, true, guide)) return true;
   }
+  // M10d: compose the gridless detailed rung inside the Corridor for the locked-channel boards.
+  // When `detailedRouter` is on, a Segment the corridor-guided grid/A* still missed falls to the
+  // line-search (§9b-1) and the corner-stitched channel router (§9b-2), which thread the sub-Bin
+  // channels a coarse Mesh cannot represent (cm5 GND pours, J802 locked copper). Both re-check every
+  // leg with the exact predicate and roll back atomically, so R-1/R-2 hold identically (a Corridor
+  // still only causes a miss, never a Violation). Only reached under the `tiles`/`lineprobe` setting,
+  // so the fast tier and `globalPlan:"off"` are untouched.
+  const detailed = ctx.settings.detailedRouter;
+  if (detailed === "lineprobe" || detailed === "tiles") {
+    const ends = {
+      from: { pt: from, sheets: fromUsable, center: from },
+      to: { pt: to, sheets: toUsable, center: to },
+    };
+    if (tryLineprobeRoute(ctx, seg.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
+    if (detailed === "tiles" && tryChannelRoute(ctx, seg.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
+  }
   return false;
-}
-
-/** Rip one net's own `free`/router copper through the Journal (whole-net global rip-up; R-2 safe). */
-function ripNetCopper(ctx: RouteCtx, net: number): void {
-  const ids: number[] = [];
-  for (const t of ctx.layout.tracks) if (t.net === net && t.origin === "router" && t.hold === "free") ids.push(t.id);
-  for (const b of ctx.layout.barrels) if (b.net === net && b.origin === "router" && b.hold === "free") ids.push(b.id);
-  ids.sort((a, b) => a - b);
-  ripAll(ctx, ids);
-  ctx.ripped += ids.length;
 }
 
 /** Global negotiation options (spec/api/settings.md `global*`) with the defaults left in place. */
@@ -1220,12 +1238,91 @@ function negotiateOptsFromSettings(s: RouteSettings): Partial<NegotiateOptions> 
 }
 
 /**
- * The corridor-guided detailed phase (docs/DESIGN.md §10.3–§10.5). Builds the Mesh, decomposes each
- * net into Segments, negotiates a congestion-resolved Plan (all no copper), then realises the
- * Segments in the Plan's global order through the detailed router with corridor guidance; an
- * unrealisable Corridor bumps its Bridges' history, whole-net global rip-reroutes, re-negotiates and
- * retries. All under keep-best: every recorded state is DRC-clean, so a rollback preserves R-1/R-6,
- * and whatever the planned driver still cannot realise is left for the legacy loop (clean fallback).
+ * Realise the current Plan's Segments in global order and return the ids that still missed. A greedy
+ * hard-obstacle sweep first (never breaks what it lays), then a rip-up-guided retry of the misses.
+ * Every leg still passes the exact `clear.ts` predicate + Journal, so a Corridor causes only a miss.
+ */
+function realiseAll(ctx: RouteCtx, plan: Plan, byId: readonly Segment[], guides: Map<number, CorridorGuide>): Set<number> {
+  const failed = new Set<number>();
+  ctx.ripupActive = false;
+  ctx.ripHistory.resetPresent();
+  for (const segId of plan.order) {
+    const seg = byId[segId]!;
+    if (ctx.ignored.has(seg.net)) continue;
+    if (abortRequested(ctx) || timeUp(ctx)) return failed;
+    if (!routeSegmentPlanned(ctx, seg, guides.get(segId)!, false)) failed.add(segId);
+  }
+  if (ctx.settings.ripupEnabled) {
+    // Several rip-up passes over the STILL-incomplete Segments: routing one Segment against soft
+    // obstacles rips another net's free copper (negotiated congestion), so a single pass leaves
+    // churn behind. Re-checking connectivity each pass and retrying only the truly-incomplete
+    // Segments lets the negotiation settle within this iteration (the legacy loop's convergence,
+    // applied inside the corridor). Bounded by REALISE_RIPUP_PASSES, so it always terminates.
+    for (let pass = 0; pass < REALISE_RIPUP_PASSES; pass++) {
+      ctx.ripupActive = true;
+      ctx.ripHistory.resetPresent();
+      let progressed = false;
+      const incomplete = incompleteSegments(ctx, plan, byId);
+      for (const segId of plan.order) {
+        if (!incomplete.has(segId)) continue;
+        if (abortRequested(ctx) || timeUp(ctx)) { for (const s of incomplete) failed.add(s); return prune(ctx, failed, plan, byId); }
+        if (routeSegmentPlanned(ctx, byId[segId]!, guides.get(segId)!, true)) progressed = true;
+      }
+      if (!progressed) break;
+    }
+  }
+  return prune(ctx, failed, plan, byId);
+}
+
+/** Max rip-up passes over incomplete Segments within one feedback iteration (bounded convergence). */
+const REALISE_RIPUP_PASSES = 3;
+
+/** Segment ids whose two Terminals are not yet in the same connected component (still incomplete). */
+function incompleteSegments(ctx: RouteCtx, plan: Plan, byId: readonly Segment[]): Set<number> {
+  const conn = connectivity(ctx.layout, ctx.lattice);
+  const out = new Set<number>();
+  for (const segId of plan.order) {
+    const seg = byId[segId]!;
+    if (ctx.ignored.has(seg.net)) continue;
+    if (!segmentJoined(conn, seg)) out.add(segId);
+  }
+  return out;
+}
+
+/** True when a Segment's two Terminals already sit in the same net component (nothing to route). */
+function segmentJoined(conn: Connectivity, seg: Segment): boolean {
+  const a = seg.from.anchor, b = seg.to.anchor;
+  if (a < 0 || b < 0) return false; // Steiner points have no anchor: treat as unjoined
+  const ca = conn.componentOf.get(a), cb = conn.componentOf.get(b);
+  return ca !== undefined && ca === cb;
+}
+
+/** Recompute the true failure set from live connectivity (drop Segments a later pass completed). */
+function prune(ctx: RouteCtx, failed: Set<number>, plan: Plan, byId: readonly Segment[]): Set<number> {
+  const inc = incompleteSegments(ctx, plan, byId);
+  const out = new Set<number>();
+  for (const segId of failed) if (inc.has(segId)) out.add(segId);
+  for (const segId of inc) out.add(segId);
+  return out;
+}
+
+/**
+ * The global↔detailed feedback loop (task I16, M10d/M10e; docs/DESIGN.md §10.3–§10.5, §10.7). Builds
+ * the Mesh, decomposes each net into 2-pin Segments, negotiates a first congestion-resolved Plan
+ * (commits no copper), then ITERATES: rip the whole board's planned copper, re-realise every Segment
+ * against the current Plan through the detailed router with corridor guidance, and for every Segment
+ * still unrealised bump its Corridor's Bridges' history and RE-NEGOTIATE *keeping* that escalating
+ * history — so the coarse plan actually changes and drives the detailed router down a DIFFERENT
+ * corridor next iteration (the PathFinder convergence property the M9 local loop and the one-shot
+ * M10c plan both lack; McMurchie & Ebeling 1995, Pan/Xu/Chu 2006–09 FastRoute congestion feedback).
+ *
+ * Whole-board rip-and-reroute each iteration is the property that erases the first-come advantage;
+ * it is affordable because the Corridors confine each detailed reroute (docs/DESIGN.md §10.4). The
+ * loop is bounded by `globalMaxIterations` (or a small default) and the wall-clock budget, so it
+ * always terminates. Keep-best is held as a captured-copper snapshot (not a Journal mark, because
+ * the per-iteration whole-board rip rewinds *past* any mark), so the fewest-incomplete DRC-clean
+ * state survives the churn (R-6); every recorded state was DRC-clean when laid, so restoring it
+ * preserves R-1. Whatever the loop still cannot realise is left for the legacy loop (clean fallback).
  */
 function plannedDrive(ctx: RouteCtx): void {
   const conn = connectivity(ctx.layout, ctx.lattice);
@@ -1235,73 +1332,51 @@ function plannedDrive(ctx: RouteCtx): void {
   if (segments.length === 0) return;
   const byId: Segment[] = [];
   for (const s of segments) byId[s.id] = s;
+  const negOpts = negotiateOptsFromSettings(ctx.settings);
 
-  let plan = negotiate(mesh, segments, negotiateOptsFromSettings(ctx.settings));
+  let plan = negotiate(mesh, segments, negOpts);
   let guides = buildGuides(mesh, plan);
 
-  // Keep-best over the whole planned phase (docs/DESIGN.md §10.5, R-6).
+  // Whole-board keep-best held as captured copper (docs/DESIGN.md §10.5/§10.6, R-6): `preMark` is the
+  // post-fanout, no-planned-copper state; `bestCopper === null` means "just the fanout state".
+  const preMark = ctx.journal.mark();
   let bestIncomplete = totalIncomplete(ctx);
-  let bestMark = ctx.journal.mark();
+  let bestCopper: CopperSnapshot | null = null;
   const record = (): void => {
     const inc = totalIncomplete(ctx);
-    if (inc < bestIncomplete) { bestIncomplete = inc; bestMark = ctx.journal.mark(); }
+    if (inc < bestIncomplete) { bestIncomplete = inc; bestCopper = captureCopper(ctx, preMark); }
   };
   const finish = (): void => {
-    if (totalIncomplete(ctx) > bestIncomplete) ctx.journal.rewind(bestMark);
+    if (totalIncomplete(ctx) <= bestIncomplete) return;
+    ctx.journal.rewind(preMark);
+    if (bestCopper) restoreCopper(ctx, bestCopper);
   };
 
-  // Round 0: greedy corridor-guided sweep in the Plan's global order (no rip-up).
-  ctx.ripupActive = false;
-  ctx.ripHistory.resetPresent();
-  const failed = new Set<number>();
-  for (const segId of plan.order) {
-    const seg = byId[segId]!;
-    if (ctx.ignored.has(seg.net)) continue;
-    if (abortRequested(ctx) || timeUp(ctx)) { record(); finish(); return; }
-    if (!routeSegmentPlanned(ctx, seg, guides.get(segId)!, false)) failed.add(segId);
-  }
-  record();
+  const maxIters = Math.max(1, ctx.settings.globalMaxIterations ?? GLOBAL_FEEDBACK_ITERS);
+  let prevFailed = -1;
+  for (let iter = 0; iter < maxIters; iter++) {
+    if (abortRequested(ctx) || timeUp(ctx)) break;
+    // Whole-board rip: from iteration 1 on, discard all planned copper so every Segment is rerouted
+    // against the changed (re-negotiated) cost field — the PathFinder rip-and-reroute-ALL property.
+    if (iter > 0) ctx.journal.rewind(preMark);
 
-  // Round 1: rip-up-guided retry of the Segments that missed.
-  if (ctx.settings.ripupEnabled) {
-    ctx.ripupActive = true;
-    ctx.ripHistory.resetPresent();
-    for (const segId of plan.order) {
-      if (!failed.has(segId)) continue;
-      if (abortRequested(ctx) || timeUp(ctx)) { record(); finish(); return; }
-      if (routeSegmentPlanned(ctx, byId[segId]!, guides.get(segId)!, true)) failed.delete(segId);
-    }
+    const failed = realiseAll(ctx, plan, byId, guides);
     record();
-  }
 
-  // Congestion feedback (FastRoute; docs/DESIGN.md §10.4): each round bumps history on the
-  // still-unrealisable Corridors, whole-net global rip-reroutes those nets, re-negotiates and
-  // retries. Each round is guarded by its own keep-best mark, so it can only improve or stay equal.
-  for (let round = 0; round < GLOBAL_FEEDBACK_ROUNDS; round++) {
-    if (failed.size === 0 || !ctx.settings.ripupEnabled || abortRequested(ctx) || timeUp(ctx)) break;
-    const failedNets = new Set<number>();
-    for (const segId of failed) {
-      failedNets.add(byId[segId]!.net);
-      for (const b of plan.corridors[segId]!.bridges) mesh.addHistory(b, GLOBAL_HISTORY_BUMP);
-    }
-    const mark2 = ctx.journal.mark();
-    const before = totalIncomplete(ctx);
-    for (const net of failedNets) ripNetCopper(ctx, net);
-    plan = negotiate(mesh, segments, negotiateOptsFromSettings(ctx.settings));
+    // Converged (all Segments realised) or out of budget: stop.
+    if (failed.size === 0 || abortRequested(ctx) || timeUp(ctx)) break;
+    // Fixpoint guard: if the re-negotiation stopped changing the outcome, more iterations cannot
+    // help — terminate rather than spin (keeps the loop bounded even below the iteration cap).
+    if (failed.size === prevFailed && iter > 0) break;
+    prevFailed = failed.size;
+    if (iter + 1 >= maxIters || !ctx.settings.ripupEnabled) break;
+
+    // Congestion feedback (FastRoute): bump history on every still-unrealisable Corridor's Bridges,
+    // then re-negotiate KEEPING that escalating history so the coarse plan responds to the detailed
+    // failures (task I16 crux — see negotiate.ts NegotiateOptions.keepHistory).
+    for (const segId of failed) for (const b of plan.corridors[segId]!.bridges) mesh.addHistory(b, GLOBAL_HISTORY_BUMP);
+    plan = negotiate(mesh, segments, { ...negOpts, keepHistory: true });
     guides = buildGuides(mesh, plan);
-    ctx.ripupActive = true;
-    ctx.ripHistory.resetPresent();
-    const stillFailed = new Set<number>();
-    for (const segId of plan.order) {
-      const seg = byId[segId]!;
-      if (!failedNets.has(seg.net) || ctx.ignored.has(seg.net)) continue;
-      if (abortRequested(ctx) || timeUp(ctx)) break;
-      if (!routeSegmentPlanned(ctx, seg, guides.get(segId)!, false) && !routeSegmentPlanned(ctx, seg, guides.get(segId)!, true)) stillFailed.add(segId);
-    }
-    if (totalIncomplete(ctx) > before) { ctx.journal.rewind(mark2); break; } // keep-best: never regress
-    record();
-    failed.clear();
-    for (const segId of stillFailed) failed.add(segId);
   }
 
   finish();
