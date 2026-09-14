@@ -1362,3 +1362,76 @@ Decisions where the spec left detail open (simplest behaviour that satisfies the
 swept boundary column; a Track that fully spans a boundary -> capacity 0; `free` copper leaves
 capacity untouched; two builds identical across every Bridge; a hand-set overflow summarised by
 `meshCongestion`; and `route(globalPlan:"off")` byte-identical to the default run.
+
+## Status (task I14 — M10b: Steiner decomposition + coarse negotiated global routing → a Plan)
+
+Three new modules, no wiring into the pass loop, **commits no copper**: `globalPlan` stays inert
+(`"off"`), so every acceptance number is byte-identical (R-1 trivially safe — nothing is inserted).
+
+- **`src/route/plan.ts`** — the `Terminal` / `Segment` / `Corridor` / `Plan` data structures and
+  `orderSegments` (the global order: descending `airline × (1 + local endpoint density)`, density
+  read off a Bin-grid prefix sum; Nair 1987 difficulty ordering; ties by ascending Segment id).
+- **`src/route/steiner.ts`** — `steinerDecompose(layout, mesh)`: per-net rectilinear MST (Kruskal,
+  ties `(distance, idA, idB)`) over the representative points of the net's *terminal components*,
+  cut into 2-pin Segments carrying their airline and terminal Bins (the deterministic
+  RSMT-by-MST fallback the task asks for; a FLUTE table can replace `rectilinearMst` behind the
+  same `Segment[]` interface). Self-contained: builds its own `connectivity` when none is passed.
+- **`src/route/negotiate.ts`** — `negotiate(mesh, segments, opt)`: the coarse PathFinder loop.
+  Each iteration rips and reroutes **every** Segment by A* over Bins with cost
+  `(base + presentWeight·projectedOverflow)·(1 + historyWeight·history)`, accumulates history on
+  over-full Bridges, escalates the history weight per `historyRamp`, biases in-plane Bridges by
+  each Sheet's preferred direction and seeds every allowed Sheet so an axis-aligned Segment lands
+  on the matching Sheet (BoxRouter layer assignment). Stops at total Overflow 0 or the iteration
+  cap; **keep-best** returns the least-Overflow iteration. Writes only Mesh usage/history + the
+  Plan's Corridors.
+
+Decisions where the spec left detail open (simplest behaviour that satisfies the task/cases):
+1. **Capacity-0 Bridges are strongly penalised, not hard-blocked.** In the coarse model a pin's own
+   copper walls its Bin (on bm07, 35 % of Bridges are capacity-0; a BGA pin Bin has *all* its
+   boundaries covered), so a hard block would disconnect the Mesh and leave almost every Segment
+   unrealised. Per docs/DESIGN.md §10.4 the Corridor is guidance (`region`+`stepCost`) re-checked by
+   the exact predicate, so crossing a nominally-blocked coarse Bridge causes a detailed *miss*,
+   never a violation — R-1 holds. Crossing one adds `blockedCost` (default 500) to the base cost, so
+   it is a last resort (pin escape) only.
+2. **Present term = projected Overflow** `max(0, usage + 1 − capacity)`: slack is shared freely and
+   only real contention is penalised, which targets Overflow = 0 directly (McMurchie-Ebeling
+   present-sharing, capacity-relative).
+3. **Effective preferred direction** for layer bias: an explicit `Sheet.preferDir` wins; otherwise
+   Sheets alternate H/V from the board's longer-side direction (Q-I1-39 / L-09 longer-side default
+   extended to the classic per-layer H/V spread global layer assignment needs). Callers may pass an
+   explicit `preferDir` array (`sheetPreferDirs(layout, mesh)` builds it from the Stack).
+4. **Bounded-suboptimal A\*** (`heuristicWeight` default 1.1) and **stagnation stop** (`maxStagnant`
+   default 10) keep the negotiation affordable on the target Meshes; both are deterministic.
+
+### Measured — coarse negotiation on the target boards (default options; commits no copper)
+
+| Board | signal Sheets / grid / Bridges | Segments | capacity-0 Bridges | greedy (1 iter) Overflow | negotiated Overflow / iters / unrealised |
+|---|---|---|---|---|---|
+| dac2020-bm07 | 2 / 24×65 / 7622 | 86 | 2677 (35 %) | 288 | **198** / 12 / 0 |
+| cm5-carrier | 6 / 65×43 / 46867 | 129 | 46867 (100 %) | 2285 | **2285** / 11 / 0 |
+
+- **bm07** is the pure movable-congestion case (no pours): the negotiation genuinely reduces
+  coarse Overflow 288 → 198 (−31 %) with every Segment realised — the property the M9 local loop
+  lacks (docs/DESIGN.md §10.1/§10.6). The residual is dominated by irreducible pin-escape crossings
+  of capacity-0 Bin boundaries (the coarse model cannot see the sub-Bin channel between pins); the
+  detailed router closes those in M10c.
+- **cm5-carrier** carries **full-board `locked` GND pours** on signal Sheets 0/1/2/5 (bbox
+  770000×510000), so *every* Bridge is capacity-0 and greedy == negotiated: there is zero free
+  coarse capacity to negotiate over. This is the §9b **resolution-wall** artifact (routing threads
+  channels *inside* the pour that a coarse Bin cannot represent), orthogonal to global negotiation;
+  layer bias still assigns Sheets and all 129 Segments are realised. Honest residual recorded.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 65 files, 0 violations |
+| `bun run test` | green — 839 pass, 0 fail (adds `test/steiner.test.ts` 3, `test/negotiate.test.ts` 4) |
+| `bun run acceptance -- --tier fast` | 401/401 passed, 0 failed (byte-identical; the two pre-existing barrel *advisories* unchanged) |
+
+`test/steiner.test.ts`: Segments span every terminal and form a tree (no cycle); a single-terminal
+net yields none; two decompositions are byte-identical. `test/negotiate.test.ts`: a congested-but-
+feasible Mesh reaches Overflow 0 within the cap; an over-capacity Mesh reports the residual honestly
+(never a false 0) with every Segment realised; layer bias lands the horizontal Segment on the
+h-Sheet and the vertical on the v-Sheet; two runs are byte-identical.

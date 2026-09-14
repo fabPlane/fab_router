@@ -67,3 +67,8 @@ export * from "./channel.ts";
 
 // Task I13: the coarse global Mesh, Bridge capacities and the congestion report (M10a).
 export * from "./mesh.ts";
+
+// Task I14: Steiner decomposition + coarse negotiated global routing → a Plan (M10b). No copper.
+export * from "./plan.ts";
+export * from "./steiner.ts";
+export * from "./negotiate.ts";
