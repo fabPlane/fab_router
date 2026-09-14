@@ -172,6 +172,50 @@ describe("srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-termi
   });
 });
 
+describe("srj cross-Sheet Prior copper bridging (task I7 gap 1; K-02/K-16, J-34)", () => {
+  // A physical multi-layer via of the existing route maps to one Prior Pour per Sheet; two Pours on
+  // different Sheets never join (only a Barrel bridges Sheets, K-02). The import emits an inert
+  // bridging Barrel (Kind 0, no drill, origin "prior") so the via's Prior copper is a single
+  // cross-Sheet component — a route can then complete a connection whose Prior route changes Sheet.
+  const bridged: SimpleRouteJson = {
+    layerCount: 2, minTraceWidth: 0.15, defaultObstacleMargin: 0.2,
+    bounds: { minX: 0, maxX: 20, minY: 0, maxY: 10 },
+    obstacles: [
+      // a top trace from the top endpoint to the via, a two-Sheet via, a bottom trace to the bottom endpoint.
+      { type: "rect", layers: ["top"], center: { x: 6, y: 5 }, width: 8, height: 1, connectedTo: ["A"] },
+      { type: "rect", layers: ["top", "bottom"], center: { x: 10, y: 5 }, width: 1, height: 1, connectedTo: ["A"] },
+      { type: "rect", layers: ["bottom"], center: { x: 14, y: 5 }, width: 8, height: 1, connectedTo: ["A"] },
+    ],
+    connections: [{ name: "A", pointsToConnect: [{ x: 2, y: 5, layer: "top" }, { x: 18, y: 5, layer: "bottom" }] }],
+  } as unknown as SimpleRouteJson;
+
+  test("a two-Sheet net-owned obstacle emits an inert Kind-0 Prior Barrel", () => {
+    const { layout } = buildSrjLayout(bridged);
+    const bridge = layout.barrels.filter((b) => b.origin === "prior");
+    expect(bridge.length).toBe(1);
+    expect(bridge[0]!.kind).toBe(0);
+    expect(bridge[0]!.hold).toBe("locked");
+    expect(bridge[0]!.fromSheet).toBe(0);
+    expect(bridge[0]!.toSheet).toBe(1);
+  });
+
+  test("the bridge joins the per-Sheet Prior copper so the connection needs no route", () => {
+    const { layout } = buildSrjLayout(bridged);
+    // top endpoint → top trace → via (top) → bridge → via (bottom) → bottom trace → bottom endpoint:
+    // one component, so nothing is left to route and no Violation is introduced.
+    expect(api.requiredConnections(layout).length).toBe(0);
+    expect(api.checkDrc(layout).counts.incompletes).toBe(0);
+    expect(api.checkDrc(layout).counts.violations).toBe(0);
+  });
+
+  test("without the two-Sheet via the two Sheets stay separate (one required link)", () => {
+    const split: SimpleRouteJson = { ...bridged, obstacles: [bridged.obstacles![0]!, bridged.obstacles![2]!] };
+    const { layout } = buildSrjLayout(split);
+    expect(layout.barrels.filter((b) => b.origin === "prior").length).toBe(0);
+    expect(api.requiredConnections(layout).length).toBe(1);
+  });
+});
+
 describe("srj differential-pair normalisation", () => {
   test("boards' connectionNames split into _P and _N members", () => {
     const pairs = normalisePairs([

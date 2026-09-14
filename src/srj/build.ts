@@ -237,6 +237,7 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
   // A plain keepout (empty `connectedTo`) stays a Fence: it blocks every net and belongs to none.
   const pours: Pour[] = [];
   const fences: Fence[] = [];
+  const barrels: Barrel[] = [];
   const obstacles = (srj.obstacles ?? []) as RawObstacle[];
   for (const o of obstacles) {
     const sheetsFor = (o.layers ?? []).map((l) => sheetByName.get(l)).filter((s): s is number => s !== undefined);
@@ -253,6 +254,27 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
       } else {
         fences.push({ id: id(), sheet: s, scope: "track", shape: { kind: "ring", pts: ring }, kind: 1 });
       }
+    }
+    // Cross-Sheet Prior connectivity (task I7 gap 1; spec/formats/srj.md J-34, rules/connectivity.md
+    // K-16): a net-owned obstacle that spans two or more Sheets is one physical object (a via/pad of
+    // the existing route), but it maps to one Prior Pour *per Sheet* and two Pours on different
+    // Sheets never join (only a Barrel bridges Sheets, K-02). So the net's Prior copper stays
+    // fragmented per Sheet and a route that attaches to it on one Sheet cannot reach the endpoint on
+    // another. Emit an inert bridging Barrel (Kind 0, no drill, `origin: "prior"`) whose copper sits
+    // inside the obstacle on each of its Sheets: it joins those Prior Pours into one component
+    // through its span (K-02), so the physical via's Prior copper is a single cross-Sheet blob a
+    // route can complete against. It is DRC-silent (Kind 0 is never a spacing/hole subject, and
+    // same-net copper is exempt anyway) and no obstacle to the router (Kind 0 does not block in
+    // clear.ts), so it changes only connectivity, never `violationsBefore` or R-1.
+    if (ownerNet !== undefined && on.length >= 2) {
+      const lo = Math.min(...on), hi = Math.max(...on);
+      const c = ringCentroid(ring);
+      const r = Math.max(1, Math.floor(ringInnerRadius(ring, c)));
+      const perSheet = new Map<number, ShapeOnSheet[]>();
+      for (const s of on) perSheet.set(s, [{ kind: "disk", c: { x: 0, y: 0 }, r }]);
+      const formId = padForms.length;
+      padForms.push({ id: formId, name: `srj_bridge_${formId}`, perSheet, attachAllowed: false });
+      barrels.push({ id: id(), net: ownerNet, at: c, form: formId, fromSheet: lo, toSheet: hi, kind: 0, hold: "locked", origin: "prior" });
     }
   }
 
@@ -279,7 +301,7 @@ export function buildSrjLayout(srjIn: SimpleRouteJson): SrjLayout {
     padForms,
     parts,
     pads,
-    barrels: [] as Barrel[],
+    barrels,
     tracks: [],
     pours,
     fences,
@@ -308,6 +330,22 @@ function largestCoordinate(srj: SrjLike): number {
     if (y !== undefined) m = Math.max(m, Math.abs(y));
   }
   return m > 0 ? m : 1;
+}
+
+/** Centroid of a ring (integer LU). */
+function ringCentroid(ring: readonly Pt[]): Pt {
+  let x = 0, y = 0;
+  for (const p of ring) { x += p.x; y += p.y; }
+  const n = Math.max(1, ring.length);
+  return { x: Math.round(x / n), y: Math.round(y / n) };
+}
+
+/** A radius that keeps a disk at `c` inside the ring: the smallest centroid-to-vertex distance
+ *  halved (conservative, so the bridging disk stays within the Prior Pour it must overlap). */
+function ringInnerRadius(ring: readonly Pt[], c: Pt): number {
+  let min = Infinity;
+  for (const p of ring) { const d = Math.hypot(p.x - c.x, p.y - c.y); if (d < min) min = d; }
+  return Number.isFinite(min) ? min / 2 : 1;
 }
 
 /** The vertex ring (LU) of an obstacle: rotated rect, oval box, or an explicit polygon outline. */

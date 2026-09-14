@@ -24,7 +24,7 @@ import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { RouteHooks } from "../../spec/types/results.ts";
 import type { Box } from "../geom/index.ts";
 import { boxOfPts, dist2PtPt } from "../geom/index.ts";
-import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf } from "../drc/index.ts";
+import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
 import type { Connection } from "../../spec/types/results.ts";
 import { barrelSheets, buildLattice, type Lattice } from "../lattice/index.ts";
 import { createJournal, type Journal } from "./journal.ts";
@@ -65,6 +65,8 @@ export interface RouteCtx {
   planeSheets: Set<number>;
   /** Whether rip-up is allowed this pass (off on the first, stabilising pass). */
   ripupActive: boolean;
+  /** The connectivity computed at the start of the current pass (for Prior-copper attachment). */
+  conn?: Connectivity;
 }
 
 export interface PassOutcome {
@@ -241,6 +243,14 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
   for (const sheet of common) {
     if (fastProbe(ctx, conn.net, sheet, ends.from.pt, ends.to.pt, profile, ignore)) return true;
   }
+
+  // 1a) Attach to same-net Prior copper (task I7 gap 1; K-16, spec/formats/srj.md J-34). When one
+  // endpoint's component already carries the net's Prior copper, reaching that copper from the other
+  // endpoint completes the connection — usually a far shorter, clearer route than pad→pad across the
+  // dense board. The bridging Barrels emitted at import (src/srj/build.ts) make each physical via's
+  // Prior copper a single cross-Sheet component, so a bottom-Sheet attach can complete a connection
+  // whose Prior route runs over the top Sheet.
+  if (tryAttachPrior(ctx, conn, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
   const multilayer = (): boolean => {
     if (!(viasOk && fromUsable.length > 0 && toUsable.length > 0)) return false;
     if (tryRouteViaPoints(ctx, conn.net, ends.from.pt, ends.to.pt, fromUsable, toUsable, profile, ignore, deadline, false)) return true;
@@ -280,6 +290,95 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
       if (tryRouteViaPoints(ctx, conn.net, ends.from.pt, ends.to.pt, fromUsable, toUsable, profile, ignore, deadline, true)) return true;
       if (tryRouteLayered(ctx, conn.net, ends.from.pt, ends.to.pt, fromUsable, toUsable, profile, ignore, deadline, true)) return true;
     }
+  }
+  return false;
+}
+
+/**
+ * Attach a connection to same-net Prior copper (task I7 gap 1; rules/connectivity.md K-16,
+ * spec/formats/srj.md J-34). A required connection joins two terminal components; when one of them
+ * already holds the net's Prior copper, routing the *other* endpoint to that Prior copper joins the
+ * two components and completes the connection. Prior copper is same-net (never blocks its own net in
+ * clear.ts) and connective (a Track touching it joins, connect.ts), so the attach leg is short and
+ * lands on a large, reachable target. Journalled: a partial attach is rolled back so a failed
+ * attempt leaves no dangling copper. Deterministic: components and Pours in ascending id order.
+ */
+function tryAttachPrior(
+  ctx: RouteCtx, conn: Connection, ends: { from: Endpoint; to: Endpoint },
+  fromUsable: number[], toUsable: number[], profile: Profile, ignore: IgnoreSet, deadline: number | undefined,
+): boolean {
+  const net = conn.net;
+  if (net === null) return false;
+  const cc = ctx.conn;
+  if (!cc) return false;
+  const nc = cc.nets[net];
+  if (!nc) return false;
+
+  // Prior Pours of this net on usable Sheets, grouped by their connectivity component.
+  const priorByComp = new Map<number, Pour[]>();
+  for (const pour of ctx.layout.pours) {
+    if (pour.net !== net || pour.origin !== "prior") continue;
+    if (!profile.sheets.includes(pour.sheet)) continue;
+    const ci = cc.componentOf.get(pour.id);
+    if (ci === undefined) continue;
+    (priorByComp.get(ci) ?? priorByComp.set(ci, []).get(ci)!).push(pour);
+  }
+  if (priorByComp.size === 0) return false;
+
+  const compFrom = cc.componentOf.get(conn.from);
+  const compTo = cc.componentOf.get(conn.to);
+
+  // One-way attach: route `src` (an endpoint) to Prior copper already in the partner's component.
+  const oneWay = (srcPt: Pt, srcSheets: number[], partnerComp: number | undefined): boolean => {
+    if (partnerComp === undefined) return false;
+    const pours = priorByComp.get(partnerComp);
+    if (!pours || srcSheets.length === 0) return false;
+    return routeToPours(ctx, net, srcPt, srcSheets, pours, profile, ignore, deadline);
+  };
+  if (oneWay(ends.from.pt, fromUsable, compTo)) return true;
+  if (oneWay(ends.to.pt, toUsable, compFrom)) return true;
+
+  // Two-way attach: neither endpoint sits on Prior copper. Pick a Prior-only component (largest
+  // first, ties by lowest index) and route both endpoints onto it, atomically.
+  const candidateComps = [...priorByComp.keys()]
+    .filter((ci) => ci !== compFrom && ci !== compTo)
+    .sort((a, b) => (priorByComp.get(b)!.length - priorByComp.get(a)!.length) || a - b);
+  for (const ci of candidateComps) {
+    const pours = priorByComp.get(ci)!;
+    const mark = ctx.journal.mark();
+    if (routeToPours(ctx, net, ends.from.pt, fromUsable, pours, profile, ignore, deadline)
+      && routeToPours(ctx, net, ends.to.pt, toUsable, pours, profile, ignore, deadline)) return true;
+    ctx.journal.rewind(mark);
+    if (deadline !== undefined && now() > deadline) return false;
+    if (abortRequested(ctx)) return false;
+  }
+  return false;
+}
+
+/** Route a source point to any of `pours` (same-net Prior copper), nearest target first. */
+function routeToPours(
+  ctx: RouteCtx, net: number | null, srcPt: Pt, srcSheets: number[], pours: readonly Pour[],
+  profile: Profile, ignore: IgnoreSet, deadline: number | undefined,
+): boolean {
+  interface Target { sheet: number; pt: Pt; d: number }
+  const targets: Target[] = [];
+  for (const pour of pours) {
+    if (!srcSheets.includes(pour.sheet)) continue;
+    const v = nearestVertex(pour.outline, srcPt);
+    const c = centroid(pour.outline);
+    targets.push({ sheet: pour.sheet, pt: v, d: dist2PtPt(v, srcPt) });
+    targets.push({ sheet: pour.sheet, pt: c, d: dist2PtPt(c, srcPt) });
+  }
+  if (targets.length === 0) return false;
+  targets.sort((a, b) => a.d - b.d);
+  const soft = ctx.settings.ripupEnabled && ctx.ripupActive;
+  const LIMIT = 12;
+  for (const t of targets.slice(0, LIMIT)) {
+    if (fastProbe(ctx, net, t.sheet, srcPt, t.pt, profile, ignore)) return true;
+    if (tryRouteOnSheet(ctx, net, t.sheet, srcPt, t.pt, profile, ignore, deadline, false)) return true;
+    if (soft && tryRouteOnSheet(ctx, net, t.sheet, srcPt, t.pt, profile, ignore, deadline, true)) return true;
+    if (deadline !== undefined && now() > deadline) return false;
+    if (abortRequested(ctx)) return false;
   }
   return false;
 }
@@ -753,6 +852,7 @@ function gridRegion(ctx: RouteCtx, from: Pt, to: Pt, step: number): { gx0: numbe
 /** Deterministic connection order: by net id, then the net's Kruskal edge order (distance, ids). */
 function connectionsOf(ctx: RouteCtx): Connection[] {
   const conn = connectivity(ctx.layout, ctx.lattice);
+  ctx.conn = conn;
   const out: Connection[] = [];
   const isPlaneNet = (id: number): boolean => ctx.layout.stack.some((s) => s.role === "plane" && s.planeNet === id);
   for (const net of ctx.layout.nets) {
