@@ -1,0 +1,1095 @@
+{
+  "_generated": "fine-pitch fanout fixture for fabdesk-qfn28-fanout, generated from standard KiCad QFN-28-1EP_5x5mm_P0.5mm + R_0603 geometry (tools/fabdesk-cases/gen-finepitch.ts); board data only.",
+  "layerCount": 2,
+  "minTraceWidth": 0.15,
+  "bounds": {
+    "minX": -12.5,
+    "maxX": 12.5,
+    "minY": -12.5,
+    "maxY": 12.5
+  },
+  "obstacles": [
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": 1.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N1"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -4.6378,
+        "y": 2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N1"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -3.0378,
+        "y": 2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R0_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": 0.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N3"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -5.2091,
+        "y": 0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N3"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -3.6091,
+        "y": 0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R1_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": -0.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N5"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -5.2091,
+        "y": -0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N5"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -3.6091,
+        "y": -0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R2_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": -1.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N7"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -4.6378,
+        "y": -2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N7"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -3.0378,
+        "y": -2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R3_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N9"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.7005,
+        "y": -4.9663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N9"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.7005,
+        "y": -3.3663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R4_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N11"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": -5.3
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N11"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": -3.7
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R5_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N13"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.7005,
+        "y": -4.9663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N13"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.7005,
+        "y": -3.3663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R6_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": -1.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N15"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 3.0378,
+        "y": -2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N15"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 4.6378,
+        "y": -2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R7_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": -0.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N17"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 3.6091,
+        "y": -0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N17"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 5.2091,
+        "y": -0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R8_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": 0.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N19"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 3.6091,
+        "y": 0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N19"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 5.2091,
+        "y": 0.8998
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R9_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": 1.5
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "N21"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 3.0378,
+        "y": 2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "N21"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 4.6378,
+        "y": 2.3497
+      },
+      "width": 0.9,
+      "height": 0.95,
+      "connectedTo": [
+        "R10_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N23"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.7005,
+        "y": 3.3663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N23"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.7005,
+        "y": 4.9663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R11_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N25"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": 3.7
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N25"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0,
+        "y": 5.3
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R12_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "N27"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.7005,
+        "y": 3.3663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "N27"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.7005,
+        "y": 4.9663
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "R13_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": 1
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": 0
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q4"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -2.45,
+        "y": -1
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q6"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.5,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q8"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.5,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q10"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.5,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q12"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.5,
+        "y": -2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q14"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": -1
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q16"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": 0
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q18"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 2.45,
+        "y": 1
+      },
+      "width": 0.6,
+      "height": 0.28,
+      "connectedTo": [
+        "Q20"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.5,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q22"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.5,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q24"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.5,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q26"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.5,
+        "y": 2.45
+      },
+      "width": 0.28,
+      "height": 0.6,
+      "connectedTo": [
+        "Q28"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "name": "N1",
+      "pointsToConnect": [
+        {
+          "x": -2.45,
+          "y": 1.5
+        },
+        {
+          "x": -4.637830868343195,
+          "y": 2.349692368373384
+        }
+      ]
+    },
+    {
+      "name": "N3",
+      "pointsToConnect": [
+        {
+          "x": -2.45,
+          "y": 0.5
+        },
+        {
+          "x": -5.20911826451183,
+          "y": 0.8998200539820069
+        }
+      ]
+    },
+    {
+      "name": "N5",
+      "pointsToConnect": [
+        {
+          "x": -2.45,
+          "y": -0.5
+        },
+        {
+          "x": -5.20911826451183,
+          "y": -0.8998200539820069
+        }
+      ]
+    },
+    {
+      "name": "N7",
+      "pointsToConnect": [
+        {
+          "x": -2.45,
+          "y": -1.5
+        },
+        {
+          "x": -4.637830868343195,
+          "y": -2.349692368373384
+        }
+      ]
+    },
+    {
+      "name": "N9",
+      "pointsToConnect": [
+        {
+          "x": -1,
+          "y": -2.45
+        },
+        {
+          "x": -1.7005364884197518,
+          "y": -4.966314396628394
+        }
+      ]
+    },
+    {
+      "name": "N11",
+      "pointsToConnect": [
+        {
+          "x": 0,
+          "y": -2.45
+        },
+        {
+          "x": 2.755455298081545e-16,
+          "y": -5.3
+        }
+      ]
+    },
+    {
+      "name": "N13",
+      "pointsToConnect": [
+        {
+          "x": 1,
+          "y": -2.45
+        },
+        {
+          "x": 1.7005364884197525,
+          "y": -4.966314396628394
+        }
+      ]
+    },
+    {
+      "name": "N15",
+      "pointsToConnect": [
+        {
+          "x": 2.45,
+          "y": -1.5
+        },
+        {
+          "x": 3.0378308683431943,
+          "y": -2.349692368373384
+        }
+      ]
+    },
+    {
+      "name": "N17",
+      "pointsToConnect": [
+        {
+          "x": 2.45,
+          "y": -0.5
+        },
+        {
+          "x": 3.6091182645118307,
+          "y": -0.8998200539820063
+        }
+      ]
+    },
+    {
+      "name": "N19",
+      "pointsToConnect": [
+        {
+          "x": 2.45,
+          "y": 0.5
+        },
+        {
+          "x": 3.6091182645118307,
+          "y": 0.8998200539820063
+        }
+      ]
+    },
+    {
+      "name": "N21",
+      "pointsToConnect": [
+        {
+          "x": 2.45,
+          "y": 1.5
+        },
+        {
+          "x": 3.0378308683431943,
+          "y": 2.349692368373384
+        }
+      ]
+    },
+    {
+      "name": "N23",
+      "pointsToConnect": [
+        {
+          "x": 1,
+          "y": 2.45
+        },
+        {
+          "x": 1.7005364884197525,
+          "y": 3.366314396628394
+        }
+      ]
+    },
+    {
+      "name": "N25",
+      "pointsToConnect": [
+        {
+          "x": 0,
+          "y": 2.45
+        },
+        {
+          "x": 2.755455298081545e-16,
+          "y": 3.7
+        }
+      ]
+    },
+    {
+      "name": "N27",
+      "pointsToConnect": [
+        {
+          "x": -1,
+          "y": 2.45
+        },
+        {
+          "x": -1.7005364884197518,
+          "y": 3.366314396628394
+        }
+      ]
+    }
+  ],
+  "minViaPadDiameter": 0.6,
+  "minViaHoleDiameter": 0.3
+}

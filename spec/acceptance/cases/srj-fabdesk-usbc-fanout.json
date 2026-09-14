@@ -1,0 +1,10 @@
+{
+  "id": "srj-fabdesk-usbc-fanout",
+  "kind": "srj",
+  "origin": "new",
+  "tier": "fast",
+  "board": "fabdesk-usbc-fanout.srj.json",
+  "settings": { "timeoutSeconds": 30, "fanout": true, "detailedRouter": "tiles" },
+  "expect": { "violations": { "maxAdded": 0 }, "incomplete": { "max": 4, "advisory": true } },
+  "note": "USB-C 0.5mm 16-pin fanout (fabdesk router-issues.md R1). Hard: violations.maxAdded 0 (vs the tscircuit router's clearance/shorting on this class). Completion 2/6 advisory: the trapped inner-row pads need a fanout via to escape, which fab_router does not yet drop."
+}

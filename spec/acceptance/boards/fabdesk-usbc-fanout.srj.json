@@ -1,0 +1,543 @@
+{
+  "_generated": "fine-pitch fanout fixture for fabdesk-usbc-fanout, generated from standard KiCad USB-C 0.5mm 16-pin + R_0603 geometry (tools/fabdesk-cases/gen-finepitch.ts); board data only.",
+  "layerCount": 2,
+  "minTraceWidth": 0.15,
+  "bounds": {
+    "minX": -12.5,
+    "maxX": 12.5,
+    "minY": -10,
+    "maxY": 10
+  },
+  "obstacles": [
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_0"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": -4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U0_0"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": -2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU0_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.25,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_1"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": -4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U0_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": -2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU1_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.25,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_3"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.25,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_4"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.25,
+        "y": -4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U0_4"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.25,
+        "y": -2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU2_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.75,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_5"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.25,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_6"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.25,
+        "y": -4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U0_6"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.25,
+        "y": -2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU3_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.75,
+        "y": -1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U0_7"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_0"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": 2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U1_0"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.75,
+        "y": 4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU4_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -1.25,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_1"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": 2.9
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "U1_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.75,
+        "y": 4.5
+      },
+      "width": 0.95,
+      "height": 0.9,
+      "connectedTo": [
+        "RU5_2"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": -0.25,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_3"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.25,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_4"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 0.75,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_5"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.25,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_6"
+      ]
+    },
+    {
+      "type": "rect",
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ],
+      "center": {
+        "x": 1.75,
+        "y": 1.1
+      },
+      "width": 0.3,
+      "height": 1.2,
+      "connectedTo": [
+        "U1_7"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "name": "U0_0",
+      "pointsToConnect": [
+        {
+          "x": -1.75,
+          "y": -1.1
+        },
+        {
+          "x": -1.75,
+          "y": -4.5
+        }
+      ]
+    },
+    {
+      "name": "U0_2",
+      "pointsToConnect": [
+        {
+          "x": -0.75,
+          "y": -1.1
+        },
+        {
+          "x": -0.75,
+          "y": -4.5
+        }
+      ]
+    },
+    {
+      "name": "U0_4",
+      "pointsToConnect": [
+        {
+          "x": 0.25,
+          "y": -1.1
+        },
+        {
+          "x": 0.25,
+          "y": -4.5
+        }
+      ]
+    },
+    {
+      "name": "U0_6",
+      "pointsToConnect": [
+        {
+          "x": 1.25,
+          "y": -1.1
+        },
+        {
+          "x": 1.25,
+          "y": -4.5
+        }
+      ]
+    },
+    {
+      "name": "U1_0",
+      "pointsToConnect": [
+        {
+          "x": -1.75,
+          "y": 1.1
+        },
+        {
+          "x": -1.75,
+          "y": 2.9000000000000004
+        }
+      ]
+    },
+    {
+      "name": "U1_2",
+      "pointsToConnect": [
+        {
+          "x": -0.75,
+          "y": 1.1
+        },
+        {
+          "x": -0.75,
+          "y": 2.9000000000000004
+        }
+      ]
+    }
+  ],
+  "minViaPadDiameter": 0.6,
+  "minViaHoleDiameter": 0.3
+}

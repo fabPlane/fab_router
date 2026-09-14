@@ -1,0 +1,10 @@
+{
+  "id": "srj-fabdesk-qfn28-fanout",
+  "kind": "srj",
+  "origin": "new",
+  "tier": "fast",
+  "board": "fabdesk-qfn28-fanout.srj.json",
+  "settings": { "timeoutSeconds": 30, "fanout": true, "detailedRouter": "tiles" },
+  "expect": { "violations": { "maxAdded": 0 }, "incomplete": { "max": 2, "advisory": true } },
+  "note": "Fine-pitch QFN-28 0.5mm fanout (fabdesk router-issues.md R1). fab_router is DRC-clean by construction (hard: maxAdded 0) where the tscircuit capacity-autorouter produces 8-26 clearance/edge/crossing violations. Completion 12/14 advisory: inner pads that need a via to escape stay open (fab_router adds no via for fine-pitch escape yet)."
+}

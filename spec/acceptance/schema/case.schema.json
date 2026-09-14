@@ -179,6 +179,37 @@
         },
         "useFileSettings": {
           "type": "boolean"
+        },
+        "detailedRouter": {
+          "enum": [
+            "off",
+            "lineprobe",
+            "tiles"
+          ]
+        },
+        "detailedBudgetMs": {
+          "type": "number"
+        },
+        "detailedMaxTiles": {
+          "type": "number"
+        },
+        "shoveEnabled": {
+          "type": "boolean"
+        },
+        "orderByDifficulty": {
+          "type": "boolean"
+        },
+        "presentCongestionCost": {
+          "type": "number"
+        },
+        "globalPlan": {
+          "enum": [
+            "off",
+            "plan"
+          ]
+        },
+        "detailedNegotiation": {
+          "type": "boolean"
         }
       }
     },
