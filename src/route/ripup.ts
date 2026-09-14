@@ -40,6 +40,10 @@ export interface RipupHistory {
   bumpPresentSeg(sheet: number, a: Pt, b: Pt): void;
   /** Clear the present-pass usage map (called at the start of each pass). */
   resetPresent(): void;
+  /** Clear every history term (per-item, per-resource-cell, and present) — a fresh negotiation.
+   *  Used by the M10c keep-better driver so its two trials each start from an unbiased history and
+   *  the legacy baseline is reproducible when it is restored. */
+  reset(): void;
   readonly cellSize: number;
 }
 
@@ -65,6 +69,7 @@ export function createRipupHistory(cellSize = 10_000): RipupHistory {
     present: (sheet, x, y) => present.get(key(sheet, Math.floor(x / size), Math.floor(y / size))) ?? 0,
     bumpPresentSeg: (sheet, a, b) => bumpCells(present, sheet, a, b),
     resetPresent: () => { present = new Map<number, number>(); },
+    reset: () => { h.clear(); cells.clear(); present = new Map<number, number>(); },
     cellSize: size,
   };
 }

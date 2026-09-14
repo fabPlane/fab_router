@@ -31,7 +31,11 @@ import { createJournal, type Journal } from "./journal.ts";
 import { resolveProfile, type Profile } from "./profile.ts";
 import { ignoreOf, pointFree, sweepClear, type IgnoreSet } from "./clear.ts";
 import { createQuilt } from "./quilt.ts";
-import { aStar, aStarLayered, DIRS_4, DIRS_8, type EdgeCost, type LayeredSpace, type SearchSpace } from "./search.ts";
+import { aStar, aStarLayered, DIRS_4, DIRS_8, type EdgeCost, type LayeredSpace, type SearchSpace, type CorridorBias, type LayeredCorridorBias } from "./search.ts";
+import { buildMesh, type Mesh } from "./mesh.ts";
+import { steinerDecompose } from "./steiner.ts";
+import { negotiate, type NegotiateOptions } from "./negotiate.ts";
+import type { Plan, Segment } from "./plan.ts";
 import { pullPath } from "./pull.ts";
 import { legaliseTrail, trackPieces } from "./legalise.ts";
 import { createRipupHistory, isRippable, ripCost, cellHistory, presentFactor, type RipupHistory } from "./ripup.ts";
@@ -578,7 +582,7 @@ function fastProbe(ctx: RouteCtx, net: number | null, sheet: number, from: Pt, t
   return false;
 }
 
-function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from: Pt, to: Pt, profile: Profile, ignore: IgnoreSet, deadline: number | undefined, soft: boolean): boolean {
+function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from: Pt, to: Pt, profile: Profile, ignore: IgnoreSet, deadline: number | undefined, soft: boolean, corridor?: CorridorGuide): boolean {
   if (!soft && fastProbe(ctx, net, sheet, from, to, profile, ignore)) return true;
 
   // A* over a lazily built Quilt, coarse first then a finer grid to weave through tighter gaps.
@@ -635,6 +639,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
         }
       : (gx: number, gy: number): boolean => quilt.isFree(gx, gy);
     const space: SearchSpace = { step: region.step, pointOf: quilt.pointOf, nodeFree, edgeCost };
+    const corridorBias = corridor ? corridorBiasForSheet(corridor, sheet, quilt.pointOf) : undefined;
     const res = aStar(space, {
       start: { gx: 0, gy: 0 },
       goal: quilt.cellOf(to),
@@ -646,6 +651,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
       maxPops: Math.min(MAX_POPS, Math.max(4000, cells)),
       ...(deadline !== undefined ? { deadline } : {}),
       ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
+      ...(corridorBias ? { corridorBias } : {}),
     });
     if (!res.ok) {
       if (deadline !== undefined && now() > deadline) return false;
@@ -785,7 +791,7 @@ interface LayerCost { along: number; against: number; preferDir: "h" | "v" | nul
 function tryRouteLayered(
   ctx: RouteCtx, net: number | null, from: Pt, to: Pt,
   fromUsable: number[], toUsable: number[], profile: Profile, ignore: IgnoreSet,
-  deadline: number | undefined, soft: boolean,
+  deadline: number | undefined, soft: boolean, corridor?: CorridorGuide,
 ): boolean {
   const usable = profile.sheets.slice(); // ascending
   if (usable.length < 2 && fromUsable.length && toUsable.length && fromUsable[0] === toUsable[0]) return false;
@@ -869,12 +875,14 @@ function tryRouteLayered(
     const cells = (region.gx1 - region.gx0 + 1) * (region.gy1 - region.gy0 + 1) * usable.length;
     const reachGoal = (layer: number, gx: number, gy: number): boolean =>
       sweepClear(ctx.layout, ctx.lattice, usable[layer]!, { a: pointOf(gx, gy), b: to }, profile, ignore, profile.width).ok;
+    const corridorBias = corridor ? corridorBiasLayered(corridor, usable, pointOf) : undefined;
     const res = aStarLayered(space, {
       starts, goalCell: goal, goalLayers, region, dirs, stepCost, minCost,
       bendCost: ctx.settings.bendCost, viaFloor: viaCost, reachGoal,
       maxPops: Math.min(MAX_POPS, Math.max(6000, cells)),
       ...(deadline !== undefined ? { deadline } : {}),
       ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
+      ...(corridorBias ? { corridorBias } : {}),
     });
     if (!res.ok) {
       if (deadline !== undefined && now() > deadline) return false;
@@ -1068,15 +1076,322 @@ function planeConnectionsOf(ctx: RouteCtx, conn: ReturnType<typeof connectivity>
   return out;
 }
 
+// ---- planned driver (task I15, M10c) ----------------------------------------------------------
+//
+// Under `globalPlan:"plan"` the router first pays the coarse two-phase negotiation (Mesh → Steiner
+// → negotiate; commits no copper) and then realises each planned Segment in the Plan's global order
+// through the *unchanged* detailed path, guided by its Corridor via `region` + `stepCost`
+// (docs/DESIGN.md §10.4; McMurchie & Ebeling 1995 PathFinder; Pan/Xu/Chu 2006–09 FastRoute
+// congestion feedback; Nair 1987 difficulty order). Every inserted leg still passes the exact
+// `clear.ts` predicate and the Journal, so R-1/R-2/R-6 hold identically to M9; a Corridor can only
+// cause a miss, never a Violation. The whole phase is under keep-best and falls back cleanly to the
+// legacy local loop (`runPasses` below), so completion can only improve or stay equal.
+
+/** Soft Corridor cost bias: a mild discount for staying inside, a penalty for the one-Bin margin. */
+const CORRIDOR_INSIDE_FACTOR = 0.8;
+const CORRIDOR_MARGIN_FACTOR = 1.5;
+/** History added to an unrealisable Corridor's Bridges before re-negotiation (FastRoute feedback). */
+const GLOBAL_HISTORY_BUMP = 2;
+/** Max global rip-reroute / re-negotiate feedback rounds after the first two planned sweeps. */
+const GLOBAL_FEEDBACK_ROUNDS = 2;
+
+/** Per-Segment Corridor membership over the Mesh, precomputed per Sheet for the detailed search. */
+interface CorridorGuide {
+  mesh: Mesh;
+  /** Per Sheet: packed `(by*nx+bx)` Bin columns strictly inside the Corridor. */
+  strict: Map<number, Set<number>>;
+  /** Per Sheet: those columns expanded by one Bin — the allowed search region. */
+  expanded: Map<number, Set<number>>;
+}
+
+/** Build one CorridorGuide per Segment from a negotiated Plan. */
+function buildGuides(mesh: Mesh, plan: Plan): Map<number, CorridorGuide> {
+  const nx = mesh.nx, ny = mesh.ny;
+  const guides = new Map<number, CorridorGuide>();
+  for (const seg of plan.segments) {
+    const corridor = plan.corridors[seg.id]!;
+    const strict = new Map<number, Set<number>>();
+    const addStrict = (sheet: number, bx: number, by: number): void => {
+      let s = strict.get(sheet);
+      if (!s) strict.set(sheet, (s = new Set<number>()));
+      s.add(by * nx + bx);
+    };
+    for (const binId of corridor.bins) { const b = mesh.binAt(binId); addStrict(b.sheet, b.bx, b.by); }
+    // Always include the two terminals' Bins so the endpoints stay reachable even when the coarse
+    // path seeded from a different candidate Bin or Sheet than the detailed endpoints resolve to.
+    for (const t of [seg.from, seg.to]) for (const binId of t.bins) { const b = mesh.binAt(binId); addStrict(b.sheet, b.bx, b.by); }
+    const expanded = new Map<number, Set<number>>();
+    for (const [sheet, cols] of strict) {
+      const e = new Set<number>();
+      for (const key of cols) {
+        const bx = key % nx, by = Math.floor(key / nx);
+        for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+          const nbx = bx + dx, nby = by + dy;
+          if (nbx < 0 || nbx >= nx || nby < 0 || nby >= ny) continue;
+          e.add(nby * nx + nbx);
+        }
+      }
+      expanded.set(sheet, e);
+    }
+    guides.set(seg.id, { mesh, strict, expanded });
+  }
+  return guides;
+}
+
+/** Single-Sheet Corridor bias over a search grid whose cells map to Pt via `pointOf`. */
+function corridorBiasForSheet(guide: CorridorGuide, sheet: number, pointOf: (gx: number, gy: number) => Pt): CorridorBias {
+  const mesh = guide.mesh, nx = mesh.nx;
+  const strict = guide.strict.get(sheet);
+  const exp = guide.expanded.get(sheet);
+  const colOf = (gx: number, gy: number): number => {
+    const bin = mesh.binOf(sheet, pointOf(gx, gy));
+    if (bin < 0) return -1;
+    const b = mesh.binAt(bin);
+    return b.by * nx + b.bx;
+  };
+  return {
+    outside: (gx, gy) => { if (!exp) return true; const k = colOf(gx, gy); return k < 0 || !exp.has(k); },
+    factor: (gx, gy) => { if (!strict) return CORRIDOR_MARGIN_FACTOR; const k = colOf(gx, gy); return k >= 0 && strict.has(k) ? CORRIDOR_INSIDE_FACTOR : CORRIDOR_MARGIN_FACTOR; },
+  };
+}
+
+/** Layered Corridor bias: `usable[layer]` is the Sheet id of each search layer. */
+function corridorBiasLayered(guide: CorridorGuide, usable: readonly number[], pointOf: (gx: number, gy: number) => Pt): LayeredCorridorBias {
+  const mesh = guide.mesh, nx = mesh.nx;
+  const colOf = (sheet: number, gx: number, gy: number): number => {
+    const bin = mesh.binOf(sheet, pointOf(gx, gy));
+    if (bin < 0) return -1;
+    const b = mesh.binAt(bin);
+    return b.by * nx + b.bx;
+  };
+  return {
+    outside: (layer, gx, gy) => { const sheet = usable[layer]!; const exp = guide.expanded.get(sheet); if (!exp) return true; const k = colOf(sheet, gx, gy); return k < 0 || !exp.has(k); },
+    factor: (layer, gx, gy) => { const sheet = usable[layer]!; const strict = guide.strict.get(sheet); if (!strict) return CORRIDOR_MARGIN_FACTOR; const k = colOf(sheet, gx, gy); return k >= 0 && strict.has(k) ? CORRIDOR_INSIDE_FACTOR : CORRIDOR_MARGIN_FACTOR; },
+  };
+}
+
+/** Realise one planned Segment through the detailed path, guided by its Corridor. */
+function routeSegmentPlanned(ctx: RouteCtx, seg: Segment, guide: CorridorGuide, soft: boolean): boolean {
+  const profile = profileFor(ctx, seg.net);
+  const ignore = ignoreOf(seg.net);
+  const deadline = perConnDeadlineOf(ctx);
+  const inUsable = (s: number): boolean => profile.sheets.includes(s);
+  const fromUsable = seg.from.sheets.filter(inUsable);
+  const toUsable = seg.to.sheets.filter(inUsable);
+  if (fromUsable.length === 0 || toUsable.length === 0) return false;
+  const from = seg.from.point, to = seg.to.point;
+  const common = fromUsable.filter((s) => toUsable.includes(s)).sort((a, b) => a - b);
+  const viasOk = ctx.settings.viasAllowed && profile.barrelForms.length > 0;
+
+  // A clean direct / L probe is a strict win (DRC-clean by construction); take it before the search.
+  for (const sheet of common) if (fastProbe(ctx, seg.net, sheet, from, to, profile, ignore)) return true;
+
+  if (!soft) {
+    for (const sheet of common) if (tryRouteOnSheet(ctx, seg.net, sheet, from, to, profile, ignore, deadline, false, guide)) return true;
+    if (viasOk && tryRouteLayered(ctx, seg.net, from, to, fromUsable, toUsable, profile, ignore, deadline, false, guide)) return true;
+    return false;
+  }
+  if (ctx.settings.ripupEnabled) {
+    for (const sheet of common) if (tryRouteOnSheet(ctx, seg.net, sheet, from, to, profile, ignore, deadline, true, guide)) return true;
+    if (viasOk && tryRouteLayered(ctx, seg.net, from, to, fromUsable, toUsable, profile, ignore, deadline, true, guide)) return true;
+  }
+  return false;
+}
+
+/** Rip one net's own `free`/router copper through the Journal (whole-net global rip-up; R-2 safe). */
+function ripNetCopper(ctx: RouteCtx, net: number): void {
+  const ids: number[] = [];
+  for (const t of ctx.layout.tracks) if (t.net === net && t.origin === "router" && t.hold === "free") ids.push(t.id);
+  for (const b of ctx.layout.barrels) if (b.net === net && b.origin === "router" && b.hold === "free") ids.push(b.id);
+  ids.sort((a, b) => a - b);
+  ripAll(ctx, ids);
+  ctx.ripped += ids.length;
+}
+
+/** Global negotiation options (spec/api/settings.md `global*`) with the defaults left in place. */
+function negotiateOptsFromSettings(s: RouteSettings): Partial<NegotiateOptions> {
+  const o: Partial<NegotiateOptions> = {};
+  if (s.globalMaxIterations !== undefined) o.maxIterations = s.globalMaxIterations;
+  if (s.globalHistoryWeight !== undefined) o.historyWeight = s.globalHistoryWeight;
+  if (s.globalPresentWeight !== undefined) o.presentWeight = s.globalPresentWeight;
+  if (s.globalHistoryRamp !== undefined) o.historyRamp = s.globalHistoryRamp;
+  if (s.globalLayerBias !== undefined) o.layerBias = s.globalLayerBias;
+  return o;
+}
+
+/**
+ * The corridor-guided detailed phase (docs/DESIGN.md §10.3–§10.5). Builds the Mesh, decomposes each
+ * net into Segments, negotiates a congestion-resolved Plan (all no copper), then realises the
+ * Segments in the Plan's global order through the detailed router with corridor guidance; an
+ * unrealisable Corridor bumps its Bridges' history, whole-net global rip-reroutes, re-negotiates and
+ * retries. All under keep-best: every recorded state is DRC-clean, so a rollback preserves R-1/R-6,
+ * and whatever the planned driver still cannot realise is left for the legacy loop (clean fallback).
+ */
+function plannedDrive(ctx: RouteCtx): void {
+  const conn = connectivity(ctx.layout, ctx.lattice);
+  ctx.conn = conn;
+  const mesh = buildMesh(ctx.layout, ctx.lattice, ctx.settings.globalBinUm !== undefined ? { binUm: ctx.settings.globalBinUm } : {});
+  const segments = steinerDecompose(ctx.layout, mesh, conn);
+  if (segments.length === 0) return;
+  const byId: Segment[] = [];
+  for (const s of segments) byId[s.id] = s;
+
+  let plan = negotiate(mesh, segments, negotiateOptsFromSettings(ctx.settings));
+  let guides = buildGuides(mesh, plan);
+
+  // Keep-best over the whole planned phase (docs/DESIGN.md §10.5, R-6).
+  let bestIncomplete = totalIncomplete(ctx);
+  let bestMark = ctx.journal.mark();
+  const record = (): void => {
+    const inc = totalIncomplete(ctx);
+    if (inc < bestIncomplete) { bestIncomplete = inc; bestMark = ctx.journal.mark(); }
+  };
+  const finish = (): void => {
+    if (totalIncomplete(ctx) > bestIncomplete) ctx.journal.rewind(bestMark);
+  };
+
+  // Round 0: greedy corridor-guided sweep in the Plan's global order (no rip-up).
+  ctx.ripupActive = false;
+  ctx.ripHistory.resetPresent();
+  const failed = new Set<number>();
+  for (const segId of plan.order) {
+    const seg = byId[segId]!;
+    if (ctx.ignored.has(seg.net)) continue;
+    if (abortRequested(ctx) || timeUp(ctx)) { record(); finish(); return; }
+    if (!routeSegmentPlanned(ctx, seg, guides.get(segId)!, false)) failed.add(segId);
+  }
+  record();
+
+  // Round 1: rip-up-guided retry of the Segments that missed.
+  if (ctx.settings.ripupEnabled) {
+    ctx.ripupActive = true;
+    ctx.ripHistory.resetPresent();
+    for (const segId of plan.order) {
+      if (!failed.has(segId)) continue;
+      if (abortRequested(ctx) || timeUp(ctx)) { record(); finish(); return; }
+      if (routeSegmentPlanned(ctx, byId[segId]!, guides.get(segId)!, true)) failed.delete(segId);
+    }
+    record();
+  }
+
+  // Congestion feedback (FastRoute; docs/DESIGN.md §10.4): each round bumps history on the
+  // still-unrealisable Corridors, whole-net global rip-reroutes those nets, re-negotiates and
+  // retries. Each round is guarded by its own keep-best mark, so it can only improve or stay equal.
+  for (let round = 0; round < GLOBAL_FEEDBACK_ROUNDS; round++) {
+    if (failed.size === 0 || !ctx.settings.ripupEnabled || abortRequested(ctx) || timeUp(ctx)) break;
+    const failedNets = new Set<number>();
+    for (const segId of failed) {
+      failedNets.add(byId[segId]!.net);
+      for (const b of plan.corridors[segId]!.bridges) mesh.addHistory(b, GLOBAL_HISTORY_BUMP);
+    }
+    const mark2 = ctx.journal.mark();
+    const before = totalIncomplete(ctx);
+    for (const net of failedNets) ripNetCopper(ctx, net);
+    plan = negotiate(mesh, segments, negotiateOptsFromSettings(ctx.settings));
+    guides = buildGuides(mesh, plan);
+    ctx.ripupActive = true;
+    ctx.ripHistory.resetPresent();
+    const stillFailed = new Set<number>();
+    for (const segId of plan.order) {
+      const seg = byId[segId]!;
+      if (!failedNets.has(seg.net) || ctx.ignored.has(seg.net)) continue;
+      if (abortRequested(ctx) || timeUp(ctx)) break;
+      if (!routeSegmentPlanned(ctx, seg, guides.get(segId)!, false) && !routeSegmentPlanned(ctx, seg, guides.get(segId)!, true)) stillFailed.add(segId);
+    }
+    if (totalIncomplete(ctx) > before) { ctx.journal.rewind(mark2); break; } // keep-best: never regress
+    record();
+    failed.clear();
+    for (const segId of stillFailed) failed.add(segId);
+  }
+
+  finish();
+}
+
+/**
+ * The routing stage entry (docs/DESIGN.md §6). `globalPlan:"off"` (default) runs the M9 local loop
+ * unchanged. `globalPlan:"plan"` (M10c) runs the two-phase planned driver, but always against the
+ * legacy loop as a baseline and keeps whichever DRC-clean state has the fewer incompletes — so the
+ * planned driver's completion can only improve or stay equal, never regress (docs/DESIGN.md §10.4,
+ * "clean fallback to the legacy local loop"). The comparison uses a Journal rewind, so both trials
+ * run from the same pre-routing state; only an explicit `globalPlan:"plan"` pays the extra trial.
+ */
 export function runPasses(ctx: RouteCtx): PassOutcome {
+  if (!ctx.settings.routerEnabled) return { passes: 0, stoppedBy: "complete", timedOut: false, aborted: false };
+  if (ctx.settings.globalPlan === "plan" && ctx.settings.maxItems === undefined) return runPlannedThenBest(ctx);
+  return runLegacyPasses(ctx);
+}
+
+/** Snapshot of the per-run counters that a routing trial accumulates (reset between keep-better trials). */
+interface CounterSnapshot { completed: number; attempted: number; ripped: number; contention: Map<string, number> }
+function snapCounters(ctx: RouteCtx): CounterSnapshot {
+  return { completed: ctx.completed, attempted: ctx.attempted, ripped: ctx.ripped, contention: new Map(ctx.contention) };
+}
+function restoreCounters(ctx: RouteCtx, s: CounterSnapshot): void {
+  ctx.completed = s.completed; ctx.attempted = s.attempted; ctx.ripped = s.ripped;
+  ctx.contention = new Map(s.contention);
+}
+
+/** A router-inserted-copper snapshot: the plain Track/Barrel data added since a Journal mark. */
+interface CopperSnapshot { tracks: Array<Omit<Track, "id" | "origin">>; barrels: Array<Omit<Barrel, "id" | "origin">> }
+/** Capture the router copper added since `mark` (deep enough to re-insert), by Journal insertion id. */
+function captureCopper(ctx: RouteCtx, mark: ReturnType<Journal["mark"]>): CopperSnapshot {
+  const ids = new Set(ctx.journal.insertedSince(mark));
+  const tracks: Array<Omit<Track, "id" | "origin">> = [];
+  const barrels: Array<Omit<Barrel, "id" | "origin">> = [];
+  for (const t of ctx.layout.tracks) if (ids.has(t.id)) tracks.push({ net: t.net, sheet: t.sheet, pts: t.pts.map((p) => ({ x: p.x, y: p.y })), width: t.width, kind: t.kind, hold: t.hold });
+  for (const b of ctx.layout.barrels) if (ids.has(b.id)) barrels.push({ net: b.net, at: { x: b.at.x, y: b.at.y }, form: b.form, fromSheet: b.fromSheet, toSheet: b.toSheet, kind: b.kind, hold: b.hold });
+  return { tracks, barrels };
+}
+/** Re-insert a captured copper snapshot through the Journal (restoring a known DRC-clean state). */
+function restoreCopper(ctx: RouteCtx, snap: CopperSnapshot): void {
+  for (const b of snap.barrels) ctx.journal.addBarrel(b);
+  for (const t of snap.tracks) ctx.journal.addTrack(t);
+}
+
+/**
+ * Run the planned driver and keep it only when it does not regress completion (docs/DESIGN.md
+ * §10.4). Both trials start from the same pre-routing Journal state. The legacy loop is the
+ * guaranteed floor: its result is captured as copper so it can be *restored without re-running* —
+ * essential under a time budget, where a redo would have no time left. Every kept state is
+ * DRC-clean, so R-1/R-2/R-6 hold whichever trial wins.
+ */
+function runPlannedThenBest(ctx: RouteCtx): PassOutcome {
+  const mark0 = ctx.journal.mark();
+  const base = snapCounters(ctx);
+
+  // Baseline trial: the legacy local loop (the completion floor the planned driver must not regress).
+  ctx.ripHistory.reset();
+  const legacyOutcome = runLegacyPasses(ctx);
+  const incLegacy = totalIncomplete(ctx);
+  if (incLegacy === 0 || legacyOutcome.aborted) return legacyOutcome;
+  const legacyCopper = captureCopper(ctx, mark0);
+  const legacyCounters = snapCounters(ctx);
+
+  // Planned trial: from the same start, pay the coarse negotiation and lay corridor-guided copper,
+  // then run the legacy loop as the clean fallback for whatever the plan could not realise.
+  ctx.journal.rewind(mark0);
+  restoreCounters(ctx, base);
+  ctx.ripHistory.reset();
+  if (!abortRequested(ctx) && !timeUp(ctx)) plannedDrive(ctx);
+  const plannedOutcome = runLegacyPasses(ctx);
+  const incPlanned = totalIncomplete(ctx);
+  if (incPlanned <= incLegacy) return plannedOutcome;
+
+  // Planned regressed: restore the captured legacy result (no re-run, so a spent budget cannot lose
+  // it). The restored copper was DRC-clean when first laid, so re-inserting it preserves R-1.
+  ctx.journal.rewind(mark0);
+  restoreCopper(ctx, legacyCopper);
+  restoreCounters(ctx, legacyCounters);
+  return legacyOutcome;
+}
+
+function runLegacyPasses(ctx: RouteCtx): PassOutcome {
   const maxItems = ctx.settings.maxItems;
   let passes = 0;
   let stagnant = 0;
   let stoppedBy: RouteReportStop = "maxPasses";
   let timedOut = false;
   let aborted = false;
-
-  if (!ctx.settings.routerEnabled) return { passes: 0, stoppedBy: "complete", timedOut: false, aborted: false };
 
   // Keep-best (negotiated congestion can churn): remember the Journal position of the fewest
   // incompletes seen, and roll back to it if later passes end up worse. Every recorded state was
