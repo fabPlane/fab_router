@@ -14,17 +14,27 @@ bun run typecheck && bun run check:layers && bun run test
 bun run acceptance -- --tier slow
 ```
 
-## Status
+## Status — delivered (M0–M10)
 
-Milestones M0–M7 complete (tags `M0`…`M7`). The router reads SPECCTRA DSN, checks DRC and
-connectivity, routes multilayer boards with vias, rip-up, fanout and a monotone optimiser, writes
-and applies SES, and drives the tscircuit SimpleRouteJson adapter. **It never adds a DRC violation
-(invariant R-1) on any board at any setting.** Acceptance: 401 non-routing cases pass; all feature
-routing cases (4-/6-layer, plane layers, strict-DRC, item caps, DAC bm08) pass to their bounds.
+Milestones M0–M10 complete (tags `M0`…`M10`). The router reads SPECCTRA DSN, checks DRC and
+connectivity, routes multilayer boards with vias, rip-up, fanout, push-and-shove, a gridless
+detailed router (line-search + corner-stitch tiles) and a monotone optimiser, writes and applies
+SES, drives the tscircuit SimpleRouteJson adapter, and carries an off-by-default two-phase
+global-planning subsystem. **It never adds a DRC violation (invariant R-1) on any board at any
+setting** — held through every merge, each similarity-reviewed (no copying indicated).
 
-Known follow-up: completion on the densest boards and J802 falls short of the reference (zero added
-violations throughout) — a coarse-grid search limit that needs a gridless detailed router with
-push-and-shove. See `evidence/reports/M8-audit.md` §4.
+Acceptance: 401 non-routing cases pass; all feature routing cases (4-/6-layer, plane layers,
+strict-DRC, item caps, DAC bm08) pass to their bounds; the tscircuit SRJ boards pass their hard
+metrics.
+
+**Completion frontier (accepted).** On the ~12 densest routing cases the router completes fewer
+nets than the reference (with zero added violations throughout). This was established as a
+fundamental limit of the detailed router's local search from four independent directions — every
+detailed mechanism (M9), every negotiated-congestion knob (I12), a complete global router (M10),
+and the reference's own full-detailed-PathFinder approach (I17 spike). Closing it would require a
+deep reimplementation of the core routing algorithm or a topological/rubber-band rewrite that
+reopens R-1; both are large and uncertain. See `evidence/reports/M10-report.md` for the full
+analysis and per-board numbers.
 
 ## Provenance and licence
 
