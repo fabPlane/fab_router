@@ -105,6 +105,160 @@ export class Heap {
   }
 }
 
+// ---- allocation-free frontier and visited store (task I11, M9c) --------------------------------
+//
+// The A* loop of `aStar` / `aStarLayered` is behaviour-identical to a `Map`/object-node version but
+// avoids per-step object and Map-entry churn (the GC pressure the M9c profile flagged): the frontier
+// is a struct-of-arrays binary heap and the visited set is an open-addressing hash table, both on
+// typed arrays and both pooled across connections. Determinism is unchanged: the heap orders by the
+// same total order `(f, h, seq)` (seq is unique per push, so pop order equals the sorted order
+// regardless of internal layout), and the visited store holds the identical float g-scores and
+// parent links the two Maps did. The pools are reused, never concurrently: a search runs to
+// completion before the next begins and no `SearchSpace` callback re-enters the search.
+
+/** Struct-of-arrays min-heap keyed `(f, h, seq)`; pop leaves the popped fields in `popF/popH/popState`. */
+class SoaHeap {
+  private f = new Float64Array(1024);
+  private h = new Float64Array(1024);
+  private seq = new Float64Array(1024);
+  private st = new Float64Array(1024);
+  private n = 0;
+  private cap = 1024;
+  popF = 0; popH = 0; popState = 0;
+  get size(): number { return this.n; }
+  clear(): void { this.n = 0; }
+  private less(i: number, j: number): boolean {
+    const fi = this.f[i]!, fj = this.f[j]!;
+    if (fi < fj) return true;
+    if (fi > fj) return false;
+    const hi = this.h[i]!, hj = this.h[j]!;
+    if (hi < hj) return true;
+    if (hi > hj) return false;
+    return this.seq[i]! < this.seq[j]!;
+  }
+  private swap(i: number, j: number): void {
+    const f = this.f, h = this.h, s = this.seq, st = this.st;
+    const tf = f[i]!; f[i] = f[j]!; f[j] = tf;
+    const th = h[i]!; h[i] = h[j]!; h[j] = th;
+    const ts = s[i]!; s[i] = s[j]!; s[j] = ts;
+    const tt = st[i]!; st[i] = st[j]!; st[j] = tt;
+  }
+  private grow(): void {
+    const cap = this.cap * 2;
+    const f = new Float64Array(cap); f.set(this.f);
+    const h = new Float64Array(cap); h.set(this.h);
+    const s = new Float64Array(cap); s.set(this.seq);
+    const st = new Float64Array(cap); st.set(this.st);
+    this.f = f; this.h = h; this.seq = s; this.st = st; this.cap = cap;
+  }
+  push(f: number, h: number, seq: number, state: number): void {
+    if (this.n === this.cap) this.grow();
+    let i = this.n++;
+    this.f[i] = f; this.h[i] = h; this.seq[i] = seq; this.st[i] = state;
+    while (i > 0) { const p = (i - 1) >> 1; if (this.less(i, p)) { this.swap(i, p); i = p; } else break; }
+  }
+  pop(): void {
+    this.popF = this.f[0]!; this.popH = this.h[0]!; this.popState = this.st[0]!;
+    const last = --this.n;
+    if (last > 0) {
+      this.f[0] = this.f[last]!; this.h[0] = this.h[last]!; this.seq[0] = this.seq[last]!; this.st[0] = this.st[last]!;
+      let i = 0;
+      const n = last;
+      for (;;) {
+        const l = 2 * i + 1, r = l + 1;
+        let m = i;
+        if (l < n && this.less(l, m)) m = l;
+        if (r < n && this.less(r, m)) m = r;
+        if (m === i) break;
+        this.swap(i, m);
+        i = m;
+      }
+    }
+  }
+}
+
+const NONE = -1; // parent sentinel: a start state has no predecessor
+
+/** Open-addressing hash table `state -> (g, parent)`; reset in O(1) by bumping a generation stamp. */
+class VisitedStore {
+  private keys = new Float64Array(1024);
+  private stamp = new Int32Array(1024);
+  private gval = new Float64Array(1024);
+  private parent = new Float64Array(1024);
+  private mask = 1023;
+  private cap = 1024;
+  private count = 0;
+  private gen = 0;
+  private pi = 0;
+  private pf = false;
+  reset(): void {
+    this.count = 0;
+    this.gen++;
+    if (this.gen >= 0x7fffffff) { this.stamp.fill(0); this.gen = 1; }
+  }
+  private hash(key: number): number {
+    const hi = Math.floor(key / 4294967296);
+    let h = Math.imul((key >>> 0) ^ hi, 2654435761);
+    h ^= h >>> 15;
+    return h & this.mask;
+  }
+  private probe(key: number): void {
+    let i = this.hash(key);
+    const stamp = this.stamp, keys = this.keys, gen = this.gen;
+    while (stamp[i] === gen) {
+      if (keys[i] === key) { this.pi = i; this.pf = true; return; }
+      i = (i + 1) & this.mask;
+    }
+    this.pi = i; this.pf = false;
+  }
+  private grow(): void {
+    const oldKeys = this.keys, oldStamp = this.stamp, oldG = this.gval, oldP = this.parent, oldGen = this.gen, oldCap = this.cap;
+    const cap = oldCap * 2;
+    this.keys = new Float64Array(cap);
+    this.stamp = new Int32Array(cap);
+    this.gval = new Float64Array(cap);
+    this.parent = new Float64Array(cap);
+    this.mask = cap - 1;
+    this.cap = cap;
+    for (let i = 0; i < oldCap; i++) {
+      if (oldStamp[i] !== oldGen) continue;
+      const key = oldKeys[i]!;
+      let j = this.hash(key);
+      while (this.stamp[j] === oldGen) j = (j + 1) & this.mask;
+      this.keys[j] = key; this.stamp[j] = oldGen; this.gval[j] = oldG[i]!; this.parent[j] = oldP[i]!;
+    }
+  }
+  /** g-score of `key`, or `dflt` when absent. */
+  gOr(key: number, dflt: number): number {
+    this.probe(key);
+    return this.pf ? this.gval[this.pi]! : dflt;
+  }
+  /** True when `key` is present and its g-score is ≤ `val` (the A* relaxation skip test). */
+  leq(key: number, val: number): boolean {
+    this.probe(key);
+    return this.pf && this.gval[this.pi]! <= val;
+  }
+  /** Parent state of `key`, or `NONE` when `key` is a start or absent. */
+  parentOf(key: number): number {
+    this.probe(key);
+    return this.pf ? this.parent[this.pi]! : NONE;
+  }
+  /** Insert or overwrite `key`'s g-score and parent. */
+  put(key: number, g: number, parent: number): void {
+    this.probe(key);
+    let i = this.pi;
+    if (!this.pf) {
+      if ((this.count + 1) * 10 > this.cap * 7) { this.grow(); let j = this.hash(key); while (this.stamp[j] === this.gen) j = (j + 1) & this.mask; i = j; }
+      this.keys[i] = key; this.stamp[i] = this.gen; this.count++;
+    }
+    this.gval[i] = g; this.parent[i] = parent;
+  }
+}
+
+// One pooled frontier/visited pair; a search resets both at entry (see the reentrancy note above).
+const HEAP = new SoaHeap();
+const VIS = new VisitedStore();
+
 const NDIR = 9; // 8 real directions plus 8 = "no incoming direction" (start)
 
 /** Run A* over `space` between the option's start and goal cells. */
@@ -116,8 +270,6 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
   const cellIndex = (gx: number, gy: number): number => (gy - region.gy0) * width + (gx - region.gx0);
   const stateOf = (cell: number, dir: number): number => cell * NDIR + dir;
 
-  const gScore = new Map<number, number>();
-  const cameFrom = new Map<number, number>();       // state -> previous state
   const cellOfState = (state: number): number => Math.floor(state / NDIR);
   const dirOfState = (state: number): number => state % NDIR;
 
@@ -134,51 +286,61 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
     return cells * space.step * o.minCost;
   };
 
+  // Per-direction step cost is a pure function of `d`; cache it once instead of a closure call per
+  // neighbour. Per-direction leg length is filled lazily from the first real (from, to) it sees, so
+  // it equals the original `Math.hypot(to.x - from.x, to.y - from.y)` bit-for-bit (the difference is
+  // exactly `dx * step` for a linear `pointOf`, constant across the search).
+  const nd = dirs.length;
+  const stepCostOf = new Float64Array(nd);
+  for (let d = 0; d < nd; d++) stepCostOf[d] = o.stepCost(d);
+  const legLenOf = new Float64Array(nd);
+  for (let d = 0; d < nd; d++) legLenOf[d] = -1;
+
+  VIS.reset();
+  HEAP.clear();
   const startCell = cellIndex(start.gx, start.gy);
   const startState = stateOf(startCell, 8);
-  gScore.set(startState, 0);
-  const heap = new Heap();
+  VIS.put(startState, 0, NONE);
   let seq = 0;
-  heap.push({ f: heuristic(start.gx, start.gy), h: heuristic(start.gx, start.gy), seq: seq++, state: startState });
+  const h0 = heuristic(start.gx, start.gy);
+  HEAP.push(h0, h0, seq++, startState);
 
   let pops = 0;
   let aborted = false;
 
   const reconstruct = (endState: number): Pt[] => {
     const cells: number[] = [];
-    let s: number | undefined = endState;
-    while (s !== undefined) {
-      cells.push(cellOfState(s));
-      s = cameFrom.get(s);
-    }
+    let s = endState;
+    for (;;) { cells.push(cellOfState(s)); const p = VIS.parentOf(s); if (p === NONE) break; s = p; }
     cells.reverse();
     return cells.map((c) => space.pointOf(gxOf(c), gyOf(c)));
   };
 
   void height;
 
-  while (heap.size > 0) {
+  while (HEAP.size > 0) {
     if ((pops & 255) === 0) {
       if (o.signal?.aborted) { aborted = true; break; }
       if (o.deadline !== undefined && Date.now() > o.deadline) break;
     }
-    const node = heap.pop();
+    HEAP.pop();
+    const nodeF = HEAP.popF, nodeH = HEAP.popH, nodeState = HEAP.popState;
     pops++;
     if (pops > o.maxPops) break;
-    const cell = cellOfState(node.state);
+    const cell = cellOfState(nodeState);
     const cgx = gxOf(cell), cgy = gyOf(cell);
     if (cgx === goal.gx && cgy === goal.gy) {
-      const path = reconstruct(node.state);
+      const path = reconstruct(nodeState);
       // Collect ripped ids along the winning path (recompute edges; cheap for a short path).
       const rip = collectRip(space, path);
       return { ok: true, path, rip, pops, aborted };
     }
-    const gCur = gScore.get(node.state) ?? Infinity;
+    const gCur = VIS.gOr(nodeState, Infinity);
     // Skip a stale heap entry (a cheaper path to this state was found after it was queued).
-    if (node.f - node.h > gCur + 1e-6) continue;
-    const inDir = dirOfState(node.state);
+    if (nodeF - nodeH > gCur + 1e-6) continue;
+    const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
-    for (let d = 0; d < dirs.length; d++) {
+    for (let d = 0; d < nd; d++) {
       const [dx, dy] = dirs[d]!;
       const ngx = cgx + dx, ngy = cgy + dy;
       if (!inRegion(ngx, ngy)) continue;
@@ -186,16 +348,15 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
       const to = space.pointOf(ngx, ngy);
       const ec = space.edgeCost(from, to);
       if (ec.blocked) continue;
-      const legLen = Math.hypot(to.x - from.x, to.y - from.y);
+      let legLen = legLenOf[d]!;
+      if (legLen < 0) { legLen = Math.hypot(to.x - from.x, to.y - from.y); legLenOf[d] = legLen; }
       const bend = inDir !== 8 && inDir !== d ? o.bendCost : 0;
-      const stepG = gCur + legLen * o.stepCost(d) + bend + ec.extra;
+      const stepG = gCur + legLen * stepCostOf[d]! + bend + ec.extra;
       const nState = stateOf(cellIndex(ngx, ngy), d);
-      const prev = gScore.get(nState);
-      if (prev !== undefined && prev <= stepG) continue;
-      gScore.set(nState, stepG);
-      cameFrom.set(nState, node.state);
+      if (VIS.leq(nState, stepG)) continue;
+      VIS.put(nState, stepG, nodeState);
       const h = heuristic(ngx, ngy);
-      heap.push({ f: stepG + h, h, seq: seq++, state: nState });
+      HEAP.push(stepG + h, h, seq++, nState);
     }
   }
   return { ok: false, path: [], rip: [], pops, aborted };
@@ -275,17 +436,24 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     return cells * space.step * o.minCost + (goalSet.has(layer) ? 0 : o.viaFloor);
   };
 
-  const gScore = new Map<number, number>();
-  const cameFrom = new Map<number, number>();
-  const heap = new Heap();
+  // Cache the per-(layer, direction) step cost and the per-direction leg length (see `aStar`); both
+  // are byte-identical substitutes for the original closure call and `Math.hypot`.
+  const nd = dirs.length;
+  const stepCostOf = new Float64Array(layers * nd);
+  for (let ly = 0; ly < layers; ly++) for (let d = 0; d < nd; d++) stepCostOf[ly * nd + d] = o.stepCost(ly, d);
+  const legLenOf = new Float64Array(nd);
+  for (let d = 0; d < nd; d++) legLenOf[d] = -1;
+
+  VIS.reset();
+  HEAP.clear();
   let seq = 0;
   for (const s of o.starts) {
     if (!inRegion(s.gx, s.gy)) continue;
     const st = stateOf(cellIndex(s.gx, s.gy), s.layer, 8);
-    if ((gScore.get(st) ?? Infinity) <= 0) continue;
-    gScore.set(st, 0);
+    if (VIS.gOr(st, Infinity) <= 0) continue;
+    VIS.put(st, 0, NONE);
     const h = heuristic(s.gx, s.gy, s.layer);
-    heap.push({ f: h, h, seq: seq++, state: st });
+    HEAP.push(h, h, seq++, st);
   }
 
   let pops = 0;
@@ -293,8 +461,8 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
 
   const reconstruct = (endState: number): LayeredStep[] => {
     const chain: number[] = [];
-    let s: number | undefined = endState;
-    while (s !== undefined) { chain.push(s); s = cameFrom.get(s); }
+    let s = endState;
+    for (;;) { chain.push(s); const p = VIS.parentOf(s); if (p === NONE) break; s = p; }
     chain.reverse();
     const out: LayeredStep[] = [];
     for (let i = 0; i < chain.length; i++) {
@@ -307,32 +475,33 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     return out;
   };
 
-  while (heap.size > 0) {
+  while (HEAP.size > 0) {
     if ((pops & 255) === 0) {
       if (o.signal?.aborted) { aborted = true; break; }
       if (o.deadline !== undefined && Date.now() > o.deadline) break;
     }
-    const node = heap.pop();
+    HEAP.pop();
+    const nodeF = HEAP.popF, nodeH = HEAP.popH, nodeState = HEAP.popState;
     pops++;
     if (pops > o.maxPops) break;
-    const cell = cellOfState(node.state);
-    const layer = layerOfState(node.state);
+    const cell = cellOfState(nodeState);
+    const layer = layerOfState(nodeState);
     const cgx = gxOf(cell), cgy = gyOf(cell);
     const atGoal = cgx === o.goalCell.gx && cgy === o.goalCell.gy && goalSet.has(layer);
     // Line-of-sight goal test only near the goal (bounded cost).
     const near = Math.max(Math.abs(cgx - o.goalCell.gx), Math.abs(cgy - o.goalCell.gy)) <= 8;
     if (atGoal || (near && goalSet.has(layer) && o.reachGoal?.(layer, cgx, cgy))) {
-      const path = reconstruct(node.state);
+      const path = reconstruct(nodeState);
       const rip = collectLayeredRip(space, path);
       return { ok: true, path, rip, pops, aborted };
     }
-    const gCur = gScore.get(node.state) ?? Infinity;
-    if (node.f - node.h > gCur + 1e-6) continue;
-    const inDir = dirOfState(node.state);
+    const gCur = VIS.gOr(nodeState, Infinity);
+    if (nodeF - nodeH > gCur + 1e-6) continue;
+    const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
 
     // Horizontal Seam crossings on the same Sheet.
-    for (let d = 0; d < dirs.length; d++) {
+    for (let d = 0; d < nd; d++) {
       const [dx, dy] = dirs[d]!;
       const ngx = cgx + dx, ngy = cgy + dy;
       if (!inRegion(ngx, ngy)) continue;
@@ -341,16 +510,15 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
       const to = space.pointOf(ngx, ngy);
       const ec = space.edgeCost(layer, from, to);
       if (ec.blocked) continue;
-      const legLen = Math.hypot(to.x - from.x, to.y - from.y);
+      let legLen = legLenOf[d]!;
+      if (legLen < 0) { legLen = Math.hypot(to.x - from.x, to.y - from.y); legLenOf[d] = legLen; }
       const bend = inDir !== 8 && inDir !== d ? o.bendCost : 0;
-      const stepG = gCur + legLen * o.stepCost(layer, d) + bend + ec.extra;
+      const stepG = gCur + legLen * stepCostOf[layer * nd + d]! + bend + ec.extra;
       const nState = stateOf(cellIndex(ngx, ngy), layer, d);
-      const prev = gScore.get(nState);
-      if (prev !== undefined && prev <= stepG) continue;
-      gScore.set(nState, stepG);
-      cameFrom.set(nState, node.state);
+      if (VIS.leq(nState, stepG)) continue;
+      VIS.put(nState, stepG, nodeState);
       const h = heuristic(ngx, ngy, layer);
-      heap.push({ f: stepG + h, h, seq: seq++, state: nState });
+      HEAP.push(stepG + h, h, seq++, nState);
     }
 
     // Barrel drops to another Sheet at the same cell.
@@ -360,12 +528,10 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
       if (!vm) continue;
       const stepG = gCur + vm.extra;
       const nState = stateOf(cell, lj, 8);
-      const prev = gScore.get(nState);
-      if (prev !== undefined && prev <= stepG) continue;
-      gScore.set(nState, stepG);
-      cameFrom.set(nState, node.state);
+      if (VIS.leq(nState, stepG)) continue;
+      VIS.put(nState, stepG, nodeState);
       const h = heuristic(cgx, cgy, lj);
-      heap.push({ f: stepG + h, h, seq: seq++, state: nState });
+      HEAP.push(stepG + h, h, seq++, nState);
     }
   }
   return { ok: false, path: [], rip: [], pops, aborted };
