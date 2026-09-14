@@ -16,13 +16,40 @@
  * frontier the same deterministic `(f, h, seq)` way — the corner-stitched channel A* of
  * src/route/channel.ts — reuse it instead of re-deriving one.
  *
+ * Corridor guidance (task I15, M10c; docs/DESIGN.md §10.4): an optional `corridorBias` lets a caller
+ * that has a global Plan (src/route/plan.ts) map a Corridor onto the two mechanisms the design names
+ * — `region` and `stepCost`. `outside(gx,gy)` bounds the search to the Corridor's Bins expanded by
+ * one Bin (a per-cell region restriction, so the search cannot wander into another net's corridor —
+ * this breaks the mutual-walling stagnation of the local loop); `factor(gx,gy)` scales the per-LU
+ * length cost — a soft discount inside the Corridor, a penalty in the one-Bin margin (guidance,
+ * never a hard block; the exact predicate in `clear.ts` stays the sole gate). The bias is a pure,
+ * optional overlay: when it is absent the A* arithmetic is byte-identical to the M9 search, so
+ * `globalPlan:"off"` is unaffected. The A* core (heuristic, relaxation, tie-break) is unchanged.
+ *
  * Public surface: SearchSpace, EdgeCost, SearchOptions, SearchResult, aStar, DIRS_4, DIRS_8,
- * Heap, HeapNode.
+ * Heap, HeapNode, CorridorBias, LayeredCorridorBias.
  */
 import type { Pt } from "../geom/index.ts";
 
 /** The cost of stepping across one Seam, and what it would cost to rip (empty for a clear step). */
 export interface EdgeCost { blocked: boolean; extra: number; rip: readonly number[] }
+
+/**
+ * Optional Corridor guidance for the single-Sheet A* (M10c). A cell is addressed by its grid
+ * coordinates; the caller maps them to a Mesh Bin. `outside` realises the `region` restriction
+ * (the search may not enter a cell outside the Corridor's Bins expanded by one Bin, save the goal);
+ * `factor` realises the soft `stepCost` bias (per-LU length multiplier: <1 inside, >1 in the margin).
+ */
+export interface CorridorBias {
+  outside(gx: number, gy: number): boolean;
+  factor(gx: number, gy: number): number;
+}
+
+/** Optional Corridor guidance for the layered (multi-Sheet) A*, addressed by `(layer, gx, gy)`. */
+export interface LayeredCorridorBias {
+  outside(layer: number, gx: number, gy: number): boolean;
+  factor(layer: number, gx: number, gy: number): number;
+}
 
 /** The graph the search walks: a uniform grid of Patches on one Sheet. */
 export interface SearchSpace {
@@ -50,6 +77,8 @@ export interface SearchOptions {
   maxPops: number;
   deadline?: number;
   signal?: AbortSignal;
+  /** Optional Corridor guidance (M10c). Absent = the M9 search, byte-identical. */
+  corridorBias?: CorridorBias;
 }
 
 export interface SearchResult {
@@ -340,18 +369,26 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
     if (nodeF - nodeH > gCur + 1e-6) continue;
     const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
+    const bias = o.corridorBias;
     for (let d = 0; d < nd; d++) {
       const [dx, dy] = dirs[d]!;
       const ngx = cgx + dx, ngy = cgy + dy;
+      const isGoal = ngx === goal.gx && ngy === goal.gy;
       if (!inRegion(ngx, ngy)) continue;
-      if (!(ngx === goal.gx && ngy === goal.gy) && !space.nodeFree(ngx, ngy)) continue;
+      // Corridor region restriction (M10c): stay inside the Corridor's Bins expanded one Bin, but
+      // never wall off the goal itself. A no-op when `corridorBias` is absent (globalPlan:"off").
+      if (bias !== undefined && !isGoal && bias.outside(ngx, ngy)) continue;
+      if (!isGoal && !space.nodeFree(ngx, ngy)) continue;
       const to = space.pointOf(ngx, ngy);
       const ec = space.edgeCost(from, to);
       if (ec.blocked) continue;
       let legLen = legLenOf[d]!;
       if (legLen < 0) { legLen = Math.hypot(to.x - from.x, to.y - from.y); legLenOf[d] = legLen; }
       const bend = inDir !== 8 && inDir !== d ? o.bendCost : 0;
-      const stepG = gCur + legLen * stepCostOf[d]! + bend + ec.extra;
+      // Soft Corridor cost bias (M10c): scale only the length term; identical when the bias is absent.
+      let lenCost = legLen * stepCostOf[d]!;
+      if (bias !== undefined) lenCost *= bias.factor(ngx, ngy);
+      const stepG = gCur + lenCost + bend + ec.extra;
       const nState = stateOf(cellIndex(ngx, ngy), d);
       if (VIS.leq(nState, stepG)) continue;
       VIS.put(nState, stepG, nodeState);
@@ -408,6 +445,8 @@ export interface LayeredOptions {
   /** Optional Theta*-style goal test: clear straight line-of-sight from `(gx,gy)` on `layer` to
    *  the goal point on a goal layer. Lets the search finish near a goal buried in a pin field. */
   reachGoal?(layer: number, gx: number, gy: number): boolean;
+  /** Optional Corridor guidance (M10c). Absent = the M9 layered search, byte-identical. */
+  corridorBias?: LayeredCorridorBias;
 }
 
 export interface LayeredStep { layer: number; pt: Pt; via: boolean }
@@ -499,6 +538,7 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     if (nodeF - nodeH > gCur + 1e-6) continue;
     const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
+    const bias = o.corridorBias;
 
     // Horizontal Seam crossings on the same Sheet.
     for (let d = 0; d < nd; d++) {
@@ -506,6 +546,7 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
       const ngx = cgx + dx, ngy = cgy + dy;
       if (!inRegion(ngx, ngy)) continue;
       const isGoalCell = ngx === o.goalCell.gx && ngy === o.goalCell.gy;
+      if (bias !== undefined && !isGoalCell && bias.outside(layer, ngx, ngy)) continue;
       if (!isGoalCell && !space.nodeFree(layer, ngx, ngy)) continue;
       const to = space.pointOf(ngx, ngy);
       const ec = space.edgeCost(layer, from, to);
@@ -513,7 +554,9 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
       let legLen = legLenOf[d]!;
       if (legLen < 0) { legLen = Math.hypot(to.x - from.x, to.y - from.y); legLenOf[d] = legLen; }
       const bend = inDir !== 8 && inDir !== d ? o.bendCost : 0;
-      const stepG = gCur + legLen * stepCostOf[layer * nd + d]! + bend + ec.extra;
+      let lenCost = legLen * stepCostOf[layer * nd + d]!;
+      if (bias !== undefined) lenCost *= bias.factor(layer, ngx, ngy);
+      const stepG = gCur + lenCost + bend + ec.extra;
       const nState = stateOf(cellIndex(ngx, ngy), layer, d);
       if (VIS.leq(nState, stepG)) continue;
       VIS.put(nState, stepG, nodeState);
@@ -524,6 +567,8 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     // Barrel drops to another Sheet at the same cell.
     for (let lj = 0; lj < layers; lj++) {
       if (lj === layer) continue;
+      const isGoalCell = cgx === o.goalCell.gx && cgy === o.goalCell.gy;
+      if (bias !== undefined && !isGoalCell && bias.outside(lj, cgx, cgy)) continue;
       const vm = space.viaMove(layer, lj, cgx, cgy);
       if (!vm) continue;
       const stepG = gCur + vm.extra;

@@ -1435,3 +1435,76 @@ net yields none; two decompositions are byte-identical. `test/negotiate.test.ts`
 feasible Mesh reaches Overflow 0 within the cap; an over-capacity Mesh reports the residual honestly
 (never a false 0) with every Segment realised; layer bias lands the horizontal Segment on the
 h-Sheet and the vertical on the v-Sheet; two runs are byte-identical.
+
+## Status (task I15 — M10c: corridor-guided detailed realisation; where completion moves)
+
+The corridor-guided **planned driver** wired into the pass loop under `globalPlan:"plan"` (default
+`"off"`, so the M9 loop is byte-identical). Every leg still passes the exact
+`sweepClear`/`barrelFits` predicate and the Journal, so **R-1/R-2/R-6 hold identically to M9**; a
+Corridor can cause a miss, never a Violation.
+
+- **`src/route/search.ts`** — an optional `CorridorBias` / `LayeredCorridorBias` on `SearchOptions`
+  / `LayeredOptions` maps a Corridor onto the two mechanisms docs/DESIGN.md 10.4 names: `outside`
+  realises the **`region`** bound (the search may not enter a cell outside the Corridor's Bins
+  expanded by one Bin, save the goal — this breaks the mutual-walling stagnation), and `factor`
+  realises the soft **`stepCost`** bias (a per-LU length discount inside, a penalty in the margin —
+  guidance, never a hard block). Both are undefined-guarded: with no bias the A* arithmetic is
+  byte-identical to M9, so the off path and the fast tier are untouched. The A* core (heuristic,
+  relaxation, tie-break), `clear.ts` and legalisation are unchanged.
+- **`src/route/passes.ts`** — the planned driver: build Mesh, Steiner decompose, `negotiate` (no
+  copper), then realise each Segment in the Plan's global order via the existing detailed path
+  (`tryRouteOnSheet`/`tryRouteLayered`) with the Corridor's `{region, stepCost}`; on a detailed miss
+  a bounded **whole-net global rip-reroute** (rip the net's `free`/router copper through the Journal,
+  bump history on the unrealisable Corridor's Bridges, re-negotiate, retry — FastRoute congestion
+  feedback). All under **keep-best**, and under a **keep-better-of-two-trials** discipline: the
+  planned trial is always run against the legacy loop as the baseline floor and the fewer-incomplete
+  DRC-clean state is kept, so completion can only improve or stay equal, never regress (the "clean
+  fallback to the legacy local loop").
+
+Decisions where the spec left detail open (simplest behaviour that satisfies the task/cases):
+1. **Keep-better restores the baseline from a captured-copper snapshot, not a re-run.** The legacy
+   baseline trial's copper is captured (the Track/Barrel data added since the pre-routing mark) so a
+   regressed planned trial is reverted by *re-inserting* it, never by re-routing. This is essential
+   under a wall-clock `timeBudgetMs`: a re-run would have no time left and would leave the board
+   unrouted. The captured copper was DRC-clean when first laid, so restoring it preserves R-1.
+2. **`ripHistory.reset()` between trials.** Each trial (and the restored baseline) starts from an
+   unbiased negotiation history, so the baseline is reproducible and the trials are deterministic.
+3. **Planned driver gated off under `maxItems`.** The R-5 item cap accounting lives in the legacy
+   loop; the planned path is skipped when a cap is set, so R-5 is unaffected.
+4. **Corridor factors** are constants (inside 0.8, margin 1.5) and the region restriction is the
+   Corridor's Bins expanded by one Bin plus the two terminals' Bins (so endpoints stay reachable).
+   These are guidance only; the exact predicate is the sole gate, so their values cannot affect R-1.
+
+### Measured — `globalPlan:"plan"` vs `"off"` on the target boards (added Violations 0 everywhere)
+
+| Board | off incomplete | plan incomplete | R-1 `violationsAdded` | notes |
+|---|---|---|---|---|
+| dac2020-bm07 | 6 | 6 | 0 | pure movable congestion; both stagnate at 6 (M9 floor). Parity, no regression. |
+| Green14SegLED | 92 | 92 | 0 | parity, no regression. |
+| dac2020-bm01 | 72 | 71 | 0 | time-budget-limited (both stop by `timeBudget`); ~parity. |
+| cm5-carrier | 43 | 43 | 0 | capacity-0 Meshes (full-board `locked` GND pours) — no free coarse capacity to negotiate over (9b resolution wall, orthogonal to global negotiation), as anticipated. Parity. `violationsAfter` 25 are all pre-existing (`violationsAdded` 0). |
+
+**Honest result.** M10c lands the corridor-guidance infrastructure R-1-safe and no-regression, but on
+these boards the corridor-guided plan reaches only **parity** with the M9 local loop — it does not
+break the completion plateau (bm07 stays at its M9 floor of 6, not the target 0). The full legacy
+loop, run as the clean fallback after the planned copper, reaches the same local optimum, so the
+planned guidance does not change the final count on these boards. The plateau break is left to the
+tuning milestones (M10d layer/region assignment + fanout + multilayer; M10e global-to-detailed
+feedback) that compose on this infrastructure. No advisory completion bound is now reached that was
+not already, and `spec/` is not writable by this role (the ruling that turns a bound hard belongs on
+the spec side).
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 65 files, 0 violations |
+| `bun run test` | green — adds `test/planned-driver.test.ts` (7 tests) |
+| `bun run acceptance -- --tier fast` | 401/401 passed, 0 failed (byte-identical; the two pre-existing barrel *advisories* unchanged — `globalPlan:"off"` untouched) |
+
+`test/planned-driver.test.ts`: on a congested synthetic board and three small real boards with
+`globalPlan:"plan"` — `report.violationsAdded === 0` and no DRC violation is added (the Corridor
+never bypasses the exact predicate); the locked wall and Pads are byte-for-byte unmoved (R-2); two
+planned runs produce identical copper (determinism); planned completion never exceeds the legacy
+loop's incomplete count (no regression); and `globalPlan:"off"` is byte-identical to the default.
