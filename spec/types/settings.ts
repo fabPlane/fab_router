@@ -57,6 +57,17 @@ export interface RouteSettings {
   detailedMaxTiles?: number;
   /** Per-connection wall-clock cap for the detailed router, ms. */
   detailedBudgetMs?: number;
+  // --- M10 global router (docs/DESIGN.md §10); default "off" reproduces the M9 loop exactly ---
+  /** Two-phase global+detailed routing: coarse negotiated-congestion plan drives the detailed router. */
+  globalPlan?: "off" | "plan";
+  /** Mesh bin size override, µm (else derived from track pitch). */
+  globalBinUm?: number;
+  /** Coarse PathFinder iteration cap. */
+  globalMaxIterations?: number;
+  /** PathFinder history and present weights, and the per-iteration history ramp, on the Mesh. */
+  globalHistoryWeight?: number; globalPresentWeight?: number; globalHistoryRamp?: number;
+  /** Directional / per-Sheet layer assignment in the global phase. */
+  globalLayerBias?: boolean;
   /** Apply layout.settingsFromFile underneath the caller's settings. Default false. */
   useFileSettings?: boolean;
 }
@@ -81,4 +92,5 @@ export const DEFAULT_ROUTE_SETTINGS: RouteSettings = {
   shoveEnabled: true,
   orderByDifficulty: true,
   detailedRouter: "off",
+  globalPlan: "off",
 };

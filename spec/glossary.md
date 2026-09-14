@@ -76,4 +76,11 @@
 - Mikami, K., Tabuchi, K. (1968). *A computer program for optimal routing of printed circuit conductors.* IFIP. — line-search routing.
 - Dai, W. W.-M., Kong, R., Jue, J., Sato, M. (1991). *Rubber band routing and dynamic data representation.* ICCAD; Dai, Kong, Sato (1991), *Routability of a rubber-band sketch,* DAC. — shove / rubber-band routing.
 - Nair, R. (1987). *A simple yet effective technique for global wiring.* IEEE TCAD. — net ordering by difficulty.
+- Chu, C., Wong, Y.-C. (2008). *FLUTE: fast lookup table based rectilinear Steiner minimal tree algorithm.* IEEE TCAD. — congestion-aware net decomposition.
+- Hwang, F. K. (1976). *On Steiner minimal trees with rectilinear distance.* SIAM J. Appl. Math.
+- Kastner, R., Bozorgzadeh, E., Sarrafzadeh, M. (2002). *Pattern routing / predictable routing (Labyrinth).* ICCAD. — negotiated global routing.
+- Pan, M., Xu, Z., Chu, C. (2006–2009). *FastRoute 1.0–4.0.* ICCAD/ASP-DAC. — congestion-driven Steiner, edge shifting, monotonic routing, layer assignment.
+- Cho, M., Pan, D. Z. (2006–2007). *BoxRouter / BoxRouter 2.0.* DAC/ICCAD. — global routing and layer assignment.
+- Gao, J.-R., Wu, P.-C., Wang, T.-C. (2008). *NTHU-Route.* ICCAD. — modern negotiation-based global router.
+- Albrecht, C. (2001). *Global routing by new approximation algorithms for multicommodity flow.* IEEE TCAD.
 - **SPECCTRA Design Language Reference** (Cadence, v10.1, 2003) — the DSN/SES/rules formats.

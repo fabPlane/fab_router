@@ -42,6 +42,11 @@ times in milliseconds; costs are dimensionless multipliers.
 | `detailedRouter` | `off` (fast) / `tiles` (slow) | Gridless detailed router for locked channels (docs/DESIGN.md §9b): `off`, `lineprobe`, or `tiles` |
 | `detailedMaxTiles` | — | Region tile budget for the detailed router |
 | `detailedBudgetMs` | — | Per-connection wall-clock cap for the detailed router |
+| `globalPlan` | `off` | Two-phase global+detailed routing (docs/DESIGN.md §10): a coarse negotiated-congestion plan drives the detailed router. `off` reproduces the M9 loop exactly. R-1/R-2 hold regardless |
+| `globalBinUm` | derived | Mesh bin size override |
+| `globalMaxIterations` | — | Coarse PathFinder iteration cap |
+| `globalHistoryWeight`, `globalPresentWeight`, `globalHistoryRamp` | — | PathFinder cost weights and history ramp on the Mesh |
+| `globalLayerBias` | true | Directional / per-Sheet layer assignment in the global phase |
 
 Acceptance cases use short names: `router → routerEnabled`, `optimizer → optimizerEnabled`,
 `fanout → fanoutEnabled`, `timeoutSeconds × 1000 → timeBudgetMs`, `optimizerMaxPasses →

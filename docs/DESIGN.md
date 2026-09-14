@@ -254,3 +254,109 @@ legacy behaviour on the fast tier; R-1/R-2 hold regardless of their values.
 J802 (locked) boards. 9b addresses the locked-channel class; corner stitching is the hardest single
 module in the project, so 9b-1 (line-search) de-risks 9b-2. Reference parity on the six-layer J802
 board is a stretch for a first pass; bm11-fanout-only is a via-geometry limit, not congestion.
+
+## 10. Global router (M10) — closing the completion plateau
+
+The M4–M9 router is a **local** negotiated-congestion loop: each pass re-routes only the *incomplete*
+connections in detail over free space. The I12 sweep and `evidence/reports/M9.md` prove it is
+**stagnation-limited, not budget-limited** — no local knob moves the floor. Two structural causes:
+
+1. **It never re-negotiates a completed net.** PathFinder (McMurchie & Ebeling 1995) converges
+   *because every net is ripped and rerouted against the shared cost field every iteration*, erasing
+   the first-come advantage. Rerouting only incomplete connections means a boxed-in net can only rip
+   a neighbour that reroutes straight back — oscillation, then plateau. (This is why
+   `presentCongestionCost > 0` measured net-negative: it thrashes a one-sided negotiation.)
+2. **Every pass pays the exact clearance predicate.** A true flat PathFinder — rip and reroute *all*
+   nets in full detail every iteration — is unaffordable because the R-1 predicate makes each
+   detailed pass far too expensive to run thousands of times.
+
+The published resolution is **two-phase routing**: negotiate on a *coarse* grid where thousands of
+rip-up-reroute-all iterations are cheap (no exact predicate), get a congestion-resolved plan, then
+pay the expensive detailed predicate once per planned segment, guided.
+
+### 10.1 Chosen strategy
+Two-phase **global + detailed** (Nair 1987; Labyrinth/Kastner 2002; FastRoute — Pan/Xu/Chu 2006–09;
+BoxRouter — Cho/Pan 2006–07; NTHU-Route 2008) carrying PathFinder's cost machinery, fed by **FLUTE**
+congestion-aware rectilinear Steiner decomposition (Chu & Wong 2008; Hwang 1976), driving the
+existing detailed router. Rubber-band routing (Dai/Kong/Sato 1991) is again rejected (reopens R-1).
+
+### 10.2 Model (vocabulary additions)
+- **Mesh** — a coarse global grid per Sheet; the negotiation arena.
+- **Bin** — one coarse cell on one Sheet (a global cell).
+- **Bridge** — a shared boundary between adjacent Bins (in-plane edge) or a Bin-to-Bin via edge;
+  carries a **capacity** (tracks of width+spacing that can legally cross, after subtracting fixed
+  blockage) and a live **usage**.
+- **Overflow** — `max(0, usage − capacity)`; the quantity the negotiation drives to zero.
+- **Corridor** — the ordered Bins a 2-pin segment is planned through (a coarse path).
+- **Plan** — per net: a Steiner topology cut into 2-pin **segments**, each with a Corridor and Sheet
+  assignment, plus a global segment order. A *proposal*, never copper.
+
+**Capacities bake in R-2.** Fixed blockage (pads, `held`/`locked`/Prior copper, fences, rim, planes)
+queried through the existing `Lattice.hits` permanently reduces a Bridge's capacity; `free` other-net
+copper does not — it is congestion the negotiation may move, never blockage. So the global router can
+never plan through immovable copper.
+
+### 10.3 Global phase (new modules, commit no copper)
+- `src/route/steiner.ts` — per-net rectilinear Steiner tree over terminal Bins, cut into 2-pin
+  segments (FLUTE; deterministic batched-greedy fallback for high degree). Replaces the per-pass MST
+  decomposition **only when the plan is active**. Congestion-aware edge shifting after round 1.
+- `src/route/negotiate.ts` — coarse PathFinder loop: each iteration rips and reroutes **every**
+  segment (the property the local loop lacks) by maze/A* over Bins with cost
+  `(base + presentWeight·present)·(1 + historyWeight·history)`; accumulate history on over-full
+  Bridges, escalate `historyWeight` on a schedule; bias in-plane Bridges by each Sheet's preferred
+  direction and assign segments to Sheets whose preferred direction matches (BoxRouter layer
+  assignment — the global form of H/V spreading that reproduced the reference's cm5 74/74 in 4
+  passes). Stop when Overflow = 0 or an iteration cap. Predicate-free, so thousands of iterations are
+  affordable. Commits no copper → R-1 cannot be violated here.
+- `src/route/plan.ts`, `src/route/mesh.ts` — the Plan and Mesh data structures.
+
+### 10.4 Integration — the Plan drives the existing detailed router
+`SearchSpace` already exposes `region` (bounds the search may not leave) and `stepCost`. A Corridor
+maps onto both: `region` ← the Corridor's Bins expanded one Bin (the search cannot wander into
+another net's corridor — this breaks the mutual-walling stagnation); `stepCost` ← a soft discount for
+staying inside, a penalty for straying (guidance, never a hard block). The A*, `clear.ts`,
+legalisation and Journal insert are **unchanged from M9**, so R-1 holds identically.
+
+New driver in `passes.ts` (planned mode, default off): build Mesh (capacities from fixed blockage) →
+Steiner decompose → `negotiate` (no copper) → route each segment in the global order via
+`routeConnection` with the corridor's `{region, stepCost}`; on detailed failure `globalRipReroute`
+the whole net (rip all its `free` copper through the Journal, raise history on the Bridges it could
+not cross, re-negotiate that net + corridor-overlapping neighbours, retry). Congestion feedback: an
+unrealisable corridor bumps that Bridge's history and re-plans (FastRoute). All under the existing
+**keep-best** discipline, with a **clean fallback to the legacy local loop** for any segment the
+planned driver cannot realise — so completion can only improve or stay equal, never regress, and
+added violations stay zero.
+
+### 10.5 R-1 / R-2 / R-6 by construction
+- **R-1**: the global phase commits no copper; every insertion still goes through `routeConnection`
+  → `legalise` → exact `sweepClear`/`barrelFits` → Journal. A corridor can cause a *miss*, never a
+  violation (same guarantee the Quilt carries). The exact predicate stays the sole gate, untouched.
+- **R-2**: immovable copper is a permanent capacity reduction; global rip-up only touches
+  `free`/`isRippable` copper; the Journal rewinds every trial.
+- **R-6**: the planned driver runs under keep-best; any re-plan/whole-net rip-up that ends up worse is
+  rewound to the fewest-incomplete DRC-clean state.
+
+### 10.6 Honest scope
+Plausible wins: **bm07** (pure movable congestion — the exact case two-phase negotiation targets;
+0 or near-0 plausible), **cm5-carrier** (layer bias reproduces the reference's mechanism; single
+digits plausible), green14seg/bm01/fanout-route (substantial improvement). Remain hard:
+**bm11-fanout-only** (via-geometry, not congestion — out of scope), **J802 six-layer** (detailed
+resolution of locked channels, §9b, orthogonal to global negotiation — improves ordering/layers but
+≤6 is a stretch). ~1600–2000 net LOC, multi-week. Main R-1 risk: never "trust the plan" and skip a
+check — the corridor only feeds `region`+`stepCost`; a plan-adherence test asserts every inserted leg
+still passes the exact predicate.
+
+### 10.7 Milestone breakdown (each R-1-safe, independently mergeable)
+- **M10a** — Mesh + capacity + congestion/overflow report. Commits no copper; `globalPlan:"off"`
+  leaves every acceptance number byte-identical.
+- **M10b** — Steiner decomposition + coarse negotiated global routing → a Plan that drives coarse
+  Overflow to 0 on the target boards. Still no copper.
+- **M10c** — corridor-guided detailed realisation (`globalPlan:"plan"`, default off): the planned
+  driver + whole-net global rip-up + keep-best + legacy fallback. **Where completion moves.**
+- **M10d** — layer/region assignment + fanout + multilayer (compose with `detailedRouter:"tiles"`).
+- **M10e** (stretch) — global↔detailed congestion-feedback iteration (pure gain under keep-best).
+
+### 10.8 Settings (default off — fast tier unchanged)
+`globalPlan` (`"off"`|`"plan"`, default `"off"`), `globalBinUm`, `globalMaxIterations`,
+`globalHistoryWeight`, `globalPresentWeight`, `globalHistoryRamp`, `globalLayerBias`. Every value
+preserves R-1/R-2 regardless; `globalPlan:"off"` reproduces the M9 loop exactly.
