@@ -163,3 +163,37 @@ endpoints joined end-to-end across Sheets without the board's own copper as a br
 3 / 6 completion is reachable only when Prior copper is connective. These completion figures are
 recorded per board in `spec/acceptance/reference/b223-j802*.srj.default.json` and are the
 `incomplete` targets of the `srj-*` acceptance cases (`spec/formats/srj.md` §9).
+
+## Detailed routing and shove outcomes (K-17..K-19)
+
+These clauses state what a detailed-routing stage — one that places copper at finer resolution than
+the coarse first search and may shove free items aside to make room (`glossary`) — must preserve.
+They are written so that the acceptance runner and an implementer share one definition. Each is an
+observation any run can check by comparing the Layout and `RouteReport` before and after; none
+describes how such a stage works. They restate invariants R-1 and R-2 of `spec/api/contract.md`
+for the detailed stage and extend R-2 to Prior copper.
+
+**K-17 — a shove preserves each moved item's meaning.** A free Track or Barrel the stage displaces
+to open room ("shoves") ends the run whole: it carries the same net it did before, the connection it
+realises stays realised (no complete connection of K-09 becomes incomplete), and it is free of
+Violations (`rules/drc.md`) — it and every pair it takes part in still meet the SpacingTable. Stated
+observably: a shove adds no Violation (`violationsAdded` stays 0, R-1), and only a `free` item is
+ever shoved.
+
+**K-18 — held, locked and Prior copper never move.** Across a detailed-routing run the position,
+shape, Sheet span and net of every `held` item, every `locked` item (Pads, Rim, Fences), and every
+Prior-copper item (`glossary`; `rules/drc.md` DR-13) are identical before and after; an observer
+comparing the two Layouts finds these items unchanged and only free items and the stage's own added
+copper different. This is R-2 made specific to the detailed stage and extended to Prior copper:
+Prior copper is same-net attachable copper (K-16) but is itself never rerouted or removed.
+
+**K-19 — a detailed stage only completes, never regresses.** Enabling the detailed stage, with
+everything else equal, never lowers `completed`, never turns a complete connection incomplete, and
+never raises `violationsAdded` above 0: on a congested board it joins connections the coarse search
+left incomplete, and on any board it leaves `completed`, `violationsAdded` and the held/locked/Prior
+items no worse than with the stage off. The per-board connections that complete only with the stage
+enabled, and the reference completion those targets are drawn from, are recorded in
+`spec/behaviour/scenarios/detailed-routing.md` and `spec/behaviour/scenarios/shove.md`; the
+generous-budget reference completion each dense board can actually reach is recorded in
+`spec/acceptance/reference/<board>.bound.json` (and `.bound-fanout.json`) and named in the
+`routing-*` and `srj-*` cases.

@@ -2,12 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "fab_router/acceptance/reference",
   "type": "object",
-  "required": ["board", "boardSha256", "profile", "settings", "_generated"],
+  "required": ["board", "boardSha256", "profile", "_generated"],
   "properties": {
     "_generated": { "type": "string", "description": "one neutral sentence on how this file was produced" },
     "board": { "type": "string" }, "boardSha256": { "type": "string" },
-    "profile": { "enum": ["default", "p1", "fanout", "strict", "novia", "applied-ses"] },
-    "settings": { "type": "object" },
+    "profile": { "enum": ["default", "p1", "fanout", "strict", "novia", "applied-ses", "bound", "bound-fanout"] },
+    "settings": { "type": "object", "description": "present on per-profile files; a 'bound' file carries 'budget' instead" },
+    "budget": { "type": "object", "description": "the generous budget under which a 'bound'/'bound-fanout' file was measured" },
+    "contextNets": { "type": "boolean", "description": "SimpleRouteJson bound files: whether the context-net import reading was used" },
     "refA": { "$ref": "#/$defs/stats" }, "refB": { "$ref": "#/$defs/stats" },
     "notes": { "type": "string" }
   },
@@ -16,6 +18,7 @@
       "type": "object",
       "properties": {
         "connections": { "type": "integer" }, "incompleteBefore": { "type": "integer" }, "incompleteAfter": { "type": "integer" },
+        "connectionsComplete": { "type": "integer" }, "escapedSmdPads": { "type": "integer" }, "tracks": { "type": "integer" },
         "vias": { "type": "integer" }, "traceLengthMm": { "type": "number" },
         "violationsBefore": { "type": "integer" }, "violationsAfter": { "type": "integer" },
         "passes": { "type": "integer" }, "wallClockMs": { "type": "number" }, "host": { "type": "string" },

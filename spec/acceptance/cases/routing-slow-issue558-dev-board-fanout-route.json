@@ -34,5 +34,5 @@
       "advisory": true
     }
   },
-  "note": "Suite A: with the fanout pre-pass and 10 passes every connection completes on this SMD-heavy board."
+  "note": "Suite A: with the fanout pre-pass and 10 passes every connection completes on this SMD-heavy board. Under a generous budget (S9) both references reach exactly 0 with no added Violation; the exact-0 bound is confirmed reachable and stays hard. Generous-budget numbers: spec/acceptance/reference/Issue558-dev-board.dsn.bound-fanout.json."
 }

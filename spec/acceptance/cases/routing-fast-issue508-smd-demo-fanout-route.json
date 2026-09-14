@@ -34,5 +34,5 @@
       "advisory": true
     }
   },
-  "note": "Suite A: with the fanout pre-pass and 10 passes at most 2 incomplete. The suite's bound (2) is looser than the measured reference (B: 0); the suite's bound is kept."
+  "note": "Suite A: with the fanout pre-pass and 10 passes at most 2 incomplete. The suite's bound (2) is looser than the measured reference (B: 0); the suite's bound is kept. Under a generous budget (S9) both references reach exactly 0; the <=2 bound is reachable. Generous-budget numbers: spec/acceptance/reference/Issue508-SMD-routing-issue-demo.dsn.bound-fanout.json."
 }
