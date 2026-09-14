@@ -1508,3 +1508,86 @@ the spec side).
 never bypasses the exact predicate); the locked wall and Pads are byte-for-byte unmoved (R-2); two
 planned runs produce identical copper (determinism); planned completion never exceeds the legacy
 loop's incomplete count (no regression); and `globalPlan:"off"` is byte-identical to the default.
+
+## Status (task I16 — M10d/e: global↔detailed feedback iteration + layer assignment)
+
+The M10c one-shot planned driver is replaced by a genuine **global↔detailed congestion-feedback
+loop** (`globalPlan:"plan"`, default `"off"` — the M9 loop stays byte-identical). Each iteration
+rips the **whole board's** planned copper, re-realises every Segment against the current Plan through
+the detailed router under corridor guidance, then for every still-unrealisable Corridor bumps its
+Bridges' history and **re-negotiates keeping that escalating history**, so the coarse plan actually
+changes and drives the detailed router down a *different* corridor next iteration (the PathFinder
+property the M9 local loop and the one-shot M10c plan both lack). Every leg still passes the exact
+`sweepClear`/`barrelFits` predicate + Journal, so R-1/R-2/R-6 hold identically to M9 (a Corridor
+causes a miss, never a Violation).
+
+- **`src/route/negotiate.ts`** — new `keepHistory` option: usage/present are always rebuilt but the
+  Mesh's accumulated history is *preserved* across the call. This is the crux that makes the feedback
+  actually respond — M10c bumped history and then `negotiate` wiped it on entry, so the re-plan never
+  changed (why M10c reached only parity). With `keepHistory` the detailed-failure feedback survives.
+- **`src/route/passes.ts`** — `plannedDrive` is now the bounded feedback loop: `realiseAll` (a greedy
+  hard-obstacle sweep then several rip-up passes over the still-incomplete Segments, re-checked
+  against live connectivity each pass so within-iteration negotiation churn settles) → keep-best held
+  as **captured copper** (not a Journal mark, since the per-iteration whole-board rip rewinds *past*
+  any mark) → history bump on unrealisable Corridors → `negotiate(keepHistory:true)` → repeat, up to
+  `globalMaxIterations` (or a small default) and the wall-clock budget, with a fixpoint guard. The
+  whole phase still runs against the legacy loop as the clean-fallback baseline (keep-better), so
+  completion can only improve or stay equal (`runPlannedThenBest`).
+- **M10d layer/region assignment + tiles** — the global layer bias (BoxRouter H/V per-Sheet spread,
+  already in `negotiate`) is composed with the detailed rung: `routeSegmentPlanned` now falls to the
+  line-search and the corner-stitched channel router inside the Corridor when
+  `detailedRouter:"tiles"`/`"lineprobe"` is set, so the locked-channel boards can thread the sub-Bin
+  channels a coarse Bin cannot represent. The corridor `region` was widened from 1 to 2 Bins
+  (`CORRIDOR_EXPAND_BINS`): a one-Bin tube choked the detailed search on the dense boards.
+
+Decisions where the spec left detail open (simplest behaviour that satisfies the task/cases):
+1. **`globalMaxIterations` bounds the feedback loop as well as the coarse `negotiate` cap** (the task
+   names it as the iteration budget). When unset the loop uses a small default (6); the wall-clock
+   `timeBudgetMs` is the real limiter on the dense boards. A fixpoint guard (unchanged failure set)
+   terminates the loop early, so it always terminates.
+2. **Keep-best is a captured-copper snapshot, not a Journal mark**, because the whole-board rip each
+   iteration rewinds past any mark; the captured copper was DRC-clean when laid, so restoring it
+   preserves R-1 (same mechanism `runPlannedThenBest` already uses for the legacy baseline).
+3. **Whole-board rip-and-reroute each iteration** (not only incomplete nets) is the property that
+   erases the first-come advantage; it is affordable because the Corridors confine each reroute.
+
+### Measured — `globalPlan:"plan"` (feedback) vs `"off"` (M9 loop); `violationsAdded == 0` everywhere
+
+| Board | budget | off incomplete | plan incomplete | plateau? |
+|---|---|---|---|---|
+| dac2020-bm07 | 90–120 s | 6 | **6** | **parity** — plateau holds (M9 floor) |
+| Green14SegLED | 120 s | 92 | **92** | **parity** |
+| dac2020-bm01 | 60 s | 72 | **72** | **parity** (both time-budget-limited, 3 passes) |
+| cm5-carrier (`tiles`) | 60 s | 35 | **35** | **parity** (both time-budget-limited, 2 passes) |
+| b223-j802 2-layer (srj, `tiles`) | 60 s | 12 | **12** | **parity** (residual is attach-to-Prior depth K-16) |
+
+**Honest result — flat feedback iteration reaches PARITY on every target board; it does NOT break the
+completion plateau.** The task anticipated this ("a valid negative result: record it honestly per
+board"). The mechanism is now real — `keepHistory` makes the re-negotiation genuinely respond to
+detailed failures, the plan changes iteration to iteration, and the whole board is ripped and
+rerouted against the changed cost field — but the **corridor-confined detailed realisation is
+net-negative against the existing strong local loop**: instrumented, `plannedDrive` converges to ~25
+incomplete on bm07 (vs the legacy loop's 6), because the reduced corridor-guided ladder (no
+shove/nudge/via-jog/attach-prior) plus the region restriction leave the negotiation churn the full
+ladder resolves. The legacy fallback (kept under keep-better) then lands at the same 6 the M9 loop
+already reaches, so the plan does not change the final count. bm07's true floor is 6 for this router
+(I12: reference 0 needs a fundamentally stronger detailed router; docs/DESIGN.md §10.6 called
+single-digit "plausible", which proved optimistic). No advisory completion bound is now reached that
+was not already; `spec/` is not writable by this role (turning a bound hard belongs on the spec side).
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 65 files, 0 violations |
+| `bun run test` | green — adds `test/feedback-loop.test.ts` (7 tests) |
+| `bun run acceptance -- --tier fast` | 401/401 passed, 0 failed (byte-identical; two pre-existing barrel advisories unchanged — `globalPlan:"off"` untouched) |
+
+`test/feedback-loop.test.ts`: under `globalPlan:"plan"` with an explicit `globalMaxIterations` —
+`violationsAdded === 0` (R-1); the locked wall and Pads byte-for-byte unmoved (R-2); the loop
+terminates under a tight budget even with a 1000-iteration cap; two runs produce identical copper
+(determinism); completion never regresses the legacy loop; and `globalPlan:"off"` is byte-identical
+to the default. `negotiate` `keepHistory`: two fresh negotiations are identical (history zeroed each
+call), a bumped-then-`keepHistory` re-negotiation preserves the accumulated history, and a subsequent
+fresh negotiation zeroes it.
