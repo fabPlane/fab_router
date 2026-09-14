@@ -12,7 +12,12 @@
  * hard search and the soft-obstacle rip-up search (src/route/ripup.ts): `edgeCost` returns a
  * per-edge extra cost and the ids a step would rip.
  *
- * Public surface: SearchSpace, EdgeCost, SearchOptions, SearchResult, aStar, DIRS_4, DIRS_8.
+ * The binary heap is exported (`Heap`, `HeapNode`) so other route-layer searches that key their
+ * frontier the same deterministic `(f, h, seq)` way — the corner-stitched channel A* of
+ * src/route/channel.ts — reuse it instead of re-deriving one.
+ *
+ * Public surface: SearchSpace, EdgeCost, SearchOptions, SearchResult, aStar, DIRS_4, DIRS_8,
+ * Heap, HeapNode.
  */
 import type { Pt } from "../geom/index.ts";
 
@@ -64,9 +69,9 @@ export const DIRS_8: ReadonlyArray<readonly [number, number]> = [
 
 // ---- binary heap keyed (f, h, seq) ------------------------------------------------------------
 
-interface HeapNode { f: number; h: number; seq: number; state: number }
+export interface HeapNode { f: number; h: number; seq: number; state: number }
 
-class Heap {
+export class Heap {
   private a: HeapNode[] = [];
   get size(): number { return this.a.length; }
   private less(i: number, j: number): boolean {
