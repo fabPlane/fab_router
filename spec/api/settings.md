@@ -33,6 +33,15 @@ times in milliseconds; costs are dimensionless multipliers.
 | `viasAllowed` | true | If false, every connection must be completed on one Sheet; Barrels are never inserted |
 | `ignoreNetGroups` | `[]` | Names of NetGroups whose nets are neither routed nor counted as incomplete |
 | `seed` | 1 | Seed for the router's pseudo-random choices. Same Layout + same settings + same seed ⇒ identical output |
+| `shoveEnabled` | true | Push movable free Tracks aside within their slack instead of only ripping them (docs/DESIGN.md §9a). R-1/R-2 hold regardless |
+| `shoveWindowUm` | ~3× track pitch | Max perpendicular displacement of one shoved segment |
+| `shoveMaxDepth` | 4 | Cascade recursion bound for transitive shoves |
+| `shoveMaxMoved` | 12 | Max segments moved in one shove trial |
+| `presentCongestionCost` | ~`startRipupCost` | Present-sharing weight in the PathFinder cost; 0 = history-only |
+| `orderByDifficulty` | true | Route connections in descending (airline × local congestion) order; false = legacy `(net, id)` |
+| `detailedRouter` | `off` (fast) / `tiles` (slow) | Gridless detailed router for locked channels (docs/DESIGN.md §9b): `off`, `lineprobe`, or `tiles` |
+| `detailedMaxTiles` | — | Region tile budget for the detailed router |
+| `detailedBudgetMs` | — | Per-connection wall-clock cap for the detailed router |
 
 Acceptance cases use short names: `router → routerEnabled`, `optimizer → optimizerEnabled`,
 `fanout → fanoutEnabled`, `timeoutSeconds × 1000 → timeBudgetMs`, `optimizerMaxPasses →

@@ -38,6 +38,25 @@ export interface RouteSettings {
   viasAllowed: boolean;
   ignoreNetGroups: string[];
   seed: number;
+  // --- M9 detailed router (docs/DESIGN.md §9); all default to legacy behaviour on the fast tier ---
+  /** Push-and-shove movable free Tracks aside instead of only ripping them. Default true. */
+  shoveEnabled: boolean;
+  /** Max perpendicular displacement of one shoved segment, µm. */
+  shoveWindowUm?: number;
+  /** Cascade recursion bound for transitive shoves. */
+  shoveMaxDepth?: number;
+  /** Max segments moved in one shove trial (determinism / cost bound). */
+  shoveMaxMoved?: number;
+  /** Present-sharing weight in the PathFinder cost (McMurchie & Ebeling). 0 = history-only. */
+  presentCongestionCost?: number;
+  /** Route connections in descending (airline × local congestion) order. Default true. */
+  orderByDifficulty: boolean;
+  /** Gridless detailed router for locked channels (docs/DESIGN.md §9b). */
+  detailedRouter?: "off" | "lineprobe" | "tiles";
+  /** Region tile budget for the detailed router. */
+  detailedMaxTiles?: number;
+  /** Per-connection wall-clock cap for the detailed router, ms. */
+  detailedBudgetMs?: number;
   /** Apply layout.settingsFromFile underneath the caller's settings. Default false. */
   useFileSettings?: boolean;
 }
@@ -59,4 +78,7 @@ export const DEFAULT_ROUTE_SETTINGS: RouteSettings = {
   viasAllowed: true,
   ignoreNetGroups: [],
   seed: 1,
+  shoveEnabled: true,
+  orderByDifficulty: true,
+  detailedRouter: "off",
 };
