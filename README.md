@@ -32,6 +32,10 @@ push-and-shove. See `evidence/reports/M8-audit.md` §4.
 autorouter's source, working only from the behavioural specification in `spec/`. The clean-room
 process, its enforcement, and the retained evidence are documented in `docs/WALL.md`; the M8 audit
 (`evidence/reports/M8-audit.md`) records a clean similarity gate over the whole tree (no copying
-indicated). This is the basis on which a permissive licence is possible; the licence file and text
-are for the user and counsel to add (the one open question — AI training data — is noted in
-`docs/WALL.md`).
+indicated). Because the work is independently created, FabPlane Inc holds its copyright and can
+license it on its own terms.
+
+**Licence: dual — GPL-3.0 OR a FabPlane Inc commercial licence** (see [`LICENSE`](LICENSE); the
+full GPL text is in [`COPYING`](COPYING)). Use is governed by the GPL unless you hold a commercial
+licence from FabPlane Inc. Contributions are accepted under both licences. The AI-training-data
+consideration noted in `docs/WALL.md` is a matter for FabPlane and its counsel.

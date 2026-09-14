@@ -1,0 +1,48 @@
+fab_router — dual licence
+==========================
+
+Copyright (c) 2026 FabPlane Inc. All rights reserved.
+
+fab_router is a clean-room implementation (see docs/WALL.md and
+evidence/reports/M8-audit.md): its source was written by contributors working
+only from the behavioural specification in spec/, with no access to any existing
+router's source. FabPlane Inc holds the copyright in this work and offers it
+under a choice of two licences.
+
+You may use, copy, modify and distribute this software under the terms of
+EITHER of the following, at your option:
+
+1. The GNU General Public License, version 3 (the "GPL"), as published by the
+   Free Software Foundation. The full text is in the file COPYING. Under this
+   option the usual GPL obligations apply — in particular, a work that combines
+   with or derives from this software and is conveyed to others must itself be
+   made available under the GPL.
+
+2. A commercial licence from FabPlane Inc, for use that is not compatible with
+   the GPL (for example, inclusion in a proprietary or non-GPL product such as
+   an MIT-licensed toolchain). The commercial licence is granted separately by
+   FabPlane Inc on negotiated terms and is not reproduced here. To obtain one,
+   contact FabPlane Inc.
+
+If you do not hold a commercial licence from FabPlane Inc, your use is governed
+by the GPL (option 1).
+
+SPDX-License-Identifier: GPL-3.0-only OR LicenseRef-FabPlane-Commercial
+
+Contributions
+-------------
+
+Unless a separate written agreement with FabPlane Inc states otherwise, any
+contribution you intentionally submit for inclusion in this work is submitted
+under BOTH licences above: you license your contribution to FabPlane Inc and to
+all downstream recipients under the GPL, AND you grant FabPlane Inc the right to
+license your contribution under its commercial licence. This dual inbound grant
+is what keeps the whole work available under both options. You represent that
+you are entitled to grant these rights for the contribution you submit.
+
+No warranty
+-----------
+
+This software is provided "as is", without warranty of any kind, to the extent
+permitted by applicable law. See COPYING (GPL §§15–17) for the full disclaimer
+that applies under the GPL option; the commercial licence states its own terms.
