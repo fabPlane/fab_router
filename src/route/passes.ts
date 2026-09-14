@@ -77,6 +77,12 @@ export interface RouteCtx {
   /** Per-connection contention (times a connection failed to route): the local-congestion term of
    *  the difficulty order (Nair 1987), keyed `${net}:${from}:${to}`. */
   contention: Map<string, number>;
+  /** SPIKE I17: when set, the soft A* edge cost uses the detailed-negotiation form
+   *  `base·(1 + present·pw + history·hw)` with this history weight `hw` (escalated per pass); when
+   *  undefined the legacy soft cost is used unchanged, so the default path is byte-identical. */
+  negHistoryWeight?: number | undefined;
+  /** SPIKE I17: present-sharing weight `pw` for the detailed-negotiation soft edge cost. */
+  negPresentWeight?: number | undefined;
 }
 
 export interface PassOutcome {
@@ -102,6 +108,13 @@ const CLEAR_EDGE: EdgeCost = { blocked: false, extra: 0, rip: Object.freeze([]) 
 // its extra passes; below it the negotiated-congestion loop has essentially converged and a rescue
 // would only add cost (protects the fast tier's timing — task I8 deliverable 5).
 const RESCUE_MIN_INCOMPLETE = 12;
+
+// SPIKE I17 — full detailed negotiated-congestion loop (McMurchie & Ebeling 1995). Default history
+// weight `hw` at pass 0, its per-pass increment (the escalation schedule), and the present-sharing
+// weight `pw`. Overridable via the reused global* settings for the measurement sweep.
+const DN_HISTORY_BASE = 1;
+const DN_HISTORY_RAMP = 1;
+const DN_PRESENT_WEIGHT = 1;
 
 function now(): number { return Date.now(); }
 
@@ -602,6 +615,25 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
     // proposes"). Skipping the per-edge predicate here is the dominant speed-up on large boards.
     if (!soft) return CLEAR_EDGE;
     const r = sweepClear(ctx.layout, ctx.lattice, sheet, { a, b }, profile, ignore, profile.width);
+    // SPIKE I17 detailed-negotiation cost (McMurchie & Ebeling 1995), gated on `negHistoryWeight`:
+    // every soft edge is priced `startRipup·(present·pw + history·hw)` — the PathFinder resource
+    // term applied *whether or not* a blocker is present, so a chronically contested cell stays
+    // expensive even in the pass where its blocker was ripped, which is what erases the first-come
+    // advantage. The exact predicate still gates every insert, so R-1 is untouched. When
+    // `negHistoryWeight` is undefined the legacy branch below runs, so the default path is unchanged.
+    const hw = ctx.negHistoryWeight;
+    if (hw !== undefined) {
+      const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+      const pw = ctx.negPresentWeight ?? 0;
+      const congestion = startRipup * (pw * ctx.ripHistory.present(sheet, mid.x, mid.y) + hw * ctx.ripHistory.cell(sheet, mid.x, mid.y));
+      if (r.ok) return congestion === 0 ? CLEAR_EDGE : { blocked: false, extra: congestion, rip: [] };
+      let base = 0;
+      for (const id of r.blocking) {
+        if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
+        base += startRipup;
+      }
+      return { blocked: false, extra: base + congestion, rip: r.blocking };
+    }
     if (r.ok) return CLEAR_EDGE;
     // Soft: passable only if every blocker is a rippable free other-net item.
     let extra = 0;
@@ -1392,8 +1424,103 @@ function plannedDrive(ctx: RouteCtx): void {
  */
 export function runPasses(ctx: RouteCtx): PassOutcome {
   if (!ctx.settings.routerEnabled) return { passes: 0, stoppedBy: "complete", timedOut: false, aborted: false };
+  // SPIKE I17: the full detailed negotiated-congestion loop (default off, ignores the R-5 item cap).
+  if (ctx.settings.detailedNegotiation === true && ctx.settings.maxItems === undefined) return runDetailedNegotiation(ctx);
   if (ctx.settings.globalPlan === "plan" && ctx.settings.maxItems === undefined) return runPlannedThenBest(ctx);
   return runLegacyPasses(ctx);
+}
+
+/**
+ * SPIKE I17 — the full detailed negotiated-congestion loop (docs/DESIGN.md §10; task
+ * `docs/tasks/I17-detailed-pathfinder-spike.md`). This is the property the M4–M9 local loop lacks
+ * (it reroutes only *incomplete* connections, so an early-completing net holds its resources for
+ * ever and the negotiation oscillates then plateaus — evidence/reports/M10-report.md).
+ *
+ * Each pass: rewind the board to the post-fanout, no-routing-copper baseline (rip ALL), then route
+ * ALL required connections in detail in a negotiation order (Nair 1987 difficulty) against the soft
+ * cost `startRipup·(present·pw + history·hw)` (McMurchie & Ebeling 1995 present + history terms). The
+ * present map is reset each pass and accrues as this pass's copper is committed; the history map
+ * accrues across passes on the resource cells that rips and unroutable corridors touch, and `hw` is
+ * escalated per pass. Keep-best snapshot of the fewest-incomplete state. Every insert still passes
+ * the exact `sweepClear`/`barrelFits` predicate through the Journal, so R-1/R-2 hold identically to
+ * the local loop — a congested corridor can only leave a connection incomplete, never add a
+ * violation. `detailedNegotiation:false` (the default) never enters here.
+ */
+function runDetailedNegotiation(ctx: RouteCtx): PassOutcome {
+  const mark0 = ctx.journal.mark();      // post-fanout baseline (no routing copper)
+  ctx.ripHistory.reset();                // a fresh negotiation
+  ctx.negPresentWeight = ctx.settings.globalPresentWeight ?? DN_PRESENT_WEIGHT;
+  const hw0 = ctx.settings.globalHistoryWeight ?? DN_HISTORY_BASE;
+  const ramp = ctx.settings.globalHistoryRamp ?? DN_HISTORY_RAMP;
+
+  let passes = 0, stagnant = 0;
+  let stoppedBy: RouteReportStop = "maxPasses";
+  let timedOut = false, aborted = false;
+  let bestIncomplete = Infinity;
+  let bestCopper: CopperSnapshot | null = null;
+
+  for (let pass = 0; pass < ctx.settings.maxPasses; pass++) {
+    if (abortRequested(ctx)) { aborted = true; stoppedBy = "abort"; break; }
+    if (timeUp(ctx)) { timedOut = true; stoppedBy = "timeBudget"; break; }
+
+    // Rip ALL routing copper: back to the post-fanout empty board so every connection is rerouted
+    // against the changed (re-negotiated) cost field — the PathFinder rip-and-reroute-ALL property.
+    ctx.journal.rewind(mark0);
+    ctx.ripHistory.resetPresent();
+    ctx.ripupActive = true;
+    ctx.negHistoryWeight = hw0 + pass * ramp;   // escalate the history weight per pass
+    passes++;
+
+    const connections = orderConnections(ctx, connectionsOf(ctx), true);
+    for (const conn of connections) {
+      if (abortRequested(ctx)) { aborted = true; stoppedBy = "abort"; break; }
+      if (timeUp(ctx)) { timedOut = true; stoppedBy = "timeBudget"; break; }
+      const t0 = now();
+      ctx.attempted++;
+      const cm = ctx.journal.mark();
+      const ok = routeConnection(ctx, conn);
+      if (ok) {
+        ctx.completed++;
+        // Present-sharing: bump the cells this connection's copper used so later routes this pass
+        // spread off them (the within-pass PathFinder present term).
+        for (const id of ctx.journal.insertedSince(cm)) {
+          const e = ctx.lattice.itemOf(id);
+          if (e?.cat === "track") {
+            const t = e.item as Track;
+            for (let i = 1; i < t.pts.length; i++) ctx.ripHistory.bumpPresentSeg(t.sheet, t.pts[i - 1]!, t.pts[i]!);
+          }
+        }
+      } else {
+        const ck = `${conn.net}:${conn.from}:${conn.to}`;
+        ctx.contention.set(ck, (ctx.contention.get(ck) ?? 0) + 1);
+        // FastRoute-style congestion feedback: make the corridor this connection could not cross
+        // expensive (history, across passes) so other nets vacate it next pass and free room.
+        const ends = resolveEndpoints(ctx.layout, conn.from, conn.to);
+        if (ends) {
+          const s = (ends.from.sheets[0] ?? ends.to.sheets[0]);
+          if (s !== undefined) ctx.ripHistory.bumpSeg(s, ends.from.pt, ends.to.pt);
+        }
+      }
+      const netName = ctx.layout.nets.find((n) => n.id === conn.net)?.name ?? String(conn.net);
+      ctx.hooks?.onConnection?.({ net: netName, from: String(conn.from), to: String(conn.to), ok, elapsedMs: now() - t0 });
+    }
+
+    const inc = totalIncomplete(ctx);
+    if (inc < bestIncomplete) { bestIncomplete = inc; bestCopper = captureCopper(ctx, mark0); stagnant = 0; }
+    else stagnant++;
+    ctx.hooks?.onPass?.({ pass: passes, incomplete: inc, elapsedMs: now() - ctx.startMs });
+
+    if (inc === 0) { stoppedBy = "complete"; break; }
+    if (timedOut || aborted) break;
+    if (ctx.settings.maxStagnantPasses > 0 && stagnant >= ctx.settings.maxStagnantPasses) { stoppedBy = "stagnant"; break; }
+  }
+
+  // Keep-best: restore the fewest-incomplete DRC-clean state seen (R-6).
+  ctx.journal.rewind(mark0);
+  if (bestCopper) restoreCopper(ctx, bestCopper);
+  ctx.negHistoryWeight = undefined;
+  ctx.negPresentWeight = undefined;
+  return { passes, stoppedBy, timedOut, aborted };
 }
 
 /** Snapshot of the per-run counters that a routing trial accumulates (reset between keep-better trials). */
