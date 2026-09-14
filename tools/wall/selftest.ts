@@ -86,6 +86,9 @@ cases.push(["orch cat read src", "allow", call(undefined, "Bash", { command: "ca
 cases.push(["impl bun test file read", "allow", call("implementer", "Bash", { command: "bun test test/geom.test.ts" })]);
 cases.push(["impl redirect into spec", "deny", call("implementer", "Bash", { command: "echo x " + ">" + " spec/x.md" }), "W-SCOPE"]);
 cases.push(["impl commit with trailer heredoc", "allow", call("implementer", "Bash", { command: "git commit -q -F - <<EOF\nfix\n\nWall-Role: implementer\nAgent-Id: x\nSpec-Tree: abc\n\nCo-Authored-By: Claude Opus 4.8 <noreply@anthropic.com>\nEOF" })]);
+cases.push(["curator java -cp not a copy", "allow", call("spec-curator", "Bash", { command: "java -cp build/classes app.Main in.dsn out.ses" })]);
+cases.push(["impl scp still blocked", "deny", call("implementer", "Bash", { command: "scp x host:y" }), "B-ESCAPE"]);
+cases.push(["impl -cp is not a copy target", "allow", call("implementer", "Bash", { command: "java -cp node_modules/x app.Main" })]);
 cases.push(["impl cat into src heredoc", "allow", call("implementer", "Bash", { command: "cat " + ">" + " src/x.ts <<EOF\nx\nEOF" })]);
 cases.push(["impl cat into spec heredoc", "deny", call("implementer", "Bash", { command: "cat " + ">" + " spec/x.md <<EOF\nx\nEOF" }), "W-SCOPE"]);
 // The denylist itself is private; add its first path and word as cases when the config is reachable.

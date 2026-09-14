@@ -226,11 +226,11 @@ if (tool === "Bash") {
     targets.push(c);
   };
   for (const m of scan.matchAll(/(?:>>?|(?<![0-9])>)\s*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of scan.matchAll(/\btee\s+(?:-a\s+)?("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of scan.matchAll(/\b(?:mkdir|touch|rmdir)\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of scan.matchAll(/\brm\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of scan.matchAll(/\b(?:cp|mv|install)\s+(?:-\S+\s+)*(?:"[^"]+"|'[^']+'|[^\s"';|&<>()]+)\s+("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
-  for (const m of scan.matchAll(/\bsed\s+-i\S*\s+(?:-e\s+\S+\s+|'[^']*'\s+|"[^"]*"\s+|\S+\s+)("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/(?<![-\w])tee\s+(?:-a\s+)?("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/(?<![-\w])(?:mkdir|touch|rmdir)\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/(?<![-\w])rm\s+(?:-\S+\s+)*("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/(?<![-\w])(?:cp|mv|install)\s+(?:-\S+\s+)*(?:"[^"]+"|'[^']+'|[^\s"';|&<>()]+)\s+("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
+  for (const m of scan.matchAll(/(?<![-\w])sed\s+-i\S*\s+(?:-e\s+\S+\s+|'[^']*'\s+|"[^"]*"\s+|\S+\s+)("[^"]+"|'[^']+'|[^\s"';|&<>()]+)/g)) push(m[1]);
   for (const t of targets) {
     if (t === "/dev/null" || t.startsWith("$") || t.startsWith("/dev/")) continue;
     const rel = relToProject(t);
