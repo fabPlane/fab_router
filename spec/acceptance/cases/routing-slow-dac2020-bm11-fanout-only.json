@@ -22,5 +22,5 @@
       "maxAdded": 0
     }
   },
-  "note": "Suite A: the fanout pre-pass alone gives at least 154 SMD Pads an escape (each escape is a stub Track plus a Barrel), with no routing pass run. Under the 'fanout' profile reference A hit the profile's 60 s budget with 3 incomplete; reference B hit the profile's 60 s budget with 3 incomplete (see the reference file); the case's own budget is what its settings say."
+  "note": "Suite A: the fanout pre-pass alone gives at least 154 SMD Pads an escape (each escape is a stub Track plus a Barrel), with no routing pass run. Under the 'fanout' profile reference A hit the profile's 60 s budget with 3 incomplete; reference B hit the profile's 60 s budget with 3 incomplete (see the reference file); the case's own budget is what its settings say. Under a generous budget (S9) the fanout pre-pass alone gives 154 SMD Pads an escape under reference A and 155 under reference B, so the >=154 bound is reached by both references and stays hard. Generous-budget completion with routing enabled is in spec/acceptance/reference/Issue730-DAC2020_bm11.dsn.bound-fanout.json."
 }

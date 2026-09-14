@@ -13,6 +13,8 @@ metric cannot express.
 | `held-items.md` | Pads, held file wiring, Pours, Fences and the Rim are untouched by routing — counts per board and profile. |
 | `optimizer-monotonicity.md` | The optimiser may only shorten, straighten and remove Barrels; the reference numbers with the optimiser on and off. Records the one reference whose post-pass does not satisfy this and the ruling. |
 | `fanout.md` | With `fanoutEnabled: true`, at least N SMD Pads per board gain a Barrel escape. |
+| `detailed-routing.md` | The completion the detailed router must reach on each dense board (the generous-budget reference best), with R-1/R-2/K-18 held; hard where a reference reaches it clean, advisory where completion needs attach-to-Prior-copper. |
+| `shove.md` | With in-search shoving enabled, the named connections that complete where they did not without it; no held/locked/Prior item moves; zero added Violations. Includes the J802 locked-channel outcome. |
 
 Conventions: board names are the file names under `spec/acceptance/boards/`; net names are the
 names from the board's `network` section, verbatim (back-ticked, `|` escaped). "Reference A" and

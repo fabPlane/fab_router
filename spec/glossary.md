@@ -47,6 +47,9 @@
 | **Dangling** | A Track or Barrel connected to nothing of its net; never counted as a terminal component |
 | **Prior copper** | Pre-existing net-owned copper carried in from an SRJ document's obstacles (`formats/srj.md` J-23): connective same-net copper the router may attach its routes to, an obstacle to router-added copper of every other net, never a connectivity terminal, and silent under design-rule checking against all other prior copper (same-net or not) — checked only against copper the router adds (`rules/drc.md` DR-13, `rules/connectivity.md` K-14/K-16) |
 | **Turn gap** | The `smd_to_turn_gap` distance: how far a Track must leave an SMD Pad before its first bend (`rules/clearance.md` C-12) |
+| **Shove** | Displacing an already-placed **free** Track or Barrel to open room for another route, then re-placing the displaced item so it stays whole (same net, connected as before) and design-rule-clean; a `held`, `locked`, or Prior-copper item is never shoved (`behaviour/scenarios/shove.md`, `rules/connectivity.md` detailed-routing outcomes) |
+| **Detailed routing** | The stage that closes remaining Incompletes on a congested Layout by placing copper at finer resolution than a coarse first search, optionally shoving free items aside; judged only by its outcome — more connections whole, no held/locked/Prior item moved, no added Violation (`behaviour/scenarios/detailed-routing.md`) |
+| **Congested region** | A part of a Sheet where the copper already placed leaves gaps near the minimum spacing, so a further route fits only if free items move or a finer path is found; named per board by the nets whose connections cross it |
 
 ## Literature (design from these; cite them in module headers)
 
@@ -55,6 +58,8 @@
 - Hart, P., Nilsson, N., Raphael, B. (1968). *A formal basis for the heuristic determination of minimum cost paths.* IEEE TSSC-4. — A\*.
 - Nash, A., Daniel, K., Koenig, S., Felner, A. (2007). *Theta\*: any-angle path planning on grids.* AAAI. — string-pulling / line-of-sight shortcutting.
 - Dees, W., Karger, P. (1982). *Automated rip-up and reroute techniques.* DAC.
+- Hetzel, A. (1998). *A sequential detailed router for huge grid graphs.* DATE. — detailed routing that closes congestion gaps a coarse pass leaves.
+- Cohoon, J. P., Heck, P. L. (1988). *BEAVER: a computational-geometry-based tool for switchbox routing.* IEEE TCAD-7. — gridless placement and displacement of wires in tight channels (shove).
 - McMurchie, L., Ebeling, C. (1995). *PathFinder: a negotiation-based performance-driven router for FPGAs.* FPGA. — negotiated congestion / history cost.
 - Dion, J., Monier, L. (1995). *Contour: a tile-based gridless router.* DEC WRL Research Report 95/3. — gridless tile decomposition of free space.
 - Finkel, R., Bentley, J. (1974). *Quad trees: a data structure for retrieval on composite keys.* Acta Informatica 4. — adaptive quadtrees.

@@ -30,5 +30,5 @@
       "advisory": true
     }
   },
-  "note": "Suite B: at least 70 of 101 nets whole with its default pipeline (76 with fanout). Incomplete bound filled from the measured reference. Measured with the 'default' profile: reference A left 1, reference B no ok result; the bound is the looser of the two."
+  "note": "Suite B: at least 70 of 101 nets whole with its default pipeline (76 with fanout). Incomplete bound filled from the measured reference. Measured with the 'default' profile: reference A left 1, reference B no ok result; the bound is the looser of the two. Under a generous budget (S9) reference A reaches 1 with no added Violation; reference B reaches 6 only by adding Violations, so reference A's clean 1 is the target and the <=1 bound stays hard. Generous-budget numbers: spec/acceptance/reference/Issue034-Green14SegLED.dsn.bound.json."
 }

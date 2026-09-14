@@ -33,5 +33,5 @@
       "advisory": true
     }
   },
-  "note": "Suite A: exactly 0 incomplete within 9 passes and 30 s. Suite B: every attempted net whole (its full pipeline: rip-up and shoving on, 20 passes)."
+  "note": "Suite A: exactly 0 incomplete within 9 passes and 30 s. Suite B: every attempted net whole (its full pipeline: rip-up and shoving on, 20 passes). Under a generous budget (up to 500 passes / 300 s / 8 threads for reference A / 30 stagnant passes for reference B, S9) both references reach exactly 0 (reference A ~3 s, reference B ~7 s), each with no added Violation; the exact-0 bound is confirmed reachable and stays hard. Generous-budget numbers: spec/acceptance/reference/Issue508-DAC2020_bm07.dsn.bound.json."
 }
