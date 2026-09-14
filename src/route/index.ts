@@ -57,3 +57,6 @@ export * from "./optimise.ts";
 
 // Task I8: geometric push-and-shove.
 export * from "./shove.ts";
+
+// Task I9: gridless line-search detailed router (M9b-1).
+export * from "./lineprobe.ts";

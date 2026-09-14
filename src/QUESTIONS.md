@@ -975,3 +975,70 @@ their hard bounds).
 | `bun run test` | green — 802 pass, 0 fail (adds `test/shove.test.ts`, 8 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
 | `bun run acceptance -- --tier fast --case 'routing-*'` | 16 / 16 pass |
 | `bun run acceptance -- --tier all --case 'routing-*'` (slow) | no new failures vs the legacy baseline; the dense/locked boards keep their pre-existing quality gaps, all with `violations.maxAdded 0` (R-1) |
+
+### Task I9
+
+68. **The slow-tier default for `detailedRouter` and how the srj cases exercise it.**
+    `spec/api/settings.md` gives `detailedRouter` a tier-dependent default ("`off` (fast) /
+    detailed (slow)"), but `DEFAULT_ROUTE_SETTINGS.detailedRouter` is a single constant `"off"` and
+    no `srj-*` acceptance case sets it, so nothing exercised the §9b rung. `route()` has no notion of
+    tier, so the tier default belongs to the runner. Simplest behaviour that keeps every existing
+    case green and still exercises the new rung: **`tools/acceptance/run-case.ts` (`measureSrj`)
+    defaults `detailedRouter` to `"lineprobe"`** for any srj case that does not pin it (`"tiles"`,
+    §9b-2, is not built yet, so the line search is the strongest available detailed router). This
+    touches only the four J802 boards, whose `incomplete` bounds are all **advisory**, so it cannot
+    turn a hard bound red; the dense DSN slow boards (hard bounds) are left on `"off"` and untouched.
+    Spec side: if the slow-tier detailed default should apply to *all* slow cases, or be pinned per
+    case, say so and I will move it.
+
+69. **9b-1 alone does not move J802 completion within the 60 s case budget.** Consistent with
+    docs/DESIGN.md §9b "Honest scope" (9b-1 de-risks 9b-2; J802 reference parity is a stretch for a
+    first pass). The line search is correct, exact-clearance-safe (R-1) and non-regressing (K-19),
+    but the J802 boards are budget-limited (they reach only 3–6 passes in 60 s) and their remaining
+    gap is attach-to-Prior-copper / gridless-tile territory (§9b-2, task I10), not single-Sheet
+    channel threading. No regression, no added Violation. Recorded, not blocking.
+
+## Status (task I9 — M9b-1 gridless line-search detailed router)
+
+Implemented, R-1/R-2-safe by construction and off by default so the fast tier is unchanged:
+
+- **`src/route/lineprobe.ts`** — a gridless line-search router (Hightower 1969; Mikami & Tabuchi
+  1968). `lineProbeCentre(...)` runs a goal-directed best-first search over *escape points*: from a
+  point it shoots H/V (and 45° in non-`"90"` modes) probe lines tested directly against the exact
+  `sweepClear`; at each obstacle's along-axis edge it drops a turn point (offset by
+  `halfWidth + spacing`) from which a perpendicular probe slips past — the mechanism that finds a
+  channel a straight/L route misses. Deterministic (fixed direction order; obstacles in ascending
+  Lattice-id order; escape points quantised and dedup'd; frontier ties break by insertion sequence)
+  and bounded (an escape-node cap plus a `detailedBudgetMs`/abort deadline polled every 256 pops).
+  `lineProbeRoute(...)` threads every shared usable Sheet first, then a one-Barrel bridge (existing
+  `dropViaNear`/`pickBarrel`/`barrelFits`); each produced leg is Theta*-pulled (`pull.ts`),
+  legalised and re-checked leg-by-leg (`legalise.ts`) before the Journal insert, and any partial
+  attempt is rewound atomically.
+- **Ladder rung** (`src/route/passes.ts`): `tryLineprobeRoute` is the last rung of `routeConnection`,
+  reached only when grid A* + shove + rip-up all missed, gated by `detailedRouter === "lineprobe"`,
+  `ripupActive` (pass > 0) and a prior failure of that connection (`contention.has(...)`) — i.e. only
+  previously-failed connections in later passes, so fast-tier timing does not regress. Options come
+  from `detailedBudgetMs` (per-connection cap) and `detailedMaxTiles` (escape-node cap).
+- **Settings**: `detailedRouter`, `detailedBudgetMs`, `detailedMaxTiles` read through
+  `RouteSettings`; the acceptance harness applies the slow-tier default for srj cases (Q-I9-68).
+
+### Measured before/after (`routeSrj`, R-1 `violationsAdded = 0` throughout)
+
+"Before" = `detailedRouter: "off"`; "after" = `"lineprobe"`. Case budget (60 s) applied.
+
+| Board | Budget | incomplete before | incomplete after | violAdded | note |
+|---|---|---|---|---|---|
+| `b223-j802.srj` (2-layer) | 60 s | 14 | 14 | 0 | budget-limited (3 passes); rung fires, no gain (gap is attach-to-Prior) |
+| `b223-j802-six-layer-v2.srj` | 60 s | 15 | 15 | 0 | budget-limited (6 passes); no gain, no regression |
+
+The advisory S9 bounds (2-layer ≤ 3; six-layer 14/6/6) are not reached by 9b-1 alone; see Q-I9-69.
+Both boards keep `violations.maxAdded 0` and `preExisting 0` (hard) and never regress completion.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 59 files, 0 violations |
+| `bun run test` | green — 808 pass, 0 fail (adds `test/lineprobe.test.ts`, 6 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
+| `bun run acceptance -- --tier all --case 'srj-*'` | pass — advisory incomplete bounds recorded; `violations.maxAdded 0` and `preExisting 0` hard, both met |
