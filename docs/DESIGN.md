@@ -192,3 +192,65 @@ abort returns the best snapshot with `report.aborted = true`.
 `bun run check:layers`; `spec/types` may be imported by everyone. Toolchain: Bun ≥ 1.4,
 TypeScript strict with `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`, `bun:test`,
 zero runtime dependencies.
+
+## 9. Detailed router (M9) — closing the completion gap
+
+The M4–M7 router is DRC-clean everywhere (R-1) but under-completes on the densest boards, in two
+distinct failure modes (see `evidence/reports/M8-audit.md` §4):
+
+- **(a) movable congestion** (dense DSN: DAC bm07, cm5-carrier, green14seg, bm01) — other nets'
+  *free* Tracks sit in the channel; the negotiated-congestion loop can only rip-and-reroute them
+  from scratch and plateaus.
+- **(b) locked channels** (J802 SRJ) — long routes must thread ~150 µm gaps between *locked* Prior
+  copper; the uniform grid's step is too coarse to represent the channel over a 50–65 mm span. This
+  is a resolution wall, not a budget wall.
+
+Every M9 mechanism keeps R-1/R-2/R-5/R-6 by construction: nothing reaches the Journal-committed
+state without passing the exact `src/route/clear.ts` predicate, and any partial trial is rewound
+atomically; only `free` other-net copper (`isRippable`) is ever moved.
+
+### 9a. Push-and-shove and stronger negotiated congestion (`src/route/shove.ts`)
+
+Instead of deleting a blocking free Track and rerouting it, displace it perpendicular to itself by
+the minimum distance that clears the wanted leg, re-legalise it with the exact predicate, and
+cascade to its own movable neighbours; roll back the whole trial on any infeasibility. Interior
+vertices move, endpoints stay fixed, so the shoved net's connectivity is preserved. This is the
+shove primitive of topological/rubber-band routing reduced to a local geometric move on the
+integer-polyline Track model. `shoveClear(layout, lattice, journal, sheet, seg, profile, ignore,
+{windowLu, maxDepth, maxMoved})` mirrors `nudgeClear` and enters the strategy ladder before rip-up.
+
+Two negotiated-congestion strengtheners: add the **present-sharing term** `pn` to the PathFinder
+cost (`(startRipupCost + h·histWeight)·(1 + pn·presentWeight)`, present map reset each pass, history
+kept across passes) so contested resources are penalised within a pass; and route connections in
+**difficulty order** (descending airline × local congestion, ties `(net, id)`), both setting-gated.
+
+Rubber-band sketch routing was evaluated and **not** adopted wholesale (it needs a topological
+sketch model, a rewrite that would re-open the R-1 guarantee); M9 borrows only its locally-absorbable
+ideas — shove-within-slack and pull-tight (already Theta* in `pull.ts`).
+
+### 9b. Gridless detailed search for locked channels
+
+A finer *uniform* grid cannot close (b) (proved in I7). The free-space representation must be
+geometry-defined. Two increments:
+- **9b-1 line-search** (`src/route/lineprobe.ts`): shoot H/V/45° probe lines directly against
+  `sweepClear`, generating escape points at obstacle boundaries — no new spatial structure, a cheap
+  gridless first cut that threads channels far better than a coarse grid.
+- **9b-2 corner-stitched tiles** (`src/route/tiles.ts`, `src/route/channel.ts`): decompose each
+  `(Sheet, Profile)` free space into maximal rectangular free tiles (corner stitching) seeded from
+  the Dop8-expanded Lattice obstacles; A* over the free-tile adjacency graph (portals wide enough
+  for the width), centreline through portal midpoints, Theta* pull + line-search refinement to the
+  channel midline, then the usual legalise + exact re-check + Journal insert. Multilayer reuses the
+  existing Barrel machinery. Both are last-resort rungs, tried only in late passes / on
+  previously-failed connections, gated by `detailedRouter: "off" | "lineprobe" | "tiles"`, so the
+  fast tier is untouched.
+
+### Settings (M9)
+`shoveEnabled`, `shoveWindowUm`, `shoveMaxDepth`, `shoveMaxMoved`, `presentCongestionCost`,
+`orderByDifficulty`, `detailedRouter`, `detailedMaxTiles`, `detailedBudgetMs` — all default to the
+legacy behaviour on the fast tier; R-1/R-2 hold regardless of their values.
+
+### Honest scope
+9a closes most movable-congestion boards to at/near reference at low risk and does not touch the
+J802 (locked) boards. 9b addresses the locked-channel class; corner stitching is the hardest single
+module in the project, so 9b-1 (line-search) de-risks 9b-2. Reference parity on the six-layer J802
+board is a stretch for a first pass; bm11-fanout-only is a via-geometry limit, not congestion.

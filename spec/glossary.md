@@ -66,4 +66,9 @@
 - Tarjan, R. E. (1975). *Efficiency of a good but not linear set union algorithm.* — union-find for connectivity.
 - Klarner, D. A. / "k-DOP" bounding volumes: Klosowski et al. (1998). *Efficient collision detection using bounding volume hierarchies of k-DOPs.* — the 8-DOP.
 - Schleimer, S., Wilkerson, D., Aiken, A. (2003). *Winnowing: local algorithms for document fingerprinting.* SIGMOD. — the similarity gate.
+- Ousterhout, J. K. (1984). *Corner stitching: a data-structuring technique for VLSI layout tools.* IEEE TCAD. — gridless free-space tiles.
+- Hightower, D. W. (1969). *A solution to line-routing problems on the continuous plane.* Design Automation Workshop. — line-search routing.
+- Mikami, K., Tabuchi, K. (1968). *A computer program for optimal routing of printed circuit conductors.* IFIP. — line-search routing.
+- Dai, W. W.-M., Kong, R., Jue, J., Sato, M. (1991). *Rubber band routing and dynamic data representation.* ICCAD; Dai, Kong, Sato (1991), *Routability of a rubber-band sketch,* DAC. — shove / rubber-band routing.
+- Nair, R. (1987). *A simple yet effective technique for global wiring.* IEEE TCAD. — net ordering by difficulty.
 - **SPECCTRA Design Language Reference** (Cadence, v10.1, 2003) — the DSN/SES/rules formats.
