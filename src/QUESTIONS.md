@@ -1318,3 +1318,47 @@ cm5-carrier / bm01-p2 / j802-2layer:
 
 R-1/R-6 intact (no src/route change; the sweep confirms `violationsAdded == 0` on every board and
 setting). No case that passed at tag M9 is affected (routes are byte-identical to M9).
+
+## Status (task I13 — M10a: the Mesh, Bridge capacities, congestion report)
+
+New module `src/route/mesh.ts` (`buildMesh`, `Mesh`, `meshCongestion`) and `test/mesh.test.ts`.
+Commits **no copper** and wires nothing into the pass loop: `globalPlan` stays inert (`"off"`), so
+every acceptance number is byte-identical (R-1 trivially safe — nothing is inserted).
+
+- **Mesh**: per-signal-Sheet coarse grid over the Layout bounding box (Rim if present, else item
+  extent). `binLu` is derived from the densest NetGroup's track pitch and clamped so the Mesh is
+  ~30-120 bins across; `globalBinUm` overrides. Bins/Bridges are numbered by a fixed index formula
+  (Sheet, then row-major), so builds are deterministic.
+- **Capacity (R-2 baked in)**: a Bridge's capacity is `floor(free / pitch)` where `free` is the
+  Bin-boundary length not covered by *fixed blockage* (pads, `held`/`locked`/`origin:"prior"`
+  copper, `track`/`barrel` Fences, Rim, plane copper) queried through `Lattice.hits` and projected
+  after a conservative AABB expansion by `margin = ceil(halfWidth + spacing)`. `free` other-net
+  copper does not reduce capacity. Via Bridges use the analogous free-area count over both adjacent
+  Sheets. Every step over-covers and rounds down, so capacity is never optimistic.
+
+Decisions where the spec left detail open (simplest behaviour that satisfies the task):
+1. **Densest pitch** = the NetGroup minimising `trackWidth + spacing(track,track)` on the first
+   signal Sheet; that group's width/spacing set the capacity `pitch` and the blockage `margin`.
+   One uniform pitch is used for every Bridge (a coarse arena; per-net width is handled later by
+   the detailed router). Bin count is clamped to [30,120] with a target of 64.
+2. **Fixed blockage** = pads, Rim, `held`/`locked`/`prior` Barrels & Tracks, `prior`/`held`/`locked`
+   Pours, and `track`/`barrel` Fences. `place` Fences and all `free` copper are excluded (they are
+   movable congestion, not blockage).
+3. **Via-Bridge capacity** is `floor(free_area / pitch^2)` bounded by the more-blocked of the two
+   adjacent Sheets (a via needs a clear landing on both). Plane-Sheet obstruction between signal
+   Sheets is out of scope for M10a.
+4. **Bounding box** falls back to item coordinates when the Layout has no Rim.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 62 files, 0 violations |
+| `bun run test` | green — 832 pass, 0 fail (adds `test/mesh.test.ts`, 9 tests) |
+| `bun run acceptance -- --tier fast` | 401/401 cases passed, 0 failed (byte-identical; two pre-existing barrel *advisories* unchanged) |
+
+`test/mesh.test.ts` covers: capacity vs an independent brute-force raster of the same model over a
+swept boundary column; a Track that fully spans a boundary -> capacity 0; `free` copper leaves
+capacity untouched; two builds identical across every Bridge; a hand-set overflow summarised by
+`meshCongestion`; and `route(globalPlan:"off")` byte-identical to the default run.

@@ -64,3 +64,6 @@ export * from "./lineprobe.ts";
 // Task I10: corner-stitched tile decomposition and the channel router (M9b-2).
 export * from "./tiles.ts";
 export * from "./channel.ts";
+
+// Task I13: the coarse global Mesh, Bridge capacities and the congestion report (M10a).
+export * from "./mesh.ts";
