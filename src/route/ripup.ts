@@ -13,7 +13,15 @@
  * makes repeatedly-contested regions progressively expensive, which is what makes PathFinder
  * converge (McMurchie & Ebeling 1995).
  *
- * Public surface: RipupHistory, createRipupHistory, isRippable, ripCost, cellHistory.
+ * PathFinder's cost has two negotiation terms on a resource: **history** `h` (accumulated across
+ * passes, above) and **present** sharing `pn` (how heavily the resource is used *this pass*, reset
+ * each pass). The soft-step cost is `(startRipupCost + h·histWeight)·(1 + pn·presentWeight)`
+ * (docs/DESIGN.md §9a): history keeps a chronically contested region expensive, while the present
+ * factor spreads simultaneously competing routes off a shared resource within one pass. With
+ * `presentWeight = 0` (the default when `presentCongestionCost` is unset) the factor is 1 and the
+ * cost reduces exactly to the legacy history-only form, so the fast tier does not regress.
+ *
+ * Public surface: RipupHistory, createRipupHistory, isRippable, ripCost, cellHistory, presentFactor.
  */
 import type { Layout, Pt } from "../../spec/types/layout.ts";
 import type { Lattice } from "../lattice/index.ts";
@@ -22,30 +30,41 @@ import type { Lattice } from "../lattice/index.ts";
 export interface RipupHistory {
   count(id: number): number;
   bump(id: number): void;
-  /** Accumulated congestion at a coarse cell on a Sheet. */
+  /** Accumulated congestion at a coarse cell on a Sheet (history, across passes). */
   cell(sheet: number, x: number, y: number): number;
   /** Bump the coarse cells a segment crosses (called when its Track is ripped). */
   bumpSeg(sheet: number, a: Pt, b: Pt): void;
+  /** Present-pass usage at a coarse cell (how many committed routes cross it this pass). */
+  present(sheet: number, x: number, y: number): number;
+  /** Bump the present-pass usage of the coarse cells a committed segment crosses. */
+  bumpPresentSeg(sheet: number, a: Pt, b: Pt): void;
+  /** Clear the present-pass usage map (called at the start of each pass). */
+  resetPresent(): void;
   readonly cellSize: number;
 }
 
 export function createRipupHistory(cellSize = 10_000): RipupHistory {
   const h = new Map<number, number>();
   const cells = new Map<number, number>();
+  let present = new Map<number, number>();
   const size = Math.max(1, Math.round(cellSize));
   const key = (sheet: number, cx: number, cy: number): number => ((sheet * 100003 + (cx + 0x40000)) * 0x80000) + (cy + 0x40000);
+  const bumpCells = (map: Map<number, number>, sheet: number, a: Pt, b: Pt): void => {
+    const steps = Math.max(1, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y) / size));
+    for (let i = 0; i <= steps; i++) {
+      const x = a.x + ((b.x - a.x) * i) / steps, y = a.y + ((b.y - a.y) * i) / steps;
+      const k = key(sheet, Math.floor(x / size), Math.floor(y / size));
+      map.set(k, (map.get(k) ?? 0) + 1);
+    }
+  };
   return {
     count: (id) => h.get(id) ?? 0,
     bump: (id) => h.set(id, (h.get(id) ?? 0) + 1),
     cell: (sheet, x, y) => cells.get(key(sheet, Math.floor(x / size), Math.floor(y / size))) ?? 0,
-    bumpSeg: (sheet, a, b) => {
-      const steps = Math.max(1, Math.ceil(Math.hypot(b.x - a.x, b.y - a.y) / size));
-      for (let i = 0; i <= steps; i++) {
-        const x = a.x + ((b.x - a.x) * i) / steps, y = a.y + ((b.y - a.y) * i) / steps;
-        const k = key(sheet, Math.floor(x / size), Math.floor(y / size));
-        cells.set(k, (cells.get(k) ?? 0) + 1);
-      }
-    },
+    bumpSeg: (sheet, a, b) => bumpCells(cells, sheet, a, b),
+    present: (sheet, x, y) => present.get(key(sheet, Math.floor(x / size), Math.floor(y / size))) ?? 0,
+    bumpPresentSeg: (sheet, a, b) => bumpCells(present, sheet, a, b),
+    resetPresent: () => { present = new Map<number, number>(); },
     cellSize: size,
   };
 }
@@ -72,4 +91,15 @@ export function ripCost(startRipupCost: number, history: RipupHistory, id: numbe
 /** Congestion cost of stepping through a location (resource history), for the soft search. */
 export function cellHistory(startRipupCost: number, history: RipupHistory, sheet: number, at: Pt): number {
   return startRipupCost * history.cell(sheet, at.x, at.y);
+}
+
+/**
+ * PathFinder present-sharing factor `(1 + pn·presentWeight)` at a resource location this pass
+ * (McMurchie & Ebeling 1995). `presentWeight` is `presentCongestionCost`; when it is undefined or 0
+ * the factor is 1 (history-only, legacy behaviour).
+ */
+export function presentFactor(presentWeight: number | undefined, history: RipupHistory, sheet: number, at: Pt): number {
+  const w = presentWeight ?? 0;
+  if (w <= 0) return 1;
+  return 1 + w * history.present(sheet, at.x, at.y);
 }

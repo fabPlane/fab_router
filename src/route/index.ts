@@ -54,3 +54,6 @@ export * from "./via.ts";
 export * from "./fanout.ts";
 export * from "./nudge.ts";
 export * from "./optimise.ts";
+
+// Task I8: geometric push-and-shove.
+export * from "./shove.ts";

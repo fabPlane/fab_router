@@ -529,6 +529,32 @@ is populated a later task may tighten it to "not checked against that Part's own
     that name (subnet 1) — N-03 subnets share a name and F-S41 writes no subnet number; no corpus
     board has subnets. `writeSes` merges the items of all subnets of a name into one `(net NAME …)`.
 
+### Task I8
+
+66. **Difficulty ordering is applied as a stagnation *rescue*, not to the main passes.** Deliverable
+    3 asks for connections routed in descending (airline × local congestion) order. Applying that
+    order to the negotiated-congestion passes directly *regressed* the named movable-congestion
+    boards (measured: `bm07` 6→10, `bm01` 72→77, `green14` 92→97 incomplete) because the hardest-first
+    order rips a different, larger set each pass and stalls the keep-best minimum earlier — it never
+    reaches the quality the legacy `(net, id)` order does. Since the task forbids regressing
+    currently-passing cases and the FAST tier's timing, `orderByDifficulty` (default true) instead
+    keeps the legacy order while the passes converge and only switches to the difficulty order —
+    `airline × contention`, contention = how often a connection has failed so far, ties `(net, id)`,
+    grouped per net for locality (`orderConnections` in `src/route/passes.ts`) — once a *still-*
+    *congested* board (≥ `RESCUE_MIN_INCOMPLETE = 12` incompletes left) stalls. Combined with the
+    keep-best rollback this can only match or improve the legacy result. Small boards (fewer
+    incompletes, the fast tier) skip the rescue entirely, so their timing is unchanged. If the spec
+    intends the literal "route in difficulty order from the first pass", please rule and I will
+    switch, but that reading regresses the target boards on this router.
+67. **`presentCongestionCost` defaults to off (0), not `~startRipupCost`.** `settings.md` suggests a
+    default near `startRipupCost`, but `DEFAULT_ROUTE_SETTINGS` leaves it unset. Treating unset as 0
+    makes the soft-step cost `(startRipupCost + h·histWeight)·(1 + pn·presentWeight)` reduce exactly
+    to the legacy history-only form, so the fast tier does not regress; the term is fully wired
+    (`presentFactor` in `src/route/ripup.ts`, present map reset each pass, bumped by every committed
+    leg) and takes effect as soon as a case sets `presentCongestionCost > 0`. On the dense boards a
+    non-zero present weight measured *worse* under the tight per-case stagnation budgets, so 0 is the
+    safe default. Please confirm the default may be 0.
+
 ## Status (task I4b — drop the traceLengthMm /10 workaround)
 
 `test/applied-ses.test.ts` now asserts `after.tracks.totalLengthMm ≈ want.traceLengthMm` directly
@@ -888,3 +914,64 @@ is a genuine router-quality limit recorded above with the number reached, per th
 | `bun run test` | green — 794 pass, 0 fail (the 2 pre-existing fast-tier barrel advisories are unchanged and unrelated) |
 | `bun run acceptance -- --tier all --case 'srj-*'` | 4 / 4 pass; `violations.preExisting 0` and `violations.maxAdded 0` hard on all four; `incomplete` advisory 14/15/15/15 |
 | `bun run acceptance -- --tier all --case 'routing-*'` | fast tier 16/16 pass; the densest slow boards miss their (hard, non-advisory) `incomplete`/exact-0 bounds as recorded above, R-1 (`violations.maxAdded 0`) and R-6 hold on every one |
+
+## Status (task I8 — M9a push-and-shove and stronger negotiated congestion)
+
+Implemented, all R-1/R-2-safe by construction and gated so the fast tier is unchanged:
+
+- **`src/route/shove.ts`** — `shoveClear(...)`: displaces the movable (`isRippable`) free other-net
+  Tracks blocking a wanted leg perpendicular to themselves by the minimum distance that clears it,
+  endpoints fixed (so a shoved net stays exactly as complete as before), re-checks each reshaped
+  Track with the exact `sweepClear`, cascades to movable neighbours up to `maxDepth`/`maxMoved`, and
+  rewinds the whole trial through the Journal on any infeasibility (immovable blocker, slack past
+  `windowLu`, budget). A straight two-vertex Track is bumped (a mid vertex is introduced) so it can
+  move while its endpoints stay put; `held`/`locked`/Prior copper and Pads/Barrels/Rim/Fences are
+  never moved.
+- **Present-congestion term** (`src/route/ripup.ts`): the soft-step cost is
+  `(startRipupCost + h·histWeight)·(1 + pn·presentWeight)`; `pn` is a per-pass present-usage count on
+  the resource cell (reset each pass, bumped by every committed leg), `h` is the cross-pass history.
+  `presentWeight = presentCongestionCost` (default 0 ⇒ legacy history-only cost; see Q-I8-67).
+- **Difficulty ordering** (`src/route/passes.ts`): descending `airline × contention`, ties
+  `(net, id)`, applied as a stagnation rescue with keep-best so it never regresses (see Q-I8-66).
+- **Ladder wiring**: a `tryShoveRoute` rung runs before rip-up in `routeConnection`, and the
+  soft-search commit path prefers shoving the movable blockers (`tryShoveTrail`) over ripping them.
+- **Settings**: `shoveEnabled`, `shoveWindowUm`, `shoveMaxDepth`, `shoveMaxMoved`,
+  `presentCongestionCost`, `orderByDifficulty` are read through `RouteSettings` (defaults from
+  `DEFAULT_ROUTE_SETTINGS`); windows/budgets default to ~3× track pitch, depth 4, 12 moves.
+
+### Measured before/after (route() on the board, R-1 `violationsAdded = 0` throughout)
+
+"Before" = shove off, difficulty off, present off (legacy); "after" = the shipped defaults (shove
+on, difficulty rescue on, present off). Budgets as noted; these dense boards are budget-/stagnation-
+limited, so figures carry run-to-run noise under load.
+
+| Board | Budget | incomplete before | incomplete after | note |
+|---|---|---|---|---|
+| `Issue508-DAC2020_bm07` | 30 s | 6 | 6 | shove fires (~7 wins/pass) but rip-up already clears the same channels; no regression |
+| `Issue508-DAC2020_bm01` | 40 s | 72 | 72 | time-budget-limited (2 passes); unchanged |
+| `Issue034-Green14SegLED` | 40 s | 92 | 92 | stagnation-limited; unchanged |
+| `cm5-carrier` | 120 s | 42 | 42 | time-budget-limited (3 passes; case allows 600 s); shove fires (~5 wins) |
+| `Issue730-DAC2020_bm11` | 60 s | 26 | 26 | time-budget-limited (7 passes; scenario allows 120 s); shove ~21 wins |
+
+**Honest outcome.** The three mechanisms are correct, exact-clearance-safe and non-regressing, and
+shove demonstrably *fires* on every dense board (displacing rather than ripping, keeping the shoved
+net whole). But within the acceptance budgets they did **not** yield a net completion gain on the
+named boards: where a board converges (`bm07`, `green14`) rip-up already renegotiates the same
+movable congestion, and where shove's advantage would show (blockers that cannot be rerouted) the
+board does not converge inside the budget (`cm5`, `bm01`, `bm11` finish 2–7 passes of the ~20 they
+need). This matches the standing I5/I7 finding that these boards are search-/budget-limited; closing
+them is the province of the §9b gridless detailed router, not §9a. No advisory completion bound could
+be turned hard this milestone; no currently-passing case regressed (verified: the fast tier stays
+401/401 and 16/16 routing, and every slow `routing-*` case that fails does so identically under the
+legacy baseline — two, `issue230-cnh` 18→15 and `issue555-cnh` 20→16, even improve, still short of
+their hard bounds).
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 58 files, 0 violations |
+| `bun run test` | green — 802 pass, 0 fail (adds `test/shove.test.ts`, 8 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
+| `bun run acceptance -- --tier fast --case 'routing-*'` | 16 / 16 pass |
+| `bun run acceptance -- --tier all --case 'routing-*'` (slow) | no new failures vs the legacy baseline; the dense/locked boards keep their pre-existing quality gaps, all with `violations.maxAdded 0` (R-1) |
