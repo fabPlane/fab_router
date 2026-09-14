@@ -1212,3 +1212,109 @@ hold by construction (nothing new reaches the Journal; the change is inside the 
 | `bun run typecheck` | green |
 | `bun run check:layers` | green — 61 files, 0 violations |
 | `bun run test` | green — 823 pass, 0 fail (adds `test/perf-invariance.test.ts`, 4 cases; the 2 pre-existing fast-tier barrel advisories unchanged) |
+
+## Status (task I12 — bounded negotiated-congestion tuning; pre-M10 experiment)
+
+TUNING only: no new algorithm or module. Swept the parameters/schedules of the existing
+rip-up / shove / negotiated-congestion loop (`src/route/{passes,ripup,shove}.ts`) on the five
+target boards at their case budgets to see whether the dense-board completion plateau moves. R-1
+(`violationsAdded == 0`) and R-6 held on **every** run of the ~30-cell sweep (the `violAdded`
+column is 0 throughout). Harness: `tools/acceptance/congestion-sweep.ts` (a standalone driver, not
+part of `bun run test`; run it explicitly, e.g. `bun run tools/acceptance/congestion-sweep.ts
+--boards bm07 --grid presentCongestionCost=0,50,100 --timeout 60`).
+
+### Conclusion: the plateau holds on every target board; no default changed
+
+No setting reaches any board's completion bound, and none reaches it without regressing the
+pass-count-bounded cases, so the defaults are unchanged (routes are byte-identical; the
+`test/perf-invariance.test.ts` fingerprints are untouched) and no advisory bound became hard. This
+is a deliberate, rigorous negative result — it confirms the M9 report's "negotiated-congestion
+plateau" finding and directly informs the M10 decision (the gap needs a *global* router — full
+topological / rubber-band routing or a stronger-convergence global negotiator — not more tuning of
+the existing local loop; docs/DESIGN.md §9 "Honest scope", evidence/reports/M9.md §"frontier").
+
+### Per-board best number reached (all `violationsAdded == 0`)
+
+| Board | case budget | bound | baseline incomplete | best reached (any knob) | verdict |
+|---|---|---|---|---|---|
+| dac2020-bm07 | 60 s, `passes ≤ 9` | exactly 0 | 6 (8 passes, stagnant) | **6** within 9 passes; 5 only past the pass bound | plateau holds |
+| issue034-green14seg | 60 s | ≤ 1 | 92 (9 passes, stagnant) | **91** (`presentCongestionCost > 0`) | plateau holds |
+| cm5-carrier | 600 s | ≤ 2 | 42 @120 s / 41 @full stagnation | **41** | plateau holds (stagnation-limited, not budget) |
+| dac2020-bm01-p2 | 300 s, `passes ≤ 2` | ≤ 28 | 72 (2 passes, done in 52 s) | **72** | plateau holds (greedy/negotiation-limited, not budget) |
+| dac2020-bm01-p1 | 270 s, `passes ≤ 1` | ≤ 56 | 72 (1 greedy pass) | **72** | out of scope — pass 0 runs no rip-up (`ripupActive = pass > 0`), so congestion knobs are inert; the limiter is the greedy first-pass search |
+| j802 2-layer (srj) | 60 s | ≤ 3 (advisory) | 12 (tiles, 3 passes) | **12** | plateau holds; residual gap is attach-to-Prior depth (K-16), not movable congestion |
+
+### The sweep table (incomplete-after / passes / stop; `violAdded == 0` on all)
+
+bm07 (`passes.max: 9`; default `maxStagnantPasses = 3`):
+
+| setting | incomplete | passes | stoppedBy |
+|---|---|---|---|
+| (defaults) | 6 | 8 | stagnant |
+| `presentCongestionCost` 25 / 50 / 100 / 200 / 400 | 10 | 4 | stagnant (earlier, worse) |
+| `startRipupCost` 25 / 50 / 200 | 6 | 8–11 | stagnant |
+| `startRipupCost` 400 | 10 | 4 | stagnant |
+| `shoveWindowUm` 200 / 400 / 800 | 6 | 8 | stagnant |
+| `shoveMaxDepth` 2 / 8 × `shoveEnabled` true / false | 6 | 8 | stagnant |
+| `bendCost` 0 / 20 / 50 | 6 / 7 / 7 | 8–9 | stagnant |
+
+bm07 with a *raised* stagnation budget (exceeds `passes.max: 9`, so **not adoptable** for this case):
+
+| setting | incomplete | passes | stoppedBy |
+|---|---|---|---|
+| `maxStagnantPasses` 6 / 10 / 20, `presentCongestionCost` 0 | 6 | 11 / 15 / 25 | stagnant |
+| `maxStagnantPasses` 6, `presentCongestionCost` 100 | 10 | 7 | stagnant |
+| `maxStagnantPasses` 10 / 20, `presentCongestionCost` 100 | **5** | 28 / 38 | stagnant |
+
+green14seg (60 s):
+
+| setting | incomplete | passes | stoppedBy |
+|---|---|---|---|
+| `presentCongestionCost` 0 | 92 | 9 | stagnant |
+| `presentCongestionCost` 50 / 100 / 200 | 91 | 11 | stagnant |
+
+cm5-carrier / bm01-p2 / j802-2layer:
+
+| board | setting | incomplete | passes | stoppedBy | ms |
+|---|---|---|---|---|---|
+| cm5 | `presentCongestionCost` 0 | 42 | 3 | timeBudget | 120 s |
+| cm5 | `presentCongestionCost` 100 | 42 | 3 | timeBudget | 120 s |
+| cm5 | (no budget, to stagnation) | 41 | 14 | stagnant | 828 s |
+| bm01-p2 | `presentCongestionCost` 0 | 72 | 2 | maxPasses | 52 s |
+| bm01-p2 | `presentCongestionCost` 100 | 72 | 2 | maxPasses | 50 s |
+| j802-2L | `presentCongestionCost` 0 / 100 | 12 | 3 | timeBudget | 60 s |
+
+### What each knob does (interpretation)
+
+- **`presentCongestionCost`** (the PathFinder present-sharing term; currently defaults 0 per
+  Q-I8-67). Turning it on is **net-negative under the case budgets**: the soft search avoids
+  contested cells so strongly that the negotiation converges *earlier* to a *worse* plateau (bm07
+  6 → 10 in 4 passes instead of 6 in 8). It beats the history-only floor only when given a much
+  larger stagnation budget — bm07 reaches 5 (vs 6) at `maxStagnantPasses ≥ 10`, ~28–38 passes —
+  which exceeds bm07's `passes.max: 9`, so it cannot be adopted for that case, and it never nears
+  the exact-0 target. green14 gains a single net (92 → 91). This directly reaffirms the Q-I8-67
+  choice to default it to 0 rather than the settings.md "~startRipupCost" note.
+- **`startRipupCost`** — 25–200 leave bm07 at 6; 400 makes it converge fast and worse (10). 100
+  (default) is already near-best.
+- **`shoveWindowUm` / `shoveMaxDepth` / `shoveEnabled`** — bm07's residue is invariant to shove
+  (6 with shove on or off): its last few nets are not shove-absorbable (they need a global
+  re-route, not a local displacement within slack).
+- **Rip-up ordering / history schedule** — the existing difficulty-ordered *rescue* (Nair 1987,
+  gated behind stagnation + keep-best in `passes.ts`) and per-resource-cell history (`ripup.ts`)
+  are already the configuration these boards converge under; no per-cell decay or re-queue-only
+  reorder within the pass budget moved a board off its floor.
+- **Adaptive stagnation** (raise `maxStagnantPasses` while still improving) does not help: the
+  history-only floor (bm07 6, cm5 41, green14 ~91) is reached and then *flat* — extra passes at
+  `presentCongestionCost = 0` never drop below it — and raising the default would break the
+  pass-count-bounded cases (bm07 `≤ 9`, bm01 `≤ 1`/`≤ 2`) for no completion gain.
+
+### Verification (worktree root)
+
+| Command | Result |
+|---|---|
+| `bun run typecheck` | green |
+| `bun run check:layers` | green — 61 files, 0 violations |
+| `bun run test` | green — 823 pass, 0 fail (no src change; adds only the standalone sweep tool, which is not in the suite) |
+
+R-1/R-6 intact (no src/route change; the sweep confirms `violationsAdded == 0` on every board and
+setting). No case that passed at tag M9 is affected (routes are byte-identical to M9).
