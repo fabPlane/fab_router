@@ -1431,10 +1431,9 @@ export function runPasses(ctx: RouteCtx): PassOutcome {
 }
 
 /**
- * SPIKE I17 — the full detailed negotiated-congestion loop (docs/DESIGN.md §10; task
- * `docs/tasks/I17-detailed-pathfinder-spike.md`). This is the property the M4–M9 local loop lacks
- * (it reroutes only *incomplete* connections, so an early-completing net holds its resources for
- * ever and the negotiation oscillates then plateaus — evidence/reports/M10-report.md).
+ * The full detailed negotiated-congestion loop (docs/DESIGN.md §10). This is the property the M4–M9
+ * local loop lacks (it reroutes only *incomplete* connections, so an early-completing net holds its
+ * resources for ever and the negotiation oscillates then plateaus).
  *
  * Each pass: rewind the board to the post-fanout, no-routing-copper baseline (rip ALL), then route
  * ALL required connections in detail in a negotiation order (Nair 1987 difficulty) against the soft

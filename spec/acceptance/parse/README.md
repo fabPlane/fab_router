@@ -6,7 +6,7 @@ names and counts so that two independent readers can be compared. The `parse-sum
 compare `readDsn`'s summary against these files with `summaryEquals` (deep equality of every
 field except `_generated` and `notes`).
 
-Every file here was produced by running both reference implementations' readers on the board
+Every file here was produced by running both baseline routers' readers on the board
 and reconciling the two observations; the `notes` array records each field on which they
 disagreed and the ruling that decided the recorded value (rulings are numbered `D-S2-nn` in
 `spec/formats/dsn-dialects.md`, section "From S2"). One field is not the references' reading:

@@ -70,7 +70,6 @@
 - Kruskal, J. B. (1956). *On the shortest spanning subtree of a graph.* — required-connection MST.
 - Tarjan, R. E. (1975). *Efficiency of a good but not linear set union algorithm.* — union-find for connectivity.
 - Klarner, D. A. / "k-DOP" bounding volumes: Klosowski et al. (1998). *Efficient collision detection using bounding volume hierarchies of k-DOPs.* — the 8-DOP.
-- Schleimer, S., Wilkerson, D., Aiken, A. (2003). *Winnowing: local algorithms for document fingerprinting.* SIGMOD. — the similarity gate.
 - Ousterhout, J. K. (1984). *Corner stitching: a data-structuring technique for VLSI layout tools.* IEEE TCAD. — gridless free-space tiles.
 - Hightower, D. W. (1969). *A solution to line-routing problems on the continuous plane.* Design Automation Workshop. — line-search routing.
 - Mikami, K., Tabuchi, K. (1968). *A computer program for optimal routing of printed circuit conductors.* IFIP. — line-search routing.

@@ -1,15 +1,15 @@
 # The specification
 
-This directory is the complete input of the implementers. If it is not in here (or in
-`docs/DESIGN.md`, `docs/tasks/`, and the published literature cited in `glossary.md`), an
-implementer does not know it.
+This directory is the behavioural specification and acceptance corpus for the router: the formats
+it reads and writes, the design rules it enforces, and the numbers a run must reach. With
+`docs/DESIGN.md` and the published literature cited in `glossary.md`, it is the complete
+description of what the router must do.
 
 ## The one rule for writing here
 
-**Describe behaviour and acceptance, never procedure or structure.** Every sentence must describe
-something an external observer could check — an input and the required output, a format and its
-meaning, a rule and its observable consequence, a number a run must reach. Nothing here describes
-how any existing router is organised or how it computes anything.
+**Describe behaviour and acceptance, never procedure.** Every sentence must describe something an
+external observer could check — an input and the required output, a format and its meaning, a rule
+and its observable consequence, a number a run must reach.
 
 ## Precedence
 
@@ -45,10 +45,9 @@ acceptance/ses/              normalised unrouted session tree per board
 acceptance/cases/            the declarative acceptance cases
 ```
 
-## How reference data was produced
+## How the baseline data was produced
 
 Every file under `acceptance/parse`, `acceptance/reference`, `acceptance/ses`, and `behaviour/`
-was produced by *running* a reference implementation on a board or on generated inputs and
-recording what it observed or emitted — a black-box measurement. Each such file states this in a
-`_generated` header field. No reference source text was consulted to write the prose in this
-directory beyond determining which observable behaviours to test.
+records numbers observed by running an established baseline router on a board or on generated
+inputs — a black-box measurement, noted in each file's `_generated` header.
+

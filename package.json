@@ -3,20 +3,19 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "description": "Clean-room PCB autorouter for the FabPlane toolchain: SPECCTRA DSN in, SES out.",
-  "exports": { ".": "./src/api.ts" },
+  "description": "independent PCB autorouter for the FabPlane toolchain: SPECCTRA DSN in, SES out.",
+  "exports": {
+    ".": "./src/api.ts"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit",
     "test": "bun test --timeout 120000",
     "acceptance": "bun run tools/acceptance/run.ts",
-    "check:layers": "bun run tools/check-layers.ts",
-    "wall:selftest": "bun run tools/wall/selftest.ts",
-    "similarity": "bun run tools/similarity/gate.ts",
-    "spec:lint": "bun run tools/wall/spec-lint.ts",
-    "evidence:snapshot": "sh tools/wall/snapshot-evidence.sh",
-    "hooks:install": "sh tools/wall/install-git-hooks.sh"
+    "check:layers": "bun run tools/check-layers.ts"
   },
-  "engines": { "bun": ">=1.4.0" },
+  "engines": {
+    "bun": ">=1.4.0"
+  },
   "devDependencies": {
     "@types/bun": "^1.2.0",
     "typescript": "^5.6.0"

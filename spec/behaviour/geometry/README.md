@@ -7,7 +7,7 @@ One JSONL file per operation. The first line of each file is a header object wit
 { "op": "<file name without extension>", "input": { ... }, "expected": ..., "note": "optional free text" }
 ```
 
-Every record was evaluated twice — by a reference implementation run as a black box and by an
+Every record was evaluated twice — by a baseline router run as a black box and by an
 independent exact big-integer computation — and kept only when both agreed. An implementation must
 reproduce `expected` for every record, exactly. Each file has at least 2 000 records; roughly half
 of them use coordinates in the large regime (|coord| up to 2^25 = 33 554 432, including values that

@@ -20,7 +20,7 @@ effect at the start of the snippet: `stringQuote` is the document's only quote c
 declaration switches to the declared character from that point on (F-4, F-11).
 `spaceInQuotedTokens` never changes how a snippet lexes (F-31) and is carried for completeness.
 
-`note` explains the snippet and records, where it applies, that a reference implementation's
+`note` explains the snippet and records, where it applies, that a baseline router's
 standalone tokeniser reads the snippet differently (with its token texts) — those differences
 are the rulings of `dsn.md` section 1 and `dsn-dialects.md` (for apostrophes, D-11: both
 references' full design readers agree with the vectors in every name position), not errors in

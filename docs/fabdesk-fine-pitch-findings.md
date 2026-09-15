@@ -33,7 +33,7 @@ fab_router **under-completes fine-pitch fanout by leaving trapped inner pads ope
 instead of dropping a fanout via to escape them to the back layer. On the QFN this costs 2/14; on the
 USB-C two-row 0.5 mm connector it costs 4/6 (the inner row cannot escape on the surface at all). This
 is a real, bounded, fixable capability — SMD fine-pitch via-escape in `src/route/fanout.ts` — and it
-is distinct from the dense-board completion plateau (evidence/reports/M10-report.md): here the
+is distinct from the dense-board completion plateau: here the
 router simply is not attempting the via drop that fine-pitch escape requires.
 
 Next step (not yet done, awaiting go-ahead): harden `src/route/fanout.ts` so a fine-pitch SMD pad

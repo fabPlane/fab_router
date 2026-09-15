@@ -5,8 +5,7 @@ second adapter. This brief is a *recommended* design: implementers may deviate w
 acceptance suite in `spec/acceptance/` still passes, but the vocabulary below is binding so that
 modules built by different people fit together.
 
-The algorithms are from the published literature (see `spec/glossary.md` for citations). Nothing
-here is derived from any existing router's source.
+The algorithms are from the published literature (see `spec/glossary.md` for citations).
 
 ## 0. Vocabulary
 
@@ -196,7 +195,7 @@ zero runtime dependencies.
 ## 9. Detailed router (M9) — closing the completion gap
 
 The M4–M7 router is DRC-clean everywhere (R-1) but under-completes on the densest boards, in two
-distinct failure modes (see `evidence/reports/M8-audit.md` §4):
+distinct failure modes:
 
 - **(a) movable congestion** (dense DSN: DAC bm07, cm5-carrier, green14seg, bm01) — other nets'
   *free* Tracks sit in the channel; the negotiated-congestion loop can only rip-and-reroute them
@@ -258,7 +257,7 @@ board is a stretch for a first pass; bm11-fanout-only is a via-geometry limit, n
 ## 10. Global router (M10) — closing the completion plateau
 
 The M4–M9 router is a **local** negotiated-congestion loop: each pass re-routes only the *incomplete*
-connections in detail over free space. The I12 sweep and `evidence/reports/M9.md` prove it is
+connections in detail over free space. The I12 sweep proves it is
 **stagnation-limited, not budget-limited** — no local knob moves the floor. Two structural causes:
 
 1. **It never re-negotiates a completed net.** PathFinder (McMurchie & Ebeling 1995) converges
