@@ -27,7 +27,7 @@ ax.barh(cases, ratios, color=['#177c88' if r >= 1 else '#b5683f' for r in ratios
 ax.axvline(1, color='#333333', linewidth=1)
 ax.invert_yaxis()
 ax.set_xlabel('Baseline median / candidate median (higher is faster)')
-ax.set_title(f'Explicit query bounds: shared-host native benchmark\n26 cases × 3 repeats per version; {order}')
+ax.set_title(f'Rejected explicit query bounds: shared-host native benchmark\n26 cases × 3 repeats per version; {order}')
 ax.grid(axis='x', alpha=.2)
 fig.tight_layout()
 fig.savefig(root / args.output, dpi=160)

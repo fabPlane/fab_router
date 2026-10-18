@@ -1,0 +1,316 @@
+(pcb "/home/hyper/bench/wt/rb-boards/cache/boards/ladder-l2-kicad_pcb/unrouted.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  40000 -85500  0 -85500  0 0  40000 0  40000 -85500)
+    )
+    (via "Via[0-1]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Pad
+      (place A1 6000 -6000 front 0 (PN Pad))
+      (place A2 6000 -7500 front 0 (PN Pad))
+      (place A3 6000 -9000 front 0 (PN Pad))
+      (place A4 6000 -10500 front 0 (PN Pad))
+      (place A5 6000 -12000 front 0 (PN Pad))
+      (place A6 6000 -13500 front 0 (PN Pad))
+      (place A7 6000 -15000 front 0 (PN Pad))
+      (place A8 6000 -16500 front 0 (PN Pad))
+      (place A9 6000 -18000 front 0 (PN Pad))
+      (place A10 6000 -19500 front 0 (PN Pad))
+      (place A11 6000 -21000 front 0 (PN Pad))
+      (place A12 6000 -22500 front 0 (PN Pad))
+      (place A13 6000 -24000 front 0 (PN Pad))
+      (place A14 6000 -25500 front 0 (PN Pad))
+      (place A15 6000 -27000 front 0 (PN Pad))
+      (place A16 6000 -28500 front 0 (PN Pad))
+      (place A17 6000 -30000 front 0 (PN Pad))
+      (place A18 6000 -31500 front 0 (PN Pad))
+      (place A19 6000 -33000 front 0 (PN Pad))
+      (place A20 6000 -34500 front 0 (PN Pad))
+      (place A21 6000 -36000 front 0 (PN Pad))
+      (place A22 6000 -37500 front 0 (PN Pad))
+      (place A23 6000 -39000 front 0 (PN Pad))
+      (place A24 6000 -40500 front 0 (PN Pad))
+      (place A25 6000 -42000 front 0 (PN Pad))
+      (place A26 6000 -43500 front 0 (PN Pad))
+      (place A27 6000 -45000 front 0 (PN Pad))
+      (place A28 6000 -46500 front 0 (PN Pad))
+      (place A29 6000 -48000 front 0 (PN Pad))
+      (place A30 6000 -49500 front 0 (PN Pad))
+      (place A31 6000 -51000 front 0 (PN Pad))
+      (place A32 6000 -52500 front 0 (PN Pad))
+      (place A33 6000 -54000 front 0 (PN Pad))
+      (place A34 6000 -55500 front 0 (PN Pad))
+      (place A35 6000 -57000 front 0 (PN Pad))
+      (place A36 6000 -58500 front 0 (PN Pad))
+      (place A37 6000 -60000 front 0 (PN Pad))
+      (place A38 6000 -61500 front 0 (PN Pad))
+      (place A39 6000 -63000 front 0 (PN Pad))
+      (place A40 6000 -64500 front 0 (PN Pad))
+      (place A41 6000 -66000 front 0 (PN Pad))
+      (place A42 6000 -67500 front 0 (PN Pad))
+      (place A43 6000 -69000 front 0 (PN Pad))
+      (place A44 6000 -70500 front 0 (PN Pad))
+      (place A45 6000 -72000 front 0 (PN Pad))
+      (place A46 6000 -73500 front 0 (PN Pad))
+      (place A47 6000 -75000 front 0 (PN Pad))
+      (place A48 6000 -76500 front 0 (PN Pad))
+      (place A49 6000 -78000 front 0 (PN Pad))
+      (place A50 6000 -79500 front 0 (PN Pad))
+      (place B1 34000 -6000 front 0 (PN Pad))
+      (place B2 34000 -7500 front 0 (PN Pad))
+      (place B3 34000 -9000 front 0 (PN Pad))
+      (place B4 34000 -10500 front 0 (PN Pad))
+      (place B5 34000 -12000 front 0 (PN Pad))
+      (place B6 34000 -13500 front 0 (PN Pad))
+      (place B7 34000 -15000 front 0 (PN Pad))
+      (place B8 34000 -16500 front 0 (PN Pad))
+      (place B9 34000 -18000 front 0 (PN Pad))
+      (place B10 34000 -19500 front 0 (PN Pad))
+      (place B11 34000 -21000 front 0 (PN Pad))
+      (place B12 34000 -22500 front 0 (PN Pad))
+      (place B13 34000 -24000 front 0 (PN Pad))
+      (place B14 34000 -25500 front 0 (PN Pad))
+      (place B15 34000 -27000 front 0 (PN Pad))
+      (place B16 34000 -28500 front 0 (PN Pad))
+      (place B17 34000 -30000 front 0 (PN Pad))
+      (place B18 34000 -31500 front 0 (PN Pad))
+      (place B19 34000 -33000 front 0 (PN Pad))
+      (place B20 34000 -34500 front 0 (PN Pad))
+      (place B21 34000 -36000 front 0 (PN Pad))
+      (place B22 34000 -37500 front 0 (PN Pad))
+      (place B23 34000 -39000 front 0 (PN Pad))
+      (place B24 34000 -40500 front 0 (PN Pad))
+      (place B25 34000 -42000 front 0 (PN Pad))
+      (place B26 34000 -43500 front 0 (PN Pad))
+      (place B27 34000 -45000 front 0 (PN Pad))
+      (place B28 34000 -46500 front 0 (PN Pad))
+      (place B29 34000 -48000 front 0 (PN Pad))
+      (place B30 34000 -49500 front 0 (PN Pad))
+      (place B31 34000 -51000 front 0 (PN Pad))
+      (place B32 34000 -52500 front 0 (PN Pad))
+      (place B33 34000 -54000 front 0 (PN Pad))
+      (place B34 34000 -55500 front 0 (PN Pad))
+      (place B35 34000 -57000 front 0 (PN Pad))
+      (place B36 34000 -58500 front 0 (PN Pad))
+      (place B37 34000 -60000 front 0 (PN Pad))
+      (place B38 34000 -61500 front 0 (PN Pad))
+      (place B39 34000 -63000 front 0 (PN Pad))
+      (place B40 34000 -64500 front 0 (PN Pad))
+      (place B41 34000 -66000 front 0 (PN Pad))
+      (place B42 34000 -67500 front 0 (PN Pad))
+      (place B43 34000 -69000 front 0 (PN Pad))
+      (place B44 34000 -70500 front 0 (PN Pad))
+      (place B45 34000 -72000 front 0 (PN Pad))
+      (place B46 34000 -73500 front 0 (PN Pad))
+      (place B47 34000 -75000 front 0 (PN Pad))
+      (place B48 34000 -76500 front 0 (PN Pad))
+      (place B49 34000 -78000 front 0 (PN Pad))
+      (place B50 34000 -79500 front 0 (PN Pad))
+    )
+  )
+  (library
+    (image Pad
+      (pin Rect[T]Pad_1000.000000x800.000000_um 1 0 0)
+    )
+    (padstack Rect[T]Pad_1000.000000x800.000000_um
+      (shape (rect F.Cu -500 -400 500 400))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net N1
+      (pins A1-1 B12-1)
+    )
+    (net N2
+      (pins A2-1 B3-1)
+    )
+    (net N3
+      (pins A3-1 B6-1)
+    )
+    (net N4
+      (pins A4-1 B9-1)
+    )
+    (net N5
+      (pins A5-1 B14-1)
+    )
+    (net N6
+      (pins A6-1 B27-1)
+    )
+    (net N7
+      (pins A7-1 B22-1)
+    )
+    (net N8
+      (pins A8-1 B49-1)
+    )
+    (net N9
+      (pins A9-1 B2-1)
+    )
+    (net N10
+      (pins A10-1 B8-1)
+    )
+    (net N11
+      (pins A11-1 B4-1)
+    )
+    (net N12
+      (pins A12-1 B50-1)
+    )
+    (net N13
+      (pins A13-1 B44-1)
+    )
+    (net N14
+      (pins A14-1 B13-1)
+    )
+    (net N15
+      (pins A15-1 B1-1)
+    )
+    (net N16
+      (pins A16-1 B45-1)
+    )
+    (net N17
+      (pins A17-1 B36-1)
+    )
+    (net N18
+      (pins A18-1 B16-1)
+    )
+    (net N19
+      (pins A19-1 B38-1)
+    )
+    (net N20
+      (pins A20-1 B10-1)
+    )
+    (net N21
+      (pins A21-1 B32-1)
+    )
+    (net N22
+      (pins A22-1 B46-1)
+    )
+    (net N23
+      (pins A23-1 B5-1)
+    )
+    (net N24
+      (pins A24-1 B11-1)
+    )
+    (net N25
+      (pins A25-1 B29-1)
+    )
+    (net N26
+      (pins A26-1 B28-1)
+    )
+    (net N27
+      (pins A27-1 B24-1)
+    )
+    (net N28
+      (pins A28-1 B26-1)
+    )
+    (net N29
+      (pins A29-1 B47-1)
+    )
+    (net N30
+      (pins A30-1 B37-1)
+    )
+    (net N31
+      (pins A31-1 B39-1)
+    )
+    (net N32
+      (pins A32-1 B43-1)
+    )
+    (net N33
+      (pins A33-1 B25-1)
+    )
+    (net N34
+      (pins A34-1 B31-1)
+    )
+    (net N35
+      (pins A35-1 B7-1)
+    )
+    (net N36
+      (pins A36-1 B34-1)
+    )
+    (net N37
+      (pins A37-1 B18-1)
+    )
+    (net N38
+      (pins A38-1 B20-1)
+    )
+    (net N39
+      (pins A39-1 B19-1)
+    )
+    (net N40
+      (pins A40-1 B21-1)
+    )
+    (net N41
+      (pins A41-1 B42-1)
+    )
+    (net N42
+      (pins A42-1 B15-1)
+    )
+    (net N43
+      (pins A43-1 B48-1)
+    )
+    (net N44
+      (pins A44-1 B35-1)
+    )
+    (net N45
+      (pins A45-1 B17-1)
+    )
+    (net N46
+      (pins A46-1 B30-1)
+    )
+    (net N47
+      (pins A47-1 B23-1)
+    )
+    (net N48
+      (pins A48-1 B41-1)
+    )
+    (net N49
+      (pins A49-1 B33-1)
+    )
+    (net N50
+      (pins A50-1 B40-1)
+    )
+    (class kicad_default N1 N10 N11 N12 N13 N14 N15 N16 N17 N18 N19 N2 N20
+      N21 N22 N23 N24 N25 N26 N27 N28 N29 N3 N30 N31 N32 N33 N34 N35 N36 N37
+      N38 N39 N4 N40 N41 N42 N43 N44 N45 N46 N47 N48 N49 N5 N50 N6 N7 N8 N9
+      (circuit
+        (use_via "Via[0-1]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+  )
+)

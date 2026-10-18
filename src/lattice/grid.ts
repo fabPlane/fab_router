@@ -395,7 +395,7 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
   }
 
   return {
-    hits: (sheet, box, filter) => collect(sheet, { x0: box.x0, y0: box.y0, x1: box.x1, y1: box.y1, s0: -Infinity, s1: Infinity, d0: -Infinity, d1: Infinity }, false, filter),
+    hits: (sheet, box, filter) => collect(sheet, { ...box, s0: -Infinity, s1: Infinity, d0: -Infinity, d1: Infinity }, false, filter),
     sweepHits: (sheet, dop8, filter) => collect(sheet, dop8, true, filter),
     insert: (ref, sheet, bounds) => insertRaw(ref.id, ref.leg ?? NO_LEG, sheet, bounds),
     remove: (ref, sheet) => removeRaw(ref.id, ref.leg ?? NO_LEG, sheet),

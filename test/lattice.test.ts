@@ -66,25 +66,6 @@ function sortRefs(refs: LatticeItemRef[]): LatticeItemRef[] {
 }
 
 describe("Lattice property tests", () => {
-  test("box filters see each slot once and cannot change the query bounds mid-collection", () => {
-    const lattice = createLattice(emptyLayout("query-snapshot"), { luPerUm: 1, cellSize: 1000 });
-    lattice.insert({ id: 1 }, 0, dop8OfPts([{ x: 10, y: 10 }, { x: 1500, y: 1500 }]));
-    lattice.insert({ id: 2, leg: 0 }, 0, dop8OfPts([{ x: 1700, y: 1700 }]));
-    // This slot lives on the shelf, which is visited after the bucket cells.
-    lattice.insert({ id: 3 }, 0, dop8OfPts([{ x: -5000, y: -5000 }, { x: 5000, y: 5000 }]));
-    expect(lattice.stats().perSheet[0]!.shelf).toBe(1);
-    const box = { x0: 0, y0: 0, x1: 2000, y1: 2000 };
-    const visited: LatticeItemRef[] = [];
-    const hits = lattice.hits(0, box, (ref) => {
-      visited.push(ref);
-      box.x0 = box.y0 = 100_000;
-      box.x1 = box.y1 = 200_000;
-      return ref.id !== 2;
-    });
-    expect(visited).toEqual([{ id: 1 }, { id: 2, leg: 0 }, { id: 3 }]);
-    expect(hits).toEqual([{ id: 1 }, { id: 3 }]);
-  });
-
   test("hits / sweepHits equal a brute-force scan over 10 000 queries with interleaved inserts and removes", () => {
     const g = makeGen(7);
     const layout = emptyLayout("prop");

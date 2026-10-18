@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "kind": "sweep",
+  "host": "hyper-ms-lin",
+  "bun": "1.4.0",
+  "allowedCpus": "12-19",
+  "sources": {
+    "before": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout",
+      "gridSha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18"
+    },
+    "after": {
+      "path": "/home/hyper/bench/wt/fr-perf",
+      "gridSha256": "93dca3c82fc27dc0ac606d2c28cf6e479305d2e4b5b0ba9ad4ea28dd921443db"
+    }
+  },
+  "slots": 2000,
+  "queries": 10000,
+  "callsPerRow": 10000000,
+  "inputSha256": "72be494dd3404f76d62909cdfdd6dc76a07b87fbe1e4db88e1720a3ac72ee838",
+  "slotSha256": "051ea09813135be40933e792c171dde40715981fe5f6bf542be1ab7ee8eec51d",
+  "boxQueriesSha256": "8ed9daf569fc2421b8a96666b50d07401c8116532ae1cb82d07d1b27c97a7663",
+  "orderedResultsSha256": "1d0da0f1c8c4dbb54f26433e0721797f458d61bd7d175baad5c1e6defee95eb6",
+  "warmupRepeats": [
+    0
+  ],
+  "utcStart": "2026-10-18T19:25:24.131Z",
+  "rows": [
+    {
+      "repeat": 0,
+      "version": "before",
+      "seconds": 1.6493273910000001,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 0,
+      "version": "after",
+      "seconds": 1.6203775230000002,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 1,
+      "version": "after",
+      "seconds": 1.660299219,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 1,
+      "version": "before",
+      "seconds": 1.7239034430000002,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 2,
+      "version": "before",
+      "seconds": 1.6929138969999995,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 2,
+      "version": "after",
+      "seconds": 1.7408647499999987,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 3,
+      "version": "after",
+      "seconds": 1.721603932,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 3,
+      "version": "before",
+      "seconds": 1.8381881880000002,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 4,
+      "version": "before",
+      "seconds": 1.7000475709999991,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 4,
+      "version": "after",
+      "seconds": 1.897012114000001,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 5,
+      "version": "after",
+      "seconds": 1.6092055169999986,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 5,
+      "version": "before",
+      "seconds": 1.8871752830000006,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 6,
+      "version": "before",
+      "seconds": 1.8851372469999987,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 6,
+      "version": "after",
+      "seconds": 1.894669668999999,
+      "checksum": 2091000
+    }
+  ],
+  "utcEnd": "2026-10-18T19:25:48.653Z"
+}

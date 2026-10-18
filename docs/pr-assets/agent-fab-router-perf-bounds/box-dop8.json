@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "kind": "box-dop8",
+  "host": "hyper-ms-lin",
+  "bun": "1.4.0",
+  "allowedCpus": "12-19",
+  "sources": {
+    "before": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout",
+      "gridSha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18"
+    },
+    "after": {
+      "path": "/home/hyper/bench/wt/fr-perf",
+      "gridSha256": "93dca3c82fc27dc0ac606d2c28cf6e479305d2e4b5b0ba9ad4ea28dd921443db"
+    }
+  },
+  "slots": 2000,
+  "queries": 10000,
+  "callsPerRow": 10000000,
+  "inputSha256": "72be494dd3404f76d62909cdfdd6dc76a07b87fbe1e4db88e1720a3ac72ee838",
+  "slotSha256": "051ea09813135be40933e792c171dde40715981fe5f6bf542be1ab7ee8eec51d",
+  "boxQueriesSha256": "8ed9daf569fc2421b8a96666b50d07401c8116532ae1cb82d07d1b27c97a7663",
+  "orderedResultsSha256": "74dc220318a3ef169b1f56b34f9b9d922bf79d9b6bd810c51b67a4d7045ec8dc",
+  "warmupRepeats": [
+    0
+  ],
+  "utcStart": "2026-10-18T19:24:59.360Z",
+  "rows": [
+    {
+      "repeat": 0,
+      "version": "before",
+      "seconds": 1.628297051,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 0,
+      "version": "after",
+      "seconds": 1.5265680270000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 1,
+      "version": "after",
+      "seconds": 1.5657772279999995,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 1,
+      "version": "before",
+      "seconds": 1.6963246600000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 2,
+      "version": "before",
+      "seconds": 1.6875829669999993,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 2,
+      "version": "after",
+      "seconds": 1.6616619629999996,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 3,
+      "version": "after",
+      "seconds": 1.5420524750000004,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 3,
+      "version": "before",
+      "seconds": 1.8036258710000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 4,
+      "version": "before",
+      "seconds": 1.6858200260000011,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 4,
+      "version": "after",
+      "seconds": 2.1242601600000017,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 5,
+      "version": "after",
+      "seconds": 2.090706115000001,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 5,
+      "version": "before",
+      "seconds": 2.097725456,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 6,
+      "version": "before",
+      "seconds": 1.7985701549999975,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 6,
+      "version": "after",
+      "seconds": 1.814672312999999,
+      "checksum": 2507114408
+    }
+  ],
+  "utcEnd": "2026-10-18T19:25:24.085Z"
+}
