@@ -1,0 +1,17 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const trace={calls:0,outside:0,seed:9,samples:[]};
+(globalThis as any).__segmentTrace=trace;
+const [source,work,output]=process.argv.slice(2);
+if(!source || !work || !output) throw new Error('Expected INSTRUMENTED_SOURCE NATIVE_WORK_DIRECTORY NEW_OUTPUT_JSON');
+if(existsSync(output)) throw new Error('Output already exists');
+const {routeDsn}=await import(pathToFileURL(resolve(source,'src/api.ts')).href);
+const text=readFileSync(work+'/board.dsn','utf8');
+const manifest=JSON.parse(readFileSync(work+'/dsn-manifest.json','utf8'));
+const candidate=JSON.parse(readFileSync(work+'/candidate-settings.json','utf8'));
+const settings={timeBudgetMs:120000,maxPasses:100,seed:2,copperToEdgeClearanceUm:manifest.native_rules.min_copper_edge_clearance*1000,holeClearanceUm:manifest.native_rules.min_hole_clearance*1000,strictDrc:true,neckWidthUm:0,fanoutEnabled:false,ignoreNetGroups:manifest.ignore_classes,...candidate.settings};
+const r=routeDsn(text,settings);if(!r.ok)throw new Error(JSON.stringify(r));
+writeFileSync(output,JSON.stringify({...trace,settings,report:r.report,input_sha256:createHash('sha256').update(text).digest('hex'),ses_sha256:createHash('sha256').update(r.ses).digest('hex')})+'\n');
+console.log(trace.calls,trace.outside,trace.samples.length);
