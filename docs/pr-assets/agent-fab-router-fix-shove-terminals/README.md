@@ -36,3 +36,15 @@ Native nonregression command (same host, cores, frozen cases/settings and three 
 cd /home/hyper/bench/wt/fp-bugs
 taskset -c 20-25 nice -n 10 timeout 3600 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source /home/hyper/bench/wt/fr-bugs --out /home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c24-after-full
 ```
+
+Full native result: 39/78 passes, 13/26 cases valid 3/3, 120 opens, 27 new
+thermal errors before and after. Every per-case/seed pass, opens, errors, vias and
+length value is identical. Median route seconds 1.172079 → 1.103216 (-5.9%);
+descriptive shared-host observation with tests partly overlapping, no speed claim.
+All 74 source hashes match b23a9da; all eight comparison controls match baseline.
+The harness started before commit creation and recorded main HEAD; source hashes
+establish the actual tested implementation. See benchmark-summary.json.
+
+Integration: retain PR #15 protected-net handling in shoveClear/ShoveCtx alongside
+this terminal guard. PR #18 protects nudge separately; performance PR #17 changes
+only lattice tests/evidence and has no function overlap.
