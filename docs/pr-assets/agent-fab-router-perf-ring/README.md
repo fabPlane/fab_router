@@ -85,3 +85,29 @@ Both final slow runs use four dedicated assigned cores per version. An initial c
 run on eight cores was stopped during its first long routing case, before producing a report;
 its scratch log is retained. It contributes no benchmark score. Native timing, profiling
 and ladder comparisons all finished before the final slow runs began.
+
+Compare the complete slow reports (including failures and timed-out progress):
+
+```bash
+python3 docs/pr-assets/agent-fab-router-perf-ring/compare-acceptance.py /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle4-acceptance-before.json /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle4-acceptance.json --out docs/pr-assets/agent-fab-router-perf-ring/acceptance-comparison.json
+```
+
+## Slow acceptance result
+
+Both fresh complete reports contain 63 cases: 51 pass, 12 fail, 14 advisory, zero stubs.
+Baseline report head is `69cf598`; candidate report head is `ea4a2ae`, whose source,
+acceptance tooling and spec inputs match production commit `8dddcad`. No pass regressions,
+increased incomplete counters or increased router violations were observed. Both runners
+exit 1 because existing failing cases remain; neither safety timeout fired.
+
+Three budgeted cases have progress-counter differences, retained in `acceptance-comparison.json`:
+
+| Case | Counter | Before | After |
+|---|---|---:|---:|
+| issue039 default | completed attempts | 294 | 300 |
+| issue555 maxpasses40 | completed attempts / passes | 182 / 6 | 175 / 5 |
+| issue555 strict | incompletes / completed attempts / passes | 19 / 199 / 8 | 17 / 206 / 9 |
+
+Completed-attempt counters include work that can be ripped up; they are not final net completion.
+The strict case has fewer incompletes within its time budget, but these time-sensitive progress
+counters are not evidence of changed geometric decisions or a general quality improvement.
