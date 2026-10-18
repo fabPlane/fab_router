@@ -12,13 +12,16 @@ orientations fail on main and pass with the fix. Each assertion set runs three
 times. The regression preserves the pads, Prior region and retained obstacle,
 checks zero added violations and no vias, then verifies journal rollback. The
 six measured routes per version (two shapes, three repeats) are in before.json
-and after.json. The image renders those records directly.
+and after.json. Each also records a fresh public route() run: the same
+one-open to zero-open improvement, with zero engine violations. validate.py
+asserts those outcomes and preservation. The image renders measured records directly.
 
 From the repository root:
 
 ```bash
 bun test test/prior-target.test.ts
 bun run docs/pr-assets/agent-fab-router-fix-prior-target/audit.ts
+python3 docs/pr-assets/agent-fab-router-fix-prior-target/validate.py
 python3 docs/pr-assets/agent-fab-router-fix-prior-target/render.py
 bun run typecheck && bun run check:layers && bun run test
 ```
@@ -27,7 +30,7 @@ To reproduce the failing baseline without changing this checkout:
 
 ```bash
 mkdir -p /tmp/prior-target-baseline
- git archive 69cf598 | tar -x -C /tmp/prior-target-baseline
+git archive 69cf598 | tar -x -C /tmp/prior-target-baseline
 cp test/prior-target.test.ts /tmp/prior-target-baseline/test/
 cp test/helpers/prior-target.ts /tmp/prior-target-baseline/test/helpers/
 mkdir -p /tmp/prior-target-baseline/docs/pr-assets/agent-fab-router-fix-prior-target
@@ -55,3 +58,21 @@ python3 docs/pr-assets/agent-fab-router-fix-prior-target/summarize.py /home/hype
 This change is independent of the live-connectivity fix in PR #24. Preserve
 both changes when integrating: one validates the partner component, the other
 validates the geometric attachment target.
+
+Targeted composition check: archived 2c78431 plus the source-only diff
+69cf598..9963847 in passes.ts, with both regression files and helpers.
+All seven tests passed on each of three repeats; see composed-regressions.json.
+This is not a full composed-suite or native-benchmark claim.
+
+Full native fab_router run: same 26 frozen cases, three repeats each, same host and cores 20–25. Inputs, settings, checker, runtime, seeds and order match; all 74 source hashes match the stated revisions. Every case/seed has identical pass, open, error, via and length outcomes.
+
+| Native measurement | Main 69cf598 | Candidate 2c78431 |
+| --- | ---: | ---: |
+| Passed attempts | 39/78 | 39/78 |
+| Cases valid 3/3 | 13/26 | 13/26 |
+| Opens | 120 | 120 |
+| New native DRC errors | 27 | 27 |
+| Median route seconds | 1.172079 | 1.132183 |
+
+All 27 errors are starved_thermal. Native completion and thermal outcomes are
+unchanged. Shared-host timing is descriptive only; no speed improvement claimed.

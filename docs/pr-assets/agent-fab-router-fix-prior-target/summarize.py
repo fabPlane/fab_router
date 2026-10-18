@@ -18,7 +18,11 @@ results=[read(root,'results.json') for root in [a.before,a.after]]
 assert len(results[0])==len(results[1])==78
 for b,c in zip(*results):
  assert (b['case'],b['seed'],b['router'])==(c['case'],c['seed'],c['router'])
- for f in ['passed','opens','new_errors','vias','length_mm']:assert b[f]==c[f],(b['case'],b['seed'],f)
+ for f in ['passed','opens','new_errors','new_error_types','vias','length_mm']:assert b[f]==c[f],(b['case'],b['seed'],f)
  rows.append({'case':b['case'],'seed':b['seed'],'before':{k:b[k] for k in ['passed','opens','new_errors','vias','length_mm','seconds']},'after':{k:c[k] for k in ['passed','opens','new_errors','vias','length_mm','seconds']}})
 out={'baseline':'69cf598','source':a.source,'controls_match':fields,'source_hashes_verified':[len(c['candidate']['source_sha256']) for c in controls],'before':metrics(results[0]),'after':metrics(results[1]),'attempts':rows,'timing_caveat':'Shared host; tests overlap. Descriptive timing only, no speed claim.'}
+out['new_error_types'] = {}
+for r in results[1]:
+ for kind,count in r['new_error_types'].items(): out['new_error_types'][kind] = out['new_error_types'].get(kind,0) + count
+assert out['new_error_types'] == {'starved_thermal': 27}
 a.out.write_text(json.dumps(out,indent=2)+'\n');print(json.dumps({k:out[k] for k in ['before','after','source_hashes_verified']},indent=2))
