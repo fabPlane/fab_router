@@ -43,7 +43,7 @@
  */
 import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
 import type { Box, ConvexShape, Dop8, Pt, Seg, Shape } from "../geom/index.ts";
-import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, withinRim } from "../geom/index.ts";
+import { boxExpand, coreOf, crossesEdge, dist2Pts, dist2PtPt, dist2PtSeg, dop8OfPts, withinRim } from "../geom/index.ts";
 import type { DrillDisk, Lattice, LatticeItemRef } from "../lattice/index.ts";
 import { RIM_ID, boundsOfShapes, drillOfBarrel, drillOfPad, formOf, transformShape } from "../lattice/index.ts";
 import type { BarrelCandidate, Profile } from "./profile.ts";
@@ -59,6 +59,18 @@ export function ignoreOf(net: number | null, ids: Iterable<number> = []): Ignore
 // ---- exact comparisons ----------------------------------------------------------------------
 
 function closerConvex(a: ConvexShape, b: ConvexShape, required: number, orTouching: boolean): boolean {
+  // Disk/capsule core distances use exactly the original point/segment operations.
+  // Keep the radius addition in argument order and use the first endpoint when collapsed.
+  if (a.kind === "disk" && (b.kind === "disk" || b.kind === "capsule")) {
+    const need = required + a.r + b.r;
+    const d2 = b.kind === "disk" ? dist2PtPt(a.c, b.c) : dist2PtSeg(a.c, b.a, b.b);
+    return orTouching ? d2 <= need * need : d2 < need * need;
+  }
+  if (a.kind === "capsule" && b.kind === "disk") {
+    const need = required + a.r + b.r;
+    const d2 = dist2PtSeg(b.c, a.a, a.b);
+    return orTouching ? d2 <= need * need : d2 < need * need;
+  }
   const ca = coreOf(a), cb = coreOf(b);
   const need = required + ca.r + cb.r;
   const d2 = dist2Pts(ca.pts, cb.pts);
