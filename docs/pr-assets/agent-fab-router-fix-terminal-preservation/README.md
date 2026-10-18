@@ -30,4 +30,31 @@ The baseline archive is read-only test source, not another worktree. Both audits
 use the same parser, fixture and lattice; only the optimiser module differs.
 Native before/after comparison uses the same 26 frozen cases, three repeats,
 settings and checker on the same machine/core set. See benchmark-summary.json
-for provenance, per-case outcomes and limitations once the run completes.
+for provenance, per-case outcomes and limitations.
+
+After a complete native sweep, validate source identity and all before/after
+controls and outcomes from the router repository root:
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-terminal-preservation/validate.py /home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full /tmp/terminal-native-full "$PWD" /tmp/terminal-benchmark-summary.json
+```
+
+The baseline is the historical same-machine main-source sweep at `69cf598`;
+its source hashes are verified against that commit. The candidate sweep records
+the pre-commit HEAD because the fix was committed while native checking ran;
+all 74 captured source hashes are verified against the committed fix. No
+executable source changed during either sweep. Independent pending PRs #8 and
+#9 touch the same optimizer: integration must retain their isolated-copper
+cleanup and ignored-net mutation guards alongside this partition guard.
+
+## Measured outcome
+
+All 78 frozen attempts match main in pass/open/error/via/length outcomes:
+39/78 passing, 13/26 cases valid 3/3, 120 opens, 27 new errors (all thermal).
+Median route seconds are 1.172079 before and 1.152014 after (-1.7%); the shared
+host and overlapping tests preclude an isolated speed claim. The regression
+fix preserves A–C in 3/3 synthetic repeats versus 0/3 on main, with one open
+and zero DRC violations in both versions. Native completion did not improve.
+Required checks passed: typecheck, layers (65 files, zero violations), and
+863 tests / zero failures / 398478 assertions (213.53 seconds). No golden,
+DRC, scoring, frozen fixture or runtime changes were needed.
