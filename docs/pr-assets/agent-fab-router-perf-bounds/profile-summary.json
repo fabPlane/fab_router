@@ -1,0 +1,1968 @@
+{
+  "before": {
+    "cpu_profile_sha256": "038da8daca80663b15fd3b50f10699ee052a8497385756be459e66b02c52d28b",
+    "samples": 38570,
+    "top_self_samples": [
+      [
+        "withinRim",
+        9208
+      ],
+      [
+        "collect",
+        5415
+      ],
+      [
+        "aStar",
+        2896
+      ],
+      [
+        "sweepClear",
+        2721
+      ],
+      [
+        "test",
+        1721
+      ],
+      [
+        "aStarLayered",
+        1719
+      ],
+      [
+        "dop8OfPts",
+        1656
+      ],
+      [
+        "onSeg",
+        1500
+      ],
+      [
+        "state",
+        1453
+      ],
+      [
+        "pop",
+        1277
+      ],
+      [
+        "hitBlocks",
+        1240
+      ],
+      [
+        "pointInRing",
+        969
+      ],
+      [
+        "coreOf",
+        959
+      ],
+      [
+        "filter",
+        877
+      ],
+      [
+        "push",
+        783
+      ],
+      [
+        "isFree",
+        596
+      ],
+      [
+        "edgeCost",
+        510
+      ],
+      [
+        "pointOf",
+        266
+      ],
+      [
+        "barrelFits",
+        236
+      ],
+      [
+        "probe",
+        209
+      ],
+      [
+        "Set",
+        201
+      ],
+      [
+        "viaMove",
+        179
+      ],
+      [
+        "leq",
+        162
+      ],
+      [
+        "dist2PtSeg",
+        162
+      ],
+      [
+        "put",
+        142
+      ]
+    ],
+    "lattice_samples": [
+      {
+        "function": "bucket",
+        "line": 135,
+        "samples": 2
+      },
+      {
+        "function": "findSlot",
+        "line": 178,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "bucket",
+        "line": 135,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 119
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 7
+      },
+      {
+        "function": "hits",
+        "line": 398,
+        "samples": 3
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 102
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 24
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 36
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 2
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 11
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 55
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 39
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 3
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 16
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 873
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 264
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 2339
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 725
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 255
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 35
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 32
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 3
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1646
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 530
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 183
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 48
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 72
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 30
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 3
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 34
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 26
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 4
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 27
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 18
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 5
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 10
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 6
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 42
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 2
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 75
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 8
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 14
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 20
+      },
+      {
+        "function": "insertItem",
+        "line": 298,
+        "samples": 1
+      },
+      {
+        "function": "removeItem",
+        "line": 357,
+        "samples": 2
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 6
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 4
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 9
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 9
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 6
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 2
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 12
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "allocSlot",
+        "line": 185,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "findSlot",
+        "line": 178,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 3
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 23
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 19
+      },
+      {
+        "function": "hits",
+        "line": 398,
+        "samples": 3
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 11
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 5
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 2
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 2
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 2
+      },
+      {
+        "function": "insertItem",
+        "line": 298,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "bucket",
+        "line": 135,
+        "samples": 1
+      },
+      {
+        "function": "medianDiagonal",
+        "line": 236,
+        "samples": 1
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 2
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "allocSlot",
+        "line": 185,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      }
+    ],
+    "routes": [
+      {
+        "seconds": 14.942639929999999,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 14925,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 13.341100363999997,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 13335,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 12.987460874,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 12984,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      }
+    ],
+    "median_seconds": 13.341100363999997
+  },
+  "after": {
+    "cpu_profile_sha256": "1586e2bc69f0331e08534370dd13bb08870dd0cbbe41fba1c1bda51e03d4fce0",
+    "samples": 44309,
+    "top_self_samples": [
+      [
+        "onSeg",
+        8722
+      ],
+      [
+        "pointInRing",
+        6741
+      ],
+      [
+        "collect",
+        5039
+      ],
+      [
+        "aStar",
+        3008
+      ],
+      [
+        "withinRim",
+        2671
+      ],
+      [
+        "sweepClear",
+        2627
+      ],
+      [
+        "aStarLayered",
+        1713
+      ],
+      [
+        "test",
+        1611
+      ],
+      [
+        "dop8OfPts",
+        1540
+      ],
+      [
+        "state",
+        1412
+      ],
+      [
+        "pop",
+        1337
+      ],
+      [
+        "hitBlocks",
+        1219
+      ],
+      [
+        "coreOf",
+        935
+      ],
+      [
+        "filter",
+        810
+      ],
+      [
+        "push",
+        762
+      ],
+      [
+        "isFree",
+        654
+      ],
+      [
+        "edgeCost",
+        475
+      ],
+      [
+        "pointOf",
+        269
+      ],
+      [
+        "barrelFits",
+        249
+      ],
+      [
+        "probe",
+        232
+      ],
+      [
+        "viaMove",
+        206
+      ],
+      [
+        "leq",
+        164
+      ],
+      [
+        "Set",
+        163
+      ],
+      [
+        "",
+        162
+      ],
+      [
+        "dist2PtSeg",
+        136
+      ]
+    ],
+    "lattice_samples": [
+      {
+        "function": "cellOf",
+        "line": 132,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 119
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 33
+      },
+      {
+        "function": "unbucket",
+        "line": 156,
+        "samples": 3
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 80
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 35
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 38
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 16
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 31
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 57
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 17
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 8
+      },
+      {
+        "function": "hits",
+        "line": 398,
+        "samples": 10
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 3
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 4
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 788
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 238
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 2155
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 645
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 201
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 50
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 3
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 30
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1528
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 521
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 89
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 151
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 40
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 7
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 2
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 74
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 6
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 42
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 71
+      },
+      {
+        "function": "hits",
+        "line": 398,
+        "samples": 3
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 13
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 7
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 24
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 10
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 10
+      },
+      {
+        "function": "insertDrilled",
+        "line": 347,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 18
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 22
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "unbucket",
+        "line": 156,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 9
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 16
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 3
+      },
+      {
+        "function": "bucket",
+        "line": 135,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 6
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 2
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 2
+      },
+      {
+        "function": "allocSlot",
+        "line": 185,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "removeItem",
+        "line": 357,
+        "samples": 1
+      },
+      {
+        "function": "insertItem",
+        "line": 298,
+        "samples": 1
+      },
+      {
+        "function": "rebuild",
+        "line": 248,
+        "samples": 1
+      },
+      {
+        "function": "allocSlot",
+        "line": 185,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 2
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "insertItem",
+        "line": 298,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 2
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 3
+      },
+      {
+        "function": "insertItem",
+        "line": 298,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 15
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 7
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 9
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 7
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 4
+      },
+      {
+        "function": "allocSlot",
+        "line": 185,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "test",
+        "line": 262,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "shapesOf",
+        "line": 363,
+        "samples": 1
+      },
+      {
+        "function": "collect",
+        "line": 257,
+        "samples": 1
+      },
+      {
+        "function": "itemOf",
+        "line": 404,
+        "samples": 1
+      },
+      {
+        "function": "push",
+        "line": 267,
+        "samples": 1
+      }
+    ],
+    "routes": [
+      {
+        "seconds": 15.319424227999999,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 15307,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 16.135616791000004,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 16132,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 15.924329718000001,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 15921,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      }
+    ],
+    "median_seconds": 15.924329718000001
+  }
+}

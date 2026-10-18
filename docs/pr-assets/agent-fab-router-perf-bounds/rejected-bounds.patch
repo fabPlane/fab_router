@@ -1,0 +1,7 @@
+diff --git a/src/lattice/grid.ts b/src/lattice/grid.ts
+index f2ad20c..065e30b 100644
+--- a/src/lattice/grid.ts
++++ b/src/lattice/grid.ts
+@@ -398 +398 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
+-    hits: (sheet, box, filter) => collect(sheet, { ...box, s0: -Infinity, s1: Infinity, d0: -Infinity, d1: Infinity }, false, filter),
++    hits: (sheet, box, filter) => collect(sheet, { x0: box.x0, y0: box.y0, x1: box.x1, y1: box.y1, s0: -Infinity, s1: Infinity, d0: -Infinity, d1: Infinity }, false, filter),
