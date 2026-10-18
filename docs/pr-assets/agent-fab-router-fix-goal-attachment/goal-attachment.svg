@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="780" viewBox="0 0 1600 780">
+<rect width="1600" height="780" fill="#101b26"/>
+<g font-family="sans-serif" fill="#edf4fa">
+<text x="60" y="60" font-size="34">Validate the last leg to an off-grid terminal</text>
+<text x="60" y="102" font-size="20" fill="#b8c6d4">Minimal layered-search regression · 3 identical repeats per version · grid coordinates shown</text>
+<text x="70" y="160" font-size="26">Before: false success</text>
+<text x="70" y="212" font-size="18" fill="#b8c6d4">Layer 0</text>
+<circle cx="70" cy="240" r="5" fill="#526675"/>
+<circle cx="70" cy="295" r="5" fill="#526675"/>
+<circle cx="70" cy="350" r="5" fill="#526675"/>
+<circle cx="210" cy="240" r="5" fill="#526675"/>
+<circle cx="210" cy="295" r="5" fill="#526675"/>
+<circle cx="210" cy="350" r="5" fill="#526675"/>
+<circle cx="350" cy="240" r="5" fill="#526675"/>
+<circle cx="350" cy="295" r="5" fill="#526675"/>
+<circle cx="350" cy="350" r="5" fill="#526675"/>
+<circle cx="490" cy="240" r="5" fill="#526675"/>
+<circle cx="490" cy="295" r="5" fill="#526675"/>
+<circle cx="490" cy="350" r="5" fill="#526675"/>
+<polyline points="70.0,240.0 210.0,240.0 350.0,240.0" stroke="#ff7f82" stroke-width="6" fill="none"/>
+<circle cx="350" cy="240" r="10" fill="none" stroke="#ffbd66" stroke-width="3"/>
+<text x="370" y="236" font-size="16" fill="#ffbd66">Rounded cell (2, 0)</text>
+<text x="70" y="402" font-size="18" fill="#b8c6d4">Layer 1</text>
+<circle cx="70" cy="430" r="5" fill="#526675"/>
+<circle cx="70" cy="485" r="5" fill="#526675"/>
+<circle cx="70" cy="540" r="5" fill="#526675"/>
+<circle cx="210" cy="430" r="5" fill="#526675"/>
+<circle cx="210" cy="485" r="5" fill="#526675"/>
+<circle cx="210" cy="540" r="5" fill="#526675"/>
+<circle cx="350" cy="430" r="5" fill="#526675"/>
+<circle cx="350" cy="485" r="5" fill="#526675"/>
+<circle cx="350" cy="540" r="5" fill="#526675"/>
+<circle cx="490" cy="430" r="5" fill="#526675"/>
+<circle cx="490" cy="485" r="5" fill="#526675"/>
+<circle cx="490" cy="540" r="5" fill="#526675"/>
+<circle cx="350" cy="430" r="10" fill="none" stroke="#ffbd66" stroke-width="3"/>
+<text x="370" y="426" font-size="16" fill="#ffbd66">Rounded cell (2, 0)</text>
+<circle cx="350" cy="485" r="11" fill="#8cd2ad"/>
+<text x="370" y="490" font-size="16">Valid attachment (2, 1)</text>
+<text x="70" y="620" font-size="22">Valid endpoint: 0/3</text>
+<text x="70" y="660" font-size="22">No-attachment case rejected: 0/3</text>
+<text x="850" y="160" font-size="26">After: valid approach found</text>
+<text x="850" y="212" font-size="18" fill="#b8c6d4">Layer 0</text>
+<circle cx="850" cy="240" r="5" fill="#526675"/>
+<circle cx="850" cy="295" r="5" fill="#526675"/>
+<circle cx="850" cy="350" r="5" fill="#526675"/>
+<circle cx="990" cy="240" r="5" fill="#526675"/>
+<circle cx="990" cy="295" r="5" fill="#526675"/>
+<circle cx="990" cy="350" r="5" fill="#526675"/>
+<circle cx="1130" cy="240" r="5" fill="#526675"/>
+<circle cx="1130" cy="295" r="5" fill="#526675"/>
+<circle cx="1130" cy="350" r="5" fill="#526675"/>
+<circle cx="1270" cy="240" r="5" fill="#526675"/>
+<circle cx="1270" cy="295" r="5" fill="#526675"/>
+<circle cx="1270" cy="350" r="5" fill="#526675"/>
+<polyline points="850.0,240.0 990.0,240.0 1130.0,240.0" stroke="#8cd2ad" stroke-width="6" fill="none"/>
+<circle cx="1130" cy="240" r="10" fill="none" stroke="#ffbd66" stroke-width="3"/>
+<text x="1150" y="236" font-size="16" fill="#ffbd66">Rounded cell (2, 0)</text>
+<text x="850" y="402" font-size="18" fill="#b8c6d4">Layer 1</text>
+<circle cx="850" cy="430" r="5" fill="#526675"/>
+<circle cx="850" cy="485" r="5" fill="#526675"/>
+<circle cx="850" cy="540" r="5" fill="#526675"/>
+<circle cx="990" cy="430" r="5" fill="#526675"/>
+<circle cx="990" cy="485" r="5" fill="#526675"/>
+<circle cx="990" cy="540" r="5" fill="#526675"/>
+<circle cx="1130" cy="430" r="5" fill="#526675"/>
+<circle cx="1130" cy="485" r="5" fill="#526675"/>
+<circle cx="1130" cy="540" r="5" fill="#526675"/>
+<circle cx="1270" cy="430" r="5" fill="#526675"/>
+<circle cx="1270" cy="485" r="5" fill="#526675"/>
+<circle cx="1270" cy="540" r="5" fill="#526675"/>
+<polyline points="1130.0,430.0 1130.0,485.0" stroke="#8cd2ad" stroke-width="6" fill="none"/>
+<circle cx="1130" cy="430" r="10" fill="none" stroke="#ffbd66" stroke-width="3"/>
+<text x="1150" y="426" font-size="16" fill="#ffbd66">Rounded cell (2, 0)</text>
+<circle cx="1130" cy="485" r="11" fill="#8cd2ad"/>
+<text x="1150" y="490" font-size="16">Valid attachment (2, 1)</text>
+<text x="850" y="620" font-size="22">Valid endpoint: 3/3</text>
+<text x="850" y="660" font-size="22">No-attachment case rejected: 3/3</text>
+<text x="60" y="736" font-size="18" fill="#b8c6d4">Search graph, not a physical board. Exact copper checks still gate insertion. Frozen native benchmark reported separately.</text>
+</g></svg>

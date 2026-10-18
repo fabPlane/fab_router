@@ -443,7 +443,8 @@ export interface LayeredOptions {
   deadline?: number;
   signal?: AbortSignal;
   /** Optional Theta*-style goal test: clear straight line-of-sight from `(gx,gy)` on `layer` to
-   *  the goal point on a goal layer. Lets the search finish near a goal buried in a pin field. */
+   *  the goal point on a goal layer. Lets the search finish near a goal buried in a pin field.
+   *  When supplied, also validates the rounded goal cell's attachment to the actual terminal. */
   reachGoal?(layer: number, gx: number, gy: number): boolean;
   /** Optional Corridor guidance (M10c). Absent = the M9 layered search, byte-identical. */
   corridorBias?: LayeredCorridorBias;
@@ -529,7 +530,10 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     const atGoal = cgx === o.goalCell.gx && cgy === o.goalCell.gy && goalSet.has(layer);
     // Line-of-sight goal test only near the goal (bounded cost).
     const near = Math.max(Math.abs(cgx - o.goalCell.gx), Math.abs(cgy - o.goalCell.gy)) <= 8;
-    if (atGoal || (near && goalSet.has(layer) && o.reachGoal?.(layer, cgx, cgy))) {
+    // The rounded cell can be separated from the actual terminal by copper. Its grid address
+    // alone is not evidence that the final off-grid leg fits. Keep searching other approaches
+    // when the caller's exact attachment test rejects it (the insert gate still checks all legs).
+    if (goalSet.has(layer) && (o.reachGoal ? near && o.reachGoal(layer, cgx, cgy) : atGoal)) {
       const path = reconstruct(nodeState);
       const rip = collectLayeredRip(space, path);
       return { ok: true, path, rip, pops, aborted };
