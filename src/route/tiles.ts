@@ -29,6 +29,7 @@
  *
  * Public surface: Tile, Portal, TileField, TileFieldOptions, buildTileField.
  */
+import { rimBounds } from "../geom/index.ts";
 import type { Layout, Pt } from "../../spec/types/layout.ts";
 import type { Box } from "../geom/index.ts";
 import { boxExpand } from "../geom/index.ts";
@@ -269,11 +270,8 @@ export function buildTileField(
 
 /** Clip `region` to the Rim's bounding box, keeping it non-empty (copper must stay on the board). */
 function clampToRim(layout: Layout, region: Box): Box {
-  if (!layout.rim || layout.rim.outline.length < 2) return region;
-  let rx0 = Infinity, ry0 = Infinity, rx1 = -Infinity, ry1 = -Infinity;
-  for (const p of layout.rim.outline) {
-    rx0 = Math.min(rx0, p.x); ry0 = Math.min(ry0, p.y); rx1 = Math.max(rx1, p.x); ry1 = Math.max(ry1, p.y);
-  }
-  const clipped = clipBox(region, { x0: rx0, y0: ry0, x1: rx1, y1: ry1 });
+  const rb = layout.rim ? rimBounds(layout.rim) : undefined;
+  if (!rb) return region;
+  const clipped = clipBox(region, rb);
   return clipped ?? region;
 }

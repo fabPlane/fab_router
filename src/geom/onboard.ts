@@ -10,12 +10,30 @@
  * It lives in `src/geom` so the router's clearance queries (`src/route/clear.ts`) and DRC
  * (`src/drc/exact.ts`) share one copy and can never disagree on a tie.
  *
- * Public surface: crossesEdge, withinRim.
+ * Public surface: outerRings, rimBounds, crossesEdge, withinRim.
  */
 import type { Rim } from "../../spec/types/layout.ts";
-import type { ConvexShape, Pt, Shape } from "./types.ts";
+import type { Box, ConvexShape, Pt, Shape } from "./types.ts";
 import { coreOf, dist2Pts } from "./distance.ts";
 import { orient, pointInConvex, pointInRing } from "./predicates.ts";
+
+/** All outer rings, with the single-outline fallback for caller-built Layouts. */
+export function outerRings(rim: Rim): readonly (readonly Pt[])[] {
+  return rim.outers?.length ? rim.outers : [rim.outline];
+}
+
+/** Bounding box of every outer ring, or undefined for a missing outline. */
+export function rimBounds(rim: Rim): Box | undefined {
+  let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
+  for (const ring of outerRings(rim)) {
+    if (ring.length < 2) continue;
+    for (const p of ring) {
+      x0 = Math.min(x0, p.x); y0 = Math.min(y0, p.y);
+      x1 = Math.max(x1, p.x); y1 = Math.max(y1, p.y);
+    }
+  }
+  return x0 <= x1 && y0 <= y1 ? { x0, y0, x1, y1 } : undefined;
+}
 
 /** The two segments cross at a single point interior to both (touching and collinear overlap excluded). */
 function properCross(a: Pt, b: Pt, c: Pt, d: Pt): boolean {
@@ -41,22 +59,22 @@ export function crossesEdge(s: Shape, a: Pt, b: Pt): boolean {
 }
 
 /**
- * Given that no Rim edge crosses the copper's interior, is every shape inside the outline and
+ * Given that no Rim edge crosses the copper's interior, is every shape inside an outer ring and
  * outside every cut-out? One core point per rounded convex part decides (the part is on one side
  * of every ring); every core point is tested for a sharp part. Rings with fewer than three
  * vertices constrain nothing.
  */
 export function withinRim(rim: Rim, shapes: readonly Shape[]): boolean {
-  const outline = rim.outline.length >= 3 ? rim.outline : undefined;
+  const outlines = outerRings(rim).filter((r) => r.length >= 3);
   const cutouts = rim.cutouts.filter((c) => c.length >= 3);
-  if (!outline && cutouts.length === 0) return true;
+  if (outlines.length === 0 && cutouts.length === 0) return true;
   const parts: ConvexShape[] = [];
   for (const s of shapes) { if (s.kind === "pieces") parts.push(...s.parts); else parts.push(s); }
   for (const part of parts) {
     const core = coreOf(part);
     const probes = core.r > 0 ? core.pts.slice(0, 1) : core.pts;
     for (const p of probes) {
-      if (outline && pointInRing(outline, p) === "outside") return false;
+      if (outlines.length > 0 && !outlines.some((r) => pointInRing(r, p) !== "outside")) return false;
       for (const c of cutouts) if (pointInRing(c, p) === "inside") return false;
     }
   }

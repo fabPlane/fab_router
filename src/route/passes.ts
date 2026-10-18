@@ -23,7 +23,7 @@ import type { Barrel, Layout, Pad, Pour, Pt } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { RouteHooks } from "../../spec/types/results.ts";
 import type { Box } from "../geom/index.ts";
-import { boxOfPts, dist2PtPt } from "../geom/index.ts";
+import { boxOfPts, dist2PtPt, rimBounds } from "../geom/index.ts";
 import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
 import type { Connection } from "../../spec/types/results.ts";
 import { barrelSheets, buildLattice, type Lattice } from "../lattice/index.ts";
@@ -215,8 +215,8 @@ function sheetCostOf(ctx: RouteCtx, sheetId: number): SheetCost {
 function defaultPreferDirs(layout: Layout): Map<number, "h" | "v" | null> {
   const out = new Map<number, "h" | "v" | null>();
   let first: "h" | "v" = "h";
-  if (layout.rim && layout.rim.outline.length >= 2) {
-    const b = boxOfPts(layout.rim.outline);
+  const b = layout.rim ? rimBounds(layout.rim) : undefined;
+  if (b) {
     first = b.x1 - b.x0 >= b.y1 - b.y0 ? "h" : "v";
   }
   let idx = 0;
@@ -997,8 +997,8 @@ function gridRegion(ctx: RouteCtx, from: Pt, to: Pt, step: number): { gx0: numbe
   const span = Math.max(bb.x1 - bb.x0, bb.y1 - bb.y0);
   const inflate = Math.max(8 * step, Math.round(0.5 * span));
   let box: Box = { x0: bb.x0 - inflate, y0: bb.y0 - inflate, x1: bb.x1 + inflate, y1: bb.y1 + inflate };
-  if (ctx.layout.rim && ctx.layout.rim.outline.length >= 2) {
-    const rb = boxOfPts(ctx.layout.rim.outline);
+  const rb = ctx.layout.rim ? rimBounds(ctx.layout.rim) : undefined;
+  if (rb) {
     const pad = step;
     box = {
       x0: Math.max(box.x0, rb.x0 - pad), y0: Math.max(box.y0, rb.y0 - pad),
