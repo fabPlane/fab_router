@@ -41,4 +41,4 @@ print(json.dumps(results, indent=2))
 if any(r['exit_code'] != (1 if r['version'] == 'before' else 0) for r in results):
     raise SystemExit('Unexpected regression outcome')
 
-assert all((r['passed'], r['failed']) == ((2, 5) if r['version'] == 'before' else (7, 0)) for r in results)
+assert all((r['passed'], r['failed']) == ((2, 9) if r['version'] == 'before' else (11, 0)) for r in results)

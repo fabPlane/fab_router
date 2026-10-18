@@ -55,3 +55,15 @@ the source commit was created. Executable sources stayed unchanged during the en
 The source and control audit is in `benchmark-summary.json`; the native checker evidence for
 the pictured repeat is in `native-contact.json`. The full required checks passed: typecheck,
 65 layer-checked files with zero violations, 866 tests, zero failures, 398510 assertions.
+
+The follow-up policy tests use two independent blocked-centre connections. A global item
+cap of one completes only one net across three allowed passes; a cap of two completes both.
+Ignoring either group leaves that net physically open while completing the active net.
+All cases preserve pads, use full-width tracks, add no vias and have zero engine violations.
+The identical expanded eleven-test suite runs three times per revision: main passes two
+controls and fails nine tests; the candidate passes all eleven. `policy-regressions.json`
+records source identities, commands, results and log hashes. The engine remains byte-identical
+to native-measured `7dffe49`; no additional native sweep or routing gain is claimed.
+
+Final follow-up checks: typecheck passes; 65 files have zero layer violations; 870 tests
+pass with zero failures and 398546 assertions (222.21 seconds).
