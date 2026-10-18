@@ -58,3 +58,13 @@ export function mixedFanoutBoard(): Layout {
   L.viaRules = [...L.viaRules, { id: 1, name: "attach", forms: [101], entries: [{ form: 101, kind: 1, attach: true }] }];
   return L;
 }
+
+/** Existing remote copper must neither consume the fanout budget nor be rewound by it. */
+export function prewiredFanoutBoard(): Layout {
+  const L = fanoutBoard();
+  L.tracks = [{ id: 20, net: 1, sheet: 0, pts: [{ x: -100000, y: 100000 }, { x: 100000, y: 100000 }],
+    width: 4000, kind: 1, hold: "locked", origin: "file" }];
+  L.barrels = [{ id: 21, net: 1, at: { x: 0, y: -100000 }, form: 101,
+    fromSheet: 0, toSheet: 1, kind: 1, hold: "locked", origin: "file" }];
+  return L;
+}

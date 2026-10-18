@@ -1,0 +1,29 @@
+{
+  "baseline_source": "69cf598",
+  "candidate_source": "cfe7376",
+  "unchanged_source_files": 80,
+  "repeats_per_version": 3,
+  "regressions_before": {
+    "pass": 1,
+    "fail": 2
+  },
+  "regressions_after": {
+    "pass": 3,
+    "fail": 0
+  },
+  "checks": {
+    "typecheck": "pass",
+    "layers_files": 65,
+    "layers_violations": 0,
+    "tests_pass": 870,
+    "tests_fail": 0,
+    "assertions": 398537,
+    "test_seconds": 216.07
+  },
+  "log_sha256": {
+    "checks.log": "bf98d97a9a3db6c85e563c2905bcaf81f3a431e33db69cf6bf51564a225622b1",
+    "regression-before.log": "a565d76b9f0506260a9c8a5b897ce4f6e43b95cbc186d2ab6187b1c3d4d376e3",
+    "regression-after.log": "359e4c7d3b51eafc86dafde5dbfedd80c334bea096c6879592ecfa548650ba4b"
+  },
+  "native_benchmark": "Not rerun; production source identical to cycle 20."
+}
