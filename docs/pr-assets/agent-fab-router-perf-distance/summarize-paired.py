@@ -10,7 +10,7 @@ from statistics import median
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('run', type=Path)
 parser.add_argument('--out', type=Path, required=True)
-parser.add_argument('--label', default='cycle6', help='Prefix for generated evidence files')
+parser.add_argument('--label', default='native', help='Prefix for generated evidence files')
 args = parser.parse_args()
 assert args.label and all(c.isalnum() or c in '-_' for c in args.label)
 rows = []
@@ -77,7 +77,7 @@ args.out.mkdir(parents=True, exist_ok=True)
                          for case in sorted(controls[v])} for v in controls},
      'controls': controls, 'attempts': rows}, indent=2) + '\n')
 lines = ['All 78 paired SES hashes and quality outcomes match.', '',
-         '| Case | Before median / p95 s | After median / p95 s | Speedup | Passed (both) | Opens / errors (both) |',
+         '| Case | Before median / p95 s | After median / p95 s | Median ratio (control) | Passed (both) | Opens / errors (both) |',
          '|---|---:|---:|---:|---:|---:|']
 totals = {v: 0.0 for v in ['before', 'after']}
 for case in sorted({r['case'] for r in rows}):

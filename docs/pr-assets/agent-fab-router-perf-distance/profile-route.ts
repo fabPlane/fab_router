@@ -17,8 +17,9 @@ const settings = {
   ignoreNetGroups: manifest.ignore_classes, ...candidate.settings,
 };
 for (let i = 0; i < Number(repeats); i++) {
+  const started_utc=new Date().toISOString();
   const start = performance.now();
   const result = routeDsn(text, settings);
   if (!result.ok) throw new Error(JSON.stringify(result.error));
-  console.log(JSON.stringify({ seconds: (performance.now() - start) / 1000, report: result.report, ses_sha256: createHash("sha256").update(result.ses).digest("hex") }));
+  console.log(JSON.stringify({ started_utc,finished_utc:new Date().toISOString(),settings,input_sha256:createHash("sha256").update(text).digest("hex"),distance_sha256:createHash("sha256").update(readFileSync(resolve(source,"src/geom/distance.ts"))).digest("hex"),seconds: (performance.now() - start) / 1000, report: result.report, ses_sha256: createHash("sha256").update(result.ses).digest("hex") }));
 }
