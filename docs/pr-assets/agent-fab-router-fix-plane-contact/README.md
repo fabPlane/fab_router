@@ -76,3 +76,58 @@ Final candidate native verification (`fb03f91`):
 Every case/seed has identical pass/open/error/via/length results. All 74 captured source hashes match the measured revision and frozen controls match the reference. Timings are shared-host descriptive only. The 27 remaining errors are thermal starvation. Full source/control and per-attempt evidence: `candidate-benchmark-summary.json`.
 
 Final required checks passed: typecheck; layer checks (65 files, zero violations); 874 tests, zero failures, 398610 assertions (211.20 seconds). All 15 plane regressions are included. Final source/test and log hashes are in candidate-checks.json; native source/control hashes and per-attempt results are in candidate-benchmark-summary.json.
+
+## Stop fully blocked candidate scans
+
+A no-yield path exposed a cancellation gap: when every via placement is blocked, the generator
+could scan the complete ring before the plane helper saw any placement and checked its deadline
+or signal. `viaDropsNear` now accepts an optional stop predicate, checked before the target and
+every ring candidate. The plane helper supplies its existing connection deadline and abort signal.
+Other callers retain their previous first-placement behavior. An individual clearance check is
+still atomic; this is a candidate-boundary stop guarantee, not a hard real-time deadline.
+
+Four deterministic regressions use a barrel-only fence covering the entire search radius.
+They cover already-aborted, already-expired, abort-during-check and expiry-during-check paths.
+The latter uses a restored mock clock, avoiding elapsed-time thresholds. No copper survives;
+each board retains one open and zero engine violations. The same tests run three times each:
+
+| Synthetic blocked search | Before 1e832f5 | After f8de7c9 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing regressions | 0/4 | 4/4 | 3/version |
+| Queries when stopped at entry, each condition | 418 | 0 | 3/condition |
+| Queries when stopped during a clearance check, each condition | 418 | ≤4 | 3/condition |
+
+```bash
+taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-contact/stop-regression.py --out /tmp/plane-stops
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/stop-render.py
+bun test test/plane-search-stop.test.ts
+```
+
+`stops.json` retains all six raw test logs and source/test hashes. The accompanying PNG charts
+measured before counts and asserted after upper bounds, not wall-clock performance.
+
+
+Final interruption-fix native validation (`f8de7c9`):
+
+| Full native fab_router sweep, same machine/cases/seeds | Before main | After f8de7c9 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing runs | 39/78 | 39/78 | 3/case |
+| Valid cases, 3/3 | 13/26 | 13/26 | 3/case |
+| Opens | 120 | 120 | 78 attempts |
+| New native DRC errors | 27 | 27 | 78 attempts |
+| Median route seconds | 1.172079 | 1.066789 | 78 attempts |
+
+Every case/seed has identical pass/open/error/via/length outcomes. All 74 captured source hashes
+match f8de7c9 and frozen input/config/harness/runtime/order/seeds/core controls match the reference.
+Timings are descriptive shared-host observations with overlapping unit tests; no speed claim.
+The 27 native errors remain thermal starvation. Evidence: `stop-benchmark-summary.json`.
+
+Required checks: typecheck passed; layers 65 files / zero violations; 878 tests / zero failures /
+398634 assertions (214.84 seconds). `stop-checks.json` records final source/test and log hashes.
+
+```bash
+cd ~/bench/wt/fp-bugs
+taskset -c 20-25 nice -n 10 timeout 2400 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source ~/bench/wt/fr-bugs --out /tmp/plane-stop-native
+cd ~/bench/wt/fr-bugs
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/summarize.py ~/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full /tmp/plane-stop-native --source-commit f8de7c9
+```
