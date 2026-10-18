@@ -76,14 +76,16 @@ export function createRipupHistory(cellSize = 10_000): RipupHistory {
 
 /**
  * May the router rip the item behind `id`? Only a `free` Track or Barrel of a different net (its
- * own net's copper is exempt anyway). Pads, Pours, Fences and the Rim are never rippable.
+ * own net's copper is exempt anyway). Pads, Pours, Fences, the Rim and copper of protected
+ * (ignored) nets are never rippable.
  */
-export function isRippable(layout: Layout, lattice: Lattice, id: number, net: number | null): boolean {
+export function isRippable(layout: Layout, lattice: Lattice, id: number, net: number | null, protectedNets?: ReadonlySet<number>): boolean {
   const entry = lattice.itemOf(id);
   if (!entry) return false;
   if (entry.cat !== "track" && entry.cat !== "barrel") return false;
   const item = entry.item as { hold: string; net: number | null };
   if (item.hold !== "free") return false;
+  if (item.net !== null && protectedNets?.has(item.net)) return false;
   if (item.net !== null && net !== null && item.net === net) return false; // same net: exempt, not ripped
   return true;
 }

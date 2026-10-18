@@ -1,0 +1,38 @@
+{
+  "source_commit": "c4d20ff",
+  "checks": {
+    "typecheck": "pass",
+    "layers": {
+      "files": 65,
+      "violations": 0
+    },
+    "tests": {
+      "passed": 867,
+      "failed": 0,
+      "expectations": 398485,
+      "seconds": 214.0
+    }
+  },
+  "logs": {
+    "checks.log": {
+      "sha256": "215c16dedc0edad05c03fd08098a1ffefd1c4807733fed42e311a8df233dedf7",
+      "tail": [
+        "",
+        " 867 pass",
+        " 0 fail",
+        " 398485 expect() calls",
+        "Ran 867 tests across 30 files. [214.00s]"
+      ]
+    },
+    "final-regression-before.log": {
+      "sha256": "2e941caddefad8c9efdf2f07768a712d10d28d3f195c2d97381bd519762a906b",
+      "tail": [
+        "",
+        " 1 pass",
+        " 7 fail",
+        " 14 expect() calls",
+        "Ran 8 tests across 1 file. [114.00ms]"
+      ]
+    }
+  }
+}

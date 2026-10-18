@@ -1,0 +1,134 @@
+{
+  "repeats": 3,
+  "rows": [
+    {
+      "detailedNegotiation": false,
+      "shoveEnabled": false,
+      "before": {
+        "preserved": 0,
+        "safe_preserved": 0,
+        "active_opens": [
+          0,
+          0,
+          0
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "preserved": 3,
+        "safe_preserved": 3,
+        "active_opens": [
+          1,
+          1,
+          1
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "detailedNegotiation": false,
+      "shoveEnabled": true,
+      "before": {
+        "preserved": 0,
+        "safe_preserved": 0,
+        "active_opens": [
+          0,
+          0,
+          0
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      },
+      "after": {
+        "preserved": 3,
+        "safe_preserved": 3,
+        "active_opens": [
+          1,
+          1,
+          1
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "detailedNegotiation": true,
+      "shoveEnabled": false,
+      "before": {
+        "preserved": 3,
+        "safe_preserved": 0,
+        "active_opens": [
+          0,
+          0,
+          0
+        ],
+        "violations": [
+          1,
+          1,
+          1
+        ]
+      },
+      "after": {
+        "preserved": 3,
+        "safe_preserved": 3,
+        "active_opens": [
+          1,
+          1,
+          1
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "detailedNegotiation": true,
+      "shoveEnabled": true,
+      "before": {
+        "preserved": 0,
+        "safe_preserved": 0,
+        "active_opens": [
+          0,
+          0,
+          0
+        ],
+        "violations": [
+          1,
+          1,
+          1
+        ]
+      },
+      "after": {
+        "preserved": 3,
+        "safe_preserved": 3,
+        "active_opens": [
+          1,
+          1,
+          1
+        ],
+        "violations": [
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "unignored_controls_identical": true
+}

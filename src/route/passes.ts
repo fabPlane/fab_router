@@ -493,7 +493,7 @@ function tryNudgeRoute(ctx: RouteCtx, net: number | null, sheet: number, from: P
     return tryRouteOnSheet(ctx, vnet, vsheet, vf, vt, vp, ignoreOf(vnet), deadline, false);
   };
   const mark = ctx.journal.mark();
-  if (!nudgeClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: from, b: to }, profile, ignore, reroute)) return false;
+  if (!nudgeClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: from, b: to }, profile, ignore, reroute, 6, ctx.ignored)) return false;
   if (fastProbe(ctx, net, sheet, from, to, profile, ignore)) return true;
   if (tryRouteOnSheet(ctx, net, sheet, from, to, profile, ignore, deadline, false)) return true;
   ctx.journal.rewind(mark);
@@ -522,7 +522,7 @@ function tryShoveRoute(ctx: RouteCtx, net: number | null, sheet: number, from: P
   if (tryShoveTrail(ctx, net, sheet, [from, to], profile, ignore)) return true;
   // Fall back to opening only the direct leg and letting A* find a route through the widened gap.
   const mark = ctx.journal.mark();
-  if (shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: from, b: to }, profile, ignore, shoveBudget(ctx, profile))
+  if (shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: from, b: to }, profile, ignore, shoveBudget(ctx, profile), ctx.ignored)
     && tryRouteOnSheet(ctx, net, sheet, from, to, profile, ignore, deadline, false)) return true;
   ctx.journal.rewind(mark);
   return false;
@@ -538,7 +538,7 @@ function tryShoveTrail(ctx: RouteCtx, net: number | null, sheet: number, centre:
   const mark = ctx.journal.mark();
   const budget = shoveBudget(ctx, profile);
   for (let i = 1; i < centre.length; i++) {
-    if (!shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: centre[i - 1]!, b: centre[i]! }, profile, ignore, budget)) { ctx.journal.rewind(mark); return false; }
+    if (!shoveClear(ctx.layout, ctx.lattice, ctx.journal, sheet, { a: centre[i - 1]!, b: centre[i]! }, profile, ignore, budget, ctx.ignored)) { ctx.journal.rewind(mark); return false; }
   }
   if (insertTrail(ctx, net, sheet, centre, profile, ignore)) return true;
   ctx.journal.rewind(mark);
@@ -629,7 +629,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
       if (r.ok) return congestion === 0 ? CLEAR_EDGE : { blocked: false, extra: congestion, rip: [] };
       let base = 0;
       for (const id of r.blocking) {
-        if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
+        if (!isRippable(ctx.layout, ctx.lattice, id, net, ctx.ignored)) return { blocked: true, extra: 0, rip: [] };
         base += startRipup;
       }
       return { blocked: false, extra: base + congestion, rip: r.blocking };
@@ -638,7 +638,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
     // Soft: passable only if every blocker is a rippable free other-net item.
     let extra = 0;
     for (const id of r.blocking) {
-      if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
+      if (!isRippable(ctx.layout, ctx.lattice, id, net, ctx.ignored)) return { blocked: true, extra: 0, rip: [] };
       extra += ripCost(startRipup, ctx.ripHistory, id);
     }
     const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
@@ -665,7 +665,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
           if (c !== undefined) return c;
           const r = pointFree(ctx.layout, ctx.lattice, sheet, quilt.pointOf(gx, gy), profile, ignore, profile.width);
           let ok = r.ok;
-          if (!ok) { ok = true; for (const id of r.blocking) if (!isRippable(ctx.layout, ctx.lattice, id, net)) { ok = false; break; } }
+          if (!ok) { ok = true; for (const id of r.blocking) if (!isRippable(ctx.layout, ctx.lattice, id, net, ctx.ignored)) { ok = false; break; } }
           softCache.set(key, ok);
           return ok;
         }
@@ -868,7 +868,7 @@ function tryRouteLayered(
       if (r.ok) return CLEAR_EDGE;
       let extra = 0;
       for (const id of r.blocking) {
-        if (!isRippable(ctx.layout, ctx.lattice, id, net)) return { blocked: true, extra: 0, rip: [] };
+        if (!isRippable(ctx.layout, ctx.lattice, id, net, ctx.ignored)) return { blocked: true, extra: 0, rip: [] };
         extra += ripCost(startRipup, ctx.ripHistory, id);
       }
       const mid = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
@@ -893,7 +893,7 @@ function tryRouteLayered(
           if (q.isFree(gx, gy)) return true;
           const r = pointFree(ctx.layout, ctx.lattice, usable[layer]!, pointOf(gx, gy), profile, ignore, profile.width);
           if (r.ok) return true;
-          for (const id of r.blocking) if (!isRippable(ctx.layout, ctx.lattice, id, net)) return false;
+          for (const id of r.blocking) if (!isRippable(ctx.layout, ctx.lattice, id, net, ctx.ignored)) return false;
           return true;
         }
       : (layer: number, gx: number, gy: number): boolean => quilts[layer]!.isFree(gx, gy);
