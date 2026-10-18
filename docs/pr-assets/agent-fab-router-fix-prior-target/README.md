@@ -88,3 +88,14 @@ expanded suite reports main 2 pass / 4 fail and candidate 6 pass / 0 fail every
 time; raw logs are in two-way-regressions.json. Run the same test command above.
 Production source is unchanged from 2c78431, so the existing exact-source native
 sweep remains applicable; no new native benchmark or timing claim is made.
+
+Cycle 36 exercises the public API's copper budget around two-terminal Prior
+attachment, in both endpoint orientations. Zero and insufficient positive
+budgets must leave every original copper, pad and region record unchanged,
+retain one open and stop with `maxItems`. An exact sufficient budget must
+produce the same complete geometry as an unlimited run, with zero violations.
+These two controls pass on main too; they establish budget rollback behavior,
+not a new production fix. Three repeats of the eight-test suite give main
+4 pass / 4 fail and candidate 8 pass / 0 fail each time; raw output is in
+`budget-regressions.json`. Reproduce with the test and baseline commands above.
+Production source remains 2c78431; native measurements above remain applicable.

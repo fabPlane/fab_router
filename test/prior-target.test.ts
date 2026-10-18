@@ -1,6 +1,6 @@
 import { expect, test } from 'bun:test';
 import { fixture } from './helpers/prior-target.ts';
-import { checkDrc, requiredConnections } from '../src/api.ts';
+import { checkDrc, requiredConnections, route } from '../src/api.ts';
 import { connectivity } from '../src/drc/index.ts';
 import { createCtx, routeConnection } from '../src/route/passes.ts';
 import { resolveSettings } from '../src/pipeline/index.ts';
@@ -25,6 +25,41 @@ for (const concave of [false, true]) for (const reverse of [false, true]) {
     ctx.journal.rewind(0);
     expect(layout.tracks).toEqual(preserved.tracks);
     expect(requiredConnections(layout)).toHaveLength(1);
+  });
+}
+
+for (const reverse of [false, true]) {
+  test(`public two-terminal Prior attachment respects an insufficient copper budget (reverse=${reverse})`, () => {
+    const makeLayout = () => {
+      const layout = fixture();
+      layout.pads[0]!.at = { x: reverse ? 10_000 : -10_000, y: 0 };
+      layout.pads[1]!.at = { x: reverse ? -10_000 : 10_000, y: 0 };
+      layout.pads[2]!.at = { x: 0, y: -20_000 };
+      layout.pads[3]!.at = { x: 0, y: 20_000 };
+      layout.tracks[0]!.pts = [layout.pads[2]!.at, layout.pads[3]!.at];
+      return layout;
+    };
+    const settings = { viasAllowed: false, optimizerEnabled: false, fanoutEnabled: false };
+    const complete = makeLayout();
+    route(complete, settings);
+    expect(requiredConnections(complete)).toHaveLength(0);
+    const needed = complete.tracks.length - makeLayout().tracks.length;
+    expect(needed).toBeGreaterThan(1);
+
+    for (const maxItems of new Set([0, 1, needed - 1])) {
+      const layout = makeLayout();
+      const original = structuredClone({ tracks: layout.tracks, barrels: layout.barrels, pads: layout.pads, pours: layout.pours });
+      const report = route(layout, { ...settings, maxItems });
+      expect(report.stoppedBy).toBe('maxItems');
+      expect(requiredConnections(layout)).toHaveLength(1);
+      expect(checkDrc(layout).counts.violations).toBe(0);
+      expect({ tracks: layout.tracks, barrels: layout.barrels, pads: layout.pads, pours: layout.pours }).toEqual(original);
+    }
+    const exact = makeLayout();
+    route(exact, { ...settings, maxItems: needed });
+    expect(requiredConnections(exact)).toHaveLength(0);
+    expect(exact.tracks).toEqual(complete.tracks);
+    expect(checkDrc(exact).counts.violations).toBe(0);
   });
 }
 
