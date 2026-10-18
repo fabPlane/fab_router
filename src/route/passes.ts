@@ -343,6 +343,13 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
     if (detailed === "tiles"
       && tryChannelRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
   }
+  // The grid is anchored at `from`; a narrow off-grid SMD target can have no usable approach
+  // on any sampled grid. Retry from its exact centre after all forward rungs miss. Clearance
+  // and Journal rollback remain identical; share the original connection deadline and item cap.
+  if (viasOk && ctx.settings.maxItems === undefined && fromUsable.length > 0 && toUsable.length > 0
+    && (deadline === undefined || now() <= deadline) && !abortRequested(ctx)) {
+    if (tryRouteLayered(ctx, conn.net, ends.to.pt, ends.from.pt, toUsable, fromUsable, profile, ignore, deadline, false)) return true;
+  }
   return false;
 }
 
