@@ -121,4 +121,47 @@ taskset -c 12-19 nice -n 10 timeout 120 python3 \
 python3 docs/pr-assets/agent-fab-router-perf/plot-repeat.py
 ```
 
-The chart requires matplotlib and compares the two interleaved experiments.
+The chart requires matplotlib. The current plot script compares all three interleaved experiments.
+The earlier two-experiment PNG is retained unchanged.
+
+
+## Cycle 3: reversed version order
+
+The first two interleaved experiments used the same version order for each case.
+A fresh full run reverses that order for every case, on the same host and core set,
+with the same 26 cases and three repeats per version. Baseline is `69cf598`;
+candidate is `d36b63f`, with production source identical to `53a5594`. Unit tests
+were run after this native experiment, avoiding overlap with our own test load.
+Other users' workloads and shared-host timing uncertainty remain uncontrolled.
+
+Total route-path time is 383.845 → 356.351 seconds. Sum of case medians is
+127.161 → 116.750 seconds (8.2% lower). Individual cases regress, and the adverse
+initial sequential result remains relevant. This supports the observed aggregate
+benefit under reversed order without establishing a universal runtime guarantee.
+All 78 paired SES hashes, pass/fail outcomes, opens, native error counts/types,
+fidelity failures, vias and lengths match. Both versions pass 39/78 attempts and
+13/26 cases at 3/3, with 120 opens and 27 new native errors across attempts.
+
+`cycle3-measurements.json` includes every attempt, source hashes, benchmark identity,
+the run schedule, and per-case start/end timestamps. `cycle3-tables.md` includes
+per-case median/p95. The runner refuses incompatible resume schedules; the analyzer
+verifies chronological run order as well as source and quality invariance. Checks
+against the historical run accepted its actual order and rejected reversed order;
+an incompatible resume was also rejected before invoking the harness.
+
+Reproduce using the original paired-run command with `--reverse-order` and a fresh
+`--out /tmp/rim-native-reversed` directory, then analyze and render:
+
+```bash
+taskset -c 12-19 nice -n 10 timeout 120 python3 \
+  docs/pr-assets/agent-fab-router-perf/summarize-paired.py \
+  /tmp/rim-native-reversed --out docs/pr-assets/agent-fab-router-perf --label cycle3
+python3 docs/pr-assets/agent-fab-router-perf/plot-repeat.py
+```
+
+The current plot writes `reverse-order-speedup.png` and retains both earlier PNGs.
+Production source did not change this cycle; slow acceptance and ladder evidence
+above remains from cycle 1.
+
+Cycle 3 verification: typecheck, layer checks (65 files, zero violations), and all
+860 unit tests pass (440,502 assertions). The unit suite ran after native timings.
