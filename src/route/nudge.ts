@@ -13,9 +13,10 @@
  *
  * Public surface: RerouteFn, nudgeClear.
  */
-import type { Layout, Pt, Track } from "../../spec/types/layout.ts";
+import type { Layout, Pour, Pt, Track } from "../../spec/types/layout.ts";
 import type { Seg } from "../geom/index.ts";
 import type { Lattice } from "../lattice/index.ts";
+import { connectivity } from "../drc/index.ts";
 import type { Journal } from "./journal.ts";
 import { isRippable } from "./ripup.ts";
 import { sweepClear, type IgnoreSet } from "./clear.ts";
@@ -48,6 +49,17 @@ export function nudgeClear(
   }
   if (victims.length === 0 || victims.length > maxLegs) return false;
 
+  // Keeping a Track's endpoints does not preserve pads or branches attached to its
+  // interior. Snapshot terminal membership, rather than just the open count: a
+  // replacement can join a different terminal while disconnecting an old one.
+  const nets = new Set(victims.map((v) => v.net));
+  const before = connectivity(layout, lattice);
+  const groups = before.nets.filter((n) => nets.has(n.net)).flatMap((n) =>
+    n.components.map((ids) => ids.filter((id) => {
+      const it = before.items.get(id)!;
+      return it.cat === "pad" || (it.cat === "pour" && (it.ref as Pour).origin !== "prior");
+    })).filter((ids) => ids.length > 1),
+  );
   const mark = journal.mark();
   const specs = victims.map((t) => ({ net: t.net, sheet: t.sheet, from: t.pts[0]!, to: t.pts[t.pts.length - 1]! }));
   for (const v of victims) journal.remove(v.id);
@@ -55,5 +67,15 @@ export function nudgeClear(
     if (!reroute(s.net, s.sheet, s.from, s.to)) { journal.rewind(mark); return false; }
   }
   if (!sweepClear(layout, lattice, sheet, seg, profile, ignore, profile.width).ok) { journal.rewind(mark); return false; }
+  if (groups.length > 0) {
+    const after = connectivity(layout, lattice);
+    for (const ids of groups) {
+      const component = after.componentOf.get(ids[0]!);
+      if (component === undefined || ids.some((id) => after.componentOf.get(id) !== component)) {
+        journal.rewind(mark);
+        return false;
+      }
+    }
+  }
   return true;
 }
