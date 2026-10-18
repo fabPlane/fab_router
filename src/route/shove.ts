@@ -55,12 +55,12 @@ interface MoveCounter { moved: number }
  */
 export function shoveClear(
   layout: Layout, lattice: Lattice, journal: Journal, sheet: number, seg: Seg,
-  profile: Profile, ignore: IgnoreSet, budget: ShoveBudget,
+  profile: Profile, ignore: IgnoreSet, budget: ShoveBudget, protectedNets?: ReadonlySet<number>,
 ): boolean {
   if (sweepClear(layout, lattice, sheet, seg, profile, ignore, profile.width).ok) return true;
   if (budget.windowLu <= 0 || budget.maxMoved <= 0 || budget.maxDepth <= 0) return false;
 
-  const ctx: ShoveCtx = { layout, lattice, journal, sheet, profile, budget };
+  const ctx: ShoveCtx = { layout, lattice, journal, sheet, profile, budget, protectedNets };
   const target: Target = { segs: [seg], kind: profile.trackKind, halfWidth: profile.halfWidth, centre: midOf(seg.a, seg.b) };
   const counter: MoveCounter = { moved: 0 };
   const mark = journal.mark();
@@ -76,6 +76,7 @@ interface ShoveCtx {
   sheet: number;
   profile: Profile;
   budget: ShoveBudget;
+  protectedNets: ReadonlySet<number> | undefined;
 }
 
 /**
@@ -95,7 +96,7 @@ function resolveBlockers(
     for (const id of r.blocking) {
       if (seen.has(id)) continue;
       seen.add(id);
-      if (!isRippable(ctx.layout, ctx.lattice, id, ignore.net)) return false;
+      if (!isRippable(ctx.layout, ctx.lattice, id, ignore.net, ctx.protectedNets)) return false;
       const entry = ctx.lattice.itemOf(id);
       if (!entry || entry.cat !== "track") return false;
       victimIds.push(id);

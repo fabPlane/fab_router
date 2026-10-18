@@ -31,7 +31,7 @@ export type RerouteFn = (net: number | null, sheet: number, from: Pt, to: Pt) =>
  */
 export function nudgeClear(
   layout: Layout, lattice: Lattice, journal: Journal, sheet: number, seg: Seg,
-  profile: Profile, ignore: IgnoreSet, reroute: RerouteFn, maxLegs = 6,
+  profile: Profile, ignore: IgnoreSet, reroute: RerouteFn, maxLegs = 6, protectedNets?: ReadonlySet<number>,
 ): boolean {
   const first = sweepClear(layout, lattice, sheet, seg, profile, ignore, profile.width);
   if (first.ok) return true;
@@ -41,7 +41,7 @@ export function nudgeClear(
   for (const id of first.blocking) {
     if (seen.has(id)) continue;
     seen.add(id);
-    if (!isRippable(layout, lattice, id, ignore.net)) return false;
+    if (!isRippable(layout, lattice, id, ignore.net, protectedNets)) return false;
     const entry = lattice.itemOf(id);
     if (!entry || entry.cat !== "track") return false;
     victims.push(entry.item as Track);
