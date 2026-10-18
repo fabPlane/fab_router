@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="470" viewBox="0 0 1100 470">
+<rect width="1100" height="470" fill="#f5f7fb"/>
+<g font-family="sans-serif" fill="#15243b">
+<text x="40" y="45" font-size="26">Reject endpoints before flattening grid coordinates</text>
+<text x="40" y="84" font-size="17">Minimal search fixture: inclusive region x=0..2, y=0..2, width=3</text>
+<g stroke="#8192ab" stroke-width="2" fill="white">
+<path d="M80 130H320V370H80Z M80 210H320 M80 290H320 M160 130V370 M240 130V370"/>
+</g>
+<g font-size="16"><text x="98" y="178">(0,0)</text><text x="178" y="178">(1,0)</text><text x="258" y="178">(2,0)</text><text x="98" y="258">(0,1)</text><text x="178" y="258">(1,1)</text><text x="258" y="258">(2,1)</text></g>
+<circle cx="360" cy="170" r="13" fill="#c43c45"/><text x="343" y="205" font-size="16">(3,0)</text>
+<circle cx="120" cy="250" r="32" fill="none" stroke="#c43c45" stroke-width="3"/>
+<path d="M347 165Q235 82 130 216" fill="none" stroke="#c43c45" stroke-width="3"/>
+<text x="440" y="145" font-size="22">Before: false success</text>
+<text x="440" y="180" font-size="18">start (3,0) → cell index 3 → decoded (0,1)</text>
+<text x="440" y="212" font-size="18">Goal (0,1) matches the aliased start.</text>
+<text x="440" y="244" font-size="18">Returned path omits the requested start.</text>
+<text x="440" y="310" font-size="22" fill="#147449">After: reject invalid endpoints</text>
+<text x="440" y="345" font-size="18">ok=false, path=[], pops=0</text>
+<text x="440" y="377" font-size="18">Valid inclusive boundary endpoints still route.</text>
+<text x="40" y="435" font-size="16">Synthetic search regression; no frozen-board completion improvement claimed.</text>
+</g></svg>
