@@ -79,3 +79,20 @@ This path normally imports file-origin retained copper, so the frozen sweep is
 nonregression coverage; the tiny repeated-call fixture exercises the repaired
 router-origin path. No frozen-board completion or thermal-preservation improvement
 is claimed. Shared-host timing with overlapping tests is descriptive only.
+
+Measured on `hyper-ms-lin`, cores 20–25, 26 frozen cases × three repeats:
+
+| Metric | Main | Candidate |
+| --- | ---: | ---: |
+| Passing attempts | 39/78 | 39/78 |
+| Cases passing 3/3 | 13/26 | 13/26 |
+| Native opens, total | 120 | 120 |
+| New native DRC errors, total | 27 | 27 |
+| Median route-path seconds | 1.172079 | 1.114215 |
+
+Every case/seed has identical pass, open, error, via and length results. All controls
+and candidate source hashes passed validation. Timing decreased 4.9% descriptively;
+the shared host and overlapping tests prevent attributing a speed change to this
+fix. All 27 remaining new native errors are thermal starvation, still unresolved.
+Final required checks: typecheck passed; layer checker 65 files / zero violations;
+863 unit tests passed / zero failed / 398471 assertions (213.93 seconds).
