@@ -1,0 +1,604 @@
+[
+  {
+    "pair": {
+      "net": 0,
+      "from": 29,
+      "to": 30,
+      "airlineLu": 25416.726775885207
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -835250
+        },
+        "to": {
+          "x": 1275650,
+          "y": -839250
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 414,
+        "result": true,
+        "pops": 7,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -835250
+        },
+        "to": {
+          "x": 1275650,
+          "y": -839250
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 551,
+        "result": true,
+        "pops": 33,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -835250
+        },
+        "to": {
+          "x": 1275650,
+          "y": -839250
+        },
+        "soft": false,
+        "div": 4,
+        "step": 1125,
+        "cells": 1316,
+        "result": true,
+        "pops": 312,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 1,
+      "from": 9,
+      "to": 48,
+      "airlineLu": 216650.14424181674
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -915250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -915500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3483,
+        "result": true,
+        "pops": 1018,
+        "blocked_original_legs": [
+          {
+            "a": {
+              "x": 1314256,
+              "y": -924254
+            },
+            "b": {
+              "x": 1309754,
+              "y": -928756
+            },
+            "r": {
+              "ok": false,
+              "blocking": [
+                7
+              ]
+            }
+          }
+        ],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -915250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -915500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 12956,
+        "result": true,
+        "pops": 6313,
+        "blocked_original_legs": []
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 2,
+      "from": 10,
+      "to": 54,
+      "airlineLu": 201879.82811563913
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -919250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -855500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3816,
+        "result": false,
+        "pops": 4001
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -919250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -855500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 14382,
+        "result": false,
+        "pops": 14383
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 3,
+      "from": 11,
+      "to": 49,
+      "airlineLu": 216657.06773608841
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -907250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -905500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3645,
+        "result": true,
+        "pops": 2024,
+        "blocked_original_legs": []
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 4,
+      "from": 12,
+      "to": 55,
+      "airlineLu": 202520.28293482112
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -911250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -845500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3960,
+        "result": false,
+        "pops": 4001
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -911250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -845500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 15087,
+        "result": false,
+        "pops": 15088
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 5,
+      "from": 15,
+      "to": 51,
+      "airlineLu": 216726.29051409522
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -891250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -885500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3969,
+        "result": false,
+        "pops": 4001
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -891250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -885500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 15010,
+        "result": false,
+        "pops": 15011
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 7,
+      "from": 17,
+      "to": 52,
+      "airlineLu": 216788.57211578288
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -883250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -875500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 4131,
+        "result": false,
+        "pops": 4132
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -883250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -875500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 15642,
+        "result": false,
+        "pops": 15643
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 9,
+      "from": 21,
+      "to": 58,
+      "airlineLu": 222744.88770788882
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -867250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -815500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 4698,
+        "result": false,
+        "pops": 4699
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -867250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -815500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 17696,
+        "result": false,
+        "pops": 17697
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 13,
+      "from": 25,
+      "to": 60,
+      "airlineLu": 223708.03517084496
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -851250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -795500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 4374,
+        "result": true,
+        "pops": 2307,
+        "blocked_original_legs": [
+          {
+            "a": {
+              "x": 1098160,
+              "y": -788222
+            },
+            "b": {
+              "x": 1093658,
+              "y": -792724
+            },
+            "r": {
+              "ok": false,
+              "blocking": [
+                61
+              ]
+            }
+          }
+        ],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -851250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -795500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 16590,
+        "result": true,
+        "pops": 8898,
+        "blocked_original_legs": []
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 15,
+      "from": 27,
+      "to": 59,
+      "airlineLu": 219914.2673861794
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -843250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -805500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 4293,
+        "result": true,
+        "pops": 3108,
+        "blocked_original_legs": [
+          {
+            "a": {
+              "x": 1098160,
+              "y": -798230
+            },
+            "b": {
+              "x": 1093658,
+              "y": -802732
+            },
+            "r": {
+              "ok": false,
+              "blocking": [
+                60
+              ]
+            }
+          }
+        ],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1300750,
+          "y": -843250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -805500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 16116,
+        "result": true,
+        "pops": 14104,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 16,
+      "from": 28,
+      "to": 57,
+      "airlineLu": 192780.8730138963
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -847250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -825500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3600,
+        "result": true,
+        "pops": 1090,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -847250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -825500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 13677,
+        "result": true,
+        "pops": 6501,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      }
+    ]
+  },
+  {
+    "pair": {
+      "net": 18,
+      "from": 34,
+      "to": 61,
+      "airlineLu": 195234.3847789113
+    },
+    "search": [
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -823250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -785500
+        },
+        "soft": false,
+        "div": 1,
+        "step": 4502,
+        "cells": 3240,
+        "result": true,
+        "pops": 2317,
+        "blocked_original_legs": [],
+        "insertion_failed": true
+      },
+      {
+        "sheet": 0,
+        "from": {
+          "x": 1275650,
+          "y": -823250
+        },
+        "to": {
+          "x": 1084100,
+          "y": -785500
+        },
+        "soft": false,
+        "div": 2,
+        "step": 2251,
+        "cells": 12267,
+        "result": false,
+        "pops": 12268
+      }
+    ]
+  }
+]

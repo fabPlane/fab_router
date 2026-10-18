@@ -1,0 +1,25 @@
+--- a/src/route/passes.ts
++++ b/src/route/passes.ts
+@@ -685,12 +685,14 @@
+       ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
+       ...(corridorBias ? { corridorBias } : {}),
+     });
++    console.error(JSON.stringify({sheet,from,to,soft,div,step:region.step,cells,result:res.ok,pops:res.pops,path:res.path}));
+     if (!res.ok) {
+       if (deadline !== undefined && now() > deadline) return false;
+       if (abortRequested(ctx)) return false;
+       continue;
+     }
+     const centre = [...res.path, to];
++    console.error("LEGS",JSON.stringify(centre.slice(1).map((b,i)=>({a:centre[i],b,r:sweepClear(ctx.layout,ctx.lattice,sheet,{a:centre[i]!,b},profile,ignore,profile.width)})).filter(x=>!x.r.ok)));
+     if (soft && res.rip.length > 0) {
+       const budget = perConnRipBudget(ctx);
+       if (res.rip.length > budget) continue;
+@@ -703,6 +705,7 @@
+       continue;
+     }
+     if (insertTrail(ctx, net, sheet, centre, profile, ignore)) return true;
++    console.error("INSERT_FAILED");
+   }
+   return false;
+ }

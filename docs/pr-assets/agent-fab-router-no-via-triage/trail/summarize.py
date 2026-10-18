@@ -1,0 +1,67 @@
+"""Summarize full native runs and audit source/control identity."""
+import argparse
+from collections import defaultdict
+import hashlib
+import json
+from pathlib import Path
+import statistics
+import subprocess
+
+parser = argparse.ArgumentParser()
+parser.add_argument('before', type=Path)
+parser.add_argument('after', type=Path)
+source_arg = parser.add_mutually_exclusive_group(required=True)
+source_arg.add_argument('--source-commit')
+source_arg.add_argument('--candidate-json', type=Path)
+args = parser.parse_args()
+root = Path(__file__).resolve().parents[4]
+controls = [json.loads((p / 'controls.json').read_text()) for p in [args.before, args.after]]
+runs = [json.loads((p / 'results.json').read_text()) for p in [args.before, args.after]]
+assert all(c['complete'] and c['controls_preserved'] and not c['interrupted'] for c in controls)
+for file, digest in controls[0]['candidate']['source_sha256'].items():
+    blob = subprocess.check_output(['git', 'show', f'69cf598:{file}'], cwd=root)
+    assert hashlib.sha256(blob).hexdigest() == digest, file
+keys = ['version', 'order', 'routers', 'cases', 'seeds', 'smoke', 'full_suite',
+        'inputs_sha256', 'configs_sha256', 'harness_sha256', 'runtime_sha256',
+        'runtime_source_sha256', 'allowed_cpus']
+audit = {k: controls[0][k] == controls[1][k] for k in keys}
+assert all(audit.values()), audit
+source = controls[1]['candidate']['source_sha256']
+if args.candidate_json:
+    expected_source = json.loads(args.candidate_json.read_text())['sources']['after']
+    for file, digest in source.items():
+        assert expected_source[file] == digest, file
+else:
+    for file, digest in source.items():
+        blob = subprocess.check_output(['git', 'show', f'{args.source_commit}:{file}'], cwd=root)
+        assert hashlib.sha256(blob).hexdigest() == digest, file
+
+def summarize(rows):
+    by_case = defaultdict(list)
+    for row in rows:
+        by_case[row['case']].append(row)
+    assert len(by_case) == 26 and len(rows) == 78
+    return {'cases': 26, 'runs': len(rows), 'passed': sum(r['passed'] for r in rows),
+            'valid_cases_3of3': sum(len(rs) == 3 and all(r['passed'] for r in rs) for rs in by_case.values()),
+            'opens': sum(r['opens'] for r in rows), 'new_drc_errors': sum(r['new_errors'] for r in rows),
+            'median_route_s': statistics.median(r['seconds'] for r in rows)}
+
+def compact(rows):
+    return [{k: r[k] for k in ['case', 'seed', 'passed', 'opens', 'new_errors', 'vias', 'length_mm', 'seconds', 'new_error_types']} for r in rows]
+
+before, after = [{(r['case'], r['seed']): r for r in rs} for rs in runs]
+changes = []
+for key, r in before.items():
+    fields = ['passed', 'opens', 'new_errors', 'new_error_types', 'vias', 'length_mm']
+    delta = {f: [r[f], after[key][f]] for f in fields if r[f] != after[key][f]}
+    if delta:
+        changes.append({'case': key[0], 'seed': key[1], 'changes': delta})
+regressions = [dict(case=k[0], seed=k[1], before_opens=r['opens'], after_opens=after[k]['opens'], before_errors=r['new_errors'], after_errors=after[k]['new_errors']) for k,r in before.items() if after[k]['opens'] > r['opens'] or after[k]['new_errors'] > r['new_errors']]
+print(json.dumps({'baseline_commit': controls[0]['candidate']['commit'],
+                  'tested_source_commit': args.source_commit,
+                  'candidate_evidence_sha256': hashlib.sha256(args.candidate_json.read_bytes()).hexdigest() if args.candidate_json else None,
+                  'harness_captured_candidate_commit': controls[1]['candidate']['commit'],
+                  'source_hashes_verified': len(source), 'control_audit': audit,
+                  'before': summarize(runs[0]), 'after': summarize(runs[1]),
+                  'regressions': regressions, 'changed_outcomes_or_copper': changes,
+                  'attempts_before': compact(runs[0]), 'attempts_after': compact(runs[1])}, indent=2))
