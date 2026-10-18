@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "kind": "box-dop8",
+  "host": "hyper-ms-lin",
+  "bun": "1.4.0",
+  "allowedCpus": "12-19",
+  "sources": {
+    "before": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout",
+      "gridSha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18"
+    },
+    "after": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-experiment",
+      "gridSha256": "a3ed2f303a8bc3955497758496a0397bf66dcb59c298fe695ee25e6639e201bf"
+    }
+  },
+  "slots": 2000,
+  "queries": 10000,
+  "callsPerRow": 10000000,
+  "inputSha256": "72be494dd3404f76d62909cdfdd6dc76a07b87fbe1e4db88e1720a3ac72ee838",
+  "slotSha256": "051ea09813135be40933e792c171dde40715981fe5f6bf542be1ab7ee8eec51d",
+  "boxQueriesSha256": "8ed9daf569fc2421b8a96666b50d07401c8116532ae1cb82d07d1b27c97a7663",
+  "orderedResultsSha256": "74dc220318a3ef169b1f56b34f9b9d922bf79d9b6bd810c51b67a4d7045ec8dc",
+  "warmupRepeats": [
+    0
+  ],
+  "utcStart": "2026-10-18T19:11:26.719Z",
+  "rows": [
+    {
+      "repeat": 0,
+      "version": "before",
+      "seconds": 1.6342460140000001,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 0,
+      "version": "after",
+      "seconds": 1.5199312189999998,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 1,
+      "version": "after",
+      "seconds": 1.5845370120000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 1,
+      "version": "before",
+      "seconds": 1.6713037520000007,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 2,
+      "version": "before",
+      "seconds": 1.650367972,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 2,
+      "version": "after",
+      "seconds": 1.6320871630000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 3,
+      "version": "after",
+      "seconds": 1.5557235900000015,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 3,
+      "version": "before",
+      "seconds": 1.8279221720000005,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 4,
+      "version": "before",
+      "seconds": 1.63424014,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 4,
+      "version": "after",
+      "seconds": 1.981642679999999,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 5,
+      "version": "after",
+      "seconds": 2.0332976259999995,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 5,
+      "version": "before",
+      "seconds": 2.113985187000002,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 6,
+      "version": "before",
+      "seconds": 1.7436887080000014,
+      "checksum": 2507114408
+    },
+    {
+      "repeat": 6,
+      "version": "after",
+      "seconds": 1.7149422760000015,
+      "checksum": 2507114408
+    }
+  ],
+  "utcEnd": "2026-10-18T19:11:51.018Z"
+}

@@ -1,0 +1,115 @@
+{
+  "schema": 1,
+  "kind": "sweep",
+  "host": "hyper-ms-lin",
+  "bun": "1.4.0",
+  "allowedCpus": "12-19",
+  "sources": {
+    "before": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout",
+      "gridSha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18"
+    },
+    "after": {
+      "path": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-experiment",
+      "gridSha256": "a3ed2f303a8bc3955497758496a0397bf66dcb59c298fe695ee25e6639e201bf"
+    }
+  },
+  "slots": 2000,
+  "queries": 10000,
+  "callsPerRow": 10000000,
+  "inputSha256": "72be494dd3404f76d62909cdfdd6dc76a07b87fbe1e4db88e1720a3ac72ee838",
+  "slotSha256": "051ea09813135be40933e792c171dde40715981fe5f6bf542be1ab7ee8eec51d",
+  "boxQueriesSha256": "8ed9daf569fc2421b8a96666b50d07401c8116532ae1cb82d07d1b27c97a7663",
+  "orderedResultsSha256": "1d0da0f1c8c4dbb54f26433e0721797f458d61bd7d175baad5c1e6defee95eb6",
+  "warmupRepeats": [
+    0
+  ],
+  "utcStart": "2026-10-18T19:11:51.066Z",
+  "rows": [
+    {
+      "repeat": 0,
+      "version": "before",
+      "seconds": 1.645209118,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 0,
+      "version": "after",
+      "seconds": 1.6948345950000003,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 1,
+      "version": "after",
+      "seconds": 1.663233006,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 1,
+      "version": "before",
+      "seconds": 1.5992817809999997,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 2,
+      "version": "before",
+      "seconds": 1.577772591000001,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 2,
+      "version": "after",
+      "seconds": 1.7184880969999994,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 3,
+      "version": "after",
+      "seconds": 1.6678649069999991,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 3,
+      "version": "before",
+      "seconds": 1.67836492,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 4,
+      "version": "before",
+      "seconds": 1.6082986349999993,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 4,
+      "version": "after",
+      "seconds": 1.8778872059999976,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 5,
+      "version": "after",
+      "seconds": 1.6860940709999996,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 5,
+      "version": "before",
+      "seconds": 1.942347984,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 6,
+      "version": "before",
+      "seconds": 1.9260840920000009,
+      "checksum": 2091000
+    },
+    {
+      "repeat": 6,
+      "version": "after",
+      "seconds": 2.0350726030000006,
+      "checksum": 2091000
+    }
+  ],
+  "utcEnd": "2026-10-18T19:12:15.388Z"
+}

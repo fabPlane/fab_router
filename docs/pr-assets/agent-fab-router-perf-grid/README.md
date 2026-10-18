@@ -53,3 +53,36 @@ Fresh complete slow acceptance: both 63 cases, 51 passed, 12 failed, 14 advisory
 `slow-comparison.json` retains both full reports, the regression list and every non-timing counter change. Four cases change counters: CM5 complete passes 9 → 10; issue039 passes 5 → 4 and completed attempts 360 → 332; maxpasses40 passes 5 → 6, completed attempts 175 → 183, length 4525.167 → 4606.368 mm and added tracks 307 → 308; strict completed attempts 206 → 207, length 4658.291 → 4725.244 mm and added tracks 325 → 324. The latter two cases also have the increased incompletes above. These counters depend on time limits and are not a quality-improvement claim. `extra-provenance.json` records exact source hashes and run window for the ladder and fresh slow suites.
 
 Final validation after restoring the original production collector: typecheck and layer checks pass (65 files, zero violations); 860 unit tests pass with 398457 assertions in 214.53 seconds. The initial experimental-source run also passed all 860 tests (216.91 seconds). The final PR changes only this evidence/tooling and the mutating-filter regression test; production source matches `69cf598`.
+
+## Cycle 7: query shapes and restored-source control
+
+`query-shapes.ts` replaces the checksum-only exploratory check with exact ordered-reference comparisons for all ten thousand queries before timing. A deliberately reversed-result candidate preserves sum-of-id checksums and is rejected by this preflight. The harness refuses to overwrite a result file. It records input and grid-source SHA-256, ordered-result SHA-256, Bun version, CPU affinity and UTC run window.
+
+Each workload runs in a separate process: plain four-property Box queries, Dop8-shaped objects passed as boxes, and swept Dop8 queries. This keeps object shapes and query modes separate at the timed call site; baseline and candidate alternate order by repeat within each process. Every timing row executes ten million queries against the same two thousand indexed slots. There are six measured repeats/version plus excluded repeat-zero warmup. Both sources are still baseline `69cf598` and rejected experimental collector `4f99c3d`. All exact preflight comparisons pass. This is synthetic query timing, not native DRC or proof of general routing performance. Own native/tests do not overlap these final measurements.
+
+| Workload | Before median s | Rejected candidate median s | Ratio before/after |
+|---|---:|---:|---:|
+| box-plain | 1.793344 | 1.679893 | 1.068× |
+| box-dop8 | 1.707496 | 1.673515 | 1.020× |
+| sweep | 1.643332 | 1.702291 | 0.965× |
+
+
+![Isolated query shapes](query-shapes.png)
+
+The candidate remains rejected: these synthetic results do not supersede the adverse L2 ladder and slow-completion evidence from cycle 6. No production changes were made in cycle 7.
+
+A fresh full native control compares baseline `69cf598` with restored-source head `5f3659b`, whose `src`, `spec` and `tools` trees match the baseline. The analyzer verifies source/configuration hashes and chronology, plus all 78 paired SES hashes, outcomes, opens, error types, fidelity, vias and length. Both versions retain 39/78 passing attempts, 13/26 cases passing 3/3, 120 opens and 27 new native errors. Existing failures persist. Sum of case medians is 126.538 → 129.335 seconds despite identical production source: this is host variation, not an optimization. The first baseline case overlaps the earlier one-million-call exploratory plain-Box microbenchmark for a few seconds; its separate scratch result is excluded from the query table. There is no own unit-test overlap with native timing. Full per-case median/p95 results and all attempt/provenance data are in `cycle7-restored-tables.md` and `cycle7-restored-measurements.json`.
+
+Reproduce the final query experiment after creating the separate experimental checkout and baseline described above. Use a new output directory; the following path must be empty of prior query result files:
+
+```bash
+mkdir -p /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-query-reproduce
+for kind in box-plain box-dop8 sweep; do
+  taskset -c 12-19 nice -n 10 timeout 600 bun docs/pr-assets/agent-fab-router-perf-grid/query-shapes.ts /home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout /home/hyper/bench/agents/codex-fabpcb-perf/scratch/grid-reproduce "$kind" "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-query-reproduce/cycle7-$kind.json"
+done
+taskset -c 12-19 nice -n 10 /home/hyper/bench/agents/codex-fabpcb-perf/scratch/plot-venv/bin/python docs/pr-assets/agent-fab-router-perf-grid/plot-query-shapes.py /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-query-reproduce
+taskset -c 12-19 nice -n 10 timeout 10800 python3 docs/pr-assets/agent-fab-router-perf-grid/paired-native.py --benchmark-checkout /home/hyper/bench/wt/fp-perf --baseline-source /home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout --candidate-source /home/hyper/bench/wt/fr-perf --out /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-restored-reproduce
+python3 docs/pr-assets/agent-fab-router-perf-grid/summarize-paired.py /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-restored-reproduce --out /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle7-restored-reproduce-summary --label restored
+```
+
+Typecheck, layer checks and the complete unit suite pass again. The standalone query harness also passes strict TypeScript checking. No fresh slow acceptance or ladder run was needed for this evidence-only change; production code remains identical to the baseline, and all prior adverse experimental results remain retained.
