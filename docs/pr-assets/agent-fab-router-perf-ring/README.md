@@ -111,3 +111,32 @@ Three budgeted cases have progress-counter differences, retained in `acceptance-
 Completed-attempt counters include work that can be ripped up; they are not final net completion.
 The strict case has fewer incompletes within its time budget, but these time-sensitive progress
 counters are not evidence of changed geometric decisions or a general quality improvement.
+
+## Independent reversed-order repeat (cycle 5)
+
+Repeat the complete native experiment with every case's version order reversed relative
+to cycle 4. Baseline remains `69cf598`; candidate `520bcfa` has identical production source
+to `8dddcad`. The analyzer verifies every captured source/configuration hash, actual chronology,
+and all 78 paired SES hashes and quality outcomes. All outputs, vias and lengths match.
+Both versions retain 39/78 passing attempts, 13/26 cases passing 3/3, 120 opens and 27 new
+native errors. Existing failures remain unresolved.
+
+| Native metric | Before | After |
+|---|---:|---:|
+| Sum of case medians | 117.295 s | 112.704 s |
+| Total route-path time, 78 attempts | 356.960 s | 341.325 s |
+
+Summed medians are 3.9% lower; 14 cases improve and 12 regress. The original experiment's
+10.4% reduction and the adverse L2 ladder result remain in the evidence. These are shared-host
+measurements, not a universal speedup estimate. Unit tests run after native timing finishes.
+No production source changed this cycle; the complete prior slow acceptance and ladder
+comparisons remain applicable and were not rerun.
+
+Per-case median/p95 values are in `cycle5-tables.md`, with every attempt and provenance in
+`cycle5-measurements.json`. The chart is `reverse-order-speedup.png`.
+
+```bash
+taskset -c 12-19 nice -n 10 timeout 7200 python3 docs/pr-assets/agent-fab-router-perf-ring/paired-native.py --benchmark-checkout /home/hyper/bench/wt/fp-perf --baseline-source /home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout --candidate-source /home/hyper/bench/wt/fr-perf --reverse-order --out /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle5-paired
+python3 docs/pr-assets/agent-fab-router-perf-ring/summarize-paired.py /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle5-paired --out docs/pr-assets/agent-fab-router-perf-ring --label cycle5
+python3 docs/pr-assets/agent-fab-router-perf-ring/plot.py --label cycle5 --output reverse-order-speedup.png
+```
