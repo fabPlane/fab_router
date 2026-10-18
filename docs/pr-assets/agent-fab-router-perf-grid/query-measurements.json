@@ -1,0 +1,215 @@
+{
+  "host": "hyper-ms-lin",
+  "cpus": "12-19",
+  "source_sha256": {
+    "before": {
+      "src/lattice/grid.ts": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+      "src/geom/bounds.ts": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7"
+    },
+    "after": {
+      "src/lattice/grid.ts": "a3ed2f303a8bc3955497758496a0397bf66dcb59c298fe695ee25e6639e201bf",
+      "src/geom/bounds.ts": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7"
+    }
+  },
+  "queries_per_timed_row": 1000000,
+  "warmup_repeat": 0,
+  "caveat": "Synthetic timing experiment; checksums are sanity checks, not proof of exact result identity. Lattice property tests and native SES comparisons supply correctness evidence.",
+  "rows": [
+    {
+      "repeat": 0,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.186712744,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 0,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.17198344699999998,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 0,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.17902444499999995,
+      "checksum": 209100
+    },
+    {
+      "repeat": 0,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.19325163699999995,
+      "checksum": 209100
+    },
+    {
+      "repeat": 1,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.18941956900000004,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 1,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.24594066399999998,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 1,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.18594206199999985,
+      "checksum": 209100
+    },
+    {
+      "repeat": 1,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.1977894849999998,
+      "checksum": 209100
+    },
+    {
+      "repeat": 2,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.19114880100000003,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 2,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.17199867599999993,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 2,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.19453084899999998,
+      "checksum": 209100
+    },
+    {
+      "repeat": 2,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.24161021600000004,
+      "checksum": 209100
+    },
+    {
+      "repeat": 3,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.1851585839999998,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 3,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.1968673249999997,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 3,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.20018558399999983,
+      "checksum": 209100
+    },
+    {
+      "repeat": 3,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.1750047840000002,
+      "checksum": 209100
+    },
+    {
+      "repeat": 4,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.207935379,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 4,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.16687560299999996,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 4,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.15853649700000005,
+      "checksum": 209100
+    },
+    {
+      "repeat": 4,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.16704705699999978,
+      "checksum": 209100
+    },
+    {
+      "repeat": 5,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.16104649999999993,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 5,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.17650817000000052,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 5,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.19625921899999957,
+      "checksum": 209100
+    },
+    {
+      "repeat": 5,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.17435648200000015,
+      "checksum": 209100
+    },
+    {
+      "repeat": 6,
+      "kind": "box",
+      "version": "before",
+      "seconds": 0.18826311800000076,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 6,
+      "kind": "box",
+      "version": "after",
+      "seconds": 0.1608210449999997,
+      "checksum": 1109704900
+    },
+    {
+      "repeat": 6,
+      "kind": "sweep",
+      "version": "before",
+      "seconds": 0.16115467400000033,
+      "checksum": 209100
+    },
+    {
+      "repeat": 6,
+      "kind": "sweep",
+      "version": "after",
+      "seconds": 0.16811870799999998,
+      "checksum": 209100
+    }
+  ]
+}
