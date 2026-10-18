@@ -1,0 +1,15 @@
+{
+  "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+  "typecheck": "pass",
+  "layers": "pass",
+  "tests": 859,
+  "failed": 0,
+  "assertions": 398454,
+  "seconds": 226.87,
+  "log_sha256": "8e879691904971753146cf7e3fddc2e35ca4f6558e0524eec78cde408be73e4a",
+  "unchanged_engine_files": 74,
+  "engine_reference": "69cf598",
+  "native_benchmark_rerun": false,
+  "diagnostic_repeats_per_variant": 3,
+  "diagnostic_fixed": false
+}

@@ -1,0 +1,1327 @@
+{
+  "native_version": "10.0.6",
+  "repeats": 3,
+  "fixed": false,
+  "benchmark_score": false,
+  "script_sha256": "18efe258baed7c8ad9d55048aa6de8d786f83eb12268fe9b3e93019b929636ee",
+  "note": "Only synthetic zone thermal gap differs. Controls are not repairs. Identical DSN/SES has different native thermal acceptance; one native open remains.",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "original",
+      "thermal_gap_mm": "0.508",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "cc1e1f13d257d02c8ad1391fc671b513e0f9c2688004b0e4f290d2c52b9a69a6"
+        },
+        "after": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GND] on F.Cu, priority 0",
+                  "pos": {
+                    "x": 75.0,
+                    "y": 126.0
+                  },
+                  "uuid": "00000000-0000-0000-0000-000057c65453"
+                },
+                {
+                  "description": "Pad 7 [GND] of U1 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 131.318
+                  },
+                  "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            },
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "b64dafc7-70e3-40bd-94b7-d09c9889ad8f"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "561bcd23-7a55-43be-8ecd-b9d8315b634e"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "b64dafc7-70e3-40bd-94b7-d09c9889ad8f"
+                },
+                {
+                  "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "e93ed62f2d5d7f20682c94c56bf2acdb8f035dd364d50b7eec0596d6caf8d844"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 9,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 1,
+      "variant": "gap-control",
+      "thermal_gap_mm": "0.254",
+      "input_sha256": "a1a2be3166fb1b0971e4899526c8dee5ba431cbf1c544530d717bcd174a9e85d",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "2d69aec2a93186c34d0c2245ced0c3b9fe1da854b47041afcd2eed4a416cc280"
+        },
+        "after": {
+          "errors": {},
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "459c6236-5115-4cc5-a182-d201e89fc8a7"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "a79c0beb-0c8b-4dab-bc31-ddffae9f3c36"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "459c6236-5115-4cc5-a182-d201e89fc8a7"
+                },
+                {
+                  "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "6019b863273425c77e45350cb608bb2d34dfb67c8b1ae8bf758994d910850353"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 6,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "original",
+      "thermal_gap_mm": "0.508",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "c78d8838b786cf3a5410647f750680e0355badb0583e20b943d0dfb1a9f5ffbe"
+        },
+        "after": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GND] on F.Cu, priority 0",
+                  "pos": {
+                    "x": 75.0,
+                    "y": 126.0
+                  },
+                  "uuid": "00000000-0000-0000-0000-000057c65453"
+                },
+                {
+                  "description": "Pad 7 [GND] of U1 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 131.318
+                  },
+                  "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            },
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "48b6c337-36f4-4a21-9c3a-7fb2716a436d"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "648e244d-231c-42ab-91c3-1dcd16363fba"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "48b6c337-36f4-4a21-9c3a-7fb2716a436d"
+                },
+                {
+                  "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "ea378df837ba4ac916f77cd2667e653c38c12460ee532806d64d0b00f231b0f8"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 6,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "gap-control",
+      "thermal_gap_mm": "0.254",
+      "input_sha256": "a1a2be3166fb1b0971e4899526c8dee5ba431cbf1c544530d717bcd174a9e85d",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "b4dbb23a5d17bf0b8def3f430e896418292f93309185e95bce3c94a252c75616"
+        },
+        "after": {
+          "errors": {},
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "4331cdc2-6110-42fd-8d1c-ffee19bde29d"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "19a185a4-8aa7-4f5e-990d-eb5b10a421d2"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "4331cdc2-6110-42fd-8d1c-ffee19bde29d"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "19a185a4-8aa7-4f5e-990d-eb5b10a421d2"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "0a1d13f54f06f278e06cfbedc3ea2d1973f8ade6d5543751fb07f048b14cd5bd"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 6,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "original",
+      "thermal_gap_mm": "0.508",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "89fdd9908f43fea67deb6b72fa4ed5e69b839a0780e6abc15592b668b4b1a400"
+        },
+        "after": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GND] on F.Cu, priority 0",
+                  "pos": {
+                    "x": 75.0,
+                    "y": 126.0
+                  },
+                  "uuid": "00000000-0000-0000-0000-000057c65453"
+                },
+                {
+                  "description": "Pad 7 [GND] of U1 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 131.318
+                  },
+                  "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            },
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "c4db4ccf-0495-4d53-bc03-4dda1bda4a7a"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "5b2f6f3a-4fed-46e0-84ca-1ccd68bc455e"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "c4db4ccf-0495-4d53-bc03-4dda1bda4a7a"
+                },
+                {
+                  "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "e7b1a402a3dc71ffde158be9153b11747f0d9f144226903bf6947b18cc4bfac1"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 5,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "gap-control",
+      "thermal_gap_mm": "0.254",
+      "input_sha256": "a1a2be3166fb1b0971e4899526c8dee5ba431cbf1c544530d717bcd174a9e85d",
+      "normalised_dsn_sha256": "b9dc4cd2e74079f34a0eced6cd2d0ef7791bca5e42ee7a9166912cfc0c88db6f",
+      "normalised_ses_sha256": "dc956297f87990dd5be95401149c716ff449fb07389924ad658f65d6ef638553",
+      "native": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T0 on F.Cu",
+                  "pos": {
+                    "x": 77.0,
+                    "y": 132.588
+                  },
+                  "uuid": "a53b506b-0642-4f3e-ae22-f991b273cd6b"
+                },
+                {
+                  "description": "Pad 1 [Net-(U1-Pad12)] of T1 on F.Cu",
+                  "pos": {
+                    "x": 83.0,
+                    "y": 132.588
+                  },
+                  "uuid": "ff26a9bd-9c4a-43e3-acbe-ab6ae8aba866"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            },
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "316c9091-7aae-49cf-a6c3-7bc657fa17c9"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "f530dabe750378c2704dbe40da2c0ad7fe22d5626c4bfe33183f39c82c0bda38"
+        },
+        "after": {
+          "errors": {},
+          "unconnected": 1,
+          "violations": [
+            {
+              "description": "Track has unconnected end",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "64d0d665-0408-4208-9c4a-0c2ae1ab379b"
+                }
+              ],
+              "severity": "warning",
+              "type": "track_dangling"
+            },
+            {
+              "description": "Via is not connected or connected on only one layer",
+              "items": [
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "8f627bfb-80f6-4aab-8e8f-eb2071d56225"
+                }
+              ],
+              "severity": "warning",
+              "type": "via_dangling"
+            }
+          ],
+          "unconnected_items": [
+            {
+              "description": "Missing connection between items",
+              "items": [
+                {
+                  "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                  "pos": {
+                    "x": 81.764,
+                    "y": 133.108
+                  },
+                  "uuid": "64d0d665-0408-4208-9c4a-0c2ae1ab379b"
+                },
+                {
+                  "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 80.264,
+                    "y": 130.108
+                  },
+                  "uuid": "8f627bfb-80f6-4aab-8e8f-eb2071d56225"
+                }
+              ],
+              "severity": "error",
+              "type": "unconnected_items"
+            }
+          ],
+          "report_sha256": "f6ffba69c78eba2b9bebeb5b3db82a092f48d5977fa10596440b10c4ab70ef52"
+        }
+      },
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 6,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    }
+  ]
+}
