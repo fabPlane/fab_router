@@ -37,8 +37,10 @@ function normalisePadstackName(name: string): string {
 /** LU per session resolution unit. */
 function luPerResolutionUnit(layout: Layout, routes: Node | undefined): number {
   const doc = documentOf(layout);
-  let unit: DimensionUnit | undefined = doc?.resolution.unit;
-  let perUnit: number | undefined = doc?.resolution.perUnit;
+  // Public file facts survive Layout copies; the hidden source document is only a legacy
+  // fallback, as in the writer. An explicit routes resolution below overrides either.
+  let unit: DimensionUnit | undefined = layout.file?.unit as DimensionUnit | undefined ?? doc?.resolution.unit;
+  let perUnit: number | undefined = layout.file?.perUnit ?? doc?.resolution.perUnit;
   const res = routes ? nodesOf(routes).find((n) => n.head === "resolution") : undefined;
   if (res) {
     const lx = lexemesOf(res);
