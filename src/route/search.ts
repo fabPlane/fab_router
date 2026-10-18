@@ -295,7 +295,12 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
   const { start, goal, region, dirs } = o;
   const width = region.gx1 - region.gx0 + 1;
   const height = region.gy1 - region.gy0 + 1;
-  const inRegion = (gx: number, gy: number): boolean => gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  const inRegion = (gx: number, gy: number): boolean => Number.isInteger(gx) && Number.isInteger(gy) && gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  // Validate before flattening: x coordinates beyond a row alias cells in the next/previous
+  // row. Otherwise an invalid start can reconstruct as a different, apparently valid endpoint.
+  if (!inRegion(start.gx, start.gy) || !inRegion(goal.gx, goal.gy)) {
+    return { ok: false, path: [], rip: [], pops: 0, aborted: false };
+  }
   const cellIndex = (gx: number, gy: number): number => (gy - region.gy0) * width + (gx - region.gx0);
   const stateOf = (cell: number, dir: number): number => cell * NDIR + dir;
 
@@ -457,7 +462,7 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
   const { region, dirs } = o;
   const width = region.gx1 - region.gx0 + 1;
   const layers = space.layers;
-  const inRegion = (gx: number, gy: number): boolean => gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  const inRegion = (gx: number, gy: number): boolean => Number.isInteger(gx) && Number.isInteger(gy) && gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
   const cellIndex = (gx: number, gy: number): number => (gy - region.gy0) * width + (gx - region.gx0);
   const gxOf = (cell: number): number => region.gx0 + (cell % width);
   const gyOf = (cell: number): number => region.gy0 + Math.floor(cell / width);
@@ -487,7 +492,8 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
   HEAP.clear();
   let seq = 0;
   for (const s of o.starts) {
-    if (!inRegion(s.gx, s.gy)) continue;
+    // Reject invalid layers before packing: layer == layers aliases the next cell.
+    if (!Number.isInteger(s.layer) || s.layer < 0 || s.layer >= layers || !inRegion(s.gx, s.gy)) continue;
     const st = stateOf(cellIndex(s.gx, s.gy), s.layer, 8);
     if (VIS.gOr(st, Infinity) <= 0) continue;
     VIS.put(st, 0, NONE);

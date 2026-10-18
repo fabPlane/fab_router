@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="520" viewBox="0 0 1400 520">
+<rect width="1400" height="520" fill="#f5f7fa"/>
+<g font-family="sans-serif" fill="#172b46">
+<text x="50" y="55" font-size="30" font-weight="bold">Layered A*: validate layer indices before packing</text>
+<rect x="40" y="85" width="640" height="385" rx="14" fill="white" stroke="#ccd4df"/>
+<rect x="710" y="85" width="650" height="385" rx="14" fill="white" stroke="#ccd4df"/>
+<text x="65" y="125" font-size="24" fill="#ba3448">Before: false success at another cell</text>
+<text x="735" y="125" font-size="24" fill="#237655">After: reject invalid start layers</text>
+<g font-size="22">
+<text x="65" y="175">Two layers; start (x=0, y=0, layer=2)</text>
+<text x="65" y="220">Packed state = (0 × 2 + 2) × 9 + 8 = 26</text>
+<text x="65" y="265">Decoded cell = 1; decoded layer = 0</text>
+<text x="65" y="310" fill="#ba3448">Goal (x=1, y=0, layer=0): success</text>
+<text x="65" y="370">Returned path omits the requested start.</text>
+<text x="65" y="420">Negative and fractional indices also alias.</text>
+<text x="735" y="180">Require an integer layer in [0, layers).</text>
+<text x="735" y="230">Skip invalid starts before encoding.</text>
+<text x="735" y="280">Keep other valid starts in the frontier.</text>
+<text x="735" y="350" fill="#237655">No valid starts → failure, zero pops</text>
+<text x="735" y="410">Valid inclusive endpoints remain routable.</text>
+</g></g></svg>
