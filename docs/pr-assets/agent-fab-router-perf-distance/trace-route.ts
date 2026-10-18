@@ -1,0 +1,18 @@
+import {readFileSync,writeFileSync,existsSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const trace={dist2Calls:0,coreCalls:0,sampledCallers:{} as Record<string,number>,kinds:{} as Record<string,{calls:number,samples:unknown[]}>};
+(globalThis as any).__distanceTrace=trace;
+const [source,work,output]=process.argv.slice(2);
+if(!source || !work || !output) throw new Error('Expected INSTRUMENTED_SOURCE NATIVE_WORK_DIRECTORY NEW_OUTPUT_JSON');
+if(existsSync(output)) throw new Error('Output already exists');
+const {routeDsn}=await import(pathToFileURL(resolve(source,'src/api.ts')).href);
+const text=readFileSync(work+'/board.dsn','utf8');
+const manifest=JSON.parse(readFileSync(work+'/dsn-manifest.json','utf8'));
+const candidate=JSON.parse(readFileSync(work+'/candidate-settings.json','utf8'));
+const settings={timeBudgetMs:120000,maxPasses:100,seed:2,copperToEdgeClearanceUm:manifest.native_rules.min_copper_edge_clearance*1000,holeClearanceUm:manifest.native_rules.min_hole_clearance*1000,strictDrc:true,neckWidthUm:0,fanoutEnabled:false,ignoreNetGroups:manifest.ignore_classes,...candidate.settings};
+const started_utc=new Date().toISOString();
+const r=routeDsn(text,settings);if(!r.ok)throw new Error(JSON.stringify(r));
+writeFileSync(output,JSON.stringify({...trace,started_utc,finished_utc:new Date().toISOString(),bun:Bun.version,instrumentation:JSON.parse(readFileSync(source+'/instrumentation.json','utf8')),settings,report:r.report,input_sha256:createHash('sha256').update(text).digest('hex'),ses_sha256:createHash('sha256').update(r.ses).digest('hex')})+'\n');
+console.log(trace.dist2Calls,trace.coreCalls,Object.fromEntries(Object.entries(trace.kinds).map(([k,v])=>[k,v.calls])));
