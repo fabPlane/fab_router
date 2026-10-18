@@ -1,0 +1,1208 @@
+[
+  {
+    "repeat": 1,
+    "removed": true,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 1,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 1,
+    "removed": false,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "id": 201,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -20000,
+              "y": 0
+            },
+            {
+              "x": -20000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 0,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -20000,
+            "y": 0
+          },
+          {
+            "x": -20000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 2,
+    "removed": true,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 1,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 2,
+    "removed": false,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "id": 201,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -20000,
+              "y": 0
+            },
+            {
+              "x": -20000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 0,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -20000,
+            "y": 0
+          },
+          {
+            "x": -20000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 3,
+    "removed": true,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 1,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 3,
+    "removed": false,
+    "before": {
+      "tracks": [
+        {
+          "id": 200,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -20000
+            },
+            {
+              "x": 0,
+              "y": 20000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "id": 201,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -20000,
+              "y": 0
+            },
+            {
+              "x": -20000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 80000
+            },
+            {
+              "x": 40000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "file"
+        }
+      ],
+      "pours": [
+        {
+          "id": 300,
+          "net": 0,
+          "sheet": 0,
+          "outline": [
+            {
+              "x": 38000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": -2000
+            },
+            {
+              "x": 42000,
+              "y": 2000
+            },
+            {
+              "x": 38000,
+              "y": 2000
+            }
+          ],
+          "holes": [],
+          "kind": 1,
+          "hold": "locked",
+          "origin": "prior"
+        }
+      ],
+      "pads": [
+        {
+          "id": 10,
+          "part": 1,
+          "pinName": "A",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": -20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 11,
+          "part": 1,
+          "pinName": "B",
+          "net": 0,
+          "form": 100,
+          "at": {
+            "x": 20000,
+            "y": 0
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 20,
+          "part": 1,
+          "pinName": "O0a",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": -20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        },
+        {
+          "id": 21,
+          "part": 1,
+          "pinName": "O0b",
+          "net": 1,
+          "form": 100,
+          "at": {
+            "x": 0,
+            "y": 20000
+          },
+          "rotationDeg": 0,
+          "side": "front",
+          "sheets": [
+            0
+          ],
+          "kind": 1,
+          "hold": "locked"
+        }
+      ]
+    },
+    "ok": true,
+    "incomplete": 0,
+    "violations": 0,
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": -20000
+          },
+          {
+            "x": 0,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "locked",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -20000,
+            "y": 0
+          },
+          {
+            "x": -20000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 80000
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 20000,
+            "y": 0
+          },
+          {
+            "x": 38000,
+            "y": -2000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 301,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  }
+]

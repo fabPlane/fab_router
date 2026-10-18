@@ -409,8 +409,10 @@ function tryAttachPrior(
 ): boolean {
   const net = conn.net;
   if (net === null) return false;
-  const cc = ctx.conn;
-  if (!cc) return false;
+  // Earlier connections in this pass may have ripped the track joining an endpoint
+  // to Prior copper. Only current connectivity can justify a one-way attachment.
+  if (!ctx.layout.pours.some((p) => p.net === net && p.origin === "prior" && profile.sheets.includes(p.sheet))) return false;
+  const cc = connectivity(ctx.layout, ctx.lattice);
   const nc = cc.nets[net];
   if (!nc) return false;
 
