@@ -1,0 +1,44 @@
+{
+  "before": "69cf598",
+  "after_source_sha256": "d2de7e1f81dc39956cc75f77da699bd7e7eaf11a9163f86cc2f8709ea7b866d7",
+  "test_sha256": "6fb027eea7dfc869846b87f5a0ef589ccad25635c5cc75c0c107a12646f54120",
+  "runs": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "passed": 2,
+      "failed": 4
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "passed": 2,
+      "failed": 4
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "passed": 2,
+      "failed": 4
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "passed": 6,
+      "failed": 0
+    }
+  ],
+  "scope": "Synthetic fanout regression, not native task scores; Offset copper trials retain no disconnected vias or stubs; centered and overlapping copper controls preserve contacting vias."
+}
