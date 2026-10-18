@@ -1,0 +1,28 @@
+{
+  "baseline": "69cf598",
+  "candidate_engine": "b23a9da",
+  "repeats": 3,
+  "cores": "20-25",
+  "baseline_terminal_tests": {
+    "passed": 1,
+    "failed": 3
+  },
+  "fixed_terminal_and_shove_tests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "unchanged_engine_files": 80,
+  "logs": {
+    "portable-before.log": "a1746a56e86bacc63b7f48060d09544fce5c3868bfa7a2d2d1c052eb10a029c0",
+    "after.log": "d1bd679f018976edc35b70c760ca9069bc8a1fad0935b5c7f12d06bdf2621c7e"
+  },
+  "checks": {
+    "typecheck": "pass",
+    "layers": "65 files, zero violations",
+    "tests_passed": 864,
+    "tests_failed": 0,
+    "assertions": 398497,
+    "seconds": 205.5,
+    "log_sha256": "21c70231086fd7400cf6b4667a9c3b5c87b2158537c2bba9a5c7d90484838aaa"
+  }
+}

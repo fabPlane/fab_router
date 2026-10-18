@@ -1,0 +1,992 @@
+[
+  {
+    "repeat": 1,
+    "branch": false,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  },
+  {
+    "repeat": 1,
+    "branch": true,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      },
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 20000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  },
+  {
+    "repeat": 2,
+    "branch": false,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  },
+  {
+    "repeat": 2,
+    "branch": true,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      },
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 20000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  },
+  {
+    "repeat": 3,
+    "branch": false,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  },
+  {
+    "repeat": 3,
+    "branch": true,
+    "ok": false,
+    "preserved": true,
+    "beforeCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "afterCounts": {
+      "violations": 0,
+      "incompletes": 1
+    },
+    "before": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      },
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "after": [
+      {
+        "id": 201,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 0,
+            "y": 20000
+          },
+          {
+            "x": 20000,
+            "y": 20000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      },
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -40000,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": -40000
+          },
+          {
+            "x": 0,
+            "y": 40000
+          },
+          {
+            "x": -40000,
+            "y": 40000
+          }
+        ],
+        "width": 2000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "file"
+      }
+    ],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": -40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 40000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 20000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -40000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ]
+  }
+]

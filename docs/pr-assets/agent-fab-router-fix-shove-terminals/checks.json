@@ -1,0 +1,27 @@
+{
+  "commands": "taskset -c 20-25 nice -n 10 timeout 1800 bash -c \"bun run typecheck && bun run check:layers && bun run test\"",
+  "typecheck": "pass",
+  "layers_files": 65,
+  "layer_violations": 0,
+  "tests_passed": 862,
+  "tests_failed": 0,
+  "assertions": 398476,
+  "test_seconds": 220.77,
+  "log_sha256": "1edd8265791981987e4a7b7f5f6c3486bb55bd29a233fa8f9f60281fd038a430",
+  "regression_before": {
+    "direct_fixtures": {
+      "pass": 0,
+      "fail": 2
+    },
+    "cascade_file": {
+      "pass": 8,
+      "fail": 1
+    }
+  },
+  "regression_after": {
+    "pass": 11,
+    "fail": 0,
+    "assertions": 51
+  },
+  "fixture_repeats": 3
+}
