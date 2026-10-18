@@ -49,6 +49,8 @@ export interface Journal {
   rewind(mark: JournalMark): void;
   /** Item ids inserted (and still live) since a mark, in insertion order. */
   insertedSince(mark: JournalMark): number[];
+  /** Removed item ids still absent at capture time, for replay after a rewind. */
+  removedSince(mark: JournalMark): number[];
   stats(): JournalStats;
 }
 
@@ -163,6 +165,9 @@ export function createJournal(layout: Layout, lattice: Lattice): Journal {
     remove,
     rewind,
     insertedSince,
+    removedSince: (mark) => [...new Set(ops.slice(mark)
+      .filter((op): op is Extract<Op, { kind: "remove-track" | "remove-barrel" }> => op.kind === "remove-track" || op.kind === "remove-barrel")
+      .map(op => op.item.id))].filter(id => !lattice.itemOf(id)),
     stats: () => ({ inserted, removed, live: L.tracks.length + L.barrels.length }),
   };
 }

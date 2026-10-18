@@ -1533,7 +1533,7 @@ function restoreCounters(ctx: RouteCtx, s: CounterSnapshot): void {
 }
 
 /** A router-inserted-copper snapshot: the plain Track/Barrel data added since a Journal mark. */
-interface CopperSnapshot { tracks: Array<Omit<Track, "id" | "origin">>; barrels: Array<Omit<Barrel, "id" | "origin">> }
+interface CopperSnapshot { removed: number[]; tracks: Array<Omit<Track, "id" | "origin">>; barrels: Array<Omit<Barrel, "id" | "origin">> }
 /** Capture the router copper added since `mark` (deep enough to re-insert), by Journal insertion id. */
 function captureCopper(ctx: RouteCtx, mark: ReturnType<Journal["mark"]>): CopperSnapshot {
   const ids = new Set(ctx.journal.insertedSince(mark));
@@ -1541,10 +1541,12 @@ function captureCopper(ctx: RouteCtx, mark: ReturnType<Journal["mark"]>): Copper
   const barrels: Array<Omit<Barrel, "id" | "origin">> = [];
   for (const t of ctx.layout.tracks) if (ids.has(t.id)) tracks.push({ net: t.net, sheet: t.sheet, pts: t.pts.map((p) => ({ x: p.x, y: p.y })), width: t.width, kind: t.kind, hold: t.hold });
   for (const b of ctx.layout.barrels) if (ids.has(b.id)) barrels.push({ net: b.net, at: { x: b.at.x, y: b.at.y }, form: b.form, fromSheet: b.fromSheet, toSheet: b.toSheet, kind: b.kind, hold: b.hold });
-  return { tracks, barrels };
+  return { tracks, barrels, removed: ctx.journal.removedSince(mark) };
 }
 /** Re-insert a captured copper snapshot through the Journal (restoring a known DRC-clean state). */
 function restoreCopper(ctx: RouteCtx, snap: CopperSnapshot): void {
+  // Rewind restored baseline obstacles too: replay their removals before the winning copper.
+  for (const id of snap.removed) ctx.journal.remove(id);
   for (const b of snap.barrels) ctx.journal.addBarrel(b);
   for (const t of snap.tracks) ctx.journal.addTrack(t);
 }
