@@ -66,20 +66,6 @@ export function dop8OfPts(pts: readonly Pt[], r = 0): Dop8 {
   return { x0: x0 - e, y0: y0 - e, x1: x1 + e, y1: y1 + e, s0: s0 - es, s1: s1 + es, d0: d0 - es, d1: d1 + es };
 }
 
-/** Two-endpoint bounds for finite layout coordinates, without a temporary point array. */
-export function dop8OfSeg(a: Pt, b: Pt, r = 0): Dop8 {
-  const sa = a.x + a.y, sb = b.x + b.y;
-  const da = a.x - a.y, db = b.x - b.y;
-  // Ties retain the first endpoint, as in dop8OfPts (including signed zero).
-  const x0 = b.x < a.x ? b.x : a.x, x1 = b.x > a.x ? b.x : a.x;
-  const y0 = b.y < a.y ? b.y : a.y, y1 = b.y > a.y ? b.y : a.y;
-  const s0 = sb < sa ? sb : sa, s1 = sb > sa ? sb : sa;
-  const d0 = db < da ? db : da, d1 = db > da ? db : da;
-  if (r === 0) return { x0, y0, x1, y1, s0, s1, d0, d1 };
-  const e = Math.ceil(r), es = Math.ceil(r * SQRT2);
-  return { x0: x0 - e, y0: y0 - e, x1: x1 + e, y1: y1 + e, s0: s0 - es, s1: s1 + es, d0: d0 - es, d1: d1 + es };
-}
-
 /** 8-DOP of any shape (radius included). */
 export function dop8Of(s: Shape): Dop8 {
   if (s.kind === "pieces") {

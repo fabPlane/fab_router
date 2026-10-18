@@ -43,7 +43,7 @@
  */
 import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
 import type { Box, ConvexShape, Dop8, Pt, Seg, Shape } from "../geom/index.ts";
-import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, dop8OfSeg, withinRim } from "../geom/index.ts";
+import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, withinRim } from "../geom/index.ts";
 import type { DrillDisk, Lattice, LatticeItemRef } from "../lattice/index.ts";
 import { RIM_ID, boundsOfShapes, drillOfBarrel, drillOfPad, formOf, transformShape } from "../lattice/index.ts";
 import type { BarrelCandidate, Profile } from "./profile.ts";
@@ -210,7 +210,7 @@ function pushBlocking(out: number[], id: number): void {
 export function sweepClear(layout: Layout, lattice: Lattice, sheet: number, seg: Seg, profile: Profile, ignore: IgnoreSet, width = profile.width): ClearResult {
   const r = width / 2;
   const leg: Shape = seg.a.x === seg.b.x && seg.a.y === seg.b.y ? { kind: "disk", c: seg.a, r } : { kind: "capsule", a: seg.a, b: seg.b, r };
-  const q: Dop8 = dop8OfSeg(seg.a, seg.b, r + margin(profile, profile.trackKind, layout));
+  const q: Dop8 = dop8OfPts([seg.a, seg.b], r + margin(profile, profile.trackKind, layout));
   const subject: Subject = { shapes: [leg], kind: profile.trackKind, cat: "track" };
   const blocking: number[] = [];
   for (const ref of lattice.sweepHits(sheet, q)) {

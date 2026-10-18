@@ -1,0 +1,40 @@
+{
+  "candidate_commit": "f45fb95458a4d91c84744a89b0a0837fb1fbd708",
+  "baseline_commit": "69cf598db98c136bff16bbe02bccdded95674b18",
+  "adopted": false,
+  "final_production_matches_baseline": true,
+  "slow_acceptance": "not run: rejected at performance gate; no slow-suite pass claimed",
+  "host": "hyper-ms-lin",
+  "cores": "12-19",
+  "command_nice": 10,
+  "observed_effective_nice": 15,
+  "own_heavy_workloads": "sequential; light reporting/type checks may overlap",
+  "checks": {
+    "candidate": {
+      "log": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle14-tests.log",
+      "sha256": "11fd89c1c60708812a3bba3f0495ee61f5b7b73cc5a1d84f8729badfbec2de58",
+      "typecheck": "pass",
+      "layers": "65 files, zero violations",
+      "test_tail": [
+        "",
+        " 860 pass",
+        " 0 fail",
+        " 631030 expect() calls",
+        "Ran 860 tests across 30 files. [225.84s]"
+      ]
+    },
+    "restored": {
+      "log": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle14-final-tests.log",
+      "sha256": "963091c66d62eba8fa073dd17067e5941097a8076c1739fc05ddd98e2f8de3f8",
+      "typecheck": "pass",
+      "layers": "65 files, zero violations",
+      "test_tail": [
+        "",
+        " 859 pass",
+        " 0 fail",
+        " 398454 expect() calls",
+        "Ran 859 tests across 29 files. [229.68s]"
+      ]
+    }
+  }
+}
