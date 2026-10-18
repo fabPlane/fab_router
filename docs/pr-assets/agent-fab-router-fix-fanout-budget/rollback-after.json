@@ -1,0 +1,590 @@
+[
+  {
+    "repeat": 1,
+    "mixed": {
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": true,
+          "routerEnabled": false,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "fanoutMaxItems": 1,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4,
+        "perNet": []
+      },
+      "tracks": [],
+      "barrels": [
+        {
+          "net": 1,
+          "at": {
+            "x": 100000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 14,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "retry": {
+      "initial": {
+        "cellSize": 50000,
+        "slots": 10,
+        "items": 3,
+        "rebuilds": 1,
+        "perSheet": [
+          {
+            "sheet": 0,
+            "slots": 6,
+            "shelf": 2,
+            "cells": 26
+          },
+          {
+            "sheet": 1,
+            "slots": 4,
+            "shelf": 2,
+            "cells": 18
+          }
+        ]
+      },
+      "rejected": {
+        "escaped": 0,
+        "addedItems": 0
+      },
+      "afterRejection": {
+        "stats": {
+          "inserted": 0,
+          "removed": 0,
+          "live": 0
+        },
+        "index": {
+          "cellSize": 50000,
+          "slots": 10,
+          "items": 3,
+          "rebuilds": 1,
+          "perSheet": [
+            {
+              "sheet": 0,
+              "slots": 6,
+              "shelf": 2,
+              "cells": 26
+            },
+            {
+              "sheet": 1,
+              "slots": 4,
+              "shelf": 2,
+              "cells": 18
+            }
+          ]
+        },
+        "tracks": [],
+        "barrels": []
+      },
+      "resumed": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "tracks": [
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 17,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 19,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 16,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 18,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    }
+  },
+  {
+    "repeat": 2,
+    "mixed": {
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": true,
+          "routerEnabled": false,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "fanoutMaxItems": 1,
+          "angleMode": "45"
+        },
+        "wallClockMs": 0,
+        "perNet": []
+      },
+      "tracks": [],
+      "barrels": [
+        {
+          "net": 1,
+          "at": {
+            "x": 100000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 14,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "retry": {
+      "initial": {
+        "cellSize": 50000,
+        "slots": 10,
+        "items": 3,
+        "rebuilds": 1,
+        "perSheet": [
+          {
+            "sheet": 0,
+            "slots": 6,
+            "shelf": 2,
+            "cells": 26
+          },
+          {
+            "sheet": 1,
+            "slots": 4,
+            "shelf": 2,
+            "cells": 18
+          }
+        ]
+      },
+      "rejected": {
+        "escaped": 0,
+        "addedItems": 0
+      },
+      "afterRejection": {
+        "stats": {
+          "inserted": 0,
+          "removed": 0,
+          "live": 0
+        },
+        "index": {
+          "cellSize": 50000,
+          "slots": 10,
+          "items": 3,
+          "rebuilds": 1,
+          "perSheet": [
+            {
+              "sheet": 0,
+              "slots": 6,
+              "shelf": 2,
+              "cells": 26
+            },
+            {
+              "sheet": 1,
+              "slots": 4,
+              "shelf": 2,
+              "cells": 18
+            }
+          ]
+        },
+        "tracks": [],
+        "barrels": []
+      },
+      "resumed": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "tracks": [
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 17,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 19,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 16,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 18,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    }
+  },
+  {
+    "repeat": 3,
+    "mixed": {
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": true,
+          "routerEnabled": false,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "fanoutMaxItems": 1,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": []
+      },
+      "tracks": [],
+      "barrels": [
+        {
+          "net": 1,
+          "at": {
+            "x": 100000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 14,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "retry": {
+      "initial": {
+        "cellSize": 50000,
+        "slots": 10,
+        "items": 3,
+        "rebuilds": 1,
+        "perSheet": [
+          {
+            "sheet": 0,
+            "slots": 6,
+            "shelf": 2,
+            "cells": 26
+          },
+          {
+            "sheet": 1,
+            "slots": 4,
+            "shelf": 2,
+            "cells": 18
+          }
+        ]
+      },
+      "rejected": {
+        "escaped": 0,
+        "addedItems": 0
+      },
+      "afterRejection": {
+        "stats": {
+          "inserted": 0,
+          "removed": 0,
+          "live": 0
+        },
+        "index": {
+          "cellSize": 50000,
+          "slots": 10,
+          "items": 3,
+          "rebuilds": 1,
+          "perSheet": [
+            {
+              "sheet": 0,
+              "slots": 6,
+              "shelf": 2,
+              "cells": 26
+            },
+            {
+              "sheet": 1,
+              "slots": 4,
+              "shelf": 2,
+              "cells": 18
+            }
+          ]
+        },
+        "tracks": [],
+        "barrels": []
+      },
+      "resumed": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "tracks": [
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 17,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 19,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 16,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 18,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    }
+  }
+]

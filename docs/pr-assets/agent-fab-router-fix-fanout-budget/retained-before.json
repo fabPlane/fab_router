@@ -1,0 +1,1436 @@
+[
+  {
+    "repeat": 1,
+    "caps": [
+      {
+        "cap": 1,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 1,
+            "angleMode": "45"
+          },
+          "wallClockMs": 5,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      },
+      {
+        "cap": 2,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 2,
+            "angleMode": "45"
+          },
+          "wallClockMs": 1,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      }
+    ],
+    "prior": {
+      "net": 1,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": -100000,
+          "y": 150000
+        },
+        {
+          "x": 100000,
+          "y": 150000
+        }
+      ],
+      "width": 4000,
+      "kind": 1,
+      "hold": "free",
+      "id": 22,
+      "origin": "router"
+    },
+    "accepted": {
+      "outcome": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "stats": {
+        "inserted": 5,
+        "removed": 1,
+        "live": 6
+      },
+      "inserted": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 24,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 26,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 25,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "stageRewind": {
+      "stats": {
+        "inserted": 1,
+        "removed": 1,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    },
+    "completeRewind": {
+      "stats": {
+        "inserted": 0,
+        "removed": 0,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "id": 20,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 100000
+            },
+            {
+              "x": 100000,
+              "y": 100000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    }
+  },
+  {
+    "repeat": 2,
+    "caps": [
+      {
+        "cap": 1,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 1,
+            "angleMode": "45"
+          },
+          "wallClockMs": 1,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      },
+      {
+        "cap": 2,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 2,
+            "angleMode": "45"
+          },
+          "wallClockMs": 0,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      }
+    ],
+    "prior": {
+      "net": 1,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": -100000,
+          "y": 150000
+        },
+        {
+          "x": 100000,
+          "y": 150000
+        }
+      ],
+      "width": 4000,
+      "kind": 1,
+      "hold": "free",
+      "id": 22,
+      "origin": "router"
+    },
+    "accepted": {
+      "outcome": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "stats": {
+        "inserted": 5,
+        "removed": 1,
+        "live": 6
+      },
+      "inserted": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 24,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 26,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 25,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "stageRewind": {
+      "stats": {
+        "inserted": 1,
+        "removed": 1,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    },
+    "completeRewind": {
+      "stats": {
+        "inserted": 0,
+        "removed": 0,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "id": 20,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 100000
+            },
+            {
+              "x": 100000,
+              "y": 100000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    }
+  },
+  {
+    "repeat": 3,
+    "caps": [
+      {
+        "cap": 1,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 1,
+            "angleMode": "45"
+          },
+          "wallClockMs": 0,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      },
+      {
+        "cap": 2,
+        "report": {
+          "passes": 0,
+          "attempted": 0,
+          "completed": 0,
+          "incompleteBefore": 1,
+          "incompleteAfter": 1,
+          "added": {
+            "tracks": 1,
+            "barrels": 1
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": true,
+            "routerEnabled": false,
+            "optimizerEnabled": false,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "fanoutMaxItems": 2,
+            "angleMode": "45"
+          },
+          "wallClockMs": 0,
+          "perNet": [
+            {
+              "net": "SIG",
+              "incomplete": 1
+            }
+          ]
+        },
+        "tracks": [
+          {
+            "id": 20,
+            "net": 1,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 100000
+              },
+              {
+                "x": 100000,
+                "y": 100000
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -100000,
+                "y": 0
+              },
+              {
+                "x": -91000,
+                "y": 0
+              }
+            ],
+            "width": 4000,
+            "kind": 1,
+            "hold": "free",
+            "id": 23,
+            "origin": "router"
+          }
+        ],
+        "barrels": [
+          {
+            "id": 21,
+            "net": 1,
+            "at": {
+              "x": 0,
+              "y": -100000
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "locked",
+            "origin": "file"
+          },
+          {
+            "net": 0,
+            "at": {
+              "x": -91000,
+              "y": 0
+            },
+            "form": 101,
+            "fromSheet": 0,
+            "toSheet": 1,
+            "kind": 1,
+            "hold": "free",
+            "id": 22,
+            "origin": "router"
+          }
+        ],
+        "violations": 0
+      }
+    ],
+    "prior": {
+      "net": 1,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": -100000,
+          "y": 150000
+        },
+        {
+          "x": 100000,
+          "y": 150000
+        }
+      ],
+      "width": 4000,
+      "kind": 1,
+      "hold": "free",
+      "id": 22,
+      "origin": "router"
+    },
+    "accepted": {
+      "outcome": {
+        "escaped": 2,
+        "addedItems": 4
+      },
+      "stats": {
+        "inserted": 5,
+        "removed": 1,
+        "live": 6
+      },
+      "inserted": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 0
+            },
+            {
+              "x": -91000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 24,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 100000,
+              "y": 0
+            },
+            {
+              "x": 109000,
+              "y": 0
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 26,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": -91000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "at": {
+            "x": 109000,
+            "y": 0
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "id": 25,
+          "origin": "router"
+        }
+      ],
+      "violations": 0
+    },
+    "stageRewind": {
+      "stats": {
+        "inserted": 1,
+        "removed": 1,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 150000
+            },
+            {
+              "x": 100000,
+              "y": 150000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 22,
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    },
+    "completeRewind": {
+      "stats": {
+        "inserted": 0,
+        "removed": 0,
+        "live": 2
+      },
+      "tracks": [
+        {
+          "id": 20,
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -100000,
+              "y": 100000
+            },
+            {
+              "x": 100000,
+              "y": 100000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 21,
+          "net": 1,
+          "at": {
+            "x": 0,
+            "y": -100000
+          },
+          "form": 101,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "locked",
+          "origin": "file"
+        }
+      ]
+    }
+  }
+]
