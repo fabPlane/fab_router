@@ -19,14 +19,14 @@ import { routeDsn } from "../src/api.ts";
 
 const BOARDS_DIR = new URL("../spec/acceptance/boards/", import.meta.url).pathname;
 
-interface Board { name: string; file: string; settings: Record<string, unknown> }
+interface Board { name: string; file: string; settings: Record<string, unknown>; incomplete?: number }
 
 // Boards chosen to exercise the changed paths: single-Sheet A* completion (bm08), rip-up with the
 // soft-obstacle edge cost plus layered via search over several passes (J2), plane Sheets
 // (min_fr_test), and a fanout-only escape (ecc83). All finish quickly and deterministically.
 const BOARDS: Board[] = [
   { name: "dac2020-bm08", file: "Issue508-DAC2020_bm08.dsn", settings: { maxPasses: 100, timeoutSeconds: 120 } },
-  { name: "issue026-j2", file: "Issue026-J2_reference.dsn", settings: { maxPasses: 100, timeoutSeconds: 120 } },
+  { name: "issue026-j2", file: "Issue026-J2_reference.dsn", incomplete: 1, settings: { maxPasses: 100, timeoutSeconds: 120 } },
   { name: "min-fr-test", file: "Issue269-min_fr_test-min_fr_test.dsn", settings: { maxPasses: 100, timeoutSeconds: 120 } },
   { name: "ecc83", file: "Issue690-ecc83.dsn", settings: { maxPasses: 100, timeoutSeconds: 120 } },
 ];
@@ -34,7 +34,9 @@ const BOARDS: Board[] = [
 // Recorded fingerprints (task I11). Regenerate deliberately only when a route is meant to change.
 const RECORDED: Record<string, string> = {
   "dac2020-bm08": "a042a8fe137cbf155a5a5967c079bc42932024bd246dc54bd1ec384070908316",
-  "issue026-j2": "599df5659ec39d3cb926c322a6957ad0fa7110a40c877615d8945f84683ab601",
+  // Opposite-terminal retry intentionally improves incompletes from 2 to 1 (three repeats).
+  // Before/after geometry and DRC: docs/pr-assets/agent-fab-router-fix-pad-escape/corpus-results.json.
+  "issue026-j2": "8ad879f41ac70b1dd804c59617f9bf22134df9c6620256047780e16d5ef87af1",
   "min-fr-test": "50e0bb0f832803abe4563c47315ff44e85e93fe767540847565300d1c1664eb5",
   "ecc83": "6259e1577b55e2e47c86958020366794c5fc8c541325a603f4ed4f4feaedf962",
 };
@@ -44,6 +46,10 @@ function fingerprint(b: Board): string {
   const r = routeDsn(text, b.settings);
   if (!r.ok) throw new Error(`route failed for ${b.file}`);
   const rep = r.report;
+  if (b.incomplete !== undefined) {
+    expect(rep.incompleteAfter).toBe(b.incomplete);
+    expect(rep.violationsAdded).toBe(0);
+  }
   // Guard the premise: a time-truncated run would make the fingerprint machine-dependent.
   expect(rep.timedOut).toBe(false);
   expect(rep.aborted).toBe(false);
