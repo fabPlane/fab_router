@@ -84,7 +84,7 @@ export function applySes(layout: Layout, text: string): ApplyResult {
   const first = layout.stack[0], last = layout.stack[layout.stack.length - 1];
   if (first && last) {
     for (const [alias, id] of [["Top", first.id], ["Bottom", last.id]] as const) {
-      if (![...sheetByName.keys()].some((n) => n.toLowerCase() === alias.toLowerCase())) { sheetByName.set(alias, id); aliased.add(alias); }
+      if (!sheetByName.has(alias)) { sheetByName.set(alias, id); aliased.add(alias); }
     }
   }
   const netByName = new Map<string, number>();
