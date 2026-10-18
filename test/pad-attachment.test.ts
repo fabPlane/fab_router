@@ -6,7 +6,7 @@ import { resolveProfile } from '../src/route/profile.ts';
 import { ignoreOf, pointFree, sweepClear } from '../src/route/clear.ts';
 import { padAttachmentBoard } from './helpers/pad-attachment-board.ts';
 
-for (const rotation of [0, 90]) test(`full-width route attaches away from blocked pad centre (${rotation} degrees)`, () => {
+for (const rotation of [0, 45, 90, 135, 180, 270]) test(`full-width route attaches away from blocked pad centre (${rotation} degrees)`, () => {
   const layout = padAttachmentBoard();
   layout.pads = layout.pads.map(p => ({ ...p, at: rotatePt(p.at, rotation), rotationDeg: rotation }));
   const lattice = buildLattice(layout);
@@ -56,4 +56,23 @@ test('zero item cap prevents pad edge insertion', () => {
   const report = route(layout, { maxItems: 0, viasAllowed: false, fanoutEnabled: false, neckWidthUm: 0, optimizerEnabled: false });
   expect(report.incompleteAfter).toBe(1);
   expect(layout.tracks).toHaveLength(0);
+});
+
+for (const kind of ['capsule', 'concave', 'multiple'] as const) test(`pad attachment uses actual ${kind} copper`, () => {
+  const layout = padAttachmentBoard();
+  const form = layout.padForms[0]!;
+  form.perSheet = new Map([[0, kind === 'capsule'
+    ? [{ kind: 'capsule', a: { x: -9000, y: 0 }, b: { x: 9000, y: 0 }, r: 1000 }]
+    : kind === 'concave'
+      ? [{ kind: 'ring', pts: [{ x: -10000, y: -1000 }, { x: 10000, y: -1000 }, { x: 10000, y: 1000 }, { x: 2000, y: 1000 }, { x: 2000, y: 2000 }, { x: -10000, y: 2000 }] }]
+      : [{ kind: 'box', box: { x0: -1000, y0: -1000, x1: 1000, y1: 1000 } }, { kind: 'box', box: { x0: 1000, y0: -1000, x1: 10000, y1: 1000 } }]]]);
+  const pads = JSON.stringify(layout.pads);
+  const report = route(layout, { viasAllowed: false, fanoutEnabled: false, neckWidthUm: 0, optimizerEnabled: false, maxPasses: 1 });
+  expect(report.incompleteAfter).toBe(0);
+  expect(requiredConnections(layout)).toHaveLength(0);
+  expect(checkDrc(layout).violations).toHaveLength(0);
+  expect(layout.tracks.length).toBeGreaterThan(0);
+  expect(layout.tracks.every(t => t.width === 8000)).toBe(true);
+  expect(layout.barrels).toHaveLength(0);
+  expect(JSON.stringify(layout.pads)).toBe(pads);
 });
