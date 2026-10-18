@@ -22,10 +22,11 @@
 import type { Barrel, Layout, Pad, Pour, Pt } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { RouteHooks } from "../../spec/types/results.ts";
-import type { Box } from "../geom/index.ts";
-import { boxOfPts, dist2PtPt } from "../geom/index.ts";
+import type { Box, Shape } from "../geom/index.ts";
+import { boxOfPts, coreOf, dist2PtPt } from "../geom/index.ts";
 import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
 import type { Connection } from "../../spec/types/results.ts";
+import { touching } from "../drc/exact.ts";
 import { barrelSheets, buildLattice, type Lattice } from "../lattice/index.ts";
 import { createJournal, type Journal } from "./journal.ts";
 import { resolveProfile, type Profile } from "./profile.ts";
@@ -343,7 +344,65 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
     if (detailed === "tiles"
       && tryChannelRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
   }
+  // An end-cap can overlap Pad copper even when its centre must stay outside the Pad.
+  // Try bounded, exactly attached centres after the ordinary centre-based strategies miss.
+  for (const sheet of common) {
+    const from = endcapPoints(ctx, conn.from, sheet, ends.from.pt, ends.to.pt, profile, ignore);
+    const to = endcapPoints(ctx, conn.to, sheet, ends.to.pt, ends.from.pt, profile, ignore);
+    if (from[0] === ends.from.pt && to[0] === ends.to.pt) continue;
+    for (const a of from) for (const b of to) {
+      if (abortRequested(ctx) || (deadline !== undefined && now() > deadline)) return false;
+      const mark = ctx.journal.mark();
+      let ok = fastProbe(ctx, conn.net, sheet, a, b, profile, ignore)
+        || tryRouteOnSheet(ctx, conn.net, sheet, a, b, profile, ignore, deadline, false);
+      if (!ok && viasOk && ctx.settings.maxItems === undefined) {
+        const fs = a === ends.from.pt ? fromUsable : [sheet];
+        const ts = b === ends.to.pt ? toUsable : [sheet];
+        ok = tryRouteViaPoints(ctx, conn.net, a, b, fs, ts, profile, ignore, deadline, false)
+          || tryRouteLayered(ctx, conn.net, a, b, fs, ts, profile, ignore, deadline, false);
+      }
+      if (ok) {
+        // Necking or shaping may change the end-cap. Verify the actual inserted copper.
+        const live = connectivity(ctx.layout, ctx.lattice);
+        const component = live.componentOf.get(conn.from);
+        if (component !== undefined && component === live.componentOf.get(conn.to)) return true;
+      }
+      ctx.journal.rewind(mark);
+    }
+  }
+
   return false;
+}
+
+/** Candidate end-cap centres; actual copper overlap and full-width clearance are mandatory. */
+function endcapPoints(ctx: RouteCtx, id: number, sheet: number, center: Pt, toward: Pt, profile: Profile, ignore: IgnoreSet): Pt[] {
+  if (pointFree(ctx.layout, ctx.lattice, sheet, center, profile, ignore).ok) return [center];
+  if (ctx.lattice.itemOf(id)?.cat !== "pad") return [];
+  const shapes = ctx.lattice.shapesOf(id, sheet);
+  const points: Pt[] = [];
+  const radius = profile.width / 2;
+  const add = (p: Pt): void => {
+    if (!points.some(q => q.x === p.x && q.y === p.y)
+      && shapes.some(s => touching(s, { kind: "disk", c: p, r: radius }))
+      && pointFree(ctx.layout, ctx.lattice, sheet, p, profile, ignore).ok) points.push(p);
+  };
+  const visit = (shape: Shape): void => {
+    if (shape.kind === "pieces") { for (const part of shape.parts) visit(part); return; }
+    const { pts, r } = coreOf(shape);
+    // A quarter-radius overlap avoids relying on exact tangent contact after native export.
+    const offset = Math.floor(r + radius * 0.75);
+    const seed = (p: Pt): void => {
+      for (const [dx, dy] of [[offset, 0], [-offset, 0], [0, offset], [0, -offset]])
+        add({ x: p.x + dx!, y: p.y + dy! });
+    };
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i]!, b = pts[(i + 1) % pts.length]!;
+      seed(a);
+      if ((a.x + b.x) % 2 === 0 && (a.y + b.y) % 2 === 0) seed({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+    }
+  };
+  for (const shape of shapes) visit(shape);
+  return points.sort((a, b) => dist2PtPt(a, toward) - dist2PtPt(b, toward) || a.x - b.x || a.y - b.y).slice(0, 8);
 }
 
 /** Per-connection options for the detailed line-search: the `detailedBudgetMs` cap and abort signal. */
