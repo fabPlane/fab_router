@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="#f6f8fc"/>
+<g font-family="DejaVu Sans, sans-serif" fill="#1b2940">
+<text x="65" y="65" font-size="30">No-via acceptance remains unresolved</text>
+<text x="65" y="103" font-size="18">Issue026 J2 · same input and rules · three repeats per variant · lower is better</text>
+<rect x="105" y="182" width="145" height="288" rx="5" fill="#51749c"/>
+<text x="177" y="164" text-anchor="middle" font-size="26">12</text>
+<text x="177" y="508" text-anchor="middle" font-size="18">Main</text>
+<rect x="320" y="182" width="145" height="288" rx="5" fill="#51749c"/>
+<text x="392" y="164" text-anchor="middle" font-size="26">12</text>
+<text x="392" y="508" text-anchor="middle" font-size="18">Reverse search</text>
+<rect x="535" y="206" width="145" height="264" rx="5" fill="#51749c"/>
+<text x="607" y="188" text-anchor="middle" font-size="26">11</text>
+<text x="607" y="508" text-anchor="middle" font-size="18">Finer grid</text>
+<rect x="750" y="182" width="145" height="288" rx="5" fill="#51749c"/>
+<text x="822" y="164" text-anchor="middle" font-size="26">12</text>
+<text x="822" y="508" text-anchor="middle" font-size="18">Exact edges</text>
+<rect x="965" y="182" width="145" height="288" rx="5" fill="#51749c"/>
+<text x="1037" y="164" text-anchor="middle" font-size="26">12</text>
+<text x="1037" y="508" text-anchor="middle" font-size="18">End-cap access</text>
+<path d="M65 326H1150" stroke="#bc4938" stroke-width="3" stroke-dasharray="10 7"/>
+<text x="73" y="315" fill="#a73729" font-size="18">Acceptance maximum: 6 opens</text>
+<text x="65" y="567" font-size="19">Every run: 0 added vias, 0 added engine violations, acceptance FAIL.</text>
+<text x="65" y="601" font-size="17">Scratch proposals only. Native DRC and thermal safety are not evaluated here.</text>
+</g></svg>
