@@ -24,3 +24,16 @@ python3 docs/pr-assets/agent-fab-router-fix-plane-contact/summarize.py ~/bench/a
 ```
 
 This independent main-based change touches the plane-via helper in passes.ts. Other pending terminal-preservation, progress, prior-target and pad-access fixes must be retained separately during integration. No performance functions change.
+
+Requested pour component controls
+--------------------------------
+
+Four additional tests place a separate same-net pour under the signal pad while the requested pour remains distant. Both endpoint orders must reject the local escape if it only contacts the wrong component. A retained plane-layer track then joins the pours: both endpoint orders must accept the same via through transitive copper connectivity. Tests preserve the retained track/pads/pours, compare live and rebuilt connectivity, assert zero spacing violations, and rewind successful insertions through the caller's journal mark.
+
+The identical four tests run three times per revision: main passes two connected controls and fails both disconnected cases; the guard passes all four. `components.json` records per-run outcomes/log hashes and engine/test hashes. This is additional synthetic regression coverage, not a new production change or native benchmark run; the recorded full native sweep still covers the unchanged engine.
+
+```bash
+taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-contact/component-regression.py --out /tmp/plane-components
+```
+
+Final cycle-42 required checks passed: typecheck, layer checks (65 files, zero violations), and 869 tests / zero failures / 398557 assertions (215.99 seconds). The full log includes all four added component tests; its hash is recorded in components.json.
