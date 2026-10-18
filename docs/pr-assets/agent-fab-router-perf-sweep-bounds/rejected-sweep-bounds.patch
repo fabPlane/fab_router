@@ -1,0 +1,79 @@
+diff --git a/src/geom/bounds.ts b/src/geom/bounds.ts
+index 02fd026..d674e21 100644
+--- a/src/geom/bounds.ts
++++ b/src/geom/bounds.ts
+@@ -66,6 +66,20 @@ export function dop8OfPts(pts: readonly Pt[], r = 0): Dop8 {
+   return { x0: x0 - e, y0: y0 - e, x1: x1 + e, y1: y1 + e, s0: s0 - es, s1: s1 + es, d0: d0 - es, d1: d1 + es };
+ }
+ 
++/** Two-endpoint bounds for finite layout coordinates, without a temporary point array. */
++export function dop8OfSeg(a: Pt, b: Pt, r = 0): Dop8 {
++  const sa = a.x + a.y, sb = b.x + b.y;
++  const da = a.x - a.y, db = b.x - b.y;
++  // Ties retain the first endpoint, as in dop8OfPts (including signed zero).
++  const x0 = b.x < a.x ? b.x : a.x, x1 = b.x > a.x ? b.x : a.x;
++  const y0 = b.y < a.y ? b.y : a.y, y1 = b.y > a.y ? b.y : a.y;
++  const s0 = sb < sa ? sb : sa, s1 = sb > sa ? sb : sa;
++  const d0 = db < da ? db : da, d1 = db > da ? db : da;
++  if (r === 0) return { x0, y0, x1, y1, s0, s1, d0, d1 };
++  const e = Math.ceil(r), es = Math.ceil(r * SQRT2);
++  return { x0: x0 - e, y0: y0 - e, x1: x1 + e, y1: y1 + e, s0: s0 - es, s1: s1 + es, d0: d0 - es, d1: d1 + es };
++}
++
+ /** 8-DOP of any shape (radius included). */
+ export function dop8Of(s: Shape): Dop8 {
+   if (s.kind === "pieces") {
+diff --git a/src/route/clear.ts b/src/route/clear.ts
+index 03569bf..4337a52 100644
+--- a/src/route/clear.ts
++++ b/src/route/clear.ts
+@@ -43,7 +43,7 @@
+  */
+ import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
+ import type { Box, ConvexShape, Dop8, Pt, Seg, Shape } from "../geom/index.ts";
+-import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, withinRim } from "../geom/index.ts";
++import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, dop8OfSeg, withinRim } from "../geom/index.ts";
+ import type { DrillDisk, Lattice, LatticeItemRef } from "../lattice/index.ts";
+ import { RIM_ID, boundsOfShapes, drillOfBarrel, drillOfPad, formOf, transformShape } from "../lattice/index.ts";
+ import type { BarrelCandidate, Profile } from "./profile.ts";
+@@ -210,7 +210,7 @@ function pushBlocking(out: number[], id: number): void {
+ export function sweepClear(layout: Layout, lattice: Lattice, sheet: number, seg: Seg, profile: Profile, ignore: IgnoreSet, width = profile.width): ClearResult {
+   const r = width / 2;
+   const leg: Shape = seg.a.x === seg.b.x && seg.a.y === seg.b.y ? { kind: "disk", c: seg.a, r } : { kind: "capsule", a: seg.a, b: seg.b, r };
+-  const q: Dop8 = dop8OfPts([seg.a, seg.b], r + margin(profile, profile.trackKind, layout));
++  const q: Dop8 = dop8OfSeg(seg.a, seg.b, r + margin(profile, profile.trackKind, layout));
+   const subject: Subject = { shapes: [leg], kind: profile.trackKind, cat: "track" };
+   const blocking: number[] = [];
+   for (const ref of lattice.sweepHits(sheet, q)) {
+diff --git a/test/sweep-bounds-invariance.test.ts b/test/sweep-bounds-invariance.test.ts
+new file mode 100644
+index 0000000..a2d5e49
+--- /dev/null
++++ b/test/sweep-bounds-invariance.test.ts
+@@ -0,0 +1,26 @@
++import { expect, test } from "bun:test";
++import { dop8OfPts, dop8OfSeg, type Pt } from "../src/geom/index.ts";
++
++test("two-endpoint sweep bounds preserve all eight slabs and signed zeros", () => {
++  const points: Pt[] = [];
++  for (const x of [-(2 ** 25), -1, -0, 0, 1, 2 ** 25]) {
++    for (const y of [-(2 ** 25), -1, -0, 0, 1, 2 ** 25]) points.push({ x, y });
++  }
++  const check = (a: Pt, b: Pt, r: number) => {
++    const expected = dop8OfPts([a, b], r), actual = dop8OfSeg(a, b, r);
++    for (const field of ["x0", "x1", "y0", "y1", "s0", "s1", "d0", "d1"] as const) {
++      expect(Object.is(actual[field], expected[field])).toBe(true);
++    }
++  };
++  for (const a of points) for (const b of points) {
++    for (const r of [0, -0, 0.1, 0.5, 1, Math.SQRT2, 1024.25]) check(a, b, r);
++  }
++  let seed = 0x41324;
++  const next = () => { seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5; return seed >>> 0; };
++  for (let i = 0; i < 10000; i++) {
++    const a = { x: (next() % 2 ** 26) - 2 ** 25, y: (next() % 2 ** 26) - 2 ** 25 };
++    const b = i % 4 === 0 ? a : { x: (next() % 2 ** 26) - 2 ** 25, y: (next() % 2 ** 26) - 2 ** 25 };
++    check(a, b, (next() % 100000) / 8);
++    check(b, a, (next() % 100000) / 8);
++  }
++});

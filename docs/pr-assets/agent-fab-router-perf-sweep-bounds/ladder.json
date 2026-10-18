@@ -1,0 +1,2162 @@
+[
+  {
+    "file": "l1.dsn",
+    "repeat": 1,
+    "version": "before",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:41.566Z",
+    "finished_utc": "2026-10-18T23:39:41.789Z",
+    "seconds": 0.223251957,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 214,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l1.dsn",
+    "repeat": 1,
+    "version": "after",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:41.789Z",
+    "finished_utc": "2026-10-18T23:39:41.974Z",
+    "seconds": 0.184273084,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 180,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l1.dsn",
+    "repeat": 2,
+    "version": "after",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:41.974Z",
+    "finished_utc": "2026-10-18T23:39:42.112Z",
+    "seconds": 0.13876536100000003,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 136,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l1.dsn",
+    "repeat": 2,
+    "version": "before",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:42.113Z",
+    "finished_utc": "2026-10-18T23:39:42.265Z",
+    "seconds": 0.15206982399999994,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 150,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l1.dsn",
+    "repeat": 3,
+    "version": "before",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:42.265Z",
+    "finished_utc": "2026-10-18T23:39:42.394Z",
+    "seconds": 0.12951817900000004,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 128,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l1.dsn",
+    "repeat": 3,
+    "version": "after",
+    "input_sha256": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:42.395Z",
+    "finished_utc": "2026-10-18T23:39:42.528Z",
+    "seconds": 0.13307552599999997,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "2fd87929382b26f8a5c22d839f9d4362e3db83df5db7d080b4c8630127234287",
+    "report": {
+      "passes": 1,
+      "attempted": 10,
+      "completed": 10,
+      "incompleteBefore": 10,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 34,
+        "barrels": 24
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 132,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 0
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 1,
+    "version": "before",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:39:42.528Z",
+    "finished_utc": "2026-10-18T23:40:01.877Z",
+    "seconds": 19.348588513,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 19343,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 1,
+    "version": "after",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:40:01.877Z",
+    "finished_utc": "2026-10-18T23:40:22.125Z",
+    "seconds": 20.248004949000002,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 20242,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 2,
+    "version": "after",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:40:22.125Z",
+    "finished_utc": "2026-10-18T23:40:42.736Z",
+    "seconds": 20.610760749,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 20606,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 2,
+    "version": "before",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:40:42.736Z",
+    "finished_utc": "2026-10-18T23:41:04.639Z",
+    "seconds": 21.903432476999996,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 21897,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 3,
+    "version": "before",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:41:04.640Z",
+    "finished_utc": "2026-10-18T23:41:25.839Z",
+    "seconds": 21.19910383600001,
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 21194,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  },
+  {
+    "file": "l2.dsn",
+    "repeat": 3,
+    "version": "after",
+    "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "timeBudgetMs": 600000,
+      "maxPasses": 2,
+      "seed": 1
+    },
+    "started_utc": "2026-10-18T23:41:25.839Z",
+    "finished_utc": "2026-10-18T23:41:47.792Z",
+    "seconds": 21.9528759,
+    "bounds_sha256": "0812ccc8ac1f3b86e0f6e07a0c7222ef3a794bae708ae488d7616b7c68f09b8f",
+    "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+    "report": {
+      "passes": 2,
+      "attempted": 82,
+      "completed": 25,
+      "incompleteBefore": 50,
+      "incompleteAfter": 29,
+      "added": {
+        "tracks": 75,
+        "barrels": 42
+      },
+      "ripped": 7,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 2,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 600000,
+        "angleMode": "45"
+      },
+      "wallClockMs": 21946,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 0
+        },
+        {
+          "net": "N3",
+          "incomplete": 0
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 1
+        },
+        {
+          "net": "N7",
+          "incomplete": 0
+        },
+        {
+          "net": "N8",
+          "incomplete": 1
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 0
+        },
+        {
+          "net": "N11",
+          "incomplete": 1
+        },
+        {
+          "net": "N12",
+          "incomplete": 1
+        },
+        {
+          "net": "N13",
+          "incomplete": 1
+        },
+        {
+          "net": "N14",
+          "incomplete": 0
+        },
+        {
+          "net": "N15",
+          "incomplete": 1
+        },
+        {
+          "net": "N16",
+          "incomplete": 1
+        },
+        {
+          "net": "N17",
+          "incomplete": 1
+        },
+        {
+          "net": "N18",
+          "incomplete": 0
+        },
+        {
+          "net": "N19",
+          "incomplete": 1
+        },
+        {
+          "net": "N20",
+          "incomplete": 1
+        },
+        {
+          "net": "N21",
+          "incomplete": 0
+        },
+        {
+          "net": "N22",
+          "incomplete": 1
+        },
+        {
+          "net": "N23",
+          "incomplete": 1
+        },
+        {
+          "net": "N24",
+          "incomplete": 1
+        },
+        {
+          "net": "N25",
+          "incomplete": 1
+        },
+        {
+          "net": "N26",
+          "incomplete": 1
+        },
+        {
+          "net": "N27",
+          "incomplete": 0
+        },
+        {
+          "net": "N28",
+          "incomplete": 0
+        },
+        {
+          "net": "N29",
+          "incomplete": 0
+        },
+        {
+          "net": "N30",
+          "incomplete": 0
+        },
+        {
+          "net": "N31",
+          "incomplete": 0
+        },
+        {
+          "net": "N32",
+          "incomplete": 0
+        },
+        {
+          "net": "N33",
+          "incomplete": 1
+        },
+        {
+          "net": "N34",
+          "incomplete": 0
+        },
+        {
+          "net": "N35",
+          "incomplete": 1
+        },
+        {
+          "net": "N36",
+          "incomplete": 0
+        },
+        {
+          "net": "N37",
+          "incomplete": 1
+        },
+        {
+          "net": "N38",
+          "incomplete": 1
+        },
+        {
+          "net": "N39",
+          "incomplete": 1
+        },
+        {
+          "net": "N40",
+          "incomplete": 1
+        },
+        {
+          "net": "N41",
+          "incomplete": 0
+        },
+        {
+          "net": "N42",
+          "incomplete": 1
+        },
+        {
+          "net": "N43",
+          "incomplete": 0
+        },
+        {
+          "net": "N44",
+          "incomplete": 0
+        },
+        {
+          "net": "N45",
+          "incomplete": 1
+        },
+        {
+          "net": "N46",
+          "incomplete": 1
+        },
+        {
+          "net": "N47",
+          "incomplete": 1
+        },
+        {
+          "net": "N48",
+          "incomplete": 1
+        },
+        {
+          "net": "N49",
+          "incomplete": 1
+        },
+        {
+          "net": "N50",
+          "incomplete": 1
+        }
+      ]
+    }
+  }
+]
