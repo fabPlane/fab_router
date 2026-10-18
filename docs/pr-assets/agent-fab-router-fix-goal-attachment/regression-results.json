@@ -1,0 +1,395 @@
+[
+  {
+    "version": "before",
+    "repeat": 1,
+    "validAttachment": false,
+    "noAttachmentRejected": false,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    }
+  },
+  {
+    "version": "before",
+    "repeat": 2,
+    "validAttachment": false,
+    "noAttachmentRejected": false,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    }
+  },
+  {
+    "version": "before",
+    "repeat": 3,
+    "validAttachment": false,
+    "noAttachmentRejected": false,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 3,
+      "aborted": false
+    }
+  },
+  {
+    "version": "after",
+    "repeat": 1,
+    "validAttachment": true,
+    "noAttachmentRejected": true,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": true
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 100
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 26,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": false,
+      "path": [],
+      "rip": [],
+      "pops": 92,
+      "aborted": false
+    }
+  },
+  {
+    "version": "after",
+    "repeat": 2,
+    "validAttachment": true,
+    "noAttachmentRejected": true,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": true
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 100
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 26,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": false,
+      "path": [],
+      "rip": [],
+      "pops": 92,
+      "aborted": false
+    }
+  },
+  {
+    "version": "after",
+    "repeat": 3,
+    "validAttachment": true,
+    "noAttachmentRejected": true,
+    "routed": {
+      "ok": true,
+      "path": [
+        {
+          "layer": 0,
+          "pt": {
+            "x": 0,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 100,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 0,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": false
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 0
+          },
+          "via": true
+        },
+        {
+          "layer": 1,
+          "pt": {
+            "x": 200,
+            "y": 100
+          },
+          "via": false
+        }
+      ],
+      "rip": [],
+      "pops": 26,
+      "aborted": false
+    },
+    "unreachable": {
+      "ok": false,
+      "path": [],
+      "rip": [],
+      "pops": 92,
+      "aborted": false
+    }
+  }
+]
