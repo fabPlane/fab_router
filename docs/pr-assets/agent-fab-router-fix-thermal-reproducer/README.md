@@ -55,3 +55,44 @@ kicad-cli pcb export svg --layers F.Cu --mode-single --page-size-mode 2 --exclud
 python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/render.py /tmp/thermal-audit/all.svg /tmp/thermal-audit/control.svg /tmp/thermal-audit/comparison.svg
 rsvg-convert /tmp/thermal-audit/comparison.svg -o /tmp/thermal-audit/comparison.png
 ```
+
+## Route-producing native failure
+
+`route-input.kicad_pcb` extends the reduction with two remote 0.25 mm SMD
+terminals at (77, 132.588) and (83, 132.588), replacing the lower track, plus
+one terminal wholly inside the retained via's copper to retain its net in DSN.
+The original thermal pad, zone, upper track and via are preserved. References
+are named and hidden. This is a synthetic diagnostic derived from the same MIT
+board, not an additional frozen benchmark case.
+
+Unlike the original all-copper fixture, this input has **zero native errors**
+after refill. Three runs of `routeDsn` (seed 1, default settings), stock native
+SES import and refill each introduce one `starved_thermal` error. The engine
+reports one completed connection, zero terminal incompletes and zero added
+violations. Native opens fall from two to one, while the dangling-track and
+dangling-via warnings remain. No clearance or shorting error is present.
+The router chooses a route with three tracks and two vias; the figure shows
+actual front-copper exports. No copper is manually repaired after routing.
+
+| Same diagnostic input, same host, 3 repeats | Before routing | After routing/import/refill |
+| --- | ---: | ---: |
+| Native errors per repeat | 0 | 1 thermal |
+| Native opens per repeat | 2 | 1 |
+| Engine terminal incompletes | 1 | 0 |
+| Engine added violations | — | 0 |
+
+```bash
+taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/route-audit.py --out /tmp/thermal-route-known-failure
+# Future safety target; currently exits 1 after retaining all three native reports:
+taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/route-audit.py --expect-safe --out /tmp/thermal-route-acceptance
+```
+
+The default audit asserts the known failure. `--expect-safe` expects zero native
+thermal errors, and currently fails. It is an explicit future acceptance target,
+not a passing safety regression. Raw before/after DRC reports, exported input DSN,
+returned SES, engine reports and native output boards remain in each output
+folder. `route-audit.json` records the three known-failure runs. Use the same SVG
+export commands above with `before.kicad_pcb` and `after.kicad_pcb`, then
+`render-route.py` instead of `render.py`, to reproduce `route-comparison.png`.
+A production thermal-aware fix is still required; it must also address the
+remaining native open rather than treating this diagnostic as a routed pass.
