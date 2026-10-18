@@ -20,7 +20,20 @@ cd ../fp-bugs
 taskset -c 20-25 nice -n 10 timeout 3000 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source ../fr-bugs --out /tmp/fanout-contact-native
 ```
 
+The frozen native harness disables fanout (`fanoutEnabled:false`); that sweep provides
+nonregression coverage, while the six synthetic tests exercise the repaired path.
+
 The additional connectivity computation has a potential cost on fanout-enabled boards;
 shared-host native timings cannot establish a speed change. Native thermal starvation and
 other remaining opens are outside this fix. Preserve the independent fanout budget and
 spanning-destination fixes during integration.
+
+Native comparison: main 69cf598 vs source 9cebc13, 26 identical cases × three repeats,
+controls preserved, all 74 captured source hashes verified. Both: 39/78 passing attempts,
+13/26 valid cases 3/3, 120 opens, 27 new thermal errors. Every per-attempt pass/open/error,
+via count and length is identical. Median route seconds 1.172079 →
+1.059487 is descriptive only: shared host and overlapping unit tests;
+no speed claim. Captured precommit HEAD is distinguished from verified source identity in JSON.
+
+Required checks pass: typecheck, 65 layer-checked files/zero violations, 865 tests/zero failures,
+398482 assertions. See checks.json for file/log hashes and regressions.json for all repeated logs.
