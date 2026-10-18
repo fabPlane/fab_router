@@ -18,7 +18,7 @@ for x, label, filename in [(35,'Before: copper skipped','before.json'),(525,'Aft
         svg.append(f'<polyline points="{pts}" stroke="#ffb95b" stroke-width="{t["width"]*.3}" fill="none"/>')
     text(x,295,f'Imported tracks: {len(run["after"])} / {len(run["before"])}')
     text(x,325,'Net: signal (A) · Layer: front (signal)',16)
-text(35,365,'Actual fixture geometry · 1 mm long × 0.2 mm wide · dashed outline marks the input track',16)
+text(35,365,'Actual fixture geometry · 1 mm long × 0.2 mm wide · dashes mark the input track',16)
 svg.append('</svg>')
 (root/'comparison.svg').write_text('\n'.join(svg))
 subprocess.run(['rsvg-convert','-w','1600',str(root/'comparison.svg'),'-o',str(root/'comparison.png')],check=True)

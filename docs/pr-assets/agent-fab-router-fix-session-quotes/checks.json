@@ -1,0 +1,37 @@
+{
+  "source_commit": "62ba359",
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "unit_tests": {
+    "passed": 866,
+    "failed": 0,
+    "assertions": 398488,
+    "seconds": 220.58
+  },
+  "check_log_sha256": "ee95a5b6f81d69b8549a4af2d94437abf3e03527fb7e688e5d2e306ab70fee14",
+  "regression": {
+    "before": {
+      "pass": 3,
+      "fail": 4
+    },
+    "after": {
+      "pass": 7,
+      "fail": 0
+    },
+    "repeats": 3
+  },
+  "audit": {
+    "before_tracks_per_repeat": 0,
+    "after_tracks_per_repeat": 1,
+    "repeats": 3
+  },
+  "logs": {
+    "regression-before-final.log": "8e2f3bad54f11caa4c19df7a06c5b30a719820d1519aae8f32f33bed5c9a8ee2",
+    "regression-before-repeats.log": "60832044f683306ec4ac262d4288d3e63b51f7d44732c4bd44897d2551f89643",
+    "regression-after-repeats.log": "9d677cae86452fa29a7fc9f554f0879855f6c0ade1ce8d3ae0ed19a160827439"
+  },
+  "limitations": "Initial strict typing failure corrected before final required checks. First native run interrupted, not scored. Final benchmark uses 62ba359 source unchanged."
+}
