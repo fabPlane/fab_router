@@ -10,7 +10,9 @@ import subprocess
 parser = argparse.ArgumentParser()
 parser.add_argument('before', type=Path)
 parser.add_argument('after', type=Path)
-parser.add_argument('--source-commit', required=True)
+source_arg = parser.add_mutually_exclusive_group(required=True)
+source_arg.add_argument('--source-commit')
+source_arg.add_argument('--composition-json', type=Path)
 args = parser.parse_args()
 root = Path(__file__).resolve().parents[3]
 controls = [json.loads((p / 'controls.json').read_text()) for p in [args.before, args.after]]
@@ -25,9 +27,14 @@ keys = ['version', 'order', 'routers', 'cases', 'seeds', 'smoke', 'full_suite',
 audit = {k: controls[0][k] == controls[1][k] for k in keys}
 assert all(audit.values()), audit
 source = controls[1]['candidate']['source_sha256']
-for file, digest in source.items():
-    blob = subprocess.check_output(['git', 'show', f'{args.source_commit}:{file}'], cwd=root)
-    assert hashlib.sha256(blob).hexdigest() == digest, file
+if args.composition_json:
+    expected_source = json.loads(args.composition_json.read_text())['sources']['composed']
+    for file, digest in source.items():
+        assert expected_source[file] == digest, file
+else:
+    for file, digest in source.items():
+        blob = subprocess.check_output(['git', 'show', f'{args.source_commit}:{file}'], cwd=root)
+        assert hashlib.sha256(blob).hexdigest() == digest, file
 
 def summarize(rows):
     by_case = defaultdict(list)
@@ -52,6 +59,7 @@ for key, r in before.items():
 assert all(after[k]['opens'] <= r['opens'] and after[k]['new_errors'] <= r['new_errors'] for k, r in before.items()), 'native regression'
 print(json.dumps({'baseline_commit': controls[0]['candidate']['commit'],
                   'tested_source_commit': args.source_commit,
+                  'composition_evidence_sha256': hashlib.sha256(args.composition_json.read_bytes()).hexdigest() if args.composition_json else None,
                   'harness_captured_candidate_commit': controls[1]['candidate']['commit'],
                   'source_hashes_verified': len(source), 'control_audit': audit,
                   'before': summarize(runs[0]), 'after': summarize(runs[1]),

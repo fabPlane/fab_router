@@ -1,0 +1,7 @@
+{
+  "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+  "log_sha256": "32e60ca63349f4d1b618c80c6834bb9b10de6a5d6556c920d1840cefb54f863f",
+  "tail": " [0.33ms]\n(pass) Bridge capacity from fixed blockage (R-2 baked in) > a Track that spans the whole boundary gives capacity 0 [0.19ms]\n(pass) Bridge capacity from fixed blockage (R-2 baked in) > free other-net copper does NOT reduce capacity [0.04ms]\n(pass) Bridge capacity from fixed blockage (R-2 baked in) > capacity matches the brute-force count over a swept boundary column [0.44ms]\n(pass) determinism > two builds of the same board give identical capacities across every Bridge [37.49ms]\n(pass) congestion report > hand-set overflow is summarised per Bridge and per Bin [0.64ms]\n(pass) R-1 safety: globalPlan:\"off\" changes no routing > routing with globalPlan:\"off\" is byte-identical to the default run [7.80ms]\n\n 867 pass\n 0 fail\n 398476 expect() calls\nRan 867 tests across 30 files. [231.48s]\n",
+  "engine_files_verified": 71,
+  "source_commit": "1f898f4"
+}

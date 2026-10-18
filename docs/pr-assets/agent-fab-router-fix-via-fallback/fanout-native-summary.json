@@ -1,0 +1,1797 @@
+{
+  "baseline_commit": "69cf598db98c136bff16bbe02bccdded95674b18",
+  "tested_source_commit": null,
+  "composition_evidence_sha256": "52d364eb5a685d429252429f48cdb7c7b47abf2387cd8a84bb061208c43cfa46",
+  "harness_captured_candidate_commit": "b0d94ede4b237309101e4d221445a0bd9fff0a36",
+  "source_hashes_verified": 74,
+  "control_audit": {
+    "version": true,
+    "order": true,
+    "routers": true,
+    "cases": true,
+    "seeds": true,
+    "smoke": true,
+    "full_suite": true,
+    "inputs_sha256": true,
+    "configs_sha256": true,
+    "harness_sha256": true,
+    "runtime_sha256": true,
+    "runtime_source_sha256": true,
+    "allowed_cpus": true
+  },
+  "before": {
+    "cases": 26,
+    "runs": 78,
+    "passed": 39,
+    "valid_cases_3of3": 13,
+    "opens": 120,
+    "new_drc_errors": 27,
+    "median_route_s": 1.1720791645
+  },
+  "after": {
+    "cases": 26,
+    "runs": 78,
+    "passed": 39,
+    "valid_cases_3of3": 13,
+    "opens": 120,
+    "new_drc_errors": 27,
+    "median_route_s": 1.1583361785
+  },
+  "changed_outcomes_or_copper": [],
+  "attempts_before": [
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.745897551,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 0.997337461,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 16.052101129,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 54.66002203199999,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 1.015024122,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.776138661,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 4.050448234,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 1.007187524,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 2.075875775,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.389959359,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.726262004,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 2.1444808909999997,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 0.8602419379999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 3.728299609,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.737055655,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 1.071387654,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.9676329960000003,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 1.036358948,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 1.1780098209999998,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 60.121857132,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.732879568,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 3.887860682,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 0.887785455,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.730643129,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.136581732,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 3.26142027,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 0.881120909,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.881355297,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 1.058994864,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.748118345,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.657873226,
+      "new_error_types": {}
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 17.484547579999997,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.589185064,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.745537794,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 0.7514249799999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 15.538241271,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.999426055,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 57.97029521,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.4250152470000002,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.74132632,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 8.360881935,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 12.471137803000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 12.839486790999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 2.27568347,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 0.889980832,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 11.020545794,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.953211111,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 4.082264486,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.762674984,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 1.1630301520000002,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.89020672,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.9614210990000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 18.015471513,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 3.674029635,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 2.4032044,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.779568344,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 1.046187045,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 1.0468969719999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 0.905070603,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.921288018,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.775188263,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 2.283344368,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.960969384,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 1.076449,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.755897339,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.484256679,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 17.290076829,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 19.436604085,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 1.166148508,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 2.80369443,
+      "new_error_types": {}
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 21.291728382,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 2.353006745,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.763778861,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 2.509631452,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.8795236049999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 2.395881057,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 10.734310932,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.905378231,
+      "new_error_types": {}
+    }
+  ],
+  "attempts_after": [
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.8723976149999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 1.119279599,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 17.692569328999998,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 52.917751425999995,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 1.186956719,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.8748169450000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 3.913401206,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 1.1608866740000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 1.91247305,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.4128386499999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.764528152,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 2.472087694,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 0.922714035,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 4.031348291,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.8817135,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 0.8698414619999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.39936252,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 1.012140152,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 1.155785683,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 50.51318235,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.736489153,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 5,
+      "new_errors": 0,
+      "vias": 102,
+      "length_mm": 909.0220346102054,
+      "seconds": 3.841517375,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 561.8597030625879,
+      "seconds": 0.874585839,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.721299535,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.2439428670000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 2.923356287,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 0.753324893,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.858994653,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 0.853509902,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.7310208899999999,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.61796157,
+      "new_error_types": {}
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 15.741321838000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.359229165,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.71926033,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 0.7159003349999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 15.207894672,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 22,
+      "length_mm": 495.56669906548063,
+      "seconds": 3.1459358460000004,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 15,
+      "new_errors": 6,
+      "vias": 130,
+      "length_mm": 1731.1131265365616,
+      "seconds": 52.179854414,
+      "new_error_types": {
+        "starved_thermal": 6
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.111903023,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 387.434261650624,
+      "seconds": 0.724832958,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 7.857897026,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 13.01241395,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 11.584027032,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 1.7977242889999998,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 0.856415639,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 7.500312146,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.867682687,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 3.1816367700000003,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.727003833,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 2,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 1,
+      "vias": 38,
+      "length_mm": 523.1989115428624,
+      "seconds": 1.124064948,
+      "new_error_types": {
+        "starved_thermal": 1
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.7287642430000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 354.1762670743417,
+      "seconds": 0.855645456,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 3,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 13.493864097000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 41,
+      "length_mm": 1522.0593137491246,
+      "seconds": 3.021252972,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 1,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 2.0117001930000002,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "passed": false,
+      "opens": 0,
+      "new_errors": 2,
+      "vias": 17,
+      "length_mm": 480.4329510930379,
+      "seconds": 0.7128694760000001,
+      "new_error_types": {
+        "starved_thermal": 2
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 0.980991145,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 1484.1054119012779,
+      "seconds": 0.98494919,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 20,
+      "length_mm": 472.91450108747847,
+      "seconds": 0.836490022,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.715584176,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.710175446,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "seconds": 1.731397542,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 2,
+      "length_mm": 1498.272560544747,
+      "seconds": 0.710375733,
+      "new_error_types": {}
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 27,
+      "length_mm": 531.9971885900213,
+      "seconds": 0.72662587,
+      "new_error_types": {}
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 59,
+      "length_mm": 828.2341957425565,
+      "seconds": 1.348353553,
+      "new_error_types": {}
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 3,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 16,
+      "length_mm": 322.00683862820495,
+      "seconds": 1.096438437,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 585.6553451830986,
+      "seconds": 11.288134423999999,
+      "new_error_types": {}
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 1,
+      "passed": false,
+      "opens": 2,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 589.076050758597,
+      "seconds": 13.493111049,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "passed": false,
+      "opens": 1,
+      "new_errors": 0,
+      "vias": 111,
+      "length_mm": 1369.2818387007,
+      "seconds": 0.96702743,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 2,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 1.986942371,
+      "new_error_types": {}
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 1,
+      "passed": false,
+      "opens": 6,
+      "new_errors": 0,
+      "vias": 1,
+      "length_mm": 171.2351255021511,
+      "seconds": 14.976910855,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 3,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 2.002151666,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 1,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 12,
+      "length_mm": 352.6905969311543,
+      "seconds": 0.7319504800000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 40,
+      "length_mm": 845.4859970828462,
+      "seconds": 2.151081949,
+      "new_error_types": {}
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 14,
+      "length_mm": 224.0750550441052,
+      "seconds": 0.841390494,
+      "new_error_types": {}
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 2,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 100,
+      "length_mm": 1315.7860560230656,
+      "seconds": 1.9938579220000001,
+      "new_error_types": {}
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 2,
+      "passed": false,
+      "opens": 3,
+      "new_errors": 0,
+      "vias": 65,
+      "length_mm": 1428.724524912799,
+      "seconds": 7.599991542,
+      "new_error_types": {}
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 3,
+      "passed": true,
+      "opens": 0,
+      "new_errors": 0,
+      "vias": 9,
+      "length_mm": 239.6847421348615,
+      "seconds": 0.836809913,
+      "new_error_types": {}
+    }
+  ]
+}
