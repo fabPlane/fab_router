@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="620">
+<rect width="1600" height="620" fill="#101b29"/>
+<text x="35" y="45" fill="#eef3fa" font-family="sans-serif" font-size="28">Ignored copper and active island cleanup: both guards must survive integration</text>
+<text x="30" y="110" fill="#eef3fa" font-family="sans-serif" font-size="25">Cleanup only</text>
+<rect x="30" y="145" width="510" height="325" rx="10" fill="#1a2a3e"/>
+<polyline points="280.00,310.00 488.33,310.00" fill="none" stroke="#77b7ff" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="238.33,435.00 321.67,435.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="71.67,310.00 280.00,310.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<rect x="59.66666666666666" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<rect x="476.33333333333337" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<text x="30" y="510" fill="#eef3fa" font-family="sans-serif" font-size="21">Ignored copper preserved: False</text>
+<text x="30" y="545" fill="#eef3fa" font-family="sans-serif" font-size="21">Active island removed: True</text>
+<text x="560" y="110" fill="#eef3fa" font-family="sans-serif" font-size="25">Ignored-net guards only</text>
+<rect x="560" y="145" width="510" height="325" rx="10" fill="#1a2a3e"/>
+<polyline points="601.67,310.00 685.00,226.67 726.67,226.67 810.00,310.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="810.00,310.00 1018.33,310.00" fill="none" stroke="#77b7ff" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="768.33,435.00 851.67,435.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="768.33,185.00 851.67,185.00" fill="none" stroke="#eac266" stroke-width="8" stroke-linejoin="round"/>
+<rect x="589.6666666666666" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<rect x="1006.3333333333334" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<circle cx="810.0" cy="310.0" r="12" fill="#eeeeee"/><circle cx="810.0" cy="310.0" r="5" fill="#101b29"/>
+<text x="560" y="510" fill="#eef3fa" font-family="sans-serif" font-size="21">Ignored copper preserved: True</text>
+<text x="560" y="545" fill="#eef3fa" font-family="sans-serif" font-size="21">Active island removed: False</text>
+<text x="1090" y="110" fill="#eef3fa" font-family="sans-serif" font-size="25">Both fixes</text>
+<rect x="1090" y="145" width="510" height="325" rx="10" fill="#1a2a3e"/>
+<polyline points="1131.67,310.00 1215.00,226.67 1256.67,226.67 1340.00,310.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="1340.00,310.00 1548.33,310.00" fill="none" stroke="#77b7ff" stroke-width="8" stroke-linejoin="round"/>
+<polyline points="1298.33,435.00 1381.67,435.00" fill="none" stroke="#ff7777" stroke-width="8" stroke-linejoin="round"/>
+<rect x="1119.6666666666667" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<rect x="1536.3333333333333" y="298.0" width="24" height="24" fill="#eeeeee"/>
+<circle cx="1340.0" cy="310.0" r="12" fill="#eeeeee"/><circle cx="1340.0" cy="310.0" r="5" fill="#101b29"/>
+<text x="1090" y="510" fill="#eef3fa" font-family="sans-serif" font-size="21">Ignored copper preserved: True</text>
+<text x="1090" y="545" fill="#eef3fa" font-family="sans-serif" font-size="21">Active island removed: True</text>
+<text x="35" y="590" fill="#eef3fa" font-family="sans-serif" font-size="19">Red: F.Cu, blue: B.Cu, gold: active island, white: pads/via. Synthetic fixture; three identical audits per version.</text>
+</svg>
