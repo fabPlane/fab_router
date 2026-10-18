@@ -65,3 +65,42 @@ Use a new output directory when repeating the native run. Source, per-attempt
 metrics and control comparison are recorded in benchmark-summary.json. Final
 required checks passed: typecheck; 65 files, zero layer violations; 867 tests,
 zero failures, 398476 assertions (223.21 seconds). checks.json records hashes.
+
+## Plane-candidate integration audit
+
+The pending plane-contact change also edits `via.ts`. `composition.py` creates
+four isolated snapshots from pinned commits: main 69cf598, via fallback 1f898f4,
+plane contact 8aff4ae, and their composition. The composition keeps the plane
+iterator/stop checks and exhausts its placements for each permitted form before
+advancing to the next form. `composition.patch` records the exact adaptation
+relative to the pinned plane source; this branch's engine remains independent.
+
+Identical 27 regression tests, same host/cores 20–25, three repeats per source:
+
+| Source | Passing per repeat | Failing per repeat |
+| --- | ---: | ---: |
+| Main | 9 | 18 |
+| Via fallback | 12 | 15 |
+| Plane contact | 24 | 3 |
+| Combined | 27 | 0 |
+
+Three additional integration checks run three times on the combined source:
+blocked first form falls through without mutating the board; rejecting a yielded
+placement allows a different form at the same location; cancellation after a
+yield prevents clearance queries for the next form. Existing tests cover actual
+plane contact, requested-component identity, rollback, and blocked-scan aborts.
+`integration.ts` is installed into the isolated snapshot by the script.
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-via-fallback/composition.py --out /tmp/via-plane-composition
+```
+
+Use a fresh output directory. The script also runs the combined typecheck,
+layer check and full test suite. Raw repeated logs, source/test hashes and the
+full-check log hash are retained in `composition.json`. This is synthetic
+integration evidence; no combined native routing or performance result is claimed.
+The independent native results above remain the measured native coverage.
+
+Final combined checks passed: typecheck; 65 files with zero layer violations;
+889 tests, zero failures, 398669 assertions. Independent branch checks passed:
+867 tests, zero failures, 398476 assertions. Production source is unchanged.
