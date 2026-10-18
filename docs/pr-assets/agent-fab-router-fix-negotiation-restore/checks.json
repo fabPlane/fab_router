@@ -1,0 +1,43 @@
+{
+  "source_commit": "f05e3c0",
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "unit_tests": {
+    "passed": 862,
+    "failed": 0,
+    "assertions": 398474,
+    "seconds": 243.35
+  },
+  "check_log_sha256": "ba006e9bb0ea53fff8ab38d88ae650f29cb55560d750efb8bfba2480d739fc3c",
+  "regression_before": {
+    "passed": 1,
+    "failed": 1,
+    "scope": "two public route regressions before adding the journal control"
+  },
+  "regression_after": {
+    "passed": 3,
+    "failed": 0
+  },
+  "audit": {
+    "repeats": 3,
+    "settings": [
+      "default local loop",
+      "detailed negotiation"
+    ],
+    "detailed_before_new_spacing_errors": [
+      1,
+      1,
+      1
+    ],
+    "detailed_after_new_spacing_errors": [
+      0,
+      0,
+      0
+    ],
+    "both_nets_connected_every_repeat": true
+  },
+  "native_benchmark_log_sha256": "86599fa9fff0bdc85b9240dd35e0b7bb483dbab2c2ba98a31b90036e88af6e9a"
+}
