@@ -1,0 +1,71 @@
+{
+  "report": {
+    "passes": 1,
+    "attempted": 1,
+    "completed": 1,
+    "incompleteBefore": 1,
+    "incompleteAfter": 0,
+    "added": {
+      "tracks": 1,
+      "barrels": 0
+    },
+    "ripped": 0,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "maxPasses",
+    "effectiveSettings": {
+      "maxPasses": 1,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": false,
+      "strictDrc": false,
+      "layers": {},
+      "viasAllowed": false,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "neckWidthUm": 0,
+      "angleMode": "any"
+    },
+    "wallClockMs": 6,
+    "perNet": [
+      {
+        "net": "POWER",
+        "incomplete": 0
+      }
+    ]
+  },
+  "tracks": [
+    {
+      "net": 0,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": 10000,
+          "y": 0
+        },
+        {
+          "x": 40000,
+          "y": 0
+        }
+      ],
+      "width": 8000,
+      "kind": 1,
+      "hold": "free",
+      "id": 14,
+      "origin": "router"
+    }
+  ]
+}

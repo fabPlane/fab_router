@@ -1,0 +1,52 @@
+{
+  "baseline": "69cf598",
+  "engine_source": "1bbd5f3",
+  "command": "taskset -c 20-25 nice -n 10 timeout 180 python3 docs/pr-assets/agent-fab-router-fix-pad-attachment/regression.py --repeats 3 --out /tmp/pad-geometry-regressions",
+  "baseline_tests": {
+    "pass": 2,
+    "fail": 11
+  },
+  "candidate_tests": {
+    "pass": 13,
+    "fail": 0
+  },
+  "runs": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "exit_code": 1,
+      "log_sha256": "135de1c3947cdf1ed30771946c785118b5add76f47ff9d2a612a78105378bf02"
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "exit_code": 1,
+      "log_sha256": "c1a1391fc08ddb1226db1f3f8e4682c7066566f62b05475f5a22c7d3e225230c"
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "exit_code": 1,
+      "log_sha256": "b215fa810b71ad234130d6a93f039a167a020f66062182c53a365aafbc3de6e0"
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "exit_code": 0,
+      "log_sha256": "f08c86fc3668a1417a61c82434c4933be4d0e855966a319b4d79da603d3d6daa"
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "exit_code": 0,
+      "log_sha256": "38feadc58cbb3453affecc905ce98c2e8d3b07f7680ca8c16a0215f795dba066"
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "exit_code": 0,
+      "log_sha256": "3626de07b043112f15bad302a6e6a1968926ef29e98397c896d3dd96ede10d39"
+    }
+  ],
+  "native_benchmark": "Not repeated: all production source files identical to cycle 27 measured revision 1bbd5f3."
+}

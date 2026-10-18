@@ -1,0 +1,34 @@
+{
+  "checks_command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+  "checks_log_sha256": "6f2222d8c51092d710568301d5bea45f195de202ca66d55f0997b77b33a8192d",
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "tests": {
+    "pass": 875,
+    "fail": 0,
+    "expectations": 398552,
+    "seconds": 221.79
+  },
+  "source_commit": "1bbd5f3",
+  "regression_repeats_each": 3,
+  "baseline_regression": {
+    "pass": 4,
+    "fail": 12
+  },
+  "fixed_regression": {
+    "pass": 16,
+    "fail": 0
+  },
+  "limits": "No frozen-board or thermal improvement claimed; pad-edge-centre candidates only, shared-layer short probes.",
+  "slow_acceptance": {
+    "cases": 2,
+    "repeats_each": 3,
+    "pass_each_repeat": 1,
+    "fail_each_repeat": 1,
+    "baseline_identical": true,
+    "full_tier": false
+  }
+}

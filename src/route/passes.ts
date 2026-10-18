@@ -22,8 +22,8 @@
 import type { Barrel, Layout, Pad, Pour, Pt } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { RouteHooks } from "../../spec/types/results.ts";
-import type { Box } from "../geom/index.ts";
-import { boxOfPts, dist2PtPt } from "../geom/index.ts";
+import type { Box, Shape } from "../geom/index.ts";
+import { boxOfPts, coreOf, dist2PtPt } from "../geom/index.ts";
 import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
 import type { Connection } from "../../spec/types/results.ts";
 import { barrelSheets, buildLattice, type Lattice } from "../lattice/index.ts";
@@ -343,7 +343,42 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
     if (detailed === "tiles"
       && tryChannelRoute(ctx, conn.net, ends, fromUsable, toUsable, profile, ignore, deadline)) return true;
   }
+  // A full-width track need not reach a Pad's centre: it may attach to any of its copper.
+  // Dense neighbours can block the centre while leaving the long edge accessible. Retry only
+  // clear, on-copper candidates, through the ordinary exact-checked insertion path.
+  for (const sheet of common) {
+    const from = padAttachPoints(ctx, conn.from, sheet, ends.from.pt, ends.to.pt, profile, ignore);
+    const to = padAttachPoints(ctx, conn.to, sheet, ends.to.pt, ends.from.pt, profile, ignore);
+    if (from.length === 1 && to.length === 1 && from[0] === ends.from.pt && to[0] === ends.to.pt) continue;
+    for (const a of from) for (const b of to) {
+      if (abortRequested(ctx) || (deadline !== undefined && now() > deadline)) return false;
+      if (fastProbe(ctx, conn.net, sheet, a, b, profile, ignore)) return true;
+    }
+  }
   return false;
+}
+
+/** Vertices and edge midpoints of convex Pad copper, never bounding-box points outside it. */
+function padAttachPoints(ctx: RouteCtx, id: number, sheet: number, center: Pt, toward: Pt, profile: Profile, ignore: IgnoreSet): Pt[] {
+  if (pointFree(ctx.layout, ctx.lattice, sheet, center, profile, ignore).ok) return [center];
+  if (ctx.lattice.itemOf(id)?.cat !== "pad") return [];
+  const points: Pt[] = [];
+  const add = (p: Pt): void => {
+    if (!points.some(q => q.x === p.x && q.y === p.y)
+      && pointFree(ctx.layout, ctx.lattice, sheet, p, profile, ignore).ok) points.push(p);
+  };
+  const visit = (shape: Shape): void => {
+    if (shape.kind === "pieces") { for (const part of shape.parts) visit(part); return; }
+    const { pts } = coreOf(shape);
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i]!, b = pts[(i + 1) % pts.length]!;
+      add(a);
+      // Keep exact midpoints; rounding a diagonal edge could put the point outside the Pad.
+      if ((a.x + b.x) % 2 === 0 && (a.y + b.y) % 2 === 0) add({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+    }
+  };
+  for (const shape of ctx.lattice.shapesOf(id, sheet)) visit(shape);
+  return points.sort((a, b) => dist2PtPt(a, toward) - dist2PtPt(b, toward) || a.x - b.x || a.y - b.y).slice(0, 16);
 }
 
 /** Per-connection options for the detailed line-search: the `detailedBudgetMs` cap and abort signal. */
