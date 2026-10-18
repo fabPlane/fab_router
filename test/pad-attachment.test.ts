@@ -76,3 +76,50 @@ for (const kind of ['capsule', 'concave', 'multiple'] as const) test(`pad attach
   expect(layout.barrels).toHaveLength(0);
   expect(JSON.stringify(layout.pads)).toBe(pads);
 });
+
+// Both connections need the edge fallback. A positive global budget must stop
+// between complete connections rather than allowing every fallback to insert.
+test('one-item budget commits only one of two pad-edge connections', () => {
+  const layout = padAttachmentBoard();
+  layout.pads = [...layout.pads, ...layout.pads.map(p => ({ ...p, id: p.id + 10,
+    net: p.net === null ? null : 2, at: { x: p.at.x, y: p.at.y + 30000 } }))];
+  layout.nets = [...layout.nets, { id: 2, name: 'SECOND', group: 0, pads: [20, 21] }];
+  layout.netGroups = layout.netGroups.map(g => ({ ...g, nets: [...g.nets, 2] }));
+  const pads = JSON.stringify(layout.pads);
+  const report = route(layout, { maxItems: 1, viasAllowed: false, fanoutEnabled: false,
+    neckWidthUm: 0, optimizerEnabled: false, maxPasses: 1 });
+  expect(report.completed).toBe(1);
+  expect(report.incompleteAfter).toBe(1);
+  expect(requiredConnections(layout)).toHaveLength(1);
+  expect(report.added.tracks).toBe(1);
+  expect(layout.tracks).toHaveLength(1);
+  expect(layout.tracks[0]!.width).toBe(8000);
+  expect(checkDrc(layout).violations).toHaveLength(0);
+  expect(layout.barrels).toHaveLength(0);
+  expect(JSON.stringify(layout.pads)).toBe(pads);
+});
+
+test('cancellation leaves an edge-routable connection and its copper untouched', () => {
+  const layout = padAttachmentBoard();
+  const pads = JSON.stringify(layout.pads);
+  const controller = new AbortController();
+  controller.abort();
+  const report = route(layout, { viasAllowed: false, fanoutEnabled: false,
+    neckWidthUm: 0, optimizerEnabled: false }, { signal: controller.signal });
+  expect(report.aborted).toBe(true);
+  expect(report.completed).toBe(0);
+  expect(requiredConnections(layout)).toHaveLength(1);
+  expect(layout.tracks).toHaveLength(0);
+  expect(layout.barrels).toHaveLength(0);
+  expect(JSON.stringify(layout.pads)).toBe(pads);
+});
+
+test('ignored group does not acquire pad-edge routes', () => {
+  const layout = padAttachmentBoard();
+  const report = route(layout, { ignoreNetGroups: ['default'], viasAllowed: false,
+    fanoutEnabled: false, neckWidthUm: 0, optimizerEnabled: false });
+  expect(report.completed).toBe(0);
+  expect(requiredConnections(layout)).toHaveLength(1);
+  expect(layout.tracks).toHaveLength(0);
+  expect(layout.barrels).toHaveLength(0);
+});
