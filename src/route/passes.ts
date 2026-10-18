@@ -1668,8 +1668,13 @@ function runLegacyPasses(ctx: RouteCtx): PassOutcome {
       ctx.hooks?.onConnection?.({ net: netName, from: String(conn.from), to: String(conn.to), ok, elapsedMs: now() - t0 });
     }
 
-    ctx.hooks?.onPass?.({ pass: passes, incomplete: cur - completedThisPass, elapsedMs: now() - ctx.startMs });
-    ctx.hooks?.onProgress?.({ done: ctx.completed, total: ctx.completed + (cur - completedThisPass), elapsedMs: now() - ctx.startMs });
+    // Successful insertions can rip up other connections, so subtracting them from the
+    // starting count understates the remaining work. Measure the live terminal connectivity.
+    if (ctx.hooks?.onPass || ctx.hooks?.onProgress) {
+      const incomplete = totalIncomplete(ctx);
+      ctx.hooks.onPass?.({ pass: passes, incomplete, elapsedMs: now() - ctx.startMs });
+      ctx.hooks.onProgress?.({ done: ctx.completed, total: ctx.completed + incomplete, elapsedMs: now() - ctx.startMs });
+    }
 
     void completedThisPass;
     if (timedOut || aborted || stoppedBy === "maxItems") break;

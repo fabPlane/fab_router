@@ -1,0 +1,38 @@
+[
+  {
+    "version": "before",
+    "repeat": 1,
+    "exit_code": 1,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n10 |     onPass: e => seen.push({ reported: e.incomplete, actual: requiredConnections(layout).length }),\n11 |     onProgress: e => seen.push({ reported: e.total - e.done, actual: requiredConnections(layout).length }),\n12 |   });\n13 |   expect(seen).toHaveLength(6);\n14 |   expect(seen.some(e => e.actual > 0)).toBe(true);\n15 |   for (const e of seen) expect(e.reported).toBe(e.actual);\n                                                ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:15:44)\n(fail) pass and progress hooks count connections reopened by rip-up [63.52ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onPass alone counts live opens and excludes ignored nets [74.88ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onProgress alone counts live opens and excludes ignored nets [65.51ms]\n\n 0 pass\n 3 fail\n 15 expect() calls\nRan 3 tests across 1 file. [225.00ms]\n"
+  },
+  {
+    "version": "before",
+    "repeat": 2,
+    "exit_code": 1,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n10 |     onPass: e => seen.push({ reported: e.incomplete, actual: requiredConnections(layout).length }),\n11 |     onProgress: e => seen.push({ reported: e.total - e.done, actual: requiredConnections(layout).length }),\n12 |   });\n13 |   expect(seen).toHaveLength(6);\n14 |   expect(seen.some(e => e.actual > 0)).toBe(true);\n15 |   for (const e of seen) expect(e.reported).toBe(e.actual);\n                                                ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:15:44)\n(fail) pass and progress hooks count connections reopened by rip-up [63.88ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onPass alone counts live opens and excludes ignored nets [75.33ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onProgress alone counts live opens and excludes ignored nets [64.29ms]\n\n 0 pass\n 3 fail\n 15 expect() calls\nRan 3 tests across 1 file. [231.00ms]\n"
+  },
+  {
+    "version": "before",
+    "repeat": 3,
+    "exit_code": 1,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n10 |     onPass: e => seen.push({ reported: e.incomplete, actual: requiredConnections(layout).length }),\n11 |     onProgress: e => seen.push({ reported: e.total - e.done, actual: requiredConnections(layout).length }),\n12 |   });\n13 |   expect(seen).toHaveLength(6);\n14 |   expect(seen.some(e => e.actual > 0)).toBe(true);\n15 |   for (const e of seen) expect(e.reported).toBe(e.actual);\n                                                ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:15:44)\n(fail) pass and progress hooks count connections reopened by rip-up [63.57ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onPass alone counts live opens and excludes ignored nets [77.70ms]\n39 |       onProgress: e => seen.push({ reported: e.total - e.done, actual: actual() }),\n40 |     });\n41 |     expect(seen).toHaveLength(3);\n42 |     for (const e of seen) {\n43 |       expect(e.actual).toBe(1);\n44 |       expect(e.reported).toBe(e.actual);\n                              ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c32/before/test/pass-progress.test.ts:44:26)\n(fail) onProgress alone counts live opens and excludes ignored nets [65.25ms]\n\n 0 pass\n 3 fail\n 15 expect() calls\nRan 3 tests across 1 file. [222.00ms]\n"
+  },
+  {
+    "version": "after",
+    "repeat": 1,
+    "exit_code": 0,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n(pass) pass and progress hooks count connections reopened by rip-up [63.11ms]\n(pass) onPass alone counts live opens and excludes ignored nets [78.49ms]\n(pass) onProgress alone counts live opens and excludes ignored nets [62.05ms]\n\n 3 pass\n 0 fail\n 30 expect() calls\nRan 3 tests across 1 file. [222.00ms]\n"
+  },
+  {
+    "version": "after",
+    "repeat": 2,
+    "exit_code": 0,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n(pass) pass and progress hooks count connections reopened by rip-up [62.47ms]\n(pass) onPass alone counts live opens and excludes ignored nets [76.13ms]\n(pass) onProgress alone counts live opens and excludes ignored nets [64.96ms]\n\n 3 pass\n 0 fail\n 30 expect() calls\nRan 3 tests across 1 file. [229.00ms]\n"
+  },
+  {
+    "version": "after",
+    "repeat": 3,
+    "exit_code": 0,
+    "output": "bun test v1.4.0 (34cbb9a40)\n\ntest/pass-progress.test.ts:\n(pass) pass and progress hooks count connections reopened by rip-up [63.33ms]\n(pass) onPass alone counts live opens and excludes ignored nets [74.65ms]\n(pass) onProgress alone counts live opens and excludes ignored nets [65.56ms]\n\n 3 pass\n 0 fail\n 30 expect() calls\nRan 3 tests across 1 file. [221.00ms]\n"
+  }
+]
