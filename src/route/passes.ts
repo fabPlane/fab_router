@@ -41,7 +41,7 @@ import { legaliseTrail, trackPieces } from "./legalise.ts";
 import { createRipupHistory, isRippable, ripCost, cellHistory, presentFactor, type RipupHistory } from "./ripup.ts";
 import type { Track } from "../../spec/types/layout.ts";
 import { barrelFits } from "./clear.ts";
-import { pickBarrel, dropViaNear } from "./via.ts";
+import { pickBarrel, dropViaNear, viaDropsNear } from "./via.ts";
 import { nudgeClear, type RerouteFn } from "./nudge.ts";
 import { shoveClear, type ShoveBudget } from "./shove.ts";
 import { lineProbeRoute, type LineProbeOptions } from "./lineprobe.ts";
@@ -265,7 +265,7 @@ export function routeConnection(ctx: RouteCtx, conn: Connection): boolean {
       const sigUsable = fromPlane ? toUsable : fromUsable;
       const planeEnd = fromPlane ? ends.from : ends.to;
       const planeSheet = planeEnd.sheets.find((s) => ctx.planeSheets.has(s)) ?? planeEnd.sheets[0]!;
-      if (sigUsable.length > 0 && tryPlaneVia(ctx, conn.net, sigPt, sigUsable, planeSheet, profile, ignore)) return true;
+      if (sigUsable.length > 0 && tryPlaneVia(ctx, conn, sigPt, sigUsable, planeSheet, profile, ignore, deadline)) return true;
     }
   }
 
@@ -546,22 +546,31 @@ function tryShoveTrail(ctx: RouteCtx, net: number | null, sheet: number, centre:
 }
 
 /** Connect a signal point to a plane Pour: a short stub and a Barrel spanning the plane Sheet. */
-function tryPlaneVia(ctx: RouteCtx, net: number | null, sigPt: Pt, sigUsable: number[], planeSheet: number, profile: Profile, ignore: IgnoreSet): boolean {
+function tryPlaneVia(ctx: RouteCtx, conn: Connection, sigPt: Pt, sigUsable: number[], planeSheet: number, profile: Profile, ignore: IgnoreSet, deadline: number | undefined): boolean {
   const luPerUm = ctx.layout.frame.luPerUm;
   const maxRadius = Math.max(1, Math.round(2000 * luPerUm)); // up to ~2 mm from the pad
   for (const sheet of sigUsable) {
-    const drop = dropViaNear(ctx.layout, ctx.lattice, sheet, planeSheet, sigPt, profile, ignore, maxRadius);
-    if (!drop) continue;
-    const mark = ctx.journal.mark();
-    const cand = drop.candidate;
-    const lo = Math.min(cand.fromSheet, planeSheet, sheet), hi = Math.max(cand.toSheet, planeSheet, sheet);
-    if (!barrelFits(ctx.layout, ctx.lattice, drop.at, cand, profile, ignore).ok) continue;
-    ctx.journal.addBarrel({ net, at: drop.at, form: cand.form, fromSheet: cand.fromSheet, toSheet: cand.toSheet, kind: cand.kind, hold: "free" });
-    void lo; void hi;
-    if (drop.stub.length >= 2) {
-      if (!insertTrail(ctx, net, sheet, drop.stub, profile, ignore)) { ctx.journal.rewind(mark); continue; }
+    for (const drop of viaDropsNear(ctx.layout, ctx.lattice, sheet, planeSheet, sigPt, profile, ignore, maxRadius,
+      () => abortRequested(ctx) || (deadline !== undefined && now() > deadline))) {
+      if (abortRequested(ctx) || (deadline !== undefined && now() > deadline)) return false;
+      const mark = ctx.journal.mark();
+      const cand = drop.candidate;
+      if (!barrelFits(ctx.layout, ctx.lattice, drop.at, cand, profile, ignore).ok) continue;
+      ctx.journal.addBarrel({ net: conn.net, at: drop.at, form: cand.form, fromSheet: cand.fromSheet, toSheet: cand.toSheet, kind: cand.kind, hold: "free" });
+      if (drop.stub.length >= 2) {
+        if (!insertTrail(ctx, conn.net, sheet, drop.stub, profile, ignore)) { ctx.journal.rewind(mark); continue; }
+      }
+      // Spanning a plane Sheet does not imply contact with its Pour: copper can be distant or
+      // contain a window. Verify both terminals against the actual inserted copper, including
+      // any necked stub, before reporting success or retaining the escape.
+      const live = connectivity(ctx.layout, ctx.lattice);
+      const component = live.componentOf.get(conn.from);
+      if (component === undefined || component !== live.componentOf.get(conn.to)) {
+        ctx.journal.rewind(mark);
+        continue;
+      }
+      return true;
     }
-    return true;
   }
   return false;
 }

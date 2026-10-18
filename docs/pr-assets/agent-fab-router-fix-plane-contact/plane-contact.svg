@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1220" viewBox="0 0 1400 1220">
+<rect width="1400" height="1220" fill="#101923"/>
+<g font-family="sans-serif" fill="#eef3f7">
+<text x="40" y="40" font-size="25">Plane via contact: measured minimal regression</text>
+<text x="40" y="70" font-size="17">Blue: plane copper   Red: signal pad   Green: inserted via (projected layers)</text>
+<text x="45" y="110" font-size="22">Before: main</text>
+<text x="45" y="140" font-size="19">distant: success=true, joined=false</text>
+<rect x="184" y="160" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="418.0,326.0 470.0,326.0 470.0,274.0 418.0,274.0" fill="#287ab0"/>
+<circle cx="340.0" cy="300.0" r="7.8" fill="#fa705f"/>
+<circle cx="340.0" cy="300.0" r="7.8" fill="#72e3a2"/><circle cx="340.0" cy="300.0" r="2.6" fill="#101923"/>
+<text x="45" y="465" font-size="16">1 via; 1 open; 0 engine violations</text>
+<text x="45" y="490" font-size="19">hole: success=true, joined=false</text>
+<rect x="184" y="510" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="210.0,780.0 470.0,780.0 470.0,520.0 210.0,520.0" fill="#287ab0"/>
+<polygon points="275.0,715.0 405.0,715.0 405.0,585.0 275.0,585.0" fill="#1c2836"/>
+<circle cx="340.0" cy="650.0" r="7.8" fill="#fa705f"/>
+<circle cx="340.0" cy="650.0" r="7.8" fill="#72e3a2"/><circle cx="340.0" cy="650.0" r="2.6" fill="#101923"/>
+<text x="45" y="815" font-size="16">1 via; 1 open; 0 engine violations</text>
+<text x="45" y="840" font-size="19">under-pad: success=true, joined=true</text>
+<rect x="184" y="860" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="210.0,1130.0 470.0,1130.0 470.0,870.0 210.0,870.0" fill="#287ab0"/>
+<circle cx="340.0" cy="1000.0" r="7.8" fill="#fa705f"/>
+<circle cx="340.0" cy="1000.0" r="7.8" fill="#72e3a2"/><circle cx="340.0" cy="1000.0" r="2.6" fill="#101923"/>
+<text x="45" y="1165" font-size="16">1 via; 0 open; 0 engine violations</text>
+<text x="740" y="110" font-size="22">After: live terminal check</text>
+<text x="740" y="140" font-size="19">distant: success=false, joined=false</text>
+<rect x="879" y="160" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="1113.0,326.0 1165.0,326.0 1165.0,274.0 1113.0,274.0" fill="#287ab0"/>
+<circle cx="1035.0" cy="300.0" r="7.8" fill="#fa705f"/>
+<text x="740" y="465" font-size="16">0 via; 1 open; 0 engine violations</text>
+<text x="740" y="490" font-size="19">hole: success=false, joined=false</text>
+<rect x="879" y="510" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="905.0,780.0 1165.0,780.0 1165.0,520.0 905.0,520.0" fill="#287ab0"/>
+<polygon points="970.0,715.0 1100.0,715.0 1100.0,585.0 970.0,585.0" fill="#1c2836"/>
+<circle cx="1035.0" cy="650.0" r="7.8" fill="#fa705f"/>
+<text x="740" y="815" font-size="16">0 via; 1 open; 0 engine violations</text>
+<text x="740" y="840" font-size="19">under-pad: success=true, joined=true</text>
+<rect x="879" y="860" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="905.0,1130.0 1165.0,1130.0 1165.0,870.0 905.0,870.0" fill="#287ab0"/>
+<circle cx="1035.0" cy="1000.0" r="7.8" fill="#fa705f"/>
+<circle cx="1035.0" cy="1000.0" r="7.8" fill="#72e3a2"/><circle cx="1035.0" cy="1000.0" r="2.6" fill="#101923"/>
+<text x="740" y="1165" font-size="16">1 via; 0 open; 0 engine violations</text>
+<text x="40" y="1200" font-size="16">Same scale in every panel. Rejected escapes remain open; no completion improvement claimed.</text>
+</g></svg>

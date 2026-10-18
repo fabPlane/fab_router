@@ -1,0 +1,1502 @@
+[
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 3,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 3
+        },
+        "violations": 0
+      }
+    },
+    "version": "before",
+    "repeat": 1,
+    "exit_code": 1,
+    "log_sha256": "2927361f2c63c7d7c683d270be85b4d5f1c3c919bea4d0f20f799f6e5b705d46",
+    "passed": 2,
+    "failed": 4
+  },
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 3,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 3
+        },
+        "violations": 0
+      }
+    },
+    "version": "before",
+    "repeat": 2,
+    "exit_code": 1,
+    "log_sha256": "de6f02227bf94800854fb34069045f27b5d2a6c9b7c6bdda2f61a8628c33fc35",
+    "passed": 2,
+    "failed": 4
+  },
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": true,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 3,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 3
+        },
+        "violations": 0
+      }
+    },
+    "version": "before",
+    "repeat": 3,
+    "exit_code": 1,
+    "log_sha256": "e1d958d3a3cfe2857caf5e6b65115d4c0ef1567cd4528cb5ef06840bc0cf5ef4",
+    "passed": 2,
+    "failed": 4
+  },
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 0,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "violations": 0
+      }
+    },
+    "version": "after",
+    "repeat": 1,
+    "exit_code": 0,
+    "log_sha256": "f6a1092dbd37d0e5811c869074a60a45a3c130098bc5a7557a5b9bd1e137f771",
+    "passed": 6,
+    "failed": 0
+  },
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 0,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "violations": 0
+      }
+    },
+    "version": "after",
+    "repeat": 2,
+    "exit_code": 0,
+    "log_sha256": "e1846b59f22ebf870967931f3a1b07260a7a0492d7b2a013bd495586a0d2ced9",
+    "passed": 6,
+    "failed": 0
+  },
+  {
+    "audit": {
+      "results": [
+        {
+          "mode": "distant",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": 30000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": -10000
+                },
+                {
+                  "x": 50000,
+                  "y": 10000
+                },
+                {
+                  "x": 30000,
+                  "y": 10000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "hole",
+          "success": false,
+          "joined": false,
+          "drc": {
+            "violations": 0,
+            "incompletes": 1
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [
+                [
+                  {
+                    "x": -25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": -25000
+                  },
+                  {
+                    "x": 25000,
+                    "y": 25000
+                  },
+                  {
+                    "x": -25000,
+                    "y": 25000
+                  }
+                ]
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [],
+          "viaRadius": 3000
+        },
+        {
+          "mode": "under-pad",
+          "success": true,
+          "joined": true,
+          "drc": {
+            "violations": 0,
+            "incompletes": 0
+          },
+          "pads": [
+            {
+              "id": 10,
+              "part": 1,
+              "pinName": "1",
+              "net": 0,
+              "form": 100,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "side": "front",
+              "rotationDeg": 0,
+              "sheets": [
+                0
+              ],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "pours": [
+            {
+              "id": 20,
+              "net": 0,
+              "sheet": 1,
+              "outline": [
+                {
+                  "x": -50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": -50000
+                },
+                {
+                  "x": 50000,
+                  "y": 50000
+                },
+                {
+                  "x": -50000,
+                  "y": 50000
+                }
+              ],
+              "holes": [],
+              "kind": 1,
+              "hold": "locked"
+            }
+          ],
+          "tracks": [],
+          "barrels": [
+            {
+              "net": 0,
+              "at": {
+                "x": 0,
+                "y": 0
+              },
+              "form": 101,
+              "fromSheet": 0,
+              "toSheet": 1,
+              "kind": 1,
+              "hold": "free",
+              "id": 21,
+              "origin": "router"
+            }
+          ],
+          "viaRadius": 3000
+        }
+      ],
+      "repeated": {
+        "completed": 0,
+        "incomplete": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "violations": 0
+      }
+    },
+    "version": "after",
+    "repeat": 3,
+    "exit_code": 0,
+    "log_sha256": "33d57463521a69bb28ada4b4fb0410fc3bb416b136a8e04b6667bac9f714e85d",
+    "passed": 6,
+    "failed": 0
+  }
+]

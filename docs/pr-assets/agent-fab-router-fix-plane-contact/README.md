@@ -1,0 +1,133 @@
+Plane contact regression evidence
+===============================
+
+`tryPlaneVia` used to treat a via spanning a plane sheet as successful plane-net completion, even when the target pour was elsewhere or had a hole around the via. The minimal two-layer fixture has one signal pad and one plane pour. The regression first fails on main; the control places real pour copper underneath the pad. A barrel-only fence also forces a displaced via and stub, checking atomic rollback and a successful displaced escape.
+
+The fix verifies live connectivity of the original connection terminals after inserting the via and legalised stub. If they remain separate, the journal rewinds before another sheet or ordinary routing tier is considered. It does not extend the existing via search or guarantee that all reachable pour copper will be found. Rejected fixtures still have one open. Native thermal starvation remains unresolved.
+
+`regressions.json` includes three identical fixture audits per version, full measured copper, per-test outcomes and log hashes. The public API repeated-pass audit demonstrates three false completions/three useless vias before, zero/zero after. The actual connection remains open in both. All synthetic engine checks report zero violations. These are synthetic engine diagnostics, not native benchmark passes.
+
+```bash
+taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-contact/regression.py --baseline 69cf598 --repeats 3 --out /tmp/plane-contact-regression
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/render.py
+taskset -c 20-25 nice -n 10 timeout 1800 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+cd ~/bench/wt/fp-bugs
+taskset -c 20-25 nice -n 10 timeout 2400 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source ~/bench/wt/fr-bugs --out /tmp/plane-contact-native
+```
+
+The render uses the actual measured pad/pour/via geometry and projects both copper layers at a common scale; it is not a native board render. The fixture and rendering code are authored for this regression. No external board asset is used.
+
+The native summary script checks every captured source hash, frozen controls, case/seed outcomes and copper counts against the same-host historical main sweep. Run it with the source commit recorded in benchmark-summary.json:
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/summarize.py ~/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full /tmp/plane-contact-native --source-commit COMMIT
+```
+
+This independent main-based change touches the plane-via helper in passes.ts. Other pending terminal-preservation, progress, prior-target and pad-access fixes must be retained separately during integration. No performance functions change.
+
+Requested pour component controls
+--------------------------------
+
+Four additional tests place a separate same-net pour under the signal pad while the requested pour remains distant. Both endpoint orders must reject the local escape if it only contacts the wrong component. A retained plane-layer track then joins the pours: both endpoint orders must accept the same via through transitive copper connectivity. Tests preserve the retained track/pads/pours, compare live and rebuilt connectivity, assert zero spacing violations, and rewind successful insertions through the caller's journal mark.
+
+The identical four tests run three times per revision: main passes two connected controls and fails both disconnected cases; the guard passes all four. `components.json` records per-run outcomes/log hashes and engine/test hashes. This is additional synthetic regression coverage, not a new production change or native benchmark run; the recorded full native sweep still covers the unchanged engine.
+
+```bash
+taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-contact/component-regression.py --out /tmp/plane-components
+```
+
+Final cycle-42 required checks passed: typecheck, layer checks (65 files, zero violations), and 869 tests / zero failures / 398557 assertions (215.99 seconds). The full log includes all four added component tests; its hash is recorded in components.json.
+
+## Reachable plane candidates
+
+A clear via at the signal pad can miss the plane while a later ring candidate contacts it.
+The first-placement helper previously stopped the plane escape before examining that candidate.
+`viaDropsNear` now enumerates the existing ordered, bounded placements; `dropViaNear` still
+returns the first placement for its other callers. Plane routing inserts each candidate and
+its legalised stub, verifies live connectivity to the requested terminal, and rewinds rejected
+copper before trying another candidate. The connection deadline and cancellation signal apply.
+This extends the contact guard; it does not add an exhaustive plane search or native thermal model.
+
+Five additional regressions cover a nearby pour edge and window edge in both endpoint orders,
+plus the public API. Each fixture changes from one open to zero with one via and one stub;
+there are zero engine spacing violations and caller rollback restores the initial board.
+Three repeats of the identical tests: `3189e6c` **0 pass / 5 fail** each; candidate search
+**5 pass / 0 fail** each. These are synthetic engine fixtures, not frozen native benchmark passes.
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/candidate-regression.py --out /tmp/plane-candidates
+bun test test/plane-candidate-search.test.ts test/plane-contact.test.ts test/plane-target-component.test.ts
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/candidate-render.py
+```
+
+`candidates.json` contains repeated raw geometry, log hashes, and source/test hashes.
+`plane-candidates.png` renders that geometry with both layers projected at the same scale.
+
+Final candidate native verification (`fb03f91`):
+
+| Full native fab_router sweep, same 26 cases | Before: main | After: fb03f91 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing runs | 39/78 | 39/78 | 3/case |
+| Valid cases, all three repeats pass | 13/26 | 13/26 | 3/case |
+| Opens, summed attempts | 120 | 120 | 78 attempts |
+| New native DRC errors | 27 | 27 | 78 attempts |
+| Median route seconds | 1.172079 | 1.110919 | 78 attempts |
+
+Every case/seed has identical pass/open/error/via/length results. All 74 captured source hashes match the measured revision and frozen controls match the reference. Timings are shared-host descriptive only. The 27 remaining errors are thermal starvation. Full source/control and per-attempt evidence: `candidate-benchmark-summary.json`.
+
+Final required checks passed: typecheck; layer checks (65 files, zero violations); 874 tests, zero failures, 398610 assertions (211.20 seconds). All 15 plane regressions are included. Final source/test and log hashes are in candidate-checks.json; native source/control hashes and per-attempt results are in candidate-benchmark-summary.json.
+
+## Stop fully blocked candidate scans
+
+A no-yield path exposed a cancellation gap: when every via placement is blocked, the generator
+could scan the complete ring before the plane helper saw any placement and checked its deadline
+or signal. `viaDropsNear` now accepts an optional stop predicate, checked before the target and
+every ring candidate. The plane helper supplies its existing connection deadline and abort signal.
+Other callers retain their previous first-placement behavior. An individual clearance check is
+still atomic; this is a candidate-boundary stop guarantee, not a hard real-time deadline.
+
+Four deterministic regressions use a barrel-only fence covering the entire search radius.
+They cover already-aborted, already-expired, abort-during-check and expiry-during-check paths.
+The latter uses a restored mock clock, avoiding elapsed-time thresholds. No copper survives;
+each board retains one open and zero engine violations. The same tests run three times each:
+
+| Synthetic blocked search | Before 1e832f5 | After f8de7c9 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing regressions | 0/4 | 4/4 | 3/version |
+| Queries when stopped at entry, each condition | 418 | 0 | 3/condition |
+| Queries when stopped during a clearance check, each condition | 418 | ≤4 | 3/condition |
+
+```bash
+taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-contact/stop-regression.py --out /tmp/plane-stops
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/stop-render.py
+bun test test/plane-search-stop.test.ts
+```
+
+`stops.json` retains all six raw test logs and source/test hashes. The accompanying PNG charts
+measured before counts and asserted after upper bounds, not wall-clock performance.
+
+
+Final interruption-fix native validation (`f8de7c9`):
+
+| Full native fab_router sweep, same machine/cases/seeds | Before main | After f8de7c9 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing runs | 39/78 | 39/78 | 3/case |
+| Valid cases, 3/3 | 13/26 | 13/26 | 3/case |
+| Opens | 120 | 120 | 78 attempts |
+| New native DRC errors | 27 | 27 | 78 attempts |
+| Median route seconds | 1.172079 | 1.066789 | 78 attempts |
+
+Every case/seed has identical pass/open/error/via/length outcomes. All 74 captured source hashes
+match f8de7c9 and frozen input/config/harness/runtime/order/seeds/core controls match the reference.
+Timings are descriptive shared-host observations with overlapping unit tests; no speed claim.
+The 27 native errors remain thermal starvation. Evidence: `stop-benchmark-summary.json`.
+
+Required checks: typecheck passed; layers 65 files / zero violations; 878 tests / zero failures /
+398634 assertions (214.84 seconds). `stop-checks.json` records final source/test and log hashes.
+
+```bash
+cd ~/bench/wt/fp-bugs
+taskset -c 20-25 nice -n 10 timeout 2400 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source ~/bench/wt/fr-bugs --out /tmp/plane-stop-native
+cd ~/bench/wt/fr-bugs
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/summarize.py ~/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full /tmp/plane-stop-native --source-commit f8de7c9
+```
