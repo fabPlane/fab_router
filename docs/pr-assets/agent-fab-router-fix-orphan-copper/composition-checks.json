@@ -1,0 +1,41 @@
+{
+  "independent_source": "eea1256",
+  "composed_source": "eea1256 with src/route/passes.ts from f7378c5",
+  "snapshot_commit": "45d177e",
+  "independent": {
+    "passed": 871,
+    "failed": 0,
+    "assertions": 398476,
+    "tests": 871,
+    "files": 29,
+    "seconds": 248.86,
+    "typecheck_passed": true,
+    "layer_violations": 0,
+    "log_sha256": "1657c4aa966257d4b9ad251cfce8dba1e392a06de5b82afc58f92b2d7042f29f"
+  },
+  "composed_initial": {
+    "passed": 873,
+    "failed": 2,
+    "assertions": 398553,
+    "tests": 875,
+    "files": 30,
+    "seconds": 247.91,
+    "typecheck_passed": true,
+    "layer_violations": 0,
+    "log_sha256": "1dcebe59c3cdacef3d55c2a0c8a78c7a64cfd86b998c2805692fe6af090f2a6e"
+  },
+  "composed_with_expectation_patch": {
+    "passed": 875,
+    "failed": 0,
+    "assertions": 398556,
+    "tests": 875,
+    "files": 30,
+    "seconds": 246.12,
+    "typecheck_passed": true,
+    "layer_violations": 0,
+    "log_sha256": "3323b7c5321146f0fef28371c97af919edeedf425f5a2f510ba9886904b1d505"
+  },
+  "expectation_patch_sha256": "8c416cfbcc4cbd18514ff28b954172a60c02abd7dff3f1688b78711096b17ff2",
+  "native_source_hashes_revalidated": true,
+  "new_native_benchmark_runs": 0
+}
