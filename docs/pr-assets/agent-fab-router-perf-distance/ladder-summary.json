@@ -1,0 +1,922 @@
+{
+  "trace_sha256": "e7693c38ca4064a1e03999b450b1bbc1964ec00c38214367db0631e3d04ce348",
+  "instrumentation": {
+    "revision": "69cf598db98c136bff16bbe02bccdded95674b18",
+    "archive_sha256": "a6b8270b08d4ee4d26a31e8cf64e103079d396580eafef63954cf1bbcd46e88f",
+    "instrumented_distance_sha256": "65874654178fd41360095b0c70e3d4297e988f5fbf44ce6679244ebc2ba3e312",
+    "generator_sha256": "7e8b4c11f8c00a376d0f80d659b7456e7b80e2f459898ef71097b15904708101"
+  },
+  "started_utc": "2026-10-18T20:51:40.481Z",
+  "finished_utc": "2026-10-18T20:51:58.916Z",
+  "bun": "1.4.0",
+  "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+  "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+  "dist2_calls": 0,
+  "core_calls": 41507868,
+  "kinds": {
+    "box": 851414,
+    "capsule": 30054557,
+    "disk": 10601897
+  },
+  "systematic_caller_samples": {
+    "geom/onboard.ts:56:18": 6188,
+    "route/clear.ts:62:14": 1803,
+    "geom/bounds.ts:79:13": 367,
+    "route/clear.ts:62:30": 1767,
+    "drc/exact.ts:34:14": 4,
+    "drc/exact.ts:34:30": 4
+  },
+  "caller_sample_stride": 4096,
+  "routes": [
+    {
+      "started_utc": "2026-10-18T20:51:58.944Z",
+      "finished_utc": "2026-10-18T20:52:16.004Z",
+      "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+      "seconds": 17.059871113,
+      "settings": {
+        "timeBudgetMs": 600000,
+        "maxPasses": 2,
+        "seed": 1
+      },
+      "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+      "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+      "report": {
+        "passes": 2,
+        "attempted": 82,
+        "completed": 25,
+        "incompleteBefore": 50,
+        "incompleteAfter": 29,
+        "added": {
+          "tracks": 75,
+          "barrels": 42
+        },
+        "ripped": 7,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 2,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 600000,
+          "angleMode": "45"
+        },
+        "wallClockMs": 17046,
+        "perNet": [
+          {
+            "net": "N1",
+            "incomplete": 0
+          },
+          {
+            "net": "N2",
+            "incomplete": 0
+          },
+          {
+            "net": "N3",
+            "incomplete": 0
+          },
+          {
+            "net": "N4",
+            "incomplete": 0
+          },
+          {
+            "net": "N5",
+            "incomplete": 0
+          },
+          {
+            "net": "N6",
+            "incomplete": 1
+          },
+          {
+            "net": "N7",
+            "incomplete": 0
+          },
+          {
+            "net": "N8",
+            "incomplete": 1
+          },
+          {
+            "net": "N9",
+            "incomplete": 1
+          },
+          {
+            "net": "N10",
+            "incomplete": 0
+          },
+          {
+            "net": "N11",
+            "incomplete": 1
+          },
+          {
+            "net": "N12",
+            "incomplete": 1
+          },
+          {
+            "net": "N13",
+            "incomplete": 1
+          },
+          {
+            "net": "N14",
+            "incomplete": 0
+          },
+          {
+            "net": "N15",
+            "incomplete": 1
+          },
+          {
+            "net": "N16",
+            "incomplete": 1
+          },
+          {
+            "net": "N17",
+            "incomplete": 1
+          },
+          {
+            "net": "N18",
+            "incomplete": 0
+          },
+          {
+            "net": "N19",
+            "incomplete": 1
+          },
+          {
+            "net": "N20",
+            "incomplete": 1
+          },
+          {
+            "net": "N21",
+            "incomplete": 0
+          },
+          {
+            "net": "N22",
+            "incomplete": 1
+          },
+          {
+            "net": "N23",
+            "incomplete": 1
+          },
+          {
+            "net": "N24",
+            "incomplete": 1
+          },
+          {
+            "net": "N25",
+            "incomplete": 1
+          },
+          {
+            "net": "N26",
+            "incomplete": 1
+          },
+          {
+            "net": "N27",
+            "incomplete": 0
+          },
+          {
+            "net": "N28",
+            "incomplete": 0
+          },
+          {
+            "net": "N29",
+            "incomplete": 0
+          },
+          {
+            "net": "N30",
+            "incomplete": 0
+          },
+          {
+            "net": "N31",
+            "incomplete": 0
+          },
+          {
+            "net": "N32",
+            "incomplete": 0
+          },
+          {
+            "net": "N33",
+            "incomplete": 1
+          },
+          {
+            "net": "N34",
+            "incomplete": 0
+          },
+          {
+            "net": "N35",
+            "incomplete": 1
+          },
+          {
+            "net": "N36",
+            "incomplete": 0
+          },
+          {
+            "net": "N37",
+            "incomplete": 1
+          },
+          {
+            "net": "N38",
+            "incomplete": 1
+          },
+          {
+            "net": "N39",
+            "incomplete": 1
+          },
+          {
+            "net": "N40",
+            "incomplete": 1
+          },
+          {
+            "net": "N41",
+            "incomplete": 0
+          },
+          {
+            "net": "N42",
+            "incomplete": 1
+          },
+          {
+            "net": "N43",
+            "incomplete": 0
+          },
+          {
+            "net": "N44",
+            "incomplete": 0
+          },
+          {
+            "net": "N45",
+            "incomplete": 1
+          },
+          {
+            "net": "N46",
+            "incomplete": 1
+          },
+          {
+            "net": "N47",
+            "incomplete": 1
+          },
+          {
+            "net": "N48",
+            "incomplete": 1
+          },
+          {
+            "net": "N49",
+            "incomplete": 1
+          },
+          {
+            "net": "N50",
+            "incomplete": 1
+          }
+        ]
+      }
+    },
+    {
+      "started_utc": "2026-10-18T20:52:16.004Z",
+      "finished_utc": "2026-10-18T20:52:34.531Z",
+      "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+      "seconds": 18.527160825999996,
+      "settings": {
+        "timeBudgetMs": 600000,
+        "maxPasses": 2,
+        "seed": 1
+      },
+      "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+      "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+      "report": {
+        "passes": 2,
+        "attempted": 82,
+        "completed": 25,
+        "incompleteBefore": 50,
+        "incompleteAfter": 29,
+        "added": {
+          "tracks": 75,
+          "barrels": 42
+        },
+        "ripped": 7,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 2,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 600000,
+          "angleMode": "45"
+        },
+        "wallClockMs": 18523,
+        "perNet": [
+          {
+            "net": "N1",
+            "incomplete": 0
+          },
+          {
+            "net": "N2",
+            "incomplete": 0
+          },
+          {
+            "net": "N3",
+            "incomplete": 0
+          },
+          {
+            "net": "N4",
+            "incomplete": 0
+          },
+          {
+            "net": "N5",
+            "incomplete": 0
+          },
+          {
+            "net": "N6",
+            "incomplete": 1
+          },
+          {
+            "net": "N7",
+            "incomplete": 0
+          },
+          {
+            "net": "N8",
+            "incomplete": 1
+          },
+          {
+            "net": "N9",
+            "incomplete": 1
+          },
+          {
+            "net": "N10",
+            "incomplete": 0
+          },
+          {
+            "net": "N11",
+            "incomplete": 1
+          },
+          {
+            "net": "N12",
+            "incomplete": 1
+          },
+          {
+            "net": "N13",
+            "incomplete": 1
+          },
+          {
+            "net": "N14",
+            "incomplete": 0
+          },
+          {
+            "net": "N15",
+            "incomplete": 1
+          },
+          {
+            "net": "N16",
+            "incomplete": 1
+          },
+          {
+            "net": "N17",
+            "incomplete": 1
+          },
+          {
+            "net": "N18",
+            "incomplete": 0
+          },
+          {
+            "net": "N19",
+            "incomplete": 1
+          },
+          {
+            "net": "N20",
+            "incomplete": 1
+          },
+          {
+            "net": "N21",
+            "incomplete": 0
+          },
+          {
+            "net": "N22",
+            "incomplete": 1
+          },
+          {
+            "net": "N23",
+            "incomplete": 1
+          },
+          {
+            "net": "N24",
+            "incomplete": 1
+          },
+          {
+            "net": "N25",
+            "incomplete": 1
+          },
+          {
+            "net": "N26",
+            "incomplete": 1
+          },
+          {
+            "net": "N27",
+            "incomplete": 0
+          },
+          {
+            "net": "N28",
+            "incomplete": 0
+          },
+          {
+            "net": "N29",
+            "incomplete": 0
+          },
+          {
+            "net": "N30",
+            "incomplete": 0
+          },
+          {
+            "net": "N31",
+            "incomplete": 0
+          },
+          {
+            "net": "N32",
+            "incomplete": 0
+          },
+          {
+            "net": "N33",
+            "incomplete": 1
+          },
+          {
+            "net": "N34",
+            "incomplete": 0
+          },
+          {
+            "net": "N35",
+            "incomplete": 1
+          },
+          {
+            "net": "N36",
+            "incomplete": 0
+          },
+          {
+            "net": "N37",
+            "incomplete": 1
+          },
+          {
+            "net": "N38",
+            "incomplete": 1
+          },
+          {
+            "net": "N39",
+            "incomplete": 1
+          },
+          {
+            "net": "N40",
+            "incomplete": 1
+          },
+          {
+            "net": "N41",
+            "incomplete": 0
+          },
+          {
+            "net": "N42",
+            "incomplete": 1
+          },
+          {
+            "net": "N43",
+            "incomplete": 0
+          },
+          {
+            "net": "N44",
+            "incomplete": 0
+          },
+          {
+            "net": "N45",
+            "incomplete": 1
+          },
+          {
+            "net": "N46",
+            "incomplete": 1
+          },
+          {
+            "net": "N47",
+            "incomplete": 1
+          },
+          {
+            "net": "N48",
+            "incomplete": 1
+          },
+          {
+            "net": "N49",
+            "incomplete": 1
+          },
+          {
+            "net": "N50",
+            "incomplete": 1
+          }
+        ]
+      }
+    },
+    {
+      "started_utc": "2026-10-18T20:52:34.531Z",
+      "finished_utc": "2026-10-18T20:52:52.593Z",
+      "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+      "seconds": 18.061622893,
+      "settings": {
+        "timeBudgetMs": 600000,
+        "maxPasses": 2,
+        "seed": 1
+      },
+      "input_sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+      "ses_sha256": "b9eb052bdc4ad175507d5a11a3af38d0415452de5e8d758e301627729c4ed7b2",
+      "report": {
+        "passes": 2,
+        "attempted": 82,
+        "completed": 25,
+        "incompleteBefore": 50,
+        "incompleteAfter": 29,
+        "added": {
+          "tracks": 75,
+          "barrels": 42
+        },
+        "ripped": 7,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 2,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 600000,
+          "angleMode": "45"
+        },
+        "wallClockMs": 18057,
+        "perNet": [
+          {
+            "net": "N1",
+            "incomplete": 0
+          },
+          {
+            "net": "N2",
+            "incomplete": 0
+          },
+          {
+            "net": "N3",
+            "incomplete": 0
+          },
+          {
+            "net": "N4",
+            "incomplete": 0
+          },
+          {
+            "net": "N5",
+            "incomplete": 0
+          },
+          {
+            "net": "N6",
+            "incomplete": 1
+          },
+          {
+            "net": "N7",
+            "incomplete": 0
+          },
+          {
+            "net": "N8",
+            "incomplete": 1
+          },
+          {
+            "net": "N9",
+            "incomplete": 1
+          },
+          {
+            "net": "N10",
+            "incomplete": 0
+          },
+          {
+            "net": "N11",
+            "incomplete": 1
+          },
+          {
+            "net": "N12",
+            "incomplete": 1
+          },
+          {
+            "net": "N13",
+            "incomplete": 1
+          },
+          {
+            "net": "N14",
+            "incomplete": 0
+          },
+          {
+            "net": "N15",
+            "incomplete": 1
+          },
+          {
+            "net": "N16",
+            "incomplete": 1
+          },
+          {
+            "net": "N17",
+            "incomplete": 1
+          },
+          {
+            "net": "N18",
+            "incomplete": 0
+          },
+          {
+            "net": "N19",
+            "incomplete": 1
+          },
+          {
+            "net": "N20",
+            "incomplete": 1
+          },
+          {
+            "net": "N21",
+            "incomplete": 0
+          },
+          {
+            "net": "N22",
+            "incomplete": 1
+          },
+          {
+            "net": "N23",
+            "incomplete": 1
+          },
+          {
+            "net": "N24",
+            "incomplete": 1
+          },
+          {
+            "net": "N25",
+            "incomplete": 1
+          },
+          {
+            "net": "N26",
+            "incomplete": 1
+          },
+          {
+            "net": "N27",
+            "incomplete": 0
+          },
+          {
+            "net": "N28",
+            "incomplete": 0
+          },
+          {
+            "net": "N29",
+            "incomplete": 0
+          },
+          {
+            "net": "N30",
+            "incomplete": 0
+          },
+          {
+            "net": "N31",
+            "incomplete": 0
+          },
+          {
+            "net": "N32",
+            "incomplete": 0
+          },
+          {
+            "net": "N33",
+            "incomplete": 1
+          },
+          {
+            "net": "N34",
+            "incomplete": 0
+          },
+          {
+            "net": "N35",
+            "incomplete": 1
+          },
+          {
+            "net": "N36",
+            "incomplete": 0
+          },
+          {
+            "net": "N37",
+            "incomplete": 1
+          },
+          {
+            "net": "N38",
+            "incomplete": 1
+          },
+          {
+            "net": "N39",
+            "incomplete": 1
+          },
+          {
+            "net": "N40",
+            "incomplete": 1
+          },
+          {
+            "net": "N41",
+            "incomplete": 0
+          },
+          {
+            "net": "N42",
+            "incomplete": 1
+          },
+          {
+            "net": "N43",
+            "incomplete": 0
+          },
+          {
+            "net": "N44",
+            "incomplete": 0
+          },
+          {
+            "net": "N45",
+            "incomplete": 1
+          },
+          {
+            "net": "N46",
+            "incomplete": 1
+          },
+          {
+            "net": "N47",
+            "incomplete": 1
+          },
+          {
+            "net": "N48",
+            "incomplete": 1
+          },
+          {
+            "net": "N49",
+            "incomplete": 1
+          },
+          {
+            "net": "N50",
+            "incomplete": 1
+          }
+        ]
+      }
+    }
+  ],
+  "profiles": [
+    {
+      "file": "CPU.20261019.035253.1458820.0.001.cpuprofile",
+      "sha256": "d3e453789ca17b484d5c605c0972694568c176cb639a9b97bc12cf189b0c914d",
+      "samples": 50019,
+      "geometry_self": [
+        {
+          "function": "withinRim",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/onboard.ts",
+          "samples": 3246
+        },
+        {
+          "function": "dop8OfPts",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 1800
+        },
+        {
+          "function": "coreOf",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 1351
+        },
+        {
+          "function": "dist2SegSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 334
+        },
+        {
+          "function": "segsIntersect",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 287
+        },
+        {
+          "function": "dist2Pts",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 225
+        },
+        {
+          "function": "dist2PtSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 152
+        },
+        {
+          "function": "pointInConvex",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 109
+        },
+        {
+          "function": "dist2SegPoly",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 37
+        },
+        {
+          "function": "dist2PtPoly",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 20
+        },
+        {
+          "function": "onSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 8
+        },
+        {
+          "function": "boxExpand",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 8
+        },
+        {
+          "function": "dop8Of",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 6
+        },
+        {
+          "function": "cross",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 3
+        },
+        {
+          "function": "pointInRing",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 3
+        },
+        {
+          "function": "simplifyCollinear",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+          "samples": 3
+        },
+        {
+          "function": "dot",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 2
+        },
+        {
+          "function": "crossesEdge",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/onboard.ts",
+          "samples": 2
+        },
+        {
+          "function": "dop8Union",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 2
+        },
+        {
+          "function": "snap45",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+          "samples": 1
+        },
+        {
+          "function": "boxOfPts",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 1
+        },
+        {
+          "function": "isOctilinear",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+          "samples": 1
+        }
+      ]
+    }
+  ]
+}
