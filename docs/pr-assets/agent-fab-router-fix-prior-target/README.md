@@ -76,3 +76,15 @@ Full native fab_router run: same 26 frozen cases, three repeats each, same host 
 
 All 27 errors are starved_thermal. Native completion and thermal outcomes are
 unchanged. Shared-host timing is descriptive only; no speed improvement claimed.
+
+Cycle 35 adds a positive control for the two-way attachment branch: neither
+terminal initially belongs to the Prior region's component, and a retained wall
+blocks direct probes. Both endpoint orientations must finish with both terminals
+in the region's component, zero violations and no vias. Rewinding the journal
+must restore exactly the retained track and the original open connection.
+These controls pass on main and candidate; they establish preservation of the
+two-leg path, not another fixed failure. Across three repeats per version, the
+expanded suite reports main 2 pass / 4 fail and candidate 6 pass / 0 fail every
+time; raw logs are in two-way-regressions.json. Run the same test command above.
+Production source is unchanged from 2c78431, so the existing exact-source native
+sweep remains applicable; no new native benchmark or timing claim is made.
