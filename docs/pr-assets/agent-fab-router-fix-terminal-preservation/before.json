@@ -1,0 +1,427 @@
+{
+  "fixture": "terminal-swap",
+  "repeats": 3,
+  "nativeBenchmark": false,
+  "rows": [
+    {
+      "repeat": 1,
+      "before": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 0
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 1
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 4000
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 5,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": true
+      },
+      "after": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 1
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 0
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 6,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": false
+      },
+      "result": {
+        "barrelsRemoved": 0,
+        "tracksShortened": 1
+      },
+      "elapsedMs": 0.9685960000000016
+    },
+    {
+      "repeat": 2,
+      "before": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 0
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 1
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 4000
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 5,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": true
+      },
+      "after": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 1
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 0
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 6,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": false
+      },
+      "result": {
+        "barrelsRemoved": 0,
+        "tracksShortened": 1
+      },
+      "elapsedMs": 0.1864709999999974
+    },
+    {
+      "repeat": 3,
+      "before": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 0
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 1
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 4000
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 5,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": true
+      },
+      "after": {
+        "pads": [
+          {
+            "id": 1,
+            "ref": "A",
+            "at": {
+              "x": -4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 2,
+            "ref": "B",
+            "at": {
+              "x": 4000,
+              "y": 0
+            },
+            "component": 0
+          },
+          {
+            "id": 3,
+            "ref": "C",
+            "at": {
+              "x": 0,
+              "y": 4000
+            },
+            "component": 1
+          },
+          {
+            "id": 4,
+            "ref": "D",
+            "at": {
+              "x": 0,
+              "y": 0
+            },
+            "component": 0
+          }
+        ],
+        "tracks": [
+          {
+            "net": 0,
+            "sheet": 0,
+            "pts": [
+              {
+                "x": -4000,
+                "y": 0
+              },
+              {
+                "x": 4000,
+                "y": 0
+              }
+            ],
+            "width": 200,
+            "kind": 1,
+            "hold": "free",
+            "id": 6,
+            "origin": "router"
+          }
+        ],
+        "opens": 1,
+        "violations": 0,
+        "acConnected": false
+      },
+      "result": {
+        "barrelsRemoved": 0,
+        "tracksShortened": 1
+      },
+      "elapsedMs": 0.1389819999999986
+    }
+  ]
+}
