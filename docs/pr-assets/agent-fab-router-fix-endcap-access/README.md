@@ -67,3 +67,31 @@ to native-measured `7dffe49`; no additional native sweep or routing gain is clai
 
 Final follow-up checks: typecheck passes; 65 files have zero layer violations; 870 tests
 pass with zero failures and 398546 assertions (222.21 seconds).
+
+Integration audit for PR #20 and PR #27:
+
+```bash
+taskset -c 20-25 nice -n 10 timeout 1500 python3 docs/pr-assets/agent-fab-router-fix-endcap-access/composition.py --out /tmp/pad-endcap-composition --full
+```
+
+Use a new output directory. The script extracts the two pinned revisions, installs
+both final regression files identically in all three snapshots, and composes the
+on-pad short probes before the unchanged end-cap fallback. It writes an exact patch
+against `e65b9c3`, source/test/log hashes and results. The patch is a review artifact;
+production sources on this branch remain unchanged. Existing local dependencies are
+shared read-only through a symlink.
+
+Across three repeats each, pad-edge alone passes 18/27 and fails nine end-cap cases;
+end-cap alone and the composition each pass all 27. Thus the present regression corpus
+does not establish any extra completion benefit from retaining the on-pad fallback.
+The composition preserves it to check the integration requested in both PRs. This
+covers engine compatibility only; no composed native benchmark or new native routing
+improvement is claimed. The earlier native table applies only to the independent
+end-cap source `7dffe49`, not to the composed patch.
+
+Full composition checks pass: typecheck, 65 layer-checked files/zero violations,
+886 tests/zero failures/398644 assertions (212.15 seconds). Independent branch
+checks also pass: 870 tests/zero failures/398546 assertions (212.64 seconds).
+All 80 engine/type files on the independent branch still match native-measured
+`7dffe49`. See `composition.json`, `composition.patch` and
+`composition-branch-checks.json` for the pinned inputs, exact patch and log hashes.

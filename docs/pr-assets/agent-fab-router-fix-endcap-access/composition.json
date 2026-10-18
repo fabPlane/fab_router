@@ -1,0 +1,158 @@
+{
+  "scope": "Engine integration only; no composed native benchmark has been run",
+  "revisions": {
+    "pad": "f5f2a7fac1d866e0a24268a14653c03f995cc9ad",
+    "endcap": "e65b9c393dbcb4c3565b2a3925763a53ac365daf"
+  },
+  "source_sha256": {
+    "pad": "78cac2898fd2c116f4facd832989ec4de25cc7b3a2f03d2b3c6ddfaf1ebb3a8d",
+    "endcap": "5935e0d7e5fd6259dec2d265d48fddd72d76ce03a2ed36dd85c75e29fc929523",
+    "composed": "aaf05dec57a50b56368ec65cc051fe27ca1237f4a826935e4bd641fadf3ed1e4"
+  },
+  "patch_sha256": "bde8c21b64906e063c83f06b36b55101ef4f0b1d61dcd60b779f5e5f7411cd49",
+  "tests_sha256": {
+    "test/pad-attachment.test.ts": "73be58e9c77b70acf22524ada24f889b89b5ed84bcd0f59ac78296345128c892",
+    "test/helpers/pad-attachment-board.ts": "02dc4d67af7fa8ecc6ccb2367e2e96bb8d8c631e48f62b84a60f7422f76433bd",
+    "test/endcap-access.test.ts": "167cd8d9663490f8a48c97259aaa7705f1c5d4a2811f9ef6b1c8f71c9cd002e0",
+    "test/helpers/endcap-board.ts": "16dcd13b336ddcf32d509ca3a96080e85c36924876c936d7aeaec5cc914e0460"
+  },
+  "results": [
+    {
+      "version": "pad-only",
+      "repeat": 1,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 18,
+      "failed": 9,
+      "exit_code": 1,
+      "log_sha256": "2c12133937ca9598039bcdd793db60717534434f0cff3e68f3efe6e4d54bab84"
+    },
+    {
+      "version": "pad-only",
+      "repeat": 2,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 18,
+      "failed": 9,
+      "exit_code": 1,
+      "log_sha256": "c6c694381ca2480e6ea4cc727df58956365d2e8e80137431d6c22abfa3cc58a0"
+    },
+    {
+      "version": "pad-only",
+      "repeat": 3,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 18,
+      "failed": 9,
+      "exit_code": 1,
+      "log_sha256": "9fd838b5760ee8031904f437eb38b0dd31189aa0a06cfd7cd81466848f284c06"
+    },
+    {
+      "version": "endcap-only",
+      "repeat": 1,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "427560d86281906e1a8fee053e80e4b6adae6344f65c991aa6e78d5a07e5aeb0"
+    },
+    {
+      "version": "endcap-only",
+      "repeat": 2,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "194099989891a2d2f11a6b9b9a9f691d25936a443a87bf4fa28a0e74ea2b5b23"
+    },
+    {
+      "version": "endcap-only",
+      "repeat": 3,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "3ee63a8e53c0ab7d2d94eb6ec73ac5e4fb0dcec932dc33ff4325c7816a6f6bf5"
+    },
+    {
+      "version": "composed",
+      "repeat": 1,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "362d7c4c1ed2149cf5632cc2631f6c52cf912fb6f927c97bff7742291b648930"
+    },
+    {
+      "version": "composed",
+      "repeat": 2,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "d0d306771597c94051fc6cf83c78a149c437a96689d02716396b4fa82d35afeb"
+    },
+    {
+      "version": "composed",
+      "repeat": 3,
+      "command": [
+        "bun",
+        "test",
+        "test/pad-attachment.test.ts",
+        "test/endcap-access.test.ts"
+      ],
+      "passed": 27,
+      "failed": 0,
+      "exit_code": 0,
+      "log_sha256": "4f53bfcbda3b32854bf1ed1af2dc8474300fcaacd4a5ad6e0a762f3d15876a5c"
+    }
+  ],
+  "checks": [
+    {
+      "command": [
+        "bash",
+        "-c",
+        "bun run typecheck && bun run check:layers && bun run test"
+      ],
+      "exit_code": 0,
+      "log_sha256": "ddc7610ba82755e48bc415d5d6584fc78f317cc836e6be51bf417fb0e2ae7850"
+    }
+  ]
+}
