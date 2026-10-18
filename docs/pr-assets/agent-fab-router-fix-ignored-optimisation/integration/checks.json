@@ -1,0 +1,27 @@
+{
+  "independent_source": "cd3ba3f",
+  "cleanup_source": "eea1256",
+  "cleanup_branch_head": "6cb4b97",
+  "composed_local_head": "b9e8d8e8718bd21b5112c1d2f0a41b4a51699c76",
+  "portable_patch_verified": true,
+  "checks": {
+    "independent": {
+      "typecheck": "pass",
+      "layers": "65 files, zero violations",
+      "tests_passed": 863,
+      "tests_failed": 0,
+      "assertions": 398471,
+      "seconds": 229.9,
+      "log_sha256": "b4f3a5f15002b39ca458eb7830ba8e50635481446cfddf2c1a702fb0780add56"
+    },
+    "composed": {
+      "typecheck": "pass",
+      "layers": "65 files, zero violations",
+      "tests_passed": 875,
+      "tests_failed": 0,
+      "assertions": 398493,
+      "seconds": 233.49,
+      "log_sha256": "d8763627b2bce9a1313a8c47ebf4f88d3a3832fdb6f9b22df613930a08d557d5"
+    }
+  }
+}

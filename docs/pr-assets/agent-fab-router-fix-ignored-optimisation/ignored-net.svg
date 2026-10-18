@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620">
+<rect width="1400" height="620" fill="#101b29"/>
+<text x="55" y="48" fill="#eef3fa" font-family="sans-serif" font-size="28">Ignored net: a second route call must preserve earlier copper</text>
+<text x="55" y="83" fill="#aec1d7" font-family="sans-serif" font-size="20">Two surface pads on opposite layers; one essential via. Geometry from audit JSON.</text>
+<text x="70" y="140" fill="#eef3fa" font-family="sans-serif" font-size="26">Before fix</text>
+<text x="70" y="178" fill="#eef3fa" font-family="sans-serif" font-size="19">Unfiltered engine check: 1 incomplete</text>
+<rect x="70" y="200" width="580" height="260" rx="12" fill="#1a2a3e"/>
+<polyline points="340.00,320.00 567.27,320.00" fill="none" stroke="#77b7ff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="112.73,320.00 340.00,320.00" fill="none" stroke="#ff7777" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="98.72727272727272" y="306.0" width="28" height="28" rx="4" fill="#ff7777"/>
+<rect x="553.2727272727273" y="306.0" width="28" height="28" rx="4" fill="#77b7ff"/>
+<circle cx="340.0" cy="320.0" r="23" fill="none" stroke="#eac266" stroke-width="3" stroke-dasharray="5 4"/>
+<text x="265" y="425" fill="#eac266" font-family="sans-serif" font-size="20">Via deleted: open</text>
+<text x="70" y="500" fill="#eef3fa" font-family="sans-serif" font-size="19">Route report: 0 incomplete (ignored net excluded)</text>
+<text x="760" y="140" fill="#eef3fa" font-family="sans-serif" font-size="26">After fix</text>
+<text x="760" y="178" fill="#eef3fa" font-family="sans-serif" font-size="19">Unfiltered engine check: 0 incomplete</text>
+<rect x="760" y="200" width="580" height="260" rx="12" fill="#1a2a3e"/>
+<polyline points="802.73,320.00 893.64,229.09 939.09,229.09 1030.00,320.00" fill="none" stroke="#ff7777" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1030.00,320.00 1257.27,320.00" fill="none" stroke="#77b7ff" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/>
+<rect x="788.7272727272727" y="306.0" width="28" height="28" rx="4" fill="#ff7777"/>
+<rect x="1243.2727272727273" y="306.0" width="28" height="28" rx="4" fill="#77b7ff"/>
+<circle cx="1030.0" cy="320.0" r="14" fill="#eac266"/><circle cx="1030.0" cy="320.0" r="6" fill="#101b29"/>
+<text x="970" y="425" fill="#eac266" font-family="sans-serif" font-size="20">Via preserved</text>
+<text x="760" y="500" fill="#eef3fa" font-family="sans-serif" font-size="19">Route report: 0 incomplete (ignored net excluded)</text>
+<text x="55" y="562" fill="#aec1d7" font-family="sans-serif" font-size="19">Red: F.Cu    Blue: B.Cu    Gold: via. Before-fix tracks overlap in this projection but are on separate layers.</text>
+<text x="55" y="594" fill="#aec1d7" font-family="sans-serif" font-size="18">Synthetic regression fixture; this image is not a native frozen-benchmark board.</text>
+</svg>
