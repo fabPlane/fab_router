@@ -45,3 +45,13 @@ This independent branch starts at main and does not include PR #20's on-pad atta
 Both changes touch the final fallback in `routeConnection`; preserve both attachment strategies
 and the end-cap post-insertion connectivity check during integration. Other pending `passes.ts`
 fixes also need to be preserved. Performance branches modifying geometry were not edited.
+
+Measured full native results (26 cases, three repeats each): main 39/78 passes, 13/26 valid
+cases, 120 opens, 27 new thermal errors; candidate 42/78 passes, 14/26 valid cases, 117 opens,
+27 new thermal errors. Only rufs J3 changes: each repeat gains completion, with one extra via
+and 4.988991 mm more track. All other pass/open/error-type/via/length values are identical.
+All 74 captured engine source hashes match `7dffe49`; the harness captured main HEAD before
+the source commit was created. Executable sources stayed unchanged during the entire sweep.
+The source and control audit is in `benchmark-summary.json`; the native checker evidence for
+the pictured repeat is in `native-contact.json`. The full required checks passed: typecheck,
+65 layer-checked files with zero violations, 866 tests, zero failures, 398510 assertions.
