@@ -25,7 +25,7 @@ for label, source in [('before', base), ('after', root)]:
         passed = int(re.search(r'(\d+) pass', log)[1])
         failed = int(re.search(r'(\d+) fail', log)[1])
         assert (passed, failed, r.returncode) == ((5, 2, 1) if label == 'before' else (7, 0, 0)), log
-        runs.append(dict(version=label, repeat=repeat, passed=passed, failed=failed))
+        runs.append(dict(version=label, repeat=repeat, passed=passed, failed=failed, log=log))
 summary = dict(before=a.before, after_source_sha256=hashlib.sha256((root/'src/route/fanout.ts').read_bytes()).hexdigest(), test_sha256=hashlib.sha256(fixture.read_bytes()).hexdigest(), runs=runs, scope='Synthetic fanout regression, not native task scores; source layers 2 and 3 gain one contacting via each, unsupported/control conditions add none.')
 (a.out / 'regressions.json').write_text(json.dumps(summary, indent=2)+'\n')
 print(json.dumps(summary, indent=2))

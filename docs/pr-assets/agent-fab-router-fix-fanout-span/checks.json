@@ -1,0 +1,16 @@
+{
+  "source_commit": "b04983f",
+  "commands": "taskset -c 20-25 nice -n 10 timeout 1800 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+  "typecheck": "passed",
+  "layers": "65 files, zero violations",
+  "tests": {
+    "passed": "866",
+    "failed": "0",
+    "assertions": "398483",
+    "tests": "866",
+    "files": "30",
+    "duration": "223.79s"
+  },
+  "check_log_sha256": "6c48b2fce3f9da501d4f360c46dfaea7d7aa4ab1bbfaf883b4fe1383910d7eeb",
+  "test_sha256": "47c97da75932bce2dc7e6e395861c737ede0564148b0215acfba280aefaaaea3"
+}
