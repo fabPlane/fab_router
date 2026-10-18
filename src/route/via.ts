@@ -55,6 +55,7 @@ export function dropViaNear(
 export function* viaDropsNear(
   layout: Layout, lattice: Lattice, sheet: number, otherSheet: number, target: Pt,
   profile: Profile, ignore: IgnoreSet, maxRadius: number,
+  shouldStop?: () => boolean,
 ): Generator<ViaDrop, undefined> {
   const cand = pickBarrel(profile, sheet, otherSheet);
   if (!cand) return undefined;
@@ -69,6 +70,7 @@ export function* viaDropsNear(
     if (los(target, c2) && los(c2, at)) return { at, candidate: cand, stub: [target, c2, at], sheet };
     return undefined;
   };
+  if (shouldStop?.()) return undefined;
   const first = tryAt(target);
   if (first) yield first;
   // Ring search: grow the radius in fine steps, sixteen directions, in a fixed order.
@@ -78,6 +80,7 @@ export function* viaDropsNear(
   for (let step = 1; step * base <= maxRadius; step++) {
     const r = step * base;
     for (const [dx, dy] of dirs) {
+      if (shouldStop?.()) return undefined;
       const at = { x: Math.round(target.x + dx * r), y: Math.round(target.y + dy * r) };
       const hit = tryAt(at);
       if (hit) yield hit;

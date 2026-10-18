@@ -550,7 +550,8 @@ function tryPlaneVia(ctx: RouteCtx, conn: Connection, sigPt: Pt, sigUsable: numb
   const luPerUm = ctx.layout.frame.luPerUm;
   const maxRadius = Math.max(1, Math.round(2000 * luPerUm)); // up to ~2 mm from the pad
   for (const sheet of sigUsable) {
-    for (const drop of viaDropsNear(ctx.layout, ctx.lattice, sheet, planeSheet, sigPt, profile, ignore, maxRadius)) {
+    for (const drop of viaDropsNear(ctx.layout, ctx.lattice, sheet, planeSheet, sigPt, profile, ignore, maxRadius,
+      () => abortRequested(ctx) || (deadline !== undefined && now() > deadline))) {
       if (abortRequested(ctx) || (deadline !== undefined && now() > deadline)) return false;
       const mark = ctx.journal.mark();
       const cand = drop.candidate;
