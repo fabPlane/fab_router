@@ -89,6 +89,30 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
 
     if (!progressed || overBudget()) break;
   }
+  // Rip-up can detach a whole router-only island. K-08 intentionally excludes it from
+  // terminal incompletes, but native CAD tools still report the leftover copper as open.
+  // Remove only wholly disposable components; retained copper and pad/pour attachments
+  // protect the entire component, including Prior copper which is not a K-08 terminal.
+  if (passes > 0 && !overBudget()) {
+    const conn = connectivity(layout, lattice);
+    for (const nc of conn.nets) {
+      if (!nc || ignored.has(nc.net)) continue;
+      for (const component of nc.components) {
+        if (overBudget()) break;
+        if (maxItems !== undefined && changes + component.length > maxItems) continue;
+        if (!component.every(id => {
+          const it = conn.items.get(id)!;
+          return (it.cat === "track" || it.cat === "barrel")
+            && it.ref.hold === "free" && (it.ref as Track).origin === "router";
+        })) continue;
+        for (const id of component) {
+          if (conn.items.get(id)!.cat === "barrel") barrelsRemoved++;
+          journal.remove(id);
+          changes++;
+        }
+      }
+    }
+  }
   return { barrelsRemoved, tracksShortened };
 }
 

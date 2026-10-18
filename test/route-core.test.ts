@@ -13,6 +13,9 @@ import { aStar, DIRS_8, type SearchSpace } from "../src/route/search.ts";
 import { checkDrc, requiredConnections } from "../src/drc/index.ts";
 import { route } from "../src/api.ts";
 
+import { runOptimise } from "../src/route/optimise.ts";
+import { resolveSettings } from "../src/pipeline/index.ts";
+
 const LU_PER_UM = 10;
 
 /** A one-signal-Sheet board with two same-net Pads and a rectangular Rim; optional obstacle Pads. */
@@ -221,4 +224,84 @@ describe("route() end to end", () => {
     expect(rep.aborted).toBe(true);
     expect(rep.violationsAdded).toBe(0);
   });
+});
+
+describe("optimiser orphan copper", () => {
+  function setup() {
+    const layout = board();
+    const lattice = buildLattice(layout);
+    const journal = createJournal(layout, lattice);
+    const orphan = journal.addTrack({ net: 0, sheet: 0, pts: [{ x: 0, y: 50000 }, { x: 30000, y: 50000 }], width: 4000, kind: 1, hold: "free" });
+    return { layout, lattice, journal, orphan };
+  }
+  const settings = (extra = {}) => resolveSettings({ optimizerEnabled: true, ...extra }, undefined, "45");
+
+  test("removes a detached router fragment ignored by terminal connectivity", () => {
+    const { layout, lattice, journal, orphan } = setup();
+    const before = checkDrc(layout).counts.incompletes;
+    runOptimise(layout, lattice, journal, settings(), new Set());
+    expect(layout.tracks).toHaveLength(0);
+    expect(lattice.itemOf(orphan.id)).toBeUndefined();
+    expect(checkDrc(layout).counts.incompletes).toBe(before);
+  });
+
+  for (const retained of [{ hold: "held" as const }, { hold: "locked" as const }, { origin: "file" as const }, { origin: "session" as const }]) {
+    test(`preserves the entire island when it contains retained copper ${JSON.stringify(retained)}`, () => {
+      const { layout, lattice, journal, orphan } = setup();
+      Object.assign(orphan, retained);
+      const sibling = journal.addTrack({ net: 0, sheet: 0, pts: [{ x: 30000, y: 50000 }, { x: 60000, y: 50000 }], width: 4000, kind: 1, hold: "free" });
+      runOptimise(layout, lattice, journal, settings(), new Set());
+      expect(layout.tracks.map(t => t.id).sort()).toEqual([orphan.id, sibling.id].sort());
+    });
+  }
+
+  test("keeps a router stub attached to a pad", () => {
+    const { layout, lattice, journal } = setup();
+    const attached = journal.addTrack({ net: 0, sheet: 0, pts: [{ x: -100000, y: 0 }, { x: -50000, y: 0 }], width: 4000, kind: 1, hold: "free" });
+    runOptimise(layout, lattice, journal, settings(), new Set());
+    expect(layout.tracks.map(t => t.id)).toEqual([attached.id]);
+  });
+
+  for (const extra of [{ optimizerEnabled: false }, { optimizerMaxItems: 0 }]) {
+    test(`respects optimiser limits ${JSON.stringify(extra)}`, () => {
+      const { layout, lattice, journal } = setup();
+      runOptimise(layout, lattice, journal, settings(extra), new Set());
+      expect(layout.tracks).toHaveLength(1);
+    });
+  }
+
+  test("preserves ignored nets", () => {
+    const { layout, lattice, journal } = setup();
+    runOptimise(layout, lattice, journal, settings(), new Set([0]));
+    expect(layout.tracks).toHaveLength(1);
+  });
+  test("removes a whole track/via island atomically and supports journal rewind", () => {
+    const { layout, lattice, journal, orphan } = setup();
+    const form = { id: 101, name: "via", perSheet: new Map([[0, [{ kind: "disk" as const, c: { x: 0, y: 0 }, r: 3000 }]]]), attachAllowed: false };
+    (layout.padForms as typeof form[]).push(form);
+    const via = journal.addBarrel({ net: 0, at: orphan.pts[0]!, form: 101, fromSheet: 0, toSheet: 0, kind: 1, hold: "free" });
+    const mark = journal.mark();
+    runOptimise(layout, lattice, journal, settings({ optimizerMaxItems: 1 }), new Set());
+    // A one-item budget may eliminate the redundant via; the remaining track must survive
+    // until another invocation can spend the additional cleanup operation.
+    expect(layout.tracks).toHaveLength(1);
+    journal.rewind(mark);
+    expect(lattice.itemOf(via.id)).toBeDefined();
+    runOptimise(layout, lattice, journal, settings(), new Set());
+    expect(layout.tracks).toHaveLength(0);
+    expect(layout.barrels).toHaveLength(0);
+    journal.rewind(mark);
+    expect(lattice.itemOf(orphan.id)).toBeDefined();
+    expect(lattice.itemOf(via.id)).toBeDefined();
+  });
+
+  test("keeps router copper touching a Prior pour", () => {
+    const { layout, lattice, journal } = setup();
+    const pour = { id: 999, net: 0, sheet: 0, outline: [{ x: 0, y: 40000 }, { x: 10000, y: 40000 }, { x: 10000, y: 60000 }, { x: 0, y: 60000 }], holes: [], kind: 1, hold: "locked" as const, origin: "prior" as const };
+    (layout.pours as typeof pour[]).push(pour);
+    lattice.insertItem("pour", pour);
+    runOptimise(layout, lattice, journal, settings(), new Set());
+    expect(layout.tracks).toHaveLength(1);
+  });
+
 });

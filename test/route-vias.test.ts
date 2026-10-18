@@ -78,3 +78,15 @@ describe("optimiser monotonicity (R-6)", () => {
     });
   }
 });
+
+test("Issue026 optimiser removes rip-up fragments without changing terminal completion", () => {
+  const layout = load("Issue026-J2_reference.dsn");
+  if (!layout) throw new Error("missing committed Issue026 regression board");
+  const report = route(layout, { maxPasses: 100 });
+  // Baseline leaves 100 tracks, including eight unanchored fragments. Keep the
+  // incomplete terminal count pinned: deleting useful routes cannot satisfy this test.
+  expect(report.incompleteAfter).toBe(2);
+  expect(report.violationsAdded).toBe(0);
+  expect(layout.tracks).toHaveLength(92);
+  expect(layout.barrels).toHaveLength(34);
+});
