@@ -23,6 +23,7 @@
  *
  * Public surface: LineProbeOptions, lineProbeCentre, lineProbeRoute.
  */
+import { rimBounds } from "../geom/index.ts";
 import type { Layout, Pt } from "../../spec/types/layout.ts";
 import type { Box } from "../geom/index.ts";
 import type { Lattice } from "../lattice/index.ts";
@@ -79,9 +80,9 @@ function regionOf(layout: Layout, from: Pt, to: Pt): Box {
   const span = Math.max(bb.x1 - bb.x0, bb.y1 - bb.y0);
   const inflate = Math.max(span, 1);
   let box: Box = { x0: bb.x0 - inflate, y0: bb.y0 - inflate, x1: bb.x1 + inflate, y1: bb.y1 + inflate };
-  if (layout.rim && layout.rim.outline.length >= 2) {
-    let rx0 = Infinity, ry0 = Infinity, rx1 = -Infinity, ry1 = -Infinity;
-    for (const p of layout.rim.outline) { rx0 = Math.min(rx0, p.x); ry0 = Math.min(ry0, p.y); rx1 = Math.max(rx1, p.x); ry1 = Math.max(ry1, p.y); }
+  const rb = layout.rim ? rimBounds(layout.rim) : undefined;
+  if (rb) {
+    const { x0: rx0, y0: ry0, x1: rx1, y1: ry1 } = rb;
     box = { x0: Math.max(box.x0, rx0), y0: Math.max(box.y0, ry0), x1: Math.min(box.x1, rx1), y1: Math.min(box.y1, ry1) };
   }
   // Keep both endpoints strictly inside.

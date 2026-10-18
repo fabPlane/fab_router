@@ -24,7 +24,7 @@
  */
 import type { Barrel, Fence, Layout, Pad, PadForm, Pour, Rim, ShapeOnSheet, Track } from "../../spec/types/layout.ts";
 import type { ConvexShape, Dop8, Pt, Shape } from "../geom/index.ts";
-import { convexPieces, dop8Of, dop8OfPts, dop8Union, hullOf } from "../geom/index.ts";
+import { convexPieces, dop8Of, dop8OfPts, dop8Union, hullOf, outerRings } from "../geom/index.ts";
 
 /** Item categories the Lattice indexes. `rim` is the board outline (one leg per edge). */
 export type ItemCat = "pad" | "barrel" | "track" | "pour" | "fence" | "rim";
@@ -251,15 +251,16 @@ export function pourBounds(pour: Pour): Dop8 {
   return dop8OfPts(pour.outline);
 }
 
-/** Rim edges: the outline's edges first, then each cut-out's edges, each a zero-width segment. */
+/** Rim edges: every outer ring's edges first, then each cut-out's edges, each a zero-width segment. */
 export function rimLegCount(rim: Rim): number {
-  let n = rim.outline.length >= 2 ? rim.outline.length : 0;
+  let n = 0;
+  for (const ring of outerRings(rim)) n += ring.length >= 2 ? ring.length : 0;
   for (const c of rim.cutouts) n += c.length >= 2 ? c.length : 0;
   return n;
 }
 
 function rimLegPoints(rim: Rim, leg: number): [Pt, Pt] | undefined {
-  const rings: (readonly Pt[])[] = [rim.outline, ...rim.cutouts];
+  const rings: (readonly Pt[])[] = [...outerRings(rim), ...rim.cutouts];
   let k = leg;
   for (const ring of rings) {
     const n = ring.length >= 2 ? ring.length : 0;

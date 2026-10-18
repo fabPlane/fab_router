@@ -60,7 +60,14 @@ export interface Track { id: number; net: number | null; sheet: number; pts: rea
 export interface Pour { id: number; net: number | null; sheet: number; outline: readonly Pt[]; holes: readonly (readonly Pt[])[]; kind: number; hold: Hold; origin?: Origin }
 /** Fence.kind: the Kind of the keepout (`rules/keepouts.md` KO-05, `clearance.md` C-11); 0 = no Kind ("must merely not overlap"). */
 export interface Fence { id: number; sheet: number | "all-signal"; scope: "track" | "barrel" | "place"; shape: ShapeOnSheet; kind: number; net?: number; /** Owning Part for image keepouts (DR-12). */ part?: number }
-export interface Rim { outline: readonly Pt[]; cutouts: readonly (readonly Pt[])[]; kind: number }
+export interface Rim {
+  /** First outer ring; used alone when `outers` is omitted. */
+  outline: readonly Pt[];
+  /** All disjoint outer rings, including `outline` (DSN F-63). */
+  outers?: readonly (readonly Pt[])[];
+  cutouts: readonly (readonly Pt[])[];
+  kind: number;
+}
 
 export interface Net { id: number; name: string; group: number; pads: readonly number[] }
 export interface NetGroup {

@@ -35,6 +35,7 @@
  * Public surface: Bin, BridgeKind, Bridge, Mesh, MeshOptions, buildMesh, BridgeOverflow,
  * BinCongestion, CongestionReport, meshCongestion.
  */
+import { rimBounds } from "../geom/index.ts";
 import type { Barrel, Fence, Layout, Pour, Pt, Track } from "../../spec/types/layout.ts";
 import type { Box } from "../geom/index.ts";
 import { boxExpand } from "../geom/index.ts";
@@ -104,8 +105,10 @@ export interface Mesh {
 function boardBox(layout: Layout): Box {
   let x0 = Infinity, y0 = Infinity, x1 = -Infinity, y1 = -Infinity;
   const eat = (p: Pt) => { if (p.x < x0) x0 = p.x; if (p.y < y0) y0 = p.y; if (p.x > x1) x1 = p.x; if (p.y > y1) y1 = p.y; };
-  if (layout.rim && layout.rim.outline.length > 0) {
-    for (const p of layout.rim.outline) eat(p);
+  const rb = layout.rim ? rimBounds(layout.rim) : undefined;
+  if (rb) {
+    eat({ x: rb.x0, y: rb.y0 });
+    eat({ x: rb.x1, y: rb.y1 });
   } else {
     for (const pad of layout.pads) eat(pad.at);
     for (const b of layout.barrels) eat(b.at);
