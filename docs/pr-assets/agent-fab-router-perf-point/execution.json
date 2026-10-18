@@ -1,0 +1,36 @@
+{
+  "host": "hyper-MS-lin",
+  "bun": "1.4.0",
+  "cpu_sets": {
+    "native_replay_ladder_profile_tests": "12-19"
+  },
+  "nice": "Inherited shell nice5 + nice10 =15 for direct jobs; native workers observed at nice15.",
+  "unit_tests": {
+    "passed": 860,
+    "failed": 0,
+    "assertions": 521166,
+    "seconds": 214.82,
+    "typecheck": true,
+    "layer_files": 65,
+    "layer_violations": 0,
+    "log_sha256": "97ca2feb5e414dc7d24f2c5cb9c2008de0ad2b4048adcd32b3df35d9704eb3a3"
+  },
+  "ladder_input_sha256": {
+    "l1.dsn": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+    "l2.dsn": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9"
+  },
+  "ladder_scope": "Unsuffixed L1/L2 files match board agent directory; cycle14/cycle18/L3/BGA variants outside this experiment.",
+  "own_overlap": "Own heavy tests, replay, native, ladder and profiles sequential. Light reporting and strict TypeScript checks overlap native. Other host workloads uncontrolled.",
+  "slow_acceptance": "Not run: production candidate rejected at performance gate; no candidate slow-acceptance pass claimed.",
+  "final_restored_checks": {
+    "passed": 860,
+    "failed": 0,
+    "assertions": 521166,
+    "seconds": 219.09,
+    "typecheck": true,
+    "layer_files": 65,
+    "layer_violations": 0,
+    "src_spec_tools_match_main": true,
+    "log_sha256": "870ed5e1f76add74dadff612461309f7c578e921f903c3bc4a791494f5db89ed"
+  }
+}
