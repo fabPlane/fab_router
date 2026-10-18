@@ -1,0 +1,1135 @@
+{
+  "before": {
+    "total_samples": 44758,
+    "self_samples": {
+      "onSeg": 5791,
+      "collect": 5766,
+      "withinRim": 5470,
+      "pointInRing": 4597,
+      "aStar": 3063,
+      "sweepClear": 2927,
+      "aStarLayered": 1906,
+      "test": 1806,
+      "state": 1596,
+      "dop8OfPts": 1578,
+      "pop": 1485,
+      "hitBlocks": 1255,
+      "filter": 1080,
+      "coreOf": 930,
+      "push": 808,
+      "isFree": 738,
+      "edgeCost": 538,
+      "barrelFits": 298,
+      "pointOf": 283,
+      "probe": 236,
+      "leq": 231,
+      "viaMove": 208,
+      "Set": 199,
+      "": 171,
+      "dist2PtSeg": 167,
+      "closerConvex": 143,
+      "put": 140,
+      "pointFree": 112,
+      "dist2Pts": 111,
+      "cell": 111,
+      "sort": 97,
+      "shapesOf": 89,
+      "anyCloser": 70,
+      "heuristic": 66,
+      "itemOf": 65,
+      "cellHistory": 54,
+      "inRegion": 46,
+      "boundsOfShapes": 46,
+      "segsIntersect": 46,
+      "count": 37,
+      "cellIndex": 28,
+      "gOr": 26,
+      "transformShape": 24,
+      "trackLegShape": 24,
+      "(unknown)": 21,
+      "next": 20,
+      "dist2SegSeg": 19,
+      "cloneObject": 13,
+      "hits": 12,
+      "drillShape": 11,
+      "stateOf": 10,
+      "drillOfPad": 10,
+      "gyOf": 9,
+      "isRippable": 9,
+      "gxOf": 8,
+      "connectivity": 7,
+      "boxExpand": 6,
+      "copyDataProperties": 6,
+      "gridRegion": 5,
+      "dist2PtPoly": 5,
+      "anonymous": 4,
+      "tryRouteOnSheet": 4,
+      "tryRouteLayered": 4,
+      "dop8Of": 4,
+      "unbucket": 4,
+      "rewind": 3,
+      "get": 3,
+      "dot": 3,
+      "dirOfState": 2,
+      "cellOfState": 2,
+      "collectRip": 2,
+      "now": 2,
+      "createQuilt": 2,
+      "allocSlot": 2,
+      "margin": 2,
+      "max": 2,
+      "insertItem": 2,
+      "insertTrail": 2,
+      "routeConnection": 2,
+      "pointInConvex": 2,
+      "barrelBoundsOn": 2,
+      "removeItem": 2,
+      "nudgeClear": 2,
+      "trackPieces": 2,
+      "lex": 1,
+      "readRuleEntries": 1,
+      "some": 1,
+      "area2": 1,
+      "addFences": 1,
+      "set": 1,
+      "medianDiagonal": 1,
+      "subjectsOf": 1,
+      "apply": 1,
+      "add": 1,
+      "fenceShape": 1,
+      "swap": 1,
+      "grow": 1,
+      "formOf": 1,
+      "tryRouteViaJog": 1,
+      "legaliseShaped": 1,
+      "trackLegCount": 1,
+      "[Symbol.iterator]": 1,
+      "sameSheetAstar": 1,
+      "copperOn": 1,
+      "shapeVariants": 1,
+      "remove": 1,
+      "orient": 1,
+      "legaliseTrail": 1,
+      "insertDrilled": 1,
+      "map": 1,
+      "has": 1,
+      "simplifyCollinear": 1,
+      "barrelShapesOn": 1,
+      "drillOfBarrel": 1,
+      "slice": 1,
+      "shoveBudget": 1,
+      "addBarrel": 1,
+      "values": 1,
+      "runOptimise": 1,
+      "resolutionOf": 1,
+      "/^[+-]?(\\d+\\.?\\d*|\\.\\d+)([eE][+-]?\\d+)?$/": 1,
+      "refreshItemKinds": 1,
+      "findSlot": 1,
+      "earClip": 1,
+      "cellOf": 1,
+      "cross": 1,
+      "tryRouteViaPoints": 1,
+      "viaPointCandidates": 1,
+      "checkSpacing": 1,
+      "section": 1,
+      "createRipupHistory": 1,
+      "splice": 1,
+      "turn": 1,
+      "endpointVias": 1,
+      "runLegacyPasses": 1,
+      "fill": 1,
+      "undo": 1,
+      "resolveBlockers": 1,
+      "addTrack": 1,
+      "isPlaneNet": 1,
+      "place": 1,
+      "hypot": 1,
+      "gridStep": 1,
+      "ripCost": 1,
+      "resolveEndpoints": 1,
+      "sheetCostOf": 1,
+      "stepCost": 1,
+      "log": 1
+    },
+    "routes": [
+      {
+        "seconds": 16.591207042999997,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 16579,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 17.379077877000004,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 17374,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 14.034462615999997,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 14030,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      }
+    ]
+  },
+  "after": {
+    "total_samples": 34801,
+    "self_samples": {
+      "withinRim": 6800,
+      "collect": 5539,
+      "aStar": 3050,
+      "sweepClear": 2882,
+      "aStarLayered": 1786,
+      "test": 1742,
+      "dop8OfPts": 1540,
+      "state": 1526,
+      "pop": 1321,
+      "hitBlocks": 1304,
+      "filter": 992,
+      "coreOf": 962,
+      "push": 902,
+      "isFree": 667,
+      "edgeCost": 545,
+      "pointOf": 268,
+      "barrelFits": 267,
+      "probe": 234,
+      "Set": 203,
+      "viaMove": 202,
+      "leq": 190,
+      "dist2PtSeg": 180,
+      "": 165,
+      "closerConvex": 165,
+      "put": 151,
+      "pointFree": 110,
+      "shapesOf": 103,
+      "dist2Pts": 99,
+      "cell": 86,
+      "sort": 83,
+      "heuristic": 77,
+      "anyCloser": 53,
+      "itemOf": 46,
+      "segsIntersect": 45,
+      "boundsOfShapes": 37,
+      "cellHistory": 34,
+      "inRegion": 33,
+      "count": 31,
+      "transformShape": 26,
+      "pointInRing": 25,
+      "gOr": 23,
+      "dist2SegSeg": 23,
+      "cellIndex": 21,
+      "cloneObject": 21,
+      "next": 14,
+      "gridRegion": 12,
+      "gyOf": 10,
+      "hits": 10,
+      "dot": 9,
+      "(unknown)": 9,
+      "map": 8,
+      "add": 6,
+      "connectivity": 6,
+      "max": 6,
+      "stateOf": 6,
+      "orient": 6,
+      "drillOfPad": 6,
+      "anonymous": 5,
+      "place": 5,
+      "isRippable": 5,
+      "tryRouteViaPoints": 5,
+      "cross": 4,
+      "boxExpand": 4,
+      "tryRouteOnSheet": 4,
+      "createQuilt": 4,
+      "has": 3,
+      "bucket": 3,
+      "dop8Of": 3,
+      "drillOfBarrel": 3,
+      "copyDataProperties": 3,
+      "stepCost": 3,
+      "allocSlot": 3,
+      "set": 2,
+      "cellOfState": 2,
+      "margin": 2,
+      "layerOfState": 2,
+      "gxOf": 2,
+      "drillShape": 2,
+      "tryRouteLayered": 2,
+      "unbucket": 2,
+      "shoveClear": 2,
+      "collectRip": 2,
+      "divsFor": 2,
+      "routeConnection": 2,
+      "routeDsn": 1,
+      "slice": 1,
+      "refreshItemKinds": 1,
+      "maximumConnections": 1,
+      "insertRaw": 1,
+      "min": 1,
+      "grow": 1,
+      "swap": 1,
+      "hash": 1,
+      "mergeTriangles": 1,
+      "boxOfPts": 1,
+      "legaliseShaped": 1,
+      "barrelBoundsOn": 1,
+      "anyTouching": 1,
+      "find": 1,
+      "every": 1,
+      "Map": 1,
+      "reconstruct": 1,
+      "displace": 1,
+      "pointInConvex": 1,
+      "onSeg": 1,
+      "insertDrilled": 1,
+      "get": 1,
+      "closer": 1,
+      "writeSes": 1,
+      "digest": 1,
+      "sheets": 1,
+      "buildLattice": 1,
+      "endpointVias": 1,
+      "trackPieces": 1,
+      "bumpCells": 1,
+      "sheetsOf": 1,
+      "now": 1,
+      "snap45": 1,
+      "addBarrel": 1,
+      "releaseSlot": 1,
+      "undo": 1,
+      "join": 1,
+      "totalIncomplete": 1,
+      "insertItem": 1,
+      "buildTree": 1,
+      "placePart": 1,
+      "connectionsOf": 1,
+      "concat": 1,
+      "viaRuleOf": 1,
+      "insertTrail": 1,
+      "simplifyCollinear": 1,
+      "indexOf": 1,
+      "tryRouteViaJog": 1,
+      "mark": 1,
+      "dist2PtPoly": 1,
+      "removeItem": 1,
+      "statsOf": 1
+    },
+    "routes": [
+      {
+        "seconds": 12.109232655,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 12095,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 12.225491464000001,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 12221,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      },
+      {
+        "seconds": 12.926561967999998,
+        "report": {
+          "passes": 4,
+          "attempted": 50,
+          "completed": 26,
+          "incompleteBefore": 32,
+          "incompleteAfter": 6,
+          "added": {
+            "tracks": 27,
+            "barrels": 1
+          },
+          "ripped": 3,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "stagnant",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 2,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 120000,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "neckWidthUm": 0,
+            "angleMode": "45"
+          },
+          "wallClockMs": 12922,
+          "perNet": [
+            {
+              "net": "Net-(A1-Pad1)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad3)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad4)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT1",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad6)",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_MOSI",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_MISO",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CLK",
+              "incomplete": 1
+            },
+            {
+              "net": "/SPI_CS1",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{BUSY}",
+              "incomplete": 1
+            },
+            {
+              "net": "/~{RST}",
+              "incomplete": 1
+            },
+            {
+              "net": "Net-(A1-Pad13)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad14)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad15)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad16)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad17)",
+              "incomplete": 0
+            },
+            {
+              "net": "/INT2",
+              "incomplete": 0
+            },
+            {
+              "net": "/SPI_CS2",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad20)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad22)",
+              "incomplete": 0
+            },
+            {
+              "net": "Net-(A1-Pad23)",
+              "incomplete": 0
+            },
+            {
+              "net": "+3V3",
+              "incomplete": 0
+            }
+          ]
+        },
+        "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+      }
+    ]
+  }
+}
