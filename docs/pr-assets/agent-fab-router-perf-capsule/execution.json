@@ -1,0 +1,52 @@
+{
+  "host": "hyper-ms-lin",
+  "allowed_cpus": [
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "bun_version": "1.4.0",
+  "measurement_effective_nice": 19,
+  "test_effective_nice": 15,
+  "priority_observation": "shell priority 5; supervisor adds 10; each measurement worker adds 10, capped at 19; observed L2 worker pid 1561874 at nice 19",
+  "timing_overlap": "own heavy tests/native/ladder/profiles sequential; lightweight reporting and source verification overlap native; other host workloads not controlled; slow acceptance baseline/candidate run concurrently on disjoint cores, with lightweight reporting",
+  "slow_acceptance": {
+    "baseline_cpus": [
+      16,
+      17,
+      18,
+      19
+    ],
+    "candidate_cpus": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "effective_nice": 19,
+    "outer_timeout_seconds": 7200,
+    "concurrency": "two processes on disjoint four-core sets",
+    "observed_worker_pids": [
+      1575928,
+      1575929
+    ],
+    "memory_observation_mib": [
+      280,
+      295
+    ]
+  },
+  "ladder_input_verification": {
+    "verified_utc": "2026-10-18T21:32:58Z",
+    "source_directory": "/home/hyper/bench/boards/ladder",
+    "sha256": {
+      "l1.dsn": "7d549e25c0703b22be6440b360a4150689d94dcc8d2dfdb4b68ef361fd593967",
+      "l2.dsn": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9"
+    },
+    "matches_current_unsuffixed_boards": true
+  }
+}

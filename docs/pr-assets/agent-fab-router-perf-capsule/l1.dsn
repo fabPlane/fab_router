@@ -1,0 +1,114 @@
+(pcb "/home/hyper/bench/wt/rb-boards/cache/boards/ladder-l1-kicad_pcb/unrouted.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (boundary
+      (path pcb 0  40000 -39000  0 -39000  0 0  40000 0  40000 -39000)
+    )
+    (via "Via[0-1]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Pad
+      (place A1 6000 -6000 front 0 (PN Pad))
+      (place A2 6000 -9000 front 0 (PN Pad))
+      (place A3 6000 -12000 front 0 (PN Pad))
+      (place A4 6000 -15000 front 0 (PN Pad))
+      (place A5 6000 -18000 front 0 (PN Pad))
+      (place A6 6000 -21000 front 0 (PN Pad))
+      (place A7 6000 -24000 front 0 (PN Pad))
+      (place A8 6000 -27000 front 0 (PN Pad))
+      (place A9 6000 -30000 front 0 (PN Pad))
+      (place A10 6000 -33000 front 0 (PN Pad))
+      (place B1 34000 -6000 front 0 (PN Pad))
+      (place B2 34000 -9000 front 0 (PN Pad))
+      (place B3 34000 -12000 front 0 (PN Pad))
+      (place B4 34000 -15000 front 0 (PN Pad))
+      (place B5 34000 -18000 front 0 (PN Pad))
+      (place B6 34000 -21000 front 0 (PN Pad))
+      (place B7 34000 -24000 front 0 (PN Pad))
+      (place B8 34000 -27000 front 0 (PN Pad))
+      (place B9 34000 -30000 front 0 (PN Pad))
+      (place B10 34000 -33000 front 0 (PN Pad))
+    )
+  )
+  (library
+    (image Pad
+      (pin Rect[T]Pad_1000.000000x800.000000_um 1 0 0)
+    )
+    (padstack Rect[T]Pad_1000.000000x800.000000_um
+      (shape (rect F.Cu -500 -400 500 400))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net N1
+      (pins A1-1 B1-1)
+    )
+    (net N2
+      (pins A2-1 B9-1)
+    )
+    (net N3
+      (pins A3-1 B10-1)
+    )
+    (net N4
+      (pins A4-1 B4-1)
+    )
+    (net N5
+      (pins A5-1 B2-1)
+    )
+    (net N6
+      (pins A6-1 B5-1)
+    )
+    (net N7
+      (pins A7-1 B3-1)
+    )
+    (net N8
+      (pins A8-1 B8-1)
+    )
+    (net N9
+      (pins A9-1 B6-1)
+    )
+    (net N10
+      (pins A10-1 B7-1)
+    )
+    (class kicad_default N1 N10 N2 N3 N4 N5 N6 N7 N8 N9
+      (circuit
+        (use_via "Via[0-1]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+  )
+)

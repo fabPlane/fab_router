@@ -43,7 +43,7 @@
  */
 import type { Barrel, Fence, Layout, Pad, Pour, Rim, Track } from "../../spec/types/layout.ts";
 import type { Box, ConvexShape, Dop8, Pt, Seg, Shape } from "../geom/index.ts";
-import { boxExpand, coreOf, crossesEdge, dist2Pts, dop8OfPts, withinRim } from "../geom/index.ts";
+import { boxExpand, coreOf, crossesEdge, dist2Pts, dist2SegSeg, dop8OfPts, withinRim } from "../geom/index.ts";
 import type { DrillDisk, Lattice, LatticeItemRef } from "../lattice/index.ts";
 import { RIM_ID, boundsOfShapes, drillOfBarrel, drillOfPad, formOf, transformShape } from "../lattice/index.ts";
 import type { BarrelCandidate, Profile } from "./profile.ts";
@@ -59,6 +59,14 @@ export function ignoreOf(net: number | null, ids: Iterable<number> = []): Ignore
 // ---- exact comparisons ----------------------------------------------------------------------
 
 function closerConvex(a: ConvexShape, b: ConvexShape, required: number, orTouching: boolean): boolean {
+  // Nondegenerate capsule cores dispatch to this same segment predicate in dist2Pts.
+  // Read the endpoints directly rather than constructing two temporary Core views.
+  if (a.kind === "capsule" && b.kind === "capsule" &&
+      (a.a.x !== a.b.x || a.a.y !== a.b.y) && (b.a.x !== b.b.x || b.a.y !== b.b.y)) {
+    const need = required + a.r + b.r;
+    const d2 = dist2SegSeg(a.a, a.b, b.a, b.b);
+    return orTouching ? d2 <= need * need : d2 < need * need;
+  }
   const ca = coreOf(a), cb = coreOf(b);
   const need = required + ca.r + cb.r;
   const d2 = dist2Pts(ca.pts, cb.pts);

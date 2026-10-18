@@ -1,0 +1,5431 @@
+{
+  "before": {
+    "taken": "2026-10-18T22:02:31.205Z",
+    "head": "69cf598db98c136bff16bbe02bccdded95674b18",
+    "acceptStubs": false,
+    "invalidCases": [],
+    "cases": [
+      {
+        "id": "parse-dialect-kicad-wiring-polygons",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 62
+          },
+          "pads": {
+            "exact": 257
+          },
+          "nets": {
+            "exact": 69
+          },
+          "padstacks": {
+            "exact": 23
+          },
+          "tracks": {
+            "exact": 861
+          },
+          "vias": {
+            "exact": 162
+          },
+          "pours": {
+            "exact": 14
+          },
+          "fences": {
+            "exact": 1
+          }
+        },
+        "board": "Issue756-tomu-fpga7.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 31.994594
+      },
+      {
+        "id": "parse-dialect-router-written-polyline-paths",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 55
+          },
+          "pads": {
+            "exact": 984
+          },
+          "nets": {
+            "exact": 282
+          },
+          "padstacks": {
+            "exact": 7
+          },
+          "tracks": {
+            "exact": 2326
+          },
+          "vias": {
+            "exact": 443
+          },
+          "pours": {
+            "exact": 0
+          },
+          "fences": {
+            "exact": 0
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 55,
+          "pads": 984,
+          "nets": 282,
+          "padstacks": 7,
+          "tracks": 2326,
+          "vias": 443,
+          "pours": 0,
+          "fences": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 31.900625999999995
+      },
+      {
+        "id": "parse-lex-issue187-brace-net-names",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 143
+          },
+          "pads": {
+            "exact": 1365
+          },
+          "nets": {
+            "exact": 529
+          },
+          "tracks": {
+            "exact": 2026
+          },
+          "vias": {
+            "exact": 324
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 143,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 2026,
+          "vias": 324,
+          "pours": 0,
+          "fences": 8
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 56.454255
+      },
+      {
+        "id": "parse-summary-issue103-board-routed",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue103-Board-Routed.dsn.json"
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 55,
+          "pads": 984,
+          "nets": 282,
+          "padstacks": 7,
+          "tracks": 2326,
+          "vias": 443,
+          "pours": 0,
+          "fences": 0,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 31.088010999999995
+      },
+      {
+        "id": "parse-summary-issue178-keebmaker-sofle-choc",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue178-KeebMaker_Sofle_Choc.dsn.json"
+          }
+        },
+        "board": "Issue178-KeebMaker_Sofle_Choc.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 216,
+          "pads": 620,
+          "nets": 176,
+          "padstacks": 15,
+          "tracks": 0,
+          "vias": 0,
+          "pours": 0,
+          "fences": 862,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 16.687511
+      },
+      {
+        "id": "parse-summary-issue187-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue187-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 143,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 2026,
+          "vias": 324,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 45.06451100000001
+      },
+      {
+        "id": "parse-summary-issue190-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue190-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue190-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 138,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 5981,
+          "vias": 223,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 22.801038000000005
+      },
+      {
+        "id": "parse-summary-issue191-processor-z80-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue191-processor.Z80-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 138,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 1921,
+          "vias": 223,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 40.578246999999976
+      },
+      {
+        "id": "parse-summary-issue690-kit-dev-coldfire-xilinx-5213",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue690-kit-dev-coldfire-xilinx_5213.dsn.json"
+          }
+        },
+        "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 4,
+          "components": 160,
+          "pads": 825,
+          "nets": 278,
+          "padstacks": 40,
+          "tracks": 2674,
+          "vias": 253,
+          "pours": 3,
+          "fences": 0,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 14.88287200000002
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga7",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga7.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga7.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 9.630421000000013
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga8",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga8.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga8.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.397212999999965
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga9",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga9.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga9.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 13,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.487824999999987
+      },
+      {
+        "id": "routing-slow-cm5-carrier-complete",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 25
+          },
+          "wallClockMs": {
+            "max": 600000,
+            "advisory": true
+          }
+        },
+        "board": "cm5-carrier.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 41,
+          "incompleteBefore": 129,
+          "completed": 91,
+          "violations": 25,
+          "violationsBefore": 25,
+          "violationsAdded": 0,
+          "passes": 10,
+          "barrels": 77,
+          "vias": 77,
+          "traceLengthMm": 835.6518480005844,
+          "addedTracks": 166,
+          "addedBarrels": 77,
+          "wallClockMs": 600045,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 2, got 41"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 600000, got 600045"
+        ],
+        "ms": 600085.8619210001
+      },
+      {
+        "id": "routing-slow-cm5-carrier-floor",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 25
+          },
+          "wallClockMs": {
+            "max": 120000,
+            "advisory": true
+          }
+        },
+        "board": "cm5-carrier.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 42,
+          "incompleteBefore": 129,
+          "completed": 90,
+          "violations": 25,
+          "violationsBefore": 25,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 74,
+          "vias": 74,
+          "traceLengthMm": 822.6718732537539,
+          "addedTracks": 162,
+          "addedBarrels": 74,
+          "wallClockMs": 120026,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 120000, got 120026"
+        ],
+        "ms": 120051.37223700003
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-maxpasses2-maxitems20",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 20
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 175,
+          "incompleteBefore": 195,
+          "completed": 20,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 144.99873847988488,
+          "addedTracks": 20,
+          "addedBarrels": 0,
+          "wallClockMs": 84,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 91.35044199996628
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-maxpasses3-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 145,
+          "incompleteBefore": 195,
+          "completed": 50,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 345.4644686712278,
+          "addedTracks": 50,
+          "addedBarrels": 0,
+          "wallClockMs": 205,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 211.25060699996538
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 56
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 72,
+          "incompleteBefore": 195,
+          "completed": 123,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 177,
+          "vias": 177,
+          "traceLengthMm": 1555.6858402150972,
+          "addedTracks": 306,
+          "addedBarrels": 177,
+          "wallClockMs": 9275,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 56, got 72"
+        ],
+        "advisoryMismatches": [],
+        "ms": 9286.332675999962
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems111",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 134
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 111
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 117,
+          "incompleteBefore": 195,
+          "completed": 78,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 604.5195913070397,
+          "addedTracks": 78,
+          "addedBarrels": 0,
+          "wallClockMs": 2738,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2744.8821280000266
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems151",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 126
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 151
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 117,
+          "incompleteBefore": 195,
+          "completed": 78,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 604.5195913070397,
+          "addedTracks": 78,
+          "addedBarrels": 0,
+          "wallClockMs": 2662,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2669.470403000014
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems61",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 147
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 61
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 134,
+          "incompleteBefore": 195,
+          "completed": 61,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 434.85610715034494,
+          "addedTracks": 61,
+          "addedBarrels": 0,
+          "wallClockMs": 386,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 391.92410900001414
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p2",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "incomplete": {
+            "max": 28
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 72,
+          "incompleteBefore": 195,
+          "completed": 148,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 2,
+          "barrels": 177,
+          "vias": 177,
+          "traceLengthMm": 1555.6858402150972,
+          "addedTracks": 306,
+          "addedBarrels": 177,
+          "wallClockMs": 54789,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 28, got 72"
+        ],
+        "advisoryMismatches": [],
+        "ms": 54800.933907
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-maxpasses20",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 20
+          },
+          "incomplete": {
+            "max": 44
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 28,
+          "incompleteBefore": 107,
+          "completed": 138,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 11,
+          "barrels": 47,
+          "vias": 47,
+          "traceLengthMm": 541.3190874876909,
+          "addedTracks": 165,
+          "addedBarrels": 47,
+          "wallClockMs": 99506,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 99512.308341
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 51
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 30,
+          "incompleteBefore": 107,
+          "completed": 77,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 51,
+          "vias": 51,
+          "traceLengthMm": 442.2251430735423,
+          "addedTracks": 131,
+          "addedBarrels": 51,
+          "wallClockMs": 1608,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 1613.630935999914
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1-maxitems2",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 106
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 60000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 2
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 105,
+          "incompleteBefore": 107,
+          "completed": 2,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 2.630201784592596,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 3,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 5.74759400007315
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1-maxitems5",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 104
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 60000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 5
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 102,
+          "incompleteBefore": 107,
+          "completed": 5,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 9.49041822649425,
+          "addedTracks": 5,
+          "addedBarrels": 0,
+          "wallClockMs": 4,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.944874000037089
+      },
+      {
+        "id": "routing-slow-dac2020-bm06-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 8
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 84000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm06.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 90,
+          "completed": 126,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 8,
+          "barrels": 64,
+          "vias": 64,
+          "traceLengthMm": 577.7686007223218,
+          "addedTracks": 252,
+          "addedBarrels": 64,
+          "wallClockMs": 2209,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 25, got 64"
+        ],
+        "ms": 2215.3834250000073
+      },
+      {
+        "id": "routing-slow-dac2020-bm07-complete",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 9
+          },
+          "wallClockMs": {
+            "max": 30000,
+            "advisory": true
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm07.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 6,
+          "incompleteBefore": 86,
+          "completed": 136,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 8,
+          "barrels": 92,
+          "vias": 92,
+          "traceLengthMm": 805.3203158637695,
+          "addedTracks": 222,
+          "addedBarrels": 92,
+          "wallClockMs": 8338,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 6"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 13, got 92"
+        ],
+        "ms": 8344.407498999964
+      },
+      {
+        "id": "routing-slow-dac2020-bm10-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 140000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm10.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 27,
+          "incompleteBefore": 199,
+          "completed": 186,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 370,
+          "vias": 370,
+          "traceLengthMm": 2160.1285236238255,
+          "addedTracks": 541,
+          "addedBarrels": 370,
+          "wallClockMs": 120033,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 27"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 150, got 370"
+        ],
+        "ms": 120053.01445599995
+      },
+      {
+        "id": "routing-slow-dac2020-bm11-fanout-only",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "min": 154
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue730-DAC2020_bm11.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 153,
+          "incompleteBefore": 160,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 145,
+          "vias": 145,
+          "traceLengthMm": 152.86077304513796,
+          "addedTracks": 145,
+          "addedBarrels": 145,
+          "wallClockMs": 55,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "addedBarrels: expected \u2265 154, got 145"
+        ],
+        "advisoryMismatches": [],
+        "ms": 64.49393799994141
+      },
+      {
+        "id": "routing-slow-issue026-j2-novia",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "wallClockMs": {
+            "max": 37000,
+            "advisory": true
+          }
+        },
+        "board": "Issue026-J2_reference.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 12,
+          "incompleteBefore": 33,
+          "completed": 45,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 116.02223295671432,
+          "addedTracks": 21,
+          "addedBarrels": 0,
+          "wallClockMs": 4039,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 6, got 12"
+        ],
+        "advisoryMismatches": [],
+        "ms": 4040.916334999958
+      },
+      {
+        "id": "routing-slow-issue026-j2-p1-optimizer-limits",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "wallClockMs": {
+            "max": 94000,
+            "advisory": true
+          }
+        },
+        "board": "Issue026-J2_reference.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 6,
+          "incompleteBefore": 33,
+          "completed": 27,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 43,
+          "vias": 43,
+          "traceLengthMm": 302.89370996447013,
+          "addedTracks": 72,
+          "addedBarrels": 43,
+          "wallClockMs": 298,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 299.4092820000369
+      },
+      {
+        "id": "routing-slow-issue034-green14seg-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 1
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 64000,
+            "advisory": true
+          }
+        },
+        "board": "Issue034-Green14SegLED.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 92,
+          "incompleteBefore": 147,
+          "completed": 63,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 87,
+          "vias": 87,
+          "traceLengthMm": 1238.9048230523624,
+          "addedTracks": 152,
+          "addedBarrels": 87,
+          "wallClockMs": 28840,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 1, got 92"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 46, got 87"
+        ],
+        "ms": 28847.39008400007
+      },
+      {
+        "id": "routing-slow-issue039-bug-design-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue039-bug-design.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 74,
+          "incompleteBefore": 197,
+          "completed": 360,
+          "violations": 9,
+          "violationsBefore": 9,
+          "violationsAdded": 0,
+          "passes": 5,
+          "barrels": 174,
+          "vias": 174,
+          "traceLengthMm": 1464.881286780445,
+          "addedTracks": 297,
+          "addedBarrels": 174,
+          "wallClockMs": 60020,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 60032.70331500005
+      },
+      {
+        "id": "routing-slow-issue066-gp8b-4layer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 60
+          }
+        },
+        "board": "Issue066-Project_GP8B.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 643,
+          "incompleteBefore": 703,
+          "completed": 60,
+          "violations": 23,
+          "violationsBefore": 23,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 550.5098432273974,
+          "addedTracks": 60,
+          "addedBarrels": 0,
+          "wallClockMs": 184,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 226.41991399996914
+      },
+      {
+        "id": "routing-slow-issue159-setonix-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 4
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "wallClockMs": {
+            "max": 10000,
+            "advisory": true
+          }
+        },
+        "board": "Issue159-setonix_2hp-pcb.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 23,
+          "completed": 23,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 9,
+          "vias": 9,
+          "traceLengthMm": 282.24886304009567,
+          "addedTracks": 32,
+          "addedBarrels": 9,
+          "wallClockMs": 192,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 195.34381500002928
+      },
+      {
+        "id": "routing-slow-issue229-display-anyangle-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "passes": {
+            "max": 1
+          },
+          "wallClockMs": {
+            "max": 82000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 8,
+          "completed": 6,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 39,
+          "vias": 39,
+          "traceLengthMm": 2086.5897543405795,
+          "addedTracks": 25,
+          "addedBarrels": 15,
+          "wallClockMs": 334,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 341.32993300003
+      },
+      {
+        "id": "routing-slow-issue229-display-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 20
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 48000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 1,
+          "incompleteBefore": 8,
+          "completed": 8,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 6,
+          "barrels": 45,
+          "vias": 45,
+          "traceLengthMm": 2118.7648840325387,
+          "addedTracks": 38,
+          "addedBarrels": 21,
+          "wallClockMs": 4246,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 29, got 45"
+        ],
+        "ms": 4253.468560999958
+      },
+      {
+        "id": "routing-slow-issue229-display-p1-optimizer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 8
+          },
+          "wallClockMs": {
+            "max": 82000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 8,
+          "completed": 6,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 38,
+          "vias": 38,
+          "traceLengthMm": 2086.300315521302,
+          "addedTracks": 29,
+          "addedBarrels": 14,
+          "wallClockMs": 341,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 346.98264599987306
+      },
+      {
+        "id": "routing-slow-issue230-cnh-plane-layers",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 5
+          },
+          "passes": {
+            "max": 20
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "wallClockMs": {
+            "max": 300000,
+            "advisory": true
+          }
+        },
+        "board": "Issue230-CNH_Functional_Tester_1.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 214,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 10,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300053,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 5, got 18"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 300000, got 300053"
+        ],
+        "ms": 300098.11771699996
+      },
+      {
+        "id": "routing-slow-issue269-caniot-tiny-arm-planes",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue269-caniot-tiny-arm.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 87,
+          "incompleteBefore": 89,
+          "completed": 18,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 1019.7055814726364,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 37022,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 37038.44097699993
+      },
+      {
+        "id": "routing-slow-issue269-z10-module-planes",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue269-z10_module.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 14,
+          "incompleteBefore": 65,
+          "completed": 42,
+          "violations": 4,
+          "violationsBefore": 4,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 124,
+          "vias": 124,
+          "traceLengthMm": 2039.80285202617,
+          "addedTracks": 85,
+          "addedBarrels": 32,
+          "wallClockMs": 7800,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 7855.595762999961
+      },
+      {
+        "id": "routing-slow-issue289-fht8086-6layer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 587,
+          "incompleteBefore": 637,
+          "completed": 50,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 15.826774759349213,
+          "addedTracks": 50,
+          "addedBarrels": 0,
+          "wallClockMs": 149,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 209.01525799999945
+      },
+      {
+        "id": "routing-slow-issue420-contribution-p1-maxitems100",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 100
+          }
+        },
+        "board": "Issue420-contribution-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 1025,
+          "incompleteBefore": 1125,
+          "completed": 100,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 559.3231852533272,
+          "addedTracks": 100,
+          "addedBarrels": 0,
+          "wallClockMs": 6378,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6424.444552999921
+      },
+      {
+        "id": "routing-slow-issue420-contribution-p1-maxitems150-optimizer1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "wallClockMs": {
+            "max": 187000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 150
+          }
+        },
+        "board": "Issue420-contribution-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 975,
+          "incompleteBefore": 1125,
+          "completed": 150,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 834.3585687527393,
+          "addedTracks": 150,
+          "addedBarrels": 0,
+          "wallClockMs": 6100,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6147.193278999999
+      },
+      {
+        "id": "routing-slow-issue555-bbd-mars64-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "min": 1,
+            "max": 99
+          },
+          "incomplete": {
+            "max": 7
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 1200000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-BBD_Mars-64.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 59,
+          "incompleteBefore": 106,
+          "completed": 206,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 67,
+          "vias": 67,
+          "traceLengthMm": 1061.3549920962614,
+          "addedTracks": 114,
+          "addedBarrels": 67,
+          "wallClockMs": 130012,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 7, got 59"
+        ],
+        "advisoryMismatches": [],
+        "ms": 130019.84516799985
+      },
+      {
+        "id": "routing-slow-issue555-bbd-mars64-timebudget",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "stoppedBy": {
+            "exact": "timeBudget"
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 4000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-BBD_Mars-64.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 74,
+          "incompleteBefore": 106,
+          "completed": 32,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 44,
+          "vias": 44,
+          "traceLengthMm": 685.5143520719589,
+          "addedTracks": 76,
+          "addedBarrels": 44,
+          "wallClockMs": 2006,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2012.4288690001704
+      },
+      {
+        "id": "routing-slow-issue555-cnh-maxpasses40",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "min": 1,
+            "max": 40
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 180000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 20,
+          "incompleteBefore": 144,
+          "completed": 175,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 5,
+          "barrels": 176,
+          "vias": 176,
+          "traceLengthMm": 4525.166711247411,
+          "addedTracks": 307,
+          "addedBarrels": 176,
+          "wallClockMs": 180050,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 6, got 20"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 180000, got 180050"
+        ],
+        "ms": 180096.55759799993
+      },
+      {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 207,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300049,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300091.13292400003
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-edge650",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 171000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 10,
+          "incompleteBefore": 94,
+          "completed": 230,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 13,
+          "barrels": 123,
+          "vias": 123,
+          "traceLengthMm": 1078.9006111037672,
+          "addedTracks": 294,
+          "addedBarrels": 123,
+          "wallClockMs": 30820,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 30829.403907999862
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-limits",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "max": 2
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 94,
+          "incompleteBefore": 94,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 1,
+          "vias": 1,
+          "traceLengthMm": 0.8,
+          "addedTracks": 1,
+          "addedBarrels": 1,
+          "wallClockMs": 3,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 8.198390000034124
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-only",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "min": 1
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 36000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 94,
+          "incompleteBefore": 94,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 98,
+          "vias": 98,
+          "traceLengthMm": 99.53171863359539,
+          "addedTracks": 98,
+          "addedBarrels": 98,
+          "wallClockMs": 23,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 27.514461999759078
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 36000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 7,
+          "incompleteBefore": 94,
+          "completed": 152,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 120,
+          "vias": 120,
+          "traceLengthMm": 1140.6592367999854,
+          "addedTracks": 341,
+          "addedBarrels": 120,
+          "wallClockMs": 18883,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 7"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 36, got 120"
+        ],
+        "ms": 18890.935223000124
+      },
+      {
+        "id": "routing-slow-issue676-ch32v-maxpasses3",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 0
+          },
+          "wallClockMs": {
+            "max": 10000,
+            "advisory": true
+          }
+        },
+        "board": "Issue676-ch32v-tx118s.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 0,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 6,
+          "vias": 6,
+          "traceLengthMm": 142.60841887259787,
+          "addedTracks": 0,
+          "addedBarrels": 0,
+          "wallClockMs": 2,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 5.134966999758035
+      },
+      {
+        "id": "routing-slow-issue684-pcb1-maxpasses3-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 50,
+          "incompleteBefore": 53,
+          "completed": 2,
+          "violations": 5,
+          "violationsBefore": 5,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 3.0813945075934663,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 575,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 579.1565600000322
+      },
+      {
+        "id": "routing-slow-issue690-kit-dev-coldfire-xilinx-5213-p1-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 44000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 0,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 253,
+          "vias": 253,
+          "traceLengthMm": 9412.190299585367,
+          "addedTracks": 0,
+          "addedBarrels": 0,
+          "wallClockMs": 118,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 191.29896999988705
+      },
+      {
+        "id": "ses-apply-issue191-processor-z80-processor",
+        "kind": "ses-apply",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "barrels": {
+            "exact": 223
+          },
+          "violations": {
+            "exact": 0
+          },
+          "tracks": {
+            "exact": 1921
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "barrels": 223,
+          "vias": 223,
+          "violations": 0,
+          "tracks": 1921,
+          "appliedTracks": 1921,
+          "appliedBarrels": 223
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 156.13481900002807
+      },
+      {
+        "id": "ses-roundtrip-issue103-board-routed",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue103-Board-Routed.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 74.83645600033924
+      },
+      {
+        "id": "ses-roundtrip-issue187-processor-z80",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue187-processor.Z80.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 78.99074500007555
+      },
+      {
+        "id": "ses-roundtrip-issue191-processor-z80-processor-z80",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue191-processor.Z80-processor.Z80.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 57.54925600020215
+      },
+      {
+        "id": "srj-j802-2layer",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 3,
+            "advisory": true
+          },
+          "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": {
+            "max": 0.15,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 12,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 3,
+          "wallClockMs": 60025,
+          "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": 0,
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": 57.506163,
+          "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": 0,
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": 77.487175,
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": 96.241321
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 3, got 12",
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N: expected \u2264 0.15, got 57.506163",
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N: expected \u2264 0.15, got 77.487175",
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N: expected \u2264 0.15, got 96.241321"
+        ],
+        "ms": 60034.230041999836
+      },
+      {
+        "id": "srj-j802-six-layer",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 14,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 5,
+          "wallClockMs": 60142,
+          "skewMm:J802_3_CM5_DPHY0_P_D0_P:J802_2_CM5_DPHY0_P_D0_N": 0,
+          "skewMm:J802_6_CM5_DPHY0_P_D1_P:J802_5_CM5_DPHY0_P_D1_N": 0,
+          "skewMm:J802_9_CM5_DPHY0_P_C_P:J802_8_CM5_DPHY0_P_C_N": 0,
+          "skewMm:J802_12_CM5_DPHY0_P_D2_P:J802_11_CM5_DPHY0_P_D2_N": 0,
+          "skewMm:J802_15_CM5_DPHY0_P_D3_P:J802_14_CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 14, got 15"
+        ],
+        "ms": 60173.58601700002
+      },
+      {
+        "id": "srj-j802-six-layer-v2",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 6,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer-v2.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 6,
+          "wallClockMs": 60138,
+          "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+          "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+          "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+          "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+          "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 6, got 15"
+        ],
+        "ms": 60165.911263999995
+      },
+      {
+        "id": "srj-j802-six-layer-v3",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 6,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer-v3.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 6,
+          "wallClockMs": 60130,
+          "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+          "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+          "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+          "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+          "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 6, got 15"
+        ],
+        "ms": 60157.17339599971
+      }
+    ],
+    "summary": {
+      "total": 63,
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0
+    }
+  },
+  "after": {
+    "taken": "2026-10-18T22:02:30.301Z",
+    "head": "9719257f9124b193fd4e4d595fdbf419af18da35",
+    "acceptStubs": false,
+    "invalidCases": [],
+    "cases": [
+      {
+        "id": "parse-dialect-kicad-wiring-polygons",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 62
+          },
+          "pads": {
+            "exact": 257
+          },
+          "nets": {
+            "exact": 69
+          },
+          "padstacks": {
+            "exact": 23
+          },
+          "tracks": {
+            "exact": 861
+          },
+          "vias": {
+            "exact": 162
+          },
+          "pours": {
+            "exact": 14
+          },
+          "fences": {
+            "exact": 1
+          }
+        },
+        "board": "Issue756-tomu-fpga7.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 24.974643999999998
+      },
+      {
+        "id": "parse-dialect-router-written-polyline-paths",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 55
+          },
+          "pads": {
+            "exact": 984
+          },
+          "nets": {
+            "exact": 282
+          },
+          "padstacks": {
+            "exact": 7
+          },
+          "tracks": {
+            "exact": 2326
+          },
+          "vias": {
+            "exact": 443
+          },
+          "pours": {
+            "exact": 0
+          },
+          "fences": {
+            "exact": 0
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 55,
+          "pads": 984,
+          "nets": 282,
+          "padstacks": 7,
+          "tracks": 2326,
+          "vias": 443,
+          "pours": 0,
+          "fences": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 29.398340000000005
+      },
+      {
+        "id": "parse-lex-issue187-brace-net-names",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "layers": {
+            "exact": 2
+          },
+          "components": {
+            "exact": 143
+          },
+          "pads": {
+            "exact": 1365
+          },
+          "nets": {
+            "exact": 529
+          },
+          "tracks": {
+            "exact": 2026
+          },
+          "vias": {
+            "exact": 324
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 143,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 2026,
+          "vias": 324,
+          "pours": 0,
+          "fences": 8
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 55.08898599999999
+      },
+      {
+        "id": "parse-summary-issue103-board-routed",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue103-Board-Routed.dsn.json"
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 55,
+          "pads": 984,
+          "nets": 282,
+          "padstacks": 7,
+          "tracks": 2326,
+          "vias": 443,
+          "pours": 0,
+          "fences": 0,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 27.65179099999999
+      },
+      {
+        "id": "parse-summary-issue178-keebmaker-sofle-choc",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue178-KeebMaker_Sofle_Choc.dsn.json"
+          }
+        },
+        "board": "Issue178-KeebMaker_Sofle_Choc.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 216,
+          "pads": 620,
+          "nets": 176,
+          "padstacks": 15,
+          "tracks": 0,
+          "vias": 0,
+          "pours": 0,
+          "fences": 862,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 14.395220999999992
+      },
+      {
+        "id": "parse-summary-issue187-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue187-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 143,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 2026,
+          "vias": 324,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 45.22172800000001
+      },
+      {
+        "id": "parse-summary-issue190-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue190-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue190-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 138,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 5981,
+          "vias": 223,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 25.386712000000017
+      },
+      {
+        "id": "parse-summary-issue191-processor-z80-processor-z80",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue191-processor.Z80-processor.Z80.dsn.json"
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 138,
+          "pads": 1365,
+          "nets": 529,
+          "padstacks": 16,
+          "tracks": 1921,
+          "vias": 223,
+          "pours": 0,
+          "fences": 8,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 47.19940399999999
+      },
+      {
+        "id": "parse-summary-issue690-kit-dev-coldfire-xilinx-5213",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue690-kit-dev-coldfire-xilinx_5213.dsn.json"
+          }
+        },
+        "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 4,
+          "components": 160,
+          "pads": 825,
+          "nets": 278,
+          "padstacks": 40,
+          "tracks": 2674,
+          "vias": 253,
+          "pours": 3,
+          "fences": 0,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 14.671843000000024
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga7",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga7.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga7.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.731073999999978
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga8",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga8.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga8.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 14,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 10.16687399999995
+      },
+      {
+        "id": "parse-summary-issue756-tomu-fpga9",
+        "kind": "parse",
+        "tier": "slow",
+        "expected": {
+          "status": {
+            "exact": "ok"
+          },
+          "summaryEquals": {
+            "equalsFile": "parse/Issue756-tomu-fpga9.dsn.json"
+          }
+        },
+        "board": "Issue756-tomu-fpga9.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "status": "ok",
+          "layers": 2,
+          "components": 62,
+          "pads": 257,
+          "nets": 69,
+          "padstacks": 23,
+          "tracks": 861,
+          "vias": 162,
+          "pours": 13,
+          "fences": 1,
+          "summaryEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 4.942646000000025
+      },
+      {
+        "id": "routing-slow-cm5-carrier-complete",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 25
+          },
+          "wallClockMs": {
+            "max": 600000,
+            "advisory": true
+          }
+        },
+        "board": "cm5-carrier.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 41,
+          "incompleteBefore": 129,
+          "completed": 91,
+          "violations": 25,
+          "violationsBefore": 25,
+          "violationsAdded": 0,
+          "passes": 10,
+          "barrels": 77,
+          "vias": 77,
+          "traceLengthMm": 835.6518480005844,
+          "addedTracks": 166,
+          "addedBarrels": 77,
+          "wallClockMs": 600031,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 2, got 41"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 600000, got 600031"
+        ],
+        "ms": 600062.734349
+      },
+      {
+        "id": "routing-slow-cm5-carrier-floor",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 25
+          },
+          "wallClockMs": {
+            "max": 120000,
+            "advisory": true
+          }
+        },
+        "board": "cm5-carrier.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 42,
+          "incompleteBefore": 129,
+          "completed": 90,
+          "violations": 25,
+          "violationsBefore": 25,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 74,
+          "vias": 74,
+          "traceLengthMm": 822.6718732537539,
+          "addedTracks": 162,
+          "addedBarrels": 74,
+          "wallClockMs": 120026,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 120000, got 120026"
+        ],
+        "ms": 120047.25864000001
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-maxpasses2-maxitems20",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 20
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 175,
+          "incompleteBefore": 195,
+          "completed": 20,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 144.99873847988488,
+          "addedTracks": 20,
+          "addedBarrels": 0,
+          "wallClockMs": 92,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 100.33272199996281
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-maxpasses3-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 145,
+          "incompleteBefore": 195,
+          "completed": 50,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 345.4644686712278,
+          "addedTracks": 50,
+          "addedBarrels": 0,
+          "wallClockMs": 224,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 230.46145599999
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 56
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 72,
+          "incompleteBefore": 195,
+          "completed": 123,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 177,
+          "vias": 177,
+          "traceLengthMm": 1555.6858402150972,
+          "addedTracks": 306,
+          "addedBarrels": 177,
+          "wallClockMs": 9841,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 56, got 72"
+        ],
+        "advisoryMismatches": [],
+        "ms": 9853.245288999984
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems111",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 134
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 111
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 117,
+          "incompleteBefore": 195,
+          "completed": 78,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 604.5195913070397,
+          "addedTracks": 78,
+          "addedBarrels": 0,
+          "wallClockMs": 2862,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2868.6992999999784
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems151",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 126
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 151
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 117,
+          "incompleteBefore": 195,
+          "completed": 78,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 604.5195913070397,
+          "addedTracks": 78,
+          "addedBarrels": 0,
+          "wallClockMs": 2780,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2787.5530039999867
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p1-maxitems61",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 147
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 58000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 61
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 134,
+          "incompleteBefore": 195,
+          "completed": 61,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 434.85610715034494,
+          "addedTracks": 61,
+          "addedBarrels": 0,
+          "wallClockMs": 397,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 404.5523380000377
+      },
+      {
+        "id": "routing-slow-dac2020-bm01-p2",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "incomplete": {
+            "max": 28
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue508-DAC2020_bm01.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 72,
+          "incompleteBefore": 195,
+          "completed": 148,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 2,
+          "barrels": 177,
+          "vias": 177,
+          "traceLengthMm": 1555.6858402150972,
+          "addedTracks": 306,
+          "addedBarrels": 177,
+          "wallClockMs": 54120,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 28, got 72"
+        ],
+        "advisoryMismatches": [],
+        "ms": 54131.64863099996
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-maxpasses20",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 20
+          },
+          "incomplete": {
+            "max": 44
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 28,
+          "incompleteBefore": 107,
+          "completed": 138,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 11,
+          "barrels": 47,
+          "vias": 47,
+          "traceLengthMm": 541.3190874876909,
+          "addedTracks": 165,
+          "addedBarrels": 47,
+          "wallClockMs": 98461,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 98467.41049400007
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 51
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 30,
+          "incompleteBefore": 107,
+          "completed": 77,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 51,
+          "vias": 51,
+          "traceLengthMm": 442.2251430735423,
+          "addedTracks": 131,
+          "addedBarrels": 51,
+          "wallClockMs": 1556,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 1560.814725000062
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1-maxitems2",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 106
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 60000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 2
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 105,
+          "incompleteBefore": 107,
+          "completed": 2,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 2.630201784592596,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 3,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 5.919178000069223
+      },
+      {
+        "id": "routing-slow-dac2020-bm05-p1-maxitems5",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 104
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 60000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 5
+          }
+        },
+        "board": "Issue508-DAC2020_bm05.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 102,
+          "incompleteBefore": 107,
+          "completed": 5,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 9.49041822649425,
+          "addedTracks": 5,
+          "addedBarrels": 0,
+          "wallClockMs": 3,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.891362000023946
+      },
+      {
+        "id": "routing-slow-dac2020-bm06-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 8
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 84000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm06.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 90,
+          "completed": 126,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 8,
+          "barrels": 64,
+          "vias": 64,
+          "traceLengthMm": 577.7686007223218,
+          "addedTracks": 252,
+          "addedBarrels": 64,
+          "wallClockMs": 2149,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 25, got 64"
+        ],
+        "ms": 2154.4689759999746
+      },
+      {
+        "id": "routing-slow-dac2020-bm07-complete",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 9
+          },
+          "wallClockMs": {
+            "max": 30000,
+            "advisory": true
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm07.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 6,
+          "incompleteBefore": 86,
+          "completed": 136,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 8,
+          "barrels": 92,
+          "vias": 92,
+          "traceLengthMm": 805.3203158637695,
+          "addedTracks": 222,
+          "addedBarrels": 92,
+          "wallClockMs": 8225,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 6"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 13, got 92"
+        ],
+        "ms": 8229.855154999997
+      },
+      {
+        "id": "routing-slow-dac2020-bm10-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 140000,
+            "advisory": true
+          }
+        },
+        "board": "Issue508-DAC2020_bm10.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 27,
+          "incompleteBefore": 199,
+          "completed": 186,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 370,
+          "vias": 370,
+          "traceLengthMm": 2160.1285236238255,
+          "addedTracks": 541,
+          "addedBarrels": 370,
+          "wallClockMs": 120032,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 27"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 150, got 370"
+        ],
+        "ms": 120053.004511
+      },
+      {
+        "id": "routing-slow-dac2020-bm11-fanout-only",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "min": 154
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue730-DAC2020_bm11.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 153,
+          "incompleteBefore": 160,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 145,
+          "vias": 145,
+          "traceLengthMm": 152.86077304513796,
+          "addedTracks": 145,
+          "addedBarrels": 145,
+          "wallClockMs": 54,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "addedBarrels: expected \u2265 154, got 145"
+        ],
+        "advisoryMismatches": [],
+        "ms": 62.474768999964
+      },
+      {
+        "id": "routing-slow-issue026-j2-novia",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "wallClockMs": {
+            "max": 37000,
+            "advisory": true
+          }
+        },
+        "board": "Issue026-J2_reference.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 12,
+          "incompleteBefore": 33,
+          "completed": 45,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 116.02223295671432,
+          "addedTracks": 21,
+          "addedBarrels": 0,
+          "wallClockMs": 4050,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 6, got 12"
+        ],
+        "advisoryMismatches": [],
+        "ms": 4051.70509199996
+      },
+      {
+        "id": "routing-slow-issue026-j2-p1-optimizer-limits",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "wallClockMs": {
+            "max": 94000,
+            "advisory": true
+          }
+        },
+        "board": "Issue026-J2_reference.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 6,
+          "incompleteBefore": 33,
+          "completed": 27,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 43,
+          "vias": 43,
+          "traceLengthMm": 302.89370996447013,
+          "addedTracks": 72,
+          "addedBarrels": 43,
+          "wallClockMs": 274,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 276.8540689999936
+      },
+      {
+        "id": "routing-slow-issue034-green14seg-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 1
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 64000,
+            "advisory": true
+          }
+        },
+        "board": "Issue034-Green14SegLED.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 92,
+          "incompleteBefore": 147,
+          "completed": 63,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 87,
+          "vias": 87,
+          "traceLengthMm": 1238.9048230523624,
+          "addedTracks": 152,
+          "addedBarrels": 87,
+          "wallClockMs": 31637,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 1, got 92"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 46, got 87"
+        ],
+        "ms": 31645.761015000055
+      },
+      {
+        "id": "routing-slow-issue039-bug-design-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue039-bug-design.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 74,
+          "incompleteBefore": 197,
+          "completed": 335,
+          "violations": 9,
+          "violationsBefore": 9,
+          "violationsAdded": 0,
+          "passes": 4,
+          "barrels": 174,
+          "vias": 174,
+          "traceLengthMm": 1464.881286780445,
+          "addedTracks": 297,
+          "addedBarrels": 174,
+          "wallClockMs": 60021,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 60035.72396299988
+      },
+      {
+        "id": "routing-slow-issue066-gp8b-4layer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 60
+          }
+        },
+        "board": "Issue066-Project_GP8B.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 643,
+          "incompleteBefore": 703,
+          "completed": 60,
+          "violations": 23,
+          "violationsBefore": 23,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 550.5098432273974,
+          "addedTracks": 60,
+          "addedBarrels": 0,
+          "wallClockMs": 198,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 245.4106310000643
+      },
+      {
+        "id": "routing-slow-issue159-setonix-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 4
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "wallClockMs": {
+            "max": 10000,
+            "advisory": true
+          }
+        },
+        "board": "Issue159-setonix_2hp-pcb.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 23,
+          "completed": 23,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 9,
+          "vias": 9,
+          "traceLengthMm": 282.24886304009567,
+          "addedTracks": 32,
+          "addedBarrels": 9,
+          "wallClockMs": 217,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 219.59659100021236
+      },
+      {
+        "id": "routing-slow-issue229-display-anyangle-p1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "passes": {
+            "max": 1
+          },
+          "wallClockMs": {
+            "max": 82000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 8,
+          "completed": 6,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 39,
+          "vias": 39,
+          "traceLengthMm": 2086.5897543405795,
+          "addedTracks": 25,
+          "addedBarrels": 15,
+          "wallClockMs": 383,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 393.5128310001455
+      },
+      {
+        "id": "routing-slow-issue229-display-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 20
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 48000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 1,
+          "incompleteBefore": 8,
+          "completed": 8,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 6,
+          "barrels": 45,
+          "vias": 45,
+          "traceLengthMm": 2118.7648840325387,
+          "addedTracks": 38,
+          "addedBarrels": 21,
+          "wallClockMs": 4631,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 29, got 45"
+        ],
+        "ms": 4639.236865000101
+      },
+      {
+        "id": "routing-slow-issue229-display-p1-optimizer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "passes": {
+            "max": 1
+          },
+          "incomplete": {
+            "max": 8
+          },
+          "wallClockMs": {
+            "max": 82000,
+            "advisory": true
+          }
+        },
+        "board": "Issue229-display-8-digit-hc595.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 2,
+          "incompleteBefore": 8,
+          "completed": 6,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 38,
+          "vias": 38,
+          "traceLengthMm": 2086.300315521302,
+          "addedTracks": 29,
+          "addedBarrels": 14,
+          "wallClockMs": 373,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 379.88272500014864
+      },
+      {
+        "id": "routing-slow-issue230-cnh-plane-layers",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "max": 5
+          },
+          "passes": {
+            "max": 20
+          },
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "wallClockMs": {
+            "max": 300000,
+            "advisory": true
+          }
+        },
+        "board": "Issue230-CNH_Functional_Tester_1.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 207,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300059,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 5, got 18"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 300000, got 300059"
+        ],
+        "ms": 300103.06513400003
+      },
+      {
+        "id": "routing-slow-issue269-caniot-tiny-arm-planes",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue269-caniot-tiny-arm.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 87,
+          "incompleteBefore": 89,
+          "completed": 18,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 1019.7055814726364,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 36534,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 36550.8689280001
+      },
+      {
+        "id": "routing-slow-issue269-z10-module-planes",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          }
+        },
+        "board": "Issue269-z10_module.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 14,
+          "incompleteBefore": 65,
+          "completed": 42,
+          "violations": 4,
+          "violationsBefore": 4,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 124,
+          "vias": 124,
+          "traceLengthMm": 2039.80285202617,
+          "addedTracks": 85,
+          "addedBarrels": 32,
+          "wallClockMs": 7783,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 7834.379765999969
+      },
+      {
+        "id": "routing-slow-issue289-fht8086-6layer",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 2
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue289-Autorouter_PCB_FHT-8086_2024-03-08.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 587,
+          "incompleteBefore": 637,
+          "completed": 50,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 15.826774759349213,
+          "addedTracks": 50,
+          "addedBarrels": 0,
+          "wallClockMs": 140,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 200.5024890000932
+      },
+      {
+        "id": "routing-slow-issue420-contribution-p1-maxitems100",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 100
+          }
+        },
+        "board": "Issue420-contribution-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 1025,
+          "incompleteBefore": 1125,
+          "completed": 100,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 559.3231852533272,
+          "addedTracks": 100,
+          "addedBarrels": 0,
+          "wallClockMs": 5927,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 5977.498045000015
+      },
+      {
+        "id": "routing-slow-issue420-contribution-p1-maxitems150-optimizer1",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "wallClockMs": {
+            "max": 187000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 150
+          }
+        },
+        "board": "Issue420-contribution-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 975,
+          "incompleteBefore": 1125,
+          "completed": 150,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 834.3585687527393,
+          "addedTracks": 150,
+          "addedBarrels": 0,
+          "wallClockMs": 6436,
+          "stoppedBy": "maxItems",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6484.84117499995
+      },
+      {
+        "id": "routing-slow-issue555-bbd-mars64-default",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "min": 1,
+            "max": 99
+          },
+          "incomplete": {
+            "max": 7
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 1200000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-BBD_Mars-64.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 59,
+          "incompleteBefore": 106,
+          "completed": 206,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 67,
+          "vias": 67,
+          "traceLengthMm": 1061.3549920962614,
+          "addedTracks": 114,
+          "addedBarrels": 67,
+          "wallClockMs": 128158,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 7, got 59"
+        ],
+        "advisoryMismatches": [],
+        "ms": 128165.19430500013
+      },
+      {
+        "id": "routing-slow-issue555-bbd-mars64-timebudget",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "stoppedBy": {
+            "exact": "timeBudget"
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 4000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-BBD_Mars-64.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 74,
+          "incompleteBefore": 106,
+          "completed": 32,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 1,
+          "barrels": 44,
+          "vias": 44,
+          "traceLengthMm": 685.5143520719589,
+          "addedTracks": 76,
+          "addedBarrels": 44,
+          "wallClockMs": 2005,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 2010.706188999815
+      },
+      {
+        "id": "routing-slow-issue555-cnh-maxpasses40",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "min": 1,
+            "max": 40
+          },
+          "incomplete": {
+            "max": 6
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 180000,
+            "advisory": true
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 20,
+          "incompleteBefore": 144,
+          "completed": 175,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 5,
+          "barrels": 176,
+          "vias": 176,
+          "traceLengthMm": 4525.166711247411,
+          "addedTracks": 307,
+          "addedBarrels": 176,
+          "wallClockMs": 180054,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected \u2264 6, got 20"
+        ],
+        "advisoryMismatches": [
+          "wallClockMs: expected \u2264 180000, got 180054"
+        ],
+        "ms": 180098.35301700002
+      },
+      {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 207,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300052,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300095.24256399996
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-edge650",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 171000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 10,
+          "incompleteBefore": 94,
+          "completed": 230,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 13,
+          "barrels": 123,
+          "vias": 123,
+          "traceLengthMm": 1078.9006111037672,
+          "addedTracks": 294,
+          "addedBarrels": 123,
+          "wallClockMs": 31093,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 31102.552158999955
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-limits",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "max": 2
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 150000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 94,
+          "incompleteBefore": 94,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 1,
+          "vias": 1,
+          "traceLengthMm": 0.8,
+          "addedTracks": 1,
+          "addedBarrels": 1,
+          "wallClockMs": 2,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 6.657937000039965
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-only",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "addedBarrels": {
+            "min": 1
+          },
+          "passes": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 36000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 94,
+          "incompleteBefore": 94,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 98,
+          "vias": 98,
+          "traceLengthMm": 99.53171863359539,
+          "addedTracks": 98,
+          "addedBarrels": 98,
+          "wallClockMs": 21,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 27.28603099985048
+      },
+      {
+        "id": "routing-slow-issue558-dev-board-fanout-route",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "passes": {
+            "max": 10
+          },
+          "barrels": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "traceLengthMm": {
+            "maxRatioToReference": 1.5,
+            "advisory": true
+          },
+          "wallClockMs": {
+            "max": 36000,
+            "advisory": true
+          }
+        },
+        "board": "Issue558-dev-board.dsn",
+        "pass": false,
+        "stub": false,
+        "measured": {
+          "incomplete": 7,
+          "incompleteBefore": 94,
+          "completed": 152,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 7,
+          "barrels": 120,
+          "vias": 120,
+          "traceLengthMm": 1140.6592367999854,
+          "addedTracks": 341,
+          "addedBarrels": 120,
+          "wallClockMs": 18118,
+          "stoppedBy": "stagnant",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [
+          "incomplete: expected exactly 0, got 7"
+        ],
+        "advisoryMismatches": [
+          "barrels: expected \u2264 1.5 \u00d7 reference 36, got 120"
+        ],
+        "ms": 18124.44465699978
+      },
+      {
+        "id": "routing-slow-issue676-ch32v-maxpasses3",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "incomplete": {
+            "max": 0
+          },
+          "wallClockMs": {
+            "max": 10000,
+            "advisory": true
+          }
+        },
+        "board": "Issue676-ch32v-tx118s.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 0,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 6,
+          "vias": 6,
+          "traceLengthMm": 142.60841887259787,
+          "addedTracks": 0,
+          "addedBarrels": 0,
+          "wallClockMs": 2,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 4.138580000028014
+      },
+      {
+        "id": "routing-slow-issue684-pcb1-maxpasses3-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 3
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue684-Autorouter_PCB1_2026-5-8.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 50,
+          "incompleteBefore": 53,
+          "completed": 2,
+          "violations": 5,
+          "violationsBefore": 5,
+          "violationsAdded": 0,
+          "passes": 3,
+          "barrels": 0,
+          "vias": 0,
+          "traceLengthMm": 3.0813945075934663,
+          "addedTracks": 2,
+          "addedBarrels": 0,
+          "wallClockMs": 560,
+          "stoppedBy": "maxPasses",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 565.0693200002424
+      },
+      {
+        "id": "routing-slow-issue690-kit-dev-coldfire-xilinx-5213-p1-maxitems50",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "passes": {
+            "max": 1
+          },
+          "violations": {
+            "maxAdded": 0
+          },
+          "wallClockMs": {
+            "max": 44000,
+            "advisory": true
+          },
+          "completed": {
+            "max": 50
+          }
+        },
+        "board": "Issue690-kit-dev-coldfire-xilinx_5213.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "incompleteBefore": 0,
+          "completed": 0,
+          "violations": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "passes": 0,
+          "barrels": 253,
+          "vias": 253,
+          "traceLengthMm": 9412.190299585367,
+          "addedTracks": 0,
+          "addedBarrels": 0,
+          "wallClockMs": 117,
+          "stoppedBy": "complete",
+          "timedOut": false,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 193.24169999966398
+      },
+      {
+        "id": "ses-apply-issue191-processor-z80-processor",
+        "kind": "ses-apply",
+        "tier": "slow",
+        "expected": {
+          "incomplete": {
+            "exact": 0
+          },
+          "barrels": {
+            "exact": 223
+          },
+          "violations": {
+            "exact": 0
+          },
+          "tracks": {
+            "exact": 1921
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 0,
+          "barrels": 223,
+          "vias": 223,
+          "violations": 0,
+          "tracks": 1921,
+          "appliedTracks": 1921,
+          "appliedBarrels": 223
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 101.63832599995658
+      },
+      {
+        "id": "ses-roundtrip-issue103-board-routed",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue103-Board-Routed.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue103-Board-Routed.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 51.499904999975115
+      },
+      {
+        "id": "ses-roundtrip-issue187-processor-z80",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue187-processor.Z80.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue187-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 61.95980799989775
+      },
+      {
+        "id": "ses-roundtrip-issue191-processor-z80-processor-z80",
+        "kind": "ses-roundtrip",
+        "tier": "slow",
+        "expected": {
+          "treeEquals": {
+            "equalsFile": "ses/Issue191-processor.Z80-processor.Z80.dsn.unrouted.sexp.json"
+          }
+        },
+        "board": "Issue191-processor.Z80-processor.Z80.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "treeEquals": "equal"
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 55.29966700030491
+      },
+      {
+        "id": "srj-j802-2layer",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 3,
+            "advisory": true
+          },
+          "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": {
+            "max": 0.15,
+            "advisory": true
+          },
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": {
+            "max": 0.15,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 12,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 3,
+          "wallClockMs": 60026,
+          "skewMm:J802_3_/CM5/DPHY0_P.D0_P:J802_2_/CM5/DPHY0_P.D0_N": 0,
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N": 57.506163,
+          "skewMm:J802_9_/CM5/DPHY0_P.C_P:J802_8_/CM5/DPHY0_P.C_N": 0,
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N": 77.487175,
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N": 96.241321
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 3, got 12",
+          "skewMm:J802_6_/CM5/DPHY0_P.D1_P:J802_5_/CM5/DPHY0_P.D1_N: expected \u2264 0.15, got 57.506163",
+          "skewMm:J802_12_/CM5/DPHY0_P.D2_P:J802_11_/CM5/DPHY0_P.D2_N: expected \u2264 0.15, got 77.487175",
+          "skewMm:J802_15_/CM5/DPHY0_P.D3_P:J802_14_/CM5/DPHY0_P.D3_N: expected \u2264 0.15, got 96.241321"
+        ],
+        "ms": 60032.95635699993
+      },
+      {
+        "id": "srj-j802-six-layer",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 14,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 5,
+          "wallClockMs": 60138,
+          "skewMm:J802_3_CM5_DPHY0_P_D0_P:J802_2_CM5_DPHY0_P_D0_N": 0,
+          "skewMm:J802_6_CM5_DPHY0_P_D1_P:J802_5_CM5_DPHY0_P_D1_N": 0,
+          "skewMm:J802_9_CM5_DPHY0_P_C_P:J802_8_CM5_DPHY0_P_C_N": 0,
+          "skewMm:J802_12_CM5_DPHY0_P_D2_P:J802_11_CM5_DPHY0_P_D2_N": 0,
+          "skewMm:J802_15_CM5_DPHY0_P_D3_P:J802_14_CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 14, got 15"
+        ],
+        "ms": 60177.24081700016
+      },
+      {
+        "id": "srj-j802-six-layer-v2",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 6,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer-v2.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 6,
+          "wallClockMs": 60138,
+          "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+          "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+          "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+          "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+          "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 6, got 15"
+        ],
+        "ms": 60166.854255999904
+      },
+      {
+        "id": "srj-j802-six-layer-v3",
+        "kind": "srj",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 0
+          },
+          "incomplete": {
+            "max": 6,
+            "advisory": true
+          }
+        },
+        "board": "b223-j802-six-layer-v3.srj.json",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "ok": false,
+          "incomplete": 15,
+          "incompleteBefore": 15,
+          "violations": 0,
+          "violationsBefore": 0,
+          "passes": 6,
+          "wallClockMs": 60123,
+          "skewMm:CM5_DPHY0_P_D0_P:CM5_DPHY0_P_D0_N": 0,
+          "skewMm:CM5_DPHY0_P_D1_P:CM5_DPHY0_P_D1_N": 0,
+          "skewMm:CM5_DPHY0_P_C_P:CM5_DPHY0_P_C_N": 0,
+          "skewMm:CM5_DPHY0_P_D2_P:CM5_DPHY0_P_D2_N": 0,
+          "skewMm:CM5_DPHY0_P_D3_P:CM5_DPHY0_P_D3_N": 0
+        },
+        "mismatches": [],
+        "advisoryMismatches": [
+          "incomplete: expected \u2264 6, got 15"
+        ],
+        "ms": 60153.05316499993
+      }
+    ],
+    "summary": {
+      "total": 63,
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0
+    }
+  },
+  "changes": [
+    {
+      "id": "routing-slow-issue039-bug-design-default",
+      "completed": [
+        360,
+        335
+      ],
+      "passes": [
+        5,
+        4
+      ]
+    },
+    {
+      "id": "routing-slow-issue230-cnh-plane-layers",
+      "completed": [
+        214,
+        207
+      ],
+      "passes": [
+        10,
+        9
+      ]
+    }
+  ],
+  "violation_increases": [],
+  "invariant_regressions": [],
+  "abort_regressions": [],
+  "pass_regressions": [],
+  "incomplete_increases": []
+}
