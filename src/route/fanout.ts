@@ -85,7 +85,7 @@ function escapePadWithVia(layout: Layout, lattice: Lattice, journal: Journal, pa
   if (!drop) return false;
   const cand = drop.candidate;
   const mark = journal.mark();
-  journal.addBarrel({ net: pad.net, at: drop.at, form: cand.form, fromSheet: cand.fromSheet, toSheet: cand.toSheet, kind: cand.kind, hold: "free" });
+  const barrel = journal.addBarrel({ net: pad.net, at: drop.at, form: cand.form, fromSheet: cand.fromSheet, toSheet: cand.toSheet, kind: cand.kind, hold: "free" });
   if (drop.stub.length >= 2) {
     const los = (a: Pt, b: Pt): boolean => sweepClear(layout, lattice, padSheet, { a, b }, profile, ignore, profile.width).ok;
     const leg = legaliseTrail(layout, lattice, padSheet, pullPath(drop.stub, los), profile, ignore, false);
@@ -94,6 +94,13 @@ function escapePadWithVia(layout: Layout, lattice: Lattice, journal: Journal, pa
       if (piece.pts.length < 2) continue;
       journal.addTrack({ net: pad.net, sheet: padSheet, pts: piece.pts, width: piece.width, kind: profile.trackKind, hold: "free" });
     }
+  }
+  // Pad anchors need not lie in their copper (offset or hollow forms). A clear
+  // placement is an escape only if the inserted copper actually reaches this pad.
+  const conn = connectivity(layout, lattice);
+  if (conn.componentOf.get(pad.id) !== conn.componentOf.get(barrel.id)) {
+    journal.rewind(mark);
+    return false;
   }
   return true;
 }
