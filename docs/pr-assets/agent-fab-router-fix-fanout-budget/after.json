@@ -1,0 +1,596 @@
+[
+  {
+    "repeat": 1,
+    "cap": 0,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 1,
+    "cap": 1,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 1,
+    "cap": 2,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 1,
+    "cap": 3,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 1,
+    "cap": 4,
+    "added": {
+      "tracks": 2,
+      "barrels": 2
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 100000,
+            "y": 0
+          },
+          {
+            "x": 109000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 15,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "at": {
+          "x": 109000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 2,
+    "cap": 0,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 2,
+    "cap": 1,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 2,
+    "cap": 2,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 2,
+    "cap": 3,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 2,
+    "cap": 4,
+    "added": {
+      "tracks": 2,
+      "barrels": 2
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 100000,
+            "y": 0
+          },
+          {
+            "x": 109000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 15,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "at": {
+          "x": 109000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 3,
+    "cap": 0,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 3,
+    "cap": 1,
+    "added": {
+      "tracks": 0,
+      "barrels": 0
+    },
+    "violations": 0,
+    "tracks": [],
+    "barrels": [],
+    "withinBudget": true
+  },
+  {
+    "repeat": 3,
+    "cap": 2,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 3,
+    "cap": 3,
+    "added": {
+      "tracks": 1,
+      "barrels": 1
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  },
+  {
+    "repeat": 3,
+    "cap": 4,
+    "added": {
+      "tracks": 2,
+      "barrels": 2
+    },
+    "violations": 0,
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -100000,
+            "y": 0
+          },
+          {
+            "x": -91000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 13,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 100000,
+            "y": 0
+          },
+          {
+            "x": 109000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 15,
+        "origin": "router"
+      }
+    ],
+    "barrels": [
+      {
+        "net": 0,
+        "at": {
+          "x": -91000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 12,
+        "origin": "router"
+      },
+      {
+        "net": 0,
+        "at": {
+          "x": 109000,
+          "y": 0
+        },
+        "form": 101,
+        "fromSheet": 0,
+        "toSheet": 1,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "withinBudget": true
+  }
+]

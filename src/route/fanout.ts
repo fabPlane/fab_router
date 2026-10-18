@@ -56,7 +56,10 @@ export function runFanout(layout: Layout, lattice: Lattice, journal: Journal, se
     for (const pad of smdPads) {
       if (maxItems !== undefined && added() >= maxItems) break;
       if (done.has(pad.id) || ignored.has(pad.net!)) continue;
+      const mark = journal.mark();
       if (settings.viasAllowed && escapePadWithVia(layout, lattice, journal, pad, profileOf(pad.net), usableOther, radius)) {
+        // An escape is atomic: its via and all stub pieces must fit the stage budget.
+        if (maxItems !== undefined && added() > maxItems) { journal.rewind(mark); continue; }
         escaped++; progressed = true; done.add(pad.id);
       }
     }
