@@ -1,0 +1,634 @@
+{
+  "runs": [
+    {
+      "repeat": 1,
+      "hooks": false,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "hooks": true,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [
+        {
+          "kind": "pass",
+          "pass": 1,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 2,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 3,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        }
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "hooks": false,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "hooks": true,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [
+        {
+          "kind": "pass",
+          "pass": 1,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 2,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 3,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        }
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "hooks": false,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "hooks": true,
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 2,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 2,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 3,
+          "maxStagnantPasses": 0,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": false,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": false,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "angleMode": "any"
+        },
+        "perNet": [
+          {
+            "net": "SIG",
+            "incomplete": 1
+          }
+        ]
+      },
+      "events": [
+        {
+          "kind": "pass",
+          "pass": 1,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 2,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "pass",
+          "pass": 3,
+          "reported": 1,
+          "actual": 1
+        },
+        {
+          "kind": "progress",
+          "reported": 1,
+          "actual": 1
+        }
+      ],
+      "tracks": [
+        {
+          "net": 1,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 0,
+              "y": -96000
+            },
+            {
+              "x": 0,
+              "y": 96000
+            }
+          ],
+          "width": 4000,
+          "kind": 1,
+          "hold": "free",
+          "id": 202,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 10,
+            "to": 11,
+            "airlineLu": 40000
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      }
+    }
+  ]
+}
