@@ -52,7 +52,10 @@ function luPerResolutionUnit(layout: Layout, routes: Node | undefined): number {
 
 export function applySes(layout: Layout, text: string): ApplyResult {
   const diagnostics: Diagnostic[] = [];
-  const roots = buildTree(lex(text), diagnostics);
+  // Sessions inherit the design's quote character (the writer uses the same facts).
+  // An explicit string_quote declaration in the session still takes precedence.
+  const stringQuote = layout.file?.quote ?? documentOf(layout)?.parser.stringQuote ?? '"';
+  const roots = buildTree(lex(text, { stringQuote }), diagnostics);
   const session = roots.find((r) => r.head === "session");
   if (!session) {
     diagnostics.push({ level: "warning", code: "session-missing", message: "text has no (session …) scope" });
