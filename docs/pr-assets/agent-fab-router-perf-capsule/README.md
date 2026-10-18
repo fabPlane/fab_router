@@ -149,3 +149,95 @@ Lower intermediate counters prevent a claim of identical timed progress or unive
 A separate archive of `9719257` adds counters only to `closerConvex`; the router checkout is never instrumented. Paperino records 3,358,472 convex clearance comparisons: 692,280 (20.61%) use the new capsule branch. Compared with the original source, those calls avoid constructing 1,384,560 Core views and their associated point arrays. These are source-level opportunities, not measured heap allocations or GC savings. The larger fallback groups are capsule/disk (1,792,434), disk/disk (554,231), and disk/capsule (287,146); the optimization targets a minority of this workload.
 
 The trace has no timeout/abort and exactly matches all six uninstrumented profile sessions and the native Paperino session. `capsule-trace.json` retains complete counts, settings, input/session fingerprints, report and generator/archive/original/instrumented hashes. Instrumented time is diagnostic only, excluded from every performance comparison. Generator and trace output guards preserve existing evidence. An initial trace launch selected a nonexistent run directory and failed before routing; the corrected launch uses the staged work-directory glob shown above.
+
+## Cycle 12: isolated real-call replay and reversed native schedule
+
+This follow-up changes only diagnostic tools and evidence; production, unit-test and acceptance code remains exactly `9719257`. It measures whether the fast branch helps actual calls and whether its guard taxes fallback calls. Full native routing compares baseline `69cf598` with `6815d27`, whose production source is identical to the original candidate. Every case reverses its baseline/candidate execution order relative to cycle 11. All 52 invocations and 156 attempts complete; source/settings identities and chronology are verified. All 78 paired sessions, quality fields, via counts and lengths match. Both versions again have 39/78 passing attempts, 13/26 cases passing 3/3, 120 opens and 27 existing new native errors.
+
+Sum of native case medians is 124.957 → 119.783 seconds (4.14% lower); total route seconds are 372.469 → 360.875. Sixteen case medians are lower and ten higher. Most aggregate reduction comes from Aquarius, 48.429 → 42.321 seconds. Paperino is again adverse, 15.254 → 16.310 seconds (6.9% slower), after cycle 11's 3.1% slowdown. Shared-host variation and mixed per-case results remain explicit; these measurements do not establish a universal or causal whole-router speedup.
+
+An isolated source archive captures Paperino comparisons using deterministic bounded Algorithm R reservoirs, up to 1,024 snapshots per ordered shape-kind group, with a separate group for the fast branch. The finite xorshift32 random source is deterministic, not a claim of perfect statistical randomness. Selected shapes are cloned immediately to preserve their values despite later mutation. All 3,358,472 call counts and the output session exactly match the previous full-count trace, all six original uninstrumented profiles, and native output. Instrumented capture time (16.319 seconds) is diagnostic only.
+
+The capture retains 6,760 tuples across eight groups. Before timing, every tuple is checked individually against both versions and the original `coreOf`/`dist2Pts` operation. All pass. The fast group has 652 true results in 1,024 samples, all strict comparisons; it contains no touching calls in this workload. Disk/disk includes 74 touching samples. This actual-call sample does not replace the existing synthetic boundary/degeneracy test.
+
+Replay times the four dominant groups through public `closerThan`/`overlaps`, including their dispatch overhead. Each version/group/repeat runs in a separate process: six measured repeats plus an excluded warmup repeat, five million calls per repeat, with alternating version order. Every worker also warms its JIT before timing; every timed pair has identical checksums. The processes cycle their group's sample array, rather than reproducing the full route's interleaving or frequency mix. The other four groups receive exact equality checks but are not timed.
+
+| Workload | Baseline median / max s | Candidate median / max s | Baseline / candidate |
+|---|---:|---:|---:|
+| fast-capsule | 0.283624 / 0.291101 | 0.178042 / 0.182498 | 1.593× |
+| capsule/disk | 0.185799 / 0.206487 | 0.197805 / 0.225910 | 0.939× |
+| disk/disk | 0.125746 / 0.127793 | 0.131138 / 0.149639 | 0.959× |
+| disk/capsule | 0.162050 / 0.185212 | 0.162976 / 0.167962 | 0.994× |
+
+The capsule branch takes 37.2% less replay time. Capsule/disk is 6.5% slower, disk/disk 4.3% slower, and disk/capsule 0.6% slower. These fallback costs are adverse evidence, not omitted noise controls. Group-specific replay timings do not predict a whole-route speedup or measured allocation savings. The production change remains bounded to capsules; broadening dispatch should first address fallback overhead and be measured as a separate experiment.
+
+![Both full native schedules and isolated clearance replay](replay-native-comparison.png)
+
+All heavy native, capture, replay and unit-test runs are sequential, on cores 12–19. Measurement workers have effective nice 19; direct unit tests have effective nice 15. Only light reporting and TypeScript checks overlap routing. The new capture/replay tools pass strict standalone TypeScript checks. Generator, capture and replay overwrite guards reject existing output and preserve hashes; an inverted-result mutant is rejected during preflight before any timing or output. `replay-validation.json` retains the results. Replay verifies tracked source hashes before and after timing, and its analyzer verifies their equality to the native controls. Input/tool hashes, per-worker chronology and sample coverage are retained. The 1.3 MB bounded sample file is committed for replay without instrumentation.
+
+No fresh slow acceptance or ladder run is claimed for this diagnostic-only follow-up; cycle 11's complete quality gates above apply to the unchanged production code. Fresh typecheck and layer checks (65 files, zero violations) pass after the measurements. All 860 unit tests pass, with 440,158 assertions in 225.53 seconds; strict standalone TypeScript checks pass for both new diagnostic tools. No tests or scoring rules are weakened.
+
+### Reproduce cycle 12 in fresh directories
+
+The following commands use the same host and staged private native runtime. They preserve committed evidence; choose unused directories and branch names. From the router checkout:
+
+```bash
+repo_assets="$PWD/docs/pr-assets/agent-fab-router-perf-capsule"
+scratch=/home/hyper/bench/agents/codex-fabpcb-perf/scratch/capsule-repeat-reproduce
+mkdir "$scratch"
+assets="$scratch/assets"
+mkdir "$assets"
+cp "$repo_assets"/*.py "$repo_assets"/*.ts "$assets/"
+cp "$repo_assets/native-measurements.json" "$repo_assets/capsule-trace.json" "$assets/"
+baseline="$scratch/baseline"
+candidate="$scratch/candidate"
+git worktree add -b agent/fab-router-perf-capsule-repeat-base "$baseline" 69cf598
+git worktree add -b agent/fab-router-perf-capsule-repeat-candidate "$candidate" 6815d27
+bun install --cwd "$baseline" --frozen-lockfile
+bun install --cwd "$candidate" --frozen-lockfile
+taskset -c 12-19 nice -n 10 nice -n 10 timeout 10800 python3 "$assets/paired-native.py" --benchmark-checkout /home/hyper/bench/wt/fp-perf --baseline-source "$baseline" --candidate-source "$candidate" --reverse-order --out "$scratch/cycle12-paired"
+python3 "$assets/summarize-paired.py" "$scratch/cycle12-paired" --out "$assets" --label cycle12-native
+python3 "$assets/capture-clearance.py" "$candidate" 9719257 "$scratch/capture-source"
+work=("$scratch"/cycle12-paired/before/paperino-hw-paperino-shield-j4/runs/*/fab-router/work)
+taskset -c 12-19 nice -n 10 nice -n 10 timeout 600 bun "$assets/capture-clearance.ts" "$scratch/capture-source" "${work[0]}" "$assets/clearance-samples.json"
+taskset -c 12-19 nice -n 10 nice -n 10 timeout 900 bun "$assets/replay-clearance.ts" "$baseline" "$candidate" "$assets/clearance-samples.json" "$assets/clearance-replay.json"
+/home/hyper/bench/agents/codex-fabpcb-perf/scratch/plot-venv/bin/python "$assets/summarize-replay.py"
+(cd "$candidate" && taskset -c 12-19 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test')
+```
+
+### Cycle 12 full native median / p95 table
+
+All 78 paired SES hashes and quality outcomes match.
+
+| Case | Before median / p95 s | After median / p95 s | Median ratio (before / after) | Passed (both) | Opens / errors (both) |
+|---|---:|---:|---:|---:|---:|
+| fan-controller-fan-controller-j1 | 3.482 / 3.805 | 3.752 / 3.767 | 0.93× | 0/3 | 15 / 0 |
+| fan-controller-fan-controller-j2-large | 0.828 / 0.832 | 0.823 / 0.836 | 1.01× | 3/3 | 0 / 0 |
+| fan-controller-fan-controller-j2-medium | 0.708 / 0.711 | 0.703 / 0.708 | 1.01× | 3/3 | 0 / 0 |
+| fan-controller-fan-controller-j2-small | 2.985 / 3.125 | 3.113 / 3.118 | 0.96× | 0/3 | 3 / 0 |
+| hellscribe-hellscribe-j1 | 1.978 / 1.995 | 1.861 / 1.976 | 1.06× | 0/3 | 9 / 0 |
+| hellscribe-hellscribe-j2-large | 0.968 / 0.976 | 0.966 / 0.967 | 1.00× | 0/3 | 3 / 0 |
+| kitspace-aquarius-j4 | 48.429 / 49.821 | 42.321 / 42.726 | 1.14× | 0/3 | 45 / 18 |
+| kitspace-lcr-addon-j3 | 2.303 / 2.562 | 2.278 / 2.310 | 1.01× | 3/3 | 0 / 0 |
+| kitspace-solenoid-driver-j1 | 0.722 / 0.802 | 0.718 / 0.723 | 1.01× | 3/3 | 0 / 0 |
+| kitspace-solenoid-driver-j3 | 0.858 / 0.995 | 0.719 / 0.742 | 1.19× | 3/3 | 0 / 0 |
+| kitspace-solenoid-driver-j4 | 0.758 / 0.856 | 0.735 / 0.740 | 1.03× | 3/3 | 0 / 0 |
+| nextbusclock-nextbusclockv1-j2-large | 3.047 / 3.294 | 3.004 / 3.131 | 1.01× | 3/3 | 0 / 0 |
+| nextbusclock-nextbusclockv1-j2-medium | 0.963 / 0.966 | 0.967 / 0.967 | 1.00× | 3/3 | 0 / 0 |
+| nextbusclock-nextbusclockv1-j2-small | 0.713 / 0.838 | 0.714 / 0.714 | 1.00× | 3/3 | 0 / 0 |
+| nextbusclock-nextbusclockv1-j3 | 7.574 / 7.718 | 7.623 / 8.199 | 0.99× | 0/3 | 9 / 0 |
+| paperino-hw-paperino-shield-j4 | 15.254 / 15.725 | 16.310 / 16.627 | 0.94× | 0/3 | 18 / 0 |
+| photon-sprinkler-sprinkler-j1 | 11.412 / 12.023 | 11.097 / 11.749 | 1.03× | 0/3 | 6 / 0 |
+| photon-sprinkler-sprinkler-j3 | 13.624 / 13.664 | 13.868 / 15.063 | 0.98× | 0/3 | 6 / 0 |
+| qrpcard-qrpcard-j1 | 1.425 / 1.527 | 1.242 / 1.351 | 1.15× | 3/3 | 0 / 0 |
+| qrpcard-qrpcard-j2-medium | 0.849 / 0.855 | 0.846 / 0.910 | 1.00× | 3/3 | 0 / 0 |
+| qrpcard-qrpcard-j2-small | 0.713 / 0.717 | 0.715 / 0.721 | 1.00× | 0/3 | 0 / 6 |
+| qrpcard-qrpcard-j4 | 0.973 / 0.975 | 0.967 / 0.970 | 1.01× | 0/3 | 0 / 3 |
+| rufs-smart-psu-j1 | 0.714 / 0.719 | 0.712 / 0.713 | 1.00× | 3/3 | 0 / 0 |
+| rufs-smart-psu-j3 | 1.720 / 1.730 | 1.733 / 1.748 | 0.99× | 0/3 | 3 / 0 |
+| rufs-smart-psu-j4 | 1.103 / 1.131 | 1.099 / 1.266 | 1.00× | 0/3 | 3 / 0 |
+| sv650sds-sds-tool-j4 | 0.853 / 0.856 | 0.899 / 0.901 | 0.95× | 3/3 | 0 / 0 |
+
+Sum of case medians: 124.957 → 119.783 seconds.
+before: total 372.469s; 39/78 passed; 120 opens; 27 new native errors.
+after: total 360.875s; 39/78 passed; 120 opens; 27 new native errors.

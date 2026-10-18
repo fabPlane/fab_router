@@ -1,0 +1,39 @@
+{
+  "cycle": 12,
+  "host": "hyper-ms-lin",
+  "source_commit": "6815d27f9d3e2b78dc91ea590d5f3c999e6bf351",
+  "production_identical_to": "9719257f9124b193fd4e4d595fdbf419af18da35",
+  "cpus": "12-19",
+  "native_outer_exit": 0,
+  "capture_outer_exit": 0,
+  "replay_outer_exit": 0,
+  "tests_outer_exit": 0,
+  "measurement_effective_nice": 19,
+  "test_effective_nice": 15,
+  "heavy_workload_order": [
+    "full reversed-order native comparison",
+    "instrumented Paperino capture",
+    "isolated replay workers",
+    "full unit suite"
+  ],
+  "light_overlap": "reporting and standalone TypeScript compilation",
+  "typecheck": "pass",
+  "layer_files": 65,
+  "layer_violations": 0,
+  "unit_tests": 860,
+  "unit_failures": 0,
+  "assertions": 440158,
+  "unit_seconds": 225.53,
+  "unit_log_sha256": "3344d760255f6d25401969db123d6ce43ee8463f2b7418978f552b34ef532c6b",
+  "new_strict_typescript_tools": [
+    "capture-clearance.ts",
+    "replay-clearance.ts"
+  ],
+  "history_rows": 61,
+  "history_breakdown": {
+    "native": 52,
+    "capture": 1,
+    "replay_version_group": 8
+  },
+  "slow_and_ladder": "Not rerun for diagnostic-only follow-up; cycle11 complete gates retained for identical production source."
+}
