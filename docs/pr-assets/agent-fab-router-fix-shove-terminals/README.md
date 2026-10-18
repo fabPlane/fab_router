@@ -66,7 +66,7 @@ pour terminals from connectivity helper geometry.
 | Prior helper safe shove and caller rewind | pass | pass |
 
 Run `python3 docs/pr-assets/agent-fab-router-fix-shove-terminals/baseline-regression.py`
-for the main comparison (expected exit 1, three regression failures), then
+for the main comparison (expected exit 1; current terminal file has four regression failures), then
 `bun test test/shove-terminals.test.ts` for the fixed version. Both commands can
 be repeated three times. No production source changed in this follow-up; the
 cycle-24 native sweep above still covers the exact same engine source. No new
@@ -77,3 +77,29 @@ zero failures, 398497 assertions (205.50 seconds). This cycle also corrects
 readonly-array setup/assertion errors in the previously committed cascade test.
 The previous cycle's all-checks-pass claim did not describe that committed test
 accurately; these fresh checks verify the final test files. No production change.
+
+
+Cycle 26 adds a two-layer connection: a locked via joins the movable front track
+interior to a held back track and a back pad. Main accepts the displacement and
+loses this pad connection; the fixed implementation rejects it. A via placed at
+the track's fixed endpoint is a positive control: both versions accept the shove,
+keep the back pad connected and allow DRC-clean insertion of the requested track.
+Both tests compare live and rebuilt connectivity, immutable via/back-track records,
+and caller rewind. The rejected trial must restore the journal before caller rewind.
+
+| Same terminal file, three repeats per version | Main 69cf598 | Fixed |
+| --- | ---: | ---: |
+| Tests passed per repeat | 2/6 | 6/6 |
+| Interior via/back-pad preservation regression | fail | pass |
+| Endpoint via safe shove and caller rewind | pass | pass |
+
+The combined shove suite passes 15/15 each repeat. Commands above reproduce these
+results; `via-regressions.json` records commands, repeated results and log hashes.
+All 80 tracked engine/type files still match b23a9da. This follow-up changes tests
+and evidence only; it reuses the exact-source native sweep above and makes no new
+native completion, thermal or timing claim.
+
+Final cycle-26 checks: typecheck passes; 65 files/zero layer violations;
+866 tests pass, zero failures, 398581 assertions (212.65 seconds).
+The initial check run was stopped after strengthening a rollback assertion;
+these final checks cover the final test source.

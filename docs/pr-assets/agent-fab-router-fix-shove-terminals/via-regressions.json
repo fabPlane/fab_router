@@ -1,0 +1,118 @@
+{
+  "main": {
+    "command": [
+      "python3",
+      "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-shove-terminals/baseline-regression.py"
+    ],
+    "repeats": [
+      {
+        "repeat": 1,
+        "passed": 2,
+        "failed": 4,
+        "assertions": 71,
+        "exit_code": 1,
+        "log_sha256": "964ce419f19193f8df11106830567552bb539abbffa6e81fbdc70961f5c2aaf1"
+      },
+      {
+        "repeat": 2,
+        "passed": 2,
+        "failed": 4,
+        "assertions": 71,
+        "exit_code": 1,
+        "log_sha256": "cfae3251badcd68aaa076480529ca984023c228b383d1d560ce78694bfbb7234"
+      },
+      {
+        "repeat": 3,
+        "passed": 2,
+        "failed": 4,
+        "assertions": 71,
+        "exit_code": 1,
+        "log_sha256": "79eb0c0eda58f1dddd0ae0b365a4c4d2655f6fc88520c5c817a1091a6e8db9ca"
+      }
+    ]
+  },
+  "fixed": {
+    "command": [
+      "bun",
+      "test",
+      "test/shove-terminals.test.ts"
+    ],
+    "repeats": [
+      {
+        "repeat": 1,
+        "passed": 6,
+        "failed": 0,
+        "assertions": 119,
+        "exit_code": 0,
+        "log_sha256": "878f052e1716528ed7d3471641e7b15eef322368823e005c2ba0479103b137c4"
+      },
+      {
+        "repeat": 2,
+        "passed": 6,
+        "failed": 0,
+        "assertions": 119,
+        "exit_code": 0,
+        "log_sha256": "847005d9d84935faa62f451241c3eb6da0c38070675577fa0649ab2ac5efaa94"
+      },
+      {
+        "repeat": 3,
+        "passed": 6,
+        "failed": 0,
+        "assertions": 119,
+        "exit_code": 0,
+        "log_sha256": "c91c9b15979aba7202a987062494f4831e96a566788bf5b124f2a27b00f76c0d"
+      }
+    ]
+  },
+  "combined": {
+    "command": [
+      "bun",
+      "test",
+      "test/shove-terminals.test.ts",
+      "test/shove.test.ts"
+    ],
+    "repeats": [
+      {
+        "repeat": 1,
+        "passed": 15,
+        "failed": 0,
+        "assertions": 156,
+        "exit_code": 0,
+        "log_sha256": "cdf90c1bc874908663da3500cfab3a8f7264d736bd9b2f9cf96669da3defbd3e"
+      },
+      {
+        "repeat": 2,
+        "passed": 15,
+        "failed": 0,
+        "assertions": 156,
+        "exit_code": 0,
+        "log_sha256": "584d8271f2974a61543fc0a09becc6802aa7671f9590f3cefa9fd1408bb92f3e"
+      },
+      {
+        "repeat": 3,
+        "passed": 15,
+        "failed": 0,
+        "assertions": 156,
+        "exit_code": 0,
+        "log_sha256": "25bc4a0712382b98c844a020eda9ac9425c2f4d21a8aed4319f1f457637ea86d"
+      }
+    ]
+  },
+  "engine_source_identity": {
+    "reference": "b23a9da",
+    "tracked_files_compared": 80,
+    "all_identical": true
+  },
+  "scope": "Two-layer regression controls; no new native benchmark run. Main and fixed use the same terminal test file; combined includes the existing shove suite.",
+  "final_checks": {
+    "command": "taskset -c 20-25 nice -n 10 timeout 1800 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+    "typecheck": "pass",
+    "layers_files": 65,
+    "layer_violations": 0,
+    "tests_passed": 866,
+    "tests_failed": 0,
+    "assertions": 398581,
+    "seconds": 212.65,
+    "log_sha256": "c39d02ef76cdca272d0e3b230a69f4c1ffd3db12bbe9153f18710c73f6c966d7"
+  }
+}
