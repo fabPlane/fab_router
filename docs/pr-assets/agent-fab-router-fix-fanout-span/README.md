@@ -23,3 +23,13 @@ taskset -c 20-25 nice -n 10 timeout 3600 python3 benchmarks/autorouter/benchmark
 ```
 
 The existing fanout item-budget fix in PR #16 edits a different part of `runFanout`; preserve both changes when integrating. Current performance branches edit geometry predicates, not this destination lookup. This fix only rejects destinations with no spanning via. It does not search every alternate layer after a physically blocked placement or resolve native thermal metadata gaps.
+
+## Measured validation
+
+Required checks: typecheck passes; 65 files / zero layer violations; 866 tests / zero failures / 398483 assertions (223.79 s). `checks.json` records the log digest.
+
+Native before → after: 39/78 → 39/78 passed attempts; 13/26 → 13/26 valid 3/3 cases; 120 → 120 opens; 27 → 27 new thermal errors. Every per-attempt outcome, error type, via count and track length is identical. Median route seconds 1.172079 → 1.105425 are descriptive shared-host observations only, with overlapping work. No native completion, thermal-safety or speed gain is claimed. All 74 captured source hashes match b04983f; inputs, configuration, checker, runtime, seeds, order and cores match the main baseline. The harness captured precommit HEAD 69cf598; the exact file hashes establish candidate identity. Full per-attempt metrics and control audit are in `benchmark-summary.json`.
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-fanout-span/summarize.py /home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full /home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45-after-full --source-commit b04983f
+```
