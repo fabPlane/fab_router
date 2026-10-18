@@ -1,0 +1,173 @@
+{
+  "started_utc": "2026-10-18T22:03:30.803Z",
+  "finished_utc": "2026-10-18T22:03:44.379Z",
+  "diagnostic_seconds": 13.57667598,
+  "provenance": {
+    "commit": "9719257f9124b193fd4e4d595fdbf419af18da35",
+    "archive_sha256": "6a2c9048b24e36b28972fe11e0a60579c092e539b0aeeef72d4d06316df7bfb4",
+    "generator_sha256": "8c0a9808d903308786f4ab3535c269876bafa6e8a804a87380d3e5b4ad91e863",
+    "original_clear_sha256": "1e9a54dc8722b076f7f709422652d7b9a603c6e8b5838afdda2791db71eb2ddc",
+    "instrumented_clear_sha256": "0f32ef1ee48297aee6bb26d55d164f62782d1df16629cf582dc63f04f8208afa"
+  },
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "settings": {
+    "timeBudgetMs": 120000,
+    "maxPasses": 100,
+    "seed": 2,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "counts": {
+    "total": 3358472,
+    "fast": 692280,
+    "fallback": {
+      "capsule/disk": 1792434,
+      "disk/disk": 554231,
+      "disk/hull": 30000,
+      "disk/capsule": 287146,
+      "disk/box": 566,
+      "capsule/box": 1765,
+      "capsule/hull": 50
+    }
+  },
+  "report": {
+    "passes": 4,
+    "attempted": 50,
+    "completed": 26,
+    "incompleteBefore": 32,
+    "incompleteAfter": 6,
+    "added": {
+      "tracks": 27,
+      "barrels": 1
+    },
+    "ripped": 3,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "stagnant",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": true,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 2,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeBudgetMs": 120000,
+      "copperToEdgeClearanceUm": 500,
+      "holeClearanceUm": 250,
+      "neckWidthUm": 0,
+      "angleMode": "45"
+    },
+    "wallClockMs": 13564,
+    "perNet": [
+      {
+        "net": "Net-(A1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad3)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad4)",
+        "incomplete": 0
+      },
+      {
+        "net": "/INT1",
+        "incomplete": 1
+      },
+      {
+        "net": "Net-(A1-Pad6)",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_MOSI",
+        "incomplete": 1
+      },
+      {
+        "net": "/SPI_MISO",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_CLK",
+        "incomplete": 1
+      },
+      {
+        "net": "/SPI_CS1",
+        "incomplete": 1
+      },
+      {
+        "net": "/~{BUSY}",
+        "incomplete": 1
+      },
+      {
+        "net": "/~{RST}",
+        "incomplete": 1
+      },
+      {
+        "net": "Net-(A1-Pad13)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad14)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad15)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad16)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad17)",
+        "incomplete": 0
+      },
+      {
+        "net": "/INT2",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_CS2",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad20)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad22)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad23)",
+        "incomplete": 0
+      },
+      {
+        "net": "+3V3",
+        "incomplete": 0
+      }
+    ]
+  },
+  "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+}

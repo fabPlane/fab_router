@@ -1,0 +1,51 @@
+{
+  "source_heads": {
+    "before": "69cf598db98c136bff16bbe02bccdded95674b18",
+    "after": "9719257f9124b193fd4e4d595fdbf419af18da35"
+  },
+  "summaries": {
+    "before": {
+      "total": 63,
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0
+    },
+    "after": {
+      "total": 63,
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0
+    }
+  },
+  "raw_report_sha256": {
+    "before": "28b3066e455afc3e11ac67ed56969d11a63c9db2bd755301585cc794fa27782a",
+    "after": "5e7d71880b7b4650df76d896f41a380d5d4864b558904e081a28c31c6cdeb4bc"
+  },
+  "changes": [
+    {
+      "id": "routing-slow-issue039-bug-design-default",
+      "completed": [
+        360,
+        335
+      ],
+      "passes": [
+        5,
+        4
+      ]
+    },
+    {
+      "id": "routing-slow-issue230-cnh-plane-layers",
+      "completed": [
+        214,
+        207
+      ],
+      "passes": [
+        10,
+        9
+      ]
+    }
+  ],
+  "quality_gate_pass": true
+}

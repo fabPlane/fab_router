@@ -1,0 +1,60 @@
+{
+  "tool_sha256": "c09af2ca30d22918ff7feee02a12bba16a5e49c1efdf15b15c970136fdd481d9",
+  "cases": [
+    {
+      "case": "identical",
+      "exit": 0,
+      "pass_regressions": [],
+      "incomplete_increases": [],
+      "violation_increases": [],
+      "invariant_regressions": [],
+      "abort_regressions": []
+    },
+    {
+      "case": "known-adverse",
+      "exit": 1,
+      "pass_regressions": [],
+      "incomplete_increases": [
+        "routing-slow-issue555-cnh-maxpasses40",
+        "routing-slow-issue555-cnh-strict"
+      ],
+      "violation_increases": [],
+      "invariant_regressions": [],
+      "abort_regressions": []
+    },
+    {
+      "case": "pass-violation-mutant",
+      "exit": 1,
+      "pass_regressions": [
+        "parse-dialect-kicad-wiring-polygons"
+      ],
+      "incomplete_increases": [],
+      "violation_increases": [
+        {
+          "id": "routing-slow-cm5-carrier-complete",
+          "before": 0,
+          "after": 1
+        }
+      ],
+      "invariant_regressions": [],
+      "abort_regressions": []
+    },
+    {
+      "case": "invariant-abort-mutant",
+      "exit": 1,
+      "pass_regressions": [],
+      "incomplete_increases": [],
+      "violation_increases": [],
+      "invariant_regressions": [
+        {
+          "id": "routing-slow-cm5-carrier-complete",
+          "field": "invariant:R-3"
+        }
+      ],
+      "abort_regressions": [
+        "routing-slow-cm5-carrier-complete"
+      ]
+    }
+  ],
+  "overwrite_guard": "all four outputs reject replacement with exit 2 and unchanged SHA-256"
+}

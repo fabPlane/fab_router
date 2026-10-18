@@ -77,7 +77,7 @@ args.out.mkdir(parents=True, exist_ok=True)
                          for case in sorted(controls[v])} for v in controls},
      'controls': controls, 'attempts': rows}, indent=2) + '\n')
 lines = ['All 78 paired SES hashes and quality outcomes match.', '',
-         '| Case | Before median / p95 s | After median / p95 s | Median ratio (control) | Passed (both) | Opens / errors (both) |',
+         '| Case | Before median / p95 s | After median / p95 s | Median ratio (before / after) | Passed (both) | Opens / errors (both) |',
          '|---|---:|---:|---:|---:|---:|']
 totals = {v: 0.0 for v in ['before', 'after']}
 for case in sorted({r['case'] for r in rows}):
