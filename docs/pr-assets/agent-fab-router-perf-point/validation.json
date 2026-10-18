@@ -1,0 +1,8 @@
+{
+  "inverted_predicate_rejected": true,
+  "no_mutant_timing_output": true,
+  "overwrite_rejected": true,
+  "replay_sha256_unchanged": "d133e8e8e990d475157909613b3f6333f5c0daf4deb9ccb7919c4c3b62da74be",
+  "mutant_stderr": "44 |       if (!(t.touching ? t.required === 0 : t.required > 0)) throw new Error(\"Invalid tuple\");\n45 |       const a = geom.coreOf(t.a), b = geom.coreOf(t.b);\n46 |       const need = t.required + a.r + b.r;\n47 |       const d2 = geom.dist2Pts(a.pts, b.pts);\n48 |       const expected = t.touching ? d2 <= need * need : d2 < need * need;\n49 |       if (evaluate(before, t) !== expected || evaluate(after, t) !== expected) throw new Error(`Preflight mismatch: ${key}`);\n                                                                                              ^\nerror: Preflight mismatch: capsule/disk\n      at /home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-point/replay-clearance.ts:49:90\n\nBun v1.4.0 (Linux x64)\n",
+  "overwrite_stderr": "26 |   for (let i = 0; i < calls; i++) checksum += Number(evaluate(api, tuples[i % tuples.length]!));\n27 |   console.log(JSON.stringify({ seconds: (performance.now() - start) / 1000, checksum }));\n28 | } else {\n29 |   const [baseline, candidate, file, output, callText = \"5000000\"] = process.argv.slice(2);\n30 |   if (!baseline || !candidate || !file || !output) throw new Error(\"Expected BASELINE CANDIDATE CAPTURE OUTPUT [CALLS]\");\n31 |   if (existsSync(output)) throw new Error(\"Output already exists\");\n                                         ^\nerror: Output already exists\n      at /home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-point/replay-clearance.ts:31:37\n\nBun v1.4.0 (Linux x64)\n"
+}

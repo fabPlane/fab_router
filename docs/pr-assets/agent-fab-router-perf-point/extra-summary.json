@@ -1,0 +1,1436 @@
+{
+  "ladder": {
+    "l1.dsn": {
+      "before": {
+        "median_seconds": 0.14324160299999994,
+        "incomplete": [
+          0
+        ],
+        "violations_added": [
+          0
+        ]
+      },
+      "after": {
+        "median_seconds": 0.14750352999999997,
+        "incomplete": [
+          0
+        ],
+        "violations_added": [
+          0
+        ]
+      }
+    },
+    "l2.dsn": {
+      "before": {
+        "median_seconds": 18.196760801999996,
+        "incomplete": [
+          29
+        ],
+        "violations_added": [
+          0
+        ]
+      },
+      "after": {
+        "median_seconds": 18.899949959000004,
+        "incomplete": [
+          29
+        ],
+        "violations_added": [
+          0
+        ]
+      }
+    }
+  },
+  "profiles": {
+    "before": {
+      "median_seconds": 15.922931764,
+      "rows": [
+        {
+          "started_utc": "2026-10-18T23:10:16.002Z",
+          "finished_utc": "2026-10-18T23:10:31.433Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 15.430861913000001,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 15418,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        },
+        {
+          "started_utc": "2026-10-18T23:11:05.443Z",
+          "finished_utc": "2026-10-18T23:11:23.425Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 17.981830498000004,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 17967,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        },
+        {
+          "started_utc": "2026-10-18T23:11:23.693Z",
+          "finished_utc": "2026-10-18T23:11:39.615Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 15.922931764,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 15909,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        }
+      ],
+      "profiles": [
+        {
+          "file": "CPU.20261019.061031.1989752.0.001.cpuprofile",
+          "sha256": "91f6d174965fdc0eca6c1ad336f3abdbf3039a61ac7b08dc886290d4f02d9466"
+        },
+        {
+          "file": "CPU.20261019.061123.1991664.0.001.cpuprofile",
+          "sha256": "d0a0b58240fbb4f6286776123bd2cab4eaea15b6bb1aff9f0692b0629561ef5c"
+        },
+        {
+          "file": "CPU.20261019.061139.1992364.0.001.cpuprofile",
+          "sha256": "850b21d6828340af62d9e042385e51fac70b5fdb9400d111141784a7e218d2e6"
+        }
+      ],
+      "samples": 46185,
+      "geometry_self": {
+        "coreOf": 1122,
+        "closerConvex": 150,
+        "dist2Pts": 143,
+        "dist2SegSeg": 27,
+        "dist2PtSeg": 160,
+        "dist2PtPt": 1
+      },
+      "top_self": [
+        {
+          "function": "withinRim",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/onboard.ts",
+          "samples": 7118
+        },
+        {
+          "function": "collect",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/lattice/grid.ts",
+          "samples": 6366
+        },
+        {
+          "function": "onSeg",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/predicates.ts",
+          "samples": 4670
+        },
+        {
+          "function": "pointInRing",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/predicates.ts",
+          "samples": 3103
+        },
+        {
+          "function": "aStar",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 3057
+        },
+        {
+          "function": "sweepClear",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 2998
+        },
+        {
+          "function": "test",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/lattice/grid.ts",
+          "samples": 1986
+        },
+        {
+          "function": "aStarLayered",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 1865
+        },
+        {
+          "function": "dop8OfPts",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/bounds.ts",
+          "samples": 1728
+        },
+        {
+          "function": "state",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/quilt.ts",
+          "samples": 1540
+        },
+        {
+          "function": "pop",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 1359
+        },
+        {
+          "function": "filter",
+          "url": "",
+          "samples": 1283
+        },
+        {
+          "function": "hitBlocks",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 1246
+        },
+        {
+          "function": "coreOf",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/distance.ts",
+          "samples": 1122
+        },
+        {
+          "function": "isFree",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/quilt.ts",
+          "samples": 781
+        },
+        {
+          "function": "push",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/lattice/grid.ts",
+          "samples": 657
+        },
+        {
+          "function": "edgeCost",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/passes.ts",
+          "samples": 568
+        },
+        {
+          "function": "probe",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 562
+        },
+        {
+          "function": "leq",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 452
+        },
+        {
+          "function": "barrelFits",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 354
+        },
+        {
+          "function": "pointOf",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/quilt.ts",
+          "samples": 249
+        },
+        {
+          "function": "viaMove",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/passes.ts",
+          "samples": 233
+        },
+        {
+          "function": "Set",
+          "url": "",
+          "samples": 218
+        },
+        {
+          "function": "push",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 203
+        },
+        {
+          "function": "",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/passes.ts",
+          "samples": 167
+        },
+        {
+          "function": "dist2PtSeg",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/distance.ts",
+          "samples": 160
+        },
+        {
+          "function": "pointFree",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 160
+        },
+        {
+          "function": "put",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 155
+        },
+        {
+          "function": "closerConvex",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 150
+        },
+        {
+          "function": "pointOf",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/passes.ts",
+          "samples": 145
+        },
+        {
+          "function": "cell",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/ripup.ts",
+          "samples": 145
+        },
+        {
+          "function": "dist2Pts",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/distance.ts",
+          "samples": 143
+        },
+        {
+          "function": "sort",
+          "url": "",
+          "samples": 121
+        },
+        {
+          "function": "shapesOf",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/lattice/grid.ts",
+          "samples": 115
+        },
+        {
+          "function": "heuristic",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 86
+        },
+        {
+          "function": "inRegion",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 79
+        },
+        {
+          "function": "cellIndex",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 72
+        },
+        {
+          "function": "anyCloser",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/clear.ts",
+          "samples": 64
+        },
+        {
+          "function": "gOr",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/route/search.ts",
+          "samples": 52
+        },
+        {
+          "function": "segsIntersect",
+          "url": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/baseline-checkout/src/geom/predicates.ts",
+          "samples": 48
+        }
+      ]
+    },
+    "after": {
+      "median_seconds": 16.603393722,
+      "rows": [
+        {
+          "started_utc": "2026-10-18T23:10:31.649Z",
+          "finished_utc": "2026-10-18T23:10:48.399Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "37aa28fd0d1376894dd92d4c79858a04560c0679440cb7d90f21717cea28a5e0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.750165212000002,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16737,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        },
+        {
+          "started_utc": "2026-10-18T23:10:48.595Z",
+          "finished_utc": "2026-10-18T23:11:05.198Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "37aa28fd0d1376894dd92d4c79858a04560c0679440cb7d90f21717cea28a5e0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.603393722,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16589,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        },
+        {
+          "started_utc": "2026-10-18T23:11:39.838Z",
+          "finished_utc": "2026-10-18T23:11:56.440Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "clear_sha256": "37aa28fd0d1376894dd92d4c79858a04560c0679440cb7d90f21717cea28a5e0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.602638048,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16588,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+        }
+      ],
+      "profiles": [
+        {
+          "file": "CPU.20261019.061048.1990491.0.001.cpuprofile",
+          "sha256": "fcbcf0fdbbd1b8941ae0389a5a6f290b582212a41c508a04c7c3130cc16671d5"
+        },
+        {
+          "file": "CPU.20261019.061105.1991225.0.001.cpuprofile",
+          "sha256": "1e9aa7e3d7e33054c228eef2b7ff4665a68de49bf74fe6719b2527ec2997992f"
+        },
+        {
+          "file": "CPU.20261019.061156.1992673.0.001.cpuprofile",
+          "sha256": "9075e9b3dc2c33d8a86dab0146bc7d3abf60896a983477af3921cbf8a58cdbc2"
+        }
+      ],
+      "samples": 46681,
+      "geometry_self": {
+        "coreOf": 934,
+        "closerConvex": 106,
+        "dist2Pts": 40,
+        "dist2SegSeg": 52,
+        "dist2PtSeg": 67,
+        "dist2PtPt": 0
+      },
+      "top_self": [
+        {
+          "function": "withinRim",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/onboard.ts",
+          "samples": 7217
+        },
+        {
+          "function": "collect",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+          "samples": 6388
+        },
+        {
+          "function": "onSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 4937
+        },
+        {
+          "function": "aStar",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 3249
+        },
+        {
+          "function": "pointInRing",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 3126
+        },
+        {
+          "function": "sweepClear",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 3073
+        },
+        {
+          "function": "test",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+          "samples": 2094
+        },
+        {
+          "function": "aStarLayered",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 1921
+        },
+        {
+          "function": "dop8OfPts",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+          "samples": 1680
+        },
+        {
+          "function": "state",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/quilt.ts",
+          "samples": 1558
+        },
+        {
+          "function": "pop",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 1291
+        },
+        {
+          "function": "filter",
+          "url": "",
+          "samples": 1251
+        },
+        {
+          "function": "hitBlocks",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 1203
+        },
+        {
+          "function": "coreOf",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 934
+        },
+        {
+          "function": "push",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+          "samples": 706
+        },
+        {
+          "function": "isFree",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/quilt.ts",
+          "samples": 703
+        },
+        {
+          "function": "edgeCost",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/passes.ts",
+          "samples": 642
+        },
+        {
+          "function": "probe",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 555
+        },
+        {
+          "function": "leq",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 498
+        },
+        {
+          "function": "barrelFits",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 300
+        },
+        {
+          "function": "pointOf",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/quilt.ts",
+          "samples": 264
+        },
+        {
+          "function": "push",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 262
+        },
+        {
+          "function": "Set",
+          "url": "",
+          "samples": 227
+        },
+        {
+          "function": "viaMove",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/passes.ts",
+          "samples": 217
+        },
+        {
+          "function": "",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/passes.ts",
+          "samples": 185
+        },
+        {
+          "function": "pointOf",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/passes.ts",
+          "samples": 181
+        },
+        {
+          "function": "anyCloser",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 161
+        },
+        {
+          "function": "cell",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/ripup.ts",
+          "samples": 149
+        },
+        {
+          "function": "pointFree",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 141
+        },
+        {
+          "function": "shapesOf",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+          "samples": 136
+        },
+        {
+          "function": "put",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 128
+        },
+        {
+          "function": "closerConvex",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+          "samples": 106
+        },
+        {
+          "function": "sort",
+          "url": "",
+          "samples": 93
+        },
+        {
+          "function": "heuristic",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 85
+        },
+        {
+          "function": "inRegion",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 73
+        },
+        {
+          "function": "dist2PtSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 67
+        },
+        {
+          "function": "gOr",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 56
+        },
+        {
+          "function": "cellIndex",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/route/search.ts",
+          "samples": 56
+        },
+        {
+          "function": "dist2SegSeg",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+          "samples": 52
+        },
+        {
+          "function": "segsIntersect",
+          "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+          "samples": 41
+        }
+      ]
+    }
+  }
+}
