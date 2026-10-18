@@ -36,6 +36,18 @@ export function pickBarrel(profile: Profile, a: number, b: number): BarrelCandid
   return exact ?? wider;
 }
 
+
+/** Preserve exact-span preference and rule order while retaining fallback forms. */
+function barrelChoices(profile: Profile, a: number, b: number): BarrelCandidate[] {
+  const lo = Math.min(a, b), hi = Math.max(a, b);
+  const exact: BarrelCandidate[] = [], wider: BarrelCandidate[] = [];
+  for (const c of profile.barrelForms) {
+    if (!spanCovers(c, lo, hi)) continue;
+    (c.fromSheet === lo && c.toSheet === hi ? exact : wider).push(c);
+  }
+  return [...exact, ...wider];
+}
+
 export interface ViaDrop { at: Pt; candidate: BarrelCandidate; stub: Pt[]; sheet: number }
 
 /**
@@ -48,8 +60,18 @@ export function dropViaNear(
   layout: Layout, lattice: Lattice, sheet: number, otherSheet: number, target: Pt,
   profile: Profile, ignore: IgnoreSet, maxRadius: number,
 ): ViaDrop | undefined {
-  const cand = pickBarrel(profile, sheet, otherSheet);
-  if (!cand) return undefined;
+  for (const cand of barrelChoices(profile, sheet, otherSheet)) {
+    const drop = dropWithCandidate(layout, lattice, sheet, target, profile, ignore, maxRadius, cand);
+    if (drop) return drop;
+  }
+  return undefined;
+}
+
+/** Search the existing target/ring order for one permitted form before trying another. */
+function dropWithCandidate(
+  layout: Layout, lattice: Lattice, sheet: number, target: Pt,
+  profile: Profile, ignore: IgnoreSet, maxRadius: number, cand: BarrelCandidate,
+): ViaDrop | undefined {
   const los = (a: Pt, b: Pt): boolean => sweepClear(layout, lattice, sheet, { a, b }, profile, ignore, profile.width).ok;
   const tryAt = (at: Pt): ViaDrop | undefined => {
     if (!barrelFits(layout, lattice, at, cand, profile, ignore).ok) return undefined;
