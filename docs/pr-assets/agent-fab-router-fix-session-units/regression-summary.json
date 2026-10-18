@@ -1,0 +1,10 @@
+{
+  "baseline_commit": "69cf598",
+  "tests_per_repeat": 4,
+  "repeats": 3,
+  "before_passed_per_repeat": [2, 2, 2],
+  "after_passed_per_repeat": [4, 4, 4],
+  "copied_layout_before_mm": {"start": [10, 10], "end": [20, 10], "width": 2},
+  "copied_layout_after_mm": {"start": [1, 1], "end": [2, 1], "width": 0.2},
+  "scope": "Session application regression, not a native routing improvement"
+}
