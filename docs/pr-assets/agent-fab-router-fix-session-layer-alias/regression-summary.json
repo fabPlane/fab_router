@@ -1,0 +1,17 @@
+{
+  "baseline_commit": "69cf598",
+  "candidate_source_commit": "6b72bf0",
+  "repeats_per_version": 3,
+  "tests_per_repeat": 3,
+  "baseline_each_repeat": {
+    "passed": 2,
+    "failed": 1,
+    "imported_alias_tracks": 0
+  },
+  "candidate_each_repeat": {
+    "passed": 3,
+    "failed": 0,
+    "imported_alias_tracks": 4
+  },
+  "scope": "Minimal session import fixture, not a native benchmark board"
+}
