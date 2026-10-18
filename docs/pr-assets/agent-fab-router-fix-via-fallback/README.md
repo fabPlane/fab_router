@@ -33,3 +33,35 @@ bun run typecheck && bun run check:layers && bun run test
 The PNG renders measured synthetic geometry. Dashed outlines show the rejected
 candidate, not retained copper. Searching additional forms can add clearance
 work after a candidate is exhausted; no performance improvement is claimed.
+
+## Native nonregression sweep
+
+26 frozen cases × 3 repeats, fab_router only, on hyper-ms-lin cores 20–25.
+The baseline is 69cf598; all 74 captured candidate source hashes match 1f898f4.
+Inputs, configuration, checker, runtime, seeds and order match the baseline.
+The harness captured the precommit main HEAD; source hashes identify the tested
+candidate. No engine source changed during this sweep.
+
+| Metric | Before | After |
+| --- | ---: | ---: |
+| Passing attempts | 39/78 | 39/78 |
+| Cases valid 3/3 | 13/26 | 13/26 |
+| Native opens, total | 120 | 120 |
+| New native errors, total | 27 | 27 |
+| Median route seconds | 1.172079 | 1.121041 |
+
+All per-attempt pass/open/error-type/via/length outcomes are unchanged. Remaining
+native errors are thermal starvation; this fix does not repair them. Timings are
+descriptive shared-host measurements with test overlap; no speed claim.
+
+```bash
+cd "$HOME/bench/wt/fp-bugs"
+taskset -c 20-25 nice -n 10 timeout 2400 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source "$HOME/bench/wt/fr-bugs" --out "$HOME/bench/agents/codex-fabpcb-bugs/scratch/c48-after-full"
+cd "$HOME/bench/wt/fr-bugs"
+python3 docs/pr-assets/agent-fab-router-fix-via-fallback/summarize.py "$HOME/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full" "$HOME/bench/agents/codex-fabpcb-bugs/scratch/c48-after-full" --source-commit 1f898f4
+```
+
+Use a new output directory when repeating the native run. Source, per-attempt
+metrics and control comparison are recorded in benchmark-summary.json. Final
+required checks passed: typecheck; 65 files, zero layer violations; 867 tests,
+zero failures, 398476 assertions (223.21 seconds). checks.json records hashes.

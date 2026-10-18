@@ -45,7 +45,7 @@ def compact(rows):
 before, after = [{(r['case'], r['seed']): r for r in rs} for rs in runs]
 changes = []
 for key, r in before.items():
-    fields = ['passed', 'opens', 'new_errors', 'vias', 'length_mm']
+    fields = ['passed', 'opens', 'new_errors', 'new_error_types', 'vias', 'length_mm']
     delta = {f: [r[f], after[key][f]] for f in fields if r[f] != after[key][f]}
     if delta:
         changes.append({'case': key[0], 'seed': key[1], 'changes': delta})
