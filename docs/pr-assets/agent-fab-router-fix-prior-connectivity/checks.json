@@ -1,0 +1,16 @@
+{
+  "source": "9963847",
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "tests": {
+    "passed": 862,
+    "failed": 0,
+    "assertions": 398479,
+    "seconds": 234.93
+  },
+  "log_sha256": "1e0dcfa67ddacab81d6654dca57249a59d626af1b2bc82c357bd55f5a9b6aaa4",
+  "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'"
+}
