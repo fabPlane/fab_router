@@ -295,7 +295,7 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
   const { start, goal, region, dirs } = o;
   const width = region.gx1 - region.gx0 + 1;
   const height = region.gy1 - region.gy0 + 1;
-  const inRegion = (gx: number, gy: number): boolean => gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  const inRegion = (gx: number, gy: number): boolean => Number.isInteger(gx) && Number.isInteger(gy) && gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
   // Validate before flattening: x coordinates beyond a row alias cells in the next/previous
   // row. Otherwise an invalid start can reconstruct as a different, apparently valid endpoint.
   if (!inRegion(start.gx, start.gy) || !inRegion(goal.gx, goal.gy)) {
@@ -462,7 +462,7 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
   const { region, dirs } = o;
   const width = region.gx1 - region.gx0 + 1;
   const layers = space.layers;
-  const inRegion = (gx: number, gy: number): boolean => gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
+  const inRegion = (gx: number, gy: number): boolean => Number.isInteger(gx) && Number.isInteger(gy) && gx >= region.gx0 && gx <= region.gx1 && gy >= region.gy0 && gy <= region.gy1;
   const cellIndex = (gx: number, gy: number): number => (gy - region.gy0) * width + (gx - region.gx0);
   const gxOf = (cell: number): number => region.gx0 + (cell % width);
   const gyOf = (cell: number): number => region.gy0 + Math.floor(cell / width);

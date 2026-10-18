@@ -63,3 +63,18 @@ test("layered search skips invalid starts while retaining a valid start", () => 
   expect(result.path[0]).toEqual({ layer: 1, pt: { x: 0, y: 0 }, via: false });
   expect(result.path.at(-1)).toEqual({ layer: 1, pt: { x: 1, y: 0 }, via: false });
 });
+
+for (const start of [{ gx: 0, gy: 1 / 3 }, { gx: 0.5, gy: 0 }]) {
+  test(`single-sheet search rejects fractional start ${JSON.stringify(start)}`, () => {
+    expect(aStar(space, { ...options, start })).toMatchObject({ ok: false, path: [], pops: 0 });
+  });
+  test(`layered search rejects fractional start ${JSON.stringify(start)}`, () => {
+    expect(aStarLayered(layered, { ...layeredOptions, starts: [{ ...start, layer: 0 }] }))
+      .toMatchObject({ ok: false, path: [], pops: 0 });
+  });
+}
+
+test("single-sheet search rejects fractional goal before expanding", () => {
+  expect(aStar(space, { ...options, goal: { gx: 0.5, gy: 0 } }))
+    .toMatchObject({ ok: false, path: [], pops: 0 });
+});
