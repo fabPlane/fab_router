@@ -37,3 +37,29 @@ no speed claim. Captured precommit HEAD is distinguished from verified source id
 
 Required checks pass: typecheck, 65 layer-checked files/zero violations, 865 tests/zero failures,
 398482 assertions. See checks.json for file/log hashes and regressions.json for all repeated logs.
+
+## Fanout integration audit
+
+The portable composition audit pins the final budget regression coverage, spanning-destination
+fix, and contact guard, then applies the two independent source patches to the contact source.
+All versions receive identical test files. On the same host and cores 20–25, three repeats each:
+
+| Source | Targeted passing tests per repeat | Failing tests |
+| --- | ---: | ---: |
+| Main 69cf598 | 11/19 | 8 |
+| Budget fe69341 | 13/19 | 6 |
+| Spanning destination 05cb41e | 13/19 | 6 |
+| Contact ceeccc8 | 15/19 | 4 |
+| All three fixes | 19/19 | 0 |
+
+```sh
+python3 docs/pr-assets/agent-fab-router-fix-fanout-contact/composition.py --out /tmp/fanout-composition
+```
+
+The audit also runs typecheck, layer checks, and the complete unit suite on the composed
+source, including the additional retained-copper and rollback budget tests. See
+composition.json for repeated raw logs, source/test identities and full-check evidence;
+composition.patch records the exact changes relative to the contact source. This establishes
+compatibility on the current synthetic corpus. Other pending fixes are outside the audit;
+no composed native score or performance improvement is claimed. Production source on this
+branch remains identical to the previously measured contact fix.

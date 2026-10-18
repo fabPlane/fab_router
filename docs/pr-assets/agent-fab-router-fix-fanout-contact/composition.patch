@@ -1,0 +1,31 @@
+--- a/src/route/fanout.ts
++++ b/src/route/fanout.ts
+@@ -17,7 +17,7 @@
+ import type { Journal } from "./journal.ts";
+ import { ignoreOf, sweepClear } from "./clear.ts";
+ import { resolveProfile, type Profile } from "./profile.ts";
+-import { dropViaNear } from "./via.ts";
++import { dropViaNear, pickBarrel } from "./via.ts";
+ import { legaliseTrail, trackPieces } from "./legalise.ts";
+ import { pullPath } from "./pull.ts";
+ 
+@@ -36,7 +36,7 @@
+     if (!p) { p = resolveProfile(layout, net, settings); profiles.set(net, p); }
+     return p;
+   };
+-  const usableOther = (padSheet: number, profile: Profile): number | undefined => profile.sheets.find((s) => s !== padSheet);
++  const usableOther = (padSheet: number, profile: Profile): number | undefined => profile.sheets.find((s) => s !== padSheet && pickBarrel(profile, padSheet, s) !== undefined);
+ 
+   const luPerUm = layout.frame.luPerUm;
+   const radius = Math.max(1, Math.round(3000 * luPerUm)); // escape within ~3 mm of the pad
+@@ -56,7 +56,10 @@
+     for (const pad of smdPads) {
+       if (maxItems !== undefined && added() >= maxItems) break;
+       if (done.has(pad.id) || ignored.has(pad.net!)) continue;
++      const mark = journal.mark();
+       if (settings.viasAllowed && escapePadWithVia(layout, lattice, journal, pad, profileOf(pad.net), usableOther, radius)) {
++        // An escape is atomic: its via and all stub pieces must fit the stage budget.
++        if (maxItems !== undefined && added() > maxItems) { journal.rewind(mark); continue; }
+         escaped++; progressed = true; done.add(pad.id);
+       }
+     }
