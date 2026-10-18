@@ -1,0 +1,50 @@
+{
+  "before": "69cf598",
+  "after_source_sha256": "8d45236010cabc2c98f818ea7fdcd39adc26b433ba2fdc157237a665be0255ab",
+  "test_sha256": "47c97da75932bce2dc7e6e395861c737ede0564148b0215acfba280aefaaaea3",
+  "runs": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "passed": 5,
+      "failed": 2,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 2 [4.43ms]\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 3 [0.54ms]\n(pass) fanout does not invent a via span for an unreachable source [0.99ms]\n(pass) fanout span selection respects vias disabled [0.55ms]\n(pass) fanout span selection respects destination inactive [0.56ms]\n(pass) fanout span selection respects ignored group [0.35ms]\n(pass) fanout span selection respects zero item budget [0.32ms]\n\n 5 pass\n 2 fail\n 19 expect() calls\nRan 7 tests across 1 file. [31.00ms]\n"
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "passed": 5,
+      "failed": 2,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 2 [4.48ms]\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 3 [0.52ms]\n(pass) fanout does not invent a via span for an unreachable source [0.85ms]\n(pass) fanout span selection respects vias disabled [0.48ms]\n(pass) fanout span selection respects destination inactive [0.59ms]\n(pass) fanout span selection respects ignored group [0.45ms]\n(pass) fanout span selection respects zero item budget [0.47ms]\n\n 5 pass\n 2 fail\n 19 expect() calls\nRan 7 tests across 1 file. [36.00ms]\n"
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "passed": 5,
+      "failed": 2,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 2 [4.44ms]\n25 |   test(`fanout finds a spanning destination after unsupported layers: source ${sheet}`, () => {\n26 |     const layout = fanoutSpanBoard(sheet);\n27 |     const pads = structuredClone(layout.pads);\n28 |     const rep = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n29 |     expect(rep.passes).toBe(0);\n30 |     expect(rep.added.barrels).toBe(1);\n                                   ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c45/final-regression/before-source/test/fanout-span.test.ts:30:31)\n(fail) fanout finds a spanning destination after unsupported layers: source 3 [0.52ms]\n(pass) fanout does not invent a via span for an unreachable source [1.37ms]\n(pass) fanout span selection respects vias disabled [0.54ms]\n(pass) fanout span selection respects destination inactive [0.47ms]\n(pass) fanout span selection respects ignored group [0.38ms]\n(pass) fanout span selection respects zero item budget [0.33ms]\n\n 5 pass\n 2 fail\n 19 expect() calls\nRan 7 tests across 1 file. [34.00ms]\n"
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "passed": 7,
+      "failed": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n(pass) fanout finds a spanning destination after unsupported layers: source 2 [5.81ms]\n(pass) fanout finds a spanning destination after unsupported layers: source 3 [1.15ms]\n(pass) fanout does not invent a via span for an unreachable source [0.84ms]\n(pass) fanout span selection respects vias disabled [0.44ms]\n(pass) fanout span selection respects destination inactive [0.43ms]\n(pass) fanout span selection respects ignored group [0.37ms]\n(pass) fanout span selection respects zero item budget [0.36ms]\n\n 7 pass\n 0 fail\n 29 expect() calls\nRan 7 tests across 1 file. [32.00ms]\n"
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "passed": 7,
+      "failed": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n(pass) fanout finds a spanning destination after unsupported layers: source 2 [6.03ms]\n(pass) fanout finds a spanning destination after unsupported layers: source 3 [1.02ms]\n(pass) fanout does not invent a via span for an unreachable source [0.90ms]\n(pass) fanout span selection respects vias disabled [0.52ms]\n(pass) fanout span selection respects destination inactive [0.56ms]\n(pass) fanout span selection respects ignored group [0.55ms]\n(pass) fanout span selection respects zero item budget [0.59ms]\n\n 7 pass\n 0 fail\n 29 expect() calls\nRan 7 tests across 1 file. [35.00ms]\n"
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "passed": 7,
+      "failed": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/fanout-span.test.ts:\n(pass) fanout finds a spanning destination after unsupported layers: source 2 [5.44ms]\n(pass) fanout finds a spanning destination after unsupported layers: source 3 [1.01ms]\n(pass) fanout does not invent a via span for an unreachable source [1.15ms]\n(pass) fanout span selection respects vias disabled [0.67ms]\n(pass) fanout span selection respects destination inactive [0.43ms]\n(pass) fanout span selection respects ignored group [0.40ms]\n(pass) fanout span selection respects zero item budget [0.46ms]\n\n 7 pass\n 0 fail\n 29 expect() calls\nRan 7 tests across 1 file. [38.00ms]\n"
+    }
+  ],
+  "scope": "Synthetic fanout regression, not native task scores; source layers 2 and 3 gain one contacting via each, unsupported/control conditions add none."
+}

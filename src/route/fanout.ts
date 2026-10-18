@@ -17,7 +17,7 @@ import { connectivity } from "../drc/index.ts";
 import type { Journal } from "./journal.ts";
 import { ignoreOf, sweepClear } from "./clear.ts";
 import { resolveProfile, type Profile } from "./profile.ts";
-import { dropViaNear } from "./via.ts";
+import { dropViaNear, pickBarrel } from "./via.ts";
 import { legaliseTrail, trackPieces } from "./legalise.ts";
 import { pullPath } from "./pull.ts";
 
@@ -36,7 +36,7 @@ export function runFanout(layout: Layout, lattice: Lattice, journal: Journal, se
     if (!p) { p = resolveProfile(layout, net, settings); profiles.set(net, p); }
     return p;
   };
-  const usableOther = (padSheet: number, profile: Profile): number | undefined => profile.sheets.find((s) => s !== padSheet);
+  const usableOther = (padSheet: number, profile: Profile): number | undefined => profile.sheets.find((s) => s !== padSheet && pickBarrel(profile, padSheet, s) !== undefined);
 
   const luPerUm = layout.frame.luPerUm;
   const radius = Math.max(1, Math.round(3000 * luPerUm)); // escape within ~3 mm of the pad
