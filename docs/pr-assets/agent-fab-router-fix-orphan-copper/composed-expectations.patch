@@ -1,0 +1,34 @@
+diff --git a/test/perf-invariance.test.ts b/test/perf-invariance.test.ts
+index 46cbccc..9c98c3a 100644
+--- a/test/perf-invariance.test.ts
++++ b/test/perf-invariance.test.ts
+@@ -34,8 +34,8 @@ const BOARDS: Board[] = [
+ // Recorded fingerprints (task I11). Regenerate deliberately only when a route is meant to change.
+ const RECORDED: Record<string, string> = {
+   "dac2020-bm08": "a042a8fe137cbf155a5a5967c079bc42932024bd246dc54bd1ec384070908316",
+-  // Orphan cleanup removes eight isolated router tracks; remaining geometry is unchanged.
+-  "issue026-j2": "0c30b63c2694626ed609044acf62c2e53a641237a1801c23ff79fe891054a6cb",
++  // With reverse pad escape, cleanup removes nine isolated tracks; retained geometry is unchanged.
++  "issue026-j2": "8daeb56450f67a2a83bccea3844ffb833e13312a129bc1ac1155ef36bd964b5b",
+   "min-fr-test": "50e0bb0f832803abe4563c47315ff44e85e93fe767540847565300d1c1664eb5",
+   "ecc83": "6259e1577b55e2e47c86958020366794c5fc8c541325a603f4ed4f4feaedf962",
+ };
+diff --git a/test/route-vias.test.ts b/test/route-vias.test.ts
+index 084f564..28b0754 100644
+--- a/test/route-vias.test.ts
++++ b/test/route-vias.test.ts
+@@ -83,10 +83,10 @@ test("Issue026 optimiser removes rip-up fragments without changing terminal comp
+   const layout = load("Issue026-J2_reference.dsn");
+   if (!layout) throw new Error("missing committed Issue026 regression board");
+   const report = route(layout, { maxPasses: 100 });
+-  // Baseline leaves 100 tracks, including eight unanchored fragments. Keep the
++  // Reverse pad escape leaves 108 tracks, including nine unanchored fragments. Keep the
+   // incomplete terminal count pinned: deleting useful routes cannot satisfy this test.
+-  expect(report.incompleteAfter).toBe(2);
++  expect(report.incompleteAfter).toBe(1);
+   expect(report.violationsAdded).toBe(0);
+-  expect(layout.tracks).toHaveLength(92);
+-  expect(layout.barrels).toHaveLength(34);
++  expect(layout.tracks).toHaveLength(99);
++  expect(layout.barrels).toHaveLength(37);
+ });

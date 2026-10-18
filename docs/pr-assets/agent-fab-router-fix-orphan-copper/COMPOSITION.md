@@ -27,6 +27,9 @@ cd /tmp/router-composed
 bun install --frozen-lockfile
 bun run typecheck && bun run check:layers
 bun test test/pad-escape.test.ts test/route-core.test.ts
+# Apply the separately reviewed integration expectations before the full suite:
+git apply /path/to/this-checkout/docs/pr-assets/agent-fab-router-fix-orphan-copper/composed-expectations.patch
+bun run typecheck && bun run check:layers && bun run test
 cd /home/hyper/bench/wt/fp-bugs
 taskset -c 20-25 nice -n 10 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source /tmp/router-pad-escape-only --out /tmp/pad-escape-only-run
 taskset -c 20-25 nice -n 10 python3 benchmarks/autorouter/benchmark.py --router fab-router --fab-router-source /tmp/router-composed --out /tmp/composed-run
@@ -42,10 +45,47 @@ host, with tests partly overlapping, is descriptive and supports no speed claim.
 
 Checks on the independent PR #8 source passed: typecheck, layer check (65 files,
 zero violations), 871 tests / zero failures / 398476 assertions (231.80 seconds).
-The composed source passed typecheck, layer checks and all 30 tests in
-`pad-escape.test.ts` and `route-core.test.ts` (82 assertions). A complete unit
-suite on the composed source was not run; the 871-test result applies only to
-PR #8. The full native sweep covers the composed source.
+The composed source initially passed all 30 targeted pad-escape/core tests.
+The subsequent full-suite integration check exposed two Issue026 expectation
+conflicts: 873 tests passed and two failed (247.91 seconds). Its old fingerprint
+and cleanup-only item/completion counts describe the independent fix, so they
+cannot also describe the deliberately changed reverse-escape route.
+
+`composed-expectations.patch` updates only those two tests in the combined
+snapshot; it is an integration artifact and is **not applied to this PR's tests**.
+It preserves the byte-for-byte fingerprint, run-to-run determinism, exact item
+counts and zero-added-violation assertions. The other three corpus fingerprints
+stay unchanged. Apply it only after composing both production fixes.
+
+Before updating the expectations, `audit-composed-corpus.ts` independently routed
+the same committed Issue026 board three times with each version on cores 20–25:
+
+| Issue026 engine result | Pad escape only | Pad escape + cleanup | Repeats |
+| --- | ---: | ---: | ---: |
+| Tracks | 108 | 99 | 3 each |
+| Vias | 37 | 37 | 3 each |
+| Terminal incompletes | 1 | 1 | 3 each |
+| Added engine violations | 0 | 0 | 3 each |
+
+Every retained track record and every via record is identical. Exactly nine
+tracks disappear on each repeat. The committed JSON includes the removed
+geometry and full reports. These are engine checks, not native DRC results;
+the separate 78-attempt native evidence below still applies. The native-source
+hash validator was rerun after preparing the test patch and still passes.
+
+Reproduce the audit (after preparing the two sources above):
+
+```bash
+cd /path/to/this-checkout
+taskset -c 20-25 nice -n 10 timeout 240 bun docs/pr-assets/agent-fab-router-fix-orphan-copper/audit-composed-corpus.ts /tmp/router-pad-escape-only /tmp/router-composed /tmp/composed-corpus-audit.json
+```
+
+Full composed-suite verification with the integration patch passed: typecheck,
+layer checks (65 files, zero violations), **875 tests / zero failures / 398556
+assertions** (246.12 seconds). Independent PR #8 checks also passed again:
+871 tests / zero failures / 398476 assertions (248.86 seconds). Counts and
+log hashes are recorded in `composition-checks.json`. No production source or native benchmark controls
+changed during this integration test work.
 
 | Native result | Pad escape only | Pad escape + cleanup | Repeats |
 | --- | ---: | ---: | ---: |
