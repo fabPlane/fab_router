@@ -1,0 +1,31 @@
+{
+  "source_commit": "3a556d22b0db665c63156ae64915d0542c99e090",
+  "required_checks": {
+    "typecheck": "pass",
+    "layers_files": 65,
+    "layer_violations": 0,
+    "tests_passed": 862,
+    "tests_failed": 0,
+    "assertions": 398474,
+    "test_seconds": 221.02
+  },
+  "logs_sha256": {
+    "checks.log": "4c57ab155b11613fc582afd2b272a4dec5c8100b318bb1f72c5779a70061c2ae",
+    "regression-before.log": "3fed64dc96bff3dfae84c88f2b8b81b597b008a70955b5fe17a1b8503b4b64a8",
+    "before-1.log": "6db711e8e85b18395c3ffffd05354351d94d2d0d1076bfc8dea32898425edf9e",
+    "before-2.log": "318fa6840508be1a5d0d1391b191286ade516da0ae85380b491903eede55a44f",
+    "before-3.log": "4766fbd6b1f94e076d954d026daa3fea5f7347af53d43cd763183820b196c35e",
+    "after-1.log": "0fcdd9f418b2dff8a1c9d0fcb008efa8c9a55114fe3909b8ce6f5e77cae563ee",
+    "after-2.log": "6c555b76b2c39e8dce6a38ea8e4f9a8e844f8c430bb6b1fb01cafcc1a4f1ecda",
+    "after-3.log": "bab053ce957c0a045e79159837480144f312d1d2b9b96b1f360d2c79b4804ccd"
+  },
+  "regression_repeats": 3,
+  "baseline_regression": {
+    "passed": 1,
+    "failed": 2
+  },
+  "candidate_regression": {
+    "passed": 3,
+    "failed": 0
+  }
+}
