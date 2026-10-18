@@ -1,0 +1,21 @@
+{
+  "source": "2c78431 + source-only live-connectivity change from 9963847",
+  "scope": "Targeted integration only; not a full test suite or native benchmark",
+  "runs": [
+    {
+      "repeat": 1,
+      "exit": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/prior-target.test.ts:\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=false) [6.20ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=true) [0.96ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=false) [3.34ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=true) [1.18ms]\n\ntest/prior-connectivity.test.ts:\n(pass) prior attachment uses live connectivity after rip-up (reverse=false) [3.86ms]\n(pass) prior attachment uses live connectivity after rip-up (reverse=true) [2.13ms]\n(pass) prior attachment preserves an existing bridge and joins the other terminal [0.46ms]\n\n 7 pass\n 0 fail\n 69 expect() calls\nRan 7 tests across 2 files. [42.00ms]\n"
+    },
+    {
+      "repeat": 2,
+      "exit": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/prior-target.test.ts:\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=false) [5.93ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=true) [1.01ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=false) [2.98ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=true) [1.20ms]\n\ntest/prior-connectivity.test.ts:\n(pass) prior attachment uses live connectivity after rip-up (reverse=false) [2.58ms]\n(pass) prior attachment uses live connectivity after rip-up (reverse=true) [1.95ms]\n(pass) prior attachment preserves an existing bridge and joins the other terminal [0.44ms]\n\n 7 pass\n 0 fail\n 69 expect() calls\nRan 7 tests across 2 files. [37.00ms]\n"
+    },
+    {
+      "repeat": 3,
+      "exit": 0,
+      "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/prior-target.test.ts:\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=false) [5.75ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=false, reverse=true) [1.00ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=false) [2.88ms]\n(pass) prior target outside filled copper cannot falsely complete attachment (concave=true, reverse=true) [1.20ms]\n\ntest/prior-connectivity.test.ts:\n(pass) prior attachment uses live connectivity after rip-up (reverse=false) [2.61ms]\n(pass) prior attachment uses live connectivity after rip-up (reverse=true) [1.97ms]\n(pass) prior attachment preserves an existing bridge and joins the other terminal [0.43ms]\n\n 7 pass\n 0 fail\n 69 expect() calls\nRan 7 tests across 2 files. [40.00ms]\n"
+    }
+  ]
+}

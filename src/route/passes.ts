@@ -24,7 +24,7 @@ import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { RouteHooks } from "../../spec/types/results.ts";
 import type { Box } from "../geom/index.ts";
 import { boxOfPts, dist2PtPt } from "../geom/index.ts";
-import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
+import { connectivity, incompleteCount, ignoredNets, requiredConnectionsOf, pourRegion, shapeTouchesPour, type Connectivity } from "../drc/index.ts";
 import type { Connection } from "../../spec/types/results.ts";
 import { barrelSheets, buildLattice, type Lattice } from "../lattice/index.ts";
 import { createJournal, type Journal } from "./journal.ts";
@@ -467,7 +467,11 @@ function routeToPours(
     const v = nearestVertex(pour.outline, srcPt);
     const c = centroid(pour.outline);
     targets.push({ sheet: pour.sheet, pt: v, d: dist2PtPt(v, srcPt) });
-    targets.push({ sheet: pour.sheet, pt: c, d: dist2PtPt(c, srcPt) });
+    // An outline centroid may lie in a hole or outside a concave filled region.
+    // A successful route to empty space cannot complete an attachment.
+    if (shapeTouchesPour({ kind: "disk", c, r: 0 }, pourRegion(pour))) {
+      targets.push({ sheet: pour.sheet, pt: c, d: dist2PtPt(c, srcPt) });
+    }
   }
   if (targets.length === 0) return false;
   targets.sort((a, b) => a.d - b.d);

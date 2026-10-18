@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "checks.log": {
+      "sha256": "af52f79e85e9f60a8250cb7441cc1324215067fefd3abba0133608271eb8b415",
+      "tail": [
+        "(pass) congestion report > hand-set overflow is summarised per Bridge and per Bin [0.94ms]",
+        "(pass) R-1 safety: globalPlan:\"off\" changes no routing > routing with globalPlan:\"off\" is byte-identical to the default run [10.57ms]",
+        "",
+        " 863 pass",
+        " 0 fail",
+        " 398498 expect() calls",
+        "Ran 863 tests across 30 files. [234.89s]"
+      ]
+    },
+    "final-typecheck.log": {
+      "sha256": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92",
+      "tail": [
+        "$ tsc --noEmit"
+      ]
+    }
+  },
+  "final_test_source_sha256": {
+    "test/prior-target.test.ts": "a88ea02f237b2c61f0be56e55fc2d4bb0914bbd2fe8639cbed082333323b02b0",
+    "test/helpers/prior-target.ts": "fbc303ff4e959bf6e67730a4c7a8788db1c7d486853361d636e65151ac2ab27a"
+  }
+}

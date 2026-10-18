@@ -1,0 +1,10 @@
+{
+  "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c \"bun run typecheck && bun run check:layers && bun run test\"",
+  "exit": 0,
+  "tests_passed": 865,
+  "tests_failed": 0,
+  "assertions": 398522,
+  "seconds": 214.04,
+  "log_sha256": "66d4be6b91c5e9bea08301293a32a81a90c24c31043653aaf565dafdf672d24b",
+  "production_revision": "2c78431"
+}
