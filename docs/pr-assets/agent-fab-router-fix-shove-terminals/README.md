@@ -48,3 +48,32 @@ establish the actual tested implementation. See benchmark-summary.json.
 Integration: retain PR #15 protected-net handling in shoveClear/ShoveCtx alongside
 this terminal guard. PR #18 protects nudge separately; performance PR #17 changes
 only lattice tests/evidence and has no function overlap.
+
+Cycle 25 adds two pour-specific regression controls (three repeats per version on
+this same host/core set). On main, the non-prior interior pour detaches; the fixed
+implementation rejects the shove and restores the track, journal and live index.
+A prior helper pour is deliberately excluded from terminal membership: both
+versions allow the shove, keep endpoint pads connected and permit insertion of
+the wanted track with zero spacing violations. Rewinding that successful trial
+restores the original attachment and records. These controls distinguish real
+pour terminals from connectivity helper geometry.
+
+| Terminal regression file, each of three repeats | Main | Fixed |
+| --- | ---: | ---: |
+| Passed tests | 1 | 4 |
+| Failed tests | 3 | 0 |
+| Interior pour preserved | no | yes |
+| Prior helper safe shove and caller rewind | pass | pass |
+
+Run `python3 docs/pr-assets/agent-fab-router-fix-shove-terminals/baseline-regression.py`
+for the main comparison (expected exit 1, three regression failures), then
+`bun test test/shove-terminals.test.ts` for the fixed version. Both commands can
+be repeated three times. No production source changed in this follow-up; the
+cycle-24 native sweep above still covers the exact same engine source. No new
+native sweep or completion/thermal improvement is claimed.
+
+Final cycle-25 verification: typecheck and layer checks pass; 864 tests pass,
+zero failures, 398497 assertions (205.50 seconds). This cycle also corrects
+readonly-array setup/assertion errors in the previously committed cascade test.
+The previous cycle's all-checks-pass claim did not describe that committed test
+accurately; these fresh checks verify the final test files. No production change.

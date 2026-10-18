@@ -158,10 +158,11 @@ describe("shoveClear", () => {
       { net: 1, pts: [{ x: -40_000, y: 0 }, { x: 40_000, y: 0 }] },
       { net: 2, pts: [{ x: -40_000, y: 8_000 }, { x: 40_000, y: 8_000 }] },
     ], [{ x: 0, y: -30_000 }, { x: 0, y: 30_000 }]);
-    L.pads.push({ ...L.pads.find((p) => p.net === 2)!, id: 99, pinName: "branch", at: { x: 10_000, y: 8_000 } });
-    L.nets.find((n) => n.id === 2)!.pads.push(99);
+    L.pads = [...L.pads, { ...L.pads.find((p) => p.net === 2)!, id: 99, pinName: "branch", at: { x: 10_000, y: 8_000 } }];
+    const cascadeNet = L.nets.find((n) => n.id === 2)!;
+    cascadeNet.pads = [...cascadeNet.pads, 99];
     const lat = buildLattice(L), j = createJournal(L, lat);
-    const snapshot = structuredClone(L.tracks), mark = j.mark();
+    const snapshot = structuredClone([...L.tracks]), mark = j.mark();
     const profile = resolveProfile(L, 0, settings);
     expect(shoveClear(L, lat, j, 0, vWanted, profile, ignoreOf(0), bigBudget)).toBe(false);
     expect([...L.tracks].sort((a, b) => a.id - b.id)).toEqual(snapshot);
