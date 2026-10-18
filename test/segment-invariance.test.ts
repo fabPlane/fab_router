@@ -1,0 +1,26 @@
+import { expect, test } from "bun:test";
+import { onSeg } from "../src/geom/predicates.ts";
+import type { Pt } from "../src/geom/types.ts";
+function original(p: Pt, a: Pt, b: Pt): boolean {
+  if ((b.x-a.x)*(p.y-a.y)-(b.y-a.y)*(p.x-a.x) !== 0) return false;
+  return Math.min(a.x,b.x)<=p.x && p.x<=Math.max(a.x,b.x) &&
+    Math.min(a.y,b.y)<=p.y && p.y<=Math.max(a.y,b.y);
+}
+test("segment bounds rejection preserves exact integer containment", () => {
+  let seed=9;
+  const next=()=> {seed=(Math.imul(seed,1664525)+1013904223)>>>0; return seed;};
+  const bound=2**25;
+  const point=():Pt=>({x:next()%(2*bound+1)-bound,y:next()%(2*bound+1)-bound});
+  for(let i=0;i<10000;i++) {
+    const a=point(), b=i%7===0?a:point();
+    for(const p of [point(),a,b,{x:a.x,y:b.y},{x:b.x,y:a.y}]) {
+      expect(onSeg(p,a,b)).toBe(original(p,a,b));
+      expect(onSeg(p,b,a)).toBe(original(p,b,a));
+    }
+  }
+  for(const x of [-bound,0,bound]) for(const y of [-bound,0,bound])
+    for(const dx of [-1,0,1]) for(const dy of [-1,0,1]) {
+      const a={x,y},b={x:-x,y:-y},p={x:x+dx,y:y+dy};
+      expect(onSeg(p,a,b)).toBe(original(p,a,b));
+    }
+});

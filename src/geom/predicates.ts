@@ -43,9 +43,9 @@ export function side(a: Pt, b: Pt, p: Pt): number {
 
 /** True when p lies on the closed segment a–b (a may equal b). */
 export function onSeg(p: Pt, a: Pt, b: Pt): boolean {
-  if (cross(a, b, p) !== 0) return false;
-  return Math.min(a.x, b.x) <= p.x && p.x <= Math.max(a.x, b.x) &&
-    Math.min(a.y, b.y) <= p.y && p.y <= Math.max(a.y, b.y);
+  if (p.x < Math.min(a.x, b.x) || p.x > Math.max(a.x, b.x) ||
+      p.y < Math.min(a.y, b.y) || p.y > Math.max(a.y, b.y)) return false;
+  return cross(a, b, p) === 0;
 }
 
 /**
