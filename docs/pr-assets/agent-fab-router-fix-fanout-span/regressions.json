@@ -1,0 +1,44 @@
+{
+  "before": "69cf598",
+  "after_source_sha256": "8d45236010cabc2c98f818ea7fdcd39adc26b433ba2fdc157237a665be0255ab",
+  "test_sha256": "47c97da75932bce2dc7e6e395861c737ede0564148b0215acfba280aefaaaea3",
+  "runs": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "passed": 5,
+      "failed": 2
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "passed": 5,
+      "failed": 2
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "passed": 5,
+      "failed": 2
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "passed": 7,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "passed": 7,
+      "failed": 0
+    }
+  ],
+  "scope": "Synthetic fanout regression, not native task scores; source layers 2 and 3 gain one contacting via each, unsupported/control conditions add none."
+}
