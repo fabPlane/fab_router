@@ -15,6 +15,10 @@ args = parser.parse_args()
 root = Path(__file__).resolve().parents[3]
 controls = [json.loads((p / 'controls.json').read_text()) for p in [args.before, args.after]]
 runs = [json.loads((p / 'results.json').read_text()) for p in [args.before, args.after]]
+assert all(c['complete'] and c['controls_preserved'] and not c['interrupted'] for c in controls)
+for file, digest in controls[0]['candidate']['source_sha256'].items():
+    blob = subprocess.check_output(['git', 'show', f'69cf598:{file}'], cwd=root)
+    assert hashlib.sha256(blob).hexdigest() == digest, file
 keys = ['version', 'order', 'routers', 'cases', 'seeds', 'smoke', 'full_suite',
         'inputs_sha256', 'configs_sha256', 'harness_sha256', 'runtime_sha256',
         'runtime_source_sha256', 'allowed_cpus']

@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import io
 import json
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -33,7 +34,11 @@ with tempfile.TemporaryDirectory(prefix='endcap-access-') as tmp:
             log = args.out / f'{label}-{repeat}.log'
             log.write_bytes(run.stdout)
             results.append({'version': label, 'repeat': repeat, 'exit_code': run.returncode,
-                            'log_sha256': hashlib.sha256(run.stdout).hexdigest()})
+                            'log_sha256': hashlib.sha256(run.stdout).hexdigest(),
+                            'passed': int(re.search(rb' (\d+) pass', run.stdout)[1]),
+                            'failed': int(re.search(rb' (\d+) fail', run.stdout)[1])})
 print(json.dumps(results, indent=2))
 if any(r['exit_code'] != (1 if r['version'] == 'before' else 0) for r in results):
     raise SystemExit('Unexpected regression outcome')
+
+assert all((r['passed'], r['failed']) == ((2, 5) if r['version'] == 'before' else (7, 0)) for r in results)
