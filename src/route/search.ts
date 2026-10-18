@@ -492,7 +492,8 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
   HEAP.clear();
   let seq = 0;
   for (const s of o.starts) {
-    if (!inRegion(s.gx, s.gy)) continue;
+    // Reject invalid layers before packing: layer == layers aliases the next cell.
+    if (!Number.isInteger(s.layer) || s.layer < 0 || s.layer >= layers || !inRegion(s.gx, s.gy)) continue;
     const st = stateOf(cellIndex(s.gx, s.gy), s.layer, 8);
     if (VIS.gOr(st, Infinity) <= 0) continue;
     VIS.put(st, 0, NONE);
