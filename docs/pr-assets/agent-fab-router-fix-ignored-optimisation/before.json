@@ -1,0 +1,476 @@
+[
+  {
+    "repeat": 1,
+    "before": {
+      "tracks": [
+        {
+          "id": 20,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": -30000,
+              "y": 20000
+            },
+            {
+              "x": -20000,
+              "y": 20000
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 22,
+          "net": 0,
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "form": 1,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "incompletes": 0
+    },
+    "after": {
+      "tracks": [
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "incompletes": 1
+    },
+    "report": {
+      "passes": 0,
+      "attempted": 0,
+      "completed": 0,
+      "incompleteBefore": 0,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 0,
+        "barrels": -1
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [
+          "preserve"
+        ],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 2,
+      "perNet": []
+    }
+  },
+  {
+    "repeat": 2,
+    "before": {
+      "tracks": [
+        {
+          "id": 20,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": -30000,
+              "y": 20000
+            },
+            {
+              "x": -20000,
+              "y": 20000
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 22,
+          "net": 0,
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "form": 1,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "incompletes": 0
+    },
+    "after": {
+      "tracks": [
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "incompletes": 1
+    },
+    "report": {
+      "passes": 0,
+      "attempted": 0,
+      "completed": 0,
+      "incompleteBefore": 0,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 0,
+        "barrels": -1
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [
+          "preserve"
+        ],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 0,
+      "perNet": []
+    }
+  },
+  {
+    "repeat": 3,
+    "before": {
+      "tracks": [
+        {
+          "id": 20,
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": -30000,
+              "y": 20000
+            },
+            {
+              "x": -20000,
+              "y": 20000
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "barrels": [
+        {
+          "id": 22,
+          "net": 0,
+          "at": {
+            "x": 0,
+            "y": 0
+          },
+          "form": 1,
+          "fromSheet": 0,
+          "toSheet": 1,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        }
+      ],
+      "incompletes": 0
+    },
+    "after": {
+      "tracks": [
+        {
+          "id": 21,
+          "net": 0,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 0,
+              "y": 0
+            },
+            {
+              "x": 50000,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "origin": "router"
+        },
+        {
+          "net": 0,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": -50000,
+              "y": 0
+            },
+            {
+              "x": 0,
+              "y": 0
+            }
+          ],
+          "width": 2000,
+          "kind": 1,
+          "hold": "free",
+          "id": 23,
+          "origin": "router"
+        }
+      ],
+      "barrels": [],
+      "incompletes": 1
+    },
+    "report": {
+      "passes": 0,
+      "attempted": 0,
+      "completed": 0,
+      "incompleteBefore": 0,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 0,
+        "barrels": -1
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "complete",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [
+          "preserve"
+        ],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 1,
+      "perNet": []
+    }
+  }
+]

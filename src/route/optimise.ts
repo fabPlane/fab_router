@@ -57,6 +57,7 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
     // Barrel elimination.
     for (const barrel of layout.barrels.slice().sort((a, b) => a.id - b.id)) {
       if (overBudget()) break;
+      if (barrel.net !== null && ignored.has(barrel.net)) continue;
       if (barrel.hold !== "free" || barrel.origin !== "router") continue;
       const mark = journal.mark();
       journal.remove(barrel.id);
@@ -68,6 +69,7 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
     // Bend straightening / shortcut.
     for (const track of layout.tracks.slice().sort((a, b) => a.id - b.id)) {
       if (overBudget()) break;
+      if (track.net !== null && ignored.has(track.net)) continue;
       if (track.hold !== "free" || track.origin !== "router" || track.pts.length < 3) continue;
       const profile = profileOf(track.net);
       const sheet = track.sheet;
