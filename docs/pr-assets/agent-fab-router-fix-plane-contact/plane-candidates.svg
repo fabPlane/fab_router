@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="870" viewBox="0 0 1400 870">
+<rect width="1400" height="870" fill="#101923"/>
+<g font-family="sans-serif" fill="#eef3f7">
+<text x="40" y="40" font-size="25">Reachable plane copper: measured candidate search</text>
+<text x="40" y="70" font-size="17">Blue: plane copper   Red: signal pad   Green: inserted via (projected layers)</text>
+<text x="45" y="110" font-size="22">Before: first candidate only</text>
+<text x="45" y="140" font-size="19">reachable pour edge: success=false, joined=false</text>
+<rect x="184" y="160" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="363.4,326.0 470.0,326.0 470.0,274.0 363.4,274.0" fill="#287ab0"/>
+<circle cx="340.0" cy="300.0" r="7.8" fill="#fa705f"/>
+<text x="45" y="465" font-size="16">0 via; 1 open; 0 engine violations</text>
+<text x="45" y="490" font-size="19">reachable hole edge: success=false, joined=false</text>
+<rect x="184" y="510" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="210.0,780.0 470.0,780.0 470.0,520.0 210.0,520.0" fill="#287ab0"/>
+<polygon points="316.6,673.4 363.4,673.4 363.4,626.6 316.6,626.6" fill="#1c2836"/>
+<circle cx="340.0" cy="650.0" r="7.8" fill="#fa705f"/>
+<text x="45" y="815" font-size="16">0 via; 1 open; 0 engine violations</text>
+<text x="740" y="110" font-size="22">After: continue candidate search</text>
+<text x="740" y="140" font-size="19">reachable pour edge: success=true, joined=true</text>
+<rect x="879" y="160" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="1058.4,326.0 1165.0,326.0 1165.0,274.0 1058.4,274.0" fill="#287ab0"/>
+<circle cx="1035.0" cy="300.0" r="7.8" fill="#fa705f"/>
+<polyline points="1035.0,300.0 1050.6,300.0" fill="none" stroke="#fa705f" stroke-width="5.2" stroke-linecap="round"/>
+<circle cx="1050.6" cy="300.0" r="7.8" fill="#72e3a2"/><circle cx="1050.6" cy="300.0" r="2.6" fill="#101923"/>
+<text x="740" y="465" font-size="16">1 via; 0 open; 0 engine violations</text>
+<text x="740" y="490" font-size="19">reachable hole edge: success=true, joined=true</text>
+<rect x="879" y="510" width="312" height="280" fill="#1c2836" stroke="#748396"/>
+<polygon points="905.0,780.0 1165.0,780.0 1165.0,520.0 905.0,520.0" fill="#287ab0"/>
+<polygon points="1011.6,673.4 1058.4,673.4 1058.4,626.6 1011.6,626.6" fill="#1c2836"/>
+<circle cx="1035.0" cy="650.0" r="7.8" fill="#fa705f"/>
+<polyline points="1035.0,650.0 1050.6,650.0" fill="none" stroke="#fa705f" stroke-width="5.2" stroke-linecap="round"/>
+<circle cx="1050.6" cy="650.0" r="7.8" fill="#72e3a2"/><circle cx="1050.6" cy="650.0" r="2.6" fill="#101923"/>
+<text x="740" y="815" font-size="16">1 via; 0 open; 0 engine violations</text>
+<text x="40" y="850" font-size="16">Same scale in every panel. Later candidates complete these synthetic fixtures; native sweep reported separately.</text>
+</g></svg>

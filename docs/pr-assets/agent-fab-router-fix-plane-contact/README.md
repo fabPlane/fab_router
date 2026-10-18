@@ -37,3 +37,28 @@ taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-plane-co
 ```
 
 Final cycle-42 required checks passed: typecheck, layer checks (65 files, zero violations), and 869 tests / zero failures / 398557 assertions (215.99 seconds). The full log includes all four added component tests; its hash is recorded in components.json.
+
+## Reachable plane candidates
+
+A clear via at the signal pad can miss the plane while a later ring candidate contacts it.
+The first-placement helper previously stopped the plane escape before examining that candidate.
+`viaDropsNear` now enumerates the existing ordered, bounded placements; `dropViaNear` still
+returns the first placement for its other callers. Plane routing inserts each candidate and
+its legalised stub, verifies live connectivity to the requested terminal, and rewinds rejected
+copper before trying another candidate. The connection deadline and cancellation signal apply.
+This extends the contact guard; it does not add an exhaustive plane search or native thermal model.
+
+Five additional regressions cover a nearby pour edge and window edge in both endpoint orders,
+plus the public API. Each fixture changes from one open to zero with one via and one stub;
+there are zero engine spacing violations and caller rollback restores the initial board.
+Three repeats of the identical tests: `3189e6c` **0 pass / 5 fail** each; candidate search
+**5 pass / 0 fail** each. These are synthetic engine fixtures, not frozen native benchmark passes.
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/candidate-regression.py --out /tmp/plane-candidates
+bun test test/plane-candidate-search.test.ts test/plane-contact.test.ts test/plane-target-component.test.ts
+python3 docs/pr-assets/agent-fab-router-fix-plane-contact/candidate-render.py
+```
+
+`candidates.json` contains repeated raw geometry, log hashes, and source/test hashes.
+`plane-candidates.png` renders that geometry with both layers projected at the same scale.

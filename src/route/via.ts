@@ -48,6 +48,14 @@ export function dropViaNear(
   layout: Layout, lattice: Lattice, sheet: number, otherSheet: number, target: Pt,
   profile: Profile, ignore: IgnoreSet, maxRadius: number,
 ): ViaDrop | undefined {
+  return viaDropsNear(layout, lattice, sheet, otherSheet, target, profile, ignore, maxRadius).next().value;
+}
+
+/** Enumerate clear placements in the same fixed order, so a caller can reject a disconnected drop. */
+export function* viaDropsNear(
+  layout: Layout, lattice: Lattice, sheet: number, otherSheet: number, target: Pt,
+  profile: Profile, ignore: IgnoreSet, maxRadius: number,
+): Generator<ViaDrop, undefined> {
   const cand = pickBarrel(profile, sheet, otherSheet);
   if (!cand) return undefined;
   const los = (a: Pt, b: Pt): boolean => sweepClear(layout, lattice, sheet, { a, b }, profile, ignore, profile.width).ok;
@@ -62,7 +70,7 @@ export function dropViaNear(
     return undefined;
   };
   const first = tryAt(target);
-  if (first) return first;
+  if (first) yield first;
   // Ring search: grow the radius in fine steps, sixteen directions, in a fixed order.
   const dirs: Array<[number, number]> = [];
   for (let k = 0; k < 16; k++) { const a = (k * Math.PI) / 8; dirs.push([Math.cos(a), Math.sin(a)]); }
@@ -72,7 +80,7 @@ export function dropViaNear(
     for (const [dx, dy] of dirs) {
       const at = { x: Math.round(target.x + dx * r), y: Math.round(target.y + dy * r) };
       const hit = tryAt(at);
-      if (hit) return hit;
+      if (hit) yield hit;
     }
   }
   return undefined;

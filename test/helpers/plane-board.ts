@@ -21,3 +21,11 @@ export function planeBoard(mode: 'under-pad' | 'distant' | 'hole'): Layout {
     viaRules: [{ id: 0, name: 'default', forms: [101], entries: [{ form: 101, kind: 1, attach: true }] }], pinEdgeToTurnLu: 0, warnings: [],
   };
 }
+
+export function reachablePlane(hole: boolean) {
+  const layout = planeBoard(hole ? 'hole' : 'distant');
+  const rect = [{ x: -9000, y: -9000 }, { x: 9000, y: -9000 }, { x: 9000, y: 9000 }, { x: -9000, y: 9000 }];
+  if (hole) layout.pours[0]!.holes = [rect];
+  else layout.pours[0]!.outline = [{ x: 9000, y: -10000 }, { x: 50000, y: -10000 }, { x: 50000, y: 10000 }, { x: 9000, y: 10000 }];
+  return layout;
+}
