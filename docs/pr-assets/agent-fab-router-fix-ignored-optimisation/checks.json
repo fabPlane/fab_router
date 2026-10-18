@@ -1,0 +1,42 @@
+{
+  "source_commit": "cd3ba3f",
+  "typecheck": "pass",
+  "layers": "pass",
+  "unit_tests": {
+    "passed": 863,
+    "failed": 0,
+    "expectations": 398471,
+    "seconds": 213.93
+  },
+  "checks_log_sha256": "1676ab438111b9d462a174679088d99a360fc80f63df19395ab6e54e0f808914",
+  "regression_repeats": [
+    {
+      "repeat": 1,
+      "before_pass": 1,
+      "before_fail": 3,
+      "after_pass": 4,
+      "after_fail": 0,
+      "before_log_sha256": "4eb1a12d2da59eeea705a3ba543398559ca9fcee4598469be059647b8f69af98",
+      "after_log_sha256": "f297d0b2a80fcfd7ecabb4038b1899c42d05502403964ec291e0aa67a260eaae"
+    },
+    {
+      "repeat": 2,
+      "before_pass": 1,
+      "before_fail": 3,
+      "after_pass": 4,
+      "after_fail": 0,
+      "before_log_sha256": "fc21370f1e2a1a6f3de32c9b2e277a29c16165bddbf89de1ce5ba61ed10023e7",
+      "after_log_sha256": "c0e3db63ad491931b1b27687278e79439f5a0253d396bdf2f587a7097958fc97"
+    },
+    {
+      "repeat": 3,
+      "before_pass": 1,
+      "before_fail": 3,
+      "after_pass": 4,
+      "after_fail": 0,
+      "before_log_sha256": "237bd7f542b2bb9a2d2141b11f4edaac22b052a9bfa793444ffe893098a84d56",
+      "after_log_sha256": "3aab57d15c31607622c16266725372ee96edfb0a3323dbb63763d7f75ac47310"
+    }
+  ],
+  "initial_typecheck": "Failed because new test passed wrong resolveSettings arguments; corrected before final full checks. Production source unchanged."
+}

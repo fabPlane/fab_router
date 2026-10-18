@@ -17,7 +17,7 @@ for i, name in enumerate(('before', 'after')):
     def xy(p):
         return ox + 270 + p['x'] / 220, 320 - p['y'] / 220
     label(ox, 140, 'Before fix' if i == 0 else 'After fix', 26)
-    label(ox, 178, f"Native-independent engine check: {state['incompletes']} incomplete", 19)
+    label(ox, 178, f"Unfiltered engine check: {state['incompletes']} incomplete", 19)
     svg.append(f'<rect x="{ox}" y="200" width="580" height="260" rx="12" fill="#1a2a3e"/>')
     for t in state['tracks']:
         points = ' '.join(f'{x:.2f},{y:.2f}' for x, y in map(xy, t['pts']))
