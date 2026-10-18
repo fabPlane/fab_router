@@ -62,3 +62,17 @@ python3 docs/pr-assets/agent-fab-router-fix-plane-contact/candidate-render.py
 
 `candidates.json` contains repeated raw geometry, log hashes, and source/test hashes.
 `plane-candidates.png` renders that geometry with both layers projected at the same scale.
+
+Final candidate native verification (`fb03f91`):
+
+| Full native fab_router sweep, same 26 cases | Before: main | After: fb03f91 | Repeats |
+| --- | ---: | ---: | ---: |
+| Passing runs | 39/78 | 39/78 | 3/case |
+| Valid cases, all three repeats pass | 13/26 | 13/26 | 3/case |
+| Opens, summed attempts | 120 | 120 | 78 attempts |
+| New native DRC errors | 27 | 27 | 78 attempts |
+| Median route seconds | 1.172079 | 1.110919 | 78 attempts |
+
+Every case/seed has identical pass/open/error/via/length results. All 74 captured source hashes match the measured revision and frozen controls match the reference. Timings are shared-host descriptive only. The 27 remaining errors are thermal starvation. Full source/control and per-attempt evidence: `candidate-benchmark-summary.json`.
+
+Final required checks passed: typecheck; layer checks (65 files, zero violations); 874 tests, zero failures, 398610 assertions (211.20 seconds). All 15 plane regressions are included. Final source/test and log hashes are in candidate-checks.json; native source/control hashes and per-attempt results are in candidate-benchmark-summary.json.
