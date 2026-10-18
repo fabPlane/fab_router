@@ -254,15 +254,20 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
     rebuilds++;
   }
 
-  function collect(sheet: number, q: Dop8, sweep: boolean, filter: LatticeFilter | undefined): LatticeItemRef[] {
+  function collect(sheet: number, q: Box, sweep: boolean, filter: LatticeFilter | undefined): LatticeItemRef[] {
     const out: LatticeItemRef[] = [];
     const g = sheets.get(sheet);
     if (!g) return out;
+    // Box queries used to spread into a Dop8. Snapshot their bounds without allocating
+    // that object; filters may mutate the caller's box while collection is in progress.
+    const { x0, x1, y0, y1 } = q;
     gen++;
-    const test = (s: number): boolean => {
-      if (q.x0 > sX1[s]! || sX0[s]! > q.x1 || q.y0 > sY1[s]! || sY0[s]! > q.y1) return false;
-      if (sweep && (q.s0 > sS1[s]! || sS0[s]! > q.s1 || q.d0 > sD1[s]! || sD0[s]! > q.d1)) return false;
-      return true;
+    const test = sweep ? (s: number): boolean => {
+      const d = q as Dop8;
+      return !(d.x0 > sX1[s]! || sX0[s]! > d.x1 || d.y0 > sY1[s]! || sY0[s]! > d.y1
+        || d.s0 > sS1[s]! || sS0[s]! > d.s1 || d.d0 > sD1[s]! || sD0[s]! > d.d1);
+    } : (s: number): boolean => {
+      return !(x0 > sX1[s]! || sX0[s]! > x1 || y0 > sY1[s]! || sY0[s]! > y1);
     };
     const push = (s: number) => {
       const leg = sLeg[s]!;
@@ -270,8 +275,8 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
       if (filter && !filter(ref)) return;
       out.push(ref);
     };
-    const cx0 = Math.max(cellOf(q.x0), g.cx0), cx1 = Math.min(cellOf(q.x1), g.cx1);
-    const cy0 = Math.max(cellOf(q.y0), g.cy0), cy1 = Math.min(cellOf(q.y1), g.cy1);
+    const cx0 = Math.max(cellOf(x0), g.cx0), cx1 = Math.min(cellOf(x1), g.cx1);
+    const cy0 = Math.max(cellOf(y0), g.cy0), cy1 = Math.min(cellOf(y1), g.cy1);
     if (cx0 <= cx1 && cy0 <= cy1) {
       for (let cx = cx0; cx <= cx1; cx++) {
         for (let cy = cy0; cy <= cy1; cy++) {
@@ -395,7 +400,7 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
   }
 
   return {
-    hits: (sheet, box, filter) => collect(sheet, { ...box, s0: -Infinity, s1: Infinity, d0: -Infinity, d1: Infinity }, false, filter),
+    hits: (sheet, box, filter) => collect(sheet, box, false, filter),
     sweepHits: (sheet, dop8, filter) => collect(sheet, dop8, true, filter),
     insert: (ref, sheet, bounds) => insertRaw(ref.id, ref.leg ?? NO_LEG, sheet, bounds),
     remove: (ref, sheet) => removeRaw(ref.id, ref.leg ?? NO_LEG, sheet),
