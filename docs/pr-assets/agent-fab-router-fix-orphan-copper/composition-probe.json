@@ -1,0 +1,159 @@
+{
+  "case": "nextbusclock-nextbusclockv1-j3",
+  "seed": 1,
+  "before_source": "f7378c5",
+  "after_source": "eea1256 plus passes.ts from f7378c5",
+  "removed_tracks": [
+    {
+      "net": 31,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": 813300,
+          "y": -1166600
+        },
+        {
+          "x": 865800,
+          "y": -1166600
+        }
+      ],
+      "width": 2500,
+      "kind": 1,
+      "hold": "free",
+      "id": 402,
+      "origin": "router"
+    }
+  ],
+  "retained_tracks_identical": true,
+  "barrels_identical": true,
+  "retained_tracks": [
+    {
+      "net": 31,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": 685800,
+          "y": -1054100
+        },
+        {
+          "x": 768300,
+          "y": -1054100
+        }
+      ],
+      "width": 2500,
+      "kind": 1,
+      "hold": "free",
+      "id": 628,
+      "origin": "router"
+    },
+    {
+      "net": 31,
+      "sheet": 1,
+      "pts": [
+        {
+          "x": 768300,
+          "y": -1054100
+        },
+        {
+          "x": 768300,
+          "y": -1174100
+        }
+      ],
+      "width": 2500,
+      "kind": 1,
+      "hold": "free",
+      "id": 629,
+      "origin": "router"
+    },
+    {
+      "net": 31,
+      "sheet": 0,
+      "pts": [
+        {
+          "x": 768300,
+          "y": -1174100
+        },
+        {
+          "x": 858300,
+          "y": -1174100
+        }
+      ],
+      "width": 2500,
+      "kind": 1,
+      "hold": "free",
+      "id": 630,
+      "origin": "router"
+    },
+    {
+      "net": 31,
+      "sheet": 1,
+      "pts": [
+        {
+          "x": 858300,
+          "y": -1174100
+        },
+        {
+          "x": 927100,
+          "y": -1244600
+        }
+      ],
+      "width": 2500,
+      "kind": 1,
+      "hold": "free",
+      "id": 713,
+      "origin": "router"
+    }
+  ],
+  "retained_barrels": [
+    {
+      "net": 31,
+      "at": {
+        "x": 768300,
+        "y": -1054100
+      },
+      "form": 15,
+      "fromSheet": 0,
+      "toSheet": 1,
+      "kind": 3,
+      "hold": "free",
+      "id": 625,
+      "origin": "router"
+    },
+    {
+      "net": 31,
+      "at": {
+        "x": 768300,
+        "y": -1174100
+      },
+      "form": 15,
+      "fromSheet": 0,
+      "toSheet": 1,
+      "kind": 3,
+      "hold": "free",
+      "id": 626,
+      "origin": "router"
+    },
+    {
+      "net": 31,
+      "at": {
+        "x": 858300,
+        "y": -1174100
+      },
+      "form": 15,
+      "fromSheet": 0,
+      "toSheet": 1,
+      "kind": 3,
+      "hold": "free",
+      "id": 627,
+      "origin": "router"
+    }
+  ],
+  "terminal_incompletes": [
+    0,
+    0
+  ],
+  "violations_added": [
+    0,
+    0
+  ]
+}
