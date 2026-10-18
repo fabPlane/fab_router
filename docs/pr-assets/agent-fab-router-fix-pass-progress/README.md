@@ -61,3 +61,42 @@ Timing is a shared-host observation, not a speed claim. This is the complete
 fab_router sweep, not a five-router full benchmark. Required checks passed:
 typecheck, 65 files with zero layer violations, 860 tests with zero failures and
 398462 assertions (219.72 seconds).
+
+Callback selection and ignored-net regression coverage
+-----------------------------------------------------
+
+Two additional regressions register `onPass` and `onProgress` independently. Each
+fixture adds a disconnected ignored net, verifies it remains disconnected, and
+compares each reported count with live non-ignored connectivity. Each also routes
+an independently constructed control without hooks and checks identical track,
+via and non-timing report records. This catches the guard requiring both hooks,
+accidentally counting ignored nets, or callback registration changing routing.
+
+Three repeats on the same host and cores 20–25, including the original test:
+
+| Regression tests per repeat | Main 69cf598 | Candidate 2cc0f50 source |
+| --- | ---: | ---: |
+| Pass / fail | 0 / 3 | 3 / 0 |
+
+Raw output is in `hook-selection-regressions.json`. Reproduce from the repository
+root, choosing a new empty baseline directory:
+
+```bash
+baseline=/tmp/pass-progress-hook-selection-baseline
+mkdir -p "$baseline"
+git archive 69cf598 | tar -x -C "$baseline"
+cp test/pass-progress.test.ts "$baseline/test/"
+cp test/helpers/pass-progress.ts "$baseline/test/helpers/"
+for repeat in 1 2 3; do
+  (cd "$baseline" && taskset -c 20-25 nice -n 10 timeout 60 bun test test/pass-progress.test.ts)
+  taskset -c 20-25 nice -n 10 timeout 60 bun test test/pass-progress.test.ts
+done
+```
+
+The baseline test commands intentionally exit 1; the candidate commands exit 0.
+
+These are unit regressions, not another native benchmark. Production source is
+unchanged; the full native table above remains the measured result for that source.
+
+With this coverage, required checks pass: typecheck; 65 files with zero layer
+violations; 862 tests, zero failures, 398484 assertions (206.55 seconds).
