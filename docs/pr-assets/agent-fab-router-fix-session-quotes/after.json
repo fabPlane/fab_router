@@ -1,0 +1,164 @@
+[
+  {
+    "repeat": 1,
+    "before": [
+      {
+        "id": 1,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "session": "(session quotes.ses\n  (base_design quotes)\n  (placement\n    (resolution um 1)\n  )\n  (was_is)\n  (routes\n    (resolution um 1)\n    (parser)\n    (library_out\n    )\n    (network_out\n      (net 'signal (A)'\n        (wire\n          (path 'front (signal)' 200\n            1000 1000\n            2000 1000\n          )\n          (type protect)\n        )\n      )\n    )\n  )\n)\n",
+    "result": {
+      "ok": true,
+      "applied": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "diagnostics": []
+    },
+    "after": [
+      {
+        "id": 2,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "session"
+      }
+    ]
+  },
+  {
+    "repeat": 2,
+    "before": [
+      {
+        "id": 1,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "session": "(session quotes.ses\n  (base_design quotes)\n  (placement\n    (resolution um 1)\n  )\n  (was_is)\n  (routes\n    (resolution um 1)\n    (parser)\n    (library_out\n    )\n    (network_out\n      (net 'signal (A)'\n        (wire\n          (path 'front (signal)' 200\n            1000 1000\n            2000 1000\n          )\n          (type protect)\n        )\n      )\n    )\n  )\n)\n",
+    "result": {
+      "ok": true,
+      "applied": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "diagnostics": []
+    },
+    "after": [
+      {
+        "id": 2,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "session"
+      }
+    ]
+  },
+  {
+    "repeat": 3,
+    "before": [
+      {
+        "id": 1,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "file"
+      }
+    ],
+    "session": "(session quotes.ses\n  (base_design quotes)\n  (placement\n    (resolution um 1)\n  )\n  (was_is)\n  (routes\n    (resolution um 1)\n    (parser)\n    (library_out\n    )\n    (network_out\n      (net 'signal (A)'\n        (wire\n          (path 'front (signal)' 200\n            1000 1000\n            2000 1000\n          )\n          (type protect)\n        )\n      )\n    )\n  )\n)\n",
+    "result": {
+      "ok": true,
+      "applied": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "diagnostics": []
+    },
+    "after": [
+      {
+        "id": 2,
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 1000,
+            "y": 1000
+          },
+          {
+            "x": 2000,
+            "y": 1000
+          }
+        ],
+        "width": 200,
+        "kind": 1,
+        "hold": "held",
+        "origin": "session"
+      }
+    ]
+  }
+]
