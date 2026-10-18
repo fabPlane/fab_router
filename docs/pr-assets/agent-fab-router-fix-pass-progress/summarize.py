@@ -15,6 +15,13 @@ args = parser.parse_args()
 root = Path(__file__).resolve().parents[3]
 controls = [json.loads((p / 'controls.json').read_text()) for p in [args.before, args.after]]
 runs = [json.loads((p / 'results.json').read_text()) for p in [args.before, args.after]]
+for folder in [args.before, args.after]:
+    summary = json.loads((folder / 'summary.json').read_text())
+    assert summary['complete'] and summary['controls_preserved'] and summary['completed_runs'] == 78
+for file, digest in controls[0]['candidate']['source_sha256'].items():
+    blob = subprocess.check_output(['git', 'show', f'69cf598:{file}'], cwd=root)
+    assert hashlib.sha256(blob).hexdigest() == digest, file
+
 keys = ['version', 'order', 'routers', 'cases', 'seeds', 'smoke', 'full_suite',
         'inputs_sha256', 'configs_sha256', 'harness_sha256', 'runtime_sha256',
         'runtime_source_sha256', 'allowed_cpus']
@@ -45,6 +52,7 @@ for key, r in before.items():
     delta = {f: [r[f], after[key][f]] for f in fields if r[f] != after[key][f]}
     if delta:
         changes.append({'case': key[0], 'seed': key[1], 'changes': delta})
+assert not changes, changes
 print(json.dumps({'baseline_commit': controls[0]['candidate']['commit'],
                   'tested_source_commit': args.source_commit,
                   'harness_captured_candidate_commit': controls[1]['candidate']['commit'],
