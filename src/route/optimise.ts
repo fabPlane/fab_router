@@ -16,10 +16,10 @@
  *
  * Public surface: OptimiseResult, runOptimise.
  */
-import type { Layout, Pt, Track } from "../../spec/types/layout.ts";
+import type { Layout, Pour, Pt, Track } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { Lattice } from "../lattice/index.ts";
-import { connectivity, incompleteCount } from "../drc/index.ts";
+import { connectivity, type Connectivity } from "../drc/index.ts";
 import type { Journal } from "./journal.ts";
 import { ignoreOf, sweepClear } from "./clear.ts";
 import { resolveProfile, type Profile } from "./profile.ts";
@@ -28,11 +28,22 @@ import { pathLength } from "../geom/index.ts";
 
 export interface OptimiseResult { barrelsRemoved: number; tracksShortened: number }
 
-function totalIncomplete(layout: Layout, lattice: Lattice, ignored: ReadonlySet<number>): number {
-  const conn = connectivity(layout, lattice);
-  let sum = 0;
-  for (const net of layout.nets) { if (!ignored.has(net.id)) sum += incompleteCount(conn, net.id); }
-  return sum;
+/** A count can hide one lost connection offset by a newly joined terminal. */
+function preservesTerminals(before: Connectivity, after: Connectivity, ignored: ReadonlySet<number>): boolean {
+  for (const net of before.nets) {
+    if (!net || ignored.has(net.net)) continue;
+    for (const ci of net.terminal) {
+      let component: number | undefined;
+      for (const id of net.components[ci]!) {
+        const item = before.items.get(id)!;
+        if (item.cat !== "pad" && (item.cat !== "pour" || (item.ref as Pour).origin === "prior")) continue;
+        const current = after.componentOf.get(id);
+        if (current === undefined || (component !== undefined && current !== component)) return false;
+        component = current;
+      }
+    }
+  }
+  return true;
 }
 
 /** Run the optimiser over `layout` (mutating through the Journal). */
@@ -46,7 +57,7 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
     if (!p) { p = resolveProfile(layout, net, settings); profiles.set(net, p); }
     return p;
   };
-  let base = totalIncomplete(layout, lattice, ignored);
+  let base = connectivity(layout, lattice);
   let barrelsRemoved = 0, tracksShortened = 0;
   let changes = 0;
   const overBudget = (): boolean => (maxItems !== undefined && changes >= maxItems) || (deadline !== undefined && Date.now() > deadline);
@@ -60,8 +71,8 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
       if (barrel.hold !== "free" || barrel.origin !== "router") continue;
       const mark = journal.mark();
       journal.remove(barrel.id);
-      const now = totalIncomplete(layout, lattice, ignored);
-      if (now <= base) { base = now; barrelsRemoved++; changes++; progressed = true; }
+      const now = connectivity(layout, lattice);
+      if (preservesTerminals(base, now, ignored)) { base = now; barrelsRemoved++; changes++; progressed = true; }
       else journal.rewind(mark);
     }
 
@@ -82,8 +93,8 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
       journal.remove(track.id);
       const replacement: Omit<Track, "id" | "origin"> = { net: track.net, sheet, pts: pulled, width: track.width, kind: track.kind, hold: "free" };
       journal.addTrack(replacement);
-      const now = totalIncomplete(layout, lattice, ignored);
-      if (now <= base) { base = now; tracksShortened++; changes++; progressed = true; }
+      const now = connectivity(layout, lattice);
+      if (preservesTerminals(base, now, ignored)) { base = now; tracksShortened++; changes++; progressed = true; }
       else journal.rewind(mark);
     }
 

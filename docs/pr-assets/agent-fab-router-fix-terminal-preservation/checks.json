@@ -1,0 +1,33 @@
+{
+  "source_commit": "6ec2de0e5691d84baf126339be57b7c944de76fe",
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "unit_tests": {
+    "passed": 863,
+    "failed": 0,
+    "assertions": 398478,
+    "seconds": 213.53
+  },
+  "regression": {
+    "before_pass": 1,
+    "before_fail": 3,
+    "after_pass": 4,
+    "after_fail": 0
+  },
+  "log_sha256": {
+    "checks.log": "18d55213001f7884ffbb90c5d8083c2b2f7c002dbf250dafe5a6c37f33cbf36e",
+    "regression-before-final.log": "a781f1d5b8d5b4697a92c1d50b232cf6005dc0a03269f1eb664a9524cd362ff6",
+    "regression-after.log": "6248db60501c220d05eda99878ca42b37489c96ad84672a67f6caed373731e09"
+  },
+  "fixture_audit": {
+    "repeats": 3,
+    "before_preserved": 0,
+    "after_preserved": 3,
+    "opens_before_and_after": 1,
+    "violations": 0
+  },
+  "note": "Full checks ran on unchanged executable/test source at source_commit. Native run captured pre-commit HEAD; compare all source hashes."
+}
