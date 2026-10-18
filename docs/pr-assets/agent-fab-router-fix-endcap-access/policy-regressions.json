@@ -1,0 +1,74 @@
+{
+  "baseline": "69cf598",
+  "candidate_engine": "7dffe49",
+  "engine_unchanged": true,
+  "benchmark_rerun": false,
+  "results": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "exit_code": 1,
+      "log_sha256": "b415f3d2fbcd93c3a052f697b0757c0de529dee077cc373b824c12ea0d82c442",
+      "passed": 2,
+      "failed": 9
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "exit_code": 1,
+      "log_sha256": "0e72718704079b5a42f7a461a19fdae08112832bbc977af9a6bc56f20e80f503",
+      "passed": 2,
+      "failed": 9
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "exit_code": 1,
+      "log_sha256": "4e3455d69a17b235342b85f3032368cde22a79dca6dbc294014cd8d01a536bb9",
+      "passed": 2,
+      "failed": 9
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "exit_code": 0,
+      "log_sha256": "a97eaea7e7f9663910f93a041756c7154f19afa6acc8dbd367e877cf497fe7aa",
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "exit_code": 0,
+      "log_sha256": "59e61edbdd86ab5ab16553ae4278abf0f8a95dd0dfd7962e4615beda34c94f8a",
+      "passed": 11,
+      "failed": 0
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "exit_code": 0,
+      "log_sha256": "154615c0f98b647ec7ab59cd022d8ba9ab4d884b516c4f9864f2b33f9b160ab4",
+      "passed": 11,
+      "failed": 0
+    }
+  ],
+  "sha256": {
+    "test/endcap-access.test.ts": "167cd8d9663490f8a48c97259aaa7705f1c5d4a2811f9ef6b1c8f71c9cd002e0",
+    "test/helpers/endcap-board.ts": "16dcd13b336ddcf32d509ca3a96080e85c36924876c936d7aeaec5cc914e0460",
+    "docs/pr-assets/agent-fab-router-fix-endcap-access/regression.py": "3651206cb47bb2e474054bfe543f12f5b9f25f9e0a446a4a24d39dd6ea4ba9b0"
+  },
+  "command": "taskset -c 20-25 nice -n 10 python3 docs/pr-assets/agent-fab-router-fix-endcap-access/regression.py --baseline 69cf598 --repeats 3 --out /tmp/endcap-regression",
+  "required_checks": {
+    "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+    "exit_code": 0,
+    "typecheck": "pass",
+    "layer_files": 65,
+    "layer_violations": 0,
+    "tests_passed": 870,
+    "tests_failed": 0,
+    "assertions": 398546,
+    "test_seconds": 222.21,
+    "log_sha256": "06f9e6edf00096dcd7c1d4bc050a43ffe37c12aed7ceff6faa0dad5fc93a5f5d"
+  }
+}

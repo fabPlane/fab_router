@@ -1,0 +1,332 @@
+{
+  "before": {
+    "native_check": {
+      "native_version": "10.0.6",
+      "board_sha256": "e437f63e7cbf2509f24210a9512fe6b265981fd52133b423d76dda5e36e622cd",
+      "integrity_checks": {
+        "footprints": true,
+        "pads": true,
+        "outline": true,
+        "layers": true,
+        "zones": true,
+        "kicad_pro_preserved": true,
+        "kicad_dru_preserved": true,
+        "checker_policy_preserved": true,
+        "nets": true,
+        "zone_definition": true,
+        "board_setup": true
+      },
+      "integrity_pass": true,
+      "native_opens": 1,
+      "native_total_errors_excluding_opens": 0,
+      "inherited_errors": 0,
+      "new_errors": 0,
+      "new_error_details": [],
+      "new_warning_details": [
+        {
+          "description": "The current configuration does not include the footprint library 'TO_SOT_Packages_SMD'",
+          "items": [
+            {
+              "description": "Footprint U1",
+              "pos": {
+                "x": 70.406,
+                "y": 26.615
+              },
+              "uuid": "00000000-0000-0000-0000-0000569e4975"
+            }
+          ],
+          "severity": "warning",
+          "type": "lib_footprint_issues"
+        },
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [Net-(C2-Pad1)] on F.Cu, length 1.1186 mm",
+              "pos": {
+                "x": 72.619,
+                "y": 27.453
+              },
+              "uuid": "51a619de-b56d-49e7-bbf7-b0202a9bf723"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        },
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [Net-(C2-Pad1)] on B.Cu, length 1.8750 mm",
+              "pos": {
+                "x": 72.619,
+                "y": 25.578
+              },
+              "uuid": "ecfd6561-3b97-4ba4-b0f7-11443719f313"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        }
+      ],
+      "new_error_types": {},
+      "new_warnings": 3,
+      "new_warning_types": {
+        "lib_footprint_issues": 1,
+        "track_dangling": 2
+      },
+      "via_count": 26,
+      "track_count": 104,
+      "track_length_mm": 379.0178352540116,
+      "per_net_length_mm": {
+        "+BATT": 90.36617315334601,
+        "GND": 88.40595164945645,
+        "GNDA": 33.135601808938844,
+        "Net-(C1-Pad2)": 8.87615453001025,
+        "Net-(C2-Pad1)": 18.57481556814436,
+        "Net-(C6-Pad1)": 2.99397144274958,
+        "Net-(C6-Pad2)": 3.617411367262507,
+        "Net-(D1-Pad1)": 3.3261,
+        "Net-(D1-Pad2)": 9.309025642371319,
+        "Net-(D2-Pad1)": 3.3261,
+        "Net-(D2-Pad2)": 5.3461068461447825,
+        "Net-(IC1-Pad1)": 10.836219869213785,
+        "Net-(IC1-Pad5)": 7.134058592414279,
+        "Net-(IC1-Pad6)": 7.204646594399325,
+        "Net-(IC1-Pad7)": 29.910383760003466,
+        "Net-(P1-Pad6)": 10.758472019555189,
+        "Net-(P4-Pad1)": 9.216807473384314,
+        "Net-(Q1-Pad2)": 5.757001436120288,
+        "Net-(R6-Pad1)": 3.8509144981614822,
+        "Net-(SW3-Pad2)": 11.555546830969812,
+        "VCC": 15.516372171365514
+      },
+      "native_acceptance": false,
+      "manufacturing_clean": false,
+      "ignored_checks": [
+        {
+          "description": "Footprint has no courtyard defined",
+          "key": "missing_courtyard"
+        },
+        {
+          "description": "Track endpoint not centered on via",
+          "key": "track_not_centered_on_via"
+        },
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        },
+        {
+          "description": "Footprint doesn't match symbol's footprint filters",
+          "key": "footprint_filters_mismatch"
+        },
+        {
+          "description": "Footprint component type doesn't match footprint pads",
+          "key": "footprint_type_mismatch"
+        }
+      ],
+      "drc_command": [
+        "/usr/bin/kicad-cli",
+        "pcb",
+        "drc",
+        "--severity-all",
+        "--format",
+        "json",
+        "-o",
+        "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full/runs/run-20261018T142847.770138Z-009/fab-router/drc.json",
+        "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c1-before-full/runs/run-20261018T142847.770138Z-009/fab-router/final.kicad_pcb"
+      ],
+      "power_width_violations": [],
+      "pairs": [],
+      "pass": false,
+      "opens": 1,
+      "fidelity": {
+        "footprints": true,
+        "pads": true,
+        "outline": true,
+        "layers": true,
+        "zones": true,
+        "kicad_pro_preserved": true,
+        "kicad_dru_preserved": true,
+        "checker_policy_preserved": true,
+        "nets": true,
+        "zone_definition": true,
+        "board_setup": true
+      },
+      "vias": 26,
+      "length_mm": 379.0178352540116,
+      "job": "J3",
+      "raw_output_sha256": "e437f63e7cbf2509f24210a9512fe6b265981fd52133b423d76dda5e36e622cd"
+    },
+    "artifacts_sha256": {
+      "final.kicad_pcb": "e437f63e7cbf2509f24210a9512fe6b265981fd52133b423d76dda5e36e622cd",
+      "check.json": "35a6eafa991f3a31d514e2ebdb0d477dae922bea4cbc008f593b6c9e51f11ef3",
+      "work/board.dsn": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd"
+    }
+  },
+  "after": {
+    "native_check": {
+      "native_version": "10.0.6",
+      "board_sha256": "92db379def186bba6af7d7749c2b51d6a21960529778f581c2435ebe7c36f637",
+      "integrity_checks": {
+        "footprints": true,
+        "pads": true,
+        "outline": true,
+        "layers": true,
+        "zones": true,
+        "kicad_pro_preserved": true,
+        "kicad_dru_preserved": true,
+        "checker_policy_preserved": true,
+        "nets": true,
+        "zone_definition": true,
+        "board_setup": true
+      },
+      "integrity_pass": true,
+      "native_opens": 0,
+      "native_total_errors_excluding_opens": 0,
+      "inherited_errors": 0,
+      "new_errors": 0,
+      "new_error_details": [],
+      "new_warning_details": [
+        {
+          "description": "The current configuration does not include the footprint library 'TO_SOT_Packages_SMD'",
+          "items": [
+            {
+              "description": "Footprint U1",
+              "pos": {
+                "x": 70.406,
+                "y": 26.615
+              },
+              "uuid": "00000000-0000-0000-0000-0000569e4975"
+            }
+          ],
+          "severity": "warning",
+          "type": "lib_footprint_issues"
+        },
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [Net-(C2-Pad1)] on F.Cu, length 1.1186 mm",
+              "pos": {
+                "x": 72.619,
+                "y": 27.453
+              },
+              "uuid": "748140f3-68ce-41c1-b541-dea7c7d09605"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        },
+        {
+          "description": "Track has unconnected end",
+          "items": [
+            {
+              "description": "Track [Net-(C2-Pad1)] on B.Cu, length 1.8750 mm",
+              "pos": {
+                "x": 72.619,
+                "y": 25.578
+              },
+              "uuid": "9cfb3b5c-524b-4a64-a75b-05f4c47b3e59"
+            }
+          ],
+          "severity": "warning",
+          "type": "track_dangling"
+        }
+      ],
+      "new_error_types": {},
+      "new_warnings": 3,
+      "new_warning_types": {
+        "lib_footprint_issues": 1,
+        "track_dangling": 2
+      },
+      "via_count": 27,
+      "track_count": 106,
+      "track_length_mm": 384.00682624609857,
+      "per_net_length_mm": {
+        "+BATT": 96.06315358272728,
+        "GND": 88.40595164945645,
+        "GNDA": 32.39553260358811,
+        "Net-(C1-Pad2)": 8.87615453001025,
+        "Net-(C2-Pad1)": 18.57481556814436,
+        "Net-(C6-Pad1)": 2.99397144274958,
+        "Net-(C6-Pad2)": 3.617411367262507,
+        "Net-(D1-Pad1)": 3.3261,
+        "Net-(D1-Pad2)": 9.309025642371319,
+        "Net-(D2-Pad1)": 3.3261,
+        "Net-(D2-Pad2)": 5.3461068461447825,
+        "Net-(IC1-Pad1)": 10.836219869213785,
+        "Net-(IC1-Pad5)": 7.134058592414279,
+        "Net-(IC1-Pad6)": 7.204646594399325,
+        "Net-(IC1-Pad7)": 29.910383760003466,
+        "Net-(P1-Pad6)": 10.758472019555189,
+        "Net-(P4-Pad1)": 9.216807473384314,
+        "Net-(Q1-Pad2)": 5.757001436120288,
+        "Net-(R6-Pad1)": 3.8509144981614822,
+        "Net-(SW3-Pad2)": 11.555546830969812,
+        "VCC": 15.548451939421966
+      },
+      "native_acceptance": true,
+      "manufacturing_clean": true,
+      "ignored_checks": [
+        {
+          "description": "Footprint has no courtyard defined",
+          "key": "missing_courtyard"
+        },
+        {
+          "description": "Track endpoint not centered on via",
+          "key": "track_not_centered_on_via"
+        },
+        {
+          "description": "Tuning profile track geometries",
+          "key": "tuning_profile_track_geometries"
+        },
+        {
+          "description": "Footprint doesn't match symbol's footprint filters",
+          "key": "footprint_filters_mismatch"
+        },
+        {
+          "description": "Footprint component type doesn't match footprint pads",
+          "key": "footprint_type_mismatch"
+        }
+      ],
+      "drc_command": [
+        "/usr/bin/kicad-cli",
+        "pcb",
+        "drc",
+        "--severity-all",
+        "--format",
+        "json",
+        "-o",
+        "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c38-after-full/runs/run-20261018T211932.299670Z-009/fab-router/drc.json",
+        "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c38-after-full/runs/run-20261018T211932.299670Z-009/fab-router/final.kicad_pcb"
+      ],
+      "power_width_violations": [],
+      "pairs": [],
+      "pass": true,
+      "opens": 0,
+      "fidelity": {
+        "footprints": true,
+        "pads": true,
+        "outline": true,
+        "layers": true,
+        "zones": true,
+        "kicad_pro_preserved": true,
+        "kicad_dru_preserved": true,
+        "checker_policy_preserved": true,
+        "nets": true,
+        "zone_definition": true,
+        "board_setup": true
+      },
+      "vias": 27,
+      "length_mm": 384.00682624609857,
+      "job": "J3",
+      "raw_output_sha256": "92db379def186bba6af7d7749c2b51d6a21960529778f581c2435ebe7c36f637"
+    },
+    "artifacts_sha256": {
+      "final.kicad_pcb": "92db379def186bba6af7d7749c2b51d6a21960529778f581c2435ebe7c36f637",
+      "check.json": "cdc6f4ba8adab0378b29effbfe552fccd2a94ffa0f1ac9a7a6783ede0517144a",
+      "work/board.dsn": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd"
+    }
+  }
+}

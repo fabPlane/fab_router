@@ -1,0 +1,50 @@
+[
+  {
+    "version": "before",
+    "repeat": 1,
+    "exit_code": 1,
+    "log_sha256": "f401a1df70f5832a04f0b5c1172a15cc5712922a72f08ef2fb802200be24bc2b",
+    "passed": 2,
+    "failed": 5
+  },
+  {
+    "version": "before",
+    "repeat": 2,
+    "exit_code": 1,
+    "log_sha256": "8f2ffefaf3d49f2fecd5b6f5e6f698067eafc6f48925d775c5492fdff221557a",
+    "passed": 2,
+    "failed": 5
+  },
+  {
+    "version": "before",
+    "repeat": 3,
+    "exit_code": 1,
+    "log_sha256": "eb5c2995522f46bf4c705bd62ba3afc2a3fb9745e6d24b8ce85574e6b9714e93",
+    "passed": 2,
+    "failed": 5
+  },
+  {
+    "version": "after",
+    "repeat": 1,
+    "exit_code": 0,
+    "log_sha256": "183d0d7012ba5eeb4ed79f06629cb76c1d200cda548a1f888dde4fb2fbd395b4",
+    "passed": 7,
+    "failed": 0
+  },
+  {
+    "version": "after",
+    "repeat": 2,
+    "exit_code": 0,
+    "log_sha256": "508ae50dd64237aacb3723313f83607b510cf22ae469e66c0844c40cc5dffc6c",
+    "passed": 7,
+    "failed": 0
+  },
+  {
+    "version": "after",
+    "repeat": 3,
+    "exit_code": 0,
+    "log_sha256": "3a78d392733e1d76ed2e3f943da0d115362efcc80c54babcf89801c0d1a44275",
+    "passed": 7,
+    "failed": 0
+  }
+]

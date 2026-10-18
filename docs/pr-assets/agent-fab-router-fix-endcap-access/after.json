@@ -1,0 +1,449 @@
+[
+  {
+    "repeat": 1,
+    "report": {
+      "passes": 1,
+      "attempted": 1,
+      "completed": 1,
+      "incompleteBefore": 1,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": false,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": false,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "neckWidthUm": 0,
+        "angleMode": "any"
+      },
+      "wallClockMs": 6,
+      "perNet": [
+        {
+          "net": "POWER",
+          "incomplete": 0
+        }
+      ]
+    },
+    "opens": 0,
+    "violations": [],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 40000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": 6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": -6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ],
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 9125,
+            "y": 0
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 5000,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 2,
+    "report": {
+      "passes": 1,
+      "attempted": 1,
+      "completed": 1,
+      "incompleteBefore": 1,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": false,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": false,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "neckWidthUm": 0,
+        "angleMode": "any"
+      },
+      "wallClockMs": 1,
+      "perNet": [
+        {
+          "net": "POWER",
+          "incomplete": 0
+        }
+      ]
+    },
+    "opens": 0,
+    "violations": [],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 40000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": 6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": -6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ],
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 9125,
+            "y": 0
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 5000,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  },
+  {
+    "repeat": 3,
+    "report": {
+      "passes": 1,
+      "attempted": 1,
+      "completed": 1,
+      "incompleteBefore": 1,
+      "incompleteAfter": 0,
+      "added": {
+        "tracks": 1,
+        "barrels": 0
+      },
+      "ripped": 0,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "maxPasses",
+      "effectiveSettings": {
+        "maxPasses": 1,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": false,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": false,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "neckWidthUm": 0,
+        "angleMode": "any"
+      },
+      "wallClockMs": 1,
+      "perNet": [
+        {
+          "net": "POWER",
+          "incomplete": 0
+        }
+      ]
+    },
+    "opens": 0,
+    "violations": [],
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "10",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 0,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "11",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 40000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 12,
+        "part": 1,
+        "pinName": "12",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": 6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 13,
+        "part": 1,
+        "pinName": "13",
+        "net": null,
+        "form": 101,
+        "at": {
+          "x": 0,
+          "y": -6500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ],
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": 9125,
+            "y": 0
+          },
+          {
+            "x": 40000,
+            "y": 0
+          }
+        ],
+        "width": 5000,
+        "kind": 1,
+        "hold": "free",
+        "id": 14,
+        "origin": "router"
+      }
+    ],
+    "barrels": []
+  }
+]
