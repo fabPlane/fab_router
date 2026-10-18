@@ -45,3 +45,16 @@ export function fanoutBoard(attachAllowed = false): Layout {
   L.viaRules = [{ id: 0, name: "default", forms: [101], entries: [] }];
   return L;
 }
+
+/** First pad needs a stub; the later pad's net permits a directly attached via. */
+export function mixedFanoutBoard(): Layout {
+  const L = fanoutBoard();
+  L.pads = L.pads.map(p => p.id === 11 ? { ...p, net: 1 } : p);
+  L.nets = L.nets.map(n => ({ ...n, group: n.id, pads: [n.id === 0 ? 10 : 11] }));
+  L.netGroups = [
+    { ...L.netGroups[0]!, nets: [0], viaRule: 0 },
+    { ...L.netGroups[0]!, id: 1, name: "attach", nets: [1], viaRule: 1 },
+  ];
+  L.viaRules = [...L.viaRules, { id: 1, name: "attach", forms: [101], entries: [{ form: 101, kind: 1, attach: true }] }];
+  return L;
+}

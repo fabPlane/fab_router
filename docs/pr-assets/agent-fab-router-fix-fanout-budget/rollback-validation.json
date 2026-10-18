@@ -1,0 +1,28 @@
+{
+  "executable_source_reference": "cfe7376",
+  "verified_identical_files": 80,
+  "new_native_run": false,
+  "test_repeats": 3,
+  "baseline_tests_per_repeat": {
+    "passed": 0,
+    "failed": 2
+  },
+  "candidate_tests_per_repeat": {
+    "passed": 2,
+    "failed": 0
+  },
+  "checks": {
+    "typecheck": "pass",
+    "layers": {
+      "files": 65,
+      "violations": 0
+    },
+    "tests": {
+      "passed": 867,
+      "failed": 0,
+      "assertions": 398508,
+      "seconds": 211.94
+    },
+    "log_sha256": "fe4e1fe631196dad13b579b0a5067df66658c1eb69c0e677c9bfe740cecd9641"
+  }
+}
