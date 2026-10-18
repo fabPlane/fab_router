@@ -4,9 +4,9 @@
  * Heck (1988) BEAVER switchbox routing — the shove primitive of topological routing reduced here to
  * a local geometric move on the integer-polyline Track model. Rip-up (Dees & Karger 1982) deletes a
  * blocking free Track and reroutes it from scratch; a shove instead *displaces* it perpendicular to
- * itself by the minimum distance that clears the wanted leg, keeping its endpoints fixed so the
- * shoved net stays exactly as complete as before, then re-checks the reshaped Track with the exact
- * `sweepClear` predicate and cascades to its own movable neighbours.
+ * itself by the minimum distance that clears the wanted leg, keeping its endpoints fixed, then re-checks the reshaped Track with the exact
+ * `sweepClear` predicate and cascades to its own movable neighbours. Terminal group membership
+ * is checked across the complete trial before accepting any moves.
  *
  * `shoveClear` mirrors `nudgeClear` (src/route/nudge.ts) and enters the strategy ladder before
  * rip-up. Every move goes through the Journal; on any infeasibility — an immovable blocker, a
@@ -18,10 +18,11 @@
  *
  * Public surface: ShoveBudget, shoveClear.
  */
-import type { Layout, Track } from "../../spec/types/layout.ts";
+import type { Layout, Pour, Track } from "../../spec/types/layout.ts";
 import type { Pt, Seg } from "../geom/index.ts";
 import { dist2SegSeg } from "../geom/index.ts";
 import type { Lattice } from "../lattice/index.ts";
+import { connectivity } from "../drc/index.ts";
 import type { Journal } from "./journal.ts";
 import { isRippable } from "./ripup.ts";
 import { ignoreOf, sweepClear, type IgnoreSet } from "./clear.ts";
@@ -63,8 +64,24 @@ export function shoveClear(
   const ctx: ShoveCtx = { layout, lattice, journal, sheet, profile, budget };
   const target: Target = { segs: [seg], kind: profile.trackKind, halfWidth: profile.halfWidth, centre: midOf(seg.a, seg.b) };
   const counter: MoveCounter = { moved: 0 };
+  // A displacement can detach pads or branches from a Track's interior despite
+  // retaining its endpoints. Cascades can reach other nets, so snapshot every
+  // terminal group before the trial and validate the whole cascade atomically.
+  const before = connectivity(layout, lattice);
+  const groups = before.nets.flatMap((n) => n.components.map((ids) =>
+    ids.filter((id) => {
+      const it = before.items.get(id)!;
+      return it.cat === "pad" || (it.cat === "pour" && (it.ref as Pour).origin !== "prior");
+    }),
+  ).filter((ids) => ids.length > 1));
   const mark = journal.mark();
-  if (resolveBlockers(ctx, [seg], profile, ignore, target, 0, counter)) return true;
+  if (resolveBlockers(ctx, [seg], profile, ignore, target, 0, counter)) {
+    const after = connectivity(layout, lattice);
+    if (groups.every((ids) => {
+      const component = after.componentOf.get(ids[0]!);
+      return component !== undefined && ids.every((id) => after.componentOf.get(id) === component);
+    })) return true;
+  }
   journal.rewind(mark);
   return false;
 }
