@@ -139,7 +139,8 @@
           ],
           "barrels": [],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=0 [3.14ms]\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=30000 [2.63ms]\n23 | \n24 | test('public fanout escapes with a later fitting via form and preserves board truth', () => {\n25 |   const layout = blockedFirstViaBoard();\n26 |   const truth = structuredClone({ pads: layout.pads, forms: layout.padForms, rules: layout.viaRules, fences: layout.fences, pours: layout.pours });\n27 |   const report = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n28 |   expect(report.added.barrels).toBe(1);\n                                    ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:28:32)\n(fail) public fanout escapes with a later fitting via form and preserves board truth [3.39ms]\n(pass) the first fitting form retains priority [0.20ms]\n(pass) a blocked rule with no alternative still adds no copper [1.73ms]\n(pass) later candidate obeys disabled vias [0.44ms]\n(pass) later candidate obeys disabled fanout [0.46ms]\n(pass) a later candidate must span both requested sheets [2.51ms]\n\n 5 pass\n 3 fail\n 11 expect() calls\nRan 8 tests across 1 file. [39.00ms]\n"
       },
       {
         "repeat": 2,
@@ -206,7 +207,8 @@
           ],
           "barrels": [],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=0 [3.13ms]\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=30000 [3.39ms]\n23 | \n24 | test('public fanout escapes with a later fitting via form and preserves board truth', () => {\n25 |   const layout = blockedFirstViaBoard();\n26 |   const truth = structuredClone({ pads: layout.pads, forms: layout.padForms, rules: layout.viaRules, fences: layout.fences, pours: layout.pours });\n27 |   const report = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n28 |   expect(report.added.barrels).toBe(1);\n                                    ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:28:32)\n(fail) public fanout escapes with a later fitting via form and preserves board truth [3.59ms]\n(pass) the first fitting form retains priority [0.21ms]\n(pass) a blocked rule with no alternative still adds no copper [1.79ms]\n(pass) later candidate obeys disabled vias [0.45ms]\n(pass) later candidate obeys disabled fanout [0.36ms]\n(pass) a later candidate must span both requested sheets [5.30ms]\n\n 5 pass\n 3 fail\n 11 expect() calls\nRan 8 tests across 1 file. [45.00ms]\n"
       },
       {
         "repeat": 3,
@@ -273,7 +275,8 @@
           ],
           "barrels": [],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=0 [3.35ms]\n12 |   test(`via placement tries the next permitted form after a blocked candidate, radius=${radius}`, () => {\n13 |     const layout = blockedFirstViaBoard();\n14 |     const lattice = buildLattice(layout);\n15 |     const profile = resolveProfile(layout, 0, resolveSettings({}, undefined, undefined));\n16 |     const drop = dropViaNear(layout, lattice, 0, 3, { x: 0, y: 0 }, profile, ignoreOf(0, [10]), radius);\n17 |     expect(drop?.candidate.form).toBe(4);\n                                      ^\nerror: expect(received).toBe(expected)\n\nExpected: 4\nReceived: undefined\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:17:34)\n(fail) via placement tries the next permitted form after a blocked candidate, radius=30000 [2.93ms]\n23 | \n24 | test('public fanout escapes with a later fitting via form and preserves board truth', () => {\n25 |   const layout = blockedFirstViaBoard();\n26 |   const truth = structuredClone({ pads: layout.pads, forms: layout.padForms, rules: layout.viaRules, fences: layout.fences, pours: layout.pours });\n27 |   const report = route(layout, { fanoutEnabled: true, routerEnabled: false, optimizerEnabled: false });\n28 |   expect(report.added.barrels).toBe(1);\n                                    ^\nerror: expect(received).toBe(expected)\n\nExpected: 1\nReceived: 0\n\n      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c48/repeated-v4/before/test/via-fallback.test.ts:28:32)\n(fail) public fanout escapes with a later fitting via form and preserves board truth [4.29ms]\n(pass) the first fitting form retains priority [0.37ms]\n(pass) a blocked rule with no alternative still adds no copper [2.05ms]\n(pass) later candidate obeys disabled vias [0.55ms]\n(pass) later candidate obeys disabled fanout [0.42ms]\n(pass) a later candidate must span both requested sheets [2.77ms]\n\n 5 pass\n 3 fail\n 11 expect() calls\nRan 8 tests across 1 file. [42.00ms]\n"
       }
     ],
     "after": [
@@ -357,7 +360,8 @@
             }
           ],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n(pass) via placement tries the next permitted form after a blocked candidate, radius=0 [3.24ms]\n(pass) via placement tries the next permitted form after a blocked candidate, radius=30000 [2.84ms]\n(pass) public fanout escapes with a later fitting via form and preserves board truth [4.87ms]\n(pass) the first fitting form retains priority [0.19ms]\n(pass) a blocked rule with no alternative still adds no copper [1.66ms]\n(pass) later candidate obeys disabled vias [0.43ms]\n(pass) later candidate obeys disabled fanout [1.44ms]\n(pass) a later candidate must span both requested sheets [1.17ms]\n\n 8 pass\n 0 fail\n 22 expect() calls\nRan 8 tests across 1 file. [36.00ms]\n"
       },
       {
         "repeat": 2,
@@ -439,7 +443,8 @@
             }
           ],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n(pass) via placement tries the next permitted form after a blocked candidate, radius=0 [3.07ms]\n(pass) via placement tries the next permitted form after a blocked candidate, radius=30000 [2.78ms]\n(pass) public fanout escapes with a later fitting via form and preserves board truth [4.91ms]\n(pass) the first fitting form retains priority [0.18ms]\n(pass) a blocked rule with no alternative still adds no copper [1.63ms]\n(pass) later candidate obeys disabled vias [0.42ms]\n(pass) later candidate obeys disabled fanout [1.39ms]\n(pass) a later candidate must span both requested sheets [1.10ms]\n\n 8 pass\n 0 fail\n 22 expect() calls\nRan 8 tests across 1 file. [36.00ms]\n"
       },
       {
         "repeat": 3,
@@ -521,7 +526,8 @@
             }
           ],
           "tracks": []
-        }
+        },
+        "log": "bun test v1.4.0 (34cbb9a40)\n\ntest/via-fallback.test.ts:\n(pass) via placement tries the next permitted form after a blocked candidate, radius=0 [3.12ms]\n(pass) via placement tries the next permitted form after a blocked candidate, radius=30000 [5.25ms]\n(pass) public fanout escapes with a later fitting via form and preserves board truth [5.67ms]\n(pass) the first fitting form retains priority [0.17ms]\n(pass) a blocked rule with no alternative still adds no copper [1.76ms]\n(pass) later candidate obeys disabled vias [0.41ms]\n(pass) later candidate obeys disabled fanout [1.34ms]\n(pass) a later candidate must span both requested sheets [1.07ms]\n\n 8 pass\n 0 fail\n 22 expect() calls\nRan 8 tests across 1 file. [42.00ms]\n"
       }
     ]
   }

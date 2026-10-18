@@ -64,7 +64,7 @@ for label in ['before', 'after']:
         assert geometry['added'] == {'tracks': 0, 'barrels': 0 if label == 'before' else 1}
         assert geometry['joined'] == (label == 'after')
         records.append({'repeat': repeat, 'passed': passes, 'failed': failures,
-                        'log_sha256': hashlib.sha256(log.encode()).hexdigest(), 'geometry': geometry})
+                        'log_sha256': hashlib.sha256(log.encode()).hexdigest(), 'log': log, 'geometry': geometry})
     assert all(r['geometry'] == records[0]['geometry'] for r in records)
     result['versions'][label] = records
 (a.out / 'regressions.json').write_text(json.dumps(result, indent=2) + '\n')
