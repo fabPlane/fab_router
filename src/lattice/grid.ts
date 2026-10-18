@@ -286,7 +286,7 @@ export function createLattice(layout: Layout, opts: LatticeOptions = {}): Lattic
       }
     }
     for (const s of g.shelf) if (test(s)) push(s);
-    out.sort((a, b) => a.id - b.id || (a.leg ?? NO_LEG) - (b.leg ?? NO_LEG));
+    if (out.length > 1) out.sort((a, b) => a.id - b.id || (a.leg ?? NO_LEG) - (b.leg ?? NO_LEG));
     return out;
   }
 
