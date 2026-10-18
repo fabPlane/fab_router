@@ -84,3 +84,41 @@ extended while individual case budgets remained enforced; they returned 124 when
 resumed after the complete JSON reports had been written. The committed per-case
 reports, rather than that supervisor status, establish the completed outcomes.
 Typecheck, layer checks and all 860 candidate unit tests pass; baseline has 859.
+
+
+## Cycle 2 repeat
+
+A fresh full interleaved experiment on the same host, core set, 26 cases and three
+repeats per version used baseline `69cf598` and candidate `b03002e` (identical
+production source to `53a5594`). All 78 paired SES hashes, pass/fail outcomes,
+opens, error types/counts, fidelity failures, vias and lengths match. Both versions
+again pass 39/78 attempts and 13/26 cases at 3/3, with 120 opens and 27 new native
+errors across attempts. These existing failures remain unresolved.
+
+Total route-path time: 400.361 → 364.849 seconds. Sum of case medians:
+132.908 → 120.898 seconds (9.0% lower). Individual cases regress. This repeat
+supports the favorable first interleaved result, but neither experiment isolates
+the shared host; concurrent work on other cores was observed, and this cycle's
+unit tests overlapped the early native cases. The adverse initial sequential run
+remains relevant. No universal speedup or DRC-clean suite is claimed.
+
+`cycle2-measurements.json` preserves every attempt and each case/version's source
+identity; `cycle2-tables.md` has per-case median and nearest-rank p95 (maximum of
+three). The analyzer checks complete case reports, all seeds, matching benchmark
+identity, recorded source hashes against their Git commits, and paired SES/quality
+invariance before writing a report. It was also checked against the first complete
+interleaved run and reproduced its recorded totals. Typecheck, layer checks and
+all 860 unit tests passed again; slow acceptance and ladder results above are from
+cycle 1, with unchanged production source.
+
+Reproduce the repeat using the `paired-native.py` command above with a fresh output
+directory, then verify and render it:
+
+```bash
+taskset -c 12-19 nice -n 10 timeout 120 python3 \
+  docs/pr-assets/agent-fab-router-perf/summarize-paired.py \
+  /tmp/rim-native-reproduction --out docs/pr-assets/agent-fab-router-perf
+python3 docs/pr-assets/agent-fab-router-perf/plot-repeat.py
+```
+
+The chart requires matplotlib and compares the two interleaved experiments.
