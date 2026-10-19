@@ -16,6 +16,8 @@ export interface RouteSettings {
   maxItems?: number;
   timeBudgetMs?: number;
   connectionBudgetMs?: number;
+  /** Double bounded planar/layered A* pop budgets. Opt-in; trades runtime for search coverage. */
+  extendedSearchBudget?: boolean;
   viaCost: number;
   planeViaCost: number;
   bendCost: number;
