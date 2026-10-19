@@ -11,8 +11,9 @@ profile and tries endpoint boxes grown by 0, 4, 8 and 16 pitches. Pad, foreign
 track-segment and barrel bounding-box corners propose a visibility graph, capped
 at 512 nodes per common permitted sheet. Exact full-width edge shaping decides
 which edges are usable. Each target shares 100,000 charged search-work units
-and a 15-second cooperative budget across its four boxes. Non-pad endpoints
-remain unsupported and stay open.
+and a 15-second cooperative budget across its four boxes. Pad and barrel point endpoints are supported on their common permitted copper
+sheets. Pour endpoints remain unsupported and stay open; no pour id is
+reinterpreted as a point anchor. See `barrel-checks/` for the incremental experiment.
 
 The existing route journal and spatial index receive accepted copper; using a
 second index would leave final pipeline connectivity and per-net counts stale.
