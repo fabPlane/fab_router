@@ -1,0 +1,744 @@
+{
+  "scope": "Fresh-input engine diagnostics; no native DRC or full-routing completion proof",
+  "fixture_sha256": "6cbee4ad9e7d9808e1218c43ac7ebf5a488a60760cfb4d08ee5ec77e02be3dfd",
+  "runs": [
+    {
+      "variant": "before",
+      "repeat": 1,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "ea0089973844c8c3c1abbc336a586cf1b398b4232b413453a2a2bfe6a3763f98",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    },
+    {
+      "variant": "before",
+      "repeat": 2,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "a68e006c3e810be2d1ab3c2de53569bd14d7702d71fd505f47f209f39666f82a",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    },
+    {
+      "variant": "before",
+      "repeat": 3,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "7c854cd5b77a4d3cffc8c1c4d57dc053c4a8a4602b6fd36fa662edaa0b3b995e",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    },
+    {
+      "variant": "after",
+      "repeat": 1,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "ff30a1067116d8bb229ddcf2cea39a48b89d0c5f9833fa09d91c6b911c2c13bc",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    },
+    {
+      "variant": "after",
+      "repeat": 2,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "0d85a76e0bd6525dad9205652a53776ad80f002cd17bb4fbb0f7c76ff758e566",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    },
+    {
+      "variant": "after",
+      "repeat": 3,
+      "attempts": [
+        {
+          "pair": {
+            "net": 2,
+            "from": 10,
+            "to": 54,
+            "airlineLu": 201879.82811563913
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 4,
+            "from": 12,
+            "to": 55,
+            "airlineLu": 202520.28293482112
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 5,
+            "from": 15,
+            "to": 51,
+            "airlineLu": 216726.29051409522
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 7,
+            "from": 17,
+            "to": 52,
+            "airlineLu": 216788.57211578288
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        },
+        {
+          "pair": {
+            "net": 9,
+            "from": 21,
+            "to": 58,
+            "airlineLu": 222744.88770788882
+          },
+          "ok": false,
+          "connected": false,
+          "addedDrc": [],
+          "retainedUnchanged": true,
+          "from": {
+            "ok": true,
+            "blocking": []
+          },
+          "to": {
+            "ok": true,
+            "blocking": []
+          },
+          "width": 2500,
+          "spacing": 2002,
+          "tracks": 0
+        }
+      ],
+      "report_sha256": "84774dceff894b56091833d7e137d40c1a4254564bc4c0fd3a10aa26aaf611fa",
+      "log_sha256": "82652f8440e6840fb116d516509037b21d11a023b14cfff2378fe734443a81be"
+    }
+  ]
+}

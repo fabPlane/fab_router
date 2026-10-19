@@ -46,3 +46,25 @@ All 26 cases × three repeats completed on the same host and cores 20–25, with
 | Median route seconds | 1.172079 | 1.326766 |
 
 Every attempt's pass/open/error-type/fidelity/via/track-length values are identical. `native-comparison.json` records all candidate attempt values, matching-control flags and full-evidence hashes; both original control manifests are included. The run is a full single-router sweep, not the five-router suite. Time is descriptive only: the machine is shared and engine tests overlapped the first part of the candidate sweep. The observed median increased 13.2%; no speed gain or isolated timing nonregression is claimed. Existing native thermal errors remain unresolved.
+
+## Original no-via board comparison
+
+The synthetic success does not transfer to the original Issue026 no-via board. Cycle 71 compared unmodified archives of `69cf598` and `76534d6`, three repeats each on the same host and cores 20–25. The DSN, case settings, runner, and expectations are byte-identical, verified before and after execution. Engine/type source hashes and all six raw reports/logs are under `no-via/`.
+
+| Engine acceptance, three repeats per source | Original | Candidate |
+| --- | ---: | ---: |
+| Acceptance passes (existing limit: six opens) | 0/3 | 0/3 |
+| Opens, every repeat | 12 | 12 |
+| Added engine DRC violations / vias, every repeat | 0 / 0 | 0 / 0 |
+| Added tracks / total track length, every repeat | 21 / 116.022233 mm | 21 / 116.022233 mm |
+| Fresh-input capped pairs connected, every repeat | 0/5 | 0/5 |
+
+Both full routes stop as stagnant, without timeout or cancellation. The five previously identified capped pairs (nets 2, 4, 5, 7, 9) were additionally tried independently on fresh input, with rip-up and optimization disabled. Each endpoint passes exact point clearance; each attempt preserves retained copper, adds no engine DRC violations, and reports failure consistent with rebuilt terminal connectivity. All five fail on both sources in all three repeats. This establishes that the budget fix alone does not complete those pairs; it does not establish geometric impossibility or identify the remaining root cause. These are engine diagnostics, without native refill/checker or adapter coverage.
+
+```bash
+python3 docs/pr-assets/agent-fab-router-fix-stale-budget/acceptance.py --out /tmp/stale-budget-no-via
+python3 docs/pr-assets/agent-fab-router-fix-stale-budget/pairs.py --acceptance-out /tmp/stale-budget-no-via
+python3 docs/pr-assets/agent-fab-router-fix-stale-budget/no-via/render.py
+```
+
+The first command runs the unchanged acceptance CLI six times, each with an explicit 180-second process timeout. The second runs `pairs.fixture.ts` against those same archived sources; it does not instrument or edit the engine. `pairs-comparison.json` hashes all diagnostic outputs and the fixture. Wall-clock samples are descriptive shared-host measurements with overlapping checks, without a speed claim. Existing native thermal errors remain unresolved; the previous full native comparison remains separate and was not rerun for this evidence-only extension.
