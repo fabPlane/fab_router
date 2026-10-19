@@ -40,6 +40,11 @@ are normalized; optional layer display aliases are ignored because native save m
 them. Setup child order and plot settings are compared conservatively, so unrelated setup
 edits may also block acceptance. Malformed boards or duplicate/missing sections fail closed.
 
+The complete board-level net ID-to-name table must match, regardless of table order.
+Routing may not rename, exchange, add or remove electrical nets. Numeric copper net
+fields alone cannot establish preserved electrical ownership. Duplicate IDs/names or
+malformed net declarations fail closed. Renumbering nets conservatively blocks acceptance.
+
 Original board-level segments, arcs and vias must also remain present as a multiset,
 including geometry, width, net and other physical fields. Additional routing items
 are allowed. Named field order and numeric formatting are normalized. Equivalent

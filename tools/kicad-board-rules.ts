@@ -62,6 +62,23 @@ export function assertEmbeddedBoardRules(input: string, candidate: string): void
   if (embeddedBoardRules(input) !== embeddedBoardRules(candidate)) throw new Error("Candidate embedded board rules differ from input");
 }
 
+/** Numeric net fields only identify electrical ownership through this table. Routing
+ * may add copper, but must not add, remove or rename the board's electrical nets. */
+export function assertBoardNets(input: string, candidate: string): void {
+  const inventory = (text: string) => {
+    const nets = new Map<string, string>();
+    const names = new Set<string>();
+    for (const node of parseBoard(text)) {
+      if (!Array.isArray(node) || node[0] !== "net") continue;
+      const [_, id, name] = node;
+      if (node.length !== 3 || typeof id !== "string" || !/^\d+$/.test(id) || !Number.isSafeInteger(Number(id)) || typeof name !== "string" || !name.startsWith('"') || !name.endsWith('"') || nets.has(id) || names.has(name)) throw new Error("Malformed native net table");
+      nets.set(id, name); names.add(name);
+    }
+    return JSON.stringify([...nets].sort(([a], [b]) => Number(a) - Number(b)));
+  };
+  if (inventory(input) !== inventory(candidate)) throw new Error("Candidate net table differs from input");
+}
+
 /** Preserve the multiset of original board-level tracks and vias. Additional routes
  * are permitted. This deliberately does not certify pads, zones or other metadata. */
 export function assertSourceCopper(input: string, candidate: string): void {

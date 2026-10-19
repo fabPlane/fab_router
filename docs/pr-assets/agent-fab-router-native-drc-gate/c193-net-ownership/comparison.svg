@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="480" viewBox="0 0 1100 480">
+<rect width="1100" height="480" fill="#f5f7fb"/>
+<g font-family="sans-serif" fill="#16213a">
+<text x="55" y="60" font-size="28" font-weight="bold">Preserve electrical net ownership before acceptance</text>
+<text x="55" y="98" font-size="19">Same outlined board: net 1 renamed GND → VCC; copper unchanged</text>
+<text x="55" y="156" font-size="21">Unsafe rename blocked (3 repeats)</text>
+<text x="55" y="212" font-size="21">Before</text><rect x="240" y="183" width="5" height="42" fill="#d75d53"/><text x="270" y="212" font-size="22">0 / 3</text>
+<text x="55" y="275" font-size="21">After</text><rect x="240" y="246" width="530" height="42" fill="#248369"/><text x="795" y="275" font-size="22">3 / 3</text>
+<text x="55" y="340" font-size="20">Both old native reports: zero errors, zero opens</text>
+<text x="55" y="378" font-size="20">Retained suite: 69 accept / 9 reject; all 27 thermal errors detected</text>
+<text x="55" y="431" font-size="17">Optional acceptance gate; routing not rerun; no thermal repair or score improvement</text>
+</g></svg>
