@@ -1,0 +1,1427 @@
+{
+  "profiles": {
+    "before": {
+      "rows": [
+        {
+          "started_utc": "2026-10-19T00:13:48.424Z",
+          "finished_utc": "2026-10-19T00:14:03.623Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 15.199326145999999,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 15186,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "1ed1748121ab16c5526b376729e506b8119c2c44751f9911de1f04cfabe2f99a",
+          "log_sha256": "44e1e09b839d91e7d1cc006d5762c1d55bc68f9fee6d622c975aa1141fb31502"
+        },
+        {
+          "started_utc": "2026-10-19T00:14:39.524Z",
+          "finished_utc": "2026-10-19T00:14:56.400Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.875735434000003,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16857,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "d78f78d3d68858365bd4c437612c1b5b4556e94abee6da7cf431eb9d3d629fa1",
+          "log_sha256": "6d7b784ce15ba2c42ad3ca7570a6f64648e10fbb54f6b1836affeb6beb014796"
+        },
+        {
+          "started_utc": "2026-10-19T00:14:56.614Z",
+          "finished_utc": "2026-10-19T00:15:13.362Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.747308243,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16734,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "9b18ffd5b4705a3e98026bd2991d05d20312dde17e89eefa78d4fc48977270a4",
+          "log_sha256": "e33b28deb7b12ec389e4095d747b9eaf27f22bf1fe8eff3ff0b5d7ecc9216817"
+        }
+      ],
+      "median_seconds": 16.747308243,
+      "samples": 45516,
+      "self_frames": {
+        "geom/onboard.ts:49:withinRim": 6595,
+        "lattice/grid.ts:257:collect": 6187,
+        "geom/predicates.ts:45:onSeg": 5051,
+        "geom/predicates.ts:92:pointInRing": 3719,
+        "route/search.ts:294:aStar": 3070,
+        "route/clear.ts:210:sweepClear": 2879,
+        "lattice/grid.ts:262:test": 1856,
+        "route/search.ts:456:aStarLayered": 1742,
+        "geom/bounds.ts:54:dop8OfPts": 1704,
+        "route/quilt.ts:71:state": 1562,
+        "route/search.ts:189:pop": 1397,
+        "route/clear.ts:123:hitBlocks": 1215,
+        ":1:filter": 1121,
+        "geom/distance.ts:93:coreOf": 987,
+        "route/quilt.ts:81:isFree": 763,
+        "lattice/grid.ts:267:push": 627,
+        "route/search.ts:234:probe": 511,
+        "route/search.ts:266:leq": 414,
+        "route/clear.ts:236:barrelFits": 289,
+        "route/passes.ts:612:edgeCost": 267,
+        "route/quilt.ts:68:pointOf": 260,
+        "route/passes.ts:865:edgeCost": 247,
+        "route/passes.ts:880:viaMove": 242,
+        "route/search.ts:183:push": 224,
+        ":0:Set": 204,
+        "geom/distance.ts:18:dist2PtSeg": 175,
+        "route/ripup.ts:67:cell": 147,
+        "route/search.ts:276:put": 143,
+        "route/clear.ts:61:closerConvex": 141,
+        "route/clear.ts:225:pointFree": 134,
+        "lattice/grid.ts:363:shapesOf": 127,
+        "route/passes.ts:849:pointOf": 121,
+        "geom/distance.ts:75:dist2Pts": 112,
+        "route/passes.ts:661:": 105,
+        ":0:sort": 88,
+        "route/clear.ts:85:anyCloser": 63,
+        "route/search.ts:298:inRegion": 58,
+        "route/passes.ts:891:": 58,
+        "route/search.ts:299:cellIndex": 53,
+        "route/search.ts:470:heuristic": 53,
+        "geom/predicates.ts:55:segsIntersect": 50,
+        "lattice/shapes.ts:79:transformShape": 38,
+        "route/search.ts:261:gOr": 36,
+        "lattice/shapes.ts:302:boundsOfShapes": 35,
+        ":0:cloneObject": 33,
+        "route/search.ts:460:inRegion": 33,
+        "geom/distance.ts:27:dist2SegSeg": 31,
+        ":0:(unknown)": 29,
+        "route/ripup.ts:65:count": 27,
+        "route/search.ts:307:gyOf": 25
+      },
+      "line_ticks": {
+        "geom/onboard.ts:57": 5771,
+        "geom/predicates.ts:98": 3615,
+        "lattice/grid.ts:289": 2828,
+        "route/search.ts:383": 1865,
+        "route/clear.ts:220": 1304,
+        "lattice/grid.ts:283": 1267,
+        ":1": 1128,
+        "route/search.ts:552": 1072,
+        "lattice/grid.ts:258": 1029,
+        "route/quilt.ts:77": 1005,
+        "route/clear.ts:165": 859,
+        "route/quilt.ts:82": 763,
+        "lattice/grid.ts:288": 708,
+        "route/clear.ts:213": 703,
+        "geom/onboard.ts:56": 509,
+        "route/search.ts:355": 344,
+        "route/clear.ts:214": 272,
+        "route/search.ts:374": 269,
+        "route/search.ts:267": 239,
+        "geom/bounds.ts:65": 222,
+        "route/passes.ts:617": 220,
+        "route/search.ts:522": 214,
+        "route/clear.ts:141": 204,
+        "route/quilt.ts:68": 189,
+        "route/clear.ts:216": 188,
+        "route/search.ts:381": 183,
+        "route/clear.ts:217": 173,
+        "geom/onboard.ts:52": 165,
+        "lattice/grid.ts:261": 157,
+        "route/passes.ts:867": 146,
+        "route/ripup.ts:67": 143,
+        "geom/distance.ts:19": 141,
+        "geom/distance.ts:96": 139,
+        "route/clear.ts:226": 134,
+        "geom/distance.ts:95": 130,
+        "route/passes.ts:885": 120,
+        "route/clear.ts:64": 119,
+        "route/quilt.ts:75": 115,
+        "route/clear.ts:212": 114,
+        "route/search.ts:396": 112,
+        "geom/onboard.ts:51": 104,
+        "route/passes.ts:849": 104,
+        "route/search.ts:550": 95,
+        "lattice/grid.ts:269": 94,
+        "geom/distance.ts:94": 83,
+        "lattice/grid.ts:263": 81,
+        "route/search.ts:545": 79,
+        "route/clear.ts:258": 78,
+        "route/passes.ts:871": 77,
+        "route/clear.ts:179": 73
+      }
+    },
+    "after": {
+      "rows": [
+        {
+          "started_utc": "2026-10-19T00:14:03.822Z",
+          "finished_utc": "2026-10-19T00:14:21.837Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "7ba9670ab5a61a73672184001113717cfead58f0b3b8e8c06dcfec052e314898",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 18.015688131,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 17995,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "dad3181e411236e6bd9ccd903dcb72201911a19b26a0cbb963b0afe703a88ca6",
+          "log_sha256": "4cf226380beca5952d3fc0401d00bdf5643a62de409e252b113c0ce227d93c9b"
+        },
+        {
+          "started_utc": "2026-10-19T00:14:22.060Z",
+          "finished_utc": "2026-10-19T00:14:39.313Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "7ba9670ab5a61a73672184001113717cfead58f0b3b8e8c06dcfec052e314898",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 17.252962002,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 17233,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "db131ac48590cf78f0017d8352364e48950edb0dd98d66820491433223aff234",
+          "log_sha256": "15c5f3617f09e200b003ab0743b3b9e64012b9f83cfa8c5d223bf022d5f6b422"
+        },
+        {
+          "started_utc": "2026-10-19T00:15:13.585Z",
+          "finished_utc": "2026-10-19T00:15:30.481Z",
+          "settings": {
+            "timeBudgetMs": 120000,
+            "maxPasses": 100,
+            "seed": 2,
+            "copperToEdgeClearanceUm": 500,
+            "holeClearanceUm": 250,
+            "strictDrc": true,
+            "neckWidthUm": 0,
+            "fanoutEnabled": false,
+            "ignoreNetGroups": []
+          },
+          "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+          "grid_sha256": "7ba9670ab5a61a73672184001113717cfead58f0b3b8e8c06dcfec052e314898",
+          "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "seconds": 16.895039864999998,
+          "report": {
+            "passes": 4,
+            "attempted": 50,
+            "completed": 26,
+            "incompleteBefore": 32,
+            "incompleteAfter": 6,
+            "added": {
+              "tracks": 27,
+              "barrels": 1
+            },
+            "ripped": 3,
+            "violationsBefore": 0,
+            "violationsAdded": 0,
+            "timedOut": false,
+            "aborted": false,
+            "stoppedBy": "stagnant",
+            "effectiveSettings": {
+              "maxPasses": 100,
+              "maxStagnantPasses": 3,
+              "viaCost": 50,
+              "planeViaCost": 5,
+              "bendCost": 0,
+              "preferredDirectionCost": 1.5,
+              "startRipupCost": 100,
+              "ripupEnabled": true,
+              "fanoutEnabled": false,
+              "routerEnabled": true,
+              "optimizerEnabled": true,
+              "strictDrc": true,
+              "layers": {},
+              "viasAllowed": true,
+              "ignoreNetGroups": [],
+              "seed": 2,
+              "shoveEnabled": true,
+              "orderByDifficulty": true,
+              "detailedRouter": "off",
+              "globalPlan": "off",
+              "timeBudgetMs": 120000,
+              "copperToEdgeClearanceUm": 500,
+              "holeClearanceUm": 250,
+              "neckWidthUm": 0,
+              "angleMode": "45"
+            },
+            "wallClockMs": 16874,
+            "perNet": [
+              {
+                "net": "Net-(A1-Pad1)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad3)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad4)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT1",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad6)",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_MOSI",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_MISO",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CLK",
+                "incomplete": 1
+              },
+              {
+                "net": "/SPI_CS1",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{BUSY}",
+                "incomplete": 1
+              },
+              {
+                "net": "/~{RST}",
+                "incomplete": 1
+              },
+              {
+                "net": "Net-(A1-Pad13)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad14)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad15)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad16)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad17)",
+                "incomplete": 0
+              },
+              {
+                "net": "/INT2",
+                "incomplete": 0
+              },
+              {
+                "net": "/SPI_CS2",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad20)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad22)",
+                "incomplete": 0
+              },
+              {
+                "net": "Net-(A1-Pad23)",
+                "incomplete": 0
+              },
+              {
+                "net": "+3V3",
+                "incomplete": 0
+              }
+            ]
+          },
+          "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+          "profile_sha256": "2c6b76c27318b4abf057dcc354162f4d5698eed7db780017b678292d6a8f8c91",
+          "log_sha256": "bb9e44b09bb7610f4e1396d43c5be9cba015ce3fe7839630748d26faae37019a"
+        }
+      ],
+      "median_seconds": 17.252962002,
+      "samples": 48617,
+      "self_frames": {
+        "geom/onboard.ts:49:withinRim": 7769,
+        "lattice/grid.ts:257:collect": 6265,
+        "geom/predicates.ts:45:onSeg": 5035,
+        "geom/predicates.ts:92:pointInRing": 3616,
+        "route/search.ts:294:aStar": 3270,
+        "route/clear.ts:210:sweepClear": 3147,
+        "lattice/grid.ts:262:test": 2248,
+        "route/search.ts:456:aStarLayered": 1935,
+        "route/quilt.ts:71:state": 1749,
+        "geom/bounds.ts:54:dop8OfPts": 1722,
+        "route/search.ts:189:pop": 1434,
+        ":1:filter": 1299,
+        "route/clear.ts:123:hitBlocks": 1268,
+        "geom/distance.ts:93:coreOf": 1037,
+        "route/quilt.ts:81:isFree": 735,
+        "lattice/grid.ts:267:push": 699,
+        "route/search.ts:234:probe": 526,
+        "route/search.ts:266:leq": 386,
+        "route/passes.ts:612:edgeCost": 348,
+        "route/clear.ts:236:barrelFits": 309,
+        "route/quilt.ts:68:pointOf": 289,
+        "route/passes.ts:880:viaMove": 263,
+        "route/passes.ts:865:edgeCost": 251,
+        "route/search.ts:183:push": 235,
+        ":0:Set": 214,
+        "route/search.ts:276:put": 160,
+        "route/ripup.ts:67:cell": 159,
+        "geom/distance.ts:18:dist2PtSeg": 155,
+        "lattice/grid.ts:363:shapesOf": 152,
+        "geom/distance.ts:75:dist2Pts": 151,
+        "route/clear.ts:225:pointFree": 148,
+        "route/clear.ts:61:closerConvex": 141,
+        "route/passes.ts:849:pointOf": 131,
+        "route/passes.ts:661:": 107,
+        ":0:sort": 90,
+        "route/search.ts:470:heuristic": 76,
+        "route/search.ts:299:cellIndex": 64,
+        "route/search.ts:298:inRegion": 63,
+        "route/clear.ts:85:anyCloser": 63,
+        "lattice/shapes.ts:79:transformShape": 49,
+        "lattice/shapes.ts:302:boundsOfShapes": 48,
+        "route/search.ts:261:gOr": 42,
+        "route/passes.ts:891:": 42,
+        "geom/predicates.ts:55:segsIntersect": 40,
+        ":0:push": 30,
+        "route/ripup.ts:65:count": 28,
+        "route/search.ts:460:inRegion": 27,
+        "geom/distance.ts:27:dist2SegSeg": 27,
+        ":0:(unknown)": 27,
+        "route/search.ts:307:gyOf": 24
+      },
+      "line_ticks": {
+        "geom/onboard.ts:57": 6718,
+        "geom/predicates.ts:98": 3518,
+        "lattice/grid.ts:283": 3455,
+        "route/search.ts:383": 2042,
+        "route/clear.ts:220": 1582,
+        ":1": 1306,
+        "route/search.ts:552": 1208,
+        "lattice/grid.ts:263": 1116,
+        "lattice/grid.ts:258": 1052,
+        "route/quilt.ts:77": 1041,
+        "lattice/grid.ts:289": 892,
+        "route/clear.ts:213": 778,
+        "geom/predicates.ts:46": 738,
+        "route/quilt.ts:82": 735,
+        "geom/onboard.ts:56": 660,
+        "route/clear.ts:165": 642,
+        "lattice/grid.ts:288": 446,
+        "route/search.ts:355": 391,
+        "route/passes.ts:617": 285,
+        "route/clear.ts:214": 269,
+        "route/search.ts:374": 253,
+        "route/search.ts:522": 249,
+        "route/search.ts:267": 244,
+        "route/clear.ts:152": 233,
+        "geom/bounds.ts:65": 231,
+        "lattice/grid.ts:271": 221,
+        "geom/distance.ts:94": 217,
+        "route/quilt.ts:68": 213,
+        "route/clear.ts:141": 213,
+        "route/search.ts:381": 196,
+        "lattice/grid.ts:261": 190,
+        "geom/onboard.ts:52": 190,
+        "geom/distance.ts:95": 169,
+        "route/quilt.ts:75": 160,
+        "route/ripup.ts:67": 150,
+        "route/clear.ts:217": 147,
+        "route/clear.ts:226": 147,
+        "route/passes.ts:867": 145,
+        "geom/distance.ts:96": 143,
+        "geom/onboard.ts:51": 138,
+        "geom/distance.ts:19": 125,
+        "route/clear.ts:212": 124,
+        "route/clear.ts:216": 120,
+        "route/passes.ts:887": 119,
+        "route/passes.ts:849": 108,
+        "route/clear.ts:64": 108,
+        "lattice/grid.ts:269": 104,
+        "route/passes.ts:871": 98,
+        "route/search.ts:396": 95,
+        "route/passes.ts:885": 94
+      }
+    }
+  },
+  "census": {
+    "queries": 18724856,
+    "missingSheet": 0,
+    "box": [
+      0,
+      308615,
+      77160,
+      32316,
+      4906,
+      1668,
+      18,
+      0,
+      0,
+      7,
+      25,
+      2,
+      9,
+      9,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      8,
+      0,
+      0,
+      0,
+      5,
+      0,
+      2,
+      0,
+      0,
+      0,
+      42
+    ],
+    "sweep": [
+      0,
+      16016704,
+      1706247,
+      529807,
+      45684,
+      825,
+      151,
+      78,
+      55,
+      50,
+      64,
+      29,
+      40,
+      19,
+      10,
+      8,
+      61,
+      0,
+      6,
+      0,
+      0,
+      0,
+      0,
+      4,
+      6,
+      10,
+      39,
+      2,
+      12,
+      37,
+      45,
+      33,
+      6,
+      27
+    ],
+    "references": 21811561,
+    "comparisons": 3518264,
+    "bucketVisits": 62888235,
+    "duplicateVisits": 6655871,
+    "shelfVisits": 37303333
+  },
+  "census_source": {
+    "base": "69cf598",
+    "archive_sha256": "a6b8270b08d4ee4d26a31e8cf64e103079d396580eafef63954cf1bbcd46e88f",
+    "generator_sha256": "5cd2408cc2038acd954475687805cc0c373725d14933211734dcf815bc465e0e",
+    "instrumented_grid_sha256": "897dc4dd66ebd3342667ac791932343cf41727ea3913b7135d77d8d62959305a",
+    "histogram_last_bin": "33 or more returned references",
+    "purpose": "diagnostic counts, not performance"
+  },
+  "census_route": {
+    "started_utc": "2026-10-19T00:15:31.054Z",
+    "finished_utc": "2026-10-19T00:15:46.711Z",
+    "settings": {
+      "timeBudgetMs": 120000,
+      "maxPasses": 100,
+      "seed": 2,
+      "copperToEdgeClearanceUm": 500,
+      "holeClearanceUm": 250,
+      "strictDrc": true,
+      "neckWidthUm": 0,
+      "fanoutEnabled": false,
+      "ignoreNetGroups": []
+    },
+    "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+    "grid_sha256": "897dc4dd66ebd3342667ac791932343cf41727ea3913b7135d77d8d62959305a",
+    "bounds_sha256": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+    "clear_sha256": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+    "distance_sha256": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+    "seconds": 15.656557088,
+    "report": {
+      "passes": 4,
+      "attempted": 50,
+      "completed": 26,
+      "incompleteBefore": 32,
+      "incompleteAfter": 6,
+      "added": {
+        "tracks": 27,
+        "barrels": 1
+      },
+      "ripped": 3,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": true,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 2,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 120000,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "neckWidthUm": 0,
+        "angleMode": "45"
+      },
+      "wallClockMs": 15644,
+      "perNet": [
+        {
+          "net": "Net-(A1-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad3)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad4)",
+          "incomplete": 0
+        },
+        {
+          "net": "/INT1",
+          "incomplete": 1
+        },
+        {
+          "net": "Net-(A1-Pad6)",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_MOSI",
+          "incomplete": 1
+        },
+        {
+          "net": "/SPI_MISO",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_CLK",
+          "incomplete": 1
+        },
+        {
+          "net": "/SPI_CS1",
+          "incomplete": 1
+        },
+        {
+          "net": "/~{BUSY}",
+          "incomplete": 1
+        },
+        {
+          "net": "/~{RST}",
+          "incomplete": 1
+        },
+        {
+          "net": "Net-(A1-Pad13)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad14)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad15)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad16)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad17)",
+          "incomplete": 0
+        },
+        {
+          "net": "/INT2",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_CS2",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad20)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad22)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad23)",
+          "incomplete": 0
+        },
+        {
+          "net": "+3V3",
+          "incomplete": 0
+        }
+      ]
+    },
+    "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+  },
+  "trivial_sorts": 16325319,
+  "trivial_sort_fraction_excluding_missing_sheets": 0.8718528462915817,
+  "caveat": "Census is instrumented diagnostic only. CPU samples/line ticks move with inlining. No heap/GC measurements. Last histogram bin means 33 or more."
+}

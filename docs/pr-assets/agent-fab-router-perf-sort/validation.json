@@ -1,0 +1,37 @@
+{
+  "candidate": {
+    "typecheck": "pass",
+    "layers": {
+      "files": 65,
+      "violations": 0
+    },
+    "tests": 859,
+    "failed": 0,
+    "assertions": 398454,
+    "seconds": 216.07
+  },
+  "final_restored": {
+    "typecheck": "pass",
+    "layers": {
+      "files": 65,
+      "violations": 0
+    },
+    "tests": 859,
+    "failed": 0,
+    "assertions": 398454,
+    "seconds": 237.71,
+    "log_sha256": "68881ff50e4293809804d89c997945ed3cbe013f2d2344a18f5d5d54ec8a1a92",
+    "source_tree": "src/spec/tools/test exactly main69cf598; no fresh native rerun after restoration"
+  },
+  "helpers": {
+    "strict_typescript": "pass, both measurement helpers",
+    "python_ast": "pass, all Python helpers",
+    "shell_syntax": "pass",
+    "wrong_source_analyzer_mutant": "rejected before report output",
+    "census_overwrite_guard": "rejects existing output; source hash unchanged",
+    "census_reproduction": "exact measured instrumented source reproduced",
+    "rejected_patch": "applies cleanly to restored main",
+    "ladder_inputs": "committed L1/L2 match board directory",
+    "chart": "visually inspected"
+  }
+}
