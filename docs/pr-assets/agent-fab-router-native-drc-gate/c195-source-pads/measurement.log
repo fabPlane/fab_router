@@ -1,0 +1,87 @@
+1 rufs-smart-psu-j1 2 Error: Candidate source pads differ from input
+2 qrpcard-qrpcard-j4 3 native accepted=false
+3 paperino-hw-paperino-shield-j4 2 native accepted=true
+4 kitspace-aquarius-j4 1 Error: Candidate source pads differ from input
+5 hellscribe-hellscribe-j2-large 3 native accepted=true
+6 kitspace-solenoid-driver-j4 2 native accepted=true
+7 fan-controller-fan-controller-j1 1 native accepted=true
+8 hellscribe-hellscribe-j2-large 1 native accepted=true
+9 rufs-smart-psu-j3 2 Error: Candidate source pads differ from input
+10 qrpcard-qrpcard-j1 3 native accepted=true
+11 kitspace-solenoid-driver-j3 3 native accepted=true
+12 kitspace-lcr-addon-j3 1 native accepted=true
+13 fan-controller-fan-controller-j2-large 1 native accepted=true
+14 fan-controller-fan-controller-j1 2 native accepted=true
+15 rufs-smart-psu-j1 1 Error: Candidate source pads differ from input
+16 fan-controller-fan-controller-j2-large 3 native accepted=true
+17 fan-controller-fan-controller-j2-small 3 native accepted=true
+18 nextbusclock-nextbusclockv1-j2-medium 2 native accepted=true
+19 qrpcard-qrpcard-j4 1 native accepted=false
+20 kitspace-aquarius-j4 2 Error: Candidate source pads differ from input
+21 kitspace-solenoid-driver-j1 2 native accepted=true
+22 fan-controller-fan-controller-j1 3 native accepted=true
+23 fan-controller-fan-controller-j2-large 2 native accepted=true
+24 nextbusclock-nextbusclockv1-j2-small 3 native accepted=true
+25 rufs-smart-psu-j4 1 Error: Candidate source pads differ from input
+26 nextbusclock-nextbusclockv1-j2-large 3 native accepted=true
+27 fan-controller-fan-controller-j2-medium 2 native accepted=true
+28 sv650sds-sds-tool-j4 2 native accepted=true
+29 qrpcard-qrpcard-j2-medium 2 native accepted=true
+30 qrpcard-qrpcard-j2-small 2 native accepted=false
+31 fan-controller-fan-controller-j2-small 1 native accepted=true
+32 paperino-hw-paperino-shield-j4 3 native accepted=true
+33 qrpcard-qrpcard-j1 1 native accepted=true
+34 kitspace-solenoid-driver-j3 2 native accepted=true
+35 fan-controller-fan-controller-j2-medium 3 native accepted=true
+36 photon-sprinkler-sprinkler-j3 2 native accepted=true
+37 fan-controller-fan-controller-j2-small 2 native accepted=true
+38 kitspace-aquarius-j4 3 Error: Candidate source pads differ from input
+39 rufs-smart-psu-j4 2 Error: Candidate source pads differ from input
+40 rufs-smart-psu-j1 3 Error: Candidate source pads differ from input
+41 nextbusclock-nextbusclockv1-j3 1 native accepted=true
+42 photon-sprinkler-sprinkler-j1 1 native accepted=true
+43 photon-sprinkler-sprinkler-j1 2 native accepted=true
+44 rufs-smart-psu-j3 3 Error: Candidate source pads differ from input
+45 qrpcard-qrpcard-j2-medium 3 native accepted=true
+46 nextbusclock-nextbusclockv1-j3 3 native accepted=true
+47 sv650sds-sds-tool-j4 1 native accepted=true
+48 nextbusclock-nextbusclockv1-j2-large 1 native accepted=true
+49 qrpcard-qrpcard-j2-small 1 native accepted=false
+50 qrpcard-qrpcard-j4 2 native accepted=false
+51 kitspace-solenoid-driver-j1 3 native accepted=true
+52 kitspace-solenoid-driver-j3 1 native accepted=true
+53 photon-sprinkler-sprinkler-j3 3 native accepted=true
+54 nextbusclock-nextbusclockv1-j2-large 2 native accepted=true
+55 hellscribe-hellscribe-j1 1 native accepted=true
+56 qrpcard-qrpcard-j2-small 3 native accepted=false
+57 nextbusclock-nextbusclockv1-j2-medium 1 native accepted=true
+58 nextbusclock-nextbusclockv1-j2-medium 3 native accepted=true
+59 qrpcard-qrpcard-j2-medium 1 native accepted=true
+60 kitspace-solenoid-driver-j4 1 native accepted=true
+61 nextbusclock-nextbusclockv1-j2-small 1 native accepted=true
+62 rufs-smart-psu-j3 1 Error: Candidate source pads differ from input
+63 nextbusclock-nextbusclockv1-j2-small 2 native accepted=true
+64 fan-controller-fan-controller-j2-medium 1 native accepted=true
+65 qrpcard-qrpcard-j1 2 native accepted=true
+66 rufs-smart-psu-j4 3 Error: Candidate source pads differ from input
+67 photon-sprinkler-sprinkler-j1 3 native accepted=true
+68 photon-sprinkler-sprinkler-j3 1 native accepted=true
+69 hellscribe-hellscribe-j2-large 2 native accepted=true
+70 kitspace-lcr-addon-j3 2 native accepted=true
+71 paperino-hw-paperino-shield-j4 1 native accepted=true
+72 hellscribe-hellscribe-j1 3 native accepted=true
+73 kitspace-solenoid-driver-j1 1 native accepted=true
+74 kitspace-lcr-addon-j3 3 native accepted=true
+75 sv650sds-sds-tool-j4 3 native accepted=true
+76 hellscribe-hellscribe-j1 2 native accepted=true
+77 nextbusclock-nextbusclockv1-j3 2 native accepted=true
+78 kitspace-solenoid-driver-j4 3 native accepted=true
+{
+  cases: 26,
+  candidates: 78,
+  beforeAccepted: 69,
+  afterAccepted: 60,
+  padRejected: 12,
+  nativeChecks: 132,
+  routerRerun: false,
+}

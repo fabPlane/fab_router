@@ -119,3 +119,29 @@ export function assertBoardZones(input: string, candidate: string): void {
     }).sort();
   if (JSON.stringify(inventory(input)) !== JSON.stringify(inventory(candidate))) throw new Error("Candidate zone definitions differ from input");
 }
+
+/** Preserve source terminals and their footprint-local rule context. Pad coordinates
+ * are local: matching pad bytes alone cannot detect a moved/flipped footprint. */
+export function assertSourcePads(input: string, candidate: string): void {
+  const inventory = (text: string) => {
+    const result: string[] = [];
+    for (const node of parseBoard(text)) {
+      if (!Array.isArray(node) || node[0] !== "footprint") continue;
+      const context = node.filter(field => Array.isArray(field) && [
+        "at", "layer", "clearance", "solder_mask_margin", "solder_paste_margin",
+        "solder_paste_ratio", "zone_connect", "thermal_width", "thermal_gap",
+      ].includes(String(field[0]))).map(field => JSON.stringify(field)).sort();
+      for (const field of node) {
+        if (!Array.isArray(field) || field[0] !== "pad") continue;
+        // Only identifier metadata is disposable. Keep pad type/shape, geometry,
+        // net, layer set, drill, custom primitives and all local/unknown rules.
+        const values = field.slice(1).filter(value => !(Array.isArray(value) && value[0] === "uuid"));
+        const atoms = values.filter(value => !Array.isArray(value));
+        const fields = values.filter(value => Array.isArray(value)).map(value => JSON.stringify(value)).sort();
+        result.push(JSON.stringify([context, atoms, fields]));
+      }
+    }
+    return JSON.stringify(result.sort());
+  };
+  if (inventory(input) !== inventory(candidate)) throw new Error("Candidate source pads differ from input");
+}

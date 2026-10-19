@@ -1,0 +1,12 @@
+141 |         result.push(JSON.stringify([context, atoms, fields]));
+142 |       }
+143 |     }
+144 |     return JSON.stringify(result.sort());
+145 |   };
+146 |   if (inventory(input) !== inventory(candidate)) throw new Error("Candidate source pads differ from input");
+                                                                 ^
+error: Candidate source pads differ from input
+      at assertSourcePads (/home/hyper/bench/wt/fr-bugs/tools/kicad-board-rules.ts:146:60)
+      at /home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c195/preflight.ts:6:2
+
+Bun v1.4.0 (Linux x64)

@@ -57,8 +57,16 @@ UUIDs and derived `filled_polygon`/`filled_segments` caches may change during re
 Nested rule and polygon vertex order are compared conservatively. Adding, deleting or
 editing a zone blocks acceptance before native checking.
 
+Source footprint pads must match as a multiset, including local geometry, pad number,
+type, shape, layers, net, drill, custom primitives and local rules. Their footprint
+position, rotation, side and clearance/mask/paste/thermal overrides must also match.
+Regenerated pad UUIDs, numeric formatting and named-field ordering are permitted.
+Even sub-micrometre footprint-position rounding blocks acceptance; the gate does not
+silently treat changed terminal geometry as equivalent. Other footprint metadata and
+external library dependencies are outside this check.
+
 This is a DRC/connectivity gate, not a complete design-fidelity validator or a repair command. It does
-not require zero opens, remove inherited violations, verify preserved pads/other metadata,
+not require zero opens, remove inherited violations, verify all other metadata,
 or apply/undo anything in an editor. The host must separately verify design fidelity,
 per-item rules, external dependencies and the exact checked bytes before committing a
 candidate. No live-editor transaction or benchmark scoring path calls this optional command
