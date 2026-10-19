@@ -1,0 +1,76 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+22:08:31: Debug: Adding duplicate image handler for 'PNG file'
+22:08:31: Debug: Adding duplicate image handler for 'JPEG file'
+22:08:31: Debug: Adding duplicate image handler for 'TIFF file'
+22:08:31: Debug: Adding duplicate image handler for 'GIF file'
+22:08:31: Debug: Adding duplicate image handler for 'PNM file'
+22:08:31: Debug: Adding duplicate image handler for 'PCX file'
+22:08:31: Debug: Adding duplicate image handler for 'IFF file'
+22:08:31: Debug: Adding duplicate image handler for 'Windows icon file'
+22:08:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:08:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:08:31: Debug: Adding duplicate image handler for 'TGA file'
+22:08:31: Debug: Adding duplicate image handler for 'XPM file'
+{"name": "1-original", "counts": {"footprint": 33, "segment": 163, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-all-added", "counts": {"footprint": 33, "segment": 170, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 0}
+{"name": "1-only-0", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-only-1", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-only-2", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "1-only-3", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-only-4", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-only-5", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "1-only-6", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 1, "opens": 2}
+{"name": "1-only-7", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "1-only-8", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "1-except-0", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-1", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-2", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "1-except-3", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-4", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-5", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-6", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "1-except-7", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "1-except-8", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-original", "counts": {"footprint": 33, "segment": 163, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-all-added", "counts": {"footprint": 33, "segment": 170, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 0}
+{"name": "2-only-0", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-only-1", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-only-2", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "2-only-3", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-only-4", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-only-5", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "2-only-6", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 1, "opens": 2}
+{"name": "2-only-7", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "2-only-8", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "2-except-0", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-1", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-2", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "2-except-3", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-4", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-5", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-6", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "2-except-7", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "2-except-8", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-original", "counts": {"footprint": 33, "segment": 163, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-all-added", "counts": {"footprint": 33, "segment": 170, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 0}
+{"name": "3-only-0", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-only-1", "counts": {"footprint": 33, "segment": 163, "via": 16, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-only-2", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "3-only-3", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-only-4", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-only-5", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 2}
+{"name": "3-only-6", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 1, "opens": 2}
+{"name": "3-only-7", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "3-only-8", "counts": {"footprint": 33, "segment": 164, "via": 15, "zone": 2}, "target": 0, "errors": 0, "opens": 3}
+{"name": "3-except-0", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-1", "counts": {"footprint": 33, "segment": 170, "via": 16, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-2", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "3-except-3", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-4", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-5", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-6", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 1, "opens": 1}
+{"name": "3-except-7", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+{"name": "3-except-8", "counts": {"footprint": 33, "segment": 169, "via": 17, "zone": 2}, "target": 0, "errors": 2, "opens": 1}
+PASS: 60 native checks; original proposal nodes and sidecars retained; saved drift recorded; repeats agree
