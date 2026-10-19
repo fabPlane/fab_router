@@ -12,6 +12,7 @@ assert m.native.pcbnew.Version() == '10.0.6'
 m.native.SRC, m.native.D = x.previous/'connected/source/board.kicad_pcb', x.out
 sources = [x.previous/'minimal/selected.kicad_pcb', m.native.SRC]
 hashes = {str(v): hashlib.sha256(v.read_bytes()).hexdigest() for v in sources}
+original_ids = {m.native.uid(n) for n in m.native.parse((x.previous/'connected/input/board.kicad_pcb').read_text()) if isinstance(n,list)}
 rows = []
 for label, path in zip(('reduced','full'), sources):
     nodes = m.native.parse(path.read_text())
@@ -19,7 +20,7 @@ for label, path in zip(('reduced','full'), sources):
         baseline = None
         for index, (dx,dy) in enumerate(OFFSETS):
             name = f'{label}-{repeat}-{index}'
-            data = (m.native.dump(relocate(nodes, UID, dx, dy))+'\n').encode()
+            data = (m.native.dump(relocate(nodes, UID, dx, dy, protected_ids=original_ids))+'\n').encode()
             (x.out/(name+'.kicad_pcb')).write_bytes(data)
             try:
                 row = m.transaction.checked_native(data, name)

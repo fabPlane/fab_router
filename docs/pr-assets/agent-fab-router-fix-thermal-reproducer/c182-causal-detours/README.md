@@ -75,3 +75,6 @@ taskset -c 20-25 nice -n 10 timeout 1200 bash -c 'bun run typecheck && bun run c
 ```
 
 ![Complete-board causal detour outcomes](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c182-causal-detours/comparison.png?raw=true)
+
+The current via helper requires original-copper ownership and preserves foreign-net
+tracks at coincident endpoints. See [ownership regression and fresh native comparison](../c183-via-ownership/README.md). Historical measurements above remain unchanged.

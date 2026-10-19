@@ -6,13 +6,14 @@ p=argparse.ArgumentParser();p.add_argument('--root',type=Path,required=True);x=p
 ind=json.loads((x.root/'summary.json').read_text());out=x.root/'composed';out.mkdir(exist_ok=False)
 spec=importlib.util.spec_from_file_location('via_geometry',Path(__file__).resolve().parent.parent/'c181-via-displacement/geometry.py');g=importlib.util.module_from_spec(spec);spec.loader.exec_module(g)
 m.native.SRC=x.root/'source/board.kicad_pcb';m.native.D=out
+original_ids={m.native.uid(n) for n in m.native.parse((x.root/'input/board.kicad_pcb').read_text()) if isinstance(n,list)}
 source=m.native.SRC.read_bytes();sha=lambda d:hashlib.sha256(d).hexdigest();repeats=[]
 selected=[a for a in ind['repeats'][0]['attempts'] if a['accepted']]
 for repeat in range(3):
     current=source;baseline=m.transaction.checked_native(current,f'baseline-{repeat}');initial=baseline;attempts=[]
     for index,entry in enumerate([None]+selected+[dict(label='U1.39',uid='21768f94-189f-4a8a-9f22-7e54b38c1a6d',delete=True)]):
         if entry is None:
-            label='C1.2';data=(m.native.dump(g.relocate(m.native.parse(current.decode()),'d3812c01-5e0b-47fa-b2de-04d261bdf01e',.5,0))+'\n').encode()
+            label='C1.2';data=(m.native.dump(g.relocate(m.native.parse(current.decode()),'d3812c01-5e0b-47fa-b2de-04d261bdf01e',.5,0,protected_ids=original_ids))+'\n').encode()
         else:
             label=entry['label']
             if entry.get('delete'):
