@@ -3,7 +3,7 @@ import {emptyLayout} from '../src/layout/index.ts';
 import {buildLattice} from '../src/lattice/index.ts';
 import {createJournal} from '../src/route/journal.ts';
 import {checkDrc,requiredConnections,writeSes} from '../src/api.ts';
-import {scheduleRecovery,type RecoveryPlan} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts';
+import {scheduleRecovery,type RecoveryPlan} from '../src/route/recovery-schedule.ts';
 function fixture(){
  const l=emptyLayout('schedule');
  l.stack=[{id:0,name:'top',role:'signal',active:true,preferDir:null}];

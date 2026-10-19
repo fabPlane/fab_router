@@ -5,8 +5,8 @@ import {createJournal} from '../src/route/journal.ts';
 import {resolveSettings} from '../src/pipeline/index.ts';
 import {resolveProfile} from '../src/route/profile.ts';
 import {checkDrc,requiredConnections,writeSes} from '../src/api.ts';
-import {scheduleRecovery} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts';
-import {proposeVisibility} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/visibility-recovery.ts';
+import {scheduleRecovery} from '../src/route/recovery-schedule.ts';
+import {proposeVisibility} from '../src/route/visibility-recovery.ts';
 function fixture(){
  const l=emptyLayout('visibility');
  l.spacing=makeSpacingTable(['null','default'],1,[],()=>100);

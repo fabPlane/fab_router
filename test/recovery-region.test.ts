@@ -5,7 +5,7 @@ import {buildLattice} from '../src/lattice/index.ts';
 import {createJournal} from '../src/route/journal.ts';
 import {checkDrc,requiredConnections} from '../src/api.ts';
 import type {Barrel,Track} from '../spec/types/layout.ts';
-import {copperWithinRegion,tryRecoveryTransaction} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts';
+import {copperWithinRegion,tryRecoveryTransaction} from '../src/route/recovery-transaction.ts';
 
 function board(){
  const l=emptyLayout('recovery-region');

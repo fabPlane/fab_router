@@ -3,7 +3,7 @@ import {emptyLayout} from '../src/layout/index.ts';
 import {buildLattice} from '../src/lattice/index.ts';
 import {createJournal} from '../src/route/journal.ts';
 import {writeSes,requiredConnections,checkDrc} from '../src/api.ts';
-import {tryRecoveryTransaction} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts';
+import {tryRecoveryTransaction} from '../src/route/recovery-transaction.ts';
 
 test('cancellation detected after exact validation rolls back legal copper and its live index',()=>{
  const l=emptyLayout('cancel-after-validation');

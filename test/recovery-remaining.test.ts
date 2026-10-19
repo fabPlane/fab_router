@@ -2,7 +2,7 @@ import {test,expect} from 'bun:test';
 import {emptyLayout,makeSpacingTable} from '../src/layout/index.ts';
 import {resolveSettings} from '../src/pipeline/index.ts';
 import {checkDrc,requiredConnections,writeSes} from '../src/api.ts';
-import {recoverRemaining} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recover-remaining.ts';
+import {recoverRemaining} from '../src/route/recover-remaining.ts';
 function fixture(){
  const l=emptyLayout('remaining');
  l.spacing=makeSpacingTable(['null','default'],1,[],()=>100);
