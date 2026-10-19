@@ -283,3 +283,34 @@ bun run typecheck && bun run check:layers && bun run test
 
 Raw control logs, measurements, and the plotted comparison are in `area-results/`.
 No new routing benchmark, native DRC result, or frozen-score gain is claimed.
+
+### Localizing the strip-length mismatch (cycle 80)
+
+`corridor-lengths.py` reuses all seven hash-verified filled boards from the area
+audit. Native polygon subtraction now measures downward strips at four lengths
+and retains exact missing-polygon vertices relative to the pad edge. On each of
+the three downward-guard outputs, both missing regions are corner triangles;
+the earliest missing vertex is 959661 nm beyond the pad edge. The configured
+zone gap is 508000 nm. Full positive area is covered through 950000 nm.
+
+| Same retained boards, three routed outputs per variant | Previous 1 mm strip covered | 0.508 / 0.75 / 0.95 mm strips covered |
+| --- | ---: | ---: |
+| Input (one retained board) | yes | yes / yes / yes |
+| Downward guard | 0/3 | 3/3 / 3/3 / 3/3 |
+| Leftward guard | 0/3 | 0/3 / 0/3 / 0/3 |
+
+This localizes the earlier rectangle's disagreement with native DRC: the missing
+area lies beyond the configured gap, near the arbitrary 1 mm endpoint. It does
+not establish the effective native spoke criterion, guarantee that the shorter
+strip reaches connected plane copper, or justify changing a production guard.
+No routing, refill, native DRC run, or frozen benchmark was repeated. Existing
+area controls still pass 6/6 in three repeats, with the sampled mutation 3/6.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 90 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/corridor-lengths.py --out /tmp/thermal-length-audit
+rsvg-convert /tmp/thermal-length-audit/comparison.svg -o /tmp/thermal-length-audit/comparison.png
+bun run typecheck && bun run check:layers && bun run test
+```
+
+`length-results/` retains polygon vertices, measurements, source/input hashes,
+the actual missing-geometry image, area-control logs, and verification log.

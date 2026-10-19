@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760"><rect width="1200" height="760" fill="#f4f6f8"/>
+<text x="25" y="40" font-family="sans-serif" font-size="25">Downward guard: missing copper starts beyond 0.95 mm</text>
+<g transform="translate(205 100) scale(0.0005)">
+<rect x="-254000" y="0" width="508000" height="1000000" fill="#9bd0b5" stroke="#173c32" stroke-width="2000"/>
+<polygon points="-212142,1000000 -254000,1000000 -254000,994977" fill="#ce503f"/>
+<polygon points="254000,1000000 184134,1000000 254000,959661" fill="#ce503f"/>
+</g>
+<text x="370" y="100" font-family="sans-serif" font-size="20">Pad edge: 0 mm</text>
+<text x="370" y="354" font-family="sans-serif" font-size="20">Zone gap setting: 0.508 mm</text>
+<text x="370" y="575" font-family="sans-serif" font-size="20">0.95 mm: full area covered</text>
+<text x="370" y="600" font-family="sans-serif" font-size="20">1 mm: two missing corner triangles</text>
+<text x="25" y="660" font-family="sans-serif" font-size="19">Three retained outputs: same hashes, same geometry; no routing or refill.</text>
+<text x="25" y="692" font-family="sans-serif" font-size="19">Missing area: 0.001514288654 mm²; earliest missing vertex: 0.959661 mm.</text>
+<text x="25" y="724" font-family="sans-serif" font-size="19">Shorter strip coverage does not count native spokes or prove plane connectivity.</text>
+</svg>

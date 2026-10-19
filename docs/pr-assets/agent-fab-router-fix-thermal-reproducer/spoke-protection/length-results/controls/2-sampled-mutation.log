@@ -1,0 +1,35 @@
+test_degenerate_rejected (test_corridor.CorridorTests.test_degenerate_rejected) ... ok
+test_hole (test_corridor.CorridorTests.test_hole) ... FAIL
+test_no_mutation (test_corridor.CorridorTests.test_no_mutation) ... ok
+test_outer_width (test_corridor.CorridorTests.test_outer_width) ... FAIL
+test_solid (test_corridor.CorridorTests.test_solid) ... ok
+test_subsample_slit (test_corridor.CorridorTests.test_subsample_slit) ... FAIL
+
+======================================================================
+FAIL: test_hole (test_corridor.CorridorTests.test_hole)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_corridor.py", line 29, in test_hole
+    self.assertEqual(coverage(copper, 0, -254000, 1000000, 254000)['missing_area_nm2'], 1000000)
+AssertionError: 0 != 1000000
+
+======================================================================
+FAIL: test_outer_width (test_corridor.CorridorTests.test_outer_width)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_corridor.py", line 24, in test_outer_width
+    self.assertEqual(coverage(copper, 0, -254000, 1000000, 254000)['missing_area_nm2'], 108000000000)
+AssertionError: 0 != 108000000000
+
+======================================================================
+FAIL: test_subsample_slit (test_corridor.CorridorTests.test_subsample_slit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_corridor.py", line 17, in test_subsample_slit
+    self.assertEqual(coverage(copper, 0, -254000, 1000000, 254000)['missing_area_nm2'], 508000000)
+AssertionError: 0 != 508000000
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.001s
+
+FAILED (failures=3)
