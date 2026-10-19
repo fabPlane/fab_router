@@ -249,3 +249,37 @@ PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/pytho
 `snapshot-results/` retains three baseline/candidate regression logs, identity
 controls, all fresh native inputs/reports/snapshots, the summary and measured
 chart. Baseline snapshot source is available at commit `0c24d94`.
+
+### Full-width corridor area audit (cycle 79)
+
+`area-corridors.py` subtracts the existing native filled polygon from a cardinal
+rectangle 0.508 mm wide and 1 mm long beyond the rectangular pad's bounding edge.
+It reads the exact previously measured filled boards (SHA256 checked against the
+sample audit); it does not route or refill. Native integer polygon booleans
+measure missing positive area, without inferring coverage from point samples.
+
+Six controls exercise solid coverage, a 1 um transverse slit between sample
+positions, missing outer width, a small enclosed hole, unchanged source polygons,
+and rejection of degenerate rectangles. Three repeats pass 6/6; a deliberately
+insufficient sampled implementation passes 3/6, missing all three area defects.
+This is a diagnostic mutation comparison, not an engine regression measurement.
+
+On all three retained downward-guard outputs, the old three-line samples report
+both down and left as filled, but the full downward strip lacks 1514288654 nm²
+(0.001514288654 mm²). The left strip is fully covered. Original input has both
+strips covered; leftward-guard outputs have only the left strip covered. Native
+DRC previously accepted the downward-guard outputs. Thus this requested full
+rectangle is stricter than the native spoke criterion; do not use it as a spoke
+counter or production acceptance gate. It also does not establish connection to
+the plane, resolve effective rules, cover arbitrary pad shapes, or measure
+zero-area boundary differences.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 90 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/run_corridor_controls.py --out /tmp/thermal-area-controls
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 90 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/area-corridors.py --out /tmp/thermal-area-native
+rsvg-convert /tmp/thermal-area-native/comparison.svg -o /tmp/thermal-area-native/comparison.png
+bun run typecheck && bun run check:layers && bun run test
+```
+
+Raw control logs, measurements, and the plotted comparison are in `area-results/`.
+No new routing benchmark, native DRC result, or frozen-score gain is claimed.
