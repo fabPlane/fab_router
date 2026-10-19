@@ -114,3 +114,36 @@ boards/sessions, before/after native reports, engine reports and logs.
 asserted results. `direction-comparison.png` shows actual native copper of the
 leftward and downward candidates after refill. The former is a negative
 control, not a new baseline or a production improvement.
+
+## Filled-spoke count diagnostic
+
+The leftward negative control preserves an existing spoke. Its failure does
+not demonstrate that the selected leftward spoke lacks plane connectivity.
+Sampling native filled copper shows that the route removes the *other*,
+downward spoke. The raw native report explicitly says `zone min spoke count 2;
+actual 1`. A strategy must account for the required number of spokes, not only
+select one connected corridor. This corrects the narrower hypothesis above.
+
+| Same input/rules; three retained routed repeats each | Input | Leftward guard | Downward guard |
+| --- | ---: | ---: | ---: |
+| Directions with every sampled point filled | Down + left | Left | Down + left |
+| Native thermal errors, each | 0 | 1 | 0 |
+
+`filled-spokes.py` queries native filled-zone polygons at three parallel lines
+(center and ±0.127 mm), every 0.025 mm from each pad edge to 1 mm beyond it.
+All three repeats give the same direction classifications. Both routed
+variants retain one filled polygon outline. These are finite point samples,
+not proof of full bridge width, polygon topology, or native spoke ownership.
+No production selection rule, routing fix or new benchmark run is claimed.
+The six boards and native reports are the cycle-73 measurements, reexamined
+here rather than rerouted. `filled-results/before.kicad_pcb` is a newly refilled
+copy of the unchanged native input; native settings remain unchanged.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/filled-spokes.py --before docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/filled-results/before.kicad_pcb --out /tmp/thermal-filled-spokes
+rsvg-convert /tmp/thermal-filled-spokes/comparison.svg -o /tmp/thermal-filled-spokes/comparison.png
+```
+
+The JSON retains every sample and SHA-256 hashes of the input, six routed
+boards and six native reports. The PNG is a chart of these measured samples;
+the actual native copper render remains `direction-comparison.png`.
