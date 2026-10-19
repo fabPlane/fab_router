@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle27/region-checks/no-terminals/test/near-complete-endpoint.test.ts:
+101 |    const short=l.tracks.find(t=>t.origin==='router'&&t.net===target)!;
+102 |    expect(short).toBeDefined();
+103 |    expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{
+104 |     journal.remove(short.id);addWitness();
+105 |     expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(1);
+106 |    })).toBe('terminals');
+             ^
+error: expect(received).toBe(expected)
+
+Expected: "terminals"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle27/region-checks/no-terminals/test/near-complete-endpoint.test.ts:106:8)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [4252.16ms]
+
+ 0 pass
+ 1 fail
+ 52 expect() calls
+Ran 1 test across 1 file. [4.28s]

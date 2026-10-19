@@ -1,0 +1,85 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle27/region-checks/no-rewind/test/near-complete-endpoint.test.ts:
+55 |    expect(leg.widths.every(w=>w===profile.width)).toBe(true);
+56 |    const session=writeSes(l);
+57 |    const targetPair={net:target,from:10,to:62};
+58 |    const addWitness=()=>journal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+59 |    const assertRestored=()=>{
+60 |     expect(writeSes(l)).toBe(session);
+                             ^
+error: expect(received).toBe(expected)
+
+  "(session board.ses
+    (base_design board.dsn)
+    (placement
+      (resolution um 10)
+      (component "Paperino:photon_headers"
+        (place A1 1088800 -999080 front 0)
+      )
+      (component "Paperino:mounting_hole_1.5"
+        (place M1 1025400 -974600 front 0)
+        (place M2 1674600 -656400 front 0)
+        (place M3 1025400 -656400 front 0)
+        (place M4 1674600 -974600 front 0)
+      )
+      (component "Paperino:paperino_module"
+        (place A2 1495700 -815500 back 270)
+      )
+      (component "Symbols:OSHW-Symbol_6.7x6mm_SilkScreen"
+        (place REF*** 1187860 -930500 back 90)
+      )
+    )
+    (was_is)
+    (routes
+      (resolution um 10)
+      (parser
+        (host_cad "KiCad's Pcbnew")
+        (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+      )
+      (library_out
+        (padstack "Via[0-1]_600:300_um"
+          (shape (circle F.Cu 6000 0 0))
+          (shape (circle B.Cu 6000 0 0))
+          (attach off)
+        )
+      )
+      (network_out
+        (net "/INT1"
+          (wire
+            (path F.Cu 2500
+              1076100 -778100
+              1101500 -778100
+            )
+          )
++         (wire
++           (path B.Cu 2500
++             1101500 -778100
++             1109000 -785600
++             1112750 -785600
++             1270250 -943100
++             1274000 -943100
++             1277750 -946850
++             1281500 -943100
++             1401500 -943100
++             1402100 -942500
++             1402700 -942500
++           )
++         )
+        )
+      )
+    )
+  )
+  "
+
+- Expected  - 0
++ Received  + 14
+
+      at assertRestored (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle27/region-checks/no-rewind/test/near-complete-endpoint.test.ts:60:25)
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle27/region-checks/no-rewind/test/near-complete-endpoint.test.ts:69:4)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [4188.48ms]
+
+ 0 pass
+ 1 fail
+ 20 expect() calls
+Ran 1 test across 1 file. [4.22s]

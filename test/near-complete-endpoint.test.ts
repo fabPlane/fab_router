@@ -79,6 +79,23 @@ test('near-complete endpoint context preserves legal progress and deterministic 
    })).toBe('drc');
    expect(lattice.itemOf(rejectedId)).toBeUndefined();
    assertRestored();
+   // A full-width legal closure can still leave the allowed local region.
+   // All vertices fit this box; clipping half a unit of its end-cap does not.
+   const region={x0:Math.min(...leg.pts.map(p=>p.x))-profile.width/2,
+    x1:Math.max(...leg.pts.map(p=>p.x))+profile.width/2,
+    y0:Math.min(...leg.pts.map(p=>p.y))-profile.width/2,
+    y1:Math.max(...leg.pts.map(p=>p.y))+profile.width/2};
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{
+    rejectedId=addWitness().id;
+    expect(checkDrc(l).counts.violations).toBe(0);
+    expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+   },{...region,x0:region.x0+0.5})).toBe('region');
+   expect(lattice.itemOf(rejectedId)).toBeUndefined();
+   assertRestored();
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{addWitness();},region)).toBe('kept');
+   expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+   journal.rewind(mark);
+   assertRestored();
    // Close the longer connection while ripping up the short branch: aggregate
    // incomplete count stays one, but a previously joined terminal pair is lost.
    const short=l.tracks.find(t=>t.origin==='router'&&t.net===target)!;
