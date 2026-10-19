@@ -12,6 +12,8 @@ import shutil
 import subprocess
 import sys
 
+from metadata_identity import capture, validate
+
 HERE = pathlib.Path(__file__).resolve().parent
 PARENT = HERE.parent
 
@@ -23,10 +25,12 @@ def digest(path):
 def snapshot(path):
     import pcbnew
     assert pcbnew.Version() == '10.0.6'
+    identity = capture(path, pcbnew.Version())
     board = pcbnew.LoadBoard(str(path))
     pad, = [p for p in board.GetPads() if p.GetNetname() == 'GND']
     zone, = list(board.Zones())
-    return dict(board_sha256=digest(path), project_present=path.with_suffix('.kicad_pro').exists(),
+    validate(identity, path, pcbnew.Version())
+    return dict(input_identity=identity, board_sha256=digest(path), project_present=path.with_suffix('.kicad_pro').exists(),
                 project_sha256=digest(path.with_suffix('.kicad_pro')) if path.with_suffix('.kicad_pro').exists() else None,
                 board_min_resolved_spokes=board.GetDesignSettings().m_MinResolvedSpokes,
                 zone_gap_nm=zone.GetThermalReliefGap(),

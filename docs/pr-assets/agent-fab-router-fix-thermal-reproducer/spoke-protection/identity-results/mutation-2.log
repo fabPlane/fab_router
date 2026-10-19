@@ -1,0 +1,70 @@
+test_missing_project (__main__.IdentityTests.test_missing_project) ... FAIL
+test_missing_project_is_explicit (__main__.IdentityTests.test_missing_project_is_explicit) ... FAIL
+test_native_version (__main__.IdentityTests.test_native_version) ... FAIL
+test_new_rules_after_snapshot (__main__.IdentityTests.test_new_rules_after_snapshot) ... FAIL
+test_renamed_identical_bundle (__main__.IdentityTests.test_renamed_identical_bundle) ... ok
+test_stale_board (__main__.IdentityTests.test_stale_board) ... FAIL
+test_stale_project (__main__.IdentityTests.test_stale_project) ... FAIL
+test_stale_rules (__main__.IdentityTests.test_stale_rules) ... FAIL
+test_unchanged_bundle (__main__.IdentityTests.test_unchanged_bundle) ... ok
+
+======================================================================
+FAIL: test_missing_project (__main__.IdentityTests.test_missing_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 40, in test_missing_project
+    with self.assertRaisesRegex(ValueError, 'project'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_missing_project_is_explicit (__main__.IdentityTests.test_missing_project_is_explicit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 71, in test_missing_project_is_explicit
+    with self.assertRaisesRegex(ValueError, 'project'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_native_version (__main__.IdentityTests.test_native_version)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 56, in test_native_version
+    with self.assertRaisesRegex(ValueError, 'native_version'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_new_rules_after_snapshot (__main__.IdentityTests.test_new_rules_after_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 52, in test_new_rules_after_snapshot
+    with self.assertRaisesRegex(ValueError, 'rules'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_stale_board (__main__.IdentityTests.test_stale_board)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 30, in test_stale_board
+    with self.assertRaisesRegex(ValueError, 'board'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_stale_project (__main__.IdentityTests.test_stale_project)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 35, in test_stale_project
+    with self.assertRaisesRegex(ValueError, 'project'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_stale_rules (__main__.IdentityTests.test_stale_rules)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c77/final-controls/mutation/test_metadata_identity.py", line 45, in test_stale_rules
+    with self.assertRaisesRegex(ValueError, 'rules'):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+FAILED (failures=7)
