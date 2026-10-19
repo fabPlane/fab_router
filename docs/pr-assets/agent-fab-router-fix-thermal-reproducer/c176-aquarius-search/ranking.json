@@ -1,0 +1,166 @@
+{
+  "markers": [
+    {
+      "pad": "0058b9c6-73af-4ba8-a061-fb00a457a84f",
+      "position": {
+        "x": 178.659647,
+        "y": 49.297447
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "pad": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "position": {
+        "x": 175.082,
+        "y": 58.3565
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "pad": "40448888-06d6-474b-a038-09dfd03ed49c",
+      "position": {
+        "x": 173.200561,
+        "y": 48.414401
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "pad": "8a9de701-0636-4fb8-8016-870d25898f6d",
+      "position": {
+        "x": 170.725687,
+        "y": 50.889275
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "pad": "af425661-704d-45af-ac80-3e8e4d16dab8",
+      "position": {
+        "x": 170.018581,
+        "y": 51.596381
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    },
+    {
+      "pad": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228",
+      "position": {
+        "x": 165.882006,
+        "y": 50.182168
+      },
+      "layers": [
+        "B.Cu"
+      ]
+    }
+  ],
+  "ranked_segments": [
+    {
+      "uuid": "ac8ecfb9-4b06-4ff8-98ac-4bcd66ea8ad2",
+      "layer": "F.Cu",
+      "nearest_pad": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "distance_mm": 0.08414570696120026,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": false,
+      "proposals": 6
+    },
+    {
+      "uuid": "005736d5-2c27-4b14-8e40-145e246e5724",
+      "layer": "F.Cu",
+      "nearest_pad": "8a9de701-0636-4fb8-8016-870d25898f6d",
+      "distance_mm": 0.30988700000000335,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": false,
+      "proposals": 0
+    },
+    {
+      "uuid": "380f4704-90e3-4bd8-83db-ad15c32b9c82",
+      "layer": "F.Cu",
+      "nearest_pad": "af425661-704d-45af-ac80-3e8e4d16dab8",
+      "distance_mm": 0.42418100000000436,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": false,
+      "proposals": 0
+    },
+    {
+      "uuid": "15b5bf6a-0f35-4f5e-80cd-b5ea35c6defe",
+      "layer": "F.Cu",
+      "nearest_pad": "af425661-704d-45af-ac80-3e8e4d16dab8",
+      "distance_mm": 0.4727934406503367,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": false,
+      "proposals": 6
+    },
+    {
+      "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699",
+      "layer": "B.Cu",
+      "nearest_pad": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228",
+      "distance_mm": 0.4993694193830455,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": true,
+      "proposals": 6
+    },
+    {
+      "uuid": "109854a8-ce7f-4ac1-8817-861d5c83ac18",
+      "layer": "B.Cu",
+      "nearest_pad": "8a9de701-0636-4fb8-8016-870d25898f6d",
+      "distance_mm": 0.4998409174484511,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": true,
+      "proposals": 6
+    },
+    {
+      "uuid": "0beda6e8-8a2a-414f-a756-4b922acbbe0e",
+      "layer": "B.Cu",
+      "nearest_pad": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228",
+      "distance_mm": 0.49997682020068085,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": true,
+      "proposals": 6
+    },
+    {
+      "uuid": "5cc8aa1b-af16-461b-8001-a4da5a26e72a",
+      "layer": "B.Cu",
+      "nearest_pad": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228",
+      "distance_mm": 0.49997682212277,
+      "nearest_marker_layers": [
+        "B.Cu"
+      ],
+      "same_layer": true,
+      "proposals": 6
+    }
+  ],
+  "ranked_pairs": [
+    [
+      "005736d5-2c27-4b14-8e40-145e246e5724",
+      "15b5bf6a-0f35-4f5e-80cd-b5ea35c6defe"
+    ],
+    [
+      "0beda6e8-8a2a-414f-a756-4b922acbbe0e",
+      "5cc8aa1b-af16-461b-8001-a4da5a26e72a"
+    ]
+  ],
+  "wrong_layer_segments": 4,
+  "scope": "Discovery diagnostic only; not a production bug fix or routing benchmark"
+}
