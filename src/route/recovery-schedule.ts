@@ -31,7 +31,7 @@ export interface RecoveryTrial {
 }
 export function scheduleRecovery(
  layout:Layout,lattice:Lattice,journal:Journal,target:Target,plan:RecoveryPlan,
- propose:(trial:RecoveryTrial)=>void,control:RecoveryControl={},
+ propose:(trial:RecoveryTrial)=>void,control:RecoveryControl={},anchors?:Target,
 ):{status:'disabled'|'joined'|'kept'|'exhausted'|'budget'|'deadline'|'aborted';expansions:number;trials:{margin:number;region:Box;outcome:Outcome|'budget'|'deadline'|'aborted'}[]} {
  const trials:{margin:number;region:Box;outcome:Outcome|'budget'|'deadline'|'aborted'}[]=[];
  if(!plan.enabled)return {status:'disabled',expansions:0,trials};
@@ -42,7 +42,7 @@ export function scheduleRecovery(
  if(!Number.isFinite(plan.pitch)||plan.pitch<=0||!integer(plan.maxAttempts)||!integer(plan.maxExpansions)||
   !Number.isFinite(plan.maxMilliseconds)||plan.maxMilliseconds<=0||!plan.margins.length||
   plan.margins.some((n,i)=>!Number.isFinite(n)||n<0||(i>0&&n<=plan.margins[i-1]!)))throw Error('Invalid recovery plan');
- const from=recoveryEndpoint(layout,target.from,target.net),to=recoveryEndpoint(layout,target.to,target.net);
+ const from=recoveryEndpoint(layout,anchors?.from??target.from,target.net),to=recoveryEndpoint(layout,anchors?.to??target.to,target.net);
  if(!from||!to)throw Error('Recovery schedule requires point endpoints on target net');
  // Build all boxes before calling proposals, including overflow checks.
  const regions=plan.margins.map(margin=>{
@@ -53,6 +53,12 @@ export function scheduleRecovery(
   return {margin,region};
  });
  const c=connectivity(layout,lattice);
+ // Alternate anchors only choose the search box/path. The transaction below
+ // must still close the original pad/pour terminals, not just these anchors.
+ if(anchors&&(anchors.net!==target.net||
+  c.items.get(target.from)?.net!==target.net||c.items.get(target.to)?.net!==target.net||
+  c.componentOf.get(from.id)!==c.componentOf.get(target.from)||
+  c.componentOf.get(to.id)!==c.componentOf.get(target.to)))throw Error('Recovery anchors must belong to target components');
  if(c.componentOf.get(from.id)===c.componentOf.get(to.id))return {status:'joined',expansions:0,trials};
  const deadline=performance.now()+plan.maxMilliseconds,budget=Symbol('recovery budget');
  let expansions=0;
