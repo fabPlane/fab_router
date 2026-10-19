@@ -1,0 +1,12 @@
+{
+  "control_commit": "69cf598",
+  "control_passes_sha256": "dd8b963bfe954797fab1e18e1ee48d2c9a024bd773e5dd63002590e4fe1135be",
+  "instrumented_passes_sha256": "599c9d5d88f452dc9227e90859755344ff7277b5fa6459bd864235ea04237ae5",
+  "generator_sha256": "a6500f4d11241fecc0e87c450642d4111e240f0b0de5ebec094b7ef4a09d9a47",
+  "purpose": "diagnostic counters only; timings include instrumentation overhead",
+  "insertion_generator_sha256": "22b9790aa0291874e8e70c23ea03475fc6492ce40f5273ca51aa909294737cc4",
+  "files_audited": 1487,
+  "changed": [
+    "src/route/passes.ts"
+  ]
+}
