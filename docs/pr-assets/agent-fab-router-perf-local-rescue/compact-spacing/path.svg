@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="390" viewBox="0 0 1000 390">
+<rect width="1000" height="390" fill="white"/>
+<g font-family="sans-serif" fill="#172b4d"><text x="35" y="40" font-size="24">Compact local-spacing regression: actual retained path</text>
+<text x="35" y="75" font-size="17">Same geometry / rules / width / region; only corner proposal offsets differ.</text>
+<rect x="4" y="124" width="992" height="192" fill="#edf4ff" stroke="#86a7c8"/>
+<path d="M100 220 L900 220" stroke="#b34b4b" stroke-width="2" stroke-dasharray="8 8"/>
+<polyline points="100.0,220.0 156.07999999999998,276.08 443.92,276.08 843.92,276.08 900.0,220.0" fill="none" stroke="#167a4c" stroke-width="16" stroke-linejoin="round"/>
+<circle cx="500" cy="220" r="40" fill="#af6d23"/>
+<circle cx="100" cy="220" r="40" fill="#3875a3"/><circle cx="900" cy="220" r="40" fill="#3875a3"/>
+<text x="35" y="350" font-size="17">Global: 0/6 closures. Actual kind/sheet: 6/6. Three identical paired repeats.</text>
+<text x="35" y="378" font-size="16">Engine exact DRC: zero. Native DRC / full-suite gains unmeasured. Default remains off.</text></g></svg>
