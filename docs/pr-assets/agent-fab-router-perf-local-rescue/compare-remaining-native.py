@@ -10,7 +10,7 @@ controls=[json.loads((p/'controls.json').read_text()) for p in [before,after]]
 for c in controls:
  assert c['complete'] and c['controls_preserved'] and not c['interrupted'] and not c['smoke']
  assert len(c['order'])==78 and len(c['cases'])==26 and c['seeds']==[1,2,3]
-for key in ['version','order','routers','cases','seeds','inputs_sha256','harness_sha256','runtime_sha256','runtime_source_sha256','allowed_cpus','safety_stop_seconds']:
+for key in ['version','order','routers','cases','seeds','inputs_sha256','configs_sha256','harness_sha256','runtime_sha256','runtime_source_sha256','allowed_cpus','safety_stop_seconds']:
  assert controls[0][key]==controls[1][key],key
 for i,p in enumerate([source,source/'docs/pr-assets/agent-fab-router-perf-local-rescue/candidate']):
  assert {n:sha(p/n)for n in controls[i]['candidate']['source_sha256']}==controls[i]['candidate']['source_sha256']
@@ -29,9 +29,12 @@ for r in new:
   assert record['allowed_cpus']==list(range(12,20))
   assert all(s['exit_code']==0 and not s['timed_out']for s in record['steps'])
  settings=[json.loads((d/'work/router-summary.json').read_text())['settings']for d in [d0,d1]];assert settings[0]==settings[1]
+ routed=json.loads((d1/'work/router-summary.json').read_text())['result']
+ recovery=json.loads(next(x['message'] for x in routed['diagnostics'] if x['code']=='research-local-recovery'))
  keys=['status','passed','seconds','vias','length_mm','opens','new_errors','new_error_types','failed_fidelity']
- rows.append({'case':r['case'],'seed':r['seed'],'before':{k:b[k]for k in keys},'after':{k:r[k]for k in keys},'same_ses':sha(d0/'work/board.ses')==sha(d1/'work/board.ses')})
-regressions=[r for r in rows if r['after']['opens']>r['before']['opens'] or r['after']['new_errors']>r['before']['new_errors'] or (r['before']['passed']and not r['after']['passed']) or r['after']['failed_fidelity']!=r['before']['failed_fidelity']]
+ introduced_errors=sorted({json.dumps(x,sort_keys=True)for x in r['check']['new_error_details']}-{json.dumps(x,sort_keys=True)for x in b['check']['new_error_details']})
+ rows.append({'recovery':recovery,'introduced_error_details':introduced_errors,'case':r['case'],'seed':r['seed'],'before':{k:b[k]for k in keys},'after':{k:r[k]for k in keys},'same_ses':sha(d0/'work/board.ses')==sha(d1/'work/board.ses')})
+regressions=[r for r in rows if r['introduced_error_details'] or r['after']['opens']>r['before']['opens'] or r['after']['new_errors']>r['before']['new_errors'] or (r['before']['passed']and not r['after']['passed']) or r['after']['failed_fidelity']!=r['before']['failed_fidelity']]
 cases=[]
 for name in sorted({r['case']for r in rows}):
  rr=[r for r in rows if r['case']==name];assert len(rr)==3

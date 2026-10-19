@@ -1,0 +1,11 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/remaining-mutant.test.ts:
+(pass) remaining post-pass uses each actual net profile and preserves ignored obstacles [8.90ms]
+(pass) remaining post-pass target cap leaves unattempted nets unchanged [1.06ms]
+(pass) optional copper corners discover a detour around routed foreign copper [1.67ms]
+
+ 3 pass
+ 0 fail
+ 23 expect() calls
+Ran 3 tests across 1 file. [21.00ms]

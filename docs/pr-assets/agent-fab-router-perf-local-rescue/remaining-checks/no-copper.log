@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/remaining-mutant.test.ts:
+(pass) remaining post-pass uses each actual net profile and preserves ignored obstacles [10.22ms]
+(pass) remaining post-pass target cap leaves unattempted nets unchanged [0.85ms]
+40 |  // Remove the foreign pad and second connection; the wall is routed copper.
+41 |  l.pads=l.pads.filter(p=>p.id<2);l.nets=l.nets.slice(0,1);
+42 |  l.tracks=[{id:10,net:1,sheet:0,pts:[{x:5000,y:-1000},{x:5000,y:1000}],width:200,kind:1,hold:'free',origin:'router'}];
+43 |  const settings=resolveSettings({},undefined,l.angleMode),before=writeSes(l);
+44 |  const padOnly=recoverRemaining(l,settings,true);expect(padOnly.targets.map(t=>t.status)).toEqual(['exhausted']);expect(writeSes(l)).toBe(before);
+45 |  const enriched=recoverRemaining(l,settings,true,16,true);expect(enriched.targets.map(t=>t.status)).toEqual(['kept']);
+                                                                                                         ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "kept",
++   "exhausted",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-perf/test/remaining-mutant.test.ts:45:101)
+(fail) optional copper corners discover a detour around routed foreign copper [3.86ms]
+
+ 2 pass
+ 1 fail
+ 20 expect() calls
+Ran 3 tests across 1 file. [24.00ms]
