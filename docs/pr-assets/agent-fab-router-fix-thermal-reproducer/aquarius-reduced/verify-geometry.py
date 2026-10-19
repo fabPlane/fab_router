@@ -18,6 +18,11 @@ for row in s['rows']:
     report = json.loads((root / row['name'] / 'drc.json').read_text())
     assert row['errors'] == [e for e in report['violations'] if e['severity'] == 'error']
     assert row['opens'] == len(report['unconnected_items'])
+    target = [e for e in report['violations'] if e['type'] == 'starved_thermal'
+              and any(item['uuid'] == s['pad_uuid'] for item in e['items'])]
+    assert row['target'] == target, 'target findings differ from native report'
+    if row['label'] == 'baseline':
+        assert target, 'supplied pad has no baseline thermal failure'
     if row['geometry']:
         rank, sign = row['label'].split('-')[1], int(row['label'].split('normal-')[1])
         track = s['nearby'][int(rank)-1]
@@ -39,7 +44,7 @@ for repeat in range(3):
 for label in {r['label'] for r in s['rows']}:
     group = [r for r in s['rows'] if r['label'] == label]
     assert len(group) == 3
-    for field in ('errors', 'opens', 'groups', 'eligible', 'geometry'):
+    for field in ('errors', 'opens', 'groups', 'eligible', 'geometry', 'target'):
         assert all(r[field] == group[0][field] for r in group)
 assert len(set(s['selections'])) == 1
 print(f'Verified {len(s["rows"])} native reports, all artifact hashes, geometric offsets and repeat consistency.')

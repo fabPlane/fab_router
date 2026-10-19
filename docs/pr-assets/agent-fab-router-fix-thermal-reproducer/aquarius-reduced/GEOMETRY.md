@@ -54,3 +54,31 @@ bun run typecheck && bun run check:layers && bun run test
 ```
 
 All 51 native reports, refilled boards, sidecars, logs, complete terminal partitions and artifact hashes are retained in `wide-results/`. Native rule-file trailing blank lines are retained as input provenance.
+
+## R20 target coverage and target-claim regression
+
+The same eight-track pad-axis search was applied to the previously untested R20.1 target on the same full board and sidecars, host and native checker. All 51 refills finished, but the runner rejected its exact repeat-consistency assertion: `near-3-normal--1` returns the same three additional clearance records in different list orders. The original failure and raw reports remain in `r20-results/native.log`. No selection was accepted and the runner's repeat assertion remains unchanged.
+
+| R20.1 static diagnostic, three repeats per variant | Before | After |
+| --- | ---: | ---: |
+| Native errors, each | 6 | 6 or 9 across candidates |
+| Native opens, each | 15 | 15 |
+| Target thermal findings, each | 1 | 1 throughout |
+| Positive-net pad terminals / groups | 234 / 74 | 234 / 74, exact partition throughout |
+
+`audit-target-run.py` independently inventories all reports and hashes, rebuilds terminal partitions, and checks error multisets without accepting any selection. It records the exact-list inconsistency explicitly. This negative result shows the earlier U1.39 witness does not establish coverage of another target. No engine, adapter, frozen fixture, checker or scoring change is proposed.
+
+A separate regression probe found that `verify-geometry.py` accepted an omitted target finding in an otherwise unmodified summary. The verifier now compares target findings against each raw native report, requires baseline target presence and checks target repeat consistency. Three repeats each of unchanged / omitted / duplicated / wrong-pad controls accept only unchanged evidence (before: all 12 accepted; after: 3 accepted, 9 rejected). This changes evidence verification, not native DRC rules. The previous 51-report successful witness still verifies unchanged.
+
+```bash
+ASSETS=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+SOURCE=$HOME/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_pcb
+# All 51 checks finish; expected nonzero exit at strict repeat consistency.
+taskset -c 20-25 nice -n 10 timeout 2400 /usr/bin/python3 "$ASSETS/geometry-doglegs.py" --source "$SOURCE" --pad d145de36-3889-4a3d-8c61-71242d4e107c --directions pad-axis --limit 8 --out /tmp/thermal-r20
+/usr/bin/python3 "$ASSETS/audit-target-run.py" /tmp/thermal-r20 d145de36-3889-4a3d-8c61-71242d4e107c
+python3 "$ASSETS/target-controls.py" "$ASSETS/wide-results"
+python3 "$ASSETS/verify-geometry.py" "$ASSETS/wide-results"
+bun run typecheck && bun run check:layers && bun run test
+```
+
+The exact-list failure is native scheduling dependent and may not reproduce on every invocation; no acceptance is inferred from count agreement. Retained reports document the observed failure. All required checks pass: typecheck, 65 layer checks, 859 tests, zero failures. These are static native checks, not a new router benchmark. Frozen thermal failures remain unresolved.
