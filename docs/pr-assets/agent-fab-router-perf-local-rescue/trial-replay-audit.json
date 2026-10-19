@@ -1,0 +1,162 @@
+{
+  "scope": "Diagnostic engine replays only; no new native score or timing comparison",
+  "initial_replays": 3,
+  "final_replays": 3,
+  "checks": {
+    "guard-checks.txt": "c5c8877517e8255d4791f0a49ec413e409f68aea618b7a26f2c798ba68c42967",
+    "final/replay-checks.txt": "a482672afbda2c218d337ecb0f29c2bfbe9eb648dee83748594c58a77536016a",
+    "final/diagnostic-checks.txt": "8366207267355d3e3d5bf3bf6e8c94c5f93f6078c34f08973fa2b38cdda6cc92"
+  },
+  "final_replays_identities": [
+    {
+      "phase": "initial",
+      "case": "paperino-hw-paperino-shield-j4",
+      "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": true,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "10:22:68",
+        "11:24:67",
+        "4:10:62",
+        "6:14:64",
+        "8:18:65",
+        "9:20:66"
+      ]
+    },
+    {
+      "phase": "initial",
+      "case": "rufs-smart-psu-j3",
+      "input_sha256": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd",
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "3:9:66"
+      ]
+    },
+    {
+      "phase": "initial",
+      "case": "photon-sprinkler-sprinkler-j3",
+      "input_sha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "0:1:45",
+        "3:29:46"
+      ]
+    },
+    {
+      "phase": "final",
+      "case": "paperino-hw-paperino-shield-j4",
+      "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": true,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "10:22:68",
+        "11:24:67",
+        "4:10:62",
+        "6:14:64",
+        "8:18:65",
+        "9:20:66"
+      ]
+    },
+    {
+      "phase": "final",
+      "case": "rufs-smart-psu-j3",
+      "input_sha256": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd",
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "3:9:66"
+      ]
+    },
+    {
+      "phase": "final",
+      "case": "photon-sprinkler-sprinkler-j3",
+      "input_sha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "0:1:45",
+        "3:29:46"
+      ]
+    }
+  ],
+  "artifacts": {
+    "trace-trials.py": "7d760a4da090a8560ea206f9679d643761889294997027867035cd92c06d6179",
+    "replay-trials.py": "a2aea06e557c5fce734d4dbfe53269b4b7ea5dd35432da030df5bb86050f83b7",
+    "summarise-trials.py": "30b803f2007ba3a02c19a62a8c493a42e598dad6ccb79ebd5c5a38731137b465",
+    "plot-trials.py": "6369be1395db1a925cd9dba8f881b4ec5392a228ed3e1cb2da205bbdc7eb4f98",
+    "trial-results.json": "92891a170ab2126d6a68592531b5dcdde48338e9654420da5fef5089d0923727",
+    "trial-summary.json": "89309daf453ff3e596a833afb07a8ee5ece9a8bb5f894e2a594202b75ad12a51",
+    "trial-source-audit.json": "34c435963e88efbffe17ad2e544e219f56e684256478315303b21f077d0e6c09",
+    "trial-census.png": "fd4e5f9f75a282f6e32f46b30a9ff061b762d47c128073916af030122391303f",
+    "trial-census.md": "906586c22c1e7adca845eb4697b290e1787e81d6b07c62f3951447fdf3cd202f",
+    "classify-trial-ends.ts": "47fcd1340daf79917ff702292368cc6b376c19a79d10d27d20398ab8784f3cb4",
+    "trial-endpoints.json": "f95e9ebe947d074cb7b0ba47886de46de3905576a67a4e70817bbf081c13fb47",
+    "trial-observer-checks.txt": "0268bef37c77f52ac33bb6cc507176e531c31b18073ed279b39772e7e7848417",
+    "trial-required-checks.txt": "1a01c285a552fc7c01e451cdc5c6ca5652e910333ed3f79899d435a80484617d",
+    "trial-native.json": "6667f7dbb3cba69480ee32e9bafbedc1695cb52f2efcdd6cbef2405a05819055",
+    "compare-trial-native.py": "1998f6fbb029e7db573e642b86037d9d7f2e1478305f5b7cb63234a98e82fbc4",
+    "reproduce-trial-native.sh": "9a63d2ec7f0a465db49d8ea2b609456576530bb56ce385946242b8db6d0fbd50"
+  }
+}

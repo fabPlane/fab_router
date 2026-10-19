@@ -1,0 +1,23 @@
+{
+  "control_commit": "69cf598",
+  "control_passes_sha256": "dd8b963bfe954797fab1e18e1ee48d2c9a024bd773e5dd63002590e4fe1135be",
+  "instrumented_passes_sha256": "2f3fd745066f72cdd3d8db64c107c343661a09c4d96db9d4dab78f1215c6482f",
+  "generator_sha256": "a6500f4d11241fecc0e87c450642d4111e240f0b0de5ebec094b7ef4a09d9a47",
+  "purpose": "diagnostic counters only; timings include instrumentation overhead",
+  "insertion_generator_sha256": "22b9790aa0291874e8e70c23ea03475fc6492ce40f5273ca51aa909294737cc4",
+  "trial_generator_sha256": "7d760a4da090a8560ea206f9679d643761889294997027867035cd92c06d6179",
+  "instrumented_legalise_sha256": "aae2ba3a92b9d5da8c0d2572797eb8d0afd02edf249fafd4d7748054aef9051d",
+  "files_audited": 1487,
+  "tracked_files": 1482,
+  "changed": [
+    "src/route/legalise.ts",
+    "src/route/passes.ts"
+  ],
+  "copied_ignored_reports": [
+    "spec/acceptance/out/acceptance-2026-10-18T15-08-39-273Z.csv",
+    "spec/acceptance/out/acceptance-2026-10-18T15-15-29-464Z.csv",
+    "spec/acceptance/out/acceptance-2026-10-18T17-12-51-460Z.csv",
+    "spec/acceptance/out/acceptance-2026-10-18T18-44-53-307Z.csv",
+    "spec/acceptance/out/acceptance-2026-10-18T22-02-30-301Z.csv"
+  ]
+}
