@@ -19,10 +19,10 @@ Nine deliberate corruptions must fail: session, final statistics, settings, reco
 Exact reproduction from the repository root (unused work path, existing Bun dependencies):
 
 ```sh
-asset=docs/pr-assets/agent-fab-router-perf-local-rescue/pour-filter
+asset=./docs/pr-assets/agent-fab-router-perf-local-rescue/pour-filter
 work=/tmp/pour-filter-reproduction
 python3 "$asset/prepare.py" "$work"
-POUR_FILTER_SOURCE="$work/candidate" taskset -c 12-19 nice -n 10 timeout 60 bun test "$asset/policy.test.ts"
+POUR_FILTER_SOURCE="$work/candidate" taskset -c 12-19 nice -n 10 timeout 60 bun test "$asset/policy.fixture.ts"
 python3 "$asset/checks.py" "$work"
 python3 "$asset/run.py" "$work"
 # Verify published results without routing:
