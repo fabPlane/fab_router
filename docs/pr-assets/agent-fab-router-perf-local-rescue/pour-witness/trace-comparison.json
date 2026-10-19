@@ -1,0 +1,263 @@
+{
+  "scope": "Actual recovery traces, original budgets; all 16 v2 targets and SES match control. V1 changes charged work/order outcomes; no speed claim.",
+  "changed_v1": [
+    {
+      "pair": {
+        "net": 5,
+        "from": 77,
+        "to": 120,
+        "airlineLu": 403455.78554533084
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 52445
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 50980
+      }
+    },
+    {
+      "pair": {
+        "net": 7,
+        "from": 8,
+        "to": 99,
+        "airlineLu": 675740.3347440495
+      },
+      "before": {
+        "status": "budget",
+        "expansions": 100000
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 98716
+      }
+    },
+    {
+      "pair": {
+        "net": 8,
+        "from": 9,
+        "to": 52,
+        "airlineLu": 299040.1310861136
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 15196
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 11460
+      }
+    },
+    {
+      "pair": {
+        "net": 10,
+        "from": 11,
+        "to": 54,
+        "airlineLu": 299040.1310861136
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 27728
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 15522
+      }
+    },
+    {
+      "pair": {
+        "net": 11,
+        "from": 152,
+        "to": 153,
+        "airlineLu": 623174.211793139
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 67721
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 64861
+      }
+    },
+    {
+      "pair": {
+        "net": 12,
+        "from": 13,
+        "to": 94,
+        "airlineLu": 542793.6993002037
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 90606
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 52898
+      }
+    },
+    {
+      "pair": {
+        "net": 14,
+        "from": 15,
+        "to": 51,
+        "airlineLu": 350000
+      },
+      "before": {
+        "status": "budget",
+        "expansions": 100000
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 21363
+      }
+    },
+    {
+      "pair": {
+        "net": 15,
+        "from": 16,
+        "to": 95,
+        "airlineLu": 517324.8495867949
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 67065
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 28475
+      }
+    },
+    {
+      "pair": {
+        "net": 16,
+        "from": 17,
+        "to": 86,
+        "airlineLu": 399530.97501945955
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 27106
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 47095
+      }
+    },
+    {
+      "pair": {
+        "net": 18,
+        "from": 19,
+        "to": 88,
+        "airlineLu": 399530.97501945955
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 20997
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 37612
+      }
+    },
+    {
+      "pair": {
+        "net": 19,
+        "from": 20,
+        "to": 60,
+        "airlineLu": 317647.6034853718
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 13488
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 30651
+      }
+    },
+    {
+      "pair": {
+        "net": 21,
+        "from": 22,
+        "to": 96,
+        "airlineLu": 456070.1700396552
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 24893
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 22064
+      }
+    },
+    {
+      "pair": {
+        "net": 22,
+        "from": 23,
+        "to": 55,
+        "airlineLu": 388973.0067755345
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 16193
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 11075
+      }
+    },
+    {
+      "pair": {
+        "net": 23,
+        "from": 24,
+        "to": 61,
+        "airlineLu": 341211.0783664563
+      },
+      "before": {
+        "status": "exhausted",
+        "expansions": 17176
+      },
+      "v1": {
+        "status": "exhausted",
+        "expansions": 9722
+      }
+    },
+    {
+      "pair": {
+        "net": 24,
+        "from": 79,
+        "to": 516,
+        "airlineLu": 104307.23848324238
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 5331
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 4044
+      }
+    },
+    {
+      "pair": {
+        "net": 25,
+        "from": 78,
+        "to": 270,
+        "airlineLu": 41036.56905736638
+      },
+      "before": {
+        "status": "kept",
+        "expansions": 4165
+      },
+      "v1": {
+        "status": "kept",
+        "expansions": 2807
+      }
+    }
+  ],
+  "all_v2_targets_match": true,
+  "same_v2_ses": true
+}
