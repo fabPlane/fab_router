@@ -46,3 +46,22 @@ test('optional copper corners discover a detour around routed foreign copper',()
  expect(checkDrc(l).counts.violations).toBe(0);expect(requiredConnections(l)).toEqual([]);
  expect(l.tracks.find(t=>t.id===10)!.pts).toEqual([{x:5000,y:-1000},{x:5000,y:1000}]);
 });
+
+test('all-net recovery respects initial route deadline and abort without changing copper',()=>{
+ const l=fixture(),settings=resolveSettings({},undefined,l.angleMode),before=writeSes(l);
+ const controller=new AbortController();controller.abort();
+ const aborted=recoverRemaining(l,settings,true,16,true,{signal:controller.signal});
+ expect(aborted.status).toBe('aborted');expect(aborted.targets).toEqual([]);expect(writeSes(l)).toBe(before);
+ const expired=recoverRemaining(l,settings,true,16,true,{deadline:performance.now()-1});
+ expect(expired.status).toBe('deadline');expect(expired.targets).toEqual([]);expect(writeSes(l)).toBe(before);
+ expect(()=>recoverRemaining(l,settings,true,16,true,{deadline:NaN})).toThrow('Invalid recovery deadline');
+ // Opt-out does not inspect or validate the optional control.
+ expect(recoverRemaining(l,settings,false,16,true,{deadline:NaN}).status).toBe('disabled');
+});
+
+test('completed boards return without building a recovery baseline',()=>{
+ const l=fixture();l.pads=[];l.nets=[];
+ const before=writeSes(l),result=recoverRemaining(l,resolveSettings({},undefined,l.angleMode),true);
+ expect(result.status).toBe('finished');expect(result.targets).toEqual([]);expect(result.pending).toBe(0);
+ expect(writeSes(l)).toBe(before);
+});

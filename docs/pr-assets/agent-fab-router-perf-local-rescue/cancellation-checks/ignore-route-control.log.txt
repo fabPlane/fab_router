@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle31/mutations-public/ignore-route-control/recovery-cancellation.test.ts:
+(pass) cancellation detected after exact validation rolls back legal copper and its live index [3.41ms]
+
+../../agents/codex-fabpcb-perf/scratch/cycle31/mutations-public/ignore-route-control/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [2.12ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.38ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.37ms]
+(pass) late legal proposals are rewound and do not start another region [0.30ms]
+83 |    const result=scheduleRecovery(l,lattice,journal,target,{...plan,margins:[1,2]},trial=>{
+84 |     calls++;trial.expand();add();
+85 |     if(reason==='aborted')controller.abort();else now=5;
+86 |     trial.expand();
+87 |    },{deadline:5,signal:controller.signal});
+88 |    expect(result.status).toBe(reason);expect(calls).toBe(1);expect(result.expansions).toBe(1);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "aborted"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle31/mutations-public/ignore-route-control/recovery-schedule.test.ts:88:26)
+(fail) route-wide cancellation stops immediately and rewinds a partly inserted proposal [0.54ms]
+
+ 5 pass
+ 1 fail
+ 86 expect() calls
+Ran 6 tests across 2 files. [16.00ms]

@@ -73,3 +73,26 @@ test('late legal proposals are rewound and do not start another region',()=>{
   expect(lattice.itemOf(2)).toBeUndefined();expect(requiredConnections(l)).toHaveLength(1);
  } finally {timer.mockRestore();}
 });
+
+test('route-wide cancellation stops immediately and rewinds a partly inserted proposal',()=>{
+ for(const reason of ['aborted','deadline'] as const){
+  const {l,lattice,journal,add}=fixture(),ses=writeSes(l),controller=new AbortController();
+  let now=0,calls=0;
+  const timer=spyOn(performance,'now').mockImplementation(()=>now);
+  try {
+   const result=scheduleRecovery(l,lattice,journal,target,{...plan,margins:[1,2]},trial=>{
+    calls++;trial.expand();add();
+    if(reason==='aborted')controller.abort();else now=5;
+    trial.expand();
+   },{deadline:5,signal:controller.signal});
+   expect(result.status).toBe(reason);expect(calls).toBe(1);expect(result.expansions).toBe(1);
+   expect(result.trials.map(t=>t.outcome)).toEqual([reason]);
+   expect(writeSes(l)).toBe(ses);expect(journal.insertedSince(0)).toEqual([]);
+   expect(lattice.itemOf(2)).toBeUndefined();expect(requiredConnections(l)).toHaveLength(1);
+   expect(checkDrc(l).counts.violations).toBe(0);
+   if(reason==='deadline')now=5;else controller.abort();
+   const stopped=scheduleRecovery(l,lattice,journal,target,plan,()=>{calls++;},{deadline:5,signal:controller.signal});
+   expect(stopped.status).toBe(reason);expect(stopped.trials).toEqual([]);expect(calls).toBe(1);
+  }finally{timer.mockRestore();}
+ }
+});

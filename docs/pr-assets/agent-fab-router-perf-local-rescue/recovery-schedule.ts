@@ -10,6 +10,11 @@ import {tryRecoveryTransaction} from './recovery-transaction.ts';
 
 type Target={net:number;from:number;to:number};
 type Outcome=ReturnType<typeof tryRecoveryTransaction>;
+export interface RecoveryControl {
+ /** Absolute performance.now() deadline shared by the entire post-pass. */
+ deadline?:number;
+ signal?:AbortSignal;
+}
 export interface RecoveryPlan {
  enabled:boolean;
  pitch:number;
@@ -25,10 +30,13 @@ export interface RecoveryTrial {
 }
 export function scheduleRecovery(
  layout:Layout,lattice:Lattice,journal:Journal,target:Target,plan:RecoveryPlan,
- propose:(trial:RecoveryTrial)=>void,
-):{status:'disabled'|'joined'|'kept'|'exhausted'|'budget';expansions:number;trials:{margin:number;region:Box;outcome:Outcome|'budget'}[]} {
- const trials:{margin:number;region:Box;outcome:Outcome|'budget'}[]=[];
+ propose:(trial:RecoveryTrial)=>void,control:RecoveryControl={},
+):{status:'disabled'|'joined'|'kept'|'exhausted'|'budget'|'deadline'|'aborted';expansions:number;trials:{margin:number;region:Box;outcome:Outcome|'budget'|'deadline'|'aborted'}[]} {
+ const trials:{margin:number;region:Box;outcome:Outcome|'budget'|'deadline'|'aborted'}[]=[];
  if(!plan.enabled)return {status:'disabled',expansions:0,trials};
+ if(control.deadline!==undefined&&!Number.isFinite(control.deadline))throw Error('Invalid recovery deadline');
+ const stop=()=>control.signal?.aborted?'aborted' as const:control.deadline!==undefined&&performance.now()>=control.deadline?'deadline' as const:undefined;
+ const initial=stop();if(initial)return {status:initial,expansions:0,trials};
  const integer=(n:number)=>Number.isSafeInteger(n)&&n>0;
  if(!Number.isFinite(plan.pitch)||plan.pitch<=0||!integer(plan.maxAttempts)||!integer(plan.maxExpansions)||
   !Number.isFinite(plan.maxMilliseconds)||plan.maxMilliseconds<=0||!plan.margins.length||
@@ -47,8 +55,11 @@ export function scheduleRecovery(
  if(c.componentOf.get(from.id)===c.componentOf.get(to.id))return {status:'joined',expansions:0,trials};
  const deadline=performance.now()+plan.maxMilliseconds,budget=Symbol('recovery budget');
  let expansions=0;
- const check=()=>{if(performance.now()>=deadline)throw budget;};
+ const cancelled=Symbol('recovery cancelled');
+ let stopped:'deadline'|'aborted'|undefined;
+ const check=()=>{stopped=stop();if(stopped)throw cancelled;if(performance.now()>=deadline)throw budget;};
  for(const {margin,region} of regions.slice(0,plan.maxAttempts)){
+  const reason=stop();if(reason)return {status:reason,expansions,trials};
   if(expansions>=plan.maxExpansions||performance.now()>=deadline)return {status:'budget',expansions,trials};
   let outcome:Outcome;
   try {
@@ -56,8 +67,9 @@ export function scheduleRecovery(
     check();
     propose({region:{...region},expand(){check();if(expansions>=plan.maxExpansions)throw budget;expansions++;}});
     check(); // Reject and rewind even a legal closure returned after its deadline.
-   },region);
+   },region,check);
   }catch(error){
+   if(error===cancelled&&stopped){trials.push({margin,region,outcome:stopped});return {status:stopped,expansions,trials};}
    if(error!==budget)throw error;
    trials.push({margin,region,outcome:'budget'});return {status:'budget',expansions,trials};
   }

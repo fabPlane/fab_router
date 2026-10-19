@@ -35,7 +35,7 @@ export function copperWithinRegion(layout:Layout,item:Track|Barrel,region:Box):b
 
 export function tryRecoveryTransaction(
  layout:Layout,lattice:Lattice,journal:Journal,
- target:{net:number;from:number;to:number},propose:()=>void,region?:Box,
+ target:{net:number;from:number;to:number},propose:()=>void,region?:Box,checkpoint?:()=>void,
 ):'kept'|'retained'|'region'|'drc'|'terminals'|'open' {
  if(region&&(![region.x0,region.y0,region.x1,region.y1].every(Number.isFinite)||
   region.x0>region.x1||region.y0>region.y1))throw Error('Invalid recovery region');
@@ -62,7 +62,9 @@ export function tryRecoveryTransaction(
  const copperBefore=region?copper():undefined;
  const mark=journal.mark();let kept=false;
  try {
+  checkpoint?.();
   propose();
+  checkpoint?.();
   if(retained()!==retainedBefore)return 'retained';
   if(region&&copperBefore){
    const after=copper();
@@ -76,6 +78,8 @@ export function tryRecoveryTransaction(
   const after=connectivity(layout,lattice);
   if(groups.some(g=>g.some(id=>!same(after,g[0]!,id))))return 'terminals';
   if(!same(after,target.from,target.to))return 'open';
+  // Validation is synchronous: a deadline/abort observed after it still rewinds.
+  checkpoint?.();
   kept=true;return 'kept';
  } finally {
   if(!kept)journal.rewind(mark);

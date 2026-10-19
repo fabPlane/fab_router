@@ -4,7 +4,7 @@ Both complete runs required; reports regressions instead of discarding attempts.
 import hashlib,json,sys
 from pathlib import Path
 from statistics import median
-before,after,source,out=map(lambda p:Path(p).resolve(),sys.argv[1:]);assert not out.exists()
+before,after,source,out=map(lambda p:Path(p).resolve(),sys.argv[1:5]);assert not out.exists()
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 controls=[json.loads((p/'controls.json').read_text()) for p in [before,after]]
 for c in controls:
@@ -14,7 +14,8 @@ for key in ['version','order','routers','cases','seeds','inputs_sha256','configs
  assert controls[0][key]==controls[1][key],key
 for i,p in enumerate([source,source/'docs/pr-assets/agent-fab-router-perf-local-rescue/candidate']):
  assert {n:sha(p/n)for n in controls[i]['candidate']['source_sha256']}==controls[i]['candidate']['source_sha256']
-snapshot=json.loads((source/'docs/pr-assets/agent-fab-router-perf-local-rescue/remaining-checks/source-hashes.json').read_text())
+snapshot_path=Path(sys.argv[5]) if len(sys.argv)>5 else source/'docs/pr-assets/agent-fab-router-perf-local-rescue/remaining-checks/source-hashes.json'
+snapshot=json.loads(snapshot_path.read_text())
 assert all(sha(source/n)==v for n,v in snapshot.items())
 old={(r['case'],r['seed']):r for r in json.loads((before/'results.json').read_text())}
 new=json.loads((after/'results.json').read_text());assert len(old)==len(new)==78
