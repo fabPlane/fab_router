@@ -1,0 +1,31 @@
+{
+  "scope": "one complete-board observer, three repeats; no timing or native safety claim",
+  "parity": true,
+  "repeats": 3,
+  "census": {
+    "queries": 42711408,
+    "missing": 0,
+    "cells": 85374181,
+    "nonempty": 64790744,
+    "visits": 348572028,
+    "duplicates": 51666932,
+    "bucketTests": 296905096,
+    "shelfTests": 140889510,
+    "bucketHits": 33669909,
+    "shelfHits": 42777737,
+    "filterRejected": 416892,
+    "results": 76030754,
+    "histogram": {
+      "0": 90,
+      "1": 28030978,
+      "2-7": 14048919,
+      "128+": 851,
+      "8-31": 607514,
+      "32-127": 23056
+    }
+  },
+  "shelf_test_percent": 32.18164592918717,
+  "duplicate_visit_percent": 14.822455002040497,
+  "shelf_hit_percent": 30.362613227911716,
+  "mean_results_per_query": 1.7801041351762508
+}

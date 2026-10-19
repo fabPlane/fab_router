@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-10-19T16:49:17.122134+00:00",
+  "replay_supervisors_exit": [
+    0,
+    0
+  ],
+  "replay_attempts": 3,
+  "checks_supervisor_exit": 0,
+  "observer_checks": [
+    "typecheck",
+    "check:layers"
+  ],
+  "production_checks": {
+    "typecheck": "PASS",
+    "layers_files": 71,
+    "layer_violations": 0,
+    "tests_passed": 912,
+    "tests_failed": 0,
+    "assertions": 399733,
+    "test_seconds": 347.68
+  },
+  "native_rechecked": false,
+  "production_source_changed": false,
+  "history_row": "none; diagnostic engine replays, not a scored benchmark"
+}
