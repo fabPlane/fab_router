@@ -1,0 +1,91 @@
+{
+  "target_pad": "0058b9c6-73af-4ba8-a061-fb00a457a84f",
+  "target_removed_runs": 0,
+  "selected": [
+    "near-8-normal-1",
+    "near-8-normal-1",
+    "near-8-normal-1"
+  ],
+  "removed_errors": [
+    [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 39 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 173.200561,
+              "y": 48.414401
+            },
+            "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 39 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 173.200561,
+              "y": 48.414401
+            },
+            "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 39 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 173.200561,
+              "y": 48.414401
+            },
+            "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ]
+  ],
+  "all_partitions_exact": true,
+  "terminals": 234,
+  "groups": 74,
+  "routing_benchmark": false,
+  "production_fix": false
+}

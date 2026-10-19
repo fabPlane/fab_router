@@ -112,3 +112,30 @@ git show 45a0aa1:docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius
 ```
 
 Native verification now requires `/usr/bin/python3` with the native board bindings installed. Summary-only checks cannot establish connectivity preservation.
+
+## C1 target coverage and collateral improvement
+
+The same nearest-eight pad-axis search was tested on C1.2 (`0058b9c6-73af-4ba8-a061-fb00a457a84f`) on the same full board, sidecars, host and checker. All 51 fresh static native checks completed (17 variants × three repeats), and the independent verifier passed.
+
+| C1.2 static diagnostic, three repeats | Baseline | Selected candidate |
+| --- | ---: | ---: |
+| Native errors, each | 6 | 5 |
+| Native opens, each | 15 | 15 |
+| C1.2 thermal findings, each | 1 | 1 |
+| U1.39 thermal findings, each | 1 | 0 |
+| Positive-net terminals / connected groups | 234 / 74 | 234 / 74, exact partition |
+
+Every candidate retains the C1.2 error. The selector chooses `near-8-normal-1` in all three repeats because it removes the separate U1.39 error with no new errors. Thus aggregate error reduction does not demonstrate repair of the requested pad. This is a third target coverage measurement, not another U1.39 repair claim. The adverse `near-1-normal--1` candidate has eight errors and is rejected. All 51 boards preserve the exact baseline native terminal partition.
+
+Raw reports, boards, sidecars, logs, hashes, summary, explicit target outcome and chart are retained in `c1-results/`. No engine or adapter change, production repair, frozen-suite gain or new router benchmark is claimed. Native thermal failures remain unresolved.
+
+```bash
+ASSETS=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+SOURCE=$HOME/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_pcb
+taskset -c 20-25 nice -n 10 timeout 2400 /usr/bin/python3 "$ASSETS/geometry-doglegs.py" --source "$SOURCE" --pad 0058b9c6-73af-4ba8-a061-fb00a457a84f --directions pad-axis --limit 8 --out /tmp/thermal-c1
+/usr/bin/python3 "$ASSETS/verify-geometry.py" /tmp/thermal-c1
+python3 "$ASSETS/geometry-chart.py" /tmp/thermal-c1
+bun run typecheck && bun run check:layers && bun run test
+```
+
+The 51 retained native rule files preserve their original trailing blank line for byte provenance.
