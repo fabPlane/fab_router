@@ -1,0 +1,772 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T20:11:24",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of P2",
+                    "pos": {
+                        "x": 75.098,
+                        "y": 16.83
+                    },
+                    "uuid": "37b61f6d-4074-4c02-960e-8a41c0d79868"
+                },
+                {
+                    "description": "Segment of P2 on F.Silkscreen",
+                    "pos": {
+                        "x": 74.425,
+                        "y": 19.34
+                    },
+                    "uuid": "a6b3f2bb-8627-4f36-b49d-4fdb1359e425"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P3 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.77,
+                        "y": 74.31
+                    },
+                    "uuid": "779c2e7a-e501-4a81-a3c6-1c34a961b7eb"
+                },
+                {
+                    "description": "PTH pad 3 [GNDA] of P3",
+                    "pos": {
+                        "x": 63.5,
+                        "y": 73.04
+                    },
+                    "uuid": "34589afc-bb21-4f2b-8aeb-3284befe21bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P3 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.77,
+                        "y": 74.31
+                    },
+                    "uuid": "779c2e7a-e501-4a81-a3c6-1c34a961b7eb"
+                },
+                {
+                    "description": "PTH pad 1 [+BATT] of P3",
+                    "pos": {
+                        "x": 63.5,
+                        "y": 67.96
+                    },
+                    "uuid": "8a5809c8-473f-4b18-8202-6e02147a51cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P3 on F.Silkscreen",
+                    "pos": {
+                        "x": 64.77,
+                        "y": 74.31
+                    },
+                    "uuid": "779c2e7a-e501-4a81-a3c6-1c34a961b7eb"
+                },
+                {
+                    "description": "PTH pad 2 [VCC] of P3",
+                    "pos": {
+                        "x": 63.5,
+                        "y": 70.5
+                    },
+                    "uuid": "e9462fb3-dc0e-41ad-9ce9-9711d9d9a10f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P4 on F.Silkscreen",
+                    "pos": {
+                        "x": 65.076,
+                        "y": 36.258
+                    },
+                    "uuid": "03398461-5854-4835-a55b-6c2daa14e378"
+                },
+                {
+                    "description": "PTH pad 1 [Net-(P4-Pad1)] of P4",
+                    "pos": {
+                        "x": 63.806,
+                        "y": 32.448
+                    },
+                    "uuid": "8ee2f299-ca56-446e-8777-e2935f632766"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P4 on F.Silkscreen",
+                    "pos": {
+                        "x": 65.076,
+                        "y": 36.258
+                    },
+                    "uuid": "03398461-5854-4835-a55b-6c2daa14e378"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of P4",
+                    "pos": {
+                        "x": 63.806,
+                        "y": 34.988
+                    },
+                    "uuid": "380820f7-84e5-43f6-bf01-bec8ada4ef92"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P2 on F.Silkscreen",
+                    "pos": {
+                        "x": 78.87,
+                        "y": 19.34
+                    },
+                    "uuid": "c7990f7f-16ab-4a50-8931-510c9dae0b17"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of P2",
+                    "pos": {
+                        "x": 77.6,
+                        "y": 15.53
+                    },
+                    "uuid": "5ffb6b31-8b92-4bec-9cd8-12138758c086"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Segment of P2 on F.Silkscreen",
+                    "pos": {
+                        "x": 78.87,
+                        "y": 19.34
+                    },
+                    "uuid": "c7990f7f-16ab-4a50-8931-510c9dae0b17"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(C2-Pad1)] of P2",
+                    "pos": {
+                        "x": 77.6,
+                        "y": 18.07
+                    },
+                    "uuid": "2fb36fb2-0613-4e63-a42b-24299e64eb28"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'Smart PSU v0.1 by @mik4el4ndersson 2016\nSelectable 5v or 3.3v output\nUSB and external charging of 1S Li-ion battery\nAttiny85 enabling smart control\n\nOutput max 100mA VCC and max 1000mA +BATT' on B.Silkscreen",
+                    "pos": {
+                        "x": 72.95,
+                        "y": 88.074
+                    },
+                    "uuid": "63ff9147-c2f4-4f84-b884-aa7570f51dbf"
+                },
+                {
+                    "description": "PTH pad 3 [GNDA] of SW3",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 67.8
+                    },
+                    "uuid": "63ea6b18-3de3-4b8b-926f-312188dae79c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'Smart PSU v0.1 by @mik4el4ndersson 2016\nSelectable 5v or 3.3v output\nUSB and external charging of 1S Li-ion battery\nAttiny85 enabling smart control\n\nOutput max 100mA VCC and max 1000mA +BATT' on B.Silkscreen",
+                    "pos": {
+                        "x": 72.95,
+                        "y": 88.074
+                    },
+                    "uuid": "63ff9147-c2f4-4f84-b884-aa7570f51dbf"
+                },
+                {
+                    "description": "PTH pad 1 [+BATT] of SW3",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 74.2
+                    },
+                    "uuid": "66fb7dc1-4ca7-453b-9fa0-8512f01c8eb1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'Smart PSU v0.1 by @mik4el4ndersson 2016\nSelectable 5v or 3.3v output\nUSB and external charging of 1S Li-ion battery\nAttiny85 enabling smart control\n\nOutput max 100mA VCC and max 1000mA +BATT' on B.Silkscreen",
+                    "pos": {
+                        "x": 72.95,
+                        "y": 88.074
+                    },
+                    "uuid": "63ff9147-c2f4-4f84-b884-aa7570f51dbf"
+                },
+                {
+                    "description": "PTH pad 2 [Net-(SW3-Pad2)] of SW3",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 71.0
+                    },
+                    "uuid": "d22c789d-b654-48d9-979b-8497519588c6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'Smart PSU v0.1 by @mik4el4ndersson 2016\nSelectable 5v or 3.3v output\nUSB and external charging of 1S Li-ion battery\nAttiny85 enabling smart control\n\nOutput max 100mA VCC and max 1000mA +BATT' on B.Silkscreen",
+                    "pos": {
+                        "x": 72.95,
+                        "y": 88.074
+                    },
+                    "uuid": "63ff9147-c2f4-4f84-b884-aa7570f51dbf"
+                },
+                {
+                    "description": "PTH pad 1 [<no net>] of SW2",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 38.2
+                    },
+                    "uuid": "58fec955-911c-4e1c-83d5-60489000c5af"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "PCB text 'Smart PSU v0.1 by @mik4el4ndersson 2016\nSelectable 5v or 3.3v output\nUSB and external charging of 1S Li-ion battery\nAttiny85 enabling smart control\n\nOutput max 100mA VCC and max 1000mA +BATT' on B.Silkscreen",
+                    "pos": {
+                        "x": 72.95,
+                        "y": 88.074
+                    },
+                    "uuid": "63ff9147-c2f4-4f84-b884-aa7570f51dbf"
+                },
+                {
+                    "description": "PTH pad 2 [+BATT] of SW2",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 35.0
+                    },
+                    "uuid": "55a10466-f8e3-41c6-908f-8a1404de6f12"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 65.076,
+                        "y": 24.32
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48d6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 75.744,
+                        "y": 24.828
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48dc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 75.744,
+                        "y": 27.368
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48e2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 61.774,
+                        "y": 81.47
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48e8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C5",
+                    "pos": {
+                        "x": 67.108,
+                        "y": 87.312
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Capacitors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C6",
+                    "pos": {
+                        "x": 72.188,
+                        "y": 84.264
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'LEDs'",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 62.028,
+                        "y": 54.546
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e48fa"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'LEDs'",
+            "items": [
+                {
+                    "description": "Footprint D2",
+                    "pos": {
+                        "x": 65.076,
+                        "y": 54.546
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4900"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Housings_DIP'",
+            "items": [
+                {
+                    "description": "Footprint IC1",
+                    "pos": {
+                        "x": 69.394,
+                        "y": 44.894
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e490c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connect'",
+            "items": [
+                {
+                    "description": "Footprint P1",
+                    "pos": {
+                        "x": 67.616,
+                        "y": 18.224
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4919"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connect'",
+            "items": [
+                {
+                    "description": "Footprint P2",
+                    "pos": {
+                        "x": 77.6,
+                        "y": 16.8
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e491f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connect'",
+            "items": [
+                {
+                    "description": "Footprint P4",
+                    "pos": {
+                        "x": 63.806,
+                        "y": 33.718
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e492b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'TO_SOT_Packages_SMD'",
+            "items": [
+                {
+                    "description": "Footprint Q1",
+                    "pos": {
+                        "x": 69.902,
+                        "y": 64.452
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4932"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 62.028,
+                        "y": 60.642
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4938"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 65.076,
+                        "y": 60.642
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e493e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 72.188,
+                        "y": 59.118
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4944"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 69.648,
+                        "y": 59.118
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e494a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 65.0,
+                        "y": 27.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4950"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Resistors_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R6",
+                    "pos": {
+                        "x": 73.5,
+                        "y": 80.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4956"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'spdt_slide_switch'",
+            "items": [
+                {
+                    "description": "Footprint SW2",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 35.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4965"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'spdt_slide_switch'",
+            "items": [
+                {
+                    "description": "Footprint SW3",
+                    "pos": {
+                        "x": 73.0,
+                        "y": 71.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e496c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'TO_SOT_Packages_SMD'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 70.406,
+                        "y": 26.615
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4975"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Housings_SSOP'",
+            "items": [
+                {
+                    "description": "Footprint U2",
+                    "pos": {
+                        "x": 67.0,
+                        "y": 82.5
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4981"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Measurement_Points'",
+            "items": [
+                {
+                    "description": "Footprint <no reference designator>",
+                    "pos": {
+                        "x": 77.268,
+                        "y": 56.324
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569e4986"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Connect'",
+            "items": [
+                {
+                    "description": "Footprint P3",
+                    "pos": {
+                        "x": 63.5,
+                        "y": 70.5
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569f4ae3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Buttons_Switches_SMD'",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 63.806,
+                        "y": 42.608
+                    },
+                    "uuid": "00000000-0000-0000-0000-0000569f4ae9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 2.7421 mm",
+                    "pos": {
+                        "x": 66.826,
+                        "y": 25.445
+                    },
+                    "uuid": "2abc13a3-2929-4b37-b371-08f1b40b3714"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [+BATT] on F.Cu, length 0.9380 mm",
+                    "pos": {
+                        "x": 70.744,
+                        "y": 25.118
+                    },
+                    "uuid": "43fa3ec4-fac0-444a-9ee9-ca971ee48589"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [+BATT] on B.Cu, length 1.5000 mm",
+                    "pos": {
+                        "x": 70.744,
+                        "y": 26.618
+                    },
+                    "uuid": "72c8d299-8ddf-462c-9ae2-6e8161ffc362"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}
