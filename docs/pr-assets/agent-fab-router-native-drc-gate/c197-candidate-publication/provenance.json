@@ -1,0 +1,29 @@
+{
+  "implementation_commit": "dee139f83db00e3fcbe1c314857669d4bdf1d739",
+  "before_gate_commit": "db315c4b8fa5c7e863bf5077d09290f9ebad8c15",
+  "routing_outputs_implementation": "8fa7ead0c45b0e7ca33737ff418f6309d51d762c",
+  "routing_outputs_source_cycle": 196,
+  "router_rerun": false,
+  "source_during_measurement": "dirty parent db315c4b; implementation bytes match dee139f8",
+  "initial_stop": "First pair compared entire native reports including date; four checks retained. Final comparison preserves timestamps and connectivity witnesses but compares decisions, errors, policy and opens.",
+  "source_hashes": {
+    "tools/native-drc-gate.ts": "ef416af13b61def6dc4af65d6f5a125bf03c0fc23d5682df7b4f1d018e13d148",
+    "tools/native-candidate-bundle.ts": "98f56d16f05b3f61759b6f8dd900362574dcfcff1b16ff7b50fe5d1435c67942",
+    "tools/kicad-board-rules.ts": "a7fc77852113b02cb3ab84a8164541a78c49bdcc5b5ce4ef1d1f4d5da584d76f",
+    "test/native-candidate-bundle.test.ts": "d35b17169f2439d264a7bfa795bea86ce107b9161008ce63e2c54bae6b9194e5"
+  },
+  "before_tool_hashes": {
+    "kicad-board-rules.ts": "a7fc77852113b02cb3ab84a8164541a78c49bdcc5b5ce4ef1d1f4d5da584d76f",
+    "native-drc-gate.ts": "ab869565b5fe06c13a5af265706cea9c19c1ddb369faf26ce65079155f5068e3"
+  },
+  "required_checks": {
+    "typecheck": true,
+    "layer_files": 65,
+    "layer_violations": 0,
+    "tests": 900,
+    "failed": 0,
+    "assertions": 398610,
+    "seconds": 241.37
+  },
+  "documented_extraction_exercised": true
+}
