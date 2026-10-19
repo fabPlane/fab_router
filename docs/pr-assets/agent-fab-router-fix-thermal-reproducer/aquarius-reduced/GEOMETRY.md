@@ -82,3 +82,33 @@ bun run typecheck && bun run check:layers && bun run test
 ```
 
 The exact-list failure is native scheduling dependent and may not reproduce on every invocation; no acceptance is inferred from count agreement. Retained reports document the observed failure. All required checks pass: typecheck, 65 layer checks, 859 tests, zero failures. These are static native checks, not a new router benchmark. Frozen thermal failures remain unresolved.
+
+## Native partition verification regression
+
+The verifier previously trusted summary `groups`: replacing every partition with an empty dictionary or disconnected singletons still passed. The verifier now rebuilds connectivity from each retained board and requires exact agreement with the recorded partition. Candidate eligibility also requires the same terminal inventory as baseline, in addition to preserving connected pairs. These checks validate evidence; they do not change native DRC rules or repair routing.
+
+Same 51 retained boards on the same host, three repeats per control:
+
+| Evidence control | Before accepted | After accepted |
+| --- | ---: | ---: |
+| Unchanged native partitions | 3/3 | 3/3 |
+| Empty partitions | 3/3 | 0/3 |
+| Singleton partitions | 3/3 | 0/3 |
+
+The regression was run before the fix and failed when empty partitions were accepted. Raw before/after controls and the failure log are retained in `partition-verification-results/`. The unchanged witness remains 5 native errors / 15 opens; frozen routing results and thermal failures remain unresolved. No new router benchmark was run.
+
+```bash
+ASSETS=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+taskset -c 20-25 nice -n 10 timeout 1800 /usr/bin/python3 "$ASSETS/partition-controls.py" "$ASSETS/wide-results"
+/usr/bin/python3 "$ASSETS/target-controls.py" "$ASSETS/wide-results"
+bun run typecheck && bun run check:layers && bun run test
+```
+
+To reproduce the failing pre-fix probe, materialize the prior verifier and pass it as the optional second argument (expected nonzero exit after accepting forged evidence):
+
+```bash
+git show 45a0aa1:docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/verify-geometry.py > /tmp/thermal-verify-before.py
+/usr/bin/python3 "$ASSETS/partition-controls.py" "$ASSETS/wide-results" /tmp/thermal-verify-before.py
+```
+
+Native verification now requires `/usr/bin/python3` with the native board bindings installed. Summary-only checks cannot establish connectivity preservation.
