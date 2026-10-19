@@ -1,0 +1,557 @@
+{
+  "fixtureSha256": "0b8f490c2677a9cbaba35b080cfe355e0cda99fac090f53160c8d17438dbbd4d",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "original",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 0,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 265,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 1
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 1
+      }
+    },
+    {
+      "repeat": 1,
+      "variant": "via-witness",
+      "before": {
+        "violations": 0,
+        "incompletes": 0
+      },
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 0,
+        "perNet": []
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    },
+    {
+      "repeat": 1,
+      "variant": "inset-vertex",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 1,
+        "attempted": 1,
+        "completed": 1,
+        "incompleteBefore": 1,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 0
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "original",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 0,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 240,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 1
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 1
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "via-witness",
+      "before": {
+        "violations": 0,
+        "incompletes": 0
+      },
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": []
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "inset-vertex",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 1,
+        "attempted": 1,
+        "completed": 1,
+        "incompleteBefore": 1,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 0
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "original",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 3,
+        "attempted": 3,
+        "completed": 0,
+        "incompleteBefore": 1,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 197,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 1
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 1
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "via-witness",
+      "before": {
+        "violations": 0,
+        "incompletes": 0
+      },
+      "report": {
+        "passes": 0,
+        "attempted": 0,
+        "completed": 0,
+        "incompleteBefore": 0,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 0,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 0,
+        "perNet": []
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "inset-vertex",
+      "before": {
+        "violations": 0,
+        "incompletes": 1
+      },
+      "report": {
+        "passes": 1,
+        "attempted": 1,
+        "completed": 1,
+        "incompleteBefore": 1,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 30000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "GNDA",
+            "incomplete": 0
+          }
+        ]
+      },
+      "after": {
+        "violations": 0,
+        "incompletes": 0
+      }
+    }
+  ]
+}
