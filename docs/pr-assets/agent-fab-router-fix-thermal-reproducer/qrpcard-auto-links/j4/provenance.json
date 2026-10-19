@@ -1,0 +1,188 @@
+{
+  "case": "qrpcard-qrpcard-j4",
+  "router": "fab-router",
+  "seed": 3,
+  "status": "checked",
+  "passed": false,
+  "seconds": 0.975722107,
+  "vias": 38,
+  "length_mm": 523.1989115428624,
+  "opens": 0,
+  "new_errors": 1,
+  "new_error_types": {
+    "starved_thermal": 1
+  },
+  "failed_fidelity": [],
+  "evidence": "runs/run-20261019T113122.388234Z-002/fab-router",
+  "check": {
+    "native_version": "10.0.6",
+    "board_sha256": "ddfa698a57c8f3bc36f7ee4417d9671730e248cf3f17a5868588ee8bc25da4b3",
+    "integrity_checks": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "integrity_pass": true,
+    "native_opens": 0,
+    "native_total_errors_excluding_opens": 1,
+    "inherited_errors": 0,
+    "new_errors": 1,
+    "new_error_details": [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 128.27,
+              "y": 171.45
+            },
+            "uuid": "00000000-0000-0000-0000-000057c65453"
+          },
+          {
+            "description": "Pad 15 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 76.073,
+              "y": 111.125
+            },
+            "uuid": "d77f2098-e7f4-4d9b-a0ff-0f4972d0cb00"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    "new_warning_details": [
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [+5V] on F.Cu, length 1.5065 mm",
+            "pos": {
+              "x": 73.9902,
+              "y": 113.818
+            },
+            "uuid": "e4fa0847-db1e-468f-ab6c-dc48bc7595e3"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [+5V] on F.Cu, length 1.5000 mm",
+            "pos": {
+              "x": 73.9902,
+              "y": 99.568
+            },
+            "uuid": "ff3bedcf-7e20-4c56-b70b-46aa3d2a7764"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      }
+    ],
+    "new_error_types": {
+      "starved_thermal": 1
+    },
+    "new_warnings": 2,
+    "new_warning_types": {
+      "track_dangling": 2
+    },
+    "via_count": 38,
+    "track_count": 115,
+    "track_length_mm": 523.1989115428624,
+    "per_net_length_mm": {
+      "+5V": 81.31942077997896,
+      "Net-(C1-Pad1)": 17.04352807990232,
+      "Net-(C1-Pad2)": 5.7327,
+      "Net-(C10-Pad2)": 19.51121298042749,
+      "Net-(C11-Pad2)": 25.010979969267623,
+      "Net-(C12-Pad2)": 5.447594291487973,
+      "Net-(C4-Pad2)": 5.465741762971637,
+      "Net-(C5-Pad1)": 25.1156358294544,
+      "Net-(C7-Pad2)": 6.595798414379053,
+      "Net-(C8-Pad2)": 18.28289870197075,
+      "Net-(C9-Pad2)": 26.747064341088127,
+      "Net-(I1-Pad1)": 53.437870154106164,
+      "Net-(J1-Pad5)": 68.34169793365962,
+      "Net-(LO(I)1-Pad1)": 60.65322370001465,
+      "Net-(LO(Q)1-Pad1)": 67.75714882864276,
+      "Net-(R3-Pad2)": 26.6199369988195,
+      "Net-(U1-Pad12)": 10.116458776691447
+    },
+    "native_acceptance": false,
+    "manufacturing_clean": false,
+    "ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ],
+    "drc_command": [
+      "/usr/bin/kicad-cli",
+      "pcb",
+      "drc",
+      "--severity-all",
+      "--format",
+      "json",
+      "-o",
+      "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c133/native-full/runs/run-20261019T113122.388234Z-002/fab-router/drc.json",
+      "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c133/native-full/runs/run-20261019T113122.388234Z-002/fab-router/refilled.kicad_pcb"
+    ],
+    "zone_preserved": true,
+    "ground_connected": true,
+    "island_findings": {
+      "filled_islands": [],
+      "orphan_copper": [],
+      "native_findings": [],
+      "ground_opens": []
+    },
+    "refilled_board_sha256": "ddfa698a57c8f3bc36f7ee4417d9671730e248cf3f17a5868588ee8bc25da4b3",
+    "pass": false,
+    "opens": 0,
+    "fidelity": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "vias": 38,
+    "length_mm": 523.1989115428624,
+    "job": "J4",
+    "raw_output_sha256": "ddfa698a57c8f3bc36f7ee4417d9671730e248cf3f17a5868588ee8bc25da4b3"
+  }
+}

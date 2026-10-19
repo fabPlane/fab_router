@@ -1,0 +1,72 @@
+{
+  "routing_benchmark": false,
+  "production_fix": false,
+  "input_sha256": {
+    ".kicad_pcb": "1c0db9315802b7e67830eafa14711237030e36fb200bb2d6d6fd870153e44bba",
+    ".kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+    ".kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "budget": 128,
+  "repeats": [
+    {
+      "before_errors": 2,
+      "after_errors": 0,
+      "before_opens": 0,
+      "after_opens": 0,
+      "checked_candidates": 30,
+      "accepted_candidates": 2,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "53366610b203eeef8c0651434a2b0217053d413482d1c47dff3911716be4fb61",
+      "rejected_reasons": {
+        "new_clearance": 9,
+        "new_shorting_items": 12,
+        "new_solder_mask_bridge": 11,
+        "new_track_width": 16,
+        "new_tracks_crossing": 16,
+        "not_strict_error_subset": 28
+      },
+      "lost_connected_pairs": 0
+    },
+    {
+      "before_errors": 2,
+      "after_errors": 0,
+      "before_opens": 0,
+      "after_opens": 0,
+      "checked_candidates": 30,
+      "accepted_candidates": 2,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "53366610b203eeef8c0651434a2b0217053d413482d1c47dff3911716be4fb61",
+      "rejected_reasons": {
+        "new_clearance": 9,
+        "new_shorting_items": 12,
+        "new_solder_mask_bridge": 11,
+        "new_track_width": 16,
+        "new_tracks_crossing": 16,
+        "not_strict_error_subset": 28
+      },
+      "lost_connected_pairs": 0
+    },
+    {
+      "before_errors": 2,
+      "after_errors": 0,
+      "before_opens": 0,
+      "after_opens": 0,
+      "checked_candidates": 30,
+      "accepted_candidates": 2,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "53366610b203eeef8c0651434a2b0217053d413482d1c47dff3911716be4fb61",
+      "rejected_reasons": {
+        "new_clearance": 9,
+        "new_shorting_items": 12,
+        "new_solder_mask_bridge": 11,
+        "new_track_width": 16,
+        "new_tracks_crossing": 16,
+        "not_strict_error_subset": 28
+      },
+      "lost_connected_pairs": 0
+    }
+  ]
+}
