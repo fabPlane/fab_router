@@ -1,0 +1,115 @@
+{
+  "adopted": false,
+  "failures": [
+    {
+      "mode": "exceptional",
+      "error": "Error: exceptional: mismatch popF at 53359",
+      "pops": 53359,
+      "original": [
+        "-Infinity",
+        "10",
+        "2656677124"
+      ],
+      "candidate": [
+        "NaN",
+        "8",
+        "1836261576"
+      ]
+    }
+  ],
+  "modes": [
+    {
+      "mode": "equal",
+      "pops": 13394,
+      "parity": true
+    },
+    {
+      "mode": "mixed",
+      "pops": 13276,
+      "parity": true
+    },
+    {
+      "mode": "growth",
+      "pops": 20000,
+      "parity": true
+    },
+    {
+      "mode": "reset",
+      "pops": 6673,
+      "parity": true
+    },
+    {
+      "mode": "exceptional",
+      "pops": 16,
+      "parity": false
+    }
+  ],
+  "sourceSha256": "f7c07d18765a6298e52a687b06257d9937efed1beadb077d3494ee793e97d5f0",
+  "heapSha256": "f400009554fc5282c6acb4e00cf86d0df803abb39de3f9e3c5995055b15824b8",
+  "pushes": 60056,
+  "pops": 53359,
+  "resets": 21,
+  "digest": "2826867e8fac45b8475a458fce349c4c9a1172289aaad2bf630965184c25a08a",
+  "timings": [
+    {
+      "repeat": 0,
+      "name": "original",
+      "milliseconds": 29.754966999999965
+    },
+    {
+      "repeat": 0,
+      "name": "candidate",
+      "milliseconds": 26.713662999999997
+    },
+    {
+      "repeat": 1,
+      "name": "candidate",
+      "milliseconds": 24.27669800000001
+    },
+    {
+      "repeat": 1,
+      "name": "original",
+      "milliseconds": 30.101590999999985
+    },
+    {
+      "repeat": 2,
+      "name": "original",
+      "milliseconds": 31.339023999999995
+    },
+    {
+      "repeat": 2,
+      "name": "candidate",
+      "milliseconds": 25.001195000000052
+    },
+    {
+      "repeat": 3,
+      "name": "candidate",
+      "milliseconds": 24.907328000000007
+    },
+    {
+      "repeat": 3,
+      "name": "original",
+      "milliseconds": 30.001111000000037
+    },
+    {
+      "repeat": 4,
+      "name": "original",
+      "milliseconds": 28.780919999999924
+    },
+    {
+      "repeat": 4,
+      "name": "candidate",
+      "milliseconds": 27.039207000000033
+    },
+    {
+      "repeat": 5,
+      "name": "candidate",
+      "milliseconds": 26.999062000000094
+    },
+    {
+      "repeat": 5,
+      "name": "original",
+      "milliseconds": 28.833049000000074
+    }
+  ]
+}
