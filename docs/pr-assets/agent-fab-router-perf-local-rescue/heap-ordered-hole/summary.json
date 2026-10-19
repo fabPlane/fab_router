@@ -1,0 +1,35 @@
+{
+  "scope": "One complete engine workload, three alternating pairs; no new native check or full-suite speed claim",
+  "parity": true,
+  "timings": {
+    "original": {
+      "seconds": [
+        55.461559921,
+        54.246187317,
+        46.505040177000005
+      ],
+      "median_s": 54.246187317,
+      "max_s": 55.461559921
+    },
+    "candidate": {
+      "seconds": [
+        52.388072829,
+        50.435392301,
+        47.300661282
+      ],
+      "median_s": 50.435392301,
+      "max_s": 52.388072829
+    }
+  },
+  "rejected_controls": [
+    "session",
+    "stats",
+    "settings",
+    "logs",
+    "repeat",
+    "seconds",
+    "bytes",
+    "original-hash",
+    "unexpected-source"
+  ]
+}
