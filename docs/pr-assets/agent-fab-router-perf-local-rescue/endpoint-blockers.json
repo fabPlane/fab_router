@@ -1,0 +1,487 @@
+{
+  "scope": "Original static pad geometry only; other blockers require live trial snapshots. Repeated observations are not independent routes. No path feasibility or native DRC claim.",
+  "non_pad_observations": 899,
+  "summary": [
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "pad_observations": 171,
+      "overlap": 105,
+      "below_rule": 171
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "6:14:64",
+      "pad_observations": 129,
+      "overlap": 83,
+      "below_rule": 129
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "8:18:65",
+      "pad_observations": 152,
+      "overlap": 112,
+      "below_rule": 152
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "9:20:66",
+      "pad_observations": 176,
+      "overlap": 136,
+      "below_rule": 176
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "10:22:68",
+      "pad_observations": 176,
+      "overlap": 152,
+      "below_rule": 176
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "11:24:67",
+      "pad_observations": 240,
+      "overlap": 200,
+      "below_rule": 240
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "key": "0:1:45",
+      "pad_observations": 197,
+      "overlap": 197,
+      "below_rule": 197
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "key": "3:29:46",
+      "pad_observations": 102,
+      "overlap": 102,
+      "below_rule": 102
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "key": "3:9:66",
+      "pad_observations": 408,
+      "overlap": 132,
+      "below_rule": 408
+    }
+  ],
+  "selected": [
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 0,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1265900,
+            "y": -942500
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          27,
+          28
+        ]
+      },
+      "blocker": {
+        "id": 27,
+        "part": 0,
+        "pinName": "14",
+        "net": 13,
+        "form": 0,
+        "at": {
+          "x": 1279300,
+          "y": -930500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1279300,
+            "y": -930500
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 144000000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": false,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 0,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1265900,
+            "y": -942500
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          27,
+          28
+        ]
+      },
+      "blocker": {
+        "id": 28,
+        "part": 0,
+        "pinName": "14@1",
+        "net": 13,
+        "form": 0,
+        "at": {
+          "x": 1304700,
+          "y": -930500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1304700,
+            "y": -930500
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 144000000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": false,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 1,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1238300,
+            "y": -778100
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "blocker": {
+        "id": 34,
+        "part": 0,
+        "pinName": "17@1",
+        "net": 16,
+        "form": 0,
+        "at": {
+          "x": 1304700,
+          "y": -854300
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1304700,
+            "y": -854300
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 48020000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": true,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 1,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1238300,
+            "y": -778100
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "blocker": {
+        "id": 35,
+        "part": 0,
+        "pinName": "18",
+        "net": 17,
+        "form": 0,
+        "at": {
+          "x": 1279300,
+          "y": -828900
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1279300,
+            "y": -828900
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 48020000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": true,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 1,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1238300,
+            "y": -778100
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "blocker": {
+        "id": 36,
+        "part": 0,
+        "pinName": "18@1",
+        "net": 17,
+        "form": 0,
+        "at": {
+          "x": 1304700,
+          "y": -828900
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1304700,
+            "y": -828900
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 121680000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": false,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "key": "4:10:62",
+      "trial": 3,
+      "variant": 1,
+      "segment": {
+        "sheet": 1,
+        "index": 1,
+        "legs": 2,
+        "seg": {
+          "a": {
+            "x": 1238300,
+            "y": -778100
+          },
+          "b": {
+            "x": 1402700,
+            "y": -942500
+          }
+        },
+        "width": 2500,
+        "neckWidth": 2500,
+        "angle": "45",
+        "blocking": [
+          34,
+          35,
+          36,
+          37
+        ]
+      },
+      "blocker": {
+        "id": 37,
+        "part": 0,
+        "pinName": "19",
+        "net": 18,
+        "form": 0,
+        "at": {
+          "x": 1279300,
+          "y": -803500
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0,
+          1
+        ],
+        "kind": 4,
+        "hold": "locked"
+      },
+      "part": "A1",
+      "shapes": [
+        {
+          "kind": "disk",
+          "c": {
+            "x": 1279300,
+            "y": -803500
+          },
+          "r": 9500
+        }
+      ],
+      "metrics": [
+        {
+          "core_distance_squared": 121680000,
+          "radius_sum": 10750,
+          "required": 2000,
+          "overlaps": false,
+          "below_rule": true
+        }
+      ],
+      "luPerUm": 10
+    }
+  ]
+}
