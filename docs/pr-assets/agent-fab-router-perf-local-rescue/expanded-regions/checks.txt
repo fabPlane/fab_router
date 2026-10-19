@@ -1,0 +1,10 @@
+$ tsc --noEmit
+$ bun run tools/check-layers.ts
+check:layers: 71 file(s), 0 violation(s)
+$ bun test --timeout 120000
+bun test v1.4.0 (34cbb9a40)
+
+ 912 pass
+ 0 fail
+ 399733 expect() calls
+Ran 912 tests across 42 files. [333.18s]

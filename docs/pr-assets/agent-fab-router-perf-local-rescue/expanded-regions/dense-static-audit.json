@@ -1,0 +1,10 @@
+{
+  "scope": "Static historical audit only; no routing and no identified cause of supervisor exit143",
+  "records": 6,
+  "steps": 18,
+  "all_steps_zero_without_timeout": true,
+  "results_sha256": "883c643897c171fd1ba4a41bd040985bf14012f7e12809b51680fe78689964ce",
+  "driver_sha256": "1cbacb0a315ff2f4acc9e28caa3e75554e8e4dfa3a9040e42a8bffa735b06ef2",
+  "runner_sha256": "d177864e1d6ab965556609fca3376daaee99fbc206c66edc02ef237ceb0cdaab",
+  "finding": "Driver ends after sixth flushed print; no explicit cleanup/termination path. Supervisor cause remains unknown."
+}

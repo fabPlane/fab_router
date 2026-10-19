@@ -1,0 +1,26 @@
+{
+  "sourceFilesVerifiedAtRuntimeCommit": 77,
+  "negativeControls": [
+    {
+      "mutation": "missing-repeat",
+      "exitCode": 1,
+      "summaryWritten": false
+    },
+    {
+      "mutation": "changed-session",
+      "exitCode": 1,
+      "summaryWritten": false
+    },
+    {
+      "mutation": "new-exact-error",
+      "exitCode": 1,
+      "summaryWritten": false
+    },
+    {
+      "mutation": "over-budget",
+      "exitCode": 1,
+      "summaryWritten": false
+    }
+  ],
+  "nativeScoreClaimed": false
+}
