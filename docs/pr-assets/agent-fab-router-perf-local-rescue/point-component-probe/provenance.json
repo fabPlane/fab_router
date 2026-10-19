@@ -1,0 +1,12 @@
+{
+  "case": "photon-sprinkler-sprinkler-j3",
+  "source": "fabPlane/fab_pcb benchmarks/autorouter/cases/photon-sprinkler-sprinkler-j3",
+  "license_file": "LICENSE",
+  "native_input": "archive native-input-evidence.tar.gz",
+  "derived_fixture": [
+    "test/data/component-anchor-stall.dsn",
+    "test/data/component-anchor-stall.ses",
+    "test/data/component-anchor-stall.json"
+  ],
+  "description": "Full exported DSN and unmodified native-final enabled-control session, no geometry reduction or rule change; original board attribution is preserved in DSN and frozen input."
+}
