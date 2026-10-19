@@ -1,0 +1,44 @@
+[
+  {
+    "mode": "before",
+    "repeat": 1,
+    "exit": 1,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-before-1.log"
+  },
+  {
+    "mode": "after",
+    "repeat": 1,
+    "exit": 0,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-after-1.log"
+  },
+  {
+    "mode": "before",
+    "repeat": 2,
+    "exit": 1,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-before-2.log"
+  },
+  {
+    "mode": "after",
+    "repeat": 2,
+    "exit": 0,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-after-2.log"
+  },
+  {
+    "mode": "before",
+    "repeat": 3,
+    "exit": 1,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-before-3.log"
+  },
+  {
+    "mode": "after",
+    "repeat": 3,
+    "exit": 0,
+    "test_sha256": "c1473d1573eff601892c641e9ed1420412a017a7a3a346243ad57cfd3dcf8440",
+    "log": "regression-after-3.log"
+  }
+]
