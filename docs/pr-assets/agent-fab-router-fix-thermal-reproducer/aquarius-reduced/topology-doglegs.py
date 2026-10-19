@@ -74,7 +74,11 @@ def main():
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--pad', required=True, help='Failing pad UUID from a native thermal error')
     p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--normal-scales', type=float, nargs='+', default=[-2, -1, 1, 2],
+                   help='Finite nonzero multiples of the stored gap; diagnostic search only')
     a = p.parse_args()
+    assert all(math.isfinite(v) and v != 0 for v in a.normal_scales)
+    assert len(set(a.normal_scales)) == len(a.normal_scales)
     a.out.mkdir(parents=True, exist_ok=False)
     native.SRC, native.D, native.TARGET = a.source, a.out, a.pad
     assert native.pcbnew.Version() == '10.0.6'
@@ -94,8 +98,8 @@ def main():
     base = native.parse(a.source.read_text())
     candidates = [('baseline', base, None)]
     for rank, info in enumerate(tracks, 1):
-        for sign in (-2, -1, 1, 2):
-            label = f'near-{rank}-normal-{sign}'
+        for sign in a.normal_scales:
+            label = f'near-{rank}-normal-{sign:g}'
             nodes = copy.deepcopy(base)
             original = next(n for n in base if isinstance(n, list) and native.uid(n) == info['uuid'])
             track = next(n for n in nodes if isinstance(n, list) and native.uid(n) == info['uuid'])
@@ -136,7 +140,7 @@ def main():
     assert inputs == {name: sha(Path(name)) for name in inputs}
     (a.out / 'summary.json').write_text(json.dumps(dict(production_fix=False, routing_benchmark=False,
         native_version=native.pcbnew.Version(), repeats=3, pad_uuid=a.pad, stored_zone_gap_nm=gap,
-        step_nm=gap, directions='normal', corridor_width_nm=100000, topology=metrics, pad_angle_deg=pad.GetOrientationDegrees(), nearby=tracks, input_sha256=inputs, script_sha256=sha(Path(__file__)),
+        step_nm=gap, normal_scales=a.normal_scales, directions='normal', corridor_width_nm=100000, topology=metrics, pad_angle_deg=pad.GetOrientationDegrees(), nearby=tracks, input_sha256=inputs, script_sha256=sha(Path(__file__)),
         selections=winners, controls=selection.controls(), rows=rows), indent=2)+'\n')
 
 

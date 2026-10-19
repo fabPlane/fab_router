@@ -17,7 +17,10 @@ spec.loader.exec_module(terminals)
 
 root = Path(sys.argv[1])
 s = json.loads((root / 'summary.json').read_text())
-count = 1 + 4*len(s['nearby'])
+scales = s.get('normal_scales', [-2, -1, 1, 2])
+assert all(math.isfinite(v) and v != 0 for v in scales)
+assert len(set(scales)) == len(scales)
+count = 1 + len(scales)*len(s['nearby'])
 assert s['repeats'] == 3 and len(s['rows']) == 3*count
 assert s['step_nm'] == s['stored_zone_gap_nm']
 def board_bytes(path):
@@ -47,7 +50,8 @@ for row in s['rows']:
     if row['label'] == 'baseline':
         assert target, 'supplied pad has no baseline thermal failure'
     if row['geometry']:
-        rank, sign = row['label'].split('-')[1], int(row['label'].split('normal-')[1])
+        rank, sign = row['label'].split('-')[1], float(row['label'].split('normal-')[1])
+        assert sign in scales
         track = s['nearby'][int(rank)-1]
         assert row['geometry']['track_uuid'] == track['uuid']
         assert row['geometry']['delta_nm'] == [round(sign*s['step_nm']*v) for v in track.get('direction', track['normal'])]
@@ -74,6 +78,8 @@ for row in s['rows']:
     assert row['eligible'] == expected
 for repeat in range(3):
     trials = s['rows'][repeat*count:(repeat+1)*count]
+    assert [r['label'] for r in trials] == ['baseline'] + [
+        f'near-{rank}-normal-{scale:g}' for rank in range(1, len(s['nearby'])+1) for scale in scales]
     accepted = [r for r in trials if r['eligible']]
     winner = min(accepted, key=lambda r: (len(r['errors']), r['opens'], r['label'])) if accepted else trials[0]
     assert s['selections'][repeat] == winner['label']
