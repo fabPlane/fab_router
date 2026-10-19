@@ -17,6 +17,10 @@ bent=transaction.module('auto_bent','thermal-doglegs.py')
 sha=lambda data:hashlib.sha256(data).hexdigest()
 
 
+class UnsupportedMetadata(ValueError):
+    """A known native metadata limitation that permits trying another target."""
+
+
 def targets(row):
     return sorted({item['uuid'] for error in row['errors'] if error['type']=='starved_thermal'
                    for item in error['items'] if item['uuid'] in row['groups']})
@@ -47,7 +51,7 @@ def search(original,check,proposals,budget):
                         accepted=ok,row=row,exception=exception))
                     if ok:
                         current=output;baseline=row;accepted=True;break
-            except ValueError as exc:
+            except UnsupportedMetadata as exc:
                 # Unsupported metadata is an explicit target outcome, not success.
                 skipped.append(dict(target=target,reason=str(exc),input_sha256=sha(current)))
             if accepted or len(attempts)>=budget:break
@@ -60,10 +64,15 @@ def search(original,check,proposals,budget):
 def native_proposals(data,row,target):
     board=native.pcbnew.LoadBoard(str(native.D/row['name']/'board.kicad_pcb'))
     pad=next(p for p in board.GetPads() if p.m_Uuid.AsString()==target)
-    layer=straight.plane_layer(board,pad)
+    try:
+        layer=straight.plane_layer(board,pad)
+    except ValueError as exc:
+        raise UnsupportedMetadata(str(exc)) from exc
     gap=min(z.GetThermalReliefGap() for z in board.Zones()
             if z.GetNetCode()==pad.GetNetCode()
             and any(z.IsOnLayer(l) for l in pad.GetLayerSet().Seq()))
+    if gap < 4:
+        raise UnsupportedMetadata("search scale must be at least four nanometres")
     nodes=native.parse(data.decode())
     net=json.dumps(str(pad.GetNetname()),ensure_ascii=False)
     for kind,helper in (('straight',straight),('bent',bent)):

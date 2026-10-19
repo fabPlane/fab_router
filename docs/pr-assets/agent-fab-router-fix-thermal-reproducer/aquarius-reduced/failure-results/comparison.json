@@ -1,0 +1,47 @@
+{
+  "routing_benchmark": false,
+  "rows": [
+    {
+      "source": "before",
+      "repeat": 1,
+      "passed": 11,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n...........FE\n======================================================================\nERROR: test_unsupported_metadata_is_recorded (__main__.Search.test_unsupported_metadata_is_recorded)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 93, in test_unsupported_metadata_is_recorded\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,8)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-links.py\", line 39, in search\n    for metadata,candidate in islice(proposals(current,baseline,target),\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 91, in proposals\n    raise helper.UnsupportedMetadata('ambiguous plane layers')\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'auto_links' has no attribute 'UnsupportedMetadata'\n\n======================================================================\nFAIL: test_unexpected_value_error_propagates (__main__.Search.test_unexpected_value_error_propagates)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 115, in test_unexpected_value_error_propagates\n    with self.assertRaisesRegex(ValueError,'malformed candidate geometry'):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "before",
+      "repeat": 2,
+      "passed": 11,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n...........FE\n======================================================================\nERROR: test_unsupported_metadata_is_recorded (__main__.Search.test_unsupported_metadata_is_recorded)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 93, in test_unsupported_metadata_is_recorded\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,8)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-links.py\", line 39, in search\n    for metadata,candidate in islice(proposals(current,baseline,target),\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 91, in proposals\n    raise helper.UnsupportedMetadata('ambiguous plane layers')\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'auto_links' has no attribute 'UnsupportedMetadata'\n\n======================================================================\nFAIL: test_unexpected_value_error_propagates (__main__.Search.test_unexpected_value_error_propagates)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 115, in test_unexpected_value_error_propagates\n    with self.assertRaisesRegex(ValueError,'malformed candidate geometry'):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "before",
+      "repeat": 3,
+      "passed": 11,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n...........FE\n======================================================================\nERROR: test_unsupported_metadata_is_recorded (__main__.Search.test_unsupported_metadata_is_recorded)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 93, in test_unsupported_metadata_is_recorded\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,8)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-links.py\", line 39, in search\n    for metadata,candidate in islice(proposals(current,baseline,target),\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 91, in proposals\n    raise helper.UnsupportedMetadata('ambiguous plane layers')\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: module 'auto_links' has no attribute 'UnsupportedMetadata'\n\n======================================================================\nFAIL: test_unexpected_value_error_propagates (__main__.Search.test_unexpected_value_error_propagates)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-6e0gzcrl/auto-link-controls.py\", line 115, in test_unexpected_value_error_propagates\n    with self.assertRaisesRegex(ValueError,'malformed candidate geometry'):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "after",
+      "repeat": 1,
+      "passed": 13,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "after",
+      "repeat": 2,
+      "passed": 13,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "after",
+      "repeat": 3,
+      "passed": 13,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.............\n----------------------------------------------------------------------\nRan 13 tests in 0.001s\n\nOK\n"
+    }
+  ]
+}

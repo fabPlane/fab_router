@@ -88,7 +88,7 @@ class Search(unittest.TestCase):
 
     def test_unsupported_metadata_is_recorded(self):
         def proposals(*args):
-            raise ValueError('ambiguous plane layers')
+            raise helper.UnsupportedMetadata('ambiguous plane layers')
             yield
         output,report=helper.search(b'original',lambda *args:row('a'),proposals,8)
         self.assertEqual(output,b'original');self.assertEqual(report['stop'],'exhausted')
@@ -106,6 +106,13 @@ class Search(unittest.TestCase):
             raise RuntimeError('generation failed')
             yield
         with self.assertRaisesRegex(RuntimeError,'generation failed'):
+            helper.search(b'original',lambda *args:row('a'),proposals,8)
+
+    def test_unexpected_value_error_propagates(self):
+        def proposals(*args):
+            raise ValueError('malformed candidate geometry')
+            yield
+        with self.assertRaisesRegex(ValueError,'malformed candidate geometry'):
             helper.search(b'original',lambda *args:row('a'),proposals,8)
 
     def test_invalid_budget_fails_before_checker(self):
