@@ -133,3 +133,37 @@ taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run ch
 `translation-results/` retains all 48 boards/reports, exact input/output hashes, displacement vectors, local filled-corridor measurements and raw logs. Repeated native findings and corridor measurements are asserted identical. Engine source/tests are unchanged.
 
 ![Measured native errors under complete-track translation](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/translation-results/comparison.png?raw=true)
+
+### Sequential full-board proposal replay
+
+`compose-generated.py` applies the previously accepted R20 and U1.39 proposals
+in sequence, validating each against the latest accepted native error report and
+terminal partition. Rejection or checker failure preserves the latest accepted
+bytes and baseline. Controls reject a deliberately stale-baseline mutation.
+This is a static diagnostic using published witnesses, not a production repair.
+
+| Full board, same machine, three repeats | Original | After R20 | After U1.39 |
+| --- | ---: | ---: | ---: |
+| Native errors per repeat | 6 | 5 | 4 |
+| Opens per repeat | 15 | 15 | 15 |
+| Terminals preserved | 234 | 234 | 234 |
+| Terminal groups | 74 | 74 | 74 |
+
+All three selected byte hashes agree. A fresh native refill of each selected
+board reproduces its four errors and terminal partition. Each accepted error
+multiset is a strict subset of its immediate predecessor; no connected terminal
+pair is lost. Four thermal errors and fifteen opens remain unresolved. The
+frozen router benchmark score has not changed or been rerun for this diagnostic.
+
+```sh
+asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 "$asset/compose-generated.py" --controls
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 1800 /usr/bin/python3 "$asset/compose-generated.py" --out /tmp/composed-native
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/python3 "$asset/verify-composed.py" --results "$asset/composed-generated-results"
+/usr/bin/python3 "$asset/render-composed.py" /tmp/composed-native
+```
+
+`composed-generated-results/` retains compressed boards/native reports, exact
+sidecars, byte hashes, terminal groups, controls, logs and the comparison image.
+The independent verifier regenerates candidate geometry from published witness
+metadata and checks all twelve reports and native terminal partitions.
