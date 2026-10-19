@@ -168,3 +168,37 @@ publishes nothing. The exported `checkNativeRepair` checks without publication, 
 This command checks a supplied proposal. It does not generate detours, invoke the
 bounded search, update the engine or apply a board to an editor. An unchanged routed
 board may pass; acceptance is a safety check rather than proof of repair progress.
+
+## Opt-in bounded thermal search
+
+```bash
+timeout 2400 bun tools/native-thermal-search.ts original.kicad_pcb routed.kicad_pcb accepted.json new-search-directory
+```
+
+This offline command connects generated-track proposals to the three-board repair
+boundary. It freezes the source and routed boards with their rules in an exclusively
+created search directory. It ranks at most eight generated segments near native
+thermal pad markers and tries the existing six single-segment detours, followed by
+at most sixteen connected segment pairs with sixteen corner displacements each.
+Authored copper is excluded from proposal generation and independently protected by
+the native gate. This is at most 304 proposals per stage and eight stages. Use an
+outer wall-clock timeout as shown; each native process also has a 120-second timeout.
+
+An intermediate stage must strictly reduce both total native errors and errors
+introduced relative to the source. Remaining introduced errors must be thermal
+errors. The candidate must introduce no finding relative to the current stage,
+increase neither source nor current open counts, and preserve every connected
+terminal pair in both the source and current stage. Discovery refreshes after each
+accepted stage. Every checked proposal and full validation is retained in the search
+directory; checker/generator exceptions stop the search and publish nothing.
+
+Publication requires a final check against the original routed snapshot and the
+source, with zero introduced errors. The exact three-board bundle is then published
+exclusively. Exhaustion or incomplete progress publishes nothing, and caller boards
+are never changed. An already acceptable routed board can publish unchanged with
+`repaired: false`. A failed search can retain intermediate progress in its diagnostic
+work directory; those boards are not accepted output.
+
+The text routing API, benchmark adapter and editor do not invoke this command. It
+provides no automatic application or undo. Search outcomes on retained complete
+boards are offline native experiments, not scored benchmark routing outcomes.
