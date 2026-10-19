@@ -29,3 +29,28 @@ bun run typecheck && bun run check:layers && bun run test
 ```
 
 The rank audit uses the previously retained successful selection as a coverage witness, not to construct candidates. Source files and sidecars remain unchanged; native diagnostics are retained. No production engine or adapter change is proposed.
+
+## Eight-track coverage experiment
+
+The same geometry-derived pad-axis search now accepts an explicit `--limit` from one through eight (default remains three). Eight is a diagnostic coverage bound motivated by the independent rank audit, not a general locality or safety guarantee. Candidate construction still uses native pad axes and stored zone gap / 5, without selecting track UUIDs or indices in advance.
+
+On the same full board, sidecars, host and native checker, three repeats per variant:
+
+| Static search | Before errors / opens | Selected errors / opens | Target thermal removed |
+| --- | --- | --- | --- |
+| Nearest three, retained prior measurement | 6 / 15 | 6 / 15 | 0/3 |
+| Nearest eight, 51 fresh native checks | 6 / 15 | 5 / 15 | 3/3 |
+
+The selected candidate is `near-8-normal-1` (the label retains the historical name; its actual direction source is pad-axis). All 234 positive-net pad terminals and 74 connected groups remain identical. Selection requires a strict native error multiset subset, no opens increase and preservation of all baseline connected terminal pairs. Five thermal errors and 15 opens remain. This demonstrates candidate coverage on one static routed board; it is not a production repair or a frozen routing-suite gain.
+
+```bash
+ASSETS=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+SOURCE=$HOME/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_pcb
+taskset -c 20-25 nice -n 10 timeout 2400 /usr/bin/python3 "$ASSETS/geometry-doglegs.py" --source "$SOURCE" --pad 40448888-06d6-474b-a038-09dfd03ed49c --directions pad-axis --limit 8 --out /tmp/thermal-eight
+python3 "$ASSETS/verify-geometry.py" /tmp/thermal-eight
+python3 "$ASSETS/geometry-chart.py" /tmp/thermal-eight
+/usr/bin/python3 "$ASSETS/geometry-controls.py"
+bun run typecheck && bun run check:layers && bun run test
+```
+
+All 51 native reports, refilled boards, sidecars, logs, complete terminal partitions and artifact hashes are retained in `wide-results/`. Native rule-file trailing blank lines are retained as input provenance.

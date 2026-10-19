@@ -40,6 +40,7 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--directions', choices=('normal', 'pad-axis'), default='normal')
+    p.add_argument('--limit', type=int, choices=range(1, 9), default=3)
     p.add_argument('--pad', required=True, help='Failing pad UUID from a native thermal error')
     p.add_argument('--out', type=Path, required=True)
     a = p.parse_args()
@@ -57,12 +58,12 @@ def main():
     gap = min(zone.GetThermalReliefGap() for zone in zones)
     assert gap > 0
     step = round(gap/5)
-    tracks = nearby(board, pad)
+    tracks = nearby(board, pad, a.limit)
     angle = math.radians(-pad.GetOrientationDegrees())
     axes = [(math.cos(angle), math.sin(angle)), (-math.sin(angle), math.cos(angle))]
     for info in tracks:
         info['direction'] = info['normal'] if a.directions == 'normal' else max(axes, key=lambda axis: abs(sum(x*y for x, y in zip(axis, info['normal']))))
-    assert len(tracks) == 3
+    assert len(tracks) == a.limit
     base = native.parse(a.source.read_text())
     candidates = [('baseline', base, None)]
     for rank, info in enumerate(tracks, 1):

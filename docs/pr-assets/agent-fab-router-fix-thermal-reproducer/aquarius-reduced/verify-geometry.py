@@ -9,7 +9,8 @@ import sys
 
 root = Path(sys.argv[1])
 s = json.loads((root / 'summary.json').read_text())
-assert s['repeats'] == 3 and len(s['rows']) == 21
+count = 1 + 2*len(s['nearby'])
+assert s['repeats'] == 3 and len(s['rows']) == 3*count
 assert s['step_nm'] == round(s['stored_zone_gap_nm']/5)
 for row in s['rows']:
     for name, digest in row['sha256'].items():
@@ -30,11 +31,15 @@ for row in s['rows']:
     expected = (not (errors(row)-errors(baseline)) and len(row['errors']) < len(baseline['errors'])
                 and row['opens'] <= baseline['opens'] and preserved)
     assert row['eligible'] == expected
-assert s['selections'] == ['baseline']*3
+for repeat in range(3):
+    trials = s['rows'][repeat*count:(repeat+1)*count]
+    accepted = [r for r in trials if r['eligible']]
+    winner = min(accepted, key=lambda r: (len(r['errors']), r['opens'], r['label'])) if accepted else trials[0]
+    assert s['selections'][repeat] == winner['label']
 for label in {r['label'] for r in s['rows']}:
     group = [r for r in s['rows'] if r['label'] == label]
     assert len(group) == 3
     for field in ('errors', 'opens', 'groups', 'eligible', 'geometry'):
         assert all(r[field] == group[0][field] for r in group)
 assert len(set(s['selections'])) == 1
-print('Verified 21 native reports, all artifact hashes, geometric offsets and repeat consistency.')
+print(f'Verified {len(s["rows"])} native reports, all artifact hashes, geometric offsets and repeat consistency.')
