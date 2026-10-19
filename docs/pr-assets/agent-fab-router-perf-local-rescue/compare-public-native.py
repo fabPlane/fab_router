@@ -4,6 +4,7 @@ Both complete runs required; reports regressions instead of discarding attempts.
 import hashlib,json,sys
 from pathlib import Path
 from statistics import median
+from collections import Counter
 before,after,source,out=map(lambda p:Path(p).resolve(),sys.argv[1:5]);assert not out.exists()
 sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
 controls=[json.loads((p/'controls.json').read_text()) for p in [before,after]]
@@ -38,7 +39,7 @@ for r in new:
  assert {k:v for k,v in routed['report']['effectiveSettings'].items() if k!='localRecovery'}=={k:v for k,v in old_report['effectiveSettings'].items() if k!='localRecovery'}
  assert routed['report']['incompleteAfter']==routed['statsAfter']['connections']['incomplete'] or routed['report']['effectiveSettings']['ignoreNetGroups']
  keys=['status','passed','seconds','vias','length_mm','opens','new_errors','new_error_types','failed_fidelity']
- introduced_errors=sorted({json.dumps(x,sort_keys=True)for x in r['check']['new_error_details']}-{json.dumps(x,sort_keys=True)for x in b['check']['new_error_details']})
+ introduced_errors=sorted((Counter(json.dumps(x,sort_keys=True)for x in r['check']['new_error_details'])-Counter(json.dumps(x,sort_keys=True)for x in b['check']['new_error_details'])).elements())
  rows.append({'recovery':recovery,'introduced_error_details':introduced_errors,'case':r['case'],'seed':r['seed'],'before':{k:b[k]for k in keys},'after':{k:r[k]for k in keys},'same_ses':sha(d0/'work/board.ses')==sha(d1/'work/board.ses')})
 regressions=[r for r in rows if r['introduced_error_details'] or r['after']['opens']>r['before']['opens'] or r['after']['new_errors']>r['before']['new_errors'] or (r['before']['passed']and not r['after']['passed']) or r['after']['failed_fidelity']!=r['before']['failed_fidelity']]
 cases=[]

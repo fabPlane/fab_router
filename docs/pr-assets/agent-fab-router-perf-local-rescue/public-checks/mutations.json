@@ -1,0 +1,25 @@
+{
+  "source_sha256": {
+    "/home/hyper/bench/wt/fr-perf/src/route/recovery-transaction.ts": "cc78aab19638ee446a79617dbe7dd3a38ce1a8d346930ba4ae92b611d32e7534",
+    "/home/hyper/bench/wt/fr-perf/src/route/recovery-schedule.ts": "2938cd5137caaebe0ef5b27638beb10e022a93ca834c360aa5c3cb23531a3082",
+    "/home/hyper/bench/wt/fr-perf/test/recovery-cancellation.test.ts": "c27f121ab8081c281f5183a9d85532643125a1e87edc17764230b7a5f6039d7d",
+    "/home/hyper/bench/wt/fr-perf/test/recovery-schedule.test.ts": "e0bcac7147709e56b6814c8109387d1514956da9b471a877118db14f0e70a647"
+  },
+  "results": [
+    {
+      "variant": "control",
+      "exit_code": 0,
+      "log_sha256": "a6d30a6021aa32ca00a8b67967136e612ad0c48e22205b70f4e1f4ad8daf69bf"
+    },
+    {
+      "variant": "skip-final-checkpoint",
+      "exit_code": 1,
+      "log_sha256": "92fb5e64c71be81812b5c0b30a65be1b3914b51e2fdf6f8fc26f3c4f32cbbb0e"
+    },
+    {
+      "variant": "ignore-route-control",
+      "exit_code": 1,
+      "log_sha256": "409ce080059ac504551ed84cf787b281e4e73add0555b8c7c4a87430d04d7a7f"
+    }
+  ]
+}
