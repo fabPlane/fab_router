@@ -23,6 +23,7 @@ def eligible(before, candidate):
     old, new = errors(before), errors(candidate)
     return (not (new - old) and sum(new.values()) < sum(old.values())
             and candidate['opens'] <= before['opens']
+            and candidate['groups'].keys() == before['groups'].keys()
             and not terminals.lost_pairs(before['groups'], candidate['groups']))
 
 

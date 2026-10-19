@@ -139,3 +139,30 @@ bun run typecheck && bun run check:layers && bun run test
 ```
 
 The 51 retained native rule files preserve their original trailing blank line for byte provenance.
+
+## Selector rejects changed inventories without aborting
+
+The selector called the connected-pair helper before checking terminal inventory. The helper correctly asserts equal inventories; a trial with a removed, added or replaced isolated terminal therefore aborted the entire candidate search. An explicit inventory equality check now rejects that trial before calling the helper. The helper assertion and independent native verifier remain unchanged.
+
+Same controls and host, three repeats each:
+
+| Offline selector control | Before | After |
+| --- | --- | --- |
+| Removed / added / replaced isolated terminal | 9/9 abort | 9/9 reject |
+| Valid candidate following invalid inventory | 0/3 reached | 3/3 reached |
+| Valid unchanged inventory | 3/3 accepted | 3/3 accepted |
+
+Replaying the 51 U1.39 and 51 C1.2 retained candidate records preserves all eligibility decisions and selections. Independent verification of the 51 retained C1.2 native boards also passes. These are reused measurements, not fresh native refills or a routing benchmark. The native thermal failures remain unresolved; engine and adapter source are unchanged.
+
+```bash
+ASSETS=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+git show fbb18a0:"$ASSETS/select-dogleg.py" > /tmp/thermal-selector-before.py
+# Expected nonzero: inventory changes abort selection.
+/usr/bin/python3 "$ASSETS/selector-controls.py" /tmp/thermal-selector-before.py
+/usr/bin/python3 "$ASSETS/selector-controls.py"
+/usr/bin/python3 "$ASSETS/replay-selection.py" "$ASSETS/wide-results" "$ASSETS/c1-results"
+taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 "$ASSETS/verify-geometry.py" "$ASSETS/c1-results"
+taskset -c 20-25 nice -n 10 timeout 1200 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+```
+
+Raw failing and passing controls, replay results, native diagnostics, validation and chart are retained in `selector-results/`.
