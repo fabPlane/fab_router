@@ -1,0 +1,37 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/visibility-mutant.test.ts:
+22 |  const fingerprints=[];
+23 |  for(let repeat=0;repeat<3;repeat++){
+24 |   const {l,lattice,journal,profile}=fixture(),before=writeSes(l),mark=journal.mark();
+25 |   const outcomes:ReturnType<typeof proposeVisibility>[]=[];
+26 |   const result=scheduleRecovery(l,lattice,journal,target,plan,t=>{outcomes.push(proposeVisibility(l,lattice,journal,target,profile,t));});
+27 |   expect(result.status).toBe('kept');expect(result.trials.map(t=>t.outcome)).toEqual(['open','kept']);
+                             ^
+error: expect(received).toBe(expected)
+
+Expected: "kept"
+Received: "exhausted"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts:27:25)
+(fail) visibility search discovers legal obstacle detour only after local region growth [4.75ms]
+(pass) visibility budget exhaustion and bounded graph miss preserve session and live index [1.68ms]
+62 |   const before=requiredConnections(l).filter(c=>c.net===net);expect(before.map(c=>[c.from,c.to])).toEqual([[10,62]]);
+63 |   const ses=writeSes(l),lattice=buildLattice(l),journal=createJournal(l,lattice),mark=journal.mark(),profile=resolveProfile(l,net,settings);
+64 |   const result=scheduleRecovery(l,lattice,journal,before[0]!,{
+65 |    enabled:true,pitch:profile.width+profile.maxSpacing,margins:[0,4,8,16],maxAttempts:4,maxExpansions:100000,maxMilliseconds:15000,
+66 |   },t=>{proposeVisibility(l,lattice,journal,before[0]!,profile,t);});
+67 |   expect(result.status).toBe('kept');expect(checkDrc(l).counts.violations).toBe(0);
+                             ^
+error: expect(received).toBe(expected)
+
+Expected: "kept"
+Received: "exhausted"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts:67:25)
+(fail) visibility search discovers an original-context stall closure without a recorded path [4090.84ms]
+
+ 1 pass
+ 2 fail
+ 14 expect() calls
+Ran 3 tests across 1 file. [4.11s]

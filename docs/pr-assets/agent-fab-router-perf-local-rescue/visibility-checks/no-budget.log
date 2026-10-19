@@ -1,0 +1,37 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/visibility-mutant.test.ts:
+24 |   const {l,lattice,journal,profile}=fixture(),before=writeSes(l),mark=journal.mark();
+25 |   const outcomes:ReturnType<typeof proposeVisibility>[]=[];
+26 |   const result=scheduleRecovery(l,lattice,journal,target,plan,t=>{outcomes.push(proposeVisibility(l,lattice,journal,target,profile,t));});
+27 |   expect(result.status).toBe('kept');expect(result.trials.map(t=>t.outcome)).toEqual(['open','kept']);
+28 |   expect(outcomes.map(o=>o.found)).toEqual([false,true]);
+29 |   expect(result.expansions).toBeGreaterThan(outcomes.reduce((n,o)=>n+o.edges,0));
+                                 ^
+error: expect(received).toBeGreaterThan(expected)
+
+Expected: > 16
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts:29:29)
+(fail) visibility search discovers legal obstacle detour only after local region growth [5.43ms]
+34 |  expect(new Set(fingerprints).size).toBe(1);
+35 | });
+36 | test('visibility budget exhaustion and bounded graph miss preserve session and live index',()=>{
+37 |  const {l,lattice,journal,profile}=fixture(),before=writeSes(l);
+38 |  const result=scheduleRecovery(l,lattice,journal,target,{...plan,maxExpansions:10},t=>{proposeVisibility(l,lattice,journal,target,profile,t);});
+39 |  expect(result.status).toBe('budget');expect(result.expansions).toBe(10);expect(writeSes(l)).toBe(before);
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: "budget"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts:39:24)
+(fail) visibility budget exhaustion and bounded graph miss preserve session and live index [1.06ms]
+(pass) visibility search discovers an original-context stall closure without a recorded path [11644.28ms]
+
+ 1 pass
+ 2 fail
+ 33 expect() calls
+Ran 3 tests across 1 file. [11.66s]
