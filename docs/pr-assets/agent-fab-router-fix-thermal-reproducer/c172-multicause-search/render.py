@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""Plot retained native counts, including the failed second search."""
+import argparse,json,subprocess
+from pathlib import Path
+p=argparse.ArgumentParser();p.add_argument('--results',type=Path,required=True);p.add_argument('--out',type=Path,required=True);x=p.parse_args()
+a,b=[json.loads((x.results/stage/'summary.json').read_text()) for stage in ('native','stage2')]
+s=['<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620"><rect width="1400" height="620" fill="#f8fafc"/>']
+def text(x,y,t,size=25):s.append(f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{size}" fill="#172033">{t}</text>')
+text(55,65,'Two-stage search on the complete J2-small route',34)
+text(55,110,'Same board and rules / native 10.0.6 / three independent repeats',23)
+for i,(label,z,baseline) in enumerate([('Before',a,True),('After first search',a,False),('After second search',b,False)]):
+ rows=[r['baseline'] if baseline or not r['accepted'] else r['attempts'][-1]['row'] for r in z['rows']]
+ counts={(len(r['errors']),r['opens']) for r in rows};assert len(counts)==1
+ errors,opens=counts.pop();y=190+100*i
+ text(55,y,label);text(490,y,f'{errors} thermal errors');text(900,y,f'{opens} opens / 3 repeats')
+ s.append(f'<rect x="490" y="{y+14}" width="{120*errors}" height="15" fill="#e05252"/>')
+n=len(b['rows'][0]['attempts']);accepted=sum(r['accepted'] for r in b['rows'])
+text(55,520,f'Second search: {n} proposals per repeat; {accepted}/3 accepted',25)
+text(55,570,'Offline diagnostic only; production routing and historical suite score unchanged',22)
+s.append('</svg>');x.out.mkdir(parents=True,exist_ok=True)
+(x.out/'comparison.svg').write_text(''.join(s))
+subprocess.run(['rsvg-convert','-w','1600',str(x.out/'comparison.svg'),'-o',str(x.out/'comparison.png')],check=True,timeout=120)
