@@ -1,0 +1,167 @@
+[
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 3,
+    "opens": 2,
+    "new_error_details": [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 208.28,
+              "y": 128.27
+            },
+            "uuid": "00000000-0000-0000-0000-000057c0c07c"
+          },
+          {
+            "description": "Pad 8 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 81.661,
+              "y": 101.219
+            },
+            "uuid": "fdff8c2f-ca08-488d-8cc4-069af422cc7f"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    "board_sha256": "786de0fc62891b0884d82f7ff3807a12db543d3a35af272f54e081d48243a04f",
+    "integrity_checks": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "kept_copper": {
+      "pass": true,
+      "missing": [],
+      "duplicated": [],
+      "unexpected": [],
+      "moved": [],
+      "moved_classification": "candidate geometric matches; exact missing/unexpected multisets are authoritative",
+      "narrowed": [],
+      "expected_count": 275,
+      "actual_count": 275
+    }
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 1,
+    "opens": 2,
+    "new_error_details": [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 208.28,
+              "y": 128.27
+            },
+            "uuid": "00000000-0000-0000-0000-000057c0c07c"
+          },
+          {
+            "description": "Pad 8 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 81.661,
+              "y": 101.219
+            },
+            "uuid": "fdff8c2f-ca08-488d-8cc4-069af422cc7f"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    "board_sha256": "bc3a9c7614a76ce0b31619173d737cd88c257a4ff1aefed08d222de60514d1d8",
+    "integrity_checks": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "kept_copper": {
+      "pass": true,
+      "missing": [],
+      "duplicated": [],
+      "unexpected": [],
+      "moved": [],
+      "moved_classification": "candidate geometric matches; exact missing/unexpected multisets are authoritative",
+      "narrowed": [],
+      "expected_count": 275,
+      "actual_count": 275
+    }
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 2,
+    "opens": 2,
+    "new_error_details": [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 208.28,
+              "y": 128.27
+            },
+            "uuid": "00000000-0000-0000-0000-000057c0c07c"
+          },
+          {
+            "description": "Pad 8 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 81.661,
+              "y": 101.219
+            },
+            "uuid": "fdff8c2f-ca08-488d-8cc4-069af422cc7f"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    "board_sha256": "b1827ab9a5f8e2ad950f00196d901c441e1ed86ac217a38e64d9918b96beed22",
+    "integrity_checks": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "kept_copper": {
+      "pass": true,
+      "missing": [],
+      "duplicated": [],
+      "unexpected": [],
+      "moved": [],
+      "moved_classification": "candidate geometric matches; exact missing/unexpected multisets are authoritative",
+      "narrowed": [],
+      "expected_count": 275,
+      "actual_count": 275
+    }
+  }
+]

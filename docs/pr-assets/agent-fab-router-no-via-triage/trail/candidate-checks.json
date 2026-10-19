@@ -1,0 +1,14 @@
+{
+  "scope": "Rejected scratch proposal, not final branch",
+  "command": "taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+  "typecheck": "pass",
+  "layers": "65 files; 0 violations",
+  "tests": {
+    "passed": 862,
+    "failed": 1,
+    "assertions": 398526,
+    "seconds": 217.51,
+    "failure": "Unchanged Issue026 J2 route fingerprint"
+  },
+  "log_sha256": "d041ee39e8afbc77b290369b2b8deb03974a62b9c9cb547201731c1ed326144b"
+}

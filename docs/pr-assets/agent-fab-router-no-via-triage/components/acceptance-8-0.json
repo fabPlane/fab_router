@@ -1,0 +1,63 @@
+{
+  "taken": "2026-10-19T00:12:04.723Z",
+  "head": "unknown",
+  "acceptStubs": false,
+  "invalidCases": [],
+  "cases": [
+    {
+      "id": "routing-slow-issue026-j2-novia",
+      "kind": "routing",
+      "tier": "slow",
+      "expected": {
+        "addedBarrels": {
+          "exact": 0
+        },
+        "violations": {
+          "maxAdded": 0
+        },
+        "incomplete": {
+          "max": 6
+        },
+        "wallClockMs": {
+          "max": 37000,
+          "advisory": true
+        }
+      },
+      "board": "Issue026-J2_reference.dsn",
+      "pass": false,
+      "stub": false,
+      "measured": {
+        "incomplete": 9,
+        "incompleteBefore": 33,
+        "completed": 62,
+        "violations": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "passes": 6,
+        "barrels": 0,
+        "vias": 0,
+        "traceLengthMm": 222.27493423414597,
+        "addedTracks": 23,
+        "addedBarrels": 0,
+        "wallClockMs": 2834,
+        "stoppedBy": "stagnant",
+        "timedOut": false,
+        "aborted": false,
+        "invariant:R-3": true,
+        "invariant:R-5": true
+      },
+      "mismatches": [
+        "incomplete: expected ≤ 6, got 9"
+      ],
+      "advisoryMismatches": [],
+      "ms": 2845.491485
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1,
+    "advisory": 0,
+    "stubbed": 0
+  }
+}
