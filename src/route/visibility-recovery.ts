@@ -1,3 +1,4 @@
+import {recoveryEndpoint} from './recovery-endpoint.ts';
 /** Opt-in local recovery. Bounded pad-corner visibility search, no rule/width/grid changes.
  * Every candidate generation, settled node and directed edge charges the shared
  * scheduler budget. Journal insertion happens only after reconstructing the path.
@@ -20,8 +21,8 @@ export function proposeVisibility(
 ):{found:boolean;nodes:number;edges:number} {
  if(!Number.isSafeInteger(maxNodes)||maxNodes<2||maxNodes>512)throw Error('Invalid visibility node cap');
  if(profile.net!==target.net||!Number.isFinite(profile.width)||profile.width<=0)throw Error('Invalid visibility profile');
- const from=layout.pads.find(p=>p.id===target.from),to=layout.pads.find(p=>p.id===target.to);
- if(!from||!to||from.net!==target.net||to.net!==target.net)throw Error('Invalid visibility target');
+ const from=recoveryEndpoint(layout,target.from,target.net),to=recoveryEndpoint(layout,target.to,target.net);
+ if(!from||!to)throw Error('Invalid visibility target');
  let totalNodes=0,edges=0;
  for(const sheet of profile.sheets.filter(s=>from.sheets.includes(s)&&to.sheets.includes(s))){
   const nodes:Pt[]=[{...from.at},{...to.at}],keys=new Set(nodes.map(p=>`${p.x},${p.y}`));

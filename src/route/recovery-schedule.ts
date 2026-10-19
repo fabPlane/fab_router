@@ -1,4 +1,5 @@
-/** Opt-in local recovery: explicit opt-in, pad-to-pad post-pass proposal scheduling.
+import {recoveryEndpoint} from './recovery-endpoint.ts';
+/** Opt-in local recovery: explicit opt-in, point-to-point post-pass proposal scheduling.
  * Trusted synchronous Journal-only callbacks must charge every search expansion.
  * This is a cooperative search budget, not preemption or a mutation sandbox.
  */
@@ -41,8 +42,8 @@ export function scheduleRecovery(
  if(!Number.isFinite(plan.pitch)||plan.pitch<=0||!integer(plan.maxAttempts)||!integer(plan.maxExpansions)||
   !Number.isFinite(plan.maxMilliseconds)||plan.maxMilliseconds<=0||!plan.margins.length||
   plan.margins.some((n,i)=>!Number.isFinite(n)||n<0||(i>0&&n<=plan.margins[i-1]!)))throw Error('Invalid recovery plan');
- const from=layout.pads.find(p=>p.id===target.from),to=layout.pads.find(p=>p.id===target.to);
- if(!from||!to||from.net!==target.net||to.net!==target.net)throw Error('Recovery schedule requires pad endpoints on target net');
+ const from=recoveryEndpoint(layout,target.from,target.net),to=recoveryEndpoint(layout,target.to,target.net);
+ if(!from||!to)throw Error('Recovery schedule requires point endpoints on target net');
  // Build all boxes before calling proposals, including overflow checks.
  const regions=plan.margins.map(margin=>{
   const extra=margin*plan.pitch;

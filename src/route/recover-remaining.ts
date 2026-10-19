@@ -1,3 +1,4 @@
+import {recoveryEndpoint} from './recovery-endpoint.ts';
 /** Default-off local recovery post-pass.
  * Snapshot actual incomplete connections after normal routing, resolve each net's
  * profile independently and recheck connectivity in the scheduler. Ignored nets
@@ -33,8 +34,8 @@ export function recoverRemaining(layout:Layout,settings:RouteSettings,enabled=fa
   hooks?.onLog?.('info',`local-recovery attempt net=${pair.net} from=${pair.from} to=${pair.to}`);
   const afterHook=stop();if(afterHook)return {status:afterHook,pending:pending.length,targets};
   const profile=resolveProfile(layout,pair.net,settings);
-  // Current graph supports pad endpoints only. Do not reinterpret pour/track ids.
-  if(!layout.pads.some(p=>p.id===pair.from&&p.net===pair.net)||!layout.pads.some(p=>p.id===pair.to&&p.net===pair.net)){targets.push({pair,status:'unsupported-endpoints'});continue;}
+  // Point anchors only; pour attachment remains unsupported.
+  if(!recoveryEndpoint(layout,pair.from,pair.net)||!recoveryEndpoint(layout,pair.to,pair.net)){targets.push({pair,status:'unsupported-endpoints'});continue;}
   const proposals:ReturnType<typeof proposeVisibility>[]=[];
   const start=performance.now();
   const result=scheduleRecovery(layout,lattice,journal,pair,{
