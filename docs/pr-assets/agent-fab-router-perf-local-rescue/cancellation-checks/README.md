@@ -56,3 +56,17 @@ remaining large-input recovery integration gate. The prior Dense6/L3 trials time
 out in normal routing and did not exercise recovery. Neither those trials nor this
 cancellation work establishes native safety for recovery on those stress inputs.
 The 27 existing native thermal errors remain owned by the separate bug work.
+
+In the fresh native sweep all 78 collector calls finish within the shared route
+budget. Their 87 collected targets produce 21 kept links, 30 graph/region misses,
+30 per-target charged-work budget stops and six unsupported endpoint pairs.
+No route-wide deadline/abort occurs in that sweep. The cancellation cases are
+covered by the explicit regressions and mutation controls, not inferred from the
+native completion comparison.
+
+The additional slow public-API acceptance invocation ended at its 1200-second
+external safety stop (exit 124), before producing a complete report. Its entire
+console output is retained in `slow.log.txt`, including observed completion
+failures and advisories. This is an incomplete invocation, not a full-suite score,
+and is not logged as a completed benchmark run. Required type/layer/unit checks
+completed successfully before this invocation ended.

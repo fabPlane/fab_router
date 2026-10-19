@@ -241,3 +241,20 @@ dropped; all 18 records are retained. The initial report export stopped at an
 unsupported Dense6 session-determinism assertion; the report now records that
 variation. No routing measurements were discarded. Normal routing and source implementation
 remain unchanged, and no production or downstream pin change is adopted.
+
+## Shared deadline follow-up
+
+The next research revision adds a shared route-wide monotonic deadline and
+AbortSignal, including a final transaction checkpoint after exact validation.
+Completed inputs avoid recovery baseline/index setup. These close the previously
+listed propagation gaps in the research adapter; no public production setting or
+hard validation-latency bound is added. The fresh complete 26×3 comparison retains
+120 → 99 native opens, 39/78 passes and the same 27 unresolved native thermal
+errors, with no introduced/substituted structured findings. All 78 candidate
+sessions and quality metrics match the earlier adapter. Total route time is
+403.581 → 438.932 seconds (+8.76%); this is not a speed gain.
+
+See [scope and exact commands](cancellation-checks/README.md),
+[complete measurements](cancellation-checks/native-summary.md),
+[paired raw findings and identities](cancellation-checks/native-comparison.json)
+and [the measured chart](cancellation-checks/native.png).
