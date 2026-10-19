@@ -46,6 +46,16 @@ def checked_native(data, name):
     Native save can reassign existing copper nets after shorts. Such evidence
     describes a different design and must never authorize the original bytes.
     """
+    # The proposal/saved comparison below proves native fidelity, not permission
+    # to change the source design. Only top-level tracks and vias are repairable;
+    # retain footprints/pads, zone settings/outlines, nets, graphics and rules.
+    def metadata_signature(blob):
+        nodes = native.parse(blob.decode())
+        protected = [n for n in nodes if not (
+            isinstance(n, list) and n[0] in ('segment', 'via'))]
+        return identity.design_signature((native.dump(protected)+'\n').encode())
+    if metadata_signature(data) != metadata_signature(native.SRC.read_bytes()):
+        raise ValueError('candidate changes protected source metadata')
     row = native.check(native.parse(data.decode()), name)
     board = native.D/name/'board.kicad_pcb'
     if identity.design_signature(board.read_bytes()) != identity.design_signature(data):
