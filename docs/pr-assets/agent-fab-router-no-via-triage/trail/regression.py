@@ -19,7 +19,7 @@ for label in ['before','after']:
     if label=='after':
         subprocess.run(['git','apply',str(ASSETS/'candidate.patch')],cwd=tree,check=True)
     for name in ['test/trail-fallback.test.ts','test/helpers/trail-fallback-board.ts']:
-        (tree/name).write_bytes((ASSETS/Path(name).name).read_bytes())
+        (tree/name).write_bytes((ASSETS/Path(name).name.replace('.test.ts', '.fixture.ts')).read_bytes())
     (tree/'geometry.ts').write_bytes((ASSETS/'geometry.ts').read_bytes())
     controls=['spec/acceptance/boards/Issue026-J2_reference.dsn','spec/acceptance/cases/routing-slow-issue026-j2-novia.json','tools/acceptance/run.ts','tools/acceptance/run-case.ts']
     for name in controls: assert (tree/name).read_bytes()==git('show',f'{base}:{name}')
