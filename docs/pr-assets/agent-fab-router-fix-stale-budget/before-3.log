@@ -1,0 +1,40 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/search-budget.test.ts:
+26 |   const name = layered ? "layered" : "single layer";
+27 |   test(`${name}: obsolete heap entries leave room for a reachable detour`, () => {
+28 |     const reference = search(layered, { maxPops: 32000 });
+29 |     expect(reference.ok).toBe(true);
+30 |     const result = search(layered);
+31 |     expect(result.ok).toBe(true);
+                           ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c70/portable/before/test/search-budget.test.ts:31:23)
+(fail) single layer: obsolete heap entries leave room for a reachable detour [11.79ms]
+(pass) single layer: expansion budget still stops search [0.10ms]
+(pass) single layer: cancellation and expired deadlines still stop search [0.14ms]
+26 |   const name = layered ? "layered" : "single layer";
+27 |   test(`${name}: obsolete heap entries leave room for a reachable detour`, () => {
+28 |     const reference = search(layered, { maxPops: 32000 });
+29 |     expect(reference.ok).toBe(true);
+30 |     const result = search(layered);
+31 |     expect(result.ok).toBe(true);
+                           ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c70/portable/before/test/search-budget.test.ts:31:23)
+(fail) layered: obsolete heap entries leave room for a reachable detour [9.37ms]
+(pass) layered: expansion budget still stops search [0.09ms]
+(pass) layered: cancellation and expired deadlines still stop search [0.07ms]
+
+ 4 pass
+ 2 fail
+ 14 expect() calls
+Ran 6 tests across 1 file. [25.00ms]

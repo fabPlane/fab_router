@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/search-budget.test.ts:
+(pass) single layer: obsolete heap entries leave room for a reachable detour [12.45ms]
+(pass) single layer: expansion budget still stops search [0.09ms]
+(pass) single layer: cancellation and expired deadlines still stop search [0.15ms]
+(pass) layered: obsolete heap entries leave room for a reachable detour [10.08ms]
+(pass) layered: expansion budget still stops search [0.05ms]
+(pass) layered: cancellation and expired deadlines still stop search [0.07ms]
+
+ 6 pass
+ 0 fail
+ 144 expect() calls
+Ran 6 tests across 1 file. [26.00ms]
