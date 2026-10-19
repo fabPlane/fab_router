@@ -7,6 +7,7 @@ All candidates pass the existing saved-design/rule/native/connectivity transacti
 import argparse
 import hashlib
 import json
+from itertools import islice
 from pathlib import Path
 import native
 import transaction
@@ -34,8 +35,9 @@ def search(original,check,proposals,budget):
         accepted=False
         for target in pending:
             try:
-                for metadata,candidate in proposals(current,baseline,target):
-                    if len(attempts)>=budget:break
+                # Bound iteration before requesting the next generated proposal.
+                for metadata,candidate in islice(proposals(current,baseline,target),
+                                                budget-len(attempts)):
                     name=f'candidate-{len(attempts)}'
                     output,ok,row,exception=transaction.transact(current,candidate,baseline,
                         lambda data:check(data,name))

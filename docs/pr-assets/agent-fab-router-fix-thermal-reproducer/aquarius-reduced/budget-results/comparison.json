@@ -1,0 +1,47 @@
+{
+  "routing_benchmark": false,
+  "rows": [
+    {
+      "source": "before",
+      "repeat": 1,
+      "passed": 10,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.F..E.......\n======================================================================\nERROR: test_failure_beyond_budget_is_never_requested (__main__.Search.test_failure_beyond_budget_is_never_requested)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 57, in test_failure_beyond_budget_is_never_requested\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,1)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-links.py\", line 37, in search\n    for metadata,candidate in proposals(current,baseline,target):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 56, in proposals\n    raise RuntimeError('outside authorized search budget')\nRuntimeError: outside authorized search budget\n\n======================================================================\nFAIL: test_budget_does_not_generate_an_unchecked_candidate (__main__.Search.test_budget_does_not_generate_an_unchecked_candidate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 48, in test_budget_does_not_generate_an_unchecked_candidate\n    self.assertEqual(generated,[0,1])\nAssertionError: Lists differ: [0, 1, 2] != [0, 1]\n\nFirst list contains 1 additional elements.\nFirst extra element 2:\n2\n\n- [0, 1, 2]\n?      ---\n\n+ [0, 1]\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "before",
+      "repeat": 2,
+      "passed": 10,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.F..E.......\n======================================================================\nERROR: test_failure_beyond_budget_is_never_requested (__main__.Search.test_failure_beyond_budget_is_never_requested)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 57, in test_failure_beyond_budget_is_never_requested\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,1)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-links.py\", line 37, in search\n    for metadata,candidate in proposals(current,baseline,target):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 56, in proposals\n    raise RuntimeError('outside authorized search budget')\nRuntimeError: outside authorized search budget\n\n======================================================================\nFAIL: test_budget_does_not_generate_an_unchecked_candidate (__main__.Search.test_budget_does_not_generate_an_unchecked_candidate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 48, in test_budget_does_not_generate_an_unchecked_candidate\n    self.assertEqual(generated,[0,1])\nAssertionError: Lists differ: [0, 1, 2] != [0, 1]\n\nFirst list contains 1 additional elements.\nFirst extra element 2:\n2\n\n- [0, 1, 2]\n?      ---\n\n+ [0, 1]\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "before",
+      "repeat": 3,
+      "passed": 10,
+      "failed": 2,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n.F..E.......\n======================================================================\nERROR: test_failure_beyond_budget_is_never_requested (__main__.Search.test_failure_beyond_budget_is_never_requested)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 57, in test_failure_beyond_budget_is_never_requested\n    output,report=helper.search(b'original',lambda *args:row('a'),proposals,1)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-links.py\", line 37, in search\n    for metadata,candidate in proposals(current,baseline,target):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 56, in proposals\n    raise RuntimeError('outside authorized search budget')\nRuntimeError: outside authorized search budget\n\n======================================================================\nFAIL: test_budget_does_not_generate_an_unchecked_candidate (__main__.Search.test_budget_does_not_generate_an_unchecked_candidate)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/tmp/thermal-budget-3rkiyiyr/auto-link-controls.py\", line 48, in test_budget_does_not_generate_an_unchecked_candidate\n    self.assertEqual(generated,[0,1])\nAssertionError: Lists differ: [0, 1, 2] != [0, 1]\n\nFirst list contains 1 additional elements.\nFirst extra element 2:\n2\n\n- [0, 1, 2]\n?      ---\n\n+ [0, 1]\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nFAILED (failures=1, errors=1)\n"
+    },
+    {
+      "source": "after",
+      "repeat": 1,
+      "passed": 12,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "after",
+      "repeat": 2,
+      "passed": 12,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    },
+    {
+      "source": "after",
+      "repeat": 3,
+      "passed": 12,
+      "failed": 0,
+      "log": "./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n./kicad/include/properties/property.h(607): assert \"m_choices.GetCount() > 0\" failed in PROPERTY_ENUM(): No enum choices defined\n............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+    }
+  ]
+}

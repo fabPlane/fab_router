@@ -38,6 +38,27 @@ class Search(unittest.TestCase):
         self.assertEqual(output,b'original');self.assertEqual(len(checked),3)
         self.assertEqual(report['stop'],'budget');self.assertEqual(len(report['attempts']),2)
 
+    def test_budget_does_not_generate_an_unchecked_candidate(self):
+        generated=[]
+        def proposals(*args):
+            for i in range(5):
+                generated.append(i)
+                yield dict(index=i),str(i).encode()
+        output,report=helper.search(b'original',lambda *args:row('a'),proposals,2)
+        self.assertEqual(generated,[0,1])
+        self.assertEqual(output,b'original')
+        self.assertEqual(len(report['attempts']),2)
+        self.assertEqual(report['stop'],'budget')
+
+    def test_failure_beyond_budget_is_never_requested(self):
+        def proposals(*args):
+            yield {},b'rejected'
+            raise RuntimeError('outside authorized search budget')
+        output,report=helper.search(b'original',lambda *args:row('a'),proposals,1)
+        self.assertEqual(output,b'original')
+        self.assertEqual(len(report['attempts']),1)
+        self.assertEqual(report['stop'],'budget')
+
     def test_checker_exception_rolls_back_then_continues(self):
         def check(data,name):
             if data==b'bad':raise TimeoutError('control')

@@ -1,0 +1,38 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+.F..E.......
+======================================================================
+ERROR: test_failure_beyond_budget_is_never_requested (__main__.Search.test_failure_beyond_budget_is_never_requested)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/auto-link-controls.py", line 57, in test_failure_beyond_budget_is_never_requested
+    output,report=helper.search(b'original',lambda *args:row('a'),proposals,1)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/auto-links.py", line 37, in search
+    for metadata,candidate in proposals(current,baseline,target):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/auto-link-controls.py", line 56, in proposals
+    raise RuntimeError('outside authorized search budget')
+RuntimeError: outside authorized search budget
+
+======================================================================
+FAIL: test_budget_does_not_generate_an_unchecked_candidate (__main__.Search.test_budget_does_not_generate_an_unchecked_candidate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/auto-link-controls.py", line 48, in test_budget_does_not_generate_an_unchecked_candidate
+    self.assertEqual(generated,[0,1])
+AssertionError: Lists differ: [0, 1, 2] != [0, 1]
+
+First list contains 1 additional elements.
+First extra element 2:
+2
+
+- [0, 1, 2]
+?      ---
+
++ [0, 1]
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.001s
+
+FAILED (failures=1, errors=1)
