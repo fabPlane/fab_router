@@ -3,9 +3,9 @@
  * fidelity, repair routes, or apply them to a live board. See docs/NATIVE-DRC-GATE.md.
  */
 import { execFile } from "node:child_process";
-import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { link, mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { basename, join, resolve } from "node:path";
+import { basename, dirname, join, resolve } from "node:path";
 import { promisify } from "node:util";
 import { assertSourcePads, assertBoardZones, assertBoardNets, assertEmbeddedBoardRules, assertSourceCopper } from "./kicad-board-rules.ts";
 const execute = promisify(execFile);
@@ -74,7 +74,7 @@ async function snapshot(board: string, directory: string) {
   if (rules) await writeFile(join(directory, `${name}.kicad_dru`), rules);
   return { target, bytes, project, rules };
 }
-export async function checkNativeBoards(input: string, candidate: string, timeoutMs = 120_000) {
+async function inspectNativeBoards(input: string, candidate: string, timeoutMs: number) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new Error("Invalid native check timeout");
   const directory = await mkdtemp(join(tmpdir(), "fab-router-native-gate-"));
   try {
@@ -95,8 +95,44 @@ export async function checkNativeBoards(input: string, candidate: string, timeou
     }
     const result = compareNativeReports(reports[0], reports[1]);
     const hash = (data: Buffer) => new Bun.CryptoHasher("sha256").update(data).digest("hex");
-    return { ...result, inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
+    const validation = { ...result, inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
+    const files = (snapshot: typeof before) => [
+      { name: "board.kicad_pcb", bytes: snapshot.bytes },
+      { name: "board.kicad_pro", bytes: snapshot.project },
+      ...(snapshot.rules === undefined ? [] : [{ name: "board.kicad_dru", bytes: snapshot.rules }]),
+    ].map(({ name, bytes }) => ({ name, sha256: hash(bytes), base64: bytes.toString("base64") }));
+    // Capture the already checked buffers, never reopen mutable caller paths.
+    return { validation, input: files(before), candidate: files(after) };
   } finally { await rm(directory, { recursive: true, force: true }); }
+}
+
+export async function checkNativeBoards(input: string, candidate: string, timeoutMs = 120_000) {
+  return (await inspectNativeBoards(input, candidate, timeoutMs)).validation;
+}
+
+/** Publish a self-contained accepted snapshot. The complete file becomes visible in
+ * one exclusive hard-link operation on the destination filesystem. Source files and
+ * pre-existing destinations (including symlinks) are never overwritten. This is an
+ * offline artifact, not an editor transaction or a durability guarantee across power loss.
+ */
+export async function publishNativeCandidate(input: string, candidate: string, output: string, timeoutMs = 120_000) {
+  // Resolve existing parent directories as well, so a directory symlink cannot
+  // redirect an absent output onto an absent source rule sidecar.
+  const canonical = async (path: string) => join(await realpath(dirname(resolve(path))), basename(path));
+  const destination = await canonical(output);
+  const protectedPaths = await Promise.all([input, candidate].flatMap(board =>
+    [".kicad_pcb", ".kicad_pro", ".kicad_dru"].map(ext => canonical(board.replace(/\.kicad_pcb$/, ext)))));
+  if (protectedPaths.includes(destination)) throw new Error("Bundle output overlaps a source board or rules file");
+  const inspected = await inspectNativeBoards(input, candidate, timeoutMs);
+  if (!inspected.validation.accepted) return { ...inspected.validation, published: false };
+  const staging = await mkdtemp(join(dirname(destination), ".native-candidate-"));
+  try {
+    const temporary = join(staging, "candidate.json");
+    await writeFile(temporary, `${JSON.stringify({ format: "fab-router-native-candidate-v1", ...inspected }, null, 2)}\n`, { flag: "wx", mode: 0o600 });
+    // Same filesystem; link fails with EEXIST for every existing destination.
+    await link(temporary, destination);
+  } finally { await rm(staging, { recursive: true, force: true }); }
+  return { ...inspected.validation, published: true };
 }
 
 if (import.meta.main) {

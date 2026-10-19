@@ -72,3 +72,60 @@ per-item rules, external dependencies and the exact checked bytes before committ
 candidate. No live-editor transaction or benchmark scoring path calls this optional command
 automatically. In particular, rejecting an unsafe candidate does not improve the routing
 benchmark's completion score or fix its thermal geometry.
+
+## Publish a checked candidate snapshot
+
+For an offline artifact that retains the exact checked board and rule bytes, use:
+
+```bash
+bun tools/native-candidate-bundle.ts original.kicad_pcb candidate.kicad_pcb accepted.json
+```
+
+The output must not exist. Exit codes have the same meanings as the read-only gate.
+A rejected candidate or a checker failure creates no bundle. Acceptance creates a
+`fab-router-native-candidate-v1` JSON bundle containing both full native reports,
+board hashes, and `input` / `candidate` file arrays. Each file has a fixed `name`,
+a SHA-256 digest, and its exact bytes in `base64`. An absent optional custom-rule
+file is omitted. The publication uses the in-memory snapshots that were checked,
+even if the caller's paths change while native validation runs. It does not reread
+those mutable paths after acceptance.
+
+The complete bundle is staged on the output filesystem, then published with an
+exclusive hard link. Readers see the complete artifact; existing files and symlinks
+are never replaced. Output paths overlapping either board or its rule sidecars,
+including absent sidecars reached through directory symlinks, are rejected. Staging
+files are removed on normal success and failure. An interrupted process can leave
+an unpublished staging directory; this is not a power-loss durability guarantee.
+
+Inspect the reports and verify all decoded hashes before using a bundle. For example,
+extract the candidate into a fresh directory (the input can be extracted similarly):
+
+```bash
+python3 - accepted.json extracted-candidate <<'PY'
+import base64, hashlib, json, pathlib, sys
+bundle = json.loads(pathlib.Path(sys.argv[1]).read_text())
+assert bundle['format'] == 'fab-router-native-candidate-v1'
+assert bundle['validation']['accepted']
+files = bundle['candidate']
+assert {f['name'] for f in files} in (
+    {'board.kicad_pcb', 'board.kicad_pro'},
+    {'board.kicad_pcb', 'board.kicad_pro', 'board.kicad_dru'},
+)
+assert len(files) == len({f['name'] for f in files})
+decoded = [(f, base64.b64decode(f['base64'], validate=True)) for f in files]
+for f, data in decoded:
+    assert hashlib.sha256(data).hexdigest() == f['sha256']
+assert next(f['sha256'] for f in files if f['name'] == 'board.kicad_pcb') == bundle['validation']['candidateSha256']
+output = pathlib.Path(sys.argv[2]); output.mkdir(exist_ok=False)
+for f, data in decoded:
+    (output / f['name']).write_bytes(data)
+PY
+```
+
+The bundle is a local interchange artifact, not a signed attestation. Publication uses
+all existing gate checks and limitations: acceptance may retain inherited errors and
+opens, and does not prove complete design fidelity or preserve every connected terminal
+pair. It neither edits the source paths nor commits a transaction to a live editor.
+The benchmark and editor do not invoke it automatically. A host integrating it must
+still bind the intended input to the recorded hash and handle its own atomic application
+and undo. It does not discover or repair thermal geometry.
