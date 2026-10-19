@@ -410,3 +410,26 @@ bun run typecheck && bun run check:layers && bun run test
 `custom-width-results/` retains boards, projects, custom rules, native DRC reports,
 snapshots, logs, summary hashes and the measured chart. These native diagnostics
 are not router benchmark runs; no new benchmark score or full-suite rerun is claimed.
+
+### Rule-loading failures (cycle 84)
+
+`rule-loading.py` compares a valid 0.4 mm width rule with an unknown constraint
+and an unclosed rule on the same native board/project. Three fresh CLI refills
+per variant return exit 0, zero native errors and two opens. The valid rule yields
+400 cross-section samples; both invalid files yield 508, matching the stored
+zone default. Both measured directions agree. CLI logs contain no rule-loading
+error. Thus successful CLI execution plus a clean error list cannot establish
+that supplied custom constraints were loaded. These finite sections do not prove
+thermal connectivity. No production guard or routing change is installed.
+
+The local Python module also exposes no DRC engine/constraint resolver; `BOARD.DRC`
+is an integer enum, not a rule-query method. General effective-rule resolution
+remains unavailable through the inspected bindings.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 360 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/rule-loading.py --out /tmp/thermal-rule-loading-new
+```
+
+`rule-loading-results/` retains exact rules, filled boards, projects, reports,
+CLI logs, measurements and the chart. No router benchmark ran; the frozen native
+thermal failures remain unresolved.
