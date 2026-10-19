@@ -1,0 +1,3977 @@
+{
+  "scope": "Dense6 prepared native case;1repeat/mode;2passes/600s;original versus bounded quilt front-cache routing both enabled;not full frozen suite",
+  "summary": {
+    "before": {
+      "passed": 0,
+      "opens": [
+        181
+      ],
+      "new_errors": [
+        0
+      ],
+      "median_s": 160.963425841,
+      "p95_s": 160.963425841,
+      "vias": [
+        315
+      ],
+      "length_mm": [
+        2317.561458085628
+      ],
+      "engine_incomplete": [
+        181
+      ],
+      "timeouts": [
+        false
+      ]
+    },
+    "after": {
+      "passed": 0,
+      "opens": [
+        181
+      ],
+      "new_errors": [
+        0
+      ],
+      "median_s": 177.18114857199998,
+      "p95_s": 177.18114857199998,
+      "vias": [
+        315
+      ],
+      "length_mm": [
+        2317.561458085628
+      ],
+      "engine_incomplete": [
+        181
+      ],
+      "timeouts": [
+        false
+      ]
+    }
+  },
+  "regressions": [],
+  "session_hashes": {
+    "before": [
+      "d8ed5d42fae6f89fd9da1afb1fff40a2e48986f5be9fc976cb18fa2d5a838bf3"
+    ],
+    "after": [
+      "d8ed5d42fae6f89fd9da1afb1fff40a2e48986f5be9fc976cb18fa2d5a838bf3"
+    ]
+  },
+  "pairs": [
+    {
+      "repeat": 1,
+      "before": {
+        "seconds": 160.963425841,
+        "passed": false,
+        "opens": 181,
+        "new_errors": 0,
+        "vias": 315,
+        "length_mm": 2317.561458085628,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "report": {
+          "passes": 2,
+          "attempted": 638,
+          "completed": 374,
+          "incompleteBefore": 439,
+          "incompleteAfter": 181,
+          "added": {
+            "tracks": 573,
+            "barrels": 315
+          },
+          "ripped": 314,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "maxPasses",
+          "effectiveSettings": {
+            "maxPasses": 2,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": false,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 600000,
+            "copperToEdgeClearanceUm": 300,
+            "holeClearanceUm": 200,
+            "neckWidthUm": 0,
+            "localRecovery": true,
+            "angleMode": "45"
+          },
+          "wallClockMs": 160253,
+          "perNet": [
+            {
+              "net": "QA_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D4",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "VCCIO",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D9",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D10",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "GND",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D14",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D19",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D22",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D28",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D36",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D40",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D41",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D43",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D44",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D45",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D46",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D47",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D48",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D49",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D50",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D51",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D52",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D53",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D54",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D55",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D0",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D3",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D13",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D16",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D17",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D18",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D28",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D32",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D36",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D37",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D38",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D40",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D41",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D43",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D2",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D6",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D8",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D15",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D21",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D27",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D34",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D2",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D1",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D7",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D18",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D20",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D4",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D13",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D23",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D24",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D39",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D6",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D14",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D22",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D31",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D8",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D12",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D26",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D15",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D16",
+              "incomplete": 0
+            },
+            {
+              "net": "VCC_CORE",
+              "incomplete": 4
+            },
+            {
+              "net": "MEM_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D27",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D30",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D29",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D31",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D41",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D40",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D43",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D47",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D1",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D44",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D46",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D45",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D51",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D49",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D3",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D0",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D50",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D48",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D55",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D54",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D52",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D53",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D57",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D58",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D59",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D56",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D63",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D62",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D60",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D61",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D67",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D64",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D66",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D65",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D69",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D68",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D71",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D25",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D26",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D70",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D75",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D73",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D72",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D33",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D74",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D77",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D78",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D38",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D39",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D79",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D76",
+              "incomplete": 0
+            }
+          ]
+        },
+        "new_error_details": [],
+        "warnings": [
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCCIO] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 38.8
+                },
+                "uuid": "31dd235d-5b00-419c-b56a-7d69bd6550f1"
+              },
+              {
+                "description": "Via [VCCIO] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 38.8
+                },
+                "uuid": "64552412-973b-4a91-98f0-4fc7fc575fc4"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [QA_D9] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.75,
+                  "y": 19.45
+                },
+                "uuid": "3b1cd745-fd23-46d4-bdda-cf9223ceaa14"
+              },
+              {
+                "description": "Via [QA_D9] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.75,
+                  "y": 19.05
+                },
+                "uuid": "9ab3f068-2261-4d24-9e6e-edabfb8bef59"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 30.4
+                },
+                "uuid": "3eb23ff2-79e4-4206-b3a2-44f1e0244ac8"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 30.4
+                },
+                "uuid": "9788f747-63ce-4dcd-b1f5-7b7c27941176"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 29.6
+                },
+                "uuid": "4a102ff8-9d34-4b64-988d-279cff43aeb2"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 29.6
+                },
+                "uuid": "95677c1e-0a6e-4ae3-a036-8f7080e3581b"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 14.95,
+                  "y": 20.05
+                },
+                "uuid": "cdb04475-0f2b-4eae-9b61-ea62f3b0f543"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 14.95,
+                  "y": 20.25
+                },
+                "uuid": "f26c34b2-bdee-4d6c-a915-a519f8daedbf"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D16] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.55,
+                  "y": 37.2
+                },
+                "uuid": "67db1fd8-9637-4748-8c7d-06f3708f91c6"
+              },
+              {
+                "description": "Via [JBOT_D16] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.95,
+                  "y": 37.2
+                },
+                "uuid": "76fc9176-b3ab-4b34-ad25-880ee2ecafe1"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D28] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.45,
+                  "y": 35.4
+                },
+                "uuid": "9d67b29a-629a-4511-8f9d-5221ac47cce0"
+              },
+              {
+                "description": "Via [JBOT_D28] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.25,
+                  "y": 35.4
+                },
+                "uuid": "cbab4606-b962-4bba-92ac-a8173204cd87"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D36] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 36.35,
+                  "y": 38.0
+                },
+                "uuid": "7d3c6d71-ba70-4602-86d1-342e75bbc509"
+              },
+              {
+                "description": "Via [JBOT_D36] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 36.75,
+                  "y": 38.0
+                },
+                "uuid": "df57ae24-8710-4e97-b8ac-3fd449b90156"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D20] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.25,
+                  "y": 6.4
+                },
+                "uuid": "100d47d2-f01a-48a2-9297-44e7f107fb00"
+              },
+              {
+                "description": "Via [JTOP_D20] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.85,
+                  "y": 6.4
+                },
+                "uuid": "9782620e-2ef5-435c-85e9-844395e6cf95"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D4] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.35,
+                  "y": 18.2
+                },
+                "uuid": "d6c366c9-6fcc-46e1-9dc2-ad0e82244440"
+              },
+              {
+                "description": "Via [JTOP_D4] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.15,
+                  "y": 18.2
+                },
+                "uuid": "dca5e9f7-8ecd-4547-b005-3b0fa3c23530"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D23] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.65,
+                  "y": 19.6
+                },
+                "uuid": "2ab2dc35-8247-4f7b-a903-5b2ee26b216e"
+              },
+              {
+                "description": "Via [JTOP_D23] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.85,
+                  "y": 19.6
+                },
+                "uuid": "2b40f696-8a0f-4159-b777-a406d6af9570"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D6] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 23.2
+                },
+                "uuid": "3f98ec13-eb82-4eac-83cd-0fa7068e46f0"
+              },
+              {
+                "description": "Via [MEM_D6] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 23.6
+                },
+                "uuid": "9fbbb4b7-541a-4d56-86d6-cf4b0027e703"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D12] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 24.0
+                },
+                "uuid": "3ac434cc-2b9f-4fbc-8748-bdabcf14dd30"
+              },
+              {
+                "description": "Via [MEM_D12] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 24.4
+                },
+                "uuid": "909b08e1-deba-4d16-8893-e0960ade65a3"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D26] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.85,
+                  "y": 6.4
+                },
+                "uuid": "31b99abe-ce8e-4d63-b500-288849fc77bf"
+              },
+              {
+                "description": "Via [JTOP_D26] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 35.25,
+                  "y": 6.4
+                },
+                "uuid": "b25e4b97-3e35-48b4-b129-df8a2676cf87"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 24.8
+                },
+                "uuid": "2adf9d28-df9a-48a8-ba72-9dc4891c5e3b"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 24.8
+                },
+                "uuid": "fa4ea0e3-45ba-4642-af1b-3c30c491c86e"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 24.8
+                },
+                "uuid": "2b2c51fc-1e30-438a-a8a6-1b6dfcb3291a"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 24.8
+                },
+                "uuid": "32e9c17c-7f6c-4485-b334-20c4a3f4e439"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 25.6
+                },
+                "uuid": "2c2a98de-06f3-46d6-85d3-1aaead101434"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 25.6
+                },
+                "uuid": "80ba2e1b-71a8-4fb4-a228-3d97f2ee155d"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 24.8
+                },
+                "uuid": "58756bb5-2bd6-4d92-9a0c-8e40fa17b0d7"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 24.8
+                },
+                "uuid": "aa78ce7b-a5a1-43c6-9ade-5ba223d4c735"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 27.2
+                },
+                "uuid": "89511ea5-a514-428e-9761-1ce4ffbf7b44"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 27.2
+                },
+                "uuid": "f152ab76-6c30-4c18-9aac-11a1bdea5f95"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 26.4
+                },
+                "uuid": "89a29600-d0af-432a-a9ed-ddaa1900c91d"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 26.4
+                },
+                "uuid": "e0c1057d-d38d-43f9-8eef-9cf4b70d0c26"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 26.4
+                },
+                "uuid": "89e7112d-7b36-47d0-b096-444b5c0eab89"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 26.4
+                },
+                "uuid": "ee043c12-e4d3-4703-b44d-3574c0768dcb"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 26.4
+                },
+                "uuid": "982c8bf0-bbbf-4834-aff5-d4d7ad6a7321"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 26.4
+                },
+                "uuid": "e9b3daa2-9646-45ce-b3c8-1b6f842df3b3"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 27.2
+                },
+                "uuid": "da91631d-2a6f-4b08-8484-6e2142df1033"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 27.2
+                },
+                "uuid": "ed833402-5155-4054-9d51-ee02ab85f750"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D22] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 25.6
+                },
+                "uuid": "b5e4966c-24d4-4f73-8043-fad3dfe5fa28"
+              },
+              {
+                "description": "Via [MEM_D22] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 26.0
+                },
+                "uuid": "bfd67a0d-f20c-48de-b633-18401ec5d0b0"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D27] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.6,
+                  "y": 25.2
+                },
+                "uuid": "1561995f-cec9-4bcb-a245-52664f45c3dd"
+              },
+              {
+                "description": "Via [MEM_D27] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.6,
+                  "y": 25.6
+                },
+                "uuid": "bafad1dc-0591-4cef-a3a4-01b04b79c6b5"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 27.6
+                },
+                "uuid": "05dae2f2-0310-4049-9087-6ac207f76e42"
+              },
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 27.2
+                },
+                "uuid": "356506ee-5f2a-4661-b3dc-b06ce5d8dadf"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 51.2,
+                  "y": 27.6
+                },
+                "uuid": "4b29b315-e485-4845-83ff-c66797fee547"
+              },
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 51.2,
+                  "y": 27.2
+                },
+                "uuid": "fe65041b-e577-47a6-b0a5-c2d01bb68981"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D39] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 39.8,
+                  "y": 28.0
+                },
+                "uuid": "2631cd86-18a4-452d-9c2c-0c15612de09b"
+              },
+              {
+                "description": "Via [MEM_D39] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 39.8,
+                  "y": 28.4
+                },
+                "uuid": "338eb705-ee52-4588-9287-6938ca4dc698"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D52] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 30.4
+                },
+                "uuid": "a3d0c927-0fa5-4350-be7d-d02783937125"
+              },
+              {
+                "description": "Via [MEM_D52] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 30.8
+                },
+                "uuid": "ec0f708b-1811-42e6-a994-a73cc1fa6765"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D57] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 55.6,
+                  "y": 31.2
+                },
+                "uuid": "886d9ea5-d91f-4683-bdcf-3e32f8f4630a"
+              },
+              {
+                "description": "Via [MEM_D57] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 55.6,
+                  "y": 31.6
+                },
+                "uuid": "a2c3bb02-870d-48cd-b877-3eb7969b045a"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D66] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 33.2
+                },
+                "uuid": "0055a829-3d67-4f20-b37b-ed039086f70e"
+              },
+              {
+                "description": "Via [MEM_D66] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 32.8
+                },
+                "uuid": "e603973f-45ed-40a8-95e7-3eb3d6edb309"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D74] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.8,
+                  "y": 34.4
+                },
+                "uuid": "3cfc6dc2-8234-4a7d-a63d-d6ef5e80ea87"
+              },
+              {
+                "description": "Via [MEM_D74] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.8,
+                  "y": 34.0
+                },
+                "uuid": "e7df8ea3-7da2-4b67-9dea-4c8549a2079e"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          }
+        ]
+      },
+      "after": {
+        "seconds": 177.18114857199998,
+        "passed": false,
+        "opens": 181,
+        "new_errors": 0,
+        "vias": 315,
+        "length_mm": 2317.561458085628,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "report": {
+          "passes": 2,
+          "attempted": 638,
+          "completed": 374,
+          "incompleteBefore": 439,
+          "incompleteAfter": 181,
+          "added": {
+            "tracks": 573,
+            "barrels": 315
+          },
+          "ripped": 314,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "maxPasses",
+          "effectiveSettings": {
+            "maxPasses": 2,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": false,
+            "strictDrc": true,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "timeBudgetMs": 600000,
+            "copperToEdgeClearanceUm": 300,
+            "holeClearanceUm": 200,
+            "neckWidthUm": 0,
+            "localRecovery": true,
+            "angleMode": "45"
+          },
+          "wallClockMs": 176467,
+          "perNet": [
+            {
+              "net": "QA_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D4",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "VCCIO",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D9",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D10",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "GND",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D14",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D19",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D22",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D28",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D36",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "QA_D40",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D41",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D43",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D44",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D45",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D46",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D47",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D48",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D49",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D50",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D51",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D52",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D53",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D54",
+              "incomplete": 1
+            },
+            {
+              "net": "QA_D55",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D0",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D3",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D13",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D16",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D17",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D18",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D28",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D32",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D36",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D37",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D38",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D40",
+              "incomplete": 0
+            },
+            {
+              "net": "JBOT_D41",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "JBOT_D43",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D2",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D6",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D8",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D15",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D21",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D27",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D34",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D2",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D0",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D1",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D7",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D18",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D20",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D3",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D1",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D4",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D13",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D23",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D24",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D39",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D6",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D14",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D22",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D31",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D8",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D12",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D26",
+              "incomplete": 0
+            },
+            {
+              "net": "JTOP_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "JTOP_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D15",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D16",
+              "incomplete": 0
+            },
+            {
+              "net": "VCC_CORE",
+              "incomplete": 4
+            },
+            {
+              "net": "MEM_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D27",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D26",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D25",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D30",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D29",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D31",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D33",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D39",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D38",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D41",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D42",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D40",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D43",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D47",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D1",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D44",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D46",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D45",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D51",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D49",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D3",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D2",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D0",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D50",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D48",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D55",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D54",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D52",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D9",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D5",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D6",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D4",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D7",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D53",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D57",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D58",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D59",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D56",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D14",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D13",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D15",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D12",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D11",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D8",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D10",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D63",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D62",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D60",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D61",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D67",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D64",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D22",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D23",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D20",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D19",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D17",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D16",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D18",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D66",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D65",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D69",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D68",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D71",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D31",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D25",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D24",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D27",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D26",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D21",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D70",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D75",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D73",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D72",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D33",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D32",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D35",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D30",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D29",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D28",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D74",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D77",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D78",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D38",
+              "incomplete": 0
+            },
+            {
+              "net": "QB_D39",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D37",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D36",
+              "incomplete": 1
+            },
+            {
+              "net": "QB_D34",
+              "incomplete": 1
+            },
+            {
+              "net": "MEM_D79",
+              "incomplete": 0
+            },
+            {
+              "net": "MEM_D76",
+              "incomplete": 0
+            }
+          ]
+        },
+        "new_error_details": [],
+        "warnings": [
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCCIO] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 38.8
+                },
+                "uuid": "3bc8b9e5-c145-4a14-9e42-b2c88a82ff23"
+              },
+              {
+                "description": "Via [VCCIO] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.3,
+                  "y": 38.8
+                },
+                "uuid": "6166630c-1603-411a-8b28-613f8248e2b7"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [QA_D9] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.75,
+                  "y": 19.45
+                },
+                "uuid": "8957f153-400c-4078-9050-59655b7e490b"
+              },
+              {
+                "description": "Via [QA_D9] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 8.75,
+                  "y": 19.05
+                },
+                "uuid": "c3987923-6f6f-4de8-9390-71bda6a9f543"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 29.6
+                },
+                "uuid": "4cfc081a-c8e9-48fa-8c11-ad9aaeee3c8b"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 29.6
+                },
+                "uuid": "532a0a88-692a-4769-8394-0d5325014e88"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 14.95,
+                  "y": 20.25
+                },
+                "uuid": "976a2f70-7112-483c-b8e6-2821b7528227"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 14.95,
+                  "y": 20.05
+                },
+                "uuid": "be8750b8-9a58-4a1a-bc3e-57e9af5fb925"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 30.4
+                },
+                "uuid": "b6588b6c-c7bc-4632-a346-c697d6e96e20"
+              },
+              {
+                "description": "Via [GND] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 30.4
+                },
+                "uuid": "f47a9311-25ef-4a57-aa51-a1f38fce1d1f"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D16] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.95,
+                  "y": 37.2
+                },
+                "uuid": "8654a2fe-77f4-45a3-8fc5-8fdca83f8828"
+              },
+              {
+                "description": "Via [JBOT_D16] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.55,
+                  "y": 37.2
+                },
+                "uuid": "a9748ab3-f5a7-49b0-9696-93151910fe70"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D28] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.25,
+                  "y": 35.4
+                },
+                "uuid": "ea1b45da-6bbf-4fa2-aa3c-ba8a57340f59"
+              },
+              {
+                "description": "Via [JBOT_D28] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.45,
+                  "y": 35.4
+                },
+                "uuid": "f1c0a5e7-8ed1-4981-b33c-dda988ccd50e"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JBOT_D36] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 36.75,
+                  "y": 38.0
+                },
+                "uuid": "04ba4780-52c5-40f9-ade4-a860ec72d3c0"
+              },
+              {
+                "description": "Via [JBOT_D36] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 36.35,
+                  "y": 38.0
+                },
+                "uuid": "6c095f16-2866-43ed-8450-d651945876be"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D20] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.25,
+                  "y": 6.4
+                },
+                "uuid": "03d98b47-b85e-4acb-8e84-97445191408c"
+              },
+              {
+                "description": "Via [JTOP_D20] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.85,
+                  "y": 6.4
+                },
+                "uuid": "c09d561a-ff90-4627-a1aa-3f632c6bd166"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D4] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.35,
+                  "y": 18.2
+                },
+                "uuid": "23b6a581-3a66-42ed-b66d-064336ee0cda"
+              },
+              {
+                "description": "Via [JTOP_D4] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.15,
+                  "y": 18.2
+                },
+                "uuid": "d8912c21-341c-44d8-8843-5be0f2832142"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D23] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.85,
+                  "y": 19.6
+                },
+                "uuid": "8079b1fe-b5df-4602-b829-7adb932f5e68"
+              },
+              {
+                "description": "Via [JTOP_D23] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 33.65,
+                  "y": 19.6
+                },
+                "uuid": "ce65d61f-42db-457a-8194-2ba0bc87ef3c"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D6] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 23.6
+                },
+                "uuid": "936adc90-cf88-4989-8a0c-118cdb376586"
+              },
+              {
+                "description": "Via [MEM_D6] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 23.2
+                },
+                "uuid": "bf065586-2cb5-437d-9cd5-49e16f3a0a9e"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D12] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 24.0
+                },
+                "uuid": "d9651210-01eb-4dc9-bde3-0db685ca33e0"
+              },
+              {
+                "description": "Via [MEM_D12] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 24.4
+                },
+                "uuid": "dd9a3704-1824-4e26-ac21-5e5657f5b4d0"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [JTOP_D26] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.85,
+                  "y": 6.4
+                },
+                "uuid": "5dda9d6d-8aee-4e25-8bbc-9b6a76f75895"
+              },
+              {
+                "description": "Via [JTOP_D26] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 35.25,
+                  "y": 6.4
+                },
+                "uuid": "eb2825d8-b0a7-4dfb-94e1-421e9e7a76f7"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 26.4
+                },
+                "uuid": "06fe5064-281c-4185-b32c-b77d3daf6d92"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 26.4
+                },
+                "uuid": "43349af4-fe40-466d-97af-7965a9721121"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 27.2
+                },
+                "uuid": "2da405d4-7fc8-4ec1-af52-2ae1409515eb"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 30.4,
+                  "y": 27.2
+                },
+                "uuid": "837310d1-d7d6-4886-b7db-a3036a78faeb"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 24.8
+                },
+                "uuid": "2f2610f9-5e20-43cf-8592-f112872d4e84"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 24.8
+                },
+                "uuid": "adf43b03-f70d-4fd7-8fe9-c4f3796325e2"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 27.2
+                },
+                "uuid": "3116dff3-d614-4bed-b924-6d9f8401f6ed"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 27.2
+                },
+                "uuid": "adfb7026-5858-474c-9358-385143bddd0a"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 26.4
+                },
+                "uuid": "4acc7523-5ab3-4371-8af4-188c688c46ed"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 34.4,
+                  "y": 26.4
+                },
+                "uuid": "6efc73ea-0b6d-4bd3-baad-efa241689cc2"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 25.6
+                },
+                "uuid": "4d654bd1-7e97-400d-b048-b752058bb722"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 28.8,
+                  "y": 25.6
+                },
+                "uuid": "52476056-03ca-4d4b-8b89-f9e4b98c4ed5"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 24.8
+                },
+                "uuid": "61ba915a-550b-4adc-b2d7-246c1363cbc8"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 24.8
+                },
+                "uuid": "6c113045-9803-484d-bd26-f1c4df229643"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 26.4
+                },
+                "uuid": "929785f7-4055-48cf-ba6f-b15d70ba0971"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 31.2,
+                  "y": 26.4
+                },
+                "uuid": "c35dda1d-30a0-4977-b068-03ee103a9000"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled holes co-located",
+            "items": [
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 24.8
+                },
+                "uuid": "b74bfe9c-e8b5-4d46-ad9b-53ae8eef86ff"
+              },
+              {
+                "description": "Via [VCC_CORE] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 32.8,
+                  "y": 24.8
+                },
+                "uuid": "f5a53bc5-04df-45ce-b8dd-e0faf14c9d02"
+              }
+            ],
+            "severity": "warning",
+            "type": "holes_co_located"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D22] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 25.6
+                },
+                "uuid": "998bbc03-c966-4c25-a22b-9d104111751e"
+              },
+              {
+                "description": "Via [MEM_D22] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 26.0
+                },
+                "uuid": "d6811672-c5ac-43a4-b263-b458b6c3b400"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D27] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.6,
+                  "y": 25.2
+                },
+                "uuid": "3eeb163f-c499-47e9-8ad6-d6c2616ccec8"
+              },
+              {
+                "description": "Via [MEM_D27] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.6,
+                  "y": 25.6
+                },
+                "uuid": "774e5611-ca83-40cc-a69a-d1aa124b850e"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 27.2
+                },
+                "uuid": "5f8df33e-7fa1-496e-bc5c-b5afda1eba1f"
+              },
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 27.6
+                },
+                "uuid": "7fa63295-1623-457b-8c70-0a40c616dd0c"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 51.2,
+                  "y": 27.2
+                },
+                "uuid": "64cdde06-4ca9-4aaf-95e0-4abe64b19d43"
+              },
+              {
+                "description": "Via [MEM_D29] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 51.2,
+                  "y": 27.6
+                },
+                "uuid": "8b7c3c8d-4ef9-4b83-aba6-9ecd96050818"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D39] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 39.8,
+                  "y": 28.4
+                },
+                "uuid": "99312ee1-c2f6-4dcd-ac4f-849e106957df"
+              },
+              {
+                "description": "Via [MEM_D39] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 39.8,
+                  "y": 28.0
+                },
+                "uuid": "e3baaf3c-b550-46b6-90ea-f6ec0b65bcdc"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D52] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 30.8
+                },
+                "uuid": "26bdc1ed-4dcf-4035-986f-44ea37ba4118"
+              },
+              {
+                "description": "Via [MEM_D52] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 58.8,
+                  "y": 30.4
+                },
+                "uuid": "9932f896-4cbd-4101-ae28-f261e0b0d27a"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D57] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 55.6,
+                  "y": 31.6
+                },
+                "uuid": "5f6f1886-9ed5-4db4-99b9-2caaa90a8474"
+              },
+              {
+                "description": "Via [MEM_D57] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 55.6,
+                  "y": 31.2
+                },
+                "uuid": "d5817123-24d0-450e-a793-01514b5db355"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D66] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 32.8
+                },
+                "uuid": "14004ec7-07b0-4804-a675-01598fbdd75b"
+              },
+              {
+                "description": "Via [MEM_D66] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 48.8,
+                  "y": 33.2
+                },
+                "uuid": "a56d8d5f-5a98-4994-8b28-bb2add2b3ce4"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          },
+          {
+            "description": "Drilled hole too close to other hole (board setup constraints min 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+              {
+                "description": "Via [MEM_D74] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.8,
+                  "y": 34.4
+                },
+                "uuid": "41e7a560-8b06-4130-a868-289b51dee6ca"
+              },
+              {
+                "description": "Via [MEM_D74] on F.Cu - B.Cu",
+                "pos": {
+                  "x": 46.8,
+                  "y": 34.0
+                },
+                "uuid": "d3c3b614-fe7f-431a-9396-941d40e591dd"
+              }
+            ],
+            "severity": "warning",
+            "type": "hole_to_hole"
+          }
+        ]
+      }
+    }
+  ],
+  "controls": {
+    "fixture_sha256": {
+      "job.json": "3ac2623aa159d365c44e478048e9888b166f7ece43e5546cf38e1ca17c47e94b",
+      "board.kicad_pcb": "f5841d12f854d2ae538bf9ae2996c72718028ba9702f627f726c1ccfc67a4635",
+      "board.kicad_pro": "346003c12025d81e04dcdfc1c0e64e54845aa74405df6a57b84876471d0ef902",
+      "board.kicad_dru": "edd74546c3a662048c2f81cace7014020026bf6586abc6b7333db7df5644bfc7",
+      "baseline-drc.json": "598ec95b83243d52e9e40fab3d81bb641bee696ee9dd3764bedfdbf099228e2b"
+    },
+    "runner_sha256": "d177864e1d6ab965556609fca3376daaee99fbc206c66edc02ef237ceb0cdaab",
+    "allowed_cpus": [
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "sources": {
+      "before": {
+        "commit": "16f70869e8db9651ee7baf13a73be894e1fbf45c",
+        "src": {
+          "src/cli.ts": "59d437dbd9c929fdf8b557e354975b54c9cb0c6870002e4a71e1e893d95d3c5f",
+          "src/api.ts": "aeeb2f2e29bb0428d3768bde1b93d63f014d94e822b178d1f3ea175165c305da",
+          "src/ses/apply.ts": "79c8adb8b8298590e7af068dca77133d5cc086337b3dd1386595c49ad34f777d",
+          "src/ses/index.ts": "d80e3d0b818c4a8cba9771e282269b1ea908f4bd1fe618346c398b1ef5966562",
+          "src/ses/write.ts": "532c0522c8025eda723ffcebc7f0f9a77ecf1c9e67dd2163d4e01d5bc739e720",
+          "src/ses/README.md": "921deff7568f75f1154a42acc439a50c27231ea29f7cc663a686b7488b6651d6",
+          "src/ses/normalise.ts": "cbcc5494fdfd8acefe3c43e6e0c226042466ecf5bd44daa373f83457f56d22e3",
+          "src/geom/predicates.ts": "94602db619dc5ad993864c8780eed3d0f18da2a239f2e8c61cade61ed35118b2",
+          "src/geom/onboard.ts": "2357fef121f1175a6f894e19378de725981d1f3c509fdb9fa0907afd14ace971",
+          "src/geom/rational.ts": "a2db943a974d44db92670ff60f890c1b87979f60ff9c62bf632e17f9aeb7d03c",
+          "src/geom/path.ts": "5f85827e1a3ce1d0a65e3502c6de25baf1b8c1f1f72f7c4709b696dee081e8b6",
+          "src/geom/index.ts": "d4487be806ef05315c884fae006bcdeab62c0bbca91f4c301b27a6361d1d8453",
+          "src/geom/hull.ts": "6417dff35fc55f92f0484092106656417f08655d7c3ec254379dba3828fb63f5",
+          "src/geom/README.md": "44595d232a3eecb36515ebaf30f4f020549984cd599884dc140c4047b308b73d",
+          "src/geom/bounds.ts": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "src/geom/pieces.ts": "5bc30d1a4a2e574fe9630db2c06ab1189e42bac4990105e02b3fb1f6ff555c13",
+          "src/geom/distance.ts": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "src/geom/types.ts": "f7fc99395cf918b302fa2fad7b666a282b54aeaf6d0871abf3c8591ff34ed63a",
+          "src/route/recovery-endpoint.ts": "9ec0f860e08630f9da4b21438e68dddff38750db04288a558e03bf7def980ef4",
+          "src/route/profile.ts": "733270f64d6dd0046b6b904ced6ffdfc6e45988b21be3ea96773d8d893a7abe5",
+          "src/route/via.ts": "24ecf1ead19a47f61baf363e450a9c9530828778b5f0ba417c29dd4629f6ff08",
+          "src/route/journal.ts": "bb72be0ca704fb4d61b535122b073c7434fcdab1194eeaffa4cded96078b095d",
+          "src/route/negotiate.ts": "c2a0de854be92e15a95b34f04715b353cbade80c3e929a47543dba0c3803cd08",
+          "src/route/legalise.ts": "297202aaf7ef80820005dcdf0929f1edb74c06f3094800a269c23f6067cdb445",
+          "src/route/plan.ts": "ec3e3cc4783f3e110eed551bb702dc758708f995566a94e7065aa4bea9a14505",
+          "src/route/clear.ts": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "src/route/nudge.ts": "ef0842ccee65d03b2f01431260b4001ae3b7513e8cd7e3fae6cf687222e459a4",
+          "src/route/pull.ts": "873ab7a8859dbf2fad14719026482daae17ad6ce50117ba917bd6ebe0062883b",
+          "src/route/index.ts": "1cc09bf4b6fd18a99bb9c9129f9ca3149dfc00dedfd653aefb8ebad3551cef84",
+          "src/route/optimise.ts": "f8502a49f6399448a43aae642ba61758c1752fb6498e592ca40e860d575ff124",
+          "src/route/shove.ts": "efecab2ec7e6f883e5ca6262096eeaa75a70de1a4d10c9f9a9612dd92a4fcd63",
+          "src/route/search.ts": "f7c07d18765a6298e52a687b06257d9937efed1beadb077d3494ee793e97d5f0",
+          "src/route/recover-remaining.ts": "e9c8b7ac3b5172b831f8b3d50250ad1b4dae274c0ce3b609adecc3ad6f786b5b",
+          "src/route/ripup.ts": "10482f79ce3b42eca1ebb3d4638545c8846feb3aa3548e44872e2c6f31be5f4f",
+          "src/route/lineprobe.ts": "99be920e459e87ef92c1ba323f5ac3437e2450c6686ff2b5f715a2b72188cd8e",
+          "src/route/tiles.ts": "f38dac017e5e0e093008b76f0bba33d2fd0b7e7a6f1ae58632a16040077b416f",
+          "src/route/README.md": "8586c24c5a5c5260bb816f6fe934c15882e354b2bf138d746f986664dc6ba065",
+          "src/route/fanout.ts": "a804bd8d40a380d39db663a80678451a5775a839410fd8977b87fc9db7d6c5dc",
+          "src/route/visibility-recovery.ts": "9485d946c33a87a8e2ffbe86a871905ca357a51e5269c5e0f918faded63275a8",
+          "src/route/channel.ts": "8ca61e549c9ba11eeb6a35e011b8470480666f24124799c01ae2d2539a951c52",
+          "src/route/passes.ts": "dd8b963bfe954797fab1e18e1ee48d2c9a024bd773e5dd63002590e4fe1135be",
+          "src/route/quilt.ts": "50b08ba34bd631b0aec9fb1c85ad31b1241be6994c423970b4ca4dd45689c1f5",
+          "src/route/recovery-point-component.ts": "41a1dbf86470f2f823e508cc1dd3b87d2683fc2c7580713e8f4555b1e5b9fa37",
+          "src/route/steiner.ts": "bfbf63c49a3c8d0999092a3b1961c8fd6612c11385307c15ab3fe1e2f76a63c7",
+          "src/route/recovery-transaction.ts": "cc78aab19638ee446a79617dbe7dd3a38ce1a8d346930ba4ae92b611d32e7534",
+          "src/route/mesh.ts": "a0092b378defbaae17334eacbc30fa8689a3bbf162546cb0b6a52493c10428bb",
+          "src/route/recovery-schedule.ts": "933407d8f4a9de508d0041ff8a58c41fd07358167ca411c00e51ae5fbbed36e8",
+          "src/srj/index.ts": "3712b2742147dff46a62540dd302c3cf9351ade06b297ef3f75d76994ba5fd52",
+          "src/srj/README.md": "4b393ed8178e82e07caedffc9f17cbf3eaa495363efe5b6730e2d0c908f86158",
+          "src/srj/traces.ts": "c8c6ba6f6dd4d233827ad2c0a4adaad07c59d12af6c016cedc76550292b760db",
+          "src/srj/build.ts": "ce656b9f06e0c33e3dc78a34ce364180defb88b896c3b2be9df7ab66f43c6f6a",
+          "src/layout/model.ts": "944bfdab29b73a0263106d904c5abca65c55d81960d4924f001d8ae26bfe0118",
+          "src/layout/rules.ts": "2d1635bd35394e5a6f388601044a7a2cddedec2aea98025ac753f65609b8c5c3",
+          "src/layout/index.ts": "fe73937acbd88ae0ddb7fed382611dddb775405cb26496cabe8ec294d0f34af3",
+          "src/layout/shapes.ts": "8077218051b2c8437feca5742255acbac5a6b56588f67d39d086603fc1ee24c1",
+          "src/layout/README.md": "2c17788383b45fe6125b9be7c69552e18e9f328014000efe81f5e5baf83875b6",
+          "src/layout/units.ts": "ec0f36b331a9b56b7b8dec201376ac865f8652d1ccc05dce38257e5ab4dc0591",
+          "src/layout/spacing.ts": "8692c6f48352061087d26266cef1ce4c0d82b845f3913a3a81dd17a8ecdd91a0",
+          "src/layout/summary.ts": "13eefbb19e4986528a74eeab6fefca0171175ae4d5b907b48b29d39c70891202",
+          "src/layout/build.ts": "507387e956c180a4f5d528a536c3ece0cc488033bdbda34c89f4ab7f78464f0d",
+          "src/pipeline/index.ts": "ee644c42370bd6717b771e43b87ce07f7d7ea27fc6d3d879467b079a894f882d",
+          "src/pipeline/README.md": "136a44d25d14b6a9f5b1ce3f6c009f840fba1da4430d3ac0af58bb164e6c24ca",
+          "src/lattice/index.ts": "e8836d8d97de414260cb65fbf6079bcffa0fb49503a0960963ad78dba561c6dd",
+          "src/lattice/shapes.ts": "f1b26ebf511b56e515f2de2d5b4ef240786bd6c23cda123e3b045bdf1e9b29fa",
+          "src/lattice/README.md": "1706e7cd06a149536df18423af0a51f8c74206baab64cc073c66af2dcdb6c20e",
+          "src/lattice/grid.ts": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+          "src/dsn/lex.ts": "a0f7ca0357c2c94543f82d2a468b7ac8059bc1d42faf52304e991b97a9631455",
+          "src/dsn/rules.ts": "f068820829ca8ac640942633fa612c9b802da856d90fd3b04b58fb9e9e5c96de",
+          "src/dsn/index.ts": "90768617df4c21d355b78731a4cc31886af5fc05623dd18651dc2843396ce51e",
+          "src/dsn/write.ts": "649040e6551f117c84c8c590518816e4acb65ffba3bda8199192e9d60ad72081",
+          "src/dsn/tree.ts": "fa34d1a26ecf28f12611da3597d543386943a6f3a089df9ddc540e6266734458",
+          "src/dsn/README.md": "3316f22c797d851a9535b78318ed0a774332fb5f6b9281c94d64f9196b0e7347",
+          "src/dsn/read.ts": "65e5203314a37c55cbcd80720e3608171083d0d0b9f6338b589c21f27e5c3082",
+          "src/drc/exact.ts": "26f5ebefd65f618ae90a6e850fe591715ada49df01dc7dd37d6f4510608059e2",
+          "src/drc/pour.ts": "85a06d4939c1bfddf63efacadc6c16b0e566efca42b59989558172a8a6216ad1",
+          "src/drc/index.ts": "9f77cd0039efbec4c9baebcef4fd06fb57a2f09c4ed16671ac01cf05bdd9a1df",
+          "src/drc/README.md": "e3ddae409349e7837ebdc679e7f97da2a958b201d73263b4155c3b620d27a5a5",
+          "src/drc/connect.ts": "680a8b7e53dcd28f37565a984f5b051b6625882802433d0a9ba462b83160d0b2",
+          "src/drc/spacing.ts": "b2a2878574ce9c378f65cead5d60545c1c25d9079a2dbd98a9ad4dddd36b30c0",
+          "src/drc/stats.ts": "0af8d22f6c4fc17a2c8aaf841929f61857badf61dcc41bbe213a2d757894c223"
+        }
+      },
+      "after": {
+        "commit": "ea53a1ddb75bb2bd6d21792b3278bb7a1d3ca879",
+        "src": {
+          "src/cli.ts": "59d437dbd9c929fdf8b557e354975b54c9cb0c6870002e4a71e1e893d95d3c5f",
+          "src/api.ts": "aeeb2f2e29bb0428d3768bde1b93d63f014d94e822b178d1f3ea175165c305da",
+          "src/ses/apply.ts": "79c8adb8b8298590e7af068dca77133d5cc086337b3dd1386595c49ad34f777d",
+          "src/ses/index.ts": "d80e3d0b818c4a8cba9771e282269b1ea908f4bd1fe618346c398b1ef5966562",
+          "src/ses/write.ts": "532c0522c8025eda723ffcebc7f0f9a77ecf1c9e67dd2163d4e01d5bc739e720",
+          "src/ses/README.md": "921deff7568f75f1154a42acc439a50c27231ea29f7cc663a686b7488b6651d6",
+          "src/ses/normalise.ts": "cbcc5494fdfd8acefe3c43e6e0c226042466ecf5bd44daa373f83457f56d22e3",
+          "src/geom/predicates.ts": "94602db619dc5ad993864c8780eed3d0f18da2a239f2e8c61cade61ed35118b2",
+          "src/geom/onboard.ts": "2357fef121f1175a6f894e19378de725981d1f3c509fdb9fa0907afd14ace971",
+          "src/geom/rational.ts": "a2db943a974d44db92670ff60f890c1b87979f60ff9c62bf632e17f9aeb7d03c",
+          "src/geom/path.ts": "5f85827e1a3ce1d0a65e3502c6de25baf1b8c1f1f72f7c4709b696dee081e8b6",
+          "src/geom/index.ts": "d4487be806ef05315c884fae006bcdeab62c0bbca91f4c301b27a6361d1d8453",
+          "src/geom/hull.ts": "6417dff35fc55f92f0484092106656417f08655d7c3ec254379dba3828fb63f5",
+          "src/geom/README.md": "44595d232a3eecb36515ebaf30f4f020549984cd599884dc140c4047b308b73d",
+          "src/geom/bounds.ts": "5e215b549235d3a9924da02a32e2be4310bd9facad16b5e38f3e3a0b14e4d6b7",
+          "src/geom/pieces.ts": "5bc30d1a4a2e574fe9630db2c06ab1189e42bac4990105e02b3fb1f6ff555c13",
+          "src/geom/distance.ts": "77fc6fdc734a30602749862eb36d98c6cbc8f88b751d471498fec02b079d923b",
+          "src/geom/types.ts": "f7fc99395cf918b302fa2fad7b666a282b54aeaf6d0871abf3c8591ff34ed63a",
+          "src/route/recovery-endpoint.ts": "9ec0f860e08630f9da4b21438e68dddff38750db04288a558e03bf7def980ef4",
+          "src/route/profile.ts": "733270f64d6dd0046b6b904ced6ffdfc6e45988b21be3ea96773d8d893a7abe5",
+          "src/route/via.ts": "24ecf1ead19a47f61baf363e450a9c9530828778b5f0ba417c29dd4629f6ff08",
+          "src/route/journal.ts": "bb72be0ca704fb4d61b535122b073c7434fcdab1194eeaffa4cded96078b095d",
+          "src/route/negotiate.ts": "c2a0de854be92e15a95b34f04715b353cbade80c3e929a47543dba0c3803cd08",
+          "src/route/legalise.ts": "297202aaf7ef80820005dcdf0929f1edb74c06f3094800a269c23f6067cdb445",
+          "src/route/plan.ts": "ec3e3cc4783f3e110eed551bb702dc758708f995566a94e7065aa4bea9a14505",
+          "src/route/clear.ts": "38101d31b8cdf14cc849f6e3a168cb337907df0ddf12fc84efab09133435acd0",
+          "src/route/nudge.ts": "ef0842ccee65d03b2f01431260b4001ae3b7513e8cd7e3fae6cf687222e459a4",
+          "src/route/pull.ts": "873ab7a8859dbf2fad14719026482daae17ad6ce50117ba917bd6ebe0062883b",
+          "src/route/index.ts": "1cc09bf4b6fd18a99bb9c9129f9ca3149dfc00dedfd653aefb8ebad3551cef84",
+          "src/route/optimise.ts": "f8502a49f6399448a43aae642ba61758c1752fb6498e592ca40e860d575ff124",
+          "src/route/shove.ts": "efecab2ec7e6f883e5ca6262096eeaa75a70de1a4d10c9f9a9612dd92a4fcd63",
+          "src/route/search.ts": "f7c07d18765a6298e52a687b06257d9937efed1beadb077d3494ee793e97d5f0",
+          "src/route/recover-remaining.ts": "e9c8b7ac3b5172b831f8b3d50250ad1b4dae274c0ce3b609adecc3ad6f786b5b",
+          "src/route/ripup.ts": "10482f79ce3b42eca1ebb3d4638545c8846feb3aa3548e44872e2c6f31be5f4f",
+          "src/route/lineprobe.ts": "99be920e459e87ef92c1ba323f5ac3437e2450c6686ff2b5f715a2b72188cd8e",
+          "src/route/tiles.ts": "f38dac017e5e0e093008b76f0bba33d2fd0b7e7a6f1ae58632a16040077b416f",
+          "src/route/README.md": "8586c24c5a5c5260bb816f6fe934c15882e354b2bf138d746f986664dc6ba065",
+          "src/route/fanout.ts": "a804bd8d40a380d39db663a80678451a5775a839410fd8977b87fc9db7d6c5dc",
+          "src/route/visibility-recovery.ts": "9485d946c33a87a8e2ffbe86a871905ca357a51e5269c5e0f918faded63275a8",
+          "src/route/channel.ts": "8ca61e549c9ba11eeb6a35e011b8470480666f24124799c01ae2d2539a951c52",
+          "src/route/passes.ts": "dd8b963bfe954797fab1e18e1ee48d2c9a024bd773e5dd63002590e4fe1135be",
+          "src/route/quilt.ts": "a6997d403046fe9312a55b27ee9ef84fa2ebb9c69faba61b8bcb7099ff45d5ac",
+          "src/route/recovery-point-component.ts": "41a1dbf86470f2f823e508cc1dd3b87d2683fc2c7580713e8f4555b1e5b9fa37",
+          "src/route/steiner.ts": "bfbf63c49a3c8d0999092a3b1961c8fd6612c11385307c15ab3fe1e2f76a63c7",
+          "src/route/recovery-transaction.ts": "cc78aab19638ee446a79617dbe7dd3a38ce1a8d346930ba4ae92b611d32e7534",
+          "src/route/mesh.ts": "a0092b378defbaae17334eacbc30fa8689a3bbf162546cb0b6a52493c10428bb",
+          "src/route/recovery-schedule.ts": "933407d8f4a9de508d0041ff8a58c41fd07358167ca411c00e51ae5fbbed36e8",
+          "src/srj/index.ts": "3712b2742147dff46a62540dd302c3cf9351ade06b297ef3f75d76994ba5fd52",
+          "src/srj/README.md": "4b393ed8178e82e07caedffc9f17cbf3eaa495363efe5b6730e2d0c908f86158",
+          "src/srj/traces.ts": "c8c6ba6f6dd4d233827ad2c0a4adaad07c59d12af6c016cedc76550292b760db",
+          "src/srj/build.ts": "ce656b9f06e0c33e3dc78a34ce364180defb88b896c3b2be9df7ab66f43c6f6a",
+          "src/layout/model.ts": "944bfdab29b73a0263106d904c5abca65c55d81960d4924f001d8ae26bfe0118",
+          "src/layout/rules.ts": "2d1635bd35394e5a6f388601044a7a2cddedec2aea98025ac753f65609b8c5c3",
+          "src/layout/index.ts": "fe73937acbd88ae0ddb7fed382611dddb775405cb26496cabe8ec294d0f34af3",
+          "src/layout/shapes.ts": "8077218051b2c8437feca5742255acbac5a6b56588f67d39d086603fc1ee24c1",
+          "src/layout/README.md": "2c17788383b45fe6125b9be7c69552e18e9f328014000efe81f5e5baf83875b6",
+          "src/layout/units.ts": "ec0f36b331a9b56b7b8dec201376ac865f8652d1ccc05dce38257e5ab4dc0591",
+          "src/layout/spacing.ts": "8692c6f48352061087d26266cef1ce4c0d82b845f3913a3a81dd17a8ecdd91a0",
+          "src/layout/summary.ts": "13eefbb19e4986528a74eeab6fefca0171175ae4d5b907b48b29d39c70891202",
+          "src/layout/build.ts": "507387e956c180a4f5d528a536c3ece0cc488033bdbda34c89f4ab7f78464f0d",
+          "src/pipeline/index.ts": "ee644c42370bd6717b771e43b87ce07f7d7ea27fc6d3d879467b079a894f882d",
+          "src/pipeline/README.md": "136a44d25d14b6a9f5b1ce3f6c009f840fba1da4430d3ac0af58bb164e6c24ca",
+          "src/lattice/index.ts": "e8836d8d97de414260cb65fbf6079bcffa0fb49503a0960963ad78dba561c6dd",
+          "src/lattice/shapes.ts": "f1b26ebf511b56e515f2de2d5b4ef240786bd6c23cda123e3b045bdf1e9b29fa",
+          "src/lattice/README.md": "1706e7cd06a149536df18423af0a51f8c74206baab64cc073c66af2dcdb6c20e",
+          "src/lattice/grid.ts": "a3845106d8ffb4540ea61b520337e6d7972185c6546e8fc07b2504faaf756e18",
+          "src/dsn/lex.ts": "a0f7ca0357c2c94543f82d2a468b7ac8059bc1d42faf52304e991b97a9631455",
+          "src/dsn/rules.ts": "f068820829ca8ac640942633fa612c9b802da856d90fd3b04b58fb9e9e5c96de",
+          "src/dsn/index.ts": "90768617df4c21d355b78731a4cc31886af5fc05623dd18651dc2843396ce51e",
+          "src/dsn/write.ts": "649040e6551f117c84c8c590518816e4acb65ffba3bda8199192e9d60ad72081",
+          "src/dsn/tree.ts": "fa34d1a26ecf28f12611da3597d543386943a6f3a089df9ddc540e6266734458",
+          "src/dsn/README.md": "3316f22c797d851a9535b78318ed0a774332fb5f6b9281c94d64f9196b0e7347",
+          "src/dsn/read.ts": "65e5203314a37c55cbcd80720e3608171083d0d0b9f6338b589c21f27e5c3082",
+          "src/drc/exact.ts": "26f5ebefd65f618ae90a6e850fe591715ada49df01dc7dd37d6f4510608059e2",
+          "src/drc/pour.ts": "85a06d4939c1bfddf63efacadc6c16b0e566efca42b59989558172a8a6216ad1",
+          "src/drc/index.ts": "9f77cd0039efbec4c9baebcef4fd06fb57a2f09c4ed16671ac01cf05bdd9a1df",
+          "src/drc/README.md": "e3ddae409349e7837ebdc679e7f97da2a958b201d73263b4155c3b620d27a5a5",
+          "src/drc/connect.ts": "680a8b7e53dcd28f37565a984f5b051b6625882802433d0a9ba462b83160d0b2",
+          "src/drc/spacing.ts": "b2a2878574ce9c378f65cead5d60545c1c25d9079a2dbd98a9ad4dddd36b30c0",
+          "src/drc/stats.ts": "0af8d22f6c4fc17a2c8aaf841929f61857badf61dcc41bbe213a2d757894c223"
+        }
+      }
+    }
+  }
+}

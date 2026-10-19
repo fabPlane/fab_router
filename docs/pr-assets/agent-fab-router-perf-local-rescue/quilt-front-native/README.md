@@ -43,3 +43,5 @@ PYTHONDONTWRITEBYTECODE=1 python3 "$n/verify.py"
 ```
 
 The source-board fixtures, scoring, native checker, physical rules and shared runtime are unchanged. The full-suite evidence measures the exported engine API; it does not measure the application adapter's DSN exporter or live editor workflow.
+
+The exact measured candidate is adopted in engine commit `790256b1`. Completed dense/ladder/slow validation and its limitations are retained in the [additional stress archive](../quilt-front/README.md). Dense single-pair timing is slower; the frozen-suite improvement is not a universal speed gain.

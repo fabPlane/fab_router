@@ -36,3 +36,28 @@ PYTHONDONTWRITEBYTECODE=1 python3 docs/pr-assets/agent-fab-router-perf-local-res
 ```
 
 The PNG was visually inspected. Bounded capacity per quilt does not establish a bound on simultaneously live quilts or net memory savings. Earlier lattice cache/key experiments target a different module and remain separate.
+
+Completed additional validation: dense native one paired repeat with identical sessions, 181 opens, zero new native errors, 315 vias and 2317.561458 mm length. Dense route time rises 160.963 → 177.181 seconds (+10.08%); this negative single observation is retained. L2/L3 paired engine replays have exact sessions/statistics/reports except time, 21/153 incomplete connections and zero added engine violations. Times are 19.729 → 19.963 and 177.275 → 177.825 seconds. Ladder results have no fresh native score.
+
+The complete enabled slow sweep evaluates all 63 unchanged acceptance cases: 51 pass, 12 retain recorded failures, 14 advisory results, no stubs and zero adverse completion/added-violation/invariant changes relative to the historical matching-pin control. This is a fresh candidate sweep against a historical control, not fresh paired slow timing; its 2420.617 seconds versus historical 2488.515 seconds is not a causal speed claim. All 99 captured historical runtime files match the measured original, and acceptance tools/fixtures are unchanged from that pin.
+
+Lossless additional evidence is in `dense-raw.json.gz`, `dense-comparison.json`, `ladder-records.json.gz` (including inputs) and `slow.json.gz` / `slow-comparison.json`. Verify independently:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 docs/pr-assets/agent-fab-router-perf-local-rescue/quilt-front/verify-stress.py
+```
+
+Reproduce dense with the private runtime and the prepared fixture:
+
+```sh
+p=docs/pr-assets/agent-fab-router-perf-local-rescue/quilt-front
+taskset -c 12-19 nice -n 10 timeout --kill-after=5 1800 python3 "$p/dense-native.py" "$HOME/bench/wt/fp-perf/benchmarks/autorouter" "$s/work/original" "$s/work/source" "$HOME/bench/boards/dense/fab_pcb-case-dense6-bga324-j1" "$s/dense"
+for case in l2 l3-cycle18; do
+  for mode in original candidate; do
+    taskset -c 12-19 nice -n 10 timeout --kill-after=5 900 bun "$p/stress.ts" "$s/work/$mode" "$HOME/bench/boards/ladder/$case.dsn" "$s/$case-$mode"
+  done
+done
+taskset -c 12-19 nice -n 10 timeout --kill-after=5 5400 bun docs/pr-assets/agent-fab-router-perf-local-rescue/point-components/slow.ts "$s/work/source" "$s/slow.json"
+```
+
+The slow driver calls the unchanged acceptance harness with recovery enabled and retains all expected failures; its process exit is not an all-cases-pass claim. Dense and ladder checks use two-pass/600-second budgets and do not time out. Three stress-evidence corruption controls are rejected by the archive verifier.
