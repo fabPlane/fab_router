@@ -1,0 +1,56 @@
+{
+  "source_commit": "69cf598db98c136bff16bbe02bccdded95674b18",
+  "dsn_sha256": "66ae18e7d29b3407a203b0626096a412aae61265810a6ea1ccb18eaebf9e67ff",
+  "input_pcb_sha256": "73a57337bc85ae42031ed881af7221a7b4a880fd858bfebbb3ee607fa8e16c54",
+  "scope": "saved sessions; native import and DRC only; no route timing measurement",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "baseline",
+      "session_sha256": "627291c630bb855c43816ebe0e68e01a8aab4eed11e2699044216bc2bb223764",
+      "opens": 30,
+      "other_errors": 142,
+      "warnings": 104
+    },
+    {
+      "repeat": 1,
+      "variant": "barrel-rule",
+      "session_sha256": "4c4f03168df34ab0a6f96f36df3be09024025440b66009094cda6a7a4d25ba01",
+      "opens": 15,
+      "other_errors": 142,
+      "warnings": 86
+    },
+    {
+      "repeat": 2,
+      "variant": "baseline",
+      "session_sha256": "627291c630bb855c43816ebe0e68e01a8aab4eed11e2699044216bc2bb223764",
+      "opens": 30,
+      "other_errors": 142,
+      "warnings": 104
+    },
+    {
+      "repeat": 2,
+      "variant": "barrel-rule",
+      "session_sha256": "4c4f03168df34ab0a6f96f36df3be09024025440b66009094cda6a7a4d25ba01",
+      "opens": 15,
+      "other_errors": 142,
+      "warnings": 86
+    },
+    {
+      "repeat": 3,
+      "variant": "baseline",
+      "session_sha256": "627291c630bb855c43816ebe0e68e01a8aab4eed11e2699044216bc2bb223764",
+      "opens": 30,
+      "other_errors": 142,
+      "warnings": 104
+    },
+    {
+      "repeat": 3,
+      "variant": "barrel-rule",
+      "session_sha256": "4c4f03168df34ab0a6f96f36df3be09024025440b66009094cda6a7a4d25ba01",
+      "opens": 15,
+      "other_errors": 142,
+      "warnings": 86
+    }
+  ]
+}
