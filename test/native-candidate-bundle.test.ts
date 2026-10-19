@@ -34,6 +34,15 @@ report = dict(coordinate_units='mm', kicad_version='10.0.6', included_severities
 pathlib.Path(sys.argv[sys.argv.index('--output') + 1]).write_text(json.dumps(report))
 `);
     await chmod(checker, 0o700);
+    // Isolate the connectivity dependency too: these tests exercise publication,
+    // while native-terminal-connectivity.test.ts uses real refilled boards.
+    const connectivity = join(root, "python3");
+    await writeFile(connectivity, `#!/usr/bin/python3
+import json, os, pathlib, sys
+if os.environ['BUNDLE_TEST_MODE'] == 'connectivity-error': sys.exit(4)
+pathlib.Path(sys.argv[-1]).write_text(json.dumps(dict(nativeVersion='10.0.6', input=[], candidate=[])))
+`);
+    await chmod(connectivity, 0o700);
     const invoke = async (output = join(root, "accepted.json")) => {
       const child = Bun.spawn([process.execPath, resolve("tools/native-candidate-bundle.ts"), join(root, "input.kicad_pcb"), join(root, "candidate.kicad_pcb"), output], {
         env: { ...process.env, PATH: `${root}:${process.env.PATH}`, BUNDLE_TEST_ROOT: root, BUNDLE_TEST_MODE: mode }, stdout: "pipe", stderr: "pipe",
@@ -109,5 +118,13 @@ test("publication cannot follow a dangling destination symlink", async () => {
     await symlink(root, join(root, "alias"));
     expect((await invoke(join(root, "alias", "candidate.kicad_dru"))).code).toBe(2);
     expect(await Bun.file(output).exists()).toBe(false);
+  });
+});
+
+ test("connectivity helper failure publishes no candidate", async () => {
+  await fixture("connectivity-error", async (root, invoke) => {
+    expect((await invoke()).code).toBe(2);
+    expect(await Bun.file(join(root, "accepted.json")).exists()).toBe(false);
+    expect((await readdir(root)).filter(name => name.startsWith(".native-candidate-"))).toEqual([]);
   });
 });

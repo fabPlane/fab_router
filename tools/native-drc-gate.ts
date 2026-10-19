@@ -7,6 +7,7 @@ import { link, mkdir, mkdtemp, readFile, realpath, rm, writeFile } from "node:fs
 import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { promisify } from "node:util";
+import { fileURLToPath } from "node:url";
 import { assertSourcePads, assertBoardZones, assertBoardNets, assertEmbeddedBoardRules, assertSourceCopper } from "./kicad-board-rules.ts";
 const execute = promisify(execFile);
 
@@ -58,6 +59,38 @@ export function compareNativeReports(input: unknown, candidate: unknown) {
   return { accepted: newErrors.length === 0 && opensAfter <= opensBefore, newErrors, opensBefore, opensAfter };
 }
 
+/** Preserve every previously connected terminal pair, independently of open totals. */
+export function compareTerminalGroups(value: unknown, nativeVersion: string) {
+  if (!object(value) || value.nativeVersion !== nativeVersion) throw new Error("Native connectivity version mismatch");
+  const parse = (raw: unknown) => {
+    if (!Array.isArray(raw)) throw new Error("Malformed native terminal groups");
+    const membership = new Map<string, number>();
+    raw.forEach((members: unknown, index: number) => {
+      if (!Array.isArray(members) || !members.length) throw new Error("Malformed native terminal group");
+      for (const member of members) {
+        if (typeof member !== "string" || !member || membership.has(member)) throw new Error("Ambiguous native terminal inventory");
+        membership.set(member, index);
+      }
+    });
+    return membership;
+  };
+  const before = parse(value.input), after = parse(value.candidate);
+  if (before.size !== after.size || [...before.keys()].some(key => !after.has(key))) throw new Error("Native terminal inventory changed");
+  const groups = value.input as string[][];
+  let lostTerminalPairs = 0;
+  const lostPairWitnesses: string[][] = [];
+  for (const members of groups) {
+    for (let i = 0; i < members.length; i++) for (let j = i + 1; j < members.length; j++) {
+      const left = members[i]!, right = members[j]!;
+      if (after.get(left) !== after.get(right)) {
+        lostTerminalPairs++;
+        if (lostPairWitnesses.length < 32) lostPairWitnesses.push([left, right]);
+      }
+    }
+  }
+  return { lostTerminalPairs, lostPairWitnesses, terminalGroups: value };
+}
+
 async function optionalFile(path: string): Promise<Buffer | undefined> {
   try { return await readFile(path); } catch (e) { if ((e as NodeJS.ErrnoException).code === "ENOENT") return undefined; throw e; }
 }
@@ -89,13 +122,17 @@ async function inspectNativeBoards(input: string, candidate: string, timeoutMs: 
     const reports: unknown[] = [];
     for (const [index, board] of [before, after].entries()) {
       const report = join(directory, `${index}.json`);
-      // No --save-board: all native writes stay inside this disposable directory.
-      await execute("kicad-cli", ["pcb", "drc", "--severity-all", "--format", "json", "--units", "mm", "--refill-zones", "--output", report, board.target], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
+      // Save refilled copies only inside the disposable directory so the native
+      // connectivity query sees exactly the filled geometry used by DRC.
+      await execute("kicad-cli", ["pcb", "drc", "--severity-all", "--format", "json", "--units", "mm", "--refill-zones", "--save-board", "--output", report, board.target], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
       reports.push(JSON.parse(await readFile(report, "utf8")));
     }
     const result = compareNativeReports(reports[0], reports[1]);
+    const connectivityOutput = join(directory, "terminal-groups.json");
+    await execute("python3", [fileURLToPath(new URL("./native-terminal-groups.py", import.meta.url)), before.target, after.target, connectivityOutput], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
+    const connectivity = compareTerminalGroups(JSON.parse(await readFile(connectivityOutput, "utf8")), parseReport(reports[0]).kicad_version);
     const hash = (data: Buffer) => new Bun.CryptoHasher("sha256").update(data).digest("hex");
-    const validation = { ...result, inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
+    const validation = { ...result, ...connectivity, accepted: result.accepted && connectivity.lostTerminalPairs === 0, inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
     const files = (snapshot: typeof before) => [
       { name: "board.kicad_pcb", bytes: snapshot.bytes },
       { name: "board.kicad_pro", bytes: snapshot.project },

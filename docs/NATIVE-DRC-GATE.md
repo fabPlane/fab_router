@@ -11,11 +11,11 @@ bun tools/native-drc-gate.ts original.kicad_pcb candidate.kicad_pcb native-repor
 ```
 
 Each board must have a same-stem `.kicad_pro`; same-stem `.kicad_dru` files are optional.
-Both sets of project rules must be byte-identical. Install `kicad-cli` on PATH. The command
+Both sets of project rules must be byte-identical. Install `kicad-cli` and `python3` with matching native `pcbnew` bindings on PATH. The command
 copies boards and rules to a temporary directory and runs the following for each copy:
 
 ```bash
-kicad-cli pcb drc --severity-all --format json --units mm --refill-zones --output report.json board.kicad_pcb
+kicad-cli pcb drc --severity-all --format json --units mm --refill-zones --save-board --output report.json board.kicad_pcb
 ```
 
 Exit codes are **0** for acceptance, **1** for rejection, and **2** for an operational error.
@@ -25,13 +25,24 @@ JSON goes to stdout. A report includes both full native reports and hashes of th
 board bytes that were checked. Source boards and rule files are never passed to the native
 process or overwritten. Temporary files are removed on success and failure.
 
-Acceptance requires no new error-level native findings and no increase in native opens.
+Acceptance requires no new error-level native findings, no increase in native opens,
+and preservation of every previously connected source-terminal pair.
 Errors are compared as a multiset of type, severity, physical item descriptions and positions;
 imported UUID changes do not turn inherited errors into new errors. A removed error cannot
 mask a different new error. Native versions, included severities and ignored-check policies
 must match; error checks must be enabled. Connectivity entries must be error-level
 `unconnected_items` findings with at least two described endpoints and finite millimetre
 coordinates. Malformed entries fail closed before either open total is used.
+
+After DRC saves each refilled disposable board, `tools/native-terminal-groups.py`
+loads those copies and builds native connectivity. It compares pad groups using net,
+footprint reference/position, pad number/position and pad layers, independently of
+regenerated UUIDs. Previously separate groups may join; previously connected pairs
+must remain connected. Equal or decreasing open counts alone cannot prove this.
+Ambiguous identities, changed inventories, non-equivalence native queries, mismatched
+binding versions and helper failures block acceptance. Results retain both partitions,
+the exact number of lost pairs and up to 32 witness pairs. No source path is saved.
+Each DRC process and the connectivity helper has its own 120-second timeout.
 
 Before native checking, both boards must retain the same embedded `setup` tree and
 physical layer table (IDs, canonical names, types and order). This includes stackup,
@@ -124,8 +135,7 @@ PY
 
 The bundle is a local interchange artifact, not a signed attestation. Publication uses
 all existing gate checks and limitations: acceptance may retain inherited errors and
-opens, and does not prove complete design fidelity or preserve every connected terminal
-pair. It neither edits the source paths nor commits a transaction to a live editor.
+opens, and does not prove complete design fidelity or protect every item of authored metadata. It neither edits the source paths nor commits a transaction to a live editor.
 The benchmark and editor do not invoke it automatically. A host integrating it must
 still bind the intended input to the recorded hash and handle its own atomic application
 and undo. It does not discover or repair thermal geometry.
