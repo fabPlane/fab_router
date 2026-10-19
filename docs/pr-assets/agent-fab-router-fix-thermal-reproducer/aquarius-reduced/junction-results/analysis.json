@@ -1,0 +1,225 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "rows": [
+    {
+      "repeat": 1,
+      "attempts": 20,
+      "accepted": false,
+      "blockers": {
+        "clearance": 7,
+        "retained_target": 17,
+        "shorting_items": 8,
+        "solder_mask_bridge": 11
+      },
+      "target_removals": [
+        {
+          "name": "candidate-1-4",
+          "rank": 1,
+          "scale": -0.6,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -204332,
+            -226167
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-6",
+          "rank": 1,
+          "scale": -0.8,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -272442,
+            -301556
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-8",
+          "rank": 1,
+          "scale": -1.0,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -340553,
+            -376945
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "shorting_items",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    },
+    {
+      "repeat": 2,
+      "attempts": 20,
+      "accepted": false,
+      "blockers": {
+        "clearance": 7,
+        "retained_target": 17,
+        "shorting_items": 8,
+        "solder_mask_bridge": 11
+      },
+      "target_removals": [
+        {
+          "name": "candidate-2-4",
+          "rank": 1,
+          "scale": -0.6,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -204332,
+            -226167
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-6",
+          "rank": 1,
+          "scale": -0.8,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -272442,
+            -301556
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-8",
+          "rank": 1,
+          "scale": -1.0,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -340553,
+            -376945
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "shorting_items",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    },
+    {
+      "repeat": 3,
+      "attempts": 20,
+      "accepted": false,
+      "blockers": {
+        "clearance": 7,
+        "retained_target": 17,
+        "shorting_items": 8,
+        "solder_mask_bridge": 11
+      },
+      "target_removals": [
+        {
+          "name": "candidate-3-4",
+          "rank": 1,
+          "scale": -0.6,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -204332,
+            -226167
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-6",
+          "rank": 1,
+          "scale": -0.8,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -272442,
+            -301556
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-8",
+          "rank": 1,
+          "scale": -1.0,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -340553,
+            -376945
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "shorting_items",
+            "solder_mask_bridge"
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    }
+  ]
+}
