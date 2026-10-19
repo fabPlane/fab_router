@@ -32,4 +32,6 @@ for i,label in enumerate(('before','after')):
     text(35+690*i,710,'1 native open; cropped terminal inventory unchanged',19)
 text(35,755,'Static diagnostic only: no routing completion gain or production repair.',20)
 ET.ElementTree(root).write(a/'comparison.svg',encoding='unicode',xml_declaration=True)
+path=a/'comparison.svg'
+path.write_text('\n'.join(line.rstrip() for line in path.read_text().splitlines())+'\n')
 subprocess.run(['rsvg-convert','-w','1600',str(a/'comparison.svg'),'-o',str(a/'comparison.png')],check=True)
