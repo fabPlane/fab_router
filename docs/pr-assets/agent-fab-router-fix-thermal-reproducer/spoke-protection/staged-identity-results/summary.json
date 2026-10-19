@@ -1,0 +1,298 @@
+{
+  "repeats": 3,
+  "routing_benchmark": false,
+  "production_fix": false,
+  "script_sha256": "115be8a6cf7eaf3003637c0da1c33f402dc773ffadd9f4d77ab2f633b9115b49",
+  "helper_sha256": "b7bd3a2559fa7b72246bd59cc9cb96ac7d09d334ff6adea0ac5eef4a0080291b",
+  "original_sources_unchanged": true,
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "unchanged",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": true,
+      "accepted": true,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "6e38e40c5fbb51b2984a7fab5012d040d34021ed06ac7b286b77e814f5d58ecc"
+    },
+    {
+      "repeat": 1,
+      "variant": "changed-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "e38805ac42b7710ecaa1002ca7da140cfca649a8496bb200cc6c5c9cb525a64c"
+    },
+    {
+      "repeat": 1,
+      "variant": "changed-project",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "88018fdd565b0b9bf6ccd45b82b8a858f5a0e4b9e089f20f47b8329a653291e6"
+    },
+    {
+      "repeat": 1,
+      "variant": "deleted-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "f7831f5145ab8dcec7cbc8ff63b40442b1341e002831df7aacdd6ab7dee3cd0b"
+    },
+    {
+      "repeat": 2,
+      "variant": "unchanged",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": true,
+      "accepted": true,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "5edea321e6c3ffc1d53407c0d02f837acdbb6f7f1ccba5a08d54cd5059640e6c"
+    },
+    {
+      "repeat": 2,
+      "variant": "changed-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "12b3bc6297ac22252cc710fadab0d67f75423c8a636eabccc508e351a87dd328"
+    },
+    {
+      "repeat": 2,
+      "variant": "changed-project",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "ae811e98334eb030124ed433f147e83a76e90f94232b286a87dd27080be0bc31"
+    },
+    {
+      "repeat": 2,
+      "variant": "deleted-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "0897fddbd976258958346b2df23968f29433a2d8c71925299f6e21642c52401e"
+    },
+    {
+      "repeat": 3,
+      "variant": "unchanged",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": true,
+      "accepted": true,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "ee0404e855680d7fca0beb80b4254fd87d2e1f965d6b003e47a4d324af170077"
+    },
+    {
+      "repeat": 3,
+      "variant": "changed-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "436f9f55e0345e4ebef269e97597887ad917f62272d0f6bd5a196cc8cbee33e5"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "7a87f1e9e7f27322a6fbdc77176c13e81fc92dd46756d076dfbf6a04623d1c52"
+    },
+    {
+      "repeat": 3,
+      "variant": "changed-project",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "d6816d9ef666d1d16c749c7bd9138c1269b94fc2ae28c1585bd37c02daefba1f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "234ea6b860edb2783c8a6c39f0fac2e709d1d47bc203da9a3421199959151cb6"
+    },
+    {
+      "repeat": 3,
+      "variant": "deleted-rules",
+      "loading_observed": true,
+      "native_errors": 0,
+      "native_opens": 1,
+      "previous_decision": true,
+      "stable_sidecars": false,
+      "accepted": false,
+      "probed_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "before_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "after_drc_sidecars": {
+        "kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "kicad_dru": null
+      },
+      "refilled_board_sha256": "6d888767240fe55a65f0240dd73cebfafa48b5a0a3a18e2f6e25845f75d673f5",
+      "report_sha256": "998e8e296034e804f5d7f53a8aba41718fefdac4e5fedd16492dd30a3ea927da"
+    }
+  ]
+}
