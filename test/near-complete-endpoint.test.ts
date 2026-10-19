@@ -94,6 +94,29 @@ test('near-complete endpoint context preserves legal progress and deterministic 
    journal.rewind(mark);
    expect(writeSes(l)).toBe(session);
    expect(requiredConnections(l).filter(c=>c.net===target)).toEqual(left);
+   // Duplicate an already legal branch as retained copper. Removing this
+   // redundant item does not split terminals or add DRC errors: ownership must
+   // reject it independently, for every non-router origin.
+   for(const origin of ['file','session','prior'] as const){
+    const id=Math.max(...[l.pads,l.tracks,l.barrels,l.pours,l.fences].flatMap(items=>items.map(i=>i.id)))+1;
+    const retainedBranch={...short,id,origin};
+    l.tracks=[...l.tracks,retainedBranch];
+    const ownLattice=buildLattice(l),ownJournal=createJournal(l,ownLattice);
+    const ownSession=writeSes(l),ownMark=ownJournal.mark();
+    expect(checkDrc(l).counts.violations).toBe(0);
+    expect(tryRecoveryTransaction(l,ownLattice,ownJournal,targetPair,()=>{
+     ownJournal.remove(id);
+     ownJournal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+     expect(checkDrc(l).counts.violations).toBe(0);
+     expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+    })).toBe('retained');
+    expect(writeSes(l)).toBe(ownSession);
+    expect(l.tracks.find(t=>t.id===id)).toEqual(retainedBranch);
+    expect(ownLattice.itemOf(id)).toBeDefined();
+    expect(ownJournal.insertedSince(ownMark)).toEqual([]);
+    expect(requiredConnections(l).filter(c=>c.net===target)).toEqual(left);
+    l.tracks=l.tracks.filter(t=>t.id!==id);
+   }
   }
  }
  expect(fingerprints[0]).toBe(fingerprints[1]);

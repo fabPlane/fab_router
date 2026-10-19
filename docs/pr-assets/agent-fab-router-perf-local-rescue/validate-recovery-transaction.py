@@ -1,4 +1,4 @@
-"""Reproduce the real-fixture gate checks and three deliberate bypass mutations.
+"""Reproduce the real-fixture gate checks and four deliberate bypass mutations.
 
 Usage: python3 validate-recovery-transaction.py SOURCE UNUSED_OUTPUT
 No production source is changed. Links in disposable trees reference SOURCE.
@@ -20,6 +20,7 @@ mutations = [
     ('no-drc', "if(checkDrc(layout).counts.violations)return 'drc';", "if(false)return 'drc';", 'Expected: "drc"'),
     ('no-terminals', "if(groups.some(g=>g.some(id=>!same(after,g[0]!,id))))return 'terminals';", "if(false)return 'terminals';", 'Expected: "terminals"'),
     ('no-rewind', 'if(!kept)journal.rewind(mark);', 'if(!kept)void mark;', 'expect(received).toBe(expected)'),
+    ('no-retained', "if(retained()!==retainedBefore)return 'retained';", "if(false)return 'retained';", 'Expected: "retained"'),
 ]
 rows = []
 for name, old, new, diagnostic in mutations:
@@ -41,7 +42,7 @@ for name, old, new, diagnostic in mutations:
     log = result.stdout + result.stderr
     (output / f'{name}.txt').write_text(log)
     if name == 'control':
-        assert result.returncode == 0 and '1 pass' in log and '138 expect() calls' in log, log
+        assert result.returncode == 0 and '1 pass' in log and '219 expect() calls' in log, log
     else:
         assert result.returncode == 1 and '1 fail' in log and diagnostic in log, log
     rows.append({'variant': name, 'exit': result.returncode, 'expected_outcome_observed': True})

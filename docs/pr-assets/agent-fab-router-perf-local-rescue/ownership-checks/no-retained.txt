@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle26/ownership-final/no-retained/test/near-complete-endpoint.test.ts:
+107 |     expect(tryRecoveryTransaction(l,ownLattice,ownJournal,targetPair,()=>{
+108 |      ownJournal.remove(id);
+109 |      ownJournal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+110 |      expect(checkDrc(l).counts.violations).toBe(0);
+111 |      expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+112 |     })).toBe('retained');
+              ^
+error: expect(received).toBe(expected)
+
+Expected: "retained"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle26/ownership-final/no-retained/test/near-complete-endpoint.test.ts:112:9)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [3845.65ms]
+
+ 0 pass
+ 1 fail
+ 50 expect() calls
+Ran 1 test across 1 file. [3.87s]

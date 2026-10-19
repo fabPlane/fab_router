@@ -47,9 +47,10 @@ is not a sandbox for arbitrary callbacks. It requires zero baseline exact
 violations, a valid initially disconnected target, and preserves terminal groups
 on all nets (including ignored nets and non-prior pours). Exact DRC is the
 engine's represented rule set; it does not prove native zone-refill safety.
-Proposals must also preserve non-router copper; ownership enforcement and
-byte-preservation checks belong in the future production integration. The
-tested rip-up removes only the router-generated short branch.
+Cycle 26 adds a retained track/barrel byte-preservation guard to this research
+helper; see [the ownership experiment](ownership-checks.md). Production
+integration and region/budget enforcement remain pending. The original cycle-25
+results below and their source hashes describe the earlier helper.
 
 The full-pipeline regression permits future normal legal closure. If that happens,
 its witness-specific section is skipped; the evidence runner's assertion-count
