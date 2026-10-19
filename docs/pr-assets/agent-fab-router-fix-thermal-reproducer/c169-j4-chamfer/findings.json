@@ -1,0 +1,60 @@
+{
+  "checks": 30,
+  "saved_design_drifts": 0,
+  "production_fix": false,
+  "routing_benchmark": false,
+  "outcomes": {
+    "original-input": {
+      "errors": 0,
+      "opens": 55,
+      "rules": {}
+    },
+    "original-segment": {
+      "errors": 1,
+      "opens": 0,
+      "rules": {
+        "starved_thermal": 1
+      }
+    },
+    "removed": {
+      "errors": 0,
+      "opens": 1,
+      "rules": {}
+    },
+    "upper-right": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-0.125": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-0.25": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-0.5": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-1.0": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-1.5": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "chamfer-2.0": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    }
+  }
+}
