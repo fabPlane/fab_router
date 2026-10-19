@@ -1,0 +1,242 @@
+{
+  "repeats": 3,
+  "routing_benchmark": false,
+  "production_fix": false,
+  "script_sha256": "5ac505b50481ad6e9579115d4160ae8525b36891c1ac8730d5418d550028cce3",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 1,
+      "variant": "valid-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "2de3f120981fcdde26233c74653f53a52fb4810a3a9ee56c4853b6f11d091485"
+    },
+    {
+      "repeat": 1,
+      "variant": "invalid-before-valid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "f523624b798601adc6f5395ece38493fbe7099076ce9e707fcc9e79670fd00d9"
+    },
+    {
+      "repeat": 2,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 2,
+      "variant": "valid-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "2de3f120981fcdde26233c74653f53a52fb4810a3a9ee56c4853b6f11d091485"
+    },
+    {
+      "repeat": 2,
+      "variant": "invalid-before-valid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "f523624b798601adc6f5395ece38493fbe7099076ce9e707fcc9e79670fd00d9"
+    },
+    {
+      "repeat": 3,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 3,
+      "variant": "valid-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "2de3f120981fcdde26233c74653f53a52fb4810a3a9ee56c4853b6f11d091485"
+    },
+    {
+      "repeat": 3,
+      "variant": "invalid-before-valid",
+      "exit_code": 0,
+      "errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "f523624b798601adc6f5395ece38493fbe7099076ce9e707fcc9e79670fd00d9"
+    }
+  ]
+}

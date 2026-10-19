@@ -433,3 +433,20 @@ PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 360 /usr/bin/pytho
 `rule-loading-results/` retains exact rules, filled boards, projects, reports,
 CLI logs, measurements and the chart. No router benchmark ran; the frozen native
 thermal failures remain unresolved.
+
+### Mixed valid and invalid rules (cycle 85)
+
+`mixed-rules.py` appends or prepends an unknown-constraint rule to the valid
+0.4 mm GND width rule. On the same board/project, three fresh refills per
+variant measure 400 samples with the valid rule alone, but 508 samples in
+both mixed orders. Both directions agree. All nine CLI calls exit zero,
+report zero native errors and retain two opens; exact native reports and logs
+are retained in `mixed-rule-results/`. The suffix can therefore disable the
+observed effect of an earlier valid rule. This does not resolve general rule
+loading or establish a usable thermal bridge. No production fix or routing
+benchmark is claimed; the frozen thermal failures remain unresolved.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/mixed-rules.py --out /tmp/thermal-mixed-rules-new
+bun run typecheck && bun run check:layers && bun run test
+```
