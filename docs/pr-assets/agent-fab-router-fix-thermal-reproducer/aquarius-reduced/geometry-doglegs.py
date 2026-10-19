@@ -2,6 +2,7 @@
 """Offline diagnostic: derive a bounded candidate set from native pad/track geometry."""
 import argparse
 import copy
+from collections import Counter
 import hashlib
 import importlib.util
 import json
@@ -14,6 +15,13 @@ HERE = Path(__file__).resolve().parent
 spec = importlib.util.spec_from_file_location('selection', HERE / 'select-dogleg.py')
 selection = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(selection)
+
+
+def same_outcome(before, after):
+    """Compare complete error multisets and exact non-error outcome fields."""
+    errors = lambda row: Counter(json.dumps(e, sort_keys=True) for e in row['errors'])
+    return (errors(before) == errors(after)
+            and all(before[field] == after[field] for field in ('opens', 'groups', 'eligible')))
 
 
 def nearby(board, pad, limit=3):
@@ -105,8 +113,7 @@ def main():
     assert len(set(winners)) == 1
     for label, _, _ in candidates:
         group = [r for r in rows if r['label'] == label]
-        for field in ('errors', 'opens', 'groups', 'eligible'):
-            assert all(r[field] == group[0][field] for r in group)
+        assert all(same_outcome(group[0], row) for row in group)
     assert inputs == {name: sha(Path(name)) for name in inputs}
     (a.out / 'summary.json').write_text(json.dumps(dict(production_fix=False, routing_benchmark=False,
         native_version=native.pcbnew.Version(), repeats=3, pad_uuid=a.pad, stored_zone_gap_nm=gap,
