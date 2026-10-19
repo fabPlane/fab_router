@@ -13,10 +13,12 @@ fixture=json.loads((a.results/'summary.json').read_text())
 assert fixture['all_targets'] and len(fixture['rows'])==3
 assert all(r['accepted'] and r['target_index']==0 for r in fixture['rows'])
 rows=[]
-for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejection'):
+for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejection','wrong-track-rank','wrong-track-limit'):
  out=root/('verify-control-'+label)
  shutil.copytree(a.results,out)
  s=json.loads((out/'summary.json').read_text())
+ if label=='wrong-track-rank':s['rows'][0]['attempts'][0]['track_rank']=2
+ if label=='wrong-track-limit':s['track_limit']=True
  if label=='missing-target':s['rows'].pop()
  if label=='duplicate-repeat':s['rows'][1]['repeat']=1
  if label=='truncated-rejection':
@@ -31,4 +33,4 @@ for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejecti
  assert (p.returncode==0)==(label=='unchanged'),label
  rows.append(dict(control=label,exit_code=p.returncode,expected_accept=label=='unchanged'))
 (root/'verify-controls.json').write_text(json.dumps(rows,indent=2)+'\n')
-print('PASS: unchanged accepted; missing target, duplicate repeat and truncated rejection rejected')
+print('PASS: unchanged accepted; missing target, duplicate repeat, truncated rejection, wrong rank and invalid limit rejected')

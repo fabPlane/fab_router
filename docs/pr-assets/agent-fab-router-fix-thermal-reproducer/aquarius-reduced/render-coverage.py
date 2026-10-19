@@ -3,6 +3,7 @@
 import argparse
 from html import escape
 import json
+import gzip
 from pathlib import Path
 import subprocess
 import pcbnew
@@ -11,7 +12,8 @@ p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('results', type=Path)
 p.add_argument('--source', type=Path, required=True)
 a = p.parse_args()
-s = json.loads((a.results/'summary.json').read_text())
+summary = a.results/'summary.json'
+s = json.loads(summary.read_bytes() if summary.exists() else gzip.decompress(summary.with_suffix('.json.gz').read_bytes()))
 board = pcbnew.LoadBoard(str(a.source))
 pads = {p.m_Uuid.AsString(): f'{p.GetParentFootprint().GetReference()}.{p.GetNumber()}'
         for p in board.GetPads()}
@@ -21,7 +23,7 @@ svg = [f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{height}">
 def text(x, y, value, size=20):
     svg.append(f'<text x="{x}" y="{y}" font-family="sans-serif" font-size="{size}">{escape(str(value))}</text>')
 text(30, 40, 'Full-board geometry proposal coverage: independent pad trials', 25)
-text(30, 76, 'Nearest foreign track; signed stored-gap normal steps; native validation; 3 repeats')
+text(30, 76, f'Nearest {s.get("track_limit", 1)} foreign tracks; signed stored-gap steps; native validation; 3 repeats')
 text(30, 112, 'Pad')
 text(210, 112, 'Native errors before / selected')
 text(650, 112, 'Proposals tried')

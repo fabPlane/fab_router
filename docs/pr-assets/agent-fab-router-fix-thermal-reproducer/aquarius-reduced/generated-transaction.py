@@ -34,12 +34,19 @@ def proposals(nodes, info, gap):
         yield scale, delta, (native.dump(result)+'\n').encode()
 
 
+def ranked_proposals(nodes, nearby, gap):
+    for rank, info in enumerate(nearby, 1):
+        for scale, delta, candidate in proposals(nodes, info, gap):
+            yield rank, scale, delta, candidate
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
     p.add_argument('--all-targets', action='store_true',
                    help='Measure each failing pad independently; allow no safe candidate')
+    p.add_argument('--track-limit', type=int, choices=range(1, 9), default=1)
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     assert native.pcbnew.Version() == '10.0.6'
@@ -70,16 +77,16 @@ def main():
                      and any(z.IsOnLayer(layer) for layer in pad.GetLayerSet().Seq())]
             gap = min(z.GetThermalReliefGap() for z in zones)
             assert gap > 0
-            nearby = geometry.nearby(board, pad, 1)
+            nearby = geometry.nearby(board, pad, a.track_limit)
             assert nearby
             attempts = []
             selected = original
-            for index, (scale, delta, candidate) in enumerate(proposals(nodes, nearby[0], gap)):
+            for index, (rank, scale, delta, candidate) in enumerate(ranked_proposals(nodes, nearby, gap)):
                 name = f'candidate-{repeat}-{target_index}-{index}' if a.all_targets else f'candidate-{repeat}-{index}'
                 output, accepted, row, exception = transaction.transact(original, candidate, baseline,
                     lambda data: check(data, name))
                 assert output == (candidate if accepted else original)
-                attempts.append(dict(name=name, scale=scale, delta_nm=delta, accepted=accepted,
+                attempts.append(dict(name=name, track_rank=rank, scale=scale, delta_nm=delta, accepted=accepted,
                     exception=exception, candidate_sha256=sha(candidate), row=row))
                 if accepted:
                     selected = output
@@ -97,7 +104,7 @@ def main():
         group = [r for r in rows if r['pad_uuid'] == target]
         assert len(group) == 3 and len({r['selected_sha256'] for r in group}) == 1
     (a.out/'summary.json').write_text(json.dumps(dict(production_fix=False,
-        routing_benchmark=False, all_targets=a.all_targets, input_sha256=inputs, rows=rows), indent=2)+'\n')
+        routing_benchmark=False, all_targets=a.all_targets, track_limit=a.track_limit, input_sha256=inputs, rows=rows), indent=2)+'\n')
     (a.out/'manifest.json').write_text(json.dumps({
         str(path.relative_to(a.out)): sha(path.read_bytes())
         for path in sorted(a.out.rglob('*')) if path.is_file()
