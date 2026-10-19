@@ -1,7 +1,7 @@
 # fab_router
 
 [![milestones](https://img.shields.io/badge/milestones-M0%E2%80%93M10-2ea44f)]()
-[![DRC-clean](https://img.shields.io/badge/R--1-DRC--clean%20by%20construction-2ea44f)]()
+[![DRC scope](https://img.shields.io/badge/DRC-imported%20geometry-blue)](docs/NATIVE-DRC-GATE.md)
 [![tests](https://img.shields.io/badge/tests-857%20passing-2ea44f)]()
 [![runtime](https://img.shields.io/badge/runtime-Bun%20%E2%89%A51.4-black)](https://bun.sh)
 [![licence](https://img.shields.io/badge/licence-GPL--3.0%20OR%20FabPlane%20Commercial-blue)](LICENSE)
@@ -24,8 +24,10 @@ Milestones M0–M10 complete (tags `M0`…`M10`). The router reads SPECCTRA DSN,
 connectivity, routes multilayer boards with vias, rip-up, fanout, push-and-shove, a gridless
 detailed router (line-search + corner-stitch tiles) and a monotone optimiser, writes and applies
 SES, drives the tscircuit SimpleRouteJson adapter, and carries an off-by-default two-phase
-global-planning subsystem. **It never adds a DRC violation (invariant R-1) on any board at any
-setting.**
+global-planning subsystem. Its geometric checker evaluates the imported copper model; native
+zone-refill checks can still find added thermal violations. Use the optional
+[native DRC acceptance gate](docs/NATIVE-DRC-GATE.md) to reject such candidate boards before
+accepting them. The gate does not repair routes or run automatically.
 
 Acceptance: 401 non-routing cases pass; all feature routing cases (4-/6-layer, plane layers,
 strict-DRC, item caps, DAC bm08) pass to their bounds; the tscircuit SRJ boards pass their hard

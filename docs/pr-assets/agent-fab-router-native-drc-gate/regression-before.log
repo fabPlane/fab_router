@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+error: Cannot find module '../tools/native-drc-gate.ts' from '/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts'
+-------------------------------
+
+
+ 0 pass
+ 1 fail
+ 1 error
+Ran 1 test across 1 file. [67.00ms]
