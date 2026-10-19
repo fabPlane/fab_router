@@ -106,3 +106,30 @@ asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
 PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/python3 "$asset/local-corridors.py" --out /tmp/aquarius-local-corridors
 rsvg-convert /tmp/aquarius-local-corridors/comparison.svg -o /tmp/aquarius-local-corridors/comparison.png
 ```
+
+## Complete-track translation diagnostic
+
+Added a native translation sweep on the reduced rotated B.Cu fixture. Each trial retains the rounded pad, zone, project/rules and all three tracks, changing only both endpoints of one track by the same outward displacement. This compares relocation against the earlier deletion controls; it is not routing or connectivity preservation.
+
+Same static fixture, machine, native version 10.0.6 and cores 20–25; three fresh refill/DRC checks per configuration. Entries are native errors in every repeat:
+
+| Selected outward translation | Before: 0 µm | 25 µm | 50 µm | 100 µm | 200 µm | 400 µm |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Track 1, local −y | 1 | 1 | 1 | 1 | 1 | 1 |
+| Track 2, local +x | 1 | 1 | 1 | 0 | 0 | 0 |
+| Track 3, local +y | 1 | 1 | 1 | 0 | 0 | 0 |
+
+The baseline column shares three checks across rows; 48 checks total. All retain one pad, three tracks, no vias and one zone. The 0.100 mm filled corridors recover +x for track 2 and +y for track 3 at every native-clean displacement. These rectangles are diagnostics, not a general spoke-count rule. The sweep brackets a change between 50 and 100 µm for tracks 2 and 3; it does not identify a minimum safe clearance. Moving track 1 by up to 400 µm is insufficient. Track endpoint changes would disconnect original routing, and the reduced fixture lacks those other-net terminals. Zero reported opens therefore does not establish completion. No general guard, production fix, frozen benchmark improvement or pin bump is claimed. The full baseline remains 39/78 passes, 13/26 cases passing 3/3, 120 opens and 27 unresolved native thermal errors.
+
+Reproduce from the repository root, with a fresh output directory:
+
+```bash
+asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 900 /usr/bin/python3 "$asset/translate-tracks.py" --out /tmp/aquarius-translations
+rsvg-convert /tmp/aquarius-translations/comparison.svg -o /tmp/aquarius-translations/comparison.png
+taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+```
+
+`translation-results/` retains all 48 boards/reports, exact input/output hashes, displacement vectors, local filled-corridor measurements and raw logs. Repeated native findings and corridor measurements are asserted identical. Engine source/tests are unchanged.
+
+![Measured native errors under complete-track translation](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/translation-results/comparison.png?raw=true)

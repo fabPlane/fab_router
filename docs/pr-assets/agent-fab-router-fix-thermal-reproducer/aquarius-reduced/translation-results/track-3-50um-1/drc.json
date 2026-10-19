@@ -1,0 +1,220 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T11:52:47",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 189.23,
+                        "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                    "description": "Pad 39 [GNDD] of U1 on B.Cu",
+                    "pos": {
+                        "x": 173.200561,
+                        "y": 48.414401
+                    },
+                    "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text '-' on B.Silkscreen",
+                    "pos": {
+                        "x": 175.895,
+                        "y": 96.901
+                    },
+                    "uuid": "a5abe449-0096-48ac-8e44-0506f10f1523"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text '+' on B.Silkscreen",
+                    "pos": {
+                        "x": 178.3715,
+                        "y": 96.901
+                    },
+                    "uuid": "fb9f57e0-ef68-4a2f-a143-4edec93d39b7"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Footprint 'LQFP-64_10x10mm_P0.5mm' does not match copy in library 'Package_QFP'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 168.6574,
+                        "y": 44.9319
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005d2ab95e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 121.3,
+                        "y": 96.02
+                    },
+                    "uuid": "59737521-2102-4cba-b94c-33ecfbbd7ae5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 121.3,
+                        "y": 146.02
+                    },
+                    "uuid": "ac01526d-ab26-4a8c-a579-80560130dda2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 181.3,
+                        "y": 96.02
+                    },
+                    "uuid": "6b10b0a0-92aa-496f-a6c9-344b2eb0d38b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [/Inputs/RST] on B.Cu, length 1.4952 mm",
+                    "pos": {
+                        "x": 174.6133,
+                        "y": 49.1161
+                    },
+                    "uuid": "6dbcde1f-ccf3-47bd-92d0-f3935a38c796"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(C1-Pad1)] on B.Cu, length 2.1096 mm",
+                    "pos": {
+                        "x": 176.1396,
+                        "y": 49.5902
+                    },
+                    "uuid": "21768f94-189f-4a8a-9f22-7e54b38c1a6d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+                    "pos": {
+                        "x": 171.786845,
+                        "y": 48.372155
+                    },
+                    "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}
