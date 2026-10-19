@@ -1,0 +1,806 @@
+{
+  "scope": "Reduced-fixture engine experiment only. Exact real profile; no native DRC or full-board improvement claim.",
+  "inputSha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "context": "reduced",
+  "mode": "exact-pull",
+  "rows": [
+    {
+      "repeat": 0,
+      "normalSeconds": 3.203159427,
+      "recoverySeconds": 0.04169124299999976,
+      "before": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3203,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "profile": {
+        "net": 4,
+        "group": 0,
+        "width": 2500,
+        "halfWidth": 1250,
+        "neckWidth": 2500,
+        "trackKind": 1,
+        "barrelKind": 3,
+        "spacingByKind": [
+          0,
+          2000,
+          2000,
+          2000,
+          2000,
+          5000
+        ],
+        "maxSpacing": 5000,
+        "sheets": [
+          0,
+          1
+        ],
+        "barrelForms": [
+          {
+            "form": 3,
+            "kind": 3,
+            "attach": false,
+            "fromSheet": 0,
+            "toSheet": 1
+          }
+        ],
+        "angleMode": "45",
+        "planeNet": false,
+        "holeClearance": 2500,
+        "edgeClearance": 5000
+      },
+      "closed": true,
+      "trials": [
+        {
+          "marginPitches": 4,
+          "div": 2,
+          "reverse": false,
+          "sheet": 1,
+          "step": 3750,
+          "region": {
+            "gx0": -8,
+            "gx1": 89,
+            "gy0": -52,
+            "gy1": 8
+          },
+          "searchOk": true,
+          "pops": 3985,
+          "aborted": false,
+          "deadlineExpired": false,
+          "inserted": true,
+          "violations": 0,
+          "left": 0,
+          "closed": true,
+          "seconds": 0.041185491000000185
+        }
+      ],
+      "sesBeforeSha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "sesAfterSha256": "ae75e65ce773c959a8128a0aaf376e741c6e1d1647725e22e4cc6539dc4ec11e",
+      "tracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1270250,
+              "y": -946850
+            },
+            {
+              "x": 1277750,
+              "y": -946850
+            },
+            {
+              "x": 1398350,
+              "y": -946850
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 119,
+          "origin": "router"
+        }
+      ],
+      "pads": [
+        {
+          "id": 9,
+          "at": {
+            "x": 1076100,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 10,
+          "at": {
+            "x": 1101500,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 27,
+          "at": {
+            "x": 1279300,
+            "y": -930500
+          },
+          "net": 13
+        },
+        {
+          "id": 29,
+          "at": {
+            "x": 1279300,
+            "y": -905100
+          },
+          "net": 14
+        },
+        {
+          "id": 31,
+          "at": {
+            "x": 1279300,
+            "y": -879700
+          },
+          "net": 15
+        },
+        {
+          "id": 33,
+          "at": {
+            "x": 1279300,
+            "y": -854300
+          },
+          "net": 16
+        },
+        {
+          "id": 35,
+          "at": {
+            "x": 1279300,
+            "y": -828900
+          },
+          "net": 17
+        },
+        {
+          "id": 37,
+          "at": {
+            "x": 1279300,
+            "y": -803500
+          },
+          "net": 18
+        },
+        {
+          "id": 39,
+          "at": {
+            "x": 1279300,
+            "y": -778100
+          },
+          "net": 19
+        },
+        {
+          "id": 62,
+          "at": {
+            "x": 1402700,
+            "y": -942500
+          },
+          "net": 4
+        }
+      ]
+    },
+    {
+      "repeat": 1,
+      "normalSeconds": 2.77412103,
+      "recoverySeconds": 0.03780283700000018,
+      "before": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 2774,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "profile": {
+        "net": 4,
+        "group": 0,
+        "width": 2500,
+        "halfWidth": 1250,
+        "neckWidth": 2500,
+        "trackKind": 1,
+        "barrelKind": 3,
+        "spacingByKind": [
+          0,
+          2000,
+          2000,
+          2000,
+          2000,
+          5000
+        ],
+        "maxSpacing": 5000,
+        "sheets": [
+          0,
+          1
+        ],
+        "barrelForms": [
+          {
+            "form": 3,
+            "kind": 3,
+            "attach": false,
+            "fromSheet": 0,
+            "toSheet": 1
+          }
+        ],
+        "angleMode": "45",
+        "planeNet": false,
+        "holeClearance": 2500,
+        "edgeClearance": 5000
+      },
+      "closed": true,
+      "trials": [
+        {
+          "marginPitches": 4,
+          "div": 2,
+          "reverse": false,
+          "sheet": 1,
+          "step": 3750,
+          "region": {
+            "gx0": -8,
+            "gx1": 89,
+            "gy0": -52,
+            "gy1": 8
+          },
+          "searchOk": true,
+          "pops": 3985,
+          "aborted": false,
+          "deadlineExpired": false,
+          "inserted": true,
+          "violations": 0,
+          "left": 0,
+          "closed": true,
+          "seconds": 0.03745907999999963
+        }
+      ],
+      "sesBeforeSha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "sesAfterSha256": "ae75e65ce773c959a8128a0aaf376e741c6e1d1647725e22e4cc6539dc4ec11e",
+      "tracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1270250,
+              "y": -946850
+            },
+            {
+              "x": 1277750,
+              "y": -946850
+            },
+            {
+              "x": 1398350,
+              "y": -946850
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 119,
+          "origin": "router"
+        }
+      ],
+      "pads": [
+        {
+          "id": 9,
+          "at": {
+            "x": 1076100,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 10,
+          "at": {
+            "x": 1101500,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 27,
+          "at": {
+            "x": 1279300,
+            "y": -930500
+          },
+          "net": 13
+        },
+        {
+          "id": 29,
+          "at": {
+            "x": 1279300,
+            "y": -905100
+          },
+          "net": 14
+        },
+        {
+          "id": 31,
+          "at": {
+            "x": 1279300,
+            "y": -879700
+          },
+          "net": 15
+        },
+        {
+          "id": 33,
+          "at": {
+            "x": 1279300,
+            "y": -854300
+          },
+          "net": 16
+        },
+        {
+          "id": 35,
+          "at": {
+            "x": 1279300,
+            "y": -828900
+          },
+          "net": 17
+        },
+        {
+          "id": 37,
+          "at": {
+            "x": 1279300,
+            "y": -803500
+          },
+          "net": 18
+        },
+        {
+          "id": 39,
+          "at": {
+            "x": 1279300,
+            "y": -778100
+          },
+          "net": 19
+        },
+        {
+          "id": 62,
+          "at": {
+            "x": 1402700,
+            "y": -942500
+          },
+          "net": 4
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "normalSeconds": 3.652238727,
+      "recoverySeconds": 0.04036895200000072,
+      "before": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3653,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "profile": {
+        "net": 4,
+        "group": 0,
+        "width": 2500,
+        "halfWidth": 1250,
+        "neckWidth": 2500,
+        "trackKind": 1,
+        "barrelKind": 3,
+        "spacingByKind": [
+          0,
+          2000,
+          2000,
+          2000,
+          2000,
+          5000
+        ],
+        "maxSpacing": 5000,
+        "sheets": [
+          0,
+          1
+        ],
+        "barrelForms": [
+          {
+            "form": 3,
+            "kind": 3,
+            "attach": false,
+            "fromSheet": 0,
+            "toSheet": 1
+          }
+        ],
+        "angleMode": "45",
+        "planeNet": false,
+        "holeClearance": 2500,
+        "edgeClearance": 5000
+      },
+      "closed": true,
+      "trials": [
+        {
+          "marginPitches": 4,
+          "div": 2,
+          "reverse": false,
+          "sheet": 1,
+          "step": 3750,
+          "region": {
+            "gx0": -8,
+            "gx1": 89,
+            "gy0": -52,
+            "gy1": 8
+          },
+          "searchOk": true,
+          "pops": 3985,
+          "aborted": false,
+          "deadlineExpired": false,
+          "inserted": true,
+          "violations": 0,
+          "left": 0,
+          "closed": true,
+          "seconds": 0.04010057699999925
+        }
+      ],
+      "sesBeforeSha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "sesAfterSha256": "ae75e65ce773c959a8128a0aaf376e741c6e1d1647725e22e4cc6539dc4ec11e",
+      "tracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1270250,
+              "y": -946850
+            },
+            {
+              "x": 1277750,
+              "y": -946850
+            },
+            {
+              "x": 1398350,
+              "y": -946850
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 119,
+          "origin": "router"
+        }
+      ],
+      "pads": [
+        {
+          "id": 9,
+          "at": {
+            "x": 1076100,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 10,
+          "at": {
+            "x": 1101500,
+            "y": -778100
+          },
+          "net": 4
+        },
+        {
+          "id": 27,
+          "at": {
+            "x": 1279300,
+            "y": -930500
+          },
+          "net": 13
+        },
+        {
+          "id": 29,
+          "at": {
+            "x": 1279300,
+            "y": -905100
+          },
+          "net": 14
+        },
+        {
+          "id": 31,
+          "at": {
+            "x": 1279300,
+            "y": -879700
+          },
+          "net": 15
+        },
+        {
+          "id": 33,
+          "at": {
+            "x": 1279300,
+            "y": -854300
+          },
+          "net": 16
+        },
+        {
+          "id": 35,
+          "at": {
+            "x": 1279300,
+            "y": -828900
+          },
+          "net": 17
+        },
+        {
+          "id": 37,
+          "at": {
+            "x": 1279300,
+            "y": -803500
+          },
+          "net": 18
+        },
+        {
+          "id": 39,
+          "at": {
+            "x": 1279300,
+            "y": -778100
+          },
+          "net": 19
+        },
+        {
+          "id": 62,
+          "at": {
+            "x": 1402700,
+            "y": -942500
+          },
+          "net": 4
+        }
+      ]
+    }
+  ]
+}

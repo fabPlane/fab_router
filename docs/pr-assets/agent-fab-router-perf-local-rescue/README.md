@@ -1,3 +1,5 @@
+Latest: [local recovery experiment and legal reduced-fixture witness](recovery.md). The original context remains open; no production recovery adopted.
+
 The bounded local track rescue experiment did not improve any frozen native task. This change retains its exact patch, controls, measurements, diagnostic tools and plots; the final production source is restored to the control. No speedup or native DRC fix is claimed.
 
 The measured control is `69cf598`; the default-off candidate is `4821f12`. Only the isolated candidate settings add `localRescue: true`. The 26-case suite, three seeds, checker, runtime, source identities and input DSNs are checked by `summarize-native.py`. All 78 paired SES outputs and native quality/via/length measurements match. Both versions pass 39/78 attempts and 13/26 cases on all repeats, with 120 opens and 27 native errors. Those native thermal findings remain unresolved. No additional native error or open occurs compared with the control.

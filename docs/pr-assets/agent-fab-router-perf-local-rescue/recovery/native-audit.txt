@@ -1,0 +1,24 @@
+{
+  "scope": "Full 26x3 native verification of unchanged production, historical diagnostic control; no performance or rescue gain claimed",
+  "all_78_session_and_quality_match": true,
+  "removed_diagnostic_files": [
+    "src/route/legalise.ts",
+    "src/route/passes.ts"
+  ],
+  "source_commit": "21829d3819515a6dd7df09118d4fc6ce438f5428",
+  "inputs_sha256": "c36936fd81f6af0e9efd11990ad976127b01f6e03d7db889ebc5e876af06c9a1",
+  "before_utc_start": "2026-10-19T02:20:54.415282+00:00",
+  "before_utc_end": "2026-10-19T02:29:27.409397+00:00",
+  "current_utc_start": "2026-10-19T02:57:40.499291+00:00",
+  "current_utc_end": "2026-10-19T03:05:45.161268+00:00",
+  "passed": 39,
+  "valid_cases_3of3": 13,
+  "opens": 120,
+  "new_errors": 27,
+  "before_median_s": 1.229614779,
+  "current_median_s": 1.117994366,
+  "before_p95_s": 16.771765683,
+  "current_p95_s": 20.078381426,
+  "before_total_s": 396.295112091,
+  "current_total_s": 372.760895179
+}

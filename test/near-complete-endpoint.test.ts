@@ -6,11 +6,19 @@ import {test,expect} from 'bun:test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {readDsn,route,requiredConnections,checkDrc,writeSes} from '../src/api.ts';
+import {buildLattice} from '../src/lattice/index.ts';
+import {createJournal} from '../src/route/journal.ts';
+import {legaliseTrail} from '../src/route/legalise.ts';
+import {resolveProfile} from '../src/route/profile.ts';
+import {ignoreOf} from '../src/route/clear.ts';
+import {resolveSettings} from '../src/pipeline/index.ts';
+import type {Pt} from '../src/geom/index.ts';
 import type {RouteSettings} from '../spec/types/settings.ts';
 const input=readFileSync(new URL('./data/near-complete-endpoint.dsn',import.meta.url),'utf8');
 const fixture=JSON.parse(readFileSync(new URL('./data/near-complete-endpoint.json',import.meta.url),'utf8')) as {
  input_sha256:string;kept:number[];terminalIds:number[];settings:Partial<RouteSettings>;
 };
+const witness=JSON.parse(readFileSync(new URL('./data/near-complete-endpoint-path.json',import.meta.url),'utf8')) as {net:number;sheet:number;raw:Pt[]};
 const sha=(s:string)=>createHash('sha256').update(s).digest('hex');
 test('near-complete endpoint context preserves legal progress and deterministic retained copper',()=>{
  expect(sha(input)).toBe(fixture.input_sha256);
@@ -36,6 +44,22 @@ test('near-complete endpoint context preserves legal progress and deterministic 
   expect(left.every(c=>c.from===10&&c.to===62)).toBe(true);
   expect(JSON.stringify({pads:l.pads,tracks:l.tracks.filter(t=>t.origin!=='router'),barrels:l.barrels.filter(b=>b.origin!=='router'),pours:l.pours})).toBe(retained);
   fingerprints.push(sha(writeSes(l)));
+  // A recorded raw grid path proves this reduced context is physically routable under
+  // the represented rules. Future routing may close it itself; neither failure is pinned.
+  if(left.length){
+   const lattice=buildLattice(l),journal=createJournal(l,lattice),mark=journal.mark();
+   const profile=resolveProfile(l,witness.net,resolveSettings(settings,undefined,l.angleMode));
+   const leg=legaliseTrail(l,lattice,witness.sheet,witness.raw,profile,ignoreOf(witness.net),false);
+   expect(leg.ok).toBe(true);
+   expect(leg.widths.every(w=>w===profile.width)).toBe(true);
+   const session=writeSes(l);
+   journal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+   expect(checkDrc(l).counts.violations).toBe(0);
+   expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+   journal.rewind(mark);
+   expect(writeSes(l)).toBe(session);
+   expect(requiredConnections(l).filter(c=>c.net===target)).toEqual(left);
+  }
  }
  expect(fingerprints[0]).toBe(fingerprints[1]);
 },30_000);
