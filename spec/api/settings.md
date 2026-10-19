@@ -19,6 +19,7 @@ times in milliseconds; costs are dimensionless multipliers.
 | `preferredDirectionCost` | 1.5 | Default `againstCost` for every Sheet (see `layers`). 1 disables the preference |
 | `startRipupCost` | 100 | Cost charged for ripping up a `free` other-net item on the first attempt; grows with that item's rip history |
 | `ripupEnabled` | true | If false, other-net items are hard obstacles |
+| `localRescue` | unset (off) | Experimental post-optimiser local rip-up/reroute at 4, 8 and 16 routing pitches. Track-only edits are retained only when exact DRC does not worsen, existing terminal joins survive and incomplete count decreases. Does not change rules; disabled with item caps, routing off or rip-up off. |
 | `fanoutEnabled` | false | Run the fanout pre-pass |
 | `fanoutMaxPasses`, `fanoutMaxItems` | unset | Bound the fanout stage the way `maxPasses` / `maxItems` bound routing |
 | `routerEnabled` | true | Run the routing passes (false: fanout and/or optimiser only) |
