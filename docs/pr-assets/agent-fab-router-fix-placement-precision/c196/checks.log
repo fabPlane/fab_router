@@ -1,0 +1,724 @@
+$ tsc --noEmit
+$ bun run tools/check-layers.ts
+check:layers: 65 file(s), 0 violation(s)
+$ bun test --timeout 120000
+bun test v1.4.0 (34cbb9a40)
+
+test/scenario-routing.test.ts:
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue368-CorneyIslandWireless_input_design.dsn [10.51ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue143-rpi_splitter_mod.dsn [5.58ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue649-kicad_ecc83-pp_input_board_v1.dsn [10.87ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue690-ecc83.dsn [8.03ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue269-min_fr_test-min_fr_test.dsn [363.39ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue159-setonix_2hp-pcb.dsn [179.25ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue508-DAC2020_bm08.dsn [89.52ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue143-rpi_splitter.dsn [651.56ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue270-non-ansi_bracket.dsn [685.87ms]
+(pass) scenario: novia-routable-nets (R-1, R-4) > Issue508-SMD-routing-issue-demo.dsn [1144.55ms]
+(pass) scenario: held-items (R-2) > Issue269-min_fr_test-min_fr_test.dsn (novia) [371.96ms]
+(pass) scenario: held-items (R-2) > Issue269-min_fr_test-min_fr_test.dsn (default) [3.12ms]
+(pass) scenario: held-items (R-2) > Issue508-SMD-routing-issue-demo.dsn (novia) [962.08ms]
+(pass) scenario: held-items (R-2) > Issue508-SMD-routing-issue-demo.dsn (default) [2522.60ms]
+(pass) scenario: held-items (R-2) > Issue508-DAC2020_bm08.dsn (novia) [93.15ms]
+(pass) scenario: held-items (R-2) > Issue508-DAC2020_bm08.dsn (default) [10.22ms]
+(pass) scenario: held-items (R-2) > Issue413-test.dsn (novia) [4.18ms]
+(pass) scenario: held-items (R-2) > Issue413-test.dsn (default) [1.81ms]
+
+test/vectors.test.ts:
+(pass) behaviour vectors > dsn-tokens/encoding.jsonl: 15 records [0.32ms]
+(pass) behaviour vectors > dsn-tokens/identifiers.jsonl: 15 records [0.19ms]
+(pass) behaviour vectors > dsn-tokens/numbers.jsonl: 13 records [0.06ms]
+(pass) behaviour vectors > dsn-tokens/quotes.jsonl: 25 records [0.10ms]
+(pass) behaviour vectors > geometry/convex-hull.jsonl: 2200 records [5.60ms]
+(pass) behaviour vectors > geometry/line-intersection-point.jsonl: 2200 records [3.56ms]
+(pass) behaviour vectors > geometry/orientation.jsonl: 2200 records [0.30ms]
+(pass) behaviour vectors > geometry/perpendicular-foot.jsonl: 2200 records [3.58ms]
+(pass) behaviour vectors > geometry/point-in-polygon.jsonl: 2200 records [0.56ms]
+(pass) behaviour vectors > geometry/point-segment-distance.jsonl: 2200 records [2.39ms]
+(pass) behaviour vectors > geometry/polygon-area.jsonl: 2200 records [3.41ms]
+(pass) behaviour vectors > geometry/segment-intersection.jsonl: 2200 records [0.63ms]
+(pass) behaviour vectors > skipped ops are reported [0.12ms]
+
+test/acceptance.test.ts:
+(pass) acceptance cases are well-formed > every case file validates against case.schema.json [0.02ms]
+(pass) acceptance cases are well-formed > case ids are unique [0.10ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-cm5-carrier [10.26ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-empty-board [0.28ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue229-display-unrouted [4.03ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue230-cnh [21.42ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue555-cnh [17.74ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue575-bbd-mars64 [6.95ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue575-dev-board [4.94ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue575-dev-board-hole250 [6.74ms]
+(pass) acceptance (fast tier) > drc-load: drc-load-issue575-preamp [13.37ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-collinear-micro-wires [8.27ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-doubling-back-wires [9.12ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-duplicate-padstack-definitions [1.14ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-eagle-rpi-splitter [0.40ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-easyeda-no-parser-scope [4.96ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-easyeda-pro-four-layers [1.21ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-empty-board [0.09ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-fix-only-wiring [3.18ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-image-variants-not-merged [1.79ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-kicad4-old-exporter [1.59ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-kicad8-empty-net-in-class [0.24ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-kicad8-empty-net-removed [0.15ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-librepcb-ch32v [0.49ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-pinless-parts-are-parts [4.38ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-power-layers [0.45ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-router-written-small [0.48ms]
+(pass) acceptance (fast tier) > parse: parse-dialect-six-decimal-padstack-names [4.54ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue006-not-a-design-file [5.20ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue035-bare-punctuation-pn [3.44ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue110-cyrillic-bare-layer-names [1.46ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue110-cyrillic-image-names [3.60ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue143-mod-unresolvable-references [0.42ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue143-quoted-pin-references [0.32ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue157-exponent-rotation [7.55ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue229-stray-quote [1.86ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue270-non-ansi-bracket [0.39ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue508-bm02-apostrophe-in-bare-names [2.17ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue684-single-quotes-numeric-pins [1.98ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue753-numeric-net-names [4.82ms]
+(pass) acceptance (fast tier) > parse: parse-lex-issue754-numeric-part-number [5.62ms]
+(pass) acceptance (fast tier) > parse: parse-summary-cm5-carrier [6.69ms]
+(pass) acceptance (fast tier) > parse: parse-summary-empty-board [0.21ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue006-lpc18xx-43xx-sch [1.24ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue015-stackoverflow [4.78ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue022-autorouter-interrupted [5.77ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue026-j2-reference [0.63ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue027-zmretestfixture [3.30ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue029-hw48na [4.11ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue034-green14segled [1.23ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue035-readplacescope [1.76ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue039-bug-design [3.07ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue054-tairakb [1.41ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue066-project-gp8b [3.69ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue069-testsensel-testsensel [0.31ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue069-testsensel-testsensel-kicad6 [0.22ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue070-autorouter-fq101-pcb-2022-05-13 [6.84ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue093-interf-u [3.83ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue102-mars-64-reve-rot00 [1.46ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue103-board-unrouted [2.38ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue107-freq-teiler-200khz-kicad [1.82ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue107-freq-teiler-200khz-kicad-bad [1.69ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-non-ascii-name [2.64ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-pajalnaja-stancija [0.92ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-relaymodule [1.70ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-testpcbspecctrafile [1.39ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-testprojectfromrouterbugtest [0.29ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue110-testprojectfromrouterbugtest01 [0.27ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue113-protein [3.02ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue143-rpi-splitter [0.44ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue143-rpi-splitter-mod [0.32ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue145-smoothieboard [4.18ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue153-wavefolder [2.15ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue155-ch376-mcp795-module [0.87ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue157-teamadapt-linepcb [3.28ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue159-setonix-2hp-pcb [0.50ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue163-pic-programmer [2.52ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue179-autorouter-pcb1-2023-3-24 [2.52ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue199-stackoverflow-signale-vor-block [0.61ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue208-router [2.10ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue209-split05 [1.13ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue209-split10 [1.06ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue214-router [4.49ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue217-8088sbc [1.62ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue219-logicboard-smt [3.42ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue229-display-8-digit-hc595 [1.07ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue230-cnh-functional-tester-1 [5.37ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue230-cnh-functional-tester-cnh-functional-tester-1 [7.27ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue269-caniot-tiny-arm [2.59ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue269-min-fr-test-min-fr-test [0.22ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue269-min-fr-test-min-fr-test-no-quotes [0.15ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes [0.46ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue269-z10-module [3.83ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue270-non-ansi-bracket [0.32ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue283-unconnectedtracesunderpads-natural-tone-preamp [1.81ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue289-autorouter-pcb-fht-8086-2024-03-08 [14.40ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue289-autorouter-pcb-fht-vga-2024-03-25 [28.84ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue297-myboard [2.08ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue313-fasttest [1.27ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue326-mars-64-reve [1.23ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue367-charger [1.47ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue367-ultraflactyl-ultraflactyl [1.98ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue368-corneyislandwireless-corney-island-wireless [0.22ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue368-corneyislandwireless-input-design [0.15ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue413-test [0.49ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue420-contribution-board [4.03ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue433-my-board [0.25ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm01 [0.81ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm02 [1.08ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm04 [0.72ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm05 [0.46ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm06 [0.46ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm07 [0.37ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm08 [0.17ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm09 [2.35ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm10 [0.79ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-bm11 [0.62ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm01-dac2020-bm01-unrouted [0.84ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm01-frv1-9-0-dac2020-bm01-unrouted [0.83ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm01-frv2-1-0-dac2020-bm01-unrouted [0.80ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm02-dac2020-bm02-unrouted [1.03ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm02-frv1-9-0-dac2020-bm02-unrouted [0.96ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm02-frv2-1-0-dac2020-bm02-unrouted [0.94ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm04-dac2020-bm04-unrouted [0.72ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm04-frv1-9-0-dac2020-bm04-unrouted [0.72ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm04-frv2-1-0-dac2020-bm04-unrouted [0.69ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm05-dac2020-bm05-unrouted [0.44ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm05-frv1-9-0-dac2020-bm05-unrouted [0.42ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05-unrouted [0.43ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm06-dac2020-bm06-unrouted [0.47ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm06-frv1-9-0-dac2020-bm06-unrouted [0.47ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm06-frv2-1-0-dac2020-bm06-unrouted [0.48ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm07-dac2020-bm07-unrouted [0.41ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm07-frv1-9-0-dac2020-bm07-unrouted [0.43ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07-unrouted [0.44ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm08-dac2020-bm08-unrouted [0.17ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm08-frv1-9-0-dac2020-bm08-unrouted [0.17ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm08-frv2-1-0-dac2020-bm08-unrouted [0.17ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm09-dac2020-bm09-unrouted [0.70ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm09-frv1-9-0-dac2020-bm09-unrouted [0.71ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm09-frv2-1-0-dac2020-bm09-unrouted [0.73ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm10-dac2020-bm10-unrouted [0.83ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10-unrouted [0.93ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm10-frv2-1-0-dac2020-bm10-unrouted [0.82ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm11-dac2020-bm11-unrouted [0.74ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm11-frv1-9-0-dac2020-bm11-unrouted [0.79ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-dac2020-dac2020-bm11-frv2-1-0-dac2020-bm11-unrouted [0.71ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue508-smd-routing-issue-demo [0.13ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue555-bbd-mars-64 [2.53ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue555-cnh-functional-tester-1 [6.95ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue558-dev-board [0.87ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue575-drc-bbd-mars-64-6-track-1-hole-clearance-violations [1.80ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue575-drc-dev-board-4-hole-clearance-violations [1.38ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue575-drc-natural-tone-preamp-7-unconnected [5.13ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue593-bbd-mars-64 [1.15ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue632-miniautopilot-mini-auto-pilot [1.21ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue649-kicad-ecc83-pp-input-board-v1 [0.63ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue649-kicad-ecc83-pp-input-board-v2 [0.69ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue676-ch32v-tx118s [0.41ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue684-autorouter-pcb1-2026-5-8 [2.02ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue689-bbd-mars-64 [2.68ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue690-ecc83 [0.74ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue690-sonde-xilinx [0.97ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue721-autorouter-ce2632-harrymu-2026-6-15 [1.71ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue723-combinestackoverflow [6.53ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue730-dac2020-bm11 [0.96ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue732-cm5-minima-3 [3.48ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue732-dac2020-bm10 [0.97ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue732-royalblue54l-feather [2.00ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue733-kicad-complex-hierarchy-input-design [1.07ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue733-kicad-interf-u-input-design [4.90ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue742-tastexx-pcb [0.71ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue742-tastexx-pcb-tastexx-pcb [0.68ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue753-cpu-85-r104 [3.10ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue754-avionics-hub [4.86ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue756-minimal-hang [0.15ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue756-minimal-ok [0.06ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue756-tomu-fpga [2.57ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue756-tomu-fpga11 [2.94ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue757-minimal-soe [0.09ms]
+(pass) acceptance (fast tier) > parse: parse-summary-issue757-minimal-soe-ok [0.05ms]
+(pass) acceptance (fast tier) > routing: routing-fast-dac2020-bm01-p1-maxitems2 [14.38ms]
+(pass) acceptance (fast tier) > routing: routing-fast-dac2020-bm01-p1-maxitems43 [134.34ms]
+(pass) acceptance (fast tier) > routing: routing-fast-dac2020-bm08-complete [9.83ms]
+(pass) acceptance (fast tier) > routing: routing-fast-empty-board-p1 [0.26ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue026-j2-anyangle-p1 [292.19ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue026-j2-bendcost5 [3.23ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue026-j2-default [4072.73ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue026-j2-maxitems20 [7.91ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue026-j2-maxpasses2 [1124.91ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue269-min-fr-test-planes [2.68ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue269-no-vias-on-planes-planes [10.33ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue508-smd-demo-fanout-route [106.91ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue676-ch32v-p1-maxitems20 [3.80ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue676-ch32v-p1-maxitems5 [3.16ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue690-ecc83-p1-maxitems50 [3.79ms]
+(pass) acceptance (fast tier) > routing: routing-fast-issue690-sonde-xilinx-p1-maxitems50 [18.71ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue029-hw48na [11.99ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue029-hw48na-invalid [5.33ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue029-hw48na-valid [5.23ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue107-freq-teiler-200khz-kicad [1.95ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue107-freq-teiler-200khz-kicad-bad [1.91ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue191-processor-z80-processor [44.99ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue269-nowiresonpowerlayers-proba [1.19ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue442-clearance-type-tests [10.75ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue593-bbd-mars-64 [1.63ms]
+(pass) acceptance (fast tier) > rules: rules-fast-issue742-tastexx-pcb-tastexx-pcb [1.10ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue026-j2-reference [2.90ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes [1.13ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue283-unconnectedtracesunderpads-natural-tone-preamp [10.84ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue313-fasttest [3.78ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue368-corneyislandwireless-corney-island-wireless-gui [0.60ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue368-corneyislandwireless-corney-island-wireless-no-gui [0.38ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue368-corneyislandwireless-output-session [0.38ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-bm05 [2.94ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-bm07-current [3.10ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-bm07-v190 [2.82ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm01-frv1-9-0-dac2020-bm01 [17.22ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm01-frv2-1-0-dac2020-bm01 [9.39ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm02-frv1-9-0-dac2020-bm02 [2.47ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm02-frv2-1-0-dac2020-bm02 [2.34ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm04-frv1-9-0-dac2020-bm04 [5.95ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm04-frv2-1-0-dac2020-bm04 [4.85ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm05-frv1-9-0-dac2020-bm05 [2.09ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05 [1.57ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm06-frv1-9-0-dac2020-bm06 [4.03ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm06-frv2-1-0-dac2020-bm06 [2.82ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm07-frv1-9-0-dac2020-bm07 [4.16ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07 [2.65ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm08-frv1-9-0-dac2020-bm08 [0.75ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm08-frv2-1-0-dac2020-bm08 [0.75ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm09-frv1-9-0-dac2020-bm09 [6.86ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm09-frv2-1-0-dac2020-bm09 [7.12ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10 [7.15ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm10-frv2-1-0-dac2020-bm10 [8.21ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm11-frv1-9-0-dac2020-bm11 [4.24ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue508-dac2020-dac2020-bm11-frv2-1-0-dac2020-bm11 [4.31ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue555-bbd-mars-64-current [2.87ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue555-bbd-mars-64-v190 [2.42ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue593-bbd-mars-64 [4.31ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue690-ecc83 [1.43ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue733-kicad-complex-hierarchy-output-session [3.73ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue742-tastexx-pcb [1.75ms]
+(pass) acceptance (fast tier) > ses-apply: ses-apply-issue742-tastexx-pcb-tastexx-pcb [1.48ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-cm5-carrier [6.66ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-empty-board [0.23ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue015-stackoverflow [11.24ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue022-autorouter-interrupted [10.78ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue026-j2-reference [0.63ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue027-zmretestfixture [4.09ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue029-hw48na [8.38ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue034-green14segled [1.43ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue035-readplacescope [4.05ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue039-bug-design [3.11ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue054-tairakb [1.52ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue066-project-gp8b [4.33ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue069-testsensel-testsensel [0.46ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue069-testsensel-testsensel-kicad6 [0.45ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue070-autorouter-fq101-pcb-2022-05-13 [7.53ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue093-interf-u [6.81ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue102-mars-64-reve-rot00 [1.80ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue103-board-unrouted [2.36ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue107-freq-teiler-200khz-kicad [1.95ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue107-freq-teiler-200khz-kicad-bad [1.92ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-non-ascii-name [0.95ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-pajalnaja-stancija [0.94ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-relaymodule [5.21ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-testpcbspecctrafile [2.30ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-testprojectfromrouterbugtest [0.32ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue110-testprojectfromrouterbugtest01 [0.25ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue113-protein [3.95ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue143-rpi-splitter [0.43ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue143-rpi-splitter-mod [0.27ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue145-smoothieboard [4.74ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue153-wavefolder [2.82ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue155-ch376-mcp795-module [0.96ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue157-teamadapt-linepcb [4.48ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue159-setonix-2hp-pcb [0.56ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue163-pic-programmer [3.75ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue178-keebmaker-sofle-choc [14.65ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue179-autorouter-pcb1-2023-3-24 [0.84ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue190-processor-z80 [59.87ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue199-stackoverflow-signale-vor-block [0.98ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue208-router [2.27ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue209-split05 [1.48ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue209-split10 [1.29ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue214-router [7.19ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue217-8088sbc [2.82ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue219-logicboard-smt [7.74ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue229-display-8-digit-hc595 [2.03ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue230-cnh-functional-tester-1 [5.54ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue230-cnh-functional-tester-cnh-functional-tester-1 [5.68ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue269-caniot-tiny-arm [4.69ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue269-min-fr-test-min-fr-test [0.34ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue269-min-fr-test-min-fr-test-no-quotes [0.20ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue269-noviasonpowerplanes-issue269-noviasonpowerplanes [0.50ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue269-z10-module [6.42ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue270-non-ansi-bracket [0.40ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue283-unconnectedtracesunderpads-natural-tone-preamp [2.05ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue289-autorouter-pcb-fht-8086-2024-03-08 [11.69ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue289-autorouter-pcb-fht-vga-2024-03-25 [14.06ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue297-myboard [2.40ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue313-fasttest [2.04ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue326-mars-64-reve [1.72ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue367-charger [2.11ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue367-ultraflactyl-ultraflactyl [4.75ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue368-corneyislandwireless-corney-island-wireless [0.32ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue368-corneyislandwireless-input-design [0.22ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue413-test [0.60ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue420-contribution-board [4.82ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue433-my-board [0.39ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm01 [1.16ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm02 [1.26ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm04 [1.18ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm05 [0.63ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm06 [0.56ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm07 [0.48ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm08 [0.20ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm09 [0.84ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm10 [1.06ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-bm11 [0.76ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm01-dac2020-bm01-unrouted [0.91ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm01-frv1-9-0-dac2020-bm01-unrouted [0.92ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm01-frv2-1-0-dac2020-bm01-unrouted [0.80ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm02-dac2020-bm02-unrouted [1.14ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm02-frv1-9-0-dac2020-bm02-unrouted [1.33ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm02-frv2-1-0-dac2020-bm02-unrouted [1.76ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm04-dac2020-bm04-unrouted [1.13ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm04-frv1-9-0-dac2020-bm04-unrouted [0.92ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm04-frv2-1-0-dac2020-bm04-unrouted [0.79ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm05-dac2020-bm05-unrouted [0.62ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm05-frv1-9-0-dac2020-bm05-unrouted [0.59ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm05-frv2-1-0-dac2020-bm05-unrouted [0.56ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm06-dac2020-bm06-unrouted [0.61ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm06-frv1-9-0-dac2020-bm06-unrouted [0.56ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm06-frv2-1-0-dac2020-bm06-unrouted [0.61ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm07-dac2020-bm07-unrouted [0.51ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm07-frv1-9-0-dac2020-bm07-unrouted [0.46ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm07-frv2-1-0-dac2020-bm07-unrouted [0.46ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm08-dac2020-bm08-unrouted [0.19ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm08-frv1-9-0-dac2020-bm08-unrouted [0.17ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm08-frv2-1-0-dac2020-bm08-unrouted [0.19ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm09-dac2020-bm09-unrouted [1.38ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm09-frv1-9-0-dac2020-bm09-unrouted [0.84ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm09-frv2-1-0-dac2020-bm09-unrouted [0.85ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm10-dac2020-bm10-unrouted [0.98ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm10-frv1-9-0-dac2020-bm10-unrouted [2.71ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm10-frv2-1-0-dac2020-bm10-unrouted [0.80ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm11-dac2020-bm11-unrouted [0.73ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm11-frv1-9-0-dac2020-bm11-unrouted [0.73ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-dac2020-dac2020-bm11-frv2-1-0-dac2020-bm11-unrouted [0.72ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue508-smd-routing-issue-demo [0.13ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue555-bbd-mars-64 [1.18ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue555-cnh-functional-tester-1 [5.20ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue558-dev-board [0.83ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue575-drc-bbd-mars-64-6-track-1-hole-clearance-violations [4.21ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue575-drc-dev-board-4-hole-clearance-violations [3.91ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue575-drc-natural-tone-preamp-7-unconnected [11.15ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue593-bbd-mars-64 [1.37ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue632-miniautopilot-mini-auto-pilot [1.45ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue649-kicad-ecc83-pp-input-board-v1 [0.73ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue649-kicad-ecc83-pp-input-board-v2 [1.04ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue676-ch32v-tx118s [2.65ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue684-autorouter-pcb1-2026-5-8 [1.02ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue689-bbd-mars-64 [1.22ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue690-ecc83 [0.94ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue690-kit-dev-coldfire-xilinx-5213 [21.50ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue690-sonde-xilinx [2.23ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue721-autorouter-ce2632-harrymu-2026-6-15 [2.60ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue723-combinestackoverflow [24.87ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue730-dac2020-bm11 [1.18ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue732-cm5-minima-3 [3.43ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue732-dac2020-bm10 [1.68ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue732-royalblue54l-feather [2.85ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue733-kicad-complex-hierarchy-input-design [1.60ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue733-kicad-interf-u-input-design [6.44ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue742-tastexx-pcb [1.18ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue742-tastexx-pcb-tastexx-pcb [0.99ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue753-cpu-85-r104 [6.20ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue754-avionics-hub [8.58ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-minimal-hang [0.24ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-minimal-ok [0.08ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-tomu-fpga [6.70ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-tomu-fpga11 [8.14ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-tomu-fpga7 [19.74ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-tomu-fpga8 [20.39ms]
+47 |       if (DEFERRED_TO_I5.has(c.id)) {
+48 |         // R-1 must still hold; only the completion bound may miss (deferred to task I5).
+49 |         expect(deferredIsAcceptable(r), `${c.id}: deferred to I5 but R-1 breached — ${r.mismatches.join("; ")}`).toBe(true);
+50 |         return;
+51 |       }
+52 |       throw new Error(`${r.reason ?? r.mismatches.join("; ")}\nmeasured=${JSON.stringify(r.measured).slice(0, 400)}`);
+                                                                                                                         ^
+error: treeEquals: differs at $[3][1][2]: 1000 vs 10
+measured={"treeEquals":"differs at $[3][1][2]: 1000 vs 10"}
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/acceptance.test.ts:52:117)
+(fail) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue756-tomu-fpga9 [14.71ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue757-minimal-soe [0.25ms]
+(pass) acceptance (fast tier) > ses-roundtrip: ses-roundtrip-issue757-minimal-soe-ok [0.10ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue103-board-routed-caller-wins [222.19ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue103-board-routed-file [187.04ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue103-board-routed-nofile [208.76ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue187-processor-z80-file [227.74ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue187-processor-z80-nofile [243.80ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue191-processor-z80-processor-z80-file [230.96ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue191-processor-z80-processor-z80-nofile [244.93ms]
+(pass) acceptance (fast tier) > settings: settings-fast-issue313-fasttest-no-block [10.76ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue029-hw48na [58.94ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue107-freq-teiler-200khz-kicad [8.06ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue191-processor-z80-processor [238.56ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue269-nowiresonpowerlayers-proba [1.85ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue442-clearance-type-tests [56.66ms]
+(pass) acceptance (fast tier) > settings: settings-fast-rules-issue593-bbd-mars-64 [4.20ms]
+(pass) acceptance (fast tier) > srj: srj-fabdesk-qfn28-fanout [74.80ms]
+(pass) acceptance (fast tier) > srj: srj-fabdesk-usbc-fanout [240.48ms]
+acceptance (fast): 403 case(s), 379 passed, 24 failed, 0 stubbed
+  advisory routing-fast-dac2020-bm08-complete: barrels: expected ≤ 1.5 × reference 1, got 4
+  advisory routing-fast-issue026-j2-default: barrels: expected ≤ 1.5 × reference 14, got 34
+
+test/planned-driver.test.ts:
+(pass) planned driver (M10c) — congested synthetic board > R-1: globalPlan:'plan' adds no violation and never bypasses the predicate [1554.26ms]
+(pass) planned driver (M10c) — congested synthetic board > R-2: locked wall and Pads are byte-for-byte unmoved [1817.09ms]
+(pass) planned driver (M10c) — congested synthetic board > determinism: two planned runs produce identical copper [2996.46ms]
+(pass) planned driver (M10c) — congested synthetic board > no regression: planned completes at least as much as the legacy loop [2146.42ms]
+(pass) planned driver (M10c) — real boards > Issue269-min_fr_test-min_fr_test.dsn: R-1, no regression, and off == default [5.39ms]
+(pass) planned driver (M10c) — real boards > Issue143-rpi_splitter.dsn: R-1, no regression, and off == default [461.75ms]
+(pass) planned driver (M10c) — real boards > Issue270-non-ansi_bracket.dsn: R-1, no regression, and off == default [441.31ms]
+
+test/srj.test.ts:
+(pass) srj build > maps a 2-layer board to a Layout [7.53ms]
+(pass) srj build > six-layer board yields six signal Sheets named top/inner/bottom [6.76ms]
+(pass) srj build > Rim grows the bounds outward by 1 mm [1.87ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802.srj.json: requiredConnections is 15 [9.20ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer.srj.json: requiredConnections is 15 [59.57ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer-v2.srj.json: requiredConnections is 15 [55.06ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer-v3.srj.json: requiredConnections is 15 [55.46ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802.srj.json: loads with zero DRC violations (violationsBefore 0) [5.35ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer.srj.json: loads with zero DRC violations (violationsBefore 0) [31.42ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer-v2.srj.json: loads with zero DRC violations (violationsBefore 0) [28.91ms]
+(pass) srj connectivity (Q-68 reading (b) / K-13..K-15) > b223-j802-six-layer-v3.srj.json: loads with zero DRC violations (violationsBefore 0) [28.73ms]
+(pass) srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-terminal) > two overlapping different-net Prior pieces are never a Violation (DR-13) [0.60ms]
+(pass) srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-terminal) > Prior copper is an obstacle to other nets (R-1) but same-net exempt (K-16, DR-02) [1.11ms]
+(pass) srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-terminal) > Prior copper is connective: endpoints on the net's own Prior copper complete for free (K-16) [0.14ms]
+(pass) srj Prior copper (Q-69: DR-13 silence, obstacle, connective, non-terminal) > Prior copper is never a terminal: an isolated fragment adds no required link (K-14) [0.06ms]
+(pass) srj cross-Sheet Prior copper bridging (task I7 gap 1; K-02/K-16, J-34) > a two-Sheet net-owned obstacle emits an inert Kind-0 Prior Barrel [0.06ms]
+(pass) srj cross-Sheet Prior copper bridging (task I7 gap 1; K-02/K-16, J-34) > the bridge joins the per-Sheet Prior copper so the connection needs no route [0.20ms]
+(pass) srj cross-Sheet Prior copper bridging (task I7 gap 1; K-02/K-16, J-34) > without the two-Sheet via the two Sheets stay separate (one required link) [0.07ms]
+(pass) srj differential-pair normalisation > boards' connectionNames split into _P and _N members [0.09ms]
+(pass) srj differential-pair normalisation > spec-shaped {p, n} pass through [0.02ms]
+(pass) routeSrj on a clean synthetic board > routes one connection within its bounds and avoids the obstacle [0.74ms]
+(pass) routeSrj on the J802 boards > b223-j802.srj.json: R-1 holds, output well formed, traces within bounds [90027.12ms]
+error: script "test" was terminated by signal SIGTERM (Polite quit request)

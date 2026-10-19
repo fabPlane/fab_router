@@ -1,0 +1,52 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/ses-placement-precision.test.ts:
+14 | }
+15 | 
+16 | test("session preserves source placement finer than the routing lattice", () => {
+17 |   const layout = board();
+18 |   const text = writeSes(layout);
+19 |   expect(text).toContain("(placement\n    (resolution um 1000)");
+                    ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "(placement\n    (resolution um 1000)"
+Received: "(session precision.ses\n  (base_design precision.dsn)\n  (placement\n    (resolution um 10)\n    (component one\n      (place U1 704060 -266150 front 0)\n    )\n  )\n  (was_is)\n  (routes\n    (resolution um 10)\n    (parser)\n    (library_out\n    )\n    (network_out\n    )\n  )\n)\n"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/ses-placement-precision.test.ts:19:16)
+(fail) session preserves source placement finer than the routing lattice [3.27ms]
+20 |   expect(text).toContain("(place U1 70405952 -26615000 front 0)");
+21 |   expect(text).toContain("(routes\n    (resolution um 10)");
+22 | });
+23 | 
+24 | test("source placement preserves both off-lattice axes", () => {
+25 |   expect(writeSes(board(168657.392, -44931.946))).toContain("(place U1 168657392 -44931946 front 0)");
+                                                       ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "(place U1 168657392 -44931946 front 0)"
+Received: "(session precision.ses\n  (base_design precision.dsn)\n  (placement\n    (resolution um 10)\n    (component one\n      (place U1 1686574 -449319 front 0)\n    )\n  )\n  (was_is)\n  (routes\n    (resolution um 10)\n    (parser)\n    (library_out\n    )\n    (network_out\n    )\n  )\n)\n"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/ses-placement-precision.test.ts:25:51)
+(fail) source placement preserves both off-lattice axes [0.36ms]
+(pass) on-lattice placement keeps the existing session resolution [0.18ms]
+(pass) explicitly moved parts use their current lattice placement [0.14ms]
+35 |   expect(writeSes(layout)).toContain("(place U1 704070 -266150 front 0)");
+36 | });
+37 | 
+38 | test("source placement respects a distinct coordinate unit", () => {
+39 |   const text = writeSes(board(70.405952, -26.615, "mm"));
+40 |   expect(text).toContain("(place U1 70405952 -26615000 front 0)");
+                    ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "(place U1 70405952 -26615000 front 0)"
+Received: "(session precision.ses\n  (base_design precision.dsn)\n  (placement\n    (resolution um 10)\n    (component one\n      (place U1 704000 -266000 front 0)\n    )\n  )\n  (was_is)\n  (routes\n    (resolution um 10)\n    (parser)\n    (library_out\n    )\n    (network_out\n    )\n  )\n)\n"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/ses-placement-precision.test.ts:40:16)
+(fail) source placement respects a distinct coordinate unit [0.16ms]
+
+ 2 pass
+ 3 fail
+ 5 expect() calls
+Ran 5 tests across 1 file. [69.00ms]
