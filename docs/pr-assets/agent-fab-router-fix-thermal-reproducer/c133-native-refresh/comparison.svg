@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="440" viewBox="0 0 1100 440">
+<rect width="1100" height="440" fill="#f7f9fc"/>
+<g font-family="sans-serif" fill="#17263c">
+<text x="40" y="45" font-size="26">Native full-suite refresh: unchanged engine</text>
+<text x="40" y="75" font-size="17">26 cases × 3 repeats · same host · different CPU affinity · no speed claim</text>
+<text x="45" y="120" font-size="18">Passing runs / 78</text>
+<rect x="45" y="240.0" width="75" height="85.0" fill="#6d829e"/>
+<text x="82.5" y="230.0" text-anchor="middle" font-size="22">39</text>
+<text x="45" y="350" font-size="15">Reference</text>
+<rect x="150" y="240.0" width="75" height="85.0" fill="#247d89"/>
+<text x="187.5" y="230.0" text-anchor="middle" font-size="22">39</text>
+<text x="150" y="350" font-size="15">Refresh</text>
+<text x="315" y="120" font-size="18">Valid cases / 26</text>
+<rect x="315" y="240.0" width="75" height="85.0" fill="#6d829e"/>
+<text x="352.5" y="230.0" text-anchor="middle" font-size="22">13</text>
+<text x="315" y="350" font-size="15">Reference</text>
+<rect x="420" y="240.0" width="75" height="85.0" fill="#247d89"/>
+<text x="457.5" y="230.0" text-anchor="middle" font-size="22">13</text>
+<text x="420" y="350" font-size="15">Refresh</text>
+<text x="585" y="120" font-size="18">Total native opens</text>
+<rect x="585" y="155.0" width="75" height="170.0" fill="#6d829e"/>
+<text x="622.5" y="145.0" text-anchor="middle" font-size="22">120</text>
+<text x="585" y="350" font-size="15">Reference</text>
+<rect x="690" y="155.0" width="75" height="170.0" fill="#247d89"/>
+<text x="727.5" y="145.0" text-anchor="middle" font-size="22">120</text>
+<text x="690" y="350" font-size="15">Refresh</text>
+<text x="855" y="120" font-size="18">New thermal errors</text>
+<rect x="855" y="155.0" width="75" height="170.0" fill="#6d829e"/>
+<text x="892.5" y="145.0" text-anchor="middle" font-size="22">27</text>
+<text x="855" y="350" font-size="15">Reference</text>
+<rect x="960" y="155.0" width="75" height="170.0" fill="#247d89"/>
+<text x="997.5" y="145.0" text-anchor="middle" font-size="22">27</text>
+<text x="960" y="350" font-size="15">Refresh</text>
+<text x="40" y="401" font-size="18">Thermal failures remain unresolved. Offline repairs are excluded from the benchmark.</text>
+</g></svg>
