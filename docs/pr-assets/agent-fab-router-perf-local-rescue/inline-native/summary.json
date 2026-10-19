@@ -1,0 +1,581 @@
+{
+  "summary": {
+    "before": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.0513327205,
+      "p95_s": 17.971244541,
+      "total_s": 416.144441415,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 528.036282,
+      "valid_cases_3of3": 16,
+      "sum_case_medians_s": 137.298496131,
+      "sum_case_p95_s": 147.101510368
+    },
+    "after": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.0898001575,
+      "p95_s": 17.002644292000003,
+      "total_s": 407.439693202,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 521.942976,
+      "valid_cases_3of3": 16,
+      "sum_case_medians_s": 134.15801545300002,
+      "sum_case_p95_s": 144.063334226
+    }
+  },
+  "cases": [
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "before": {
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0,
+        "vias": 306,
+        "length_mm": 2883.0126772191306,
+        "median_s": 5.221183414,
+        "p95_s": 5.330357254999999
+      },
+      "after": {
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0,
+        "vias": 306,
+        "length_mm": 2883.0126772191306,
+        "median_s": 4.6474755629999995,
+        "p95_s": 4.93949645
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1685.5791091877636,
+        "median_s": 0.853655488,
+        "p95_s": 0.854115828
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1685.5791091877636,
+        "median_s": 0.872808588,
+        "p95_s": 0.8785694980000001
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1595.991565770064,
+        "median_s": 0.722222206,
+        "p95_s": 0.760580849
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1595.991565770064,
+        "median_s": 0.780326371,
+        "p95_s": 0.872469586
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "before": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 66,
+        "length_mm": 1486.700097196442,
+        "median_s": 3.6586727559999996,
+        "p95_s": 4.33136736
+      },
+      "after": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 66,
+        "length_mm": 1486.700097196442,
+        "median_s": 4.179014601,
+        "p95_s": 4.605478638
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "before": {
+        "passed": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 300,
+        "length_mm": 3947.358168069197,
+        "median_s": 3.841919723,
+        "p95_s": 3.939047967
+      },
+      "after": {
+        "passed": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 300,
+        "length_mm": 3947.358168069197,
+        "median_s": 3.849415377,
+        "p95_s": 4.2353682280000005
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "before": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 333,
+        "length_mm": 4107.8455161021,
+        "median_s": 0.994110293,
+        "p95_s": 0.995237039
+      },
+      "after": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 333,
+        "length_mm": 4107.8455161021,
+        "median_s": 1.0080452530000001,
+        "p95_s": 1.0315595499999999
+      }
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "before": {
+        "passed": 0,
+        "opens": 45,
+        "new_errors": 18,
+        "vias": 390,
+        "length_mm": 5193.339379609684,
+        "median_s": 52.259383559,
+        "p95_s": 54.559907421
+      },
+      "after": {
+        "passed": 0,
+        "opens": 45,
+        "new_errors": 18,
+        "vias": 390,
+        "length_mm": 5193.339379609684,
+        "median_s": 49.514195308000005,
+        "p95_s": 52.427281245
+      }
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 120,
+        "length_mm": 2536.4579912485387,
+        "median_s": 2.033346709,
+        "p95_s": 2.168564606
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 120,
+        "length_mm": 2536.4579912485387,
+        "median_s": 2.052113982,
+        "p95_s": 2.227139867
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1058.071790793463,
+        "median_s": 0.7316433259999999,
+        "p95_s": 0.7377707259999999
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1058.071790793463,
+        "median_s": 0.727737453,
+        "p95_s": 0.756489523
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1062.528801223025,
+        "median_s": 0.748570069,
+        "p95_s": 0.848792379
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1062.528801223025,
+        "median_s": 0.735496911,
+        "p95_s": 0.738655481
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 27,
+        "length_mm": 719.0542264045845,
+        "median_s": 0.865624957,
+        "p95_s": 0.8785564020000001
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 27,
+        "length_mm": 719.0542264045845,
+        "median_s": 0.736457016,
+        "p95_s": 0.884662635
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 123,
+        "length_mm": 4566.177941247373,
+        "median_s": 2.913930316,
+        "p95_s": 3.383315086
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 123,
+        "length_mm": 4566.177941247373,
+        "median_s": 3.092376269,
+        "p95_s": 3.2365367729999996
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 4452.316235703834,
+        "median_s": 0.9863344869999999,
+        "p95_s": 0.994470876
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 4452.316235703834,
+        "median_s": 1.002220222,
+        "p95_s": 1.003290328
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 6,
+        "length_mm": 4494.817681634241,
+        "median_s": 0.741514233,
+        "p95_s": 0.872554389
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 6,
+        "length_mm": 4494.817681634241,
+        "median_s": 0.755407535,
+        "p95_s": 0.770012259
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "before": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 195,
+        "length_mm": 4685.449206321546,
+        "median_s": 8.401589664,
+        "p95_s": 8.709723461
+      },
+      "after": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 195,
+        "length_mm": 4685.449206321546,
+        "median_s": 8.462668225,
+        "p95_s": 8.830045699
+      }
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "before": {
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 845.3756769491636,
+        "median_s": 16.27625959,
+        "p95_s": 17.971244541
+      },
+      "after": {
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 845.3756769491636,
+        "median_s": 15.901829399,
+        "p95_s": 17.002644292000003
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 2108.9521809118555,
+        "median_s": 11.518856297000001,
+        "p95_s": 12.714077113
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 2108.9521809118555,
+        "median_s": 11.909796433,
+        "p95_s": 13.803477619999999
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 2120.2749578101307,
+        "median_s": 15.462815217,
+        "p95_s": 17.638900942
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 2120.2749578101307,
+        "median_s": 14.840554033,
+        "p95_s": 16.644669896
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 177,
+        "length_mm": 2484.7025872276695,
+        "median_s": 1.367924057,
+        "p95_s": 1.398947682
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 177,
+        "length_mm": 2484.7025872276695,
+        "median_s": 1.384657799,
+        "p95_s": 1.390586288
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 60,
+        "length_mm": 1418.7435032624353,
+        "median_s": 0.860754028,
+        "p95_s": 0.869440408
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 60,
+        "length_mm": 1418.7435032624353,
+        "median_s": 0.860229974,
+        "p95_s": 0.872295269
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "before": {
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 6,
+        "vias": 51,
+        "length_mm": 1441.2988532791137,
+        "median_s": 0.74370236,
+        "p95_s": 0.7696636960000001
+      },
+      "after": {
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 6,
+        "vias": 51,
+        "length_mm": 1441.2988532791137,
+        "median_s": 0.748237898,
+        "p95_s": 0.7508099030000001
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "before": {
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 3,
+        "vias": 114,
+        "length_mm": 1569.5967346285875,
+        "median_s": 0.9894129570000001,
+        "p95_s": 0.996410634
+      },
+      "after": {
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 3,
+        "vias": 114,
+        "length_mm": 1569.5967346285875,
+        "median_s": 1.0028225610000001,
+        "p95_s": 1.005157422
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1162.3027849518721,
+        "median_s": 0.734524892,
+        "p95_s": 0.749530685
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1162.3027849518721,
+        "median_s": 0.7413032900000001,
+        "p95_s": 0.765144971
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "before": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1137.0535057620348,
+        "median_s": 2.280539904,
+        "p95_s": 2.489938736
+      },
+      "after": {
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1137.0535057620348,
+        "median_s": 2.210664093,
+        "p95_s": 2.228037419
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 48,
+        "length_mm": 1015.1518643846924,
+        "median_s": 1.243086558,
+        "p95_s": 1.26490328
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 48,
+        "length_mm": 1015.1518643846924,
+        "median_s": 1.281724632,
+        "p95_s": 1.290286504
+      }
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "before": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 42,
+        "length_mm": 672.2251651323156,
+        "median_s": 0.8469190710000001,
+        "p95_s": 0.874091007
+      },
+      "after": {
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 42,
+        "length_mm": 672.2251651323156,
+        "median_s": 0.860436667,
+        "p95_s": 0.873168882
+      }
+    }
+  ],
+  "same_sessions": 78
+}
