@@ -1,0 +1,80 @@
+diff --git a/src/route/recovery-point-component.ts b/src/route/recovery-point-component.ts
+index 124bc0b..3554114 100644
+--- a/src/route/recovery-point-component.ts
++++ b/src/route/recovery-point-component.ts
+@@ -13 +13 @@ import {scheduleRecovery,type RecoveryControl} from './recovery-schedule.ts';
+-import {proposeVisibility} from './visibility-recovery.ts';
++import {proposeVisibility,createVisibilityShaper} from './visibility-recovery.ts';
+@@ -34,0 +35 @@ export function recoverPointComponent(layout:Layout,settings:RouteSettings,targe
++ const shaper=createVisibilityShaper(layout,lattice,profile);
+@@ -42 +43 @@ export function recoverPointComponent(layout:Layout,settings:RouteSettings,targe
+-  },trial=>{proposals.push(proposeVisibility(layout,lattice,journal,anchor,profile,trial,512,options.includeCopperCorners??true));},effectiveControl,
++  },trial=>{proposals.push(proposeVisibility(layout,lattice,journal,anchor,profile,trial,512,options.includeCopperCorners??true,shaper));},effectiveControl,
+diff --git a/src/route/visibility-recovery.ts b/src/route/visibility-recovery.ts
+index 26949f8..6ec1386 100644
+--- a/src/route/visibility-recovery.ts
++++ b/src/route/visibility-recovery.ts
+@@ -17,0 +18,20 @@ import type {RecoveryTrial} from './recovery-schedule.ts';
++/** Negative shaping cache for one synchronous target/profile on unchanged copper.
++ * Successful paths are never retained, so callers cannot alias cached vertices.
++ * The coordinator owns this cache; discard it between targets and clear it BEFORE
++ * any journal insertion, including a proposal that will subsequently roll back.
++ */
++export function createVisibilityShaper(layout:Layout,lattice:Lattice,profile:Profile){
++ const blocked=new Set<string>(),ignore=ignoreOf(profile.net);
++ return {
++  clear(){blocked.clear();},
++  legalise(sheet:number,from:Pt,to:Pt):ReturnType<typeof legaliseTrail>{
++   const key=`${sheet}:${from.x},${from.y}:${to.x},${to.y}`;
++   if(blocked.has(key))return {ok:false,pts:[],widths:[]};
++   const leg=legaliseTrail(layout,lattice,sheet,[from,to],profile,ignore,false);
++   // Retain a hard memory bound even if a future caller supplies a larger budget.
++   if(!leg.ok&&blocked.size<100000)blocked.add(key);
++   return leg;
++  },
++ };
++}
++
+@@ -20 +40 @@ export function proposeVisibility(
+- profile:Profile,trial:RecoveryTrial,maxNodes=512,includeCopperCorners=false,
++ profile:Profile,trial:RecoveryTrial,maxNodes=512,includeCopperCorners=false,shaper?:ReturnType<typeof createVisibilityShaper>,
+@@ -71,0 +92 @@ export function proposeVisibility(
++    shaper?.clear();
+@@ -79 +100 @@ export function proposeVisibility(
+-    const leg=legaliseTrail(layout,lattice,sheet,[nodes[current]!,nodes[next]!],profile,ignoreOf(target.net),false);
++    const leg=shaper?shaper.legalise(sheet,nodes[current]!,nodes[next]!):legaliseTrail(layout,lattice,sheet,[nodes[current]!,nodes[next]!],profile,ignoreOf(target.net),false);
+diff --git a/test/recovery-visibility.test.ts b/test/recovery-visibility.test.ts
+index 2b3d489..2f57d05 100644
+--- a/test/recovery-visibility.test.ts
++++ b/test/recovery-visibility.test.ts
+@@ -9 +9 @@ import {scheduleRecovery} from '../src/route/recovery-schedule.ts';
+-import {proposeVisibility} from '../src/route/visibility-recovery.ts';
++import {proposeVisibility,createVisibilityShaper} from '../src/route/visibility-recovery.ts';
+@@ -20,0 +21,27 @@ const target={net:0,from:0,to:1},plan={enabled:true,pitch:3000,margins:[0,2],max
++test('negative shaping reuse preserves region growth, budget boundaries and journal rewind',()=>{
++ for(const maxExpansions of [1,10,1000])for(const cap of [2,512]){
++  const runs=[];
++  for(const cached of [false,true]){
++   const {l,lattice,journal,profile}=fixture(),before=writeSes(l),mark=journal.mark();
++   const shaper=cached?createVisibilityShaper(l,lattice,profile):undefined,outcomes:ReturnType<typeof proposeVisibility>[]=[];
++   const result=scheduleRecovery(l,lattice,journal,target,{...plan,maxExpansions},t=>{
++    outcomes.push(proposeVisibility(l,lattice,journal,target,profile,t,cap,true,shaper));
++   });
++   runs.push({result,outcomes,ses:writeSes(l),exact:checkDrc(l).counts.violations,remaining:requiredConnections(l)});
++   journal.rewind(mark);expect(writeSes(l)).toBe(before);
++  }
++  expect(runs[1]).toEqual(runs[0]);
++ }
++});
++test('negative shaping cache clears across copper removal and does not retain successful vertices',()=>{
++ const {l,lattice,journal,profile}=fixture(),shaper=createVisibilityShaper(l,lattice,profile);
++ const from={x:0,y:10000},to={x:10000,y:10000},mark=journal.mark();
++ const first=shaper.legalise(0,from,to);expect(first.ok).toBe(true);
++ first.pts[0]={x:90000,y:10000};
++ expect(shaper.legalise(0,from,to).pts[0]!.x).toBe(0);
++ journal.addTrack({net:1,sheet:0,pts:[{x:5000,y:9000},{x:5000,y:11000}],width:200,kind:1,hold:'free'});
++ expect(shaper.legalise(0,from,to).ok).toBe(false);
++ expect(shaper.legalise(0,from,to).ok).toBe(false);
++ journal.rewind(mark);shaper.clear();
++ expect(shaper.legalise(0,from,to).ok).toBe(true);
++});

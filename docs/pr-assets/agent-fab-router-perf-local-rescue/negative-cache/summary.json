@@ -1,0 +1,543 @@
+{
+  "native": {
+    "before": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.1074029335,
+      "p95_s": 24.721967152,
+      "total_s": 415.768547195,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 528.369834,
+      "valid_cases_3of3": 16,
+      "sum_case_medians_s": 133.429245031,
+      "sum_case_p95_s": 157.25078377100002
+    },
+    "after": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.1687972245,
+      "p95_s": 21.246548556,
+      "total_s": 423.702618688,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 537.041812,
+      "valid_cases_3of3": 16,
+      "sum_case_medians_s": 138.616571805,
+      "sum_case_p95_s": 152.180093627
+    }
+  },
+  "same_sessions": 78,
+  "saved": {
+    "before": {
+      "repeats": 3,
+      "median_s": 0.9965051410000001,
+      "p95_s": 1.052127916
+    },
+    "after": {
+      "repeats": 3,
+      "median_s": 0.36341862799999997,
+      "p95_s": 0.45684698799999995
+    }
+  },
+  "cases": [
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "before": {
+        "median_s": 5.127899723,
+        "p95_s": 5.154668207,
+        "total_s": 14.831125638,
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 4.815299126,
+        "p95_s": 5.553127494,
+        "total_s": 15.115215808999999,
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "before": {
+        "median_s": 0.857431872,
+        "p95_s": 0.8636539560000001,
+        "total_s": 2.5733310410000003,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.85207699,
+        "p95_s": 0.909452202,
+        "total_s": 2.6105070990000003,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "before": {
+        "median_s": 0.715686992,
+        "p95_s": 0.7530060129999999,
+        "total_s": 2.177566895,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.7328946060000001,
+        "p95_s": 0.735673856,
+        "total_s": 2.195448582,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "before": {
+        "median_s": 3.658949857,
+        "p95_s": 3.840127986,
+        "total_s": 11.155349121,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 3.832665235,
+        "p95_s": 4.047456561,
+        "total_s": 11.702012086,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "before": {
+        "median_s": 5.1231841010000005,
+        "p95_s": 5.132068955,
+        "total_s": 13.812213565,
+        "passed": 0,
+        "opens": 9,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 3.381469821,
+        "p95_s": 3.594921588,
+        "total_s": 10.327042298,
+        "passed": 0,
+        "opens": 9,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "before": {
+        "median_s": 0.999577613,
+        "p95_s": 1.006524437,
+        "total_s": 2.989428884,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.987285796,
+        "p95_s": 1.212667209,
+        "total_s": 3.176520432,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "before": {
+        "median_s": 48.954583315,
+        "p95_s": 54.225220831,
+        "total_s": 150.250860682,
+        "passed": 0,
+        "opens": 45,
+        "new_errors": 18
+      },
+      "after": {
+        "median_s": 52.475958156,
+        "p95_s": 57.029599818,
+        "total_s": 161.533555251,
+        "passed": 0,
+        "opens": 45,
+        "new_errors": 18
+      }
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "before": {
+        "median_s": 2.390481973,
+        "p95_s": 2.6627170700000002,
+        "total_s": 7.235190769,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 2.498353291,
+        "p95_s": 2.807258089,
+        "total_s": 7.319523629999999,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "before": {
+        "median_s": 0.7215725510000001,
+        "p95_s": 0.903118532,
+        "total_s": 2.337269705,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.731390869,
+        "p95_s": 0.7355388389999999,
+        "total_s": 2.186467753,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "before": {
+        "median_s": 0.716245306,
+        "p95_s": 0.813539702,
+        "total_s": 2.2418801850000003,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.735032584,
+        "p95_s": 0.8089621389999999,
+        "total_s": 2.260745349,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "before": {
+        "median_s": 0.84515406,
+        "p95_s": 0.921184834,
+        "total_s": 2.483976555,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.7333665819999999,
+        "p95_s": 0.739021956,
+        "total_s": 2.1978312509999998,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "before": {
+        "median_s": 2.7861975040000004,
+        "p95_s": 2.889940278,
+        "total_s": 8.451628414,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 3.050431333,
+        "p95_s": 3.088477428,
+        "total_s": 8.95414099,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "before": {
+        "median_s": 0.979415792,
+        "p95_s": 0.987439867,
+        "total_s": 2.9410004919999997,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.992147055,
+        "p95_s": 0.996418126,
+        "total_s": 2.978151907,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "before": {
+        "median_s": 0.721325456,
+        "p95_s": 0.864733521,
+        "total_s": 2.29674645,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.734503746,
+        "p95_s": 0.758249732,
+        "total_s": 2.224653997,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "before": {
+        "median_s": 7.758984874,
+        "p95_s": 10.971454134,
+        "total_s": 26.454400408,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 8.860924926,
+        "p95_s": 8.946792071,
+        "total_s": 26.172581563,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "before": {
+        "median_s": 18.042106466,
+        "p95_s": 24.721967152,
+        "total_s": 58.425906148,
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 16.340152602,
+        "p95_s": 21.246548556,
+        "total_s": 52.95305413,
+        "passed": 0,
+        "opens": 12,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "before": {
+        "median_s": 10.818439308,
+        "p95_s": 12.467613008999999,
+        "total_s": 33.423996635,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 12.630589438000001,
+        "p95_s": 13.627552043,
+        "total_s": 37.629387683000004,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "before": {
+        "median_s": 13.286033943,
+        "p95_s": 18.594710264,
+        "total_s": 44.992998099,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 15.04959813,
+        "p95_s": 15.381110181,
+        "total_s": 44.365995775,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "before": {
+        "median_s": 1.393517211,
+        "p95_s": 1.417239996,
+        "total_s": 3.910665551,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 1.6436052499999998,
+        "p95_s": 1.725878933,
+        "total_s": 4.732425331,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "before": {
+        "median_s": 0.848080978,
+        "p95_s": 0.8549299929999999,
+        "total_s": 2.546427862,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.863307474,
+        "p95_s": 0.874594895,
+        "total_s": 2.588954084,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "before": {
+        "median_s": 0.717086894,
+        "p95_s": 0.727467099,
+        "total_s": 2.1520497069999998,
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 6
+      },
+      "after": {
+        "median_s": 0.731861053,
+        "p95_s": 0.755376893,
+        "total_s": 2.218956721,
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 6
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "before": {
+        "median_s": 0.977982101,
+        "p95_s": 1.128877608,
+        "total_s": 3.077089098,
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 3
+      },
+      "after": {
+        "median_s": 1.024387875,
+        "p95_s": 1.298857259,
+        "total_s": 3.3035562350000003,
+        "passed": 0,
+        "opens": 0,
+        "new_errors": 3
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "before": {
+        "median_s": 0.729156022,
+        "p95_s": 0.734541248,
+        "total_s": 2.1832756460000002,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.733813996,
+        "p95_s": 0.776978932,
+        "total_s": 2.241238986,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "before": {
+        "median_s": 2.305194191,
+        "p95_s": 2.323955154,
+        "total_s": 6.631332339,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 2.206473725,
+        "p95_s": 2.3197838109999998,
+        "total_s": 6.551643429,
+        "passed": 0,
+        "opens": 3,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "before": {
+        "median_s": 1.108272885,
+        "p95_s": 1.1120602960000001,
+        "total_s": 3.326866163,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 1.12492724,
+        "p95_s": 1.328524129,
+        "total_s": 3.574192039,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "before": {
+        "median_s": 0.846684043,
+        "p95_s": 1.1780236290000001,
+        "total_s": 2.8659711430000003,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      },
+      "after": {
+        "median_s": 0.854054906,
+        "p95_s": 0.881270887,
+        "total_s": 2.588816278,
+        "passed": 3,
+        "opens": 0,
+        "new_errors": 0
+      }
+    }
+  ],
+  "adopted": false,
+  "suite_speed_nonregression": false
+}
