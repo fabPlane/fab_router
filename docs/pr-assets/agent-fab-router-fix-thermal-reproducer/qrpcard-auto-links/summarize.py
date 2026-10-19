@@ -14,10 +14,12 @@ report = json.loads((a.results / 'summary.json').read_text())
 rows = []
 for run in report['rows']:
     baseline = Counter(json.dumps(e, sort_keys=True) for e in run['baseline']['errors'])
+    baseline_opens = run['baseline']['opens']
     rejected = Counter()
     for attempt in run['attempts']:
         if attempt['accepted']:
             baseline = Counter(json.dumps(e, sort_keys=True) for e in attempt['row']['errors'])
+            baseline_opens = attempt['row']['opens']
             continue
         row = attempt['row']
         if attempt['exception']:
@@ -29,7 +31,7 @@ for run in report['rows']:
             rejected['not_strict_error_subset'] += 1
         for error in (errors - baseline):
             rejected['new_' + json.loads(error)['type']] += 1
-        if row['opens'] > run['baseline']['opens']:
+        if row['opens'] > baseline_opens:
             rejected['increased_opens'] += 1
     rows.append(dict(before_errors=len(run['baseline']['errors']),
                      after_errors=len(run['final']['errors']),
