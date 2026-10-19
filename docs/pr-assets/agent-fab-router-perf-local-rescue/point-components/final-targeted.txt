@@ -1,0 +1,43 @@
+$ tsc --noEmit
+$ bun run tools/check-layers.ts
+check:layers: 71 file(s), 0 violation(s)
+bun test v1.4.0 (34cbb9a40)
+
+test/recovery-cancellation.test.ts:
+(pass) cancellation detected after exact validation rolls back legal copper and its live index [4.11ms]
+
+test/recovery-public.test.ts:
+(pass) public recovery defaults off and reports actual inserted copper, completion and hooks [8.17ms]
+(pass) public recovery obeys remaining item cap, ignored nets and routing opt-out [2.40ms]
+(pass) public recovery observes hook cancellation before proposals and deadline after normal passes [0.58ms]
+(pass) public opt-in closes the real all-net near-complete stall [41682.79ms]
+
+test/recovery-component-anchor.test.ts:
+(pass) alternate live component anchors close the original full-board stall without changing retained copper [95.59ms]
+(pass) public residual recovery closes through bounded alternate anchors [88.58ms]
+(pass) public alternate-anchor recovery shares item capacity and reports one original connection [87.63ms]
+(pass) public alternate-anchor fixture respects opt-in, zero items, ignored nets, route deadline and hook cancellation [77.55ms]
+
+test/recovery-point-component.test.ts:
+(pass) one target budget includes original work, enumeration and alternate; exact boundary succeeds [82.67ms]
+(pass) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [415.15ms]
+(pass) enumeration checks cancellation and both absolute deadlines before every charged item/pair [206.25ms]
+(pass) late or cancelled successful alternate insertion is rewound against original terminals [315.66ms]
+(pass) zero item allowance and entry stop perform no proposal work [5.57ms]
+(pass) ordinary successful point search retains charged trace without enumeration [22.54ms]
+(pass) exhausting all eight alternate pairs retains one ledger and leaves the original session [79.39ms]
+(pass) limits reject invalid configurations before mutation [21.55ms]
+
+test/recovery-pour-component.test.ts:
+(pass) pour component can be reached through an existing pad, reversed=false [4.62ms]
+(pass) pour component can be reached through an existing pad, reversed=true [1.25ms]
+(pass) an isolated same-net pad cannot stand in for the pour component [0.26ms]
+(pass) a component anchor needs a shared physical sheet [0.12ms]
+(pass) a barrel in the live pour component is a legal point anchor [0.66ms]
+(pass) alternate anchors cannot replace the original terminal acceptance gate [0.47ms]
+(pass) alternate anchors must belong to the requested terminal components [0.12ms]
+
+ 24 pass
+ 0 fail
+ 472 expect() calls
+Ran 24 tests across 5 files. [43.24s]
