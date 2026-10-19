@@ -4,7 +4,7 @@
  * item cap, cancellation). Boards are tiny hand-built Layouts plus the pure modules in isolation.
  */
 import { describe, expect, test } from "bun:test";
-import type { Layout, Net, NetGroup, Pad, PadForm, Part, Pt, Rim, Sheet, Track } from "../spec/types/layout.ts";
+import type { Fence, Layout, Net, NetGroup, Pad, PadForm, Part, Pt, Rim, Sheet, Track } from "../spec/types/layout.ts";
 import { makeSpacingTable } from "../src/layout/index.ts";
 import { buildLattice } from "../src/lattice/index.ts";
 import { createJournal } from "../src/route/journal.ts";
@@ -220,5 +220,66 @@ describe("route() end to end", () => {
     const rep = route(L, { viasAllowed: false, maxPasses: 10 }, { signal: ctrl.signal });
     expect(rep.aborted).toBe(true);
     expect(rep.violationsAdded).toBe(0);
+  });
+});
+
+
+describe("route report clearance settings", () => {
+  const settings = { maxPasses: 0, fanoutEnabled: false, optimizerEnabled: false };
+
+  function edgeBoard(): Layout {
+    const L = board();
+    L.tracks = [...L.tracks, { id: 99, net: 0, sheet: 0,
+      pts: [{ x: -50000, y: 196000 }, { x: 50000, y: 196000 }],
+      width: 4000, kind: 1, hold: "free", origin: "file" }];
+    return L; // track edge is 200 µm from the board edge
+  }
+
+  test("counts pre-existing edge errors under the caller's stricter rule", () => {
+    const L = edgeBoard();
+    expect(checkDrc(L).counts.violations).toBe(0);
+    expect(checkDrc(L, { copperToEdgeClearanceUm: 300 }).counts.violations).toBe(1);
+    const report = route(L, { ...settings, copperToEdgeClearanceUm: 300 });
+    expect(report.violationsBefore).toBe(1);
+    expect(report.violationsAdded).toBe(0);
+  });
+
+  test("does not count edge errors excluded by the caller's explicit zero rule", () => {
+    const L = edgeBoard();
+    L.tracks[0]!.pts = [{ x: -50000, y: 197000 }, { x: 50000, y: 197000 }];
+    expect(checkDrc(L).counts.violations).toBe(1);
+    const report = route(L, { ...settings, copperToEdgeClearanceUm: 0 });
+    expect(report.violationsBefore).toBe(0);
+    expect(report.violationsAdded).toBe(0);
+  });
+
+  test("checks the final snapshot with the same edge rule", () => {
+    const L = board();
+    const report = route(L, { ...settings, maxPasses: 1, copperToEdgeClearanceUm: 300 }, {
+      onPass: () => {
+        // A caller hook changes the board after routing; the final sweep must see it.
+        L.tracks = [...L.tracks, edgeBoard().tracks[0]!];
+      },
+    });
+    expect(report.violationsBefore).toBe(0);
+    expect(checkDrc(L, { copperToEdgeClearanceUm: 300 }).counts.violations).toBe(1);
+    expect(report.violationsAdded).toBe(1);
+  });
+
+  test("uses resolved file hole clearance and caller precedence", () => {
+    function holeBoard(): Layout {
+      const L = board();
+      const hole: Fence & { owner: string } = { id: 40, sheet: 0, scope: "track", kind: 1, owner: "part",
+        shape: { kind: "disk", c: { x: -100000, y: 12200 }, r: 5000 } };
+      L.fences = [...L.fences, hole];
+      L.settingsFromFile = { holeClearanceUm: 250 };
+      return L;
+    }
+    // Pad edge is 220 µm from the part-owned hole; default copper spacing is 200 µm.
+    expect(checkDrc(holeBoard()).counts.violations).toBe(0);
+    expect(checkDrc(holeBoard(), { holeClearanceUm: 250 }).counts.violations).toBe(1);
+    expect(route(holeBoard(), { ...settings, useFileSettings: true }).violationsBefore).toBe(1);
+    expect(route(holeBoard(), { ...settings, useFileSettings: true, holeClearanceUm: 0 }).violationsBefore).toBe(0);
+    expect(route(holeBoard(), settings).violationsBefore).toBe(0);
   });
 });
