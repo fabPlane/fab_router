@@ -1,0 +1,68 @@
+bun test v1.4.0 (34cbb9a40)
+
+docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:
+17 |  expect(writeSes(l)).toBe(before);expect(requiredConnections(l)).toHaveLength(1);expect(checkDrc(l).counts.violations).toBe(0);
+18 | }
+19 | test('one target budget includes original work, enumeration and alternate; exact boundary succeeds',()=>{
+20 |  const {l,settings}=setup(),tracks=l.tracks.length,fixed=JSON.stringify([l.pads,l.pours,l.fences,l.tracks,l.barrels]);
+21 |  const result=recoverPointComponent(l,settings,fixture.target,{}, {maxWork:18890});
+22 |  expect(result.status).toBe('kept');expect(result.work).toBe(18890);expect(result.enumeration).toBe(124);
+                                                             ^
+error: expect(received).toBe(expected)
+
+Expected: 18890
+Received: 18766
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/free-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:22:57)
+(fail) one target budget includes original work, enumeration and alternate; exact boundary succeeds [97.26ms]
+27 | });
+28 | test('work exhaustion in original search, enumeration, and alternate never resets or leaks copper',()=>{
+29 |  for(const cap of [1,14509,14510,14632,14633,14634,18889]){
+30 |   const {l,settings,before}=setup();const result=recoverPointComponent(l,settings,fixture.target,{}, {maxWork:cap});
+31 |   expect(result.status).toBe('budget');expect(result.work).toBe(cap);
+32 |   expect(result.work).toBe(result.enumeration+result.attempts.reduce((n,a)=>n+a.result.expansions,0));
+                           ^
+error: expect(received).toBe(expected)
+
+Expected: 14634
+Received: 14510
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/free-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:32:23)
+(fail) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [108.91ms]
+41 |   const timer=spyOn(performance,'now').mockImplementation(()=>{if(phase&&++reads===12){if(kind==='abort')controller.abort();else now=kind==='local'?15:10;}return now;});
+42 |   try{
+43 |    const result=recoverPointComponent(l,settings,fixture.target,{signal:controller.signal,...(kind==='route'?{deadline:10}:{})},{maxMilliseconds:15});
+44 |    expect(result.status).toBe(kind==='abort'?'aborted':kind==='local'?'budget':'deadline');
+45 |    expect(result.attempts).toHaveLength(1);expect(result.enumeration).toBeGreaterThan(0);expect(result.enumeration).toBeLessThan(124);
+46 |    expect(result.work).toBe(14509+result.enumeration);unchanged(l,before);
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: 14519
+Received: 14509
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/free-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:46:24)
+(fail) enumeration checks cancellation and both absolute deadlines before every charged item/pair [64.24ms]
+(pass) late or cancelled successful alternate insertion is rewound against original terminals [238.73ms]
+(pass) zero item allowance and entry stop perform no proposal work [4.90ms]
+(pass) ordinary successful point search retains charged trace without enumeration [21.62ms]
+87 |   trial.expand();return {found:false,nodes:0,edges:0};
+88 |  });
+89 |  try{
+90 |   const result=recoverPointComponent(l,settings,fixture.target);
+91 |   expect(result.status).toBe('exhausted');expect(result.attempts).toHaveLength(9);
+92 |   expect(result.enumeration).toBe(124);expect(result.work).toBe(124+9*4);
+                                                                ^
+error: expect(received).toBe(expected)
+
+Expected: 160
+Received: 36
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/free-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:92:60)
+(fail) exhausting all eight alternate pairs retains one ledger and leaves the original session [64.40ms]
+(pass) limits reject invalid configurations before mutation [11.83ms]
+
+ 4 pass
+ 4 fail
+ 119 expect() calls
+Ran 8 tests across 1 file. [638.00ms]

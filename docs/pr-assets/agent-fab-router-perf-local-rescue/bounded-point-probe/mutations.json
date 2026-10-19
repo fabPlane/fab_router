@@ -1,0 +1,22 @@
+[
+  {
+    "mutation": "reset-work",
+    "exit": 1,
+    "expectedFailingControl": "work exhaustion in original search, enumeration, and alternate"
+  },
+  {
+    "mutation": "reset-deadline",
+    "exit": 1,
+    "expectedFailingControl": "late or cancelled successful alternate insertion"
+  },
+  {
+    "mutation": "free-enumeration",
+    "exit": 1,
+    "expectedFailingControl": "one target budget includes original work, enumeration and alternate"
+  },
+  {
+    "mutation": "uncancellable-enumeration",
+    "exit": 1,
+    "expectedFailingControl": "enumeration checks cancellation and both absolute deadlines"
+  }
+]

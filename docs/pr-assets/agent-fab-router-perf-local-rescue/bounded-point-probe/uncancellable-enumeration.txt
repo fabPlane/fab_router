@@ -1,0 +1,42 @@
+bun test v1.4.0 (34cbb9a40)
+
+docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:
+(pass) one target budget includes original work, enumeration and alternate; exact boundary succeeds [107.77ms]
+26 |  expect(requiredConnections(l)).toEqual([]);expect(checkDrc(l).counts.violations).toBe(0);
+27 | });
+28 | test('work exhaustion in original search, enumeration, and alternate never resets or leaks copper',()=>{
+29 |  for(const cap of [1,14509,14510,14632,14633,14634,18889]){
+30 |   const {l,settings,before}=setup();const result=recoverPointComponent(l,settings,fixture.target,{}, {maxWork:cap});
+31 |   expect(result.status).toBe('budget');expect(result.work).toBe(cap);
+                                                                ^
+error: expect(received).toBe(expected)
+
+Expected: 14510
+Received: 14633
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/uncancellable-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:31:60)
+(fail) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [119.09ms]
+40 |   const scheduler=spyOn(schedule,'scheduleRecovery').mockImplementation((...args)=>{const r=original(...args);phase=true;return r;});
+41 |   const timer=spyOn(performance,'now').mockImplementation(()=>{if(phase&&++reads===12){if(kind==='abort')controller.abort();else now=kind==='local'?15:10;}return now;});
+42 |   try{
+43 |    const result=recoverPointComponent(l,settings,fixture.target,{signal:controller.signal,...(kind==='route'?{deadline:10}:{})},{maxMilliseconds:15});
+44 |    expect(result.status).toBe(kind==='abort'?'aborted':kind==='local'?'budget':'deadline');
+45 |    expect(result.attempts).toHaveLength(1);expect(result.enumeration).toBeGreaterThan(0);expect(result.enumeration).toBeLessThan(124);
+                                ^
+error: expect(received).toHaveLength(expected)
+
+Expected length: 1
+Received length: 2
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/uncancellable-enumeration/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:45:28)
+(fail) enumeration checks cancellation and both absolute deadlines before every charged item/pair [66.26ms]
+(pass) late or cancelled successful alternate insertion is rewound against original terminals [224.21ms]
+(pass) zero item allowance and entry stop perform no proposal work [7.22ms]
+(pass) ordinary successful point search retains charged trace without enumeration [15.96ms]
+(pass) exhausting all eight alternate pairs retains one ledger and leaves the original session [60.07ms]
+(pass) limits reject invalid configurations before mutation [16.80ms]
+
+ 6 pass
+ 2 fail
+ 127 expect() calls
+Ran 8 tests across 1 file. [646.00ms]

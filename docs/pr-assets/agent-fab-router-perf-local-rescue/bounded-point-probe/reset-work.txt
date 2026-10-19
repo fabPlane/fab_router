@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:
+(pass) one target budget includes original work, enumeration and alternate; exact boundary succeeds [106.98ms]
+26 |  expect(requiredConnections(l)).toEqual([]);expect(checkDrc(l).counts.violations).toBe(0);
+27 | });
+28 | test('work exhaustion in original search, enumeration, and alternate never resets or leaks copper',()=>{
+29 |  for(const cap of [1,14509,14510,14632,14633,14634,18889]){
+30 |   const {l,settings,before}=setup();const result=recoverPointComponent(l,settings,fixture.target,{}, {maxWork:cap});
+31 |   expect(result.status).toBe('budget');expect(result.work).toBe(cap);
+                             ^
+error: expect(received).toBe(expected)
+
+Expected: "budget"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/reset-work/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:31:25)
+(fail) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [271.40ms]
+(pass) enumeration checks cancellation and both absolute deadlines before every charged item/pair [179.13ms]
+(pass) late or cancelled successful alternate insertion is rewound against original terminals [237.41ms]
+(pass) zero item allowance and entry stop perform no proposal work [4.85ms]
+(pass) ordinary successful point search retains charged trace without enumeration [20.36ms]
+(pass) exhausting all eight alternate pairs retains one ledger and leaves the original session [73.81ms]
+(pass) limits reject invalid configurations before mutation [12.86ms]
+
+ 7 pass
+ 1 fail
+ 174 expect() calls
+Ran 8 tests across 1 file. [927.00ms]
