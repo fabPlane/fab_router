@@ -18,6 +18,7 @@ sha = lambda b:hashlib.sha256(b).hexdigest()
 def read(path):
     return path.read_bytes() if path.exists() else gzip.decompress(Path(str(path)+'.gz').read_bytes())
 summary = json.loads(read(a.results/'summary.json'))
+local.TARGET=summary.get('target',local.TARGET)
 for name,expected in json.loads((a.results/'manifest.json').read_text()).items():
     file=(a.results/name).resolve()
     assert file.is_relative_to(a.results.resolve())

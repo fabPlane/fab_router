@@ -32,9 +32,11 @@ def proposals(nodes,centre,angle,net,layer,gap,width_scales=(0.25,0.5,1.)):
             yield metadata,(native.dump(nodes+[track])+'\n').encode()
 
 def main():
+    global TARGET
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--source',type=Path,required=True);parser.add_argument('--out',type=Path,required=True)
-    args=parser.parse_args();args.out.mkdir(parents=True,exist_ok=False)
+    parser.add_argument('--target',type=uuid.UUID,default=uuid.UUID(TARGET))
+    args=parser.parse_args();TARGET=str(args.target);args.out.mkdir(parents=True,exist_ok=False)
     native.SRC,native.D,native.TARGET=args.source,args.out,TARGET
     assert native.pcbnew.Version()=='10.0.6'
     sha=lambda data:hashlib.sha256(data).hexdigest()
@@ -58,7 +60,7 @@ def main():
         rows.append(dict(repeat=repeat,baseline=baseline,attempts=attempts,accepted=selected!=original,selected_sha256=sha(selected)))
     assert sources=={f:sha(Path(f).read_bytes()) for f in sources}
     assert len({r['selected_sha256'] for r in rows})==1
-    (args.out/'summary.json').write_text(json.dumps(dict(production_fix=False,routing_benchmark=False,input_sha256=sources,centre_nm=centre,angle=angle,net=net,layer=layer,gap_nm=gap,width_scales=[0.25,0.5,1.],rows=rows),indent=2)+'\n')
+    (args.out/'summary.json').write_text(json.dumps(dict(production_fix=False,routing_benchmark=False,target=TARGET,input_sha256=sources,centre_nm=centre,angle=angle,net=net,layer=layer,gap_nm=gap,width_scales=[0.25,0.5,1.],rows=rows),indent=2)+'\n')
     (args.out/'manifest.json').write_text(json.dumps({str(f.relative_to(args.out)):sha(f.read_bytes())
         for f in sorted(args.out.rglob('*')) if f.is_file() and f.name!='manifest.json' and f.suffix!='.kicad_prl'},indent=2)+'\n')
     print(f'PASS: {sum(r["accepted"] for r in rows)}/3 thermal link searches accepted')

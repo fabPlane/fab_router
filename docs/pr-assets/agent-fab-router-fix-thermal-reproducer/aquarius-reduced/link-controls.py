@@ -35,3 +35,19 @@ layers=native.pcbnew.LSET();layers.AddLayer(native.pcbnew.B_Cu);pad.SetLayerSet(
 zone=native.pcbnew.ZONE(board);zone.SetLayer(native.pcbnew.B_Cu);zone.SetNet(net);board.Add(zone)
 assert link.plane_layer(board,pad)=='"B.Cu"'
 print('PASS: native back-pad plane layer comes from layer membership')
+
+# Composed searches must derive new item identities from the requested pad.
+first=link.TARGET
+before=list(link.proposals(nodes,(0,0),0,'"N"','"B.Cu"',508000))
+link.TARGET='0058b9c6-73af-4ba8-a061-fb00a457a84f'
+after=list(link.proposals(nodes,(0,0),0,'"N"','"B.Cu"',508000))
+assert [m for m,_ in before]==[m for m,_ in after]
+old_ids={native.uid(native.parse(data.decode())[-1]) for _,data in before}
+new_ids={native.uid(native.parse(data.decode())[-1]) for _,data in after}
+assert old_ids.isdisjoint(new_ids)
+for (_,a),(_,b) in zip(before,after):
+ a=native.parse(a.decode());b=native.parse(b.decode())
+ native.child(a[-1],'uuid')[1]=native.child(b[-1],'uuid')[1]
+ assert a==b
+link.TARGET=first
+print('PASS: requested pad scopes item identities without changing geometry or existing copper')
