@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="470"><rect width="1180" height="470" fill="white"/>
+<text x="30" y="45" font-family="sans-serif" font-size="27">U1.46 additive thermal links: all candidates rejected</text>
+<text x="30" y="88" font-family="sans-serif" font-size="21">Same board and rules; native refill / DRC; cores 20–25; three repeats</text>
+<text x="30" y="150" font-family="sans-serif" font-size="21">Each repeat: 24 proposals, 0 accepted; 6 remove the target thermal error</text>
+<text x="30" y="195" font-family="sans-serif" font-size="21">All 6 target removals introduce shorts and mask bridges</text>
+<text x="30" y="240" font-family="sans-serif" font-size="21">Candidate errors: 3–6; opens: 14–15</text>
+<text x="30" y="300" font-family="sans-serif" font-size="21">Before: 2 errors / 15 opens → selected: 2 errors / 15 opens</text>
+<text x="30" y="350" font-family="sans-serif" font-size="21">Selected bytes unchanged; both previously accepted links retained</text>
+<text x="30" y="420" font-family="sans-serif" font-size="21">Static diagnostic only; no production routing or frozen-suite gain</text>
+</svg>
