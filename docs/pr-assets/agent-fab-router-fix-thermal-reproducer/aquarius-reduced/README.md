@@ -167,3 +167,47 @@ PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/pytho
 sidecars, byte hashes, terminal groups, controls, logs and the comparison image.
 The independent verifier regenerates candidate geometry from published witness
 metadata and checks all twelve reports and native terminal partitions.
+
+### Bind retained native boards to each sequential proposal
+
+The sequential verifier previously regenerated the proposed bytes and checked
+native terminal partitions separately. A substituted checked board could keep
+the same terminal partition and pass despite having different design geometry.
+The verifier now compares every checked board's complete design tree against its
+corresponding original, candidate or final replay input. It permits top-level
+item ordering, numeric formatting and zone `filled_polygon` output changes.
+Zone definitions, thermal settings, footprints, pads, copper and board setup
+remain part of the comparison. Both native rule sidecars must match the source.
+
+Five controls use the same retained three-repeat dataset on the same machine,
+one verifier invocation per control before and after. Artifact manifest hashes
+are rebound after substitution, so these exercise semantic checks rather than
+only digest checks. The before revision is `8ee4122`.
+
+| Diagnostic verifier control | Before | After |
+| --- | --- | --- |
+| Original twelve native board/report pairs | Accept | Accept |
+| Substitute final candidate for baseline board | Accept (bug) | Reject |
+| Substitute baseline for first candidate board | Accept (bug) | Reject |
+| Substitute baseline for final replay board | Accept (bug) | Reject |
+| Replace candidate native rule file | Accept (bug) | Reject |
+
+The accepted full-board diagnostic still has 6 → 5 → 4 errors and fifteen opens
+in each of three repeats. This checks retained evidence; it does not rerun native
+DRC or authenticate externally supplied reports. The production failure remains
+unfixed. No routing benchmark was rerun and no score or speed gain is claimed.
+The completed shared baseline was inspected read-only: it confirms 39/78 passes,
+13/26 valid cases, 120 opens and 27 new `starved_thermal` errors.
+
+```sh
+asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 "$asset/composed-binding-controls.py" --out /tmp/composed-binding-controls
+/usr/bin/python3 "$asset/render-binding.py" "$asset/binding-results"
+taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+```
+
+`binding-results/` retains before/after control summaries, raw logs, validation
+output and the measured chart. These are static verifier controls, not router
+benchmark runs.
+
+![Native artifact substitution controls](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/binding-results/comparison.png?raw=true)

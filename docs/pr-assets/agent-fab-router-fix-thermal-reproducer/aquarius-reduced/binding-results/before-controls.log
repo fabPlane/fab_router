@@ -1,0 +1,39 @@
+[
+  {
+    "case": "unchanged",
+    "returncode": 0,
+    "expected_accept": true,
+    "accepted": true
+  },
+  {
+    "case": "baseline-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "candidate-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "replay-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "native-rules",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  }
+]
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/composed-binding-controls.py", line 52, in <module>
+    main()
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/composed-binding-controls.py", line 47, in main
+    assert all(row['accepted'] == row['expected_accept'] for row in results)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

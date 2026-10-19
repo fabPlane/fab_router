@@ -1,0 +1,32 @@
+[
+  {
+    "case": "unchanged",
+    "returncode": 0,
+    "expected_accept": true,
+    "accepted": true
+  },
+  {
+    "case": "baseline-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "candidate-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "replay-board",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  },
+  {
+    "case": "native-rules",
+    "returncode": 0,
+    "expected_accept": false,
+    "accepted": true
+  }
+]

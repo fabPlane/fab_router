@@ -3,12 +3,37 @@
 import argparse
 import hashlib
 import json
+from collections import Counter
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 import tempfile
 import native
 import transaction
 compose = transaction.module('compose', 'compose-generated.py')
 HERE = Path(__file__).resolve().parent
+
+
+def design_signature(data):
+    """Compare all design nodes; allow native refill and top-level item sorting.
+
+    Only zone filled polygons are derived output. Keep zone rules/outlines,
+    footprints, pad metadata, every copper item and all other board settings.
+    Decimal values allow the native writer to normalize numeric formatting.
+    """
+    def normalize(node):
+        if isinstance(node, list):
+            children = node
+            if node and node[0] == 'zone':
+                children = [x for x in node if not (
+                    isinstance(x, list) and x[0] == 'filled_polygon')]
+            return tuple(normalize(x) for x in children)
+        try:
+            return Decimal(node)
+        except InvalidOperation:
+            return node
+    tree = native.parse(data.decode())
+    assert tree[0] == 'kicad_pcb'
+    return Counter(normalize(node) for node in tree[1:])
 
 
 def main():
@@ -23,6 +48,7 @@ def main():
     audits=0
     for r in s['rows']:
         current=original; prior=r['baseline']
+        expected_boards = [original]
         assert len(r['steps'])==2
         for step in r['steps']:
             assert sha(current)==step['before_sha256']
@@ -35,6 +61,7 @@ def main():
             assert step['scale']==attempt['scale']
             current=next(data for scale,_,data in compose.generated.proposals(native.parse(current.decode()),info,witness['stored_gap_nm']) if scale==step['scale'])
             assert sha(current)==step['selected_sha256']
+            expected_boards.append(current)
             assert transaction.errors(step['row']) < transaction.errors(prior)
             assert step['row']['groups'].keys()==prior['groups'].keys()
             assert not transaction.terminals.lost_pairs(prior['groups'],step['row']['groups'])
@@ -43,18 +70,24 @@ def main():
         assert current==compose.read(root/f'selected-{r["repeat"]}.kicad_pcb')
         assert sha(current)==r['selected_sha256']
         rows=[r['baseline']]+[step['row'] for step in r['steps']]+[r['replay']]
-        for row in rows:
+        expected_boards.append(current)
+        for row, expected_board in zip(rows, expected_boards, strict=True):
+            actual_board = compose.read(root/row['name']/'board.kicad_pcb')
+            assert design_signature(actual_board) == design_signature(expected_board), 'checked board differs from proposed design'
+            for extension in ('.kicad_pro', '.kicad_dru'):
+                assert compose.read(root/row['name']/('board'+extension)) == compose.read(
+                    HERE/'rank8-target-results'/('source'+extension)), 'native rule sidecar differs from source'
             report=json.loads(compose.read(root/row['name']/'drc.json'))
             errors=[v for v in report['violations'] if v['severity']=='error']
             assert errors==row['errors'] and len(report['unconnected_items'])==row['opens']
             with tempfile.TemporaryDirectory() as tmp:
-                board=Path(tmp)/'board.kicad_pcb';board.write_bytes(compose.read(root/row['name']/'board.kicad_pcb'))
+                board=Path(tmp)/'board.kicad_pcb';board.write_bytes(actual_board)
                 groups=transaction.terminals.partition(native.pcbnew.LoadBoard(str(board)))
                 assert groups==row['groups']
             audits+=1
         assert transaction.errors(r['replay'])==transaction.errors(prior)
         assert r['replay']['groups']==prior['groups'] and r['replay']['opens']==prior['opens']
-    print(f'PASS: {audits} reports/partitions and all sequential candidate bytes independently replayed')
+    print(f'PASS: {audits} reports/partitions bound to proposed designs and native rules; all sequential candidate bytes independently replayed')
 
 
 if __name__=='__main__':main()
