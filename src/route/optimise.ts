@@ -3,7 +3,7 @@
  * scenarios/optimizer-monotonicity.md; contract R-6). It only ever makes the board *better*:
  *
  *   - Barrel elimination: a `free` router Barrel whose removal leaves every connection still
- *     complete is dropped (fewer Barrels).
+ *     complete and does not split surviving copper is dropped (fewer Barrels).
  *   - Bend straightening / shortcut: a `free` router Track is replaced by a shorter clear polyline
  *     with the same endpoints (less Track length), kept only when it is strictly shorter, passes
  *     the exact clearance predicate (R-1) and leaves connectivity unchanged.
@@ -19,7 +19,7 @@
 import type { Layout, Pt, Track } from "../../spec/types/layout.ts";
 import type { RouteSettings } from "../../spec/types/settings.ts";
 import type { Lattice } from "../lattice/index.ts";
-import { connectivity, incompleteCount } from "../drc/index.ts";
+import { connectivity, incompleteCount, type Connectivity } from "../drc/index.ts";
 import type { Journal } from "./journal.ts";
 import { ignoreOf, sweepClear } from "./clear.ts";
 import { resolveProfile, type Profile } from "./profile.ts";
@@ -28,8 +28,7 @@ import { pathLength } from "../geom/index.ts";
 
 export interface OptimiseResult { barrelsRemoved: number; tracksShortened: number }
 
-function totalIncomplete(layout: Layout, lattice: Lattice, ignored: ReadonlySet<number>): number {
-  const conn = connectivity(layout, lattice);
+function totalIncomplete(layout: Layout, lattice: Lattice, ignored: ReadonlySet<number>, conn: Connectivity = connectivity(layout, lattice)): number {
   let sum = 0;
   for (const net of layout.nets) { if (!ignored.has(net.id)) sum += incompleteCount(conn, net.id); }
   return sum;
@@ -59,9 +58,23 @@ export function runOptimise(layout: Layout, lattice: Lattice, journal: Journal, 
       if (overBudget()) break;
       if (barrel.hold !== "free" || barrel.origin !== "router") continue;
       const mark = journal.mark();
+      // Terminal-only incomplete counts miss a detached track-only fragment.
+      // Preserve every surviving member of each component, including ignored nets.
+      const before = connectivity(layout, lattice);
       journal.remove(barrel.id);
-      const now = totalIncomplete(layout, lattice, ignored);
-      if (now <= base) { base = now; barrelsRemoved++; changes++; progressed = true; }
+      const after = connectivity(layout, lattice);
+      const preserved = before.nets.every(net => net.components.every(ids => {
+        let component: number | undefined;
+        for (const id of ids) {
+          if (id === barrel.id) continue;
+          const next = after.componentOf.get(id);
+          if (next === undefined || (component !== undefined && next !== component)) return false;
+          component = next;
+        }
+        return true;
+      }));
+      const now = totalIncomplete(layout, lattice, ignored, after);
+      if (now <= base && preserved) { base = now; barrelsRemoved++; changes++; progressed = true; }
       else journal.rewind(mark);
     }
 
