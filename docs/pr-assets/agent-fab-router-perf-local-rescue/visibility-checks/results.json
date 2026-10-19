@@ -1,0 +1,63 @@
+{
+  "helper_sha256": "5ae73ca6ad19ab74dfaa5242d9f1ac26344d8791dc7c03970ce347165916a5f6",
+  "test_sha256": "5a5e856b99c05dc275d54d31e024229981225573580fe7e183f4ddfc0fbe036d",
+  "rows": [
+    {
+      "name": "control",
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "helper_sha256": "5ae73ca6ad19ab74dfaa5242d9f1ac26344d8791dc7c03970ce347165916a5f6",
+      "command": [
+        "taskset",
+        "-c",
+        "12-19",
+        "nice",
+        "-n",
+        "10",
+        "timeout",
+        "180",
+        "bun",
+        "test",
+        "/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts"
+      ]
+    },
+    {
+      "name": "no-corners",
+      "exit_code": 1,
+      "expected_outcome_observed": true,
+      "helper_sha256": "1ef487ab198e6108a2f094f14835d91fbfeadf09e354ba68e81ec9993f9edc34",
+      "command": [
+        "taskset",
+        "-c",
+        "12-19",
+        "nice",
+        "-n",
+        "10",
+        "timeout",
+        "180",
+        "bun",
+        "test",
+        "/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts"
+      ]
+    },
+    {
+      "name": "no-budget",
+      "exit_code": 1,
+      "expected_outcome_observed": true,
+      "helper_sha256": "2bbada3604354772092b5e02ac7002d9d5a276863df4277f5c9d019fa34cafbe",
+      "command": [
+        "taskset",
+        "-c",
+        "12-19",
+        "nice",
+        "-n",
+        "10",
+        "timeout",
+        "180",
+        "bun",
+        "test",
+        "/home/hyper/bench/wt/fr-perf/test/visibility-mutant.test.ts"
+      ]
+    }
+  ]
+}
