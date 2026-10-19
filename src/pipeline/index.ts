@@ -10,7 +10,6 @@ import type { Diagnostic, Layout } from "../../spec/types/layout.ts";
 import type { AngleMode, RouteSettings, SheetOverride } from "../../spec/types/settings.ts";
 import { DEFAULT_ROUTE_SETTINGS } from "../../spec/types/settings.ts";
 import type { RouteHooks, RouteReport } from "../../spec/types/results.ts";
-import { runLocalRescue } from "../route/local-rescue.ts";
 import { checkDrc } from "../drc/index.ts";
 import { createCtx, runPasses, runFanout, runOptimise, totalIncomplete, perNetIncomplete } from "../route/index.ts";
 
@@ -98,9 +97,6 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
   runFanout(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored);
   const outcome = runPasses(ctx);
   if (!outcome.aborted) runOptimise(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored, ctx.deadline);
-  if (!outcome.aborted) runLocalRescue(ctx);
-  const rescueAborted = effective.localRescue === true && hooks?.signal?.aborted === true;
-  const rescueTimedOut = effective.localRescue === true && ctx.deadline !== undefined && Date.now() > ctx.deadline;
 
   const incompleteAfter = totalIncomplete(ctx);
   const violationsAfter = checkDrc(layout).counts.violations;
@@ -117,9 +113,9 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
     ripped: ctx.ripped,
     violationsBefore,
     violationsAdded: Math.max(0, violationsAfter - violationsBefore),
-    timedOut: outcome.timedOut || rescueTimedOut,
-    aborted: outcome.aborted || rescueAborted,
-    stoppedBy: rescueAborted ? "abort" : rescueTimedOut ? "timeBudget" : outcome.stoppedBy,
+    timedOut: outcome.timedOut,
+    aborted: outcome.aborted,
+    stoppedBy: outcome.stoppedBy,
     effectiveSettings: effective,
     wallClockMs: Date.now() - startMs,
     perNet: perNetIncomplete(ctx, seeded),

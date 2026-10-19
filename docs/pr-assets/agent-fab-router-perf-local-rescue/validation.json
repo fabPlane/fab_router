@@ -1,0 +1,26 @@
+{
+  "measured_commit": "4821f12",
+  "candidate_required_checks_passed": true,
+  "candidate_log_sha256": "70350fb1d00419c8b9a5557b51fd9bd65a52a71193046a1c462b124ebbfcb0bd",
+  "final_production_matches": "69cf598",
+  "restored_required_checks_passed": true,
+  "restored_log_sha256": "42a1c372941f2425f7cee9db3b179e753fda754f4aa6cf6f0eaf79a9cac2b74f",
+  "patch_applies": true,
+  "patch_sha256": "d9d74871d9c44e0573e5fd27c7a6ee1f264f38898e07ead17140edaf233b3332",
+  "fresh_slow_acceptance": false,
+  "reason": "Rejected at native performance/completion gate; no adopted production change. Prior slow failures remain.",
+  "candidate_summary": [
+    "",
+    " 868 pass",
+    " 0 fail",
+    " 398481 expect() calls",
+    "Ran 868 tests across 30 files. [237.20s]"
+  ],
+  "restored_summary": [
+    "",
+    " 859 pass",
+    " 0 fail",
+    " 398454 expect() calls",
+    "Ran 859 tests across 29 files. [245.46s]"
+  ]
+}

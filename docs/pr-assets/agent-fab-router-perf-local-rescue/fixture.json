@@ -1,0 +1,250 @@
+{
+  "before": {
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "A",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": -20000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "B",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 20000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 20,
+        "part": 1,
+        "pinName": "O0a",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -10000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 21,
+        "part": 1,
+        "pinName": "O0b",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 10000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ],
+    "tracks": [
+      {
+        "id": 200,
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -10000,
+            "y": 20000
+          },
+          {
+            "x": -10000,
+            "y": -20000
+          },
+          {
+            "x": 10000,
+            "y": -20000
+          },
+          {
+            "x": 10000,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "origin": "router"
+      }
+    ]
+  },
+  "after": {
+    "pads": [
+      {
+        "id": 10,
+        "part": 1,
+        "pinName": "A",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": -20000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 11,
+        "part": 1,
+        "pinName": "B",
+        "net": 0,
+        "form": 100,
+        "at": {
+          "x": 20000,
+          "y": 0
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 20,
+        "part": 1,
+        "pinName": "O0a",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": -10000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      },
+      {
+        "id": 21,
+        "part": 1,
+        "pinName": "O0b",
+        "net": 1,
+        "form": 100,
+        "at": {
+          "x": 10000,
+          "y": 20000
+        },
+        "rotationDeg": 0,
+        "side": "front",
+        "sheets": [
+          0
+        ],
+        "kind": 1,
+        "hold": "locked"
+      }
+    ],
+    "tracks": [
+      {
+        "net": 0,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -20000,
+            "y": 0
+          },
+          {
+            "x": 20000,
+            "y": 0
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 201,
+        "origin": "router"
+      },
+      {
+        "net": 1,
+        "sheet": 0,
+        "pts": [
+          {
+            "x": -10000,
+            "y": 20000
+          },
+          {
+            "x": 10000,
+            "y": 20000
+          }
+        ],
+        "width": 4000,
+        "kind": 1,
+        "hold": "free",
+        "id": 202,
+        "origin": "router"
+      }
+    ]
+  },
+  "baselineDrc": {
+    "violations": [],
+    "incompletes": [
+      {
+        "net": 0,
+        "from": 10,
+        "to": 11,
+        "airlineLu": 40000
+      }
+    ],
+    "counts": {
+      "violations": 0,
+      "incompletes": 1
+    }
+  },
+  "afterDrc": {
+    "violations": [],
+    "incompletes": [],
+    "counts": {
+      "violations": 0,
+      "incompletes": 0
+    }
+  },
+  "logs": [
+    "local-rescue 0:10:11 radius=4pitch closed victims=1"
+  ],
+  "seconds": 0.003151177999999998
+}

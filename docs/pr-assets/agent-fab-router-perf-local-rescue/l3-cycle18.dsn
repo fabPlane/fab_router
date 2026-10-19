@@ -1,0 +1,1091 @@
+(pcb "routing-bench.dsn"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer In1.Cu
+      (type signal)
+      (property
+        (index 1)
+      )
+    )
+    (layer In2.Cu
+      (type signal)
+      (property
+        (index 2)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 3)
+      )
+    )
+    (boundary
+      (path pcb 0  40000 -171200  0 -171200  0 0  40000 0  40000 -171200)
+    )
+    (via "Via[0-3]_600:300_um")
+    (rule
+      (width 200)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component Pad
+      (place A1 6000 -6000 front 0 (PN Pad))
+      (place A2 6000 -6800 front 0 (PN Pad))
+      (place A3 6000 -7600 front 0 (PN Pad))
+      (place A4 6000 -8400 front 0 (PN Pad))
+      (place A5 6000 -9200 front 0 (PN Pad))
+      (place A6 6000 -10000 front 0 (PN Pad))
+      (place A7 6000 -10800 front 0 (PN Pad))
+      (place A8 6000 -11600 front 0 (PN Pad))
+      (place A9 6000 -12400 front 0 (PN Pad))
+      (place A10 6000 -13200 front 0 (PN Pad))
+      (place A11 6000 -14000 front 0 (PN Pad))
+      (place A12 6000 -14800 front 0 (PN Pad))
+      (place A13 6000 -15600 front 0 (PN Pad))
+      (place A14 6000 -16400 front 0 (PN Pad))
+      (place A15 6000 -17200 front 0 (PN Pad))
+      (place A16 6000 -18000 front 0 (PN Pad))
+      (place A17 6000 -18800 front 0 (PN Pad))
+      (place A18 6000 -19600 front 0 (PN Pad))
+      (place A19 6000 -20400 front 0 (PN Pad))
+      (place A20 6000 -21200 front 0 (PN Pad))
+      (place A21 6000 -22000 front 0 (PN Pad))
+      (place A22 6000 -22800 front 0 (PN Pad))
+      (place A23 6000 -23600 front 0 (PN Pad))
+      (place A24 6000 -24400 front 0 (PN Pad))
+      (place A25 6000 -25200 front 0 (PN Pad))
+      (place A26 6000 -26000 front 0 (PN Pad))
+      (place A27 6000 -26800 front 0 (PN Pad))
+      (place A28 6000 -27600 front 0 (PN Pad))
+      (place A29 6000 -28400 front 0 (PN Pad))
+      (place A30 6000 -29200 front 0 (PN Pad))
+      (place A31 6000 -30000 front 0 (PN Pad))
+      (place A32 6000 -30800 front 0 (PN Pad))
+      (place A33 6000 -31600 front 0 (PN Pad))
+      (place A34 6000 -32400 front 0 (PN Pad))
+      (place A35 6000 -33200 front 0 (PN Pad))
+      (place A36 6000 -34000 front 0 (PN Pad))
+      (place A37 6000 -34800 front 0 (PN Pad))
+      (place A38 6000 -35600 front 0 (PN Pad))
+      (place A39 6000 -36400 front 0 (PN Pad))
+      (place A40 6000 -37200 front 0 (PN Pad))
+      (place A41 6000 -38000 front 0 (PN Pad))
+      (place A42 6000 -38800 front 0 (PN Pad))
+      (place A43 6000 -39600 front 0 (PN Pad))
+      (place A44 6000 -40400 front 0 (PN Pad))
+      (place A45 6000 -41200 front 0 (PN Pad))
+      (place A46 6000 -42000 front 0 (PN Pad))
+      (place A47 6000 -42800 front 0 (PN Pad))
+      (place A48 6000 -43600 front 0 (PN Pad))
+      (place A49 6000 -44400 front 0 (PN Pad))
+      (place A50 6000 -45200 front 0 (PN Pad))
+      (place A51 6000 -46000 front 0 (PN Pad))
+      (place A52 6000 -46800 front 0 (PN Pad))
+      (place A53 6000 -47600 front 0 (PN Pad))
+      (place A54 6000 -48400 front 0 (PN Pad))
+      (place A55 6000 -49200 front 0 (PN Pad))
+      (place A56 6000 -50000 front 0 (PN Pad))
+      (place A57 6000 -50800 front 0 (PN Pad))
+      (place A58 6000 -51600 front 0 (PN Pad))
+      (place A59 6000 -52400 front 0 (PN Pad))
+      (place A60 6000 -53200 front 0 (PN Pad))
+      (place A61 6000 -54000 front 0 (PN Pad))
+      (place A62 6000 -54800 front 0 (PN Pad))
+      (place A63 6000 -55600 front 0 (PN Pad))
+      (place A64 6000 -56400 front 0 (PN Pad))
+      (place A65 6000 -57200 front 0 (PN Pad))
+      (place A66 6000 -58000 front 0 (PN Pad))
+      (place A67 6000 -58800 front 0 (PN Pad))
+      (place A68 6000 -59600 front 0 (PN Pad))
+      (place A69 6000 -60400 front 0 (PN Pad))
+      (place A70 6000 -61200 front 0 (PN Pad))
+      (place A71 6000 -62000 front 0 (PN Pad))
+      (place A72 6000 -62800 front 0 (PN Pad))
+      (place A73 6000 -63600 front 0 (PN Pad))
+      (place A74 6000 -64400 front 0 (PN Pad))
+      (place A75 6000 -65200 front 0 (PN Pad))
+      (place A76 6000 -66000 front 0 (PN Pad))
+      (place A77 6000 -66800 front 0 (PN Pad))
+      (place A78 6000 -67600 front 0 (PN Pad))
+      (place A79 6000 -68400 front 0 (PN Pad))
+      (place A80 6000 -69200 front 0 (PN Pad))
+      (place A81 6000 -70000 front 0 (PN Pad))
+      (place A82 6000 -70800 front 0 (PN Pad))
+      (place A83 6000 -71600 front 0 (PN Pad))
+      (place A84 6000 -72400 front 0 (PN Pad))
+      (place A85 6000 -73200 front 0 (PN Pad))
+      (place A86 6000 -74000 front 0 (PN Pad))
+      (place A87 6000 -74800 front 0 (PN Pad))
+      (place A88 6000 -75600 front 0 (PN Pad))
+      (place A89 6000 -76400 front 0 (PN Pad))
+      (place A90 6000 -77200 front 0 (PN Pad))
+      (place A91 6000 -78000 front 0 (PN Pad))
+      (place A92 6000 -78800 front 0 (PN Pad))
+      (place A93 6000 -79600 front 0 (PN Pad))
+      (place A94 6000 -80400 front 0 (PN Pad))
+      (place A95 6000 -81200 front 0 (PN Pad))
+      (place A96 6000 -82000 front 0 (PN Pad))
+      (place A97 6000 -82800 front 0 (PN Pad))
+      (place A98 6000 -83600 front 0 (PN Pad))
+      (place A99 6000 -84400 front 0 (PN Pad))
+      (place A100 6000 -85200 front 0 (PN Pad))
+      (place A101 6000 -86000 front 0 (PN Pad))
+      (place A102 6000 -86800 front 0 (PN Pad))
+      (place A103 6000 -87600 front 0 (PN Pad))
+      (place A104 6000 -88400 front 0 (PN Pad))
+      (place A105 6000 -89200 front 0 (PN Pad))
+      (place A106 6000 -90000 front 0 (PN Pad))
+      (place A107 6000 -90800 front 0 (PN Pad))
+      (place A108 6000 -91600 front 0 (PN Pad))
+      (place A109 6000 -92400 front 0 (PN Pad))
+      (place A110 6000 -93200 front 0 (PN Pad))
+      (place A111 6000 -94000 front 0 (PN Pad))
+      (place A112 6000 -94800 front 0 (PN Pad))
+      (place A113 6000 -95600 front 0 (PN Pad))
+      (place A114 6000 -96400 front 0 (PN Pad))
+      (place A115 6000 -97200 front 0 (PN Pad))
+      (place A116 6000 -98000 front 0 (PN Pad))
+      (place A117 6000 -98800 front 0 (PN Pad))
+      (place A118 6000 -99600 front 0 (PN Pad))
+      (place A119 6000 -100400 front 0 (PN Pad))
+      (place A120 6000 -101200 front 0 (PN Pad))
+      (place A121 6000 -102000 front 0 (PN Pad))
+      (place A122 6000 -102800 front 0 (PN Pad))
+      (place A123 6000 -103600 front 0 (PN Pad))
+      (place A124 6000 -104400 front 0 (PN Pad))
+      (place A125 6000 -105200 front 0 (PN Pad))
+      (place A126 6000 -106000 front 0 (PN Pad))
+      (place A127 6000 -106800 front 0 (PN Pad))
+      (place A128 6000 -107600 front 0 (PN Pad))
+      (place A129 6000 -108400 front 0 (PN Pad))
+      (place A130 6000 -109200 front 0 (PN Pad))
+      (place A131 6000 -110000 front 0 (PN Pad))
+      (place A132 6000 -110800 front 0 (PN Pad))
+      (place A133 6000 -111600 front 0 (PN Pad))
+      (place A134 6000 -112400 front 0 (PN Pad))
+      (place A135 6000 -113200 front 0 (PN Pad))
+      (place A136 6000 -114000 front 0 (PN Pad))
+      (place A137 6000 -114800 front 0 (PN Pad))
+      (place A138 6000 -115600 front 0 (PN Pad))
+      (place A139 6000 -116400 front 0 (PN Pad))
+      (place A140 6000 -117200 front 0 (PN Pad))
+      (place A141 6000 -118000 front 0 (PN Pad))
+      (place A142 6000 -118800 front 0 (PN Pad))
+      (place A143 6000 -119600 front 0 (PN Pad))
+      (place A144 6000 -120400 front 0 (PN Pad))
+      (place A145 6000 -121200 front 0 (PN Pad))
+      (place A146 6000 -122000 front 0 (PN Pad))
+      (place A147 6000 -122800 front 0 (PN Pad))
+      (place A148 6000 -123600 front 0 (PN Pad))
+      (place A149 6000 -124400 front 0 (PN Pad))
+      (place A150 6000 -125200 front 0 (PN Pad))
+      (place A151 6000 -126000 front 0 (PN Pad))
+      (place A152 6000 -126800 front 0 (PN Pad))
+      (place A153 6000 -127600 front 0 (PN Pad))
+      (place A154 6000 -128400 front 0 (PN Pad))
+      (place A155 6000 -129200 front 0 (PN Pad))
+      (place A156 6000 -130000 front 0 (PN Pad))
+      (place A157 6000 -130800 front 0 (PN Pad))
+      (place A158 6000 -131600 front 0 (PN Pad))
+      (place A159 6000 -132400 front 0 (PN Pad))
+      (place A160 6000 -133200 front 0 (PN Pad))
+      (place A161 6000 -134000 front 0 (PN Pad))
+      (place A162 6000 -134800 front 0 (PN Pad))
+      (place A163 6000 -135600 front 0 (PN Pad))
+      (place A164 6000 -136400 front 0 (PN Pad))
+      (place A165 6000 -137200 front 0 (PN Pad))
+      (place A166 6000 -138000 front 0 (PN Pad))
+      (place A167 6000 -138800 front 0 (PN Pad))
+      (place A168 6000 -139600 front 0 (PN Pad))
+      (place A169 6000 -140400 front 0 (PN Pad))
+      (place A170 6000 -141200 front 0 (PN Pad))
+      (place A171 6000 -142000 front 0 (PN Pad))
+      (place A172 6000 -142800 front 0 (PN Pad))
+      (place A173 6000 -143600 front 0 (PN Pad))
+      (place A174 6000 -144400 front 0 (PN Pad))
+      (place A175 6000 -145200 front 0 (PN Pad))
+      (place A176 6000 -146000 front 0 (PN Pad))
+      (place A177 6000 -146800 front 0 (PN Pad))
+      (place A178 6000 -147600 front 0 (PN Pad))
+      (place A179 6000 -148400 front 0 (PN Pad))
+      (place A180 6000 -149200 front 0 (PN Pad))
+      (place A181 6000 -150000 front 0 (PN Pad))
+      (place A182 6000 -150800 front 0 (PN Pad))
+      (place A183 6000 -151600 front 0 (PN Pad))
+      (place A184 6000 -152400 front 0 (PN Pad))
+      (place A185 6000 -153200 front 0 (PN Pad))
+      (place A186 6000 -154000 front 0 (PN Pad))
+      (place A187 6000 -154800 front 0 (PN Pad))
+      (place A188 6000 -155600 front 0 (PN Pad))
+      (place A189 6000 -156400 front 0 (PN Pad))
+      (place A190 6000 -157200 front 0 (PN Pad))
+      (place A191 6000 -158000 front 0 (PN Pad))
+      (place A192 6000 -158800 front 0 (PN Pad))
+      (place A193 6000 -159600 front 0 (PN Pad))
+      (place A194 6000 -160400 front 0 (PN Pad))
+      (place A195 6000 -161200 front 0 (PN Pad))
+      (place A196 6000 -162000 front 0 (PN Pad))
+      (place A197 6000 -162800 front 0 (PN Pad))
+      (place A198 6000 -163600 front 0 (PN Pad))
+      (place A199 6000 -164400 front 0 (PN Pad))
+      (place A200 6000 -165200 front 0 (PN Pad))
+      (place B1 34000 -6000 front 0 (PN Pad))
+      (place B2 34000 -6800 front 0 (PN Pad))
+      (place B3 34000 -7600 front 0 (PN Pad))
+      (place B4 34000 -8400 front 0 (PN Pad))
+      (place B5 34000 -9200 front 0 (PN Pad))
+      (place B6 34000 -10000 front 0 (PN Pad))
+      (place B7 34000 -10800 front 0 (PN Pad))
+      (place B8 34000 -11600 front 0 (PN Pad))
+      (place B9 34000 -12400 front 0 (PN Pad))
+      (place B10 34000 -13200 front 0 (PN Pad))
+      (place B11 34000 -14000 front 0 (PN Pad))
+      (place B12 34000 -14800 front 0 (PN Pad))
+      (place B13 34000 -15600 front 0 (PN Pad))
+      (place B14 34000 -16400 front 0 (PN Pad))
+      (place B15 34000 -17200 front 0 (PN Pad))
+      (place B16 34000 -18000 front 0 (PN Pad))
+      (place B17 34000 -18800 front 0 (PN Pad))
+      (place B18 34000 -19600 front 0 (PN Pad))
+      (place B19 34000 -20400 front 0 (PN Pad))
+      (place B20 34000 -21200 front 0 (PN Pad))
+      (place B21 34000 -22000 front 0 (PN Pad))
+      (place B22 34000 -22800 front 0 (PN Pad))
+      (place B23 34000 -23600 front 0 (PN Pad))
+      (place B24 34000 -24400 front 0 (PN Pad))
+      (place B25 34000 -25200 front 0 (PN Pad))
+      (place B26 34000 -26000 front 0 (PN Pad))
+      (place B27 34000 -26800 front 0 (PN Pad))
+      (place B28 34000 -27600 front 0 (PN Pad))
+      (place B29 34000 -28400 front 0 (PN Pad))
+      (place B30 34000 -29200 front 0 (PN Pad))
+      (place B31 34000 -30000 front 0 (PN Pad))
+      (place B32 34000 -30800 front 0 (PN Pad))
+      (place B33 34000 -31600 front 0 (PN Pad))
+      (place B34 34000 -32400 front 0 (PN Pad))
+      (place B35 34000 -33200 front 0 (PN Pad))
+      (place B36 34000 -34000 front 0 (PN Pad))
+      (place B37 34000 -34800 front 0 (PN Pad))
+      (place B38 34000 -35600 front 0 (PN Pad))
+      (place B39 34000 -36400 front 0 (PN Pad))
+      (place B40 34000 -37200 front 0 (PN Pad))
+      (place B41 34000 -38000 front 0 (PN Pad))
+      (place B42 34000 -38800 front 0 (PN Pad))
+      (place B43 34000 -39600 front 0 (PN Pad))
+      (place B44 34000 -40400 front 0 (PN Pad))
+      (place B45 34000 -41200 front 0 (PN Pad))
+      (place B46 34000 -42000 front 0 (PN Pad))
+      (place B47 34000 -42800 front 0 (PN Pad))
+      (place B48 34000 -43600 front 0 (PN Pad))
+      (place B49 34000 -44400 front 0 (PN Pad))
+      (place B50 34000 -45200 front 0 (PN Pad))
+      (place B51 34000 -46000 front 0 (PN Pad))
+      (place B52 34000 -46800 front 0 (PN Pad))
+      (place B53 34000 -47600 front 0 (PN Pad))
+      (place B54 34000 -48400 front 0 (PN Pad))
+      (place B55 34000 -49200 front 0 (PN Pad))
+      (place B56 34000 -50000 front 0 (PN Pad))
+      (place B57 34000 -50800 front 0 (PN Pad))
+      (place B58 34000 -51600 front 0 (PN Pad))
+      (place B59 34000 -52400 front 0 (PN Pad))
+      (place B60 34000 -53200 front 0 (PN Pad))
+      (place B61 34000 -54000 front 0 (PN Pad))
+      (place B62 34000 -54800 front 0 (PN Pad))
+      (place B63 34000 -55600 front 0 (PN Pad))
+      (place B64 34000 -56400 front 0 (PN Pad))
+      (place B65 34000 -57200 front 0 (PN Pad))
+      (place B66 34000 -58000 front 0 (PN Pad))
+      (place B67 34000 -58800 front 0 (PN Pad))
+      (place B68 34000 -59600 front 0 (PN Pad))
+      (place B69 34000 -60400 front 0 (PN Pad))
+      (place B70 34000 -61200 front 0 (PN Pad))
+      (place B71 34000 -62000 front 0 (PN Pad))
+      (place B72 34000 -62800 front 0 (PN Pad))
+      (place B73 34000 -63600 front 0 (PN Pad))
+      (place B74 34000 -64400 front 0 (PN Pad))
+      (place B75 34000 -65200 front 0 (PN Pad))
+      (place B76 34000 -66000 front 0 (PN Pad))
+      (place B77 34000 -66800 front 0 (PN Pad))
+      (place B78 34000 -67600 front 0 (PN Pad))
+      (place B79 34000 -68400 front 0 (PN Pad))
+      (place B80 34000 -69200 front 0 (PN Pad))
+      (place B81 34000 -70000 front 0 (PN Pad))
+      (place B82 34000 -70800 front 0 (PN Pad))
+      (place B83 34000 -71600 front 0 (PN Pad))
+      (place B84 34000 -72400 front 0 (PN Pad))
+      (place B85 34000 -73200 front 0 (PN Pad))
+      (place B86 34000 -74000 front 0 (PN Pad))
+      (place B87 34000 -74800 front 0 (PN Pad))
+      (place B88 34000 -75600 front 0 (PN Pad))
+      (place B89 34000 -76400 front 0 (PN Pad))
+      (place B90 34000 -77200 front 0 (PN Pad))
+      (place B91 34000 -78000 front 0 (PN Pad))
+      (place B92 34000 -78800 front 0 (PN Pad))
+      (place B93 34000 -79600 front 0 (PN Pad))
+      (place B94 34000 -80400 front 0 (PN Pad))
+      (place B95 34000 -81200 front 0 (PN Pad))
+      (place B96 34000 -82000 front 0 (PN Pad))
+      (place B97 34000 -82800 front 0 (PN Pad))
+      (place B98 34000 -83600 front 0 (PN Pad))
+      (place B99 34000 -84400 front 0 (PN Pad))
+      (place B100 34000 -85200 front 0 (PN Pad))
+      (place B101 34000 -86000 front 0 (PN Pad))
+      (place B102 34000 -86800 front 0 (PN Pad))
+      (place B103 34000 -87600 front 0 (PN Pad))
+      (place B104 34000 -88400 front 0 (PN Pad))
+      (place B105 34000 -89200 front 0 (PN Pad))
+      (place B106 34000 -90000 front 0 (PN Pad))
+      (place B107 34000 -90800 front 0 (PN Pad))
+      (place B108 34000 -91600 front 0 (PN Pad))
+      (place B109 34000 -92400 front 0 (PN Pad))
+      (place B110 34000 -93200 front 0 (PN Pad))
+      (place B111 34000 -94000 front 0 (PN Pad))
+      (place B112 34000 -94800 front 0 (PN Pad))
+      (place B113 34000 -95600 front 0 (PN Pad))
+      (place B114 34000 -96400 front 0 (PN Pad))
+      (place B115 34000 -97200 front 0 (PN Pad))
+      (place B116 34000 -98000 front 0 (PN Pad))
+      (place B117 34000 -98800 front 0 (PN Pad))
+      (place B118 34000 -99600 front 0 (PN Pad))
+      (place B119 34000 -100400 front 0 (PN Pad))
+      (place B120 34000 -101200 front 0 (PN Pad))
+      (place B121 34000 -102000 front 0 (PN Pad))
+      (place B122 34000 -102800 front 0 (PN Pad))
+      (place B123 34000 -103600 front 0 (PN Pad))
+      (place B124 34000 -104400 front 0 (PN Pad))
+      (place B125 34000 -105200 front 0 (PN Pad))
+      (place B126 34000 -106000 front 0 (PN Pad))
+      (place B127 34000 -106800 front 0 (PN Pad))
+      (place B128 34000 -107600 front 0 (PN Pad))
+      (place B129 34000 -108400 front 0 (PN Pad))
+      (place B130 34000 -109200 front 0 (PN Pad))
+      (place B131 34000 -110000 front 0 (PN Pad))
+      (place B132 34000 -110800 front 0 (PN Pad))
+      (place B133 34000 -111600 front 0 (PN Pad))
+      (place B134 34000 -112400 front 0 (PN Pad))
+      (place B135 34000 -113200 front 0 (PN Pad))
+      (place B136 34000 -114000 front 0 (PN Pad))
+      (place B137 34000 -114800 front 0 (PN Pad))
+      (place B138 34000 -115600 front 0 (PN Pad))
+      (place B139 34000 -116400 front 0 (PN Pad))
+      (place B140 34000 -117200 front 0 (PN Pad))
+      (place B141 34000 -118000 front 0 (PN Pad))
+      (place B142 34000 -118800 front 0 (PN Pad))
+      (place B143 34000 -119600 front 0 (PN Pad))
+      (place B144 34000 -120400 front 0 (PN Pad))
+      (place B145 34000 -121200 front 0 (PN Pad))
+      (place B146 34000 -122000 front 0 (PN Pad))
+      (place B147 34000 -122800 front 0 (PN Pad))
+      (place B148 34000 -123600 front 0 (PN Pad))
+      (place B149 34000 -124400 front 0 (PN Pad))
+      (place B150 34000 -125200 front 0 (PN Pad))
+      (place B151 34000 -126000 front 0 (PN Pad))
+      (place B152 34000 -126800 front 0 (PN Pad))
+      (place B153 34000 -127600 front 0 (PN Pad))
+      (place B154 34000 -128400 front 0 (PN Pad))
+      (place B155 34000 -129200 front 0 (PN Pad))
+      (place B156 34000 -130000 front 0 (PN Pad))
+      (place B157 34000 -130800 front 0 (PN Pad))
+      (place B158 34000 -131600 front 0 (PN Pad))
+      (place B159 34000 -132400 front 0 (PN Pad))
+      (place B160 34000 -133200 front 0 (PN Pad))
+      (place B161 34000 -134000 front 0 (PN Pad))
+      (place B162 34000 -134800 front 0 (PN Pad))
+      (place B163 34000 -135600 front 0 (PN Pad))
+      (place B164 34000 -136400 front 0 (PN Pad))
+      (place B165 34000 -137200 front 0 (PN Pad))
+      (place B166 34000 -138000 front 0 (PN Pad))
+      (place B167 34000 -138800 front 0 (PN Pad))
+      (place B168 34000 -139600 front 0 (PN Pad))
+      (place B169 34000 -140400 front 0 (PN Pad))
+      (place B170 34000 -141200 front 0 (PN Pad))
+      (place B171 34000 -142000 front 0 (PN Pad))
+      (place B172 34000 -142800 front 0 (PN Pad))
+      (place B173 34000 -143600 front 0 (PN Pad))
+      (place B174 34000 -144400 front 0 (PN Pad))
+      (place B175 34000 -145200 front 0 (PN Pad))
+      (place B176 34000 -146000 front 0 (PN Pad))
+      (place B177 34000 -146800 front 0 (PN Pad))
+      (place B178 34000 -147600 front 0 (PN Pad))
+      (place B179 34000 -148400 front 0 (PN Pad))
+      (place B180 34000 -149200 front 0 (PN Pad))
+      (place B181 34000 -150000 front 0 (PN Pad))
+      (place B182 34000 -150800 front 0 (PN Pad))
+      (place B183 34000 -151600 front 0 (PN Pad))
+      (place B184 34000 -152400 front 0 (PN Pad))
+      (place B185 34000 -153200 front 0 (PN Pad))
+      (place B186 34000 -154000 front 0 (PN Pad))
+      (place B187 34000 -154800 front 0 (PN Pad))
+      (place B188 34000 -155600 front 0 (PN Pad))
+      (place B189 34000 -156400 front 0 (PN Pad))
+      (place B190 34000 -157200 front 0 (PN Pad))
+      (place B191 34000 -158000 front 0 (PN Pad))
+      (place B192 34000 -158800 front 0 (PN Pad))
+      (place B193 34000 -159600 front 0 (PN Pad))
+      (place B194 34000 -160400 front 0 (PN Pad))
+      (place B195 34000 -161200 front 0 (PN Pad))
+      (place B196 34000 -162000 front 0 (PN Pad))
+      (place B197 34000 -162800 front 0 (PN Pad))
+      (place B198 34000 -163600 front 0 (PN Pad))
+      (place B199 34000 -164400 front 0 (PN Pad))
+      (place B200 34000 -165200 front 0 (PN Pad))
+    )
+  )
+  (library
+    (image Pad
+      (pin Rect[T]Pad_1000.000000x400.000000_um 1 0 0)
+    )
+    (padstack Rect[T]Pad_1000.000000x400.000000_um
+      (shape (rect F.Cu -500 -200 500 200))
+      (attach off)
+    )
+    (padstack "Via[0-3]_600:300_um"
+      (shape (circle F.Cu 600))
+      (shape (circle In1.Cu 600))
+      (shape (circle In2.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net N1
+      (pins A1-1 B107-1)
+    )
+    (net N2
+      (pins A2-1 B165-1)
+    )
+    (net N3
+      (pins A3-1 B81-1)
+    )
+    (net N4
+      (pins A4-1 B46-1)
+    )
+    (net N5
+      (pins A5-1 B37-1)
+    )
+    (net N6
+      (pins A6-1 B45-1)
+    )
+    (net N7
+      (pins A7-1 B32-1)
+    )
+    (net N8
+      (pins A8-1 B4-1)
+    )
+    (net N9
+      (pins A9-1 B34-1)
+    )
+    (net N10
+      (pins A10-1 B56-1)
+    )
+    (net N11
+      (pins A11-1 B125-1)
+    )
+    (net N12
+      (pins A12-1 B122-1)
+    )
+    (net N13
+      (pins A13-1 B70-1)
+    )
+    (net N14
+      (pins A14-1 B39-1)
+    )
+    (net N15
+      (pins A15-1 B55-1)
+    )
+    (net N16
+      (pins A16-1 B11-1)
+    )
+    (net N17
+      (pins A17-1 B96-1)
+    )
+    (net N18
+      (pins A18-1 B106-1)
+    )
+    (net N19
+      (pins A19-1 B89-1)
+    )
+    (net N20
+      (pins A20-1 B127-1)
+    )
+    (net N21
+      (pins A21-1 B77-1)
+    )
+    (net N22
+      (pins A22-1 B3-1)
+    )
+    (net N23
+      (pins A23-1 B131-1)
+    )
+    (net N24
+      (pins A24-1 B99-1)
+    )
+    (net N25
+      (pins A25-1 B18-1)
+    )
+    (net N26
+      (pins A26-1 B136-1)
+    )
+    (net N27
+      (pins A27-1 B119-1)
+    )
+    (net N28
+      (pins A28-1 B23-1)
+    )
+    (net N29
+      (pins A29-1 B26-1)
+    )
+    (net N30
+      (pins A30-1 B151-1)
+    )
+    (net N31
+      (pins A31-1 B182-1)
+    )
+    (net N32
+      (pins A32-1 B199-1)
+    )
+    (net N33
+      (pins A33-1 B68-1)
+    )
+    (net N34
+      (pins A34-1 B140-1)
+    )
+    (net N35
+      (pins A35-1 B95-1)
+    )
+    (net N36
+      (pins A36-1 B27-1)
+    )
+    (net N37
+      (pins A37-1 B15-1)
+    )
+    (net N38
+      (pins A38-1 B146-1)
+    )
+    (net N39
+      (pins A39-1 B85-1)
+    )
+    (net N40
+      (pins A40-1 B10-1)
+    )
+    (net N41
+      (pins A41-1 B49-1)
+    )
+    (net N42
+      (pins A42-1 B144-1)
+    )
+    (net N43
+      (pins A43-1 B88-1)
+    )
+    (net N44
+      (pins A44-1 B176-1)
+    )
+    (net N45
+      (pins A45-1 B178-1)
+    )
+    (net N46
+      (pins A46-1 B120-1)
+    )
+    (net N47
+      (pins A47-1 B200-1)
+    )
+    (net N48
+      (pins A48-1 B33-1)
+    )
+    (net N49
+      (pins A49-1 B143-1)
+    )
+    (net N50
+      (pins A50-1 B98-1)
+    )
+    (net N51
+      (pins A51-1 B194-1)
+    )
+    (net N52
+      (pins A52-1 B174-1)
+    )
+    (net N53
+      (pins A53-1 B142-1)
+    )
+    (net N54
+      (pins A54-1 B97-1)
+    )
+    (net N55
+      (pins A55-1 B79-1)
+    )
+    (net N56
+      (pins A56-1 B168-1)
+    )
+    (net N57
+      (pins A57-1 B162-1)
+    )
+    (net N58
+      (pins A58-1 B58-1)
+    )
+    (net N59
+      (pins A59-1 B71-1)
+    )
+    (net N60
+      (pins A60-1 B53-1)
+    )
+    (net N61
+      (pins A61-1 B177-1)
+    )
+    (net N62
+      (pins A62-1 B195-1)
+    )
+    (net N63
+      (pins A63-1 B126-1)
+    )
+    (net N64
+      (pins A64-1 B59-1)
+    )
+    (net N65
+      (pins A65-1 B184-1)
+    )
+    (net N66
+      (pins A66-1 B74-1)
+    )
+    (net N67
+      (pins A67-1 B134-1)
+    )
+    (net N68
+      (pins A68-1 B186-1)
+    )
+    (net N69
+      (pins A69-1 B111-1)
+    )
+    (net N70
+      (pins A70-1 B155-1)
+    )
+    (net N71
+      (pins A71-1 B52-1)
+    )
+    (net N72
+      (pins A72-1 B73-1)
+    )
+    (net N73
+      (pins A73-1 B150-1)
+    )
+    (net N74
+      (pins A74-1 B80-1)
+    )
+    (net N75
+      (pins A75-1 B113-1)
+    )
+    (net N76
+      (pins A76-1 B188-1)
+    )
+    (net N77
+      (pins A77-1 B167-1)
+    )
+    (net N78
+      (pins A78-1 B153-1)
+    )
+    (net N79
+      (pins A79-1 B86-1)
+    )
+    (net N80
+      (pins A80-1 B42-1)
+    )
+    (net N81
+      (pins A81-1 B116-1)
+    )
+    (net N82
+      (pins A82-1 B21-1)
+    )
+    (net N83
+      (pins A83-1 B123-1)
+    )
+    (net N84
+      (pins A84-1 B181-1)
+    )
+    (net N85
+      (pins A85-1 B20-1)
+    )
+    (net N86
+      (pins A86-1 B196-1)
+    )
+    (net N87
+      (pins A87-1 B133-1)
+    )
+    (net N88
+      (pins A88-1 B164-1)
+    )
+    (net N89
+      (pins A89-1 B159-1)
+    )
+    (net N90
+      (pins A90-1 B91-1)
+    )
+    (net N91
+      (pins A91-1 B94-1)
+    )
+    (net N92
+      (pins A92-1 B9-1)
+    )
+    (net N93
+      (pins A93-1 B57-1)
+    )
+    (net N94
+      (pins A94-1 B173-1)
+    )
+    (net N95
+      (pins A95-1 B43-1)
+    )
+    (net N96
+      (pins A96-1 B84-1)
+    )
+    (net N97
+      (pins A97-1 B61-1)
+    )
+    (net N98
+      (pins A98-1 B109-1)
+    )
+    (net N99
+      (pins A99-1 B105-1)
+    )
+    (net N100
+      (pins A100-1 B66-1)
+    )
+    (net N101
+      (pins A101-1 B117-1)
+    )
+    (net N102
+      (pins A102-1 B114-1)
+    )
+    (net N103
+      (pins A103-1 B54-1)
+    )
+    (net N104
+      (pins A104-1 B163-1)
+    )
+    (net N105
+      (pins A105-1 B139-1)
+    )
+    (net N106
+      (pins A106-1 B8-1)
+    )
+    (net N107
+      (pins A107-1 B75-1)
+    )
+    (net N108
+      (pins A108-1 B25-1)
+    )
+    (net N109
+      (pins A109-1 B14-1)
+    )
+    (net N110
+      (pins A110-1 B92-1)
+    )
+    (net N111
+      (pins A111-1 B5-1)
+    )
+    (net N112
+      (pins A112-1 B141-1)
+    )
+    (net N113
+      (pins A113-1 B16-1)
+    )
+    (net N114
+      (pins A114-1 B65-1)
+    )
+    (net N115
+      (pins A115-1 B197-1)
+    )
+    (net N116
+      (pins A116-1 B29-1)
+    )
+    (net N117
+      (pins A117-1 B118-1)
+    )
+    (net N118
+      (pins A118-1 B187-1)
+    )
+    (net N119
+      (pins A119-1 B62-1)
+    )
+    (net N120
+      (pins A120-1 B1-1)
+    )
+    (net N121
+      (pins A121-1 B132-1)
+    )
+    (net N122
+      (pins A122-1 B103-1)
+    )
+    (net N123
+      (pins A123-1 B189-1)
+    )
+    (net N124
+      (pins A124-1 B47-1)
+    )
+    (net N125
+      (pins A125-1 B36-1)
+    )
+    (net N126
+      (pins A126-1 B193-1)
+    )
+    (net N127
+      (pins A127-1 B191-1)
+    )
+    (net N128
+      (pins A128-1 B63-1)
+    )
+    (net N129
+      (pins A129-1 B147-1)
+    )
+    (net N130
+      (pins A130-1 B171-1)
+    )
+    (net N131
+      (pins A131-1 B44-1)
+    )
+    (net N132
+      (pins A132-1 B138-1)
+    )
+    (net N133
+      (pins A133-1 B12-1)
+    )
+    (net N134
+      (pins A134-1 B180-1)
+    )
+    (net N135
+      (pins A135-1 B156-1)
+    )
+    (net N136
+      (pins A136-1 B7-1)
+    )
+    (net N137
+      (pins A137-1 B128-1)
+    )
+    (net N138
+      (pins A138-1 B160-1)
+    )
+    (net N139
+      (pins A139-1 B112-1)
+    )
+    (net N140
+      (pins A140-1 B41-1)
+    )
+    (net N141
+      (pins A141-1 B51-1)
+    )
+    (net N142
+      (pins A142-1 B152-1)
+    )
+    (net N143
+      (pins A143-1 B24-1)
+    )
+    (net N144
+      (pins A144-1 B30-1)
+    )
+    (net N145
+      (pins A145-1 B48-1)
+    )
+    (net N146
+      (pins A146-1 B148-1)
+    )
+    (net N147
+      (pins A147-1 B157-1)
+    )
+    (net N148
+      (pins A148-1 B172-1)
+    )
+    (net N149
+      (pins A149-1 B137-1)
+    )
+    (net N150
+      (pins A150-1 B72-1)
+    )
+    (net N151
+      (pins A151-1 B28-1)
+    )
+    (net N152
+      (pins A152-1 B158-1)
+    )
+    (net N153
+      (pins A153-1 B31-1)
+    )
+    (net N154
+      (pins A154-1 B121-1)
+    )
+    (net N155
+      (pins A155-1 B154-1)
+    )
+    (net N156
+      (pins A156-1 B101-1)
+    )
+    (net N157
+      (pins A157-1 B19-1)
+    )
+    (net N158
+      (pins A158-1 B2-1)
+    )
+    (net N159
+      (pins A159-1 B104-1)
+    )
+    (net N160
+      (pins A160-1 B82-1)
+    )
+    (net N161
+      (pins A161-1 B192-1)
+    )
+    (net N162
+      (pins A162-1 B60-1)
+    )
+    (net N163
+      (pins A163-1 B161-1)
+    )
+    (net N164
+      (pins A164-1 B110-1)
+    )
+    (net N165
+      (pins A165-1 B69-1)
+    )
+    (net N166
+      (pins A166-1 B108-1)
+    )
+    (net N167
+      (pins A167-1 B13-1)
+    )
+    (net N168
+      (pins A168-1 B83-1)
+    )
+    (net N169
+      (pins A169-1 B145-1)
+    )
+    (net N170
+      (pins A170-1 B198-1)
+    )
+    (net N171
+      (pins A171-1 B40-1)
+    )
+    (net N172
+      (pins A172-1 B129-1)
+    )
+    (net N173
+      (pins A173-1 B179-1)
+    )
+    (net N174
+      (pins A174-1 B170-1)
+    )
+    (net N175
+      (pins A175-1 B64-1)
+    )
+    (net N176
+      (pins A176-1 B87-1)
+    )
+    (net N177
+      (pins A177-1 B175-1)
+    )
+    (net N178
+      (pins A178-1 B183-1)
+    )
+    (net N179
+      (pins A179-1 B50-1)
+    )
+    (net N180
+      (pins A180-1 B35-1)
+    )
+    (net N181
+      (pins A181-1 B38-1)
+    )
+    (net N182
+      (pins A182-1 B17-1)
+    )
+    (net N183
+      (pins A183-1 B22-1)
+    )
+    (net N184
+      (pins A184-1 B6-1)
+    )
+    (net N185
+      (pins A185-1 B115-1)
+    )
+    (net N186
+      (pins A186-1 B166-1)
+    )
+    (net N187
+      (pins A187-1 B100-1)
+    )
+    (net N188
+      (pins A188-1 B67-1)
+    )
+    (net N189
+      (pins A189-1 B149-1)
+    )
+    (net N190
+      (pins A190-1 B90-1)
+    )
+    (net N191
+      (pins A191-1 B169-1)
+    )
+    (net N192
+      (pins A192-1 B78-1)
+    )
+    (net N193
+      (pins A193-1 B130-1)
+    )
+    (net N194
+      (pins A194-1 B185-1)
+    )
+    (net N195
+      (pins A195-1 B102-1)
+    )
+    (net N196
+      (pins A196-1 B76-1)
+    )
+    (net N197
+      (pins A197-1 B93-1)
+    )
+    (net N198
+      (pins A198-1 B135-1)
+    )
+    (net N199
+      (pins A199-1 B124-1)
+    )
+    (net N200
+      (pins A200-1 B190-1)
+    )
+    (class kicad_default N1 N10 N100 N101 N102 N103 N104 N105 N106 N107 N108
+      N109 N11 N110 N111 N112 N113 N114 N115 N116 N117 N118 N119 N12 N120
+      N121 N122 N123 N124 N125 N126 N127 N128 N129 N13 N130 N131 N132 N133
+      N134 N135 N136 N137 N138 N139 N14 N140 N141 N142 N143 N144 N145 N146
+      N147 N148 N149 N15 N150 N151 N152 N153 N154 N155 N156 N157 N158 N159
+      N16 N160 N161 N162 N163 N164 N165 N166 N167 N168 N169 N17 N170 N171
+      N172 N173 N174 N175 N176 N177 N178 N179 N18 N180 N181 N182 N183 N184
+      N185 N186 N187 N188 N189 N19 N190 N191 N192 N193 N194 N195 N196 N197
+      N198 N199 N2 N20 N200 N21 N22 N23 N24 N25 N26 N27 N28 N29 N3 N30 N31
+      N32 N33 N34 N35 N36 N37 N38 N39 N4 N40 N41 N42 N43 N44 N45 N46 N47 N48
+      N49 N5 N50 N51 N52 N53 N54 N55 N56 N57 N58 N59 N6 N60 N61 N62 N63 N64
+      N65 N66 N67 N68 N69 N7 N70 N71 N72 N73 N74 N75 N76 N77 N78 N79 N8 N80
+      N81 N82 N83 N84 N85 N86 N87 N88 N89 N9 N90 N91 N92 N93 N94 N95 N96 N97
+      N98 N99
+      (circuit
+        (use_via "Via[0-3]_600:300_um")
+      )
+      (rule
+        (width 200)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+  )
+)

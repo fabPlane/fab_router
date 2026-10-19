@@ -22,8 +22,6 @@ export interface RouteSettings {
   preferredDirectionCost: number;
   startRipupCost: number;
   ripupEnabled: boolean;
-  /** Experimental post-pass local rip-up rescue; default off. No design-rule changes. */
-  localRescue?: boolean;
   fanoutEnabled: boolean;
   fanoutMaxPasses?: number;
   fanoutMaxItems?: number;
