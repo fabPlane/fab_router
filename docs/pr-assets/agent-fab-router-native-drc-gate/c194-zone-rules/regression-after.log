@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [1.93ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.45ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.07ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.41ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.05ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.04ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.06ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.15ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [0.86ms]
+(pass) rejects malformed connectivity findings in either report [0.13ms]
+(pass) native gate blocks deletion of original copper before native execution [0.96ms]
+(pass) native gate blocks renamed net ownership even when native reports are clean [0.71ms]
+(pass) native gate blocks changed zone thermal rules even with clean reports [0.95ms]
+
+test/native-board-zones.test.ts:
+(pass) protects thermal, clearance, connection, geometry and ownership fields [0.37ms]
+(pass) permits refreshed fill caches, regenerated identifiers and numeric formatting [0.15ms]
+(pass) preserves zone multiplicity and unknown future authored fields [0.22ms]
+(pass) permits zone and named-field reordering but protects polygon vertex order [0.11ms]
+
+ 19 pass
+ 0 fail
+ 59 expect() calls
+Ran 19 tests across 2 files. [59.00ms]

@@ -103,3 +103,19 @@ export function assertSourceCopper(input: string, candidate: string): void {
     if ((available.get(key) ?? 0) < count) throw new Error("Candidate source copper differs from input");
   }
 }
+
+/** Preserve authored zone definitions, including thermal and keepout rules. Filled
+ * polygons/segments are derived refill caches; only those and UUIDs may change. */
+export function assertBoardZones(input: string, candidate: string): void {
+  const inventory = (text: string) => parseBoard(text)
+    .filter(node => Array.isArray(node) && node[0] === "zone")
+    .map(node => {
+      const zone = node as Expression[];
+      // Sort top-level named fields only. Polygon vertex order and nested fill
+      // rules remain intact; unknown future fields are protected conservatively.
+      return JSON.stringify(zone.slice(1)
+        .filter(field => !(Array.isArray(field) && ["uuid", "filled_polygon", "filled_segments"].includes(String(field[0]))))
+        .map(field => JSON.stringify(field)).sort());
+    }).sort();
+  if (JSON.stringify(inventory(input)) !== JSON.stringify(inventory(candidate))) throw new Error("Candidate zone definitions differ from input");
+}

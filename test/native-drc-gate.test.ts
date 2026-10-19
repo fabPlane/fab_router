@@ -127,3 +127,27 @@ test.skipIf(!Bun.which("kicad-cli"))("native gate blocks renamed net ownership e
     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate net table differs");
   } finally { await rm(directory, { recursive: true, force: true }); }
 });
+
+// A refill can stay clean after a thermal-rule change; report comparison cannot
+// establish that the candidate preserved the source zone definition.
+test.skipIf(!Bun.which("kicad-cli"))("native gate blocks changed zone thermal rules even with clean reports", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "native-zone-rules-"));
+  try {
+    const before = join(directory, "before.kicad_pcb"), after = join(directory, "after.kicad_pcb");
+    const board = `(kicad_pcb (version 20260206) (generator "pcbnew")
+      (general (thickness 1.6)) (paper "A4")
+      (layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user)) (setup)
+      (net 1 "GND")
+      (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+        (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001"))
+      (zone (net 1) (net_name "GND") (layer "F.Cu")
+        (uuid "00000000-0000-0000-0000-000000000002")
+        (hatch edge 0.5) (connect_pads (clearance 0.2)) (min_thickness 0.25)
+        (fill yes (thermal_gap 0.3) (thermal_bridge_width 0.3))
+        (polygon (pts (xy 1 1) (xy 9 1) (xy 9 9) (xy 1 9)))))`;
+    await writeFile(before, board);
+    await writeFile(after, board.replace('(thermal_gap 0.3)', '(thermal_gap 0.1)'));
+    for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+    await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate zone definitions differ");
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});

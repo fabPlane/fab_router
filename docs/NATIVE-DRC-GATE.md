@@ -50,8 +50,15 @@ including geometry, width, net and other physical fields. Additional routing ite
 are allowed. Named field order and numeric formatting are normalized. Equivalent
 track splitting or deliberate edits to original copper conservatively block acceptance.
 
+Authored board-level zone definitions must match as a multiset, including thermal gaps,
+spoke widths, clearances, connection modes, polygons, ownership, keepouts and unknown
+fields. Top-level named field order and numeric formatting are normalized. Generated
+UUIDs and derived `filled_polygon`/`filled_segments` caches may change during refill.
+Nested rule and polygon vertex order are compared conservatively. Adding, deleting or
+editing a zone blocks acceptance before native checking.
+
 This is a DRC/connectivity gate, not a complete design-fidelity validator or a repair command. It does
-not require zero opens, remove inherited violations, verify preserved pads/zones/metadata,
+not require zero opens, remove inherited violations, verify preserved pads/other metadata,
 or apply/undo anything in an editor. The host must separately verify design fidelity,
 per-item rules, external dependencies and the exact checked bytes before committing a
 candidate. No live-editor transaction or benchmark scoring path calls this optional command
