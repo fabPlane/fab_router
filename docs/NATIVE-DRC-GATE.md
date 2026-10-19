@@ -29,7 +29,9 @@ Acceptance requires no new error-level native findings and no increase in native
 Errors are compared as a multiset of type, severity, physical item descriptions and positions;
 imported UUID changes do not turn inherited errors into new errors. A removed error cannot
 mask a different new error. Native versions, included severities and ignored-check policies
-must match; error checks must be enabled. Malformed reports fail closed.
+must match; error checks must be enabled. Connectivity entries must be error-level
+`unconnected_items` findings with at least two described endpoints and finite millimetre
+coordinates. Malformed entries fail closed before either open total is used.
 
 This is a DRC/connectivity gate, not a design-fidelity validator or a repair command. It does
 not require zero opens, remove inherited violations, verify preserved source copper/metadata,

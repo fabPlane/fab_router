@@ -21,6 +21,12 @@ function parseReport(value: unknown): Report {
       if (!object(i) || typeof i.description !== "string" || !object(i.pos) || typeof i.pos.x !== "number" || !Number.isFinite(i.pos.x) || typeof i.pos.y !== "number" || !Number.isFinite(i.pos.y)) throw new Error("Malformed native DRC item");
     }
   }
+  for (const connection of value.unconnected_items) {
+    if (!object(connection) || connection.type !== "unconnected_items" || connection.severity !== "error" || typeof connection.description !== "string" || !Array.isArray(connection.items) || connection.items.length < 2) throw new Error("Malformed native connectivity finding");
+    for (const item of connection.items) {
+      if (!object(item) || typeof item.description !== "string" || !object(item.pos) || typeof item.pos.x !== "number" || !Number.isFinite(item.pos.x) || typeof item.pos.y !== "number" || !Number.isFinite(item.pos.y)) throw new Error("Malformed native connectivity item");
+    }
+  }
   return value as Report;
 }
 // Same physical signature as the benchmark: imported UUIDs can change. Count duplicate

@@ -6,7 +6,7 @@ import { checkNativeBoards, compareNativeReports } from "../tools/native-drc-gat
 
 const item = (x = 1) => ({ description: "Pad 1 [GND] of U1 on F.Cu", pos: { x, y: 2 }, uuid: "pad" });
 const error = (type = "starved_thermal", x = 1) => ({ type, severity: "error", description: "Native finding", items: [item(x)] });
-const report = (violations: unknown[] = [], opens = 0) => ({ coordinate_units: "mm", kicad_version: "10.0.6", included_severities: ["error", "warning", "exclusion"], violations, unconnected_items: Array.from({ length: opens }, () => ({})), ignored_checks: [] });
+const report = (violations: unknown[] = [], opens = 0) => ({ coordinate_units: "mm", kicad_version: "10.0.6", included_severities: ["error", "warning", "exclusion"], violations, unconnected_items: Array.from({ length: opens }, () => ({ ...error("unconnected_items"), items: [item(), item(3)] })), ignored_checks: [] });
 
 describe("native DRC acceptance gate", () => {
   test("rejects the native thermal violation absent from text-router reports", () => {
@@ -66,4 +66,13 @@ test("native runner rejects missing or changed project rules without modifying s
     expect(await readFile(before, "utf8")).toBe("source bytes");
     expect(await readFile(after, "utf8")).toBe("candidate bytes");
   } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
+// A bogus inherited open must not authorize a newly disconnected candidate.
+test("rejects malformed connectivity findings in either report", () => {
+  const valid = report([], 1).unconnected_items[0]!;
+  for (const malformed of [null, {}, { ...valid, type: "clearance" }, { ...valid, severity: "warning" }, { ...valid, items: [] }, { ...valid, items: [item()] }, { ...valid, items: [item(), { description: "pad", pos: { x: NaN, y: 2 } }] }]) {
+    expect(() => compareNativeReports({ ...report(), unconnected_items: [malformed] }, report([], 1))).toThrow();
+    expect(() => compareNativeReports(report([], 1), { ...report(), unconnected_items: [malformed] })).toThrow();
+  }
 });
