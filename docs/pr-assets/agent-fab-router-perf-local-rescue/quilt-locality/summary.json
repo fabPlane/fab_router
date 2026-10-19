@@ -1,0 +1,31 @@
+{
+  "scope": "three complete diagnostic replays; simulated front slots, no speed prediction",
+  "repeats": 3,
+  "parity": true,
+  "census": {
+    "quilts": 1101,
+    "calls": 95555929,
+    "mapHits": 93498613,
+    "invalidations": 0,
+    "slots": [
+      {
+        "size": 64,
+        "hits": 41105633,
+        "cold": 61253,
+        "collisions": 54389043
+      },
+      {
+        "size": 256,
+        "hits": 60181193,
+        "cold": 235470,
+        "collisions": 35139266
+      },
+      {
+        "size": 1024,
+        "hits": 77565539,
+        "cold": 798813,
+        "collisions": 17191577
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "scope": "independent reference trace, stub clearance, no geometry claim",
+  "census": {
+    "quilts": 1,
+    "calls": 536,
+    "mapHits": 9,
+    "invalidations": 4,
+    "slots": [
+      {
+        "size": 64,
+        "hits": 5,
+        "cold": 87,
+        "collisions": 444
+      },
+      {
+        "size": 256,
+        "hits": 6,
+        "cold": 233,
+        "collisions": 297
+      },
+      {
+        "size": 1024,
+        "hits": 6,
+        "cold": 233,
+        "collisions": 297
+      }
+    ]
+  }
+}
