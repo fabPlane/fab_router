@@ -1,0 +1,33 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+12 |       (general (thickness 1.6)) (paper "A4")
+13 |       (layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user))
+14 |       (setup (pad_to_mask_clearance ${clearance})))`;
+15 |     await writeFile(before, board(0.2)); await writeFile(after, board(0));
+16 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+17 |     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate embedded board rules differ");
+                                                                ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:17:60)
+(fail) native gate rejects a changed embedded board rule even with clean reports [2374.29ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.31ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.05ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.06ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.33ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.06ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.03ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.03ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.13ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [0.97ms]
+(pass) rejects malformed connectivity findings in either report [0.13ms]
+
+ 11 pass
+ 1 fail
+ 39 expect() calls
+Ran 12 tests across 1 file. [2.46s]

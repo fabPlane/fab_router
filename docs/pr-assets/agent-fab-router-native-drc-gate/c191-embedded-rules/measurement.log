@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-native-drc-gate/measure.py", line 18, in <module>
+    assert result.returncode in (0,1),(row['case'],result.returncode,result.stderr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('rufs-smart-psu-j1', 2, 'Candidate embedded board rules differ from input\n')

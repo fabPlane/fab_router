@@ -1,0 +1,33 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-bugs/scratch/c191/outlined-before.test.ts:
+13 |       (layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user))
+14 |       (setup (pad_to_mask_clearance ${clearance}))
+15 |       (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+16 |         (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")))`;
+17 |     await writeFile(before, board(0.2)); await writeFile(after, board(0));
+18 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+                                          ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c191/outlined-before.test.ts:18:38)
+(fail) native gate rejects a changed embedded board rule even with clean reports [3171.28ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.34ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.05ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.03ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.38ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.05ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.04ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.15ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.27ms]
+(pass) rejects malformed connectivity findings in either report [0.15ms]
+
+ 11 pass
+ 1 fail
+ 39 expect() calls
+Ran 12 tests across 1 file. [3.18s]

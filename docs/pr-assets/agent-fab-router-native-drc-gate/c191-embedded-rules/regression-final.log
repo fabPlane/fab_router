@@ -1,0 +1,26 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [4.65ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.67ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.06ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.05ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.41ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.08ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.04ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.07ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.15ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.70ms]
+(pass) rejects malformed connectivity findings in either report [0.24ms]
+
+test/kicad-board-rules.test.ts:
+(pass) permits added routing and whitespace/numeric formatting while preserving rules [0.17ms]
+(pass) protects layer order, stackup and unknown embedded setup fields [0.18ms]
+(pass) permits native-added layer display aliases without changing physical layer definitions [0.04ms]
+(pass) does not ignore trailing text, duplicate/missing sections or malformed strings [0.11ms]
+
+ 16 pass
+ 0 fail
+ 51 expect() calls
+Ran 16 tests across 2 files. [76.00ms]
