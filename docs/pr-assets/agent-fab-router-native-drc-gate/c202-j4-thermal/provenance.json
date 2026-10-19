@@ -1,0 +1,10 @@
+{
+  "measured_engine_commit": "5e932ec7c549df636cc9a2e337ad3cabce78d3d6",
+  "measured_source": "unchanged committed production and native search tools",
+  "measurement": "same complete J4 seed1 snapshot searched three times, NOT a scored router run",
+  "cpu": "searches and extracted recheck20-21; full tests22-25; within allocated20-25",
+  "fixture_added": "test fixture and J4 regression appended while full suite running, before native-thermal-search.test.ts loaded; final suite count and named test must confirm coverage; static checks rerun afterwards",
+  "early_replay": "Verifier was invoked before repeat2 result.json existed; FileNotFoundError. No native attempt was stopped; final verifier rerun after all searches completed.",
+  "initial_search_wall_time": "not recorded; no speed claim",
+  "native_version": "10.0.6"
+}

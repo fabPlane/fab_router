@@ -49,3 +49,30 @@ test.skipIf(!hasNative)("bounded native search repairs two complete-board therma
     expect(Buffer.from(bundle.routed[0].base64, "base64")).toEqual(before);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 600_000);
+
+test.skipIf(!hasNative)("bounded native search restores the J4 ground-pad thermal without opening routed nets", async () => {
+  const root = await mkdtemp(join(tmpdir(), "thermal-j4-test-"));
+  const fixture = "test/fixtures/native-thermal-j4/";
+  try {
+    for (const role of ["source", "routed"]) {
+      await writeFile(join(root, `${role}.kicad_pcb`), gunzipSync(await readFile(fixture + `${role}.kicad_pcb.gz`)));
+      for (const ext of [".kicad_pro", ".kicad_dru"]) await writeFile(join(root, role + ext), await readFile(fixture + "board" + ext));
+    }
+    const source = join(root, "source.kicad_pcb"), routed = join(root, "routed.kicad_pcb");
+    const before = { source: await readFile(source), routed: await readFile(routed) };
+    const result = await searchNativeThermals(source, routed, join(root, "accepted.json"), join(root, "search"));
+    const baseline = JSON.parse(await readFile(join(root, "search", "baseline.json"), "utf8"));
+    expect(baseline.newErrors.map((error: { type: string }) => error.type)).toEqual(["starved_thermal"]);
+    expect(result.repaired).toBe(true);
+    expect(result.published).toBe(true);
+    expect(result.validation.newErrors).toHaveLength(0);
+    expect(result.validation.opensAfter).toBe(0);
+    expect(result.validation.lostTerminalPairs).toBe(0);
+    expect(result.validation.repair?.lostTerminalPairs).toBe(0);
+    expect(await readFile(source)).toEqual(before.source);
+    expect(await readFile(routed)).toEqual(before.routed);
+    const bundle = JSON.parse(await readFile(join(root, "accepted.json"), "utf8"));
+    expect(Buffer.from(bundle.input[0].base64, "base64")).toEqual(before.source);
+    expect(Buffer.from(bundle.routed[0].base64, "base64")).toEqual(before.routed);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 180_000);
