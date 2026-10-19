@@ -1,0 +1,46 @@
+{
+  "controls": [
+    {
+      "name": "control",
+      "exit": 0,
+      "expected": "pass",
+      "correct": true
+    },
+    {
+      "name": "changed-settings",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    },
+    {
+      "name": "changed-expected",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    },
+    {
+      "name": "added-violation",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    },
+    {
+      "name": "changed-source",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    },
+    {
+      "name": "changed-board",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    },
+    {
+      "name": "not-timeout",
+      "exit": 1,
+      "expected": "reject",
+      "correct": true
+    }
+  ]
+}
