@@ -1,0 +1,60 @@
+FFFFF
+======================================================================
+FAIL: test_coincident_foreign_track_is_unchanged (__main__.Ownership.test_coincident_foreign_track_is_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c183-via-ownership/test_ownership.py", line 37, in test_coincident_foreign_track_is_unchanged
+    self.assertEqual(result[4], before[4])
+AssertionError: Lists differ: ['seg[14 chars]', '1.5', '1.75'], ['end', '8', '9'], ['net', [21 chars]gn']] != ['seg[14 chars]', '1', '2'], ['end', '8', '9'], ['net', '2'],[16 chars]gn']]
+
+First differing element 1:
+['start', '1.5', '1.75']
+['start', '1', '2']
+
+  ['segment',
+-  ['start', '1.5', '1.75'],
+?              --    ^^^^
+
++  ['start', '1', '2'],
+?                  ^
+
+   ['end', '8', '9'],
+   ['net', '2'],
+   ['uuid', 'foreign']]
+
+======================================================================
+FAIL: test_missing_net_rejects_move (__main__.Ownership.test_missing_net_rejects_move)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c183-via-ownership/test_ownership.py", line 61, in test_missing_net_rejects_move
+    with self.assertRaisesRegex(ValueError, 'net'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_original_incident_track_rejects_move (__main__.Ownership.test_original_incident_track_rejects_move)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c183-via-ownership/test_ownership.py", line 45, in test_original_incident_track_rejects_move
+    with self.assertRaisesRegex(ValueError, 'protected copper'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_original_via_rejects_move (__main__.Ownership.test_original_via_rejects_move)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c183-via-ownership/test_ownership.py", line 51, in test_original_via_rejects_move
+    with self.assertRaisesRegex(ValueError, 'protected copper'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_ownership_inventory_is_required (__main__.Ownership.test_ownership_inventory_is_required)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c183-via-ownership/test_ownership.py", line 56, in test_ownership_inventory_is_required
+    with self.assertRaises(TypeError):
+AssertionError: TypeError not raised
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+FAILED (failures=5)
