@@ -1,0 +1,1359 @@
+{
+  "scope": "Historical cycle31 default-off versus fresh cycle39 default-off. Same host/cores, three repeats/case. No candidate engine or causal timing comparison. Unit tests overlap fresh sweep.",
+  "before": {
+    "attempts": 78,
+    "passed": 39,
+    "valid_cases_3of3": 13,
+    "opens": 120,
+    "new_errors": 27,
+    "vias": 2826,
+    "length_mm": 58809.32139721951,
+    "median_s": 1.1361895265,
+    "p95_s": 17.026948902999997,
+    "total_s": 403.58108083
+  },
+  "after": {
+    "attempts": 78,
+    "passed": 39,
+    "valid_cases_3of3": 13,
+    "opens": 120,
+    "new_errors": 27,
+    "vias": 2826,
+    "length_mm": 58809.32139721951,
+    "median_s": 1.2444151905,
+    "p95_s": 17.871579326,
+    "total_s": 404.189740335
+  },
+  "same_sessions": 78,
+  "introduced_findings": 0,
+  "case_rows": [
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 15,
+        "new_errors": 0,
+        "vias": 306,
+        "length_mm": 2727.066103830616,
+        "median_s": 3.959925365,
+        "p95_s": 4.038944756,
+        "total_s": 11.707484235999999
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 15,
+        "new_errors": 0,
+        "vias": 306,
+        "length_mm": 2727.066103830616,
+        "median_s": 4.011816229,
+        "p95_s": 4.593232537,
+        "total_s": 12.337454138
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1685.5791091877636,
+        "median_s": 0.9917815080000001,
+        "p95_s": 1.008598851,
+        "total_s": 2.8829665540000002
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1685.5791091877636,
+        "median_s": 0.860751733,
+        "p95_s": 0.876839901,
+        "total_s": 2.5971226759999997
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1595.991565770064,
+        "median_s": 0.7323619100000001,
+        "p95_s": 0.742252542,
+        "total_s": 2.19854198
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1595.991565770064,
+        "median_s": 0.723233199,
+        "p95_s": 0.726213139,
+        "total_s": 2.168672023
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 66,
+        "length_mm": 1486.700097196442,
+        "median_s": 3.491480658,
+        "p95_s": 3.772043205,
+        "total_s": 10.573807792
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 66,
+        "length_mm": 1486.700097196442,
+        "median_s": 3.50445632,
+        "p95_s": 4.040763446,
+        "total_s": 10.933481669999999
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 300,
+        "length_mm": 3947.358168069197,
+        "median_s": 2.158517179,
+        "p95_s": 2.164141333,
+        "total_s": 6.332749939999999
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 300,
+        "length_mm": 3947.358168069197,
+        "median_s": 2.0079308989999998,
+        "p95_s": 2.1700628379999998,
+        "total_s": 6.171004965
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 333,
+        "length_mm": 4107.8455161021,
+        "median_s": 1.013806375,
+        "p95_s": 1.032585946,
+        "total_s": 3.0447094889999997
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 333,
+        "length_mm": 4107.8455161021,
+        "median_s": 1.369875658,
+        "p95_s": 1.651679646,
+        "total_s": 4.045363117
+      }
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 45,
+        "new_errors": 18,
+        "vias": 390,
+        "length_mm": 5193.339379609684,
+        "median_s": 50.769026127,
+        "p95_s": 53.973186661,
+        "total_s": 154.149766968
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 45,
+        "new_errors": 18,
+        "vias": 390,
+        "length_mm": 5193.339379609684,
+        "median_s": 52.194418899,
+        "p95_s": 56.249937863,
+        "total_s": 158.892661618
+      }
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 120,
+        "length_mm": 2536.4579912485387,
+        "median_s": 2.199501092,
+        "p95_s": 2.460331699,
+        "total_s": 6.831872333
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 120,
+        "length_mm": 2536.4579912485387,
+        "median_s": 2.159046565,
+        "p95_s": 2.352504575,
+        "total_s": 6.660709998
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1058.071790793463,
+        "median_s": 0.734426044,
+        "p95_s": 0.862272256,
+        "total_s": 2.323583424
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1058.071790793463,
+        "median_s": 0.717861808,
+        "p95_s": 0.735373596,
+        "total_s": 2.169519417
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1062.528801223025,
+        "median_s": 0.73485062,
+        "p95_s": 0.739215837,
+        "total_s": 2.198826012
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1062.528801223025,
+        "median_s": 0.72976318,
+        "p95_s": 0.744512924,
+        "total_s": 2.199622724
+      }
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 27,
+        "length_mm": 719.0542264045845,
+        "median_s": 0.754199683,
+        "p95_s": 0.8637297660000001,
+        "total_s": 2.355365284
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 27,
+        "length_mm": 719.0542264045845,
+        "median_s": 0.717476051,
+        "p95_s": 1.247523191,
+        "total_s": 2.680981127
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 123,
+        "length_mm": 4566.177941247373,
+        "median_s": 3.201385519,
+        "p95_s": 3.3316389010000003,
+        "total_s": 9.609493975
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 123,
+        "length_mm": 4566.177941247373,
+        "median_s": 3.0483957270000004,
+        "p95_s": 3.1959627889999997,
+        "total_s": 9.261048626000001
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 4452.316235703834,
+        "median_s": 0.993738464,
+        "p95_s": 1.008286408,
+        "total_s": 2.993901738
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 4452.316235703834,
+        "median_s": 0.979263534,
+        "p95_s": 0.9946489780000001,
+        "total_s": 2.951163647
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 6,
+        "length_mm": 4494.817681634241,
+        "median_s": 0.8618754980000001,
+        "p95_s": 0.887959807,
+        "total_s": 2.4874396020000002
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 6,
+        "length_mm": 4494.817681634241,
+        "median_s": 0.717421511,
+        "p95_s": 0.750155201,
+        "total_s": 2.179997712
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 195,
+        "length_mm": 4286.173574738397,
+        "median_s": 8.183020627,
+        "p95_s": 8.458097690999999,
+        "total_s": 24.520253216999997
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 9,
+        "new_errors": 0,
+        "vias": 195,
+        "length_mm": 4286.173574738397,
+        "median_s": 7.819574939,
+        "p95_s": 8.132586791,
+        "total_s": 23.756856454
+      }
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 18,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 513.7053765064534,
+        "median_s": 16.61257021,
+        "p95_s": 17.026948902999997,
+        "total_s": 50.139425284
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 18,
+        "new_errors": 0,
+        "vias": 3,
+        "length_mm": 513.7053765064534,
+        "median_s": 16.455109675,
+        "p95_s": 17.871579326,
+        "total_s": 50.26633579
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 6,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1756.9660355492956,
+        "median_s": 11.908531968,
+        "p95_s": 13.164905097,
+        "total_s": 36.881796338
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 6,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1756.9660355492956,
+        "median_s": 11.650183819,
+        "p95_s": 12.625845389,
+        "total_s": 35.581850953
+      }
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 6,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1767.2281522757912,
+        "median_s": 15.124599273000001,
+        "p95_s": 15.504393299,
+        "total_s": 45.64731702
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 6,
+        "new_errors": 0,
+        "vias": 36,
+        "length_mm": 1767.2281522757912,
+        "median_s": 14.21407937,
+        "p95_s": 14.785355444,
+        "total_s": 43.147314308
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 177,
+        "length_mm": 2484.7025872276695,
+        "median_s": 1.3851621920000001,
+        "p95_s": 1.403168683,
+        "total_s": 4.171270785
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 177,
+        "length_mm": 2484.7025872276695,
+        "median_s": 1.4112027459999998,
+        "p95_s": 1.5432353460000001,
+        "total_s": 4.32474838
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 60,
+        "length_mm": 1418.7435032624353,
+        "median_s": 0.866654061,
+        "p95_s": 0.879300677,
+        "total_s": 2.594237443
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 60,
+        "length_mm": 1418.7435032624353,
+        "median_s": 0.859876616,
+        "p95_s": 0.881267168,
+        "total_s": 2.593334733
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 0,
+        "new_errors": 6,
+        "vias": 51,
+        "length_mm": 1441.2988532791137,
+        "median_s": 0.7333305320000001,
+        "p95_s": 0.748954677,
+        "total_s": 2.2063566039999998
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 0,
+        "new_errors": 6,
+        "vias": 51,
+        "length_mm": 1441.2988532791137,
+        "median_s": 0.740150454,
+        "p95_s": 0.742829718,
+        "total_s": 2.201045266
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 0,
+        "new_errors": 3,
+        "vias": 114,
+        "length_mm": 1569.5967346285875,
+        "median_s": 1.000952376,
+        "p95_s": 1.017747773,
+        "total_s": 3.011750558
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 0,
+        "new_errors": 3,
+        "vias": 114,
+        "length_mm": 1569.5967346285875,
+        "median_s": 1.007482534,
+        "p95_s": 1.158576539,
+        "total_s": 3.137722332
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1162.3027849518721,
+        "median_s": 0.732524802,
+        "p95_s": 0.87564563,
+        "total_s": 2.335760532
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 81,
+        "length_mm": 1162.3027849518721,
+        "median_s": 0.875858656,
+        "p95_s": 0.884871645,
+        "total_s": 2.517143475
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1137.0535057620348,
+        "median_s": 1.938830466,
+        "p95_s": 1.940115447,
+        "total_s": 5.8037831529999995
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 78,
+        "length_mm": 1137.0535057620348,
+        "median_s": 1.755700052,
+        "p95_s": 1.971728729,
+        "total_s": 5.365959929
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 48,
+        "length_mm": 966.0205158846148,
+        "median_s": 1.245923132,
+        "p95_s": 1.538860515,
+        "total_s": 4.024576754
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 0,
+        "valid_cases_3of3": 0,
+        "opens": 3,
+        "new_errors": 0,
+        "vias": 48,
+        "length_mm": 966.0205158846148,
+        "median_s": 1.117862149,
+        "p95_s": 1.2413071900000001,
+        "total_s": 3.4705460730000004
+      }
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "before": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 42,
+        "length_mm": 672.2251651323156,
+        "median_s": 0.85339104,
+        "p95_s": 0.863900891,
+        "total_s": 2.554043815
+      },
+      "after": {
+        "attempts": 3,
+        "passed": 3,
+        "valid_cases_3of3": 1,
+        "opens": 0,
+        "new_errors": 0,
+        "vias": 42,
+        "length_mm": 672.2251651323156,
+        "median_s": 0.8531611769999999,
+        "p95_s": 0.879528399,
+        "total_s": 2.578079184
+      }
+    }
+  ],
+  "attempts": [
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 2,
+      "before_seconds": 0.7275901,
+      "after_seconds": 0.756413174,
+      "same_ses": true,
+      "ses_sha256": "0f1e76ad403695e6ea5b4b602483ca43df4e342d4d070999368377f2ca734c45"
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 3,
+      "before_seconds": 1.017747773,
+      "after_seconds": 1.158576539,
+      "same_ses": true,
+      "ses_sha256": "9a6d1ef8326c52371e8839f2f40c1bb6c9657e20d26650e8b22a822852c4e3c8"
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 2,
+      "before_seconds": 16.61257021,
+      "after_seconds": 17.871579326,
+      "same_ses": true,
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 1,
+      "before_seconds": 50.769026127,
+      "after_seconds": 56.249937863,
+      "same_ses": true,
+      "ses_sha256": "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "before_seconds": 0.998317168,
+      "after_seconds": 1.369875658,
+      "same_ses": true,
+      "ses_sha256": "1164acd18de5d59422615cb63344bbf80b7314ab532672b463ed661d5df7f479"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 2,
+      "before_seconds": 0.754199683,
+      "after_seconds": 1.247523191,
+      "same_ses": true,
+      "ses_sha256": "a519bfa2373c6de0ffd61e8ddd4ae815b2eff1229d3344c6dcb248b9decda6cd"
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 1,
+      "before_seconds": 3.959925365,
+      "after_seconds": 4.593232537,
+      "same_ses": true,
+      "ses_sha256": "f8e863357f2fa4b6b6ccdd4d6c039146729dfaecb6bddfbf2d6cea4b3bbf63df"
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "before_seconds": 1.013806375,
+      "after_seconds": 1.651679646,
+      "same_ses": true,
+      "ses_sha256": "1164acd18de5d59422615cb63344bbf80b7314ab532672b463ed661d5df7f479"
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 2,
+      "before_seconds": 1.940115447,
+      "after_seconds": 1.971728729,
+      "same_ses": true,
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb"
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 3,
+      "before_seconds": 1.403168683,
+      "after_seconds": 1.5432353460000001,
+      "same_ses": true,
+      "ses_sha256": "b04eb09a4b7461ff5da51c97e97ba7b779ab8b0143a3a49db28fcd9f1813b09b"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 3,
+      "before_seconds": 0.739215837,
+      "after_seconds": 0.7253466199999999,
+      "same_ses": true,
+      "ses_sha256": "eb09877059ee2cb486e864518e9fc2c94cc226ad47abae23ef3046eedf452a6f"
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 1,
+      "before_seconds": 2.199501092,
+      "after_seconds": 2.352504575,
+      "same_ses": true,
+      "ses_sha256": "2fe206fee0c9a165673260a2b598d91f04fbb206a94bbbcae732671f62b6c669"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "before_seconds": 0.882586195,
+      "after_seconds": 0.860751733,
+      "same_ses": true,
+      "ses_sha256": "b5ef257e49b8a99bc49dcd2feac7303244c2d1b7608d5b0b5021f2a12a27686c"
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 2,
+      "before_seconds": 4.038944756,
+      "after_seconds": 4.011816229,
+      "same_ses": true,
+      "ses_sha256": "f8e863357f2fa4b6b6ccdd4d6c039146729dfaecb6bddfbf2d6cea4b3bbf63df"
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 1,
+      "before_seconds": 0.87564563,
+      "after_seconds": 0.884871645,
+      "same_ses": true,
+      "ses_sha256": "0f1e76ad403695e6ea5b4b602483ca43df4e342d4d070999368377f2ca734c45"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "before_seconds": 1.008598851,
+      "after_seconds": 0.876839901,
+      "same_ses": true,
+      "ses_sha256": "b5ef257e49b8a99bc49dcd2feac7303244c2d1b7608d5b0b5021f2a12a27686c"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "before_seconds": 3.772043205,
+      "after_seconds": 3.50445632,
+      "same_ses": true,
+      "ses_sha256": "da5fc12523fd7fd82fd2d1e94ec5ecd2ce60e05690df395c07a055409af9ced9"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "before_seconds": 0.991876866,
+      "after_seconds": 0.9946489780000001,
+      "same_ses": true,
+      "ses_sha256": "f142fe81268b9f179f88069001ce9c5b52fdf2356f6807e5aef706e2f8eb6e87"
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 1,
+      "before_seconds": 0.9930504090000001,
+      "after_seconds": 1.007482534,
+      "same_ses": true,
+      "ses_sha256": "9a6d1ef8326c52371e8839f2f40c1bb6c9657e20d26650e8b22a822852c4e3c8"
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 2,
+      "before_seconds": 49.40755418,
+      "after_seconds": 52.194418899,
+      "same_ses": true,
+      "ses_sha256": "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 2,
+      "before_seconds": 0.726885124,
+      "after_seconds": 0.735373596,
+      "same_ses": true,
+      "ses_sha256": "364dfda161ee5ffbf1ac2f0b58795294df02c2377847c66101edb89c8b9bb4da"
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 3,
+      "before_seconds": 3.7086141149999996,
+      "after_seconds": 3.732405372,
+      "same_ses": true,
+      "ses_sha256": "f8e863357f2fa4b6b6ccdd4d6c039146729dfaecb6bddfbf2d6cea4b3bbf63df"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "before_seconds": 0.9917815080000001,
+      "after_seconds": 0.859531042,
+      "same_ses": true,
+      "ses_sha256": "b5ef257e49b8a99bc49dcd2feac7303244c2d1b7608d5b0b5021f2a12a27686c"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "before_seconds": 0.7376042970000001,
+      "after_seconds": 0.750155201,
+      "same_ses": true,
+      "ses_sha256": "262cda51f1beb30d82768db49b601947f56788fc62e25b6c410fa192482ca73d"
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 1,
+      "before_seconds": 1.2397931070000001,
+      "after_seconds": 1.2413071900000001,
+      "same_ses": true,
+      "ses_sha256": "a143abb087d2fc1598ded772ae1f020533b69fcf227633c087fee754b5886b7a"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "before_seconds": 3.3316389010000003,
+      "after_seconds": 3.1959627889999997,
+      "same_ses": true,
+      "ses_sha256": "bfa7124be6b6f68bfe5f451bf8b6b141d25436600d6c55530b304bd5d3407ab2"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "before_seconds": 0.7239275279999999,
+      "after_seconds": 0.726213139,
+      "same_ses": true,
+      "ses_sha256": "af486c3d45324652f5b10850000a43195be2672c700ee5db8b0a5dab2a191ec5"
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 2,
+      "before_seconds": 0.85339104,
+      "after_seconds": 0.879528399,
+      "same_ses": true,
+      "ses_sha256": "e594a971a4353e92f96b8bd63ac8b54cc2718571ee2f33c8f2c49906aca0d0db"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "before_seconds": 0.8482827049999999,
+      "after_seconds": 0.859876616,
+      "same_ses": true,
+      "ses_sha256": "8db973c413034432f0961c25326188d76c3b7a94b3e6f36563809d2c172474b9"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "before_seconds": 0.724071395,
+      "after_seconds": 0.742829718,
+      "same_ses": true,
+      "ses_sha256": "4ec0fdeb310fc73c719584b4331eac737ce50119d73a157c2e837d4a2964c564"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "before_seconds": 3.310283929,
+      "after_seconds": 4.040763446,
+      "same_ses": true,
+      "ses_sha256": "da5fc12523fd7fd82fd2d1e94ec5ecd2ce60e05690df395c07a055409af9ced9"
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 3,
+      "before_seconds": 16.499906171,
+      "after_seconds": 16.455109675,
+      "same_ses": true,
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 1,
+      "before_seconds": 1.3851621920000001,
+      "after_seconds": 1.4112027459999998,
+      "same_ses": true,
+      "ses_sha256": "b04eb09a4b7461ff5da51c97e97ba7b779ab8b0143a3a49db28fcd9f1813b09b"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 2,
+      "before_seconds": 0.7247595549999999,
+      "after_seconds": 0.744512924,
+      "same_ses": true,
+      "ses_sha256": "eb09877059ee2cb486e864518e9fc2c94cc226ad47abae23ef3046eedf452a6f"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "before_seconds": 0.7323619100000001,
+      "after_seconds": 0.723233199,
+      "same_ses": true,
+      "ses_sha256": "af486c3d45324652f5b10850000a43195be2672c700ee5db8b0a5dab2a191ec5"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 2,
+      "before_seconds": 15.504393299,
+      "after_seconds": 14.147879494,
+      "same_ses": true,
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "before_seconds": 3.491480658,
+      "after_seconds": 3.388261904,
+      "same_ses": true,
+      "ses_sha256": "da5fc12523fd7fd82fd2d1e94ec5ecd2ce60e05690df395c07a055409af9ced9"
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 3,
+      "before_seconds": 53.973186661,
+      "after_seconds": 50.448304856,
+      "same_ses": true,
+      "ses_sha256": "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 2,
+      "before_seconds": 1.538860515,
+      "after_seconds": 1.117862149,
+      "same_ses": true,
+      "ses_sha256": "a143abb087d2fc1598ded772ae1f020533b69fcf227633c087fee754b5886b7a"
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 3,
+      "before_seconds": 0.732524802,
+      "after_seconds": 0.875858656,
+      "same_ses": true,
+      "ses_sha256": "0f1e76ad403695e6ea5b4b602483ca43df4e342d4d070999368377f2ca734c45"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 1,
+      "before_seconds": 8.183020627,
+      "after_seconds": 8.132586791,
+      "same_ses": true,
+      "ses_sha256": "c61acdfcdea7d0d89dc0a79829c08411203edd35dad6d85a8a159e72551cd754"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 1,
+      "before_seconds": 11.908531968,
+      "after_seconds": 12.625845389,
+      "same_ses": true,
+      "ses_sha256": "1c10e8a82fdb5157ec696cbc9ce64b47215dbae180b2a050daffd4e6f21f96ae"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 2,
+      "before_seconds": 13.164905097,
+      "after_seconds": 11.650183819,
+      "same_ses": true,
+      "ses_sha256": "1c10e8a82fdb5157ec696cbc9ce64b47215dbae180b2a050daffd4e6f21f96ae"
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 3,
+      "before_seconds": 1.92483724,
+      "after_seconds": 1.755700052,
+      "same_ses": true,
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "before_seconds": 0.879300677,
+      "after_seconds": 0.881267168,
+      "same_ses": true,
+      "ses_sha256": "8db973c413034432f0961c25326188d76c3b7a94b3e6f36563809d2c172474b9"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 3,
+      "before_seconds": 8.458097690999999,
+      "after_seconds": 7.804694724,
+      "same_ses": true,
+      "ses_sha256": "c61acdfcdea7d0d89dc0a79829c08411203edd35dad6d85a8a159e72551cd754"
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 1,
+      "before_seconds": 0.863900891,
+      "after_seconds": 0.8531611769999999,
+      "same_ses": true,
+      "ses_sha256": "e594a971a4353e92f96b8bd63ac8b54cc2718571ee2f33c8f2c49906aca0d0db"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "before_seconds": 3.076469555,
+      "after_seconds": 3.0483957270000004,
+      "same_ses": true,
+      "ses_sha256": "bfa7124be6b6f68bfe5f451bf8b6b141d25436600d6c55530b304bd5d3407ab2"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "before_seconds": 0.7333305320000001,
+      "after_seconds": 0.718065094,
+      "same_ses": true,
+      "ses_sha256": "4ec0fdeb310fc73c719584b4331eac737ce50119d73a157c2e837d4a2964c564"
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 2,
+      "before_seconds": 1.000952376,
+      "after_seconds": 0.9716632590000001,
+      "same_ses": true,
+      "ses_sha256": "9a6d1ef8326c52371e8839f2f40c1bb6c9657e20d26650e8b22a822852c4e3c8"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 3,
+      "before_seconds": 0.734426044,
+      "after_seconds": 0.717861808,
+      "same_ses": true,
+      "ses_sha256": "364dfda161ee5ffbf1ac2f0b58795294df02c2377847c66101edb89c8b9bb4da"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 1,
+      "before_seconds": 0.73485062,
+      "after_seconds": 0.72976318,
+      "same_ses": true,
+      "ses_sha256": "eb09877059ee2cb486e864518e9fc2c94cc226ad47abae23ef3046eedf452a6f"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 3,
+      "before_seconds": 15.124599273000001,
+      "after_seconds": 14.21407937,
+      "same_ses": true,
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "before_seconds": 3.201385519,
+      "after_seconds": 3.0166901100000003,
+      "same_ses": true,
+      "ses_sha256": "bfa7124be6b6f68bfe5f451bf8b6b141d25436600d6c55530b304bd5d3407ab2"
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 1,
+      "before_seconds": 2.164141333,
+      "after_seconds": 1.9930112279999999,
+      "same_ses": true,
+      "ses_sha256": "2c180312f770ffe8145c563ae2ae815b00cc8738527dffbb9b0fd45f5ece3d6e"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "before_seconds": 0.748954677,
+      "after_seconds": 0.740150454,
+      "same_ses": true,
+      "ses_sha256": "4ec0fdeb310fc73c719584b4331eac737ce50119d73a157c2e837d4a2964c564"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "before_seconds": 0.993738464,
+      "after_seconds": 0.9772511349999999,
+      "same_ses": true,
+      "ses_sha256": "f142fe81268b9f179f88069001ce9c5b52fdf2356f6807e5aef706e2f8eb6e87"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "before_seconds": 1.008286408,
+      "after_seconds": 0.979263534,
+      "same_ses": true,
+      "ses_sha256": "f142fe81268b9f179f88069001ce9c5b52fdf2356f6807e5aef706e2f8eb6e87"
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "before_seconds": 0.866654061,
+      "after_seconds": 0.8521909489999999,
+      "same_ses": true,
+      "ses_sha256": "8db973c413034432f0961c25326188d76c3b7a94b3e6f36563809d2c172474b9"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 1,
+      "before_seconds": 0.737435835,
+      "after_seconds": 0.717476051,
+      "same_ses": true,
+      "ses_sha256": "a519bfa2373c6de0ffd61e8ddd4ae815b2eff1229d3344c6dcb248b9decda6cd"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "before_seconds": 0.8618754980000001,
+      "after_seconds": 0.717421511,
+      "same_ses": true,
+      "ses_sha256": "262cda51f1beb30d82768db49b601947f56788fc62e25b6c410fa192482ca73d"
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 1,
+      "before_seconds": 1.938830466,
+      "after_seconds": 1.638531148,
+      "same_ses": true,
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "before_seconds": 0.887959807,
+      "after_seconds": 0.712421,
+      "same_ses": true,
+      "ses_sha256": "262cda51f1beb30d82768db49b601947f56788fc62e25b6c410fa192482ca73d"
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "before_seconds": 0.742252542,
+      "after_seconds": 0.719225685,
+      "same_ses": true,
+      "ses_sha256": "af486c3d45324652f5b10850000a43195be2672c700ee5db8b0a5dab2a191ec5"
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 2,
+      "before_seconds": 1.38293991,
+      "after_seconds": 1.370310288,
+      "same_ses": true,
+      "ses_sha256": "b04eb09a4b7461ff5da51c97e97ba7b779ab8b0143a3a49db28fcd9f1813b09b"
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 3,
+      "before_seconds": 1.245923132,
+      "after_seconds": 1.111376734,
+      "same_ses": true,
+      "ses_sha256": "a143abb087d2fc1598ded772ae1f020533b69fcf227633c087fee754b5886b7a"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 3,
+      "before_seconds": 11.808359273,
+      "after_seconds": 11.305821745,
+      "same_ses": true,
+      "ses_sha256": "1c10e8a82fdb5157ec696cbc9ce64b47215dbae180b2a050daffd4e6f21f96ae"
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 1,
+      "before_seconds": 15.018324448000001,
+      "after_seconds": 14.785355444,
+      "same_ses": true,
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768"
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "before_seconds": 1.032585946,
+      "after_seconds": 1.023807813,
+      "same_ses": true,
+      "ses_sha256": "1164acd18de5d59422615cb63344bbf80b7314ab532672b463ed661d5df7f479"
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 2,
+      "before_seconds": 2.460331699,
+      "after_seconds": 2.149158858,
+      "same_ses": true,
+      "ses_sha256": "2fe206fee0c9a165673260a2b598d91f04fbb206a94bbbcae732671f62b6c669"
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 1,
+      "before_seconds": 17.026948902999997,
+      "after_seconds": 15.939646789,
+      "same_ses": true,
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4"
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 3,
+      "before_seconds": 2.158517179,
+      "after_seconds": 2.1700628379999998,
+      "same_ses": true,
+      "ses_sha256": "2c180312f770ffe8145c563ae2ae815b00cc8738527dffbb9b0fd45f5ece3d6e"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 1,
+      "before_seconds": 0.862272256,
+      "after_seconds": 0.716284013,
+      "same_ses": true,
+      "ses_sha256": "364dfda161ee5ffbf1ac2f0b58795294df02c2377847c66101edb89c8b9bb4da"
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 3,
+      "before_seconds": 2.172039542,
+      "after_seconds": 2.159046565,
+      "same_ses": true,
+      "ses_sha256": "2fe206fee0c9a165673260a2b598d91f04fbb206a94bbbcae732671f62b6c669"
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 3,
+      "before_seconds": 0.836751884,
+      "after_seconds": 0.845389608,
+      "same_ses": true,
+      "ses_sha256": "e594a971a4353e92f96b8bd63ac8b54cc2718571ee2f33c8f2c49906aca0d0db"
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 2,
+      "before_seconds": 2.010091428,
+      "after_seconds": 2.0079308989999998,
+      "same_ses": true,
+      "ses_sha256": "2c180312f770ffe8145c563ae2ae815b00cc8738527dffbb9b0fd45f5ece3d6e"
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 2,
+      "before_seconds": 7.879134899,
+      "after_seconds": 7.819574939,
+      "same_ses": true,
+      "ses_sha256": "c61acdfcdea7d0d89dc0a79829c08411203edd35dad6d85a8a159e72551cd754"
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 3,
+      "before_seconds": 0.8637297660000001,
+      "after_seconds": 0.715981885,
+      "same_ses": true,
+      "ses_sha256": "a519bfa2373c6de0ffd61e8ddd4ae815b2eff1229d3344c6dcb248b9decda6cd"
+    }
+  ]
+}
