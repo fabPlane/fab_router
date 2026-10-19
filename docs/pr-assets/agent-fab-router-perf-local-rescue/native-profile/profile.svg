@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="white"/>
+<g font-family="sans-serif" fill="#172b4d"><text x="35" y="45" font-size="27">Complete-board CPU profile: boundary geometry leads self samples</text>
+<text x="35" y="79" font-size="18">Aquarius J4 • one production replay • no speedup claim • session and stats identical</text>
+<text x="35" y="145" font-size="19">pointInRing</text>
+<rect x="270" y="125" width="650.000" height="29" fill="#356c9b"/>
+<text x="930.000" y="146" font-size="18">11.29 s</text>
+<text x="35" y="198" font-size="19">collect</text>
+<rect x="270" y="178" width="296.128" height="29" fill="#356c9b"/>
+<text x="576.128" y="199" font-size="18">5.14 s</text>
+<text x="35" y="251" font-size="19">test</text>
+<rect x="270" y="231" width="183.147" height="29" fill="#356c9b"/>
+<text x="463.147" y="252" font-size="18">3.18 s</text>
+<text x="35" y="304" font-size="19">withinRim</text>
+<rect x="270" y="284" width="157.297" height="29" fill="#356c9b"/>
+<text x="437.297" y="305" font-size="18">2.73 s</text>
+<text x="35" y="357" font-size="19">sweepClear</text>
+<rect x="270" y="337" width="150.792" height="29" fill="#356c9b"/>
+<text x="430.792" y="358" font-size="18">2.62 s</text>
+<text x="35" y="410" font-size="19">aStarLayered</text>
+<rect x="270" y="390" width="129.272" height="29" fill="#356c9b"/>
+<text x="409.272" y="411" font-size="18">2.25 s</text>
+<text x="35" y="463" font-size="19">dist2SegSeg</text>
+<rect x="270" y="443" width="116.419" height="29" fill="#356c9b"/>
+<text x="396.419" y="464" font-size="18">2.02 s</text>
+<text x="35" y="516" font-size="19">aStar</text>
+<rect x="270" y="496" width="90.611" height="29" fill="#356c9b"/>
+<text x="370.611" y="517" font-size="18">1.57 s</text>
+<text x="35" y="590" font-size="18">Self sampled elapsed time; shared host; profiling overhead included. Native DRC was not rerun.</text></g></svg>
