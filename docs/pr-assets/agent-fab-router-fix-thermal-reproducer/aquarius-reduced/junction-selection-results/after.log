@@ -1,0 +1,50 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+[
+  {
+    "repeat": 1,
+    "case": "diagonal-positive",
+    "passed": true
+  },
+  {
+    "repeat": 1,
+    "case": "diagonal-negative",
+    "passed": true
+  },
+  {
+    "repeat": 1,
+    "case": "ordinary",
+    "passed": true
+  },
+  {
+    "repeat": 2,
+    "case": "diagonal-positive",
+    "passed": true
+  },
+  {
+    "repeat": 2,
+    "case": "diagonal-negative",
+    "passed": true
+  },
+  {
+    "repeat": 2,
+    "case": "ordinary",
+    "passed": true
+  },
+  {
+    "repeat": 3,
+    "case": "diagonal-positive",
+    "passed": true
+  },
+  {
+    "repeat": 3,
+    "case": "diagonal-negative",
+    "passed": true
+  },
+  {
+    "repeat": 3,
+    "case": "ordinary",
+    "passed": true
+  }
+]

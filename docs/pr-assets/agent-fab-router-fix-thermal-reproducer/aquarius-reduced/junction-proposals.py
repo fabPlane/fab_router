@@ -40,8 +40,12 @@ def shared_junction(nodes, track_uuid, centre):
     track=next(n for n in nodes if isinstance(n,list) and native.uid(n)==track_uuid)
     endpoints=[]
     for junction in (point(track,'start'),point(track,'end')):
-        _,moved=move_junction(nodes,track_uuid,junction,(1,1))
-        if len(moved)>1:endpoints.append(junction)
+        # Discovery is topological: a made-up displacement can collapse a
+        # short neighbouring segment even though the junction itself is valid.
+        incident=[n for n in nodes if isinstance(n,list) and n[0]=='segment'
+                  and all(native.child(n,k)==native.child(track,k) for k in ('net','layer'))
+                  and junction in (point(n,'start'),point(n,'end'))]
+        if len(incident)>1:endpoints.append(junction)
     if not endpoints:raise ValueError('no shared straight-track junction')
     return min(endpoints,key=lambda pt:sum((a-b)**2 for a,b in zip(pt,centre)))
 
