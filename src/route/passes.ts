@@ -680,7 +680,7 @@ function tryRouteOnSheet(ctx: RouteCtx, net: number | null, sheet: number, from:
       stepCost,
       minCost,
       bendCost: ctx.settings.bendCost,
-      maxPops: Math.min(MAX_POPS, Math.max(4000, cells)),
+      maxPops: Math.min(MAX_POPS, Math.max(4000, cells)) * (ctx.settings.extendedSearchBudget === true ? 2 : 1),
       ...(deadline !== undefined ? { deadline } : {}),
       ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
       ...(corridorBias ? { corridorBias } : {}),
@@ -911,7 +911,7 @@ function tryRouteLayered(
     const res = aStarLayered(space, {
       starts, goalCell: goal, goalLayers, region, dirs, stepCost, minCost,
       bendCost: ctx.settings.bendCost, viaFloor: viaCost, reachGoal,
-      maxPops: Math.min(MAX_POPS, Math.max(6000, cells)),
+      maxPops: Math.min(MAX_POPS, Math.max(6000, cells)) * (ctx.settings.extendedSearchBudget === true ? 2 : 1),
       ...(deadline !== undefined ? { deadline } : {}),
       ...(ctx.hooks?.signal ? { signal: ctx.hooks.signal } : {}),
       ...(corridorBias ? { corridorBias } : {}),

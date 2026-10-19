@@ -8,6 +8,7 @@ times in milliseconds; costs are dimensionless multipliers.
 
 | Setting | Default | Meaning (observable) |
 |---|---|---|
+| `extendedSearchBudget` | false | Double the bounded planar/layered A* node-pop budgets, including minimums and the 30000 ceiling (60000 when enabled). May improve congested routing at a runtime cost; clearance and deadline checks still apply |
 | `maxPasses` | 100 | Upper bound on router passes. A pass sweeps every incomplete connection once. The run stops early when nothing is incomplete or when `maxStagnantPasses` consecutive passes made no progress |
 | `maxStagnantPasses` | 3 | See above; 0 disables the stagnation stop |
 | `maxItems` | unset | If set, the router completes at most this many connections in the run (fanout and optimiser stages have their own `*MaxItems`); once reached it stops with `stoppedBy: "maxItems"`. A connection counts when its copper is inserted, however many Tracks and Barrels that takes. Used by the suites to freeze a partial result |

@@ -1,0 +1,272 @@
+[
+  {
+    "repeat": 1,
+    "report": {
+      "passes": 5,
+      "attempted": 31,
+      "completed": 7,
+      "incompleteBefore": 10,
+      "incompleteAfter": 5,
+      "added": {
+        "tracks": 5,
+        "barrels": 0
+      },
+      "ripped": 2,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 13063,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 1
+        },
+        {
+          "net": "N3",
+          "incomplete": 1
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 1
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 1
+        }
+      ]
+    },
+    "counts": {
+      "violations": 0,
+      "incompletes": 5
+    }
+  },
+  {
+    "repeat": 2,
+    "report": {
+      "passes": 5,
+      "attempted": 31,
+      "completed": 7,
+      "incompleteBefore": 10,
+      "incompleteAfter": 5,
+      "added": {
+        "tracks": 5,
+        "barrels": 0
+      },
+      "ripped": 2,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 12460,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 1
+        },
+        {
+          "net": "N3",
+          "incomplete": 1
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 1
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 1
+        }
+      ]
+    },
+    "counts": {
+      "violations": 0,
+      "incompletes": 5
+    }
+  },
+  {
+    "repeat": 3,
+    "report": {
+      "passes": 5,
+      "attempted": 31,
+      "completed": 7,
+      "incompleteBefore": 10,
+      "incompleteAfter": 5,
+      "added": {
+        "tracks": 5,
+        "barrels": 0
+      },
+      "ripped": 2,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "angleMode": "45"
+      },
+      "wallClockMs": 12893,
+      "perNet": [
+        {
+          "net": "N1",
+          "incomplete": 0
+        },
+        {
+          "net": "N2",
+          "incomplete": 1
+        },
+        {
+          "net": "N3",
+          "incomplete": 1
+        },
+        {
+          "net": "N4",
+          "incomplete": 0
+        },
+        {
+          "net": "N5",
+          "incomplete": 0
+        },
+        {
+          "net": "N6",
+          "incomplete": 0
+        },
+        {
+          "net": "N7",
+          "incomplete": 1
+        },
+        {
+          "net": "N8",
+          "incomplete": 0
+        },
+        {
+          "net": "N9",
+          "incomplete": 1
+        },
+        {
+          "net": "N10",
+          "incomplete": 1
+        }
+      ]
+    },
+    "counts": {
+      "violations": 0,
+      "incompletes": 5
+    }
+  }
+]
