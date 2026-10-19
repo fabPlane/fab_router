@@ -79,3 +79,8 @@ Final required validation: typecheck passes; 65 files have zero layer violations
 and its four single-track deletions. The portable minimizer also reproduces the
 four essential tracks in 11 saved native checks; its separate archive and replay
 log are retained alongside the six paired source/candidate checks.
+
+Process-status qualification: the earlier 905-test run printed a passing summary
+but its session eventually returned 143. It is not counted as a clean completion.
+The final required 906-test run returned exit code 0. Both complete logs and
+`process-status.json` are retained.
