@@ -33,10 +33,17 @@ must match; error checks must be enabled. Connectivity entries must be error-lev
 `unconnected_items` findings with at least two described endpoints and finite millimetre
 coordinates. Malformed entries fail closed before either open total is used.
 
+Before native checking, both boards must retain the same embedded `setup` tree and
+physical layer table (IDs, canonical names, types and order). This includes stackup,
+solder-mask settings and unknown future setup fields. Whitespace and numeric formatting
+are normalized; optional layer display aliases are ignored because native save may add
+them. Setup child order and plot settings are compared conservatively, so unrelated setup
+edits may also block acceptance. Malformed boards or duplicate/missing sections fail closed.
+
 This is a DRC/connectivity gate, not a design-fidelity validator or a repair command. It does
 not require zero opens, remove inherited violations, verify preserved source copper/metadata,
 or apply/undo anything in an editor. The host must separately verify design fidelity,
-embedded board rules, external dependencies and the exact checked bytes before committing a
+per-item rules, external dependencies and the exact checked bytes before committing a
 candidate. No live-editor transaction or benchmark scoring path calls this optional command
 automatically. In particular, rejecting an unsafe candidate does not improve the routing
 benchmark's completion score or fix its thermal geometry.

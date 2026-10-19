@@ -4,6 +4,22 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { checkNativeBoards, compareNativeReports } from "../tools/native-drc-gate.ts";
 
+test.skipIf(!Bun.which("kicad-cli"))("native gate rejects a changed embedded board rule even with clean reports", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "native-embedded-rules-"));
+  try {
+    const before = join(directory, "before.kicad_pcb"), after = join(directory, "after.kicad_pcb");
+    const board = (clearance: number) => `(kicad_pcb (version 20260206) (generator "pcbnew")
+      (general (thickness 1.6)) (paper "A4")
+      (layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user))
+      (setup (pad_to_mask_clearance ${clearance}))
+      (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+        (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")))`;
+    await writeFile(before, board(0.2)); await writeFile(after, board(0));
+    for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+    await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate embedded board rules differ");
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});
+
 const item = (x = 1) => ({ description: "Pad 1 [GND] of U1 on F.Cu", pos: { x, y: 2 }, uuid: "pad" });
 const error = (type = "starved_thermal", x = 1) => ({ type, severity: "error", description: "Native finding", items: [item(x)] });
 const report = (violations: unknown[] = [], opens = 0) => ({ coordinate_units: "mm", kicad_version: "10.0.6", included_severities: ["error", "warning", "exclusion"], violations, unconnected_items: Array.from({ length: opens }, () => ({ ...error("unconnected_items"), items: [item(), item(3)] })), ignored_checks: [] });
