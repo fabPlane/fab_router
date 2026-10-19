@@ -42,10 +42,14 @@ test('alternate live component anchors close the original full-board stall witho
  expect(new Set(sessions).size).toBe(1);
 });
 
-test('failed public residual recovery rewinds exactly; future legal closure remains permitted',()=>{
+test('public residual recovery closes through bounded alternate anchors',()=>{
  const l=layout(),before=writeSes(l),tracks=l.tracks.map(t=>JSON.stringify(t));
  const fixed=JSON.stringify([l.pads,l.pours,l.fences,l.barrels]);
- recoverRemaining(l,resolveSettings(fixture.settings,undefined,l.angleMode),true,16,true);
+ const result=recoverRemaining(l,resolveSettings(fixture.settings,undefined,l.angleMode),true,16,true);
+ expect(result.targets[0]?.status).toBe('kept');
+ expect(result.targets[0]?.pointRecovery?.work).toBe(18890);
+ expect(result.targets[0]?.pointRecovery?.enumeration).toBe(124);
+ expect(requiredConnections(l)).toEqual([]);
  expect(checkDrc(l).counts.violations).toBe(0);
  expect(JSON.stringify([l.pads,l.pours,l.fences,l.barrels])).toBe(fixed);
  for(const t of tracks)expect(l.tracks.some(v=>JSON.stringify(v)===t)).toBe(true);

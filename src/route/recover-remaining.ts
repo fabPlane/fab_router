@@ -1,3 +1,4 @@
+import {recoverPointComponent} from './recovery-point-component.ts';
 import {recoveryEndpoint} from './recovery-endpoint.ts';
 /** Default-off local recovery post-pass.
  * Snapshot actual incomplete connections after normal routing, resolve each net's
@@ -16,7 +17,7 @@ import {resolveProfile} from './profile.ts';
 import {scheduleRecovery,type RecoveryControl} from './recovery-schedule.ts';
 import {proposeVisibility} from './visibility-recovery.ts';
 type PointTarget={net:number;from:number;to:number};
-type RecoveryTarget={anchorPair?:PointTarget;pair:ReturnType<typeof requiredConnections>[number];status:'unsupported-endpoints'|ReturnType<typeof scheduleRecovery>['status'];result?:ReturnType<typeof scheduleRecovery>;proposals?:ReturnType<typeof proposeVisibility>[];seconds?:number};
+type RecoveryTarget={pointRecovery?:ReturnType<typeof recoverPointComponent>;anchorPair?:PointTarget;pair:ReturnType<typeof requiredConnections>[number];status:'unsupported-endpoints'|ReturnType<typeof scheduleRecovery>['status'];result?:ReturnType<typeof scheduleRecovery>;proposals?:ReturnType<typeof proposeVisibility>[];seconds?:number};
 export function recoverRemaining(layout:Layout,settings:RouteSettings,enabled=false,maxTargets=16,includeCopperCorners=false,control:RecoveryControl={},hooks?:RouteHooks,resources?:{lattice:ReturnType<typeof buildLattice>;journal:ReturnType<typeof createJournal>}){
  if(!enabled)return {status:'disabled' as const,targets:[]};
  if(!Number.isSafeInteger(maxTargets)||maxTargets<1||maxTargets>64)throw Error('Invalid recovery target cap');
@@ -62,11 +63,13 @@ export function recoverRemaining(layout:Layout,settings:RouteSettings,enabled=fa
   }
   const proposals:ReturnType<typeof proposeVisibility>[]=[];
   const start=performance.now();
-  const result=scheduleRecovery(layout,lattice,journal,pair,{
+  const pointRecovery=from&&to?recoverPointComponent(layout,settings,pair,control,{includeCopperCorners,resources:{lattice,journal}}):undefined;
+  const result=pointRecovery?{status:pointRecovery.status==='unsupported'?'exhausted' as const:pointRecovery.status==='items'?'budget' as const:pointRecovery.status,expansions:pointRecovery.work,trials:pointRecovery.attempts.flatMap(a=>a.result.trials)}:scheduleRecovery(layout,lattice,journal,pair,{
    enabled:true,pitch:profile.width+profile.maxSpacing,margins:[0,4,8,16],maxAttempts:4,maxExpansions:100000,maxMilliseconds:15000,
   },trial=>{proposals.push(proposeVisibility(layout,lattice,journal,anchorPair,profile,trial,512,includeCopperCorners));},control,anchorPair===pair?undefined:anchorPair);
+  if(pointRecovery)proposals.push(...pointRecovery.attempts.flatMap(a=>a.proposals));
   const seconds=(performance.now()-start)/1000;
-  targets.push({pair,...(anchorPair===pair?{}:{anchorPair}),status:result.status,result,proposals,seconds});
+  targets.push({pair,...(pointRecovery?{pointRecovery}:{}),...(anchorPair===pair?{}:{anchorPair}),status:result.status,result,proposals,seconds});
   hooks?.onConnection?.({net:layout.nets.find(n=>n.id===pair.net)?.name??String(pair.net),from:String(pair.from),to:String(pair.to),ok:result.status==='kept'||result.status==='joined',elapsedMs:seconds*1000});
   hooks?.onLog?.('info',`local-recovery result ${JSON.stringify(targets[targets.length-1])}`);
   if(result.status==='deadline'||result.status==='aborted')return {status:result.status,pending:pending.length,targets};

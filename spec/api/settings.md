@@ -21,7 +21,7 @@ times in milliseconds; costs are dimensionless multipliers.
 | `ripupEnabled` | true | If false, other-net items are hard obstacles |
 | `fanoutEnabled` | false | Run the fanout pre-pass |
 | `fanoutMaxPasses`, `fanoutMaxItems` | unset | Bound the fanout stage the way `maxPasses` / `maxItems` bound routing |
-| `localRecovery` | false (unset) | Experimental insertion-only local visibility post-pass after optimisation. Up to 16 remaining point-anchor links (pads or barrels); a pad-to-pour link may use the nearest compatible existing point in the pour’s live component. Original terminals must still join; direct pour contacts and pour-to-pour search remain unsupported. Four growing local boxes; exact DRC, retained-copper and terminal-preservation gates. Shares remaining route time/item capacity and AbortSignal; cooperative 15-second / 100,000-work-unit cap per target. Full widths and real rules remain unchanged. Logs each target/trial through hooks. Unsupported endpoints stay open |
+| `localRecovery` | false (unset) | Experimental insertion-only local visibility post-pass after optimisation. Up to 16 remaining point-anchor links (pads or barrels); a pad-to-pour link may use the nearest compatible existing point in the pour’s live component. Original terminals must still join; direct pour contacts and pour-to-pour search remain unsupported. For point-to-point links, try the original pair first, then at most eight compatible live-component point pairs ordered by distance and ids, each with four growing local boxes. Enumeration and all pairs share one charged work ledger and absolute target deadline. Exact DRC, retained-copper and terminal-preservation gates. Shares remaining route time/item capacity and AbortSignal; cooperative 15-second / 100,000-work-unit cap per target. Full widths and real rules remain unchanged. Logs each target/trial through hooks. Unsupported endpoints stay open |
 | `routerEnabled` | true | Run the routing passes (false: fanout and/or optimiser only) |
 | `optimizerEnabled` | true | Run the optimiser after routing completes |
 | `optimizerPasses`, `optimizerMaxItems` | unset | Bound the optimiser stage the way `maxPasses` / `maxItems` bound routing |
@@ -70,8 +70,7 @@ A DSN `structure` may carry an `autoroute_settings` block, and a rules file may 
 | `(via_costs n)` | `viaCost` |
 | `(plane_via_costs n)` | `planeViaCost` |
 | `(start_ripup_costs n)` | `startRipupCost` |
-| `(autoroute on/off)` | `localRecovery` | false (unset) | Experimental insertion-only local visibility post-pass after optimisation. Up to 16 remaining point-anchor links (pads or barrels); a pad-to-pour link may use the nearest compatible existing point in the pour’s live component. Original terminals must still join; direct pour contacts and pour-to-pour search remain unsupported. Four growing local boxes; exact DRC, retained-copper and terminal-preservation gates. Shares remaining route time/item capacity and AbortSignal; cooperative 15-second / 100,000-work-unit cap per target. Full widths and real rules remain unchanged. Logs each target/trial through hooks. Unsupported endpoints stay open |
-| `routerEnabled` |
+| `(autoroute on/off)` | `routerEnabled` |
 | `(postroute on/off)` | `optimizerEnabled` |
 | `(fanout on/off)`, `(start_pass_no n)` | ignored (a stale block must not switch the fanout pre-pass on) |
 | `(layer_rule <Sheet> (active …) (preferred_direction horizontal/vertical) (preferred_direction_trace_costs x) (against_preferred_direction_trace_costs y))` | `layers[<Sheet>] = { active, preferDir: "h"/"v", alongCost: x, againstCost: y }` |
