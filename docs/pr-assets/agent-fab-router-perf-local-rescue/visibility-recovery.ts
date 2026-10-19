@@ -6,7 +6,7 @@
  */
 import type {Layout,Pt} from '../../../spec/types/layout.ts';
 import type {Lattice} from '../../../src/lattice/index.ts';
-import {padBoundsOn} from '../../../src/lattice/index.ts';
+import {padBoundsOn,barrelBoundsOn} from '../../../src/lattice/index.ts';
 import type {Journal} from '../../../src/route/journal.ts';
 import type {Profile} from '../../../src/route/profile.ts';
 import {legaliseTrail} from '../../../src/route/legalise.ts';
@@ -16,7 +16,7 @@ import type {RecoveryTrial} from './recovery-schedule.ts';
 
 export function proposeVisibility(
  layout:Layout,lattice:Lattice,journal:Journal,target:{net:number;from:number;to:number},
- profile:Profile,trial:RecoveryTrial,maxNodes=512,
+ profile:Profile,trial:RecoveryTrial,maxNodes=512,includeCopperCorners=false,
 ):{found:boolean;nodes:number;edges:number} {
  if(!Number.isSafeInteger(maxNodes)||maxNodes<2||maxNodes>512)throw Error('Invalid visibility node cap');
  if(profile.net!==target.net||!Number.isFinite(profile.width)||profile.width<=0)throw Error('Invalid visibility profile');
@@ -38,6 +38,24 @@ export function proposeVisibility(
    trial.expand();if(pad.net===target.net)continue;
    const b=padBoundsOn(layout,pad,sheet);if(!b)continue;
    for(const x of [b.x0-margin,b.x1+margin])for(const y of [b.y0-margin,b.y1+margin])add({x,y});
+  }
+  // Optional research graph enrichment: exact checks still decide every edge.
+  // Bounding-box corners of each foreign segment and barrel, in input order.
+  if(includeCopperCorners){
+   const boxCorners=(b:{x0:number;y0:number;x1:number;y1:number},extra:number)=>{
+    for(const x of [Math.floor(b.x0-extra),Math.ceil(b.x1+extra)])for(const y of [Math.floor(b.y0-extra),Math.ceil(b.y1+extra)])add({x,y});
+   };
+   for(const track of layout.tracks){
+    trial.expand();if(track.net===target.net||track.sheet!==sheet)continue;
+    for(let i=1;i<track.pts.length;i++){
+     trial.expand();const a=track.pts[i-1]!,b=track.pts[i]!;
+     boxCorners({x0:Math.min(a.x,b.x),y0:Math.min(a.y,b.y),x1:Math.max(a.x,b.x),y1:Math.max(a.y,b.y)},margin+track.width/2);
+    }
+   }
+   for(const barrel of layout.barrels){
+    trial.expand();if(barrel.net===target.net)continue;
+    const b=barrelBoundsOn(layout,barrel,sheet);if(b)boxCorners(b,margin);
+   }
   }
   totalNodes+=nodes.length;
   const costs=nodes.map(()=>Infinity),done=new Set<number>(),parent=new Map<number,{prev:number;pts:Pt[]}>();costs[0]=0;

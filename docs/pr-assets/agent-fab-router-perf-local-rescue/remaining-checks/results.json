@@ -1,0 +1,44 @@
+{
+  "helper_sha256": "fa44a2c4ba9081f2836909d521d5bb6e490e08f8b625825084ab9f9ded94dded",
+  "test_sha256": "13bf377f8327042405aea280c259c62edb0d948cc441b62396aa9ff49ed7b971",
+  "rows": [
+    {
+      "name": "control",
+      "exit_code": 0,
+      "expected_outcome_observed": true,
+      "helper_sha256": "fa44a2c4ba9081f2836909d521d5bb6e490e08f8b625825084ab9f9ded94dded",
+      "command": [
+        "taskset",
+        "-c",
+        "12-19",
+        "nice",
+        "-n",
+        "10",
+        "timeout",
+        "180",
+        "bun",
+        "test",
+        "/home/hyper/bench/wt/fr-perf/test/remaining-mutant.test.ts"
+      ]
+    },
+    {
+      "name": "no-copper",
+      "exit_code": 1,
+      "expected_outcome_observed": true,
+      "helper_sha256": "a1cc53560dd41d8f31772fd9d61143ac2158a74de8ffcfb2ad758501dc3ed476",
+      "command": [
+        "taskset",
+        "-c",
+        "12-19",
+        "nice",
+        "-n",
+        "10",
+        "timeout",
+        "180",
+        "bun",
+        "test",
+        "/home/hyper/bench/wt/fr-perf/test/remaining-mutant.test.ts"
+      ]
+    }
+  ]
+}

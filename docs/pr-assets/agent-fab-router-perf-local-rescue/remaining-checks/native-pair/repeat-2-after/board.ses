@@ -1,0 +1,275 @@
+(session board.ses
+  (base_design board.dsn)
+  (placement
+    (resolution um 10)
+    (component "Paperino:photon_headers"
+      (place A1 1088800 -999080 front 0)
+    )
+    (component "Paperino:mounting_hole_1.5"
+      (place M1 1025400 -974600 front 0)
+      (place M2 1674600 -656400 front 0)
+      (place M3 1025400 -656400 front 0)
+      (place M4 1674600 -974600 front 0)
+    )
+    (component "Paperino:paperino_module"
+      (place A2 1495700 -815500 back 270)
+    )
+    (component "Symbols:OSHW-Symbol_6.7x6mm_SilkScreen"
+      (place REF*** 1187860 -930500 back 90)
+    )
+  )
+  (was_is)
+  (routes
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+    )
+    (library_out
+      (padstack "Via[0-1]_600:300_um"
+        (shape (circle F.Cu 6000 0 0))
+        (shape (circle B.Cu 6000 0 0))
+        (attach off)
+      )
+    )
+    (network_out
+      (net "Net-(A1-Pad1)"
+        (wire
+          (path F.Cu 2500
+            1076100 -676500
+            1101500 -676500
+          )
+        )
+      )
+      (net "Net-(A1-Pad3)"
+        (wire
+          (path F.Cu 2500
+            1076100 -727300
+            1101500 -727300
+          )
+        )
+      )
+      (net "Net-(A1-Pad4)"
+        (wire
+          (path F.Cu 2500
+            1076100 -752700
+            1101500 -752700
+          )
+        )
+      )
+      (net "/INT1"
+        (wire
+          (path F.Cu 2500
+            1076100 -778100
+            1101500 -778100
+          )
+        )
+      )
+      (net "Net-(A1-Pad6)"
+        (wire
+          (path F.Cu 2500
+            1076100 -803500
+            1101500 -803500
+          )
+        )
+      )
+      (net "/SPI_MOSI"
+        (wire
+          (path F.Cu 2500
+            1076100 -828900
+            1101500 -828900
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1101500 -828900
+            1101500 -822798
+            1263549 -660749
+            1272899 -651399
+            1282101 -651399
+            1403101 -651399
+            1418951 -667249
+            1428100 -676398
+            1428100 -688500
+          )
+        )
+      )
+      (net "/SPI_MISO"
+        (wire
+          (path F.Cu 2500
+            1076100 -854300
+            1101500 -854300
+          )
+        )
+        (wire
+          (path F.Cu 2500
+            1101500 -854300
+            1252100 -771400
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1252100 -771400
+            1252100 -681400
+            1274600 -658900
+            1372100 -658900
+            1402700 -688500
+          )
+        )
+        (via "Via[0-1]_600:300_um" 1252100 -771400)
+      )
+      (net "/SPI_CLK"
+        (wire
+          (path F.Cu 2500
+            1076100 -879700
+            1101500 -879700
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1101500 -879700
+            1091851 -870051
+            1060349 -870051
+            1060349 -660749
+            1077200 -643898
+            1256048 -643898
+            1419751 -643898
+            1435601 -659748
+            1453500 -677647
+            1453500 -688500
+          )
+        )
+      )
+      (net "/SPI_CS1"
+        (wire
+          (path F.Cu 2500
+            1076100 -905100
+            1101500 -905100
+          )
+        )
+      )
+      (net "/~{BUSY}"
+        (wire
+          (path F.Cu 2500
+            1076100 -930500
+            1101500 -930500
+          )
+        )
+      )
+      (net "/~{RST}"
+        (wire
+          (path F.Cu 2500
+            1076100 -955900
+            1101500 -955900
+          )
+        )
+      )
+      (net "Net-(A1-Pad13)"
+        (wire
+          (path F.Cu 2500
+            1279300 -955900
+            1304700 -955900
+          )
+        )
+      )
+      (net "Net-(A1-Pad14)"
+        (wire
+          (path F.Cu 2500
+            1279300 -930500
+            1304700 -930500
+          )
+        )
+      )
+      (net "Net-(A1-Pad15)"
+        (wire
+          (path F.Cu 2500
+            1279300 -905100
+            1304700 -905100
+          )
+        )
+      )
+      (net "Net-(A1-Pad16)"
+        (wire
+          (path F.Cu 2500
+            1279300 -879700
+            1304700 -879700
+          )
+        )
+      )
+      (net "Net-(A1-Pad17)"
+        (wire
+          (path F.Cu 2500
+            1279300 -854300
+            1304700 -854300
+          )
+        )
+      )
+      (net "/INT2"
+        (wire
+          (path F.Cu 2500
+            1279300 -828900
+            1304700 -828900
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1304700 -828900
+            1428100 -942500
+          )
+        )
+      )
+      (net "/SPI_CS2"
+        (wire
+          (path F.Cu 2500
+            1279300 -803500
+            1304700 -803500
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1304700 -803500
+            1453500 -942500
+          )
+        )
+      )
+      (net "Net-(A1-Pad20)"
+        (wire
+          (path F.Cu 2500
+            1279300 -778100
+            1304700 -778100
+          )
+        )
+      )
+      (net "Net-(A1-Pad22)"
+        (wire
+          (path F.Cu 2500
+            1279300 -727300
+            1304700 -727300
+          )
+        )
+      )
+      (net "Net-(A1-Pad23)"
+        (wire
+          (path F.Cu 2500
+            1279300 -701900
+            1304700 -701900
+          )
+        )
+      )
+      (net +3V3
+        (wire
+          (path F.Cu 2500
+            1279300 -676500
+            1304700 -676500
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            1304700 -676500
+            1529700 -942500
+          )
+        )
+      )
+    )
+  )
+)
