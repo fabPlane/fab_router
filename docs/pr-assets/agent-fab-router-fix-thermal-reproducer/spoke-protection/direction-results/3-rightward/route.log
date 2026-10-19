@@ -1,0 +1,11 @@
+56 | };
+57 | if (mode === "protected") (layout.fences as Fence[]).push(guard);
+58 | const before = checkDrc(layout);
+59 | if (before.violations.length || before.incompletes.length !== 1) {
+60 |   await Bun.write(reportPath, JSON.stringify({ mode, metadata, nativeBox, guard, before, rejected: "initial-guard-conflict" }, null, 2) + "\n");
+61 |   throw new Error(JSON.stringify(before));
+                 ^
+error: {"violations":[{"a":6,"b":"fence","sheet":0,"required":2000,"actual":0,"at":{"x":821345,"y":-1345900},"rule":"fence"}],"incompletes":[{"net":1,"from":2,"to":3,"airlineLu":60000}],"counts":{"violations":1,"incompletes":1}}
+      at /home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/route.ts:61:13
+
+Bun v1.4.0 (Linux x64)

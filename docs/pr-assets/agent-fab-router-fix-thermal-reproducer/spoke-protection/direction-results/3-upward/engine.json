@@ -1,0 +1,85 @@
+{
+  "mode": "protected",
+  "metadata": {
+    "net": "GND",
+    "layer": "F.Cu",
+    "centre_x_nm": 80264000,
+    "pad_bottom_nm": 131572000,
+    "thermal_gap_nm": 508000,
+    "bridge_width_nm": 508000,
+    "min_thickness_nm": 254000,
+    "native_clearance_nm": 254000,
+    "manual_direction": "downward",
+    "fixture_specific": true,
+    "direction": "upward",
+    "pad_box_nm": {
+      "x0": 79692500,
+      "y0": 131064000,
+      "x1": 80835500,
+      "y1": 131572000
+    }
+  },
+  "nativeBox": {
+    "x0": 79956000,
+    "x1": 80572000,
+    "y0": 130248000,
+    "y1": 131118000
+  },
+  "guard": {
+    "id": 8,
+    "sheet": 0,
+    "scope": "track",
+    "kind": 1,
+    "net": 0,
+    "shape": {
+      "kind": "box",
+      "box": {
+        "x0": 799560,
+        "x1": 805720,
+        "y0": -1311180,
+        "y1": -1302480
+      }
+    }
+  },
+  "before": {
+    "violations": [
+      {
+        "a": 4,
+        "b": "fence",
+        "sheet": 0,
+        "required": 2000,
+        "actual": 150,
+        "at": {
+          "x": 802640,
+          "y": -1302405
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 7,
+        "b": "fence",
+        "sheet": 0,
+        "required": 2000,
+        "actual": 0,
+        "at": {
+          "x": 802640,
+          "y": -1302480
+        },
+        "rule": "fence"
+      }
+    ],
+    "incompletes": [
+      {
+        "net": 1,
+        "from": 2,
+        "to": 3,
+        "airlineLu": 60000
+      }
+    ],
+    "counts": {
+      "violations": 2,
+      "incompletes": 1
+    }
+  },
+  "rejected": "initial-guard-conflict"
+}

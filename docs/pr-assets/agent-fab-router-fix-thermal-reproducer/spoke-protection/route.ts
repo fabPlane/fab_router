@@ -10,6 +10,8 @@ const metadata = await Bun.file(metadataPath).json() as {
   net: string; layer: string; centre_x_nm: number; pad_bottom_nm: number;
   thermal_gap_nm: number; bridge_width_nm: number; min_thickness_nm: number;
   native_clearance_nm: number;
+  direction?: "downward" | "upward" | "leftward" | "rightward";
+  pad_box_nm?: { x0: number; y0: number; x1: number; y1: number };
 };
 const read = readDsn(await Bun.file(input).text());
 if (!read.ok) throw new Error(JSON.stringify(read));
@@ -23,12 +25,26 @@ const inflation = Math.max(0, metadata.native_clearance_nm - engineClearanceNm);
 // Manually select the fixture's downward spoke. Preserve a full bridge-width
 // strip through the gap and one minimum-thickness strip into the plane.
 // No general spoke discovery, overridden pad rules, or arbitrary rotations.
-const nativeBox = {
+let nativeBox = {
   x0: metadata.centre_x_nm - metadata.bridge_width_nm / 2 - inflation,
   y0: metadata.pad_bottom_nm - inflation,
   x1: metadata.centre_x_nm + metadata.bridge_width_nm / 2 + inflation,
   y1: metadata.pad_bottom_nm + metadata.thermal_gap_nm + metadata.min_thickness_nm + inflation,
 };
+// Direction sweep remains specific to an axis-aligned rectangular pad.
+const direction = metadata.direction ?? "downward";
+if (direction !== "downward") {
+  const box = metadata.pad_box_nm;
+  if (!box) throw new Error("direction sweep requires native pad box");
+  const half = metadata.bridge_width_nm / 2 + inflation;
+  const reach = metadata.thermal_gap_nm + metadata.min_thickness_nm + inflation;
+  const cx = (box.x0 + box.x1) / 2;
+  const cy = (box.y0 + box.y1) / 2;
+  if (direction === "upward") nativeBox = { x0: cx - half, x1: cx + half, y0: box.y0 - reach, y1: box.y0 + inflation };
+  else if (direction === "leftward") nativeBox = { x0: box.x0 - reach, x1: box.x0 + inflation, y0: cy - half, y1: cy + half };
+  else if (direction === "rightward") nativeBox = { x0: box.x1 - inflation, x1: box.x1 + reach, y0: cy - half, y1: cy + half };
+  else throw new Error("unknown direction");
+}
 const nextId = Math.max(...[layout.pads, layout.barrels, layout.tracks, layout.pours, layout.fences]
   .flatMap(items => items.map(item => item.id))) + 1;
 const guard: Fence = {
@@ -40,7 +56,10 @@ const guard: Fence = {
 };
 if (mode === "protected") (layout.fences as Fence[]).push(guard);
 const before = checkDrc(layout);
-if (before.violations.length || before.incompletes.length !== 1) throw new Error(JSON.stringify(before));
+if (before.violations.length || before.incompletes.length !== 1) {
+  await Bun.write(reportPath, JSON.stringify({ mode, metadata, nativeBox, guard, before, rejected: "initial-guard-conflict" }, null, 2) + "\n");
+  throw new Error(JSON.stringify(before));
+}
 const report = route(layout, { seed: 1 });
 const after = checkDrc(layout);
 if (after.violations.length || after.incompletes.length || report.violationsAdded || report.incompleteAfter || report.timedOut || report.aborted) {

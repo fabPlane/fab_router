@@ -70,3 +70,47 @@ No frozen benchmark was rerun: its historical exact-source full summary stays
 The existing native fixture's provenance and license remain in the parent
 directory. A production strategy still needs reliable native thermal metadata,
 spoke selection/ownership, and full-suite native nonregression validation.
+
+## Direction selection diagnostic
+
+`directions.py` applies the same guard construction to each of four cardinal
+sides of this one axis-aligned rectangular pad. It does not discover actual
+spokes or zone connectivity. Three repeats per direction use identical native
+input, exported DSN, seed 1, defaults, and cores 20–25. Production engine and
+test hashes are checked before/after. Native settings and retained copper are
+checked for every imported candidate.
+
+| Direction, three repeats each | Initial guard conflicts | Intended route complete | Native thermal errors after refill, each |
+| --- | ---: | ---: | ---: |
+| Downward | 0 | 3/3 | 0 |
+| Leftward | 0 | 3/3 | 1 |
+| Upward | 2 each | Not attempted | Not measured |
+| Rightward | 1 each | Not attempted | Not measured |
+
+All native inputs have zero errors and two opens. Both imported directions
+leave one unrelated native open, so complete native board passes remain 0/3.
+Upward/rightward guards overlap existing foreign copper; their nonzero runner
+exit is an explicitly asserted preflight rejection, with complete diagnostic
+reports retained. Unexpected exceptions fail the audit. No SES is produced
+for those rejected candidates. These are not native benchmark attempts.
+
+A clear engine fence is insufficient to select a viable thermal spoke:
+leftward still starves the native thermal. Selection needs native filled-zone
+connectivity evidence, including whether the exterior strip reaches connected
+plane copper. This experiment does not determine a general selection rule.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/directions.py --out /tmp/thermal-directions --repeats 3
+```
+
+To render the measured pair, export `1-leftward/after.kicad_pcb` and
+`1-downward/after.kicad_pcb` with the same native SVG command above, then run
+`render-directions.py leftward.svg downward.svg direction-comparison.svg` and
+`rsvg-convert direction-comparison.svg -o direction-comparison.png`.
+
+`direction-results/` retains all twelve diagnostic outcomes, six imported
+boards/sessions, before/after native reports, engine reports and logs.
+`direction-results/summary.json` records production/test/runner hashes and
+asserted results. `direction-comparison.png` shows actual native copper of the
+leftward and downward candidates after refill. The former is a negative
+control, not a new baseline or a production improvement.
