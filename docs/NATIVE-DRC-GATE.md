@@ -139,3 +139,32 @@ opens, and does not prove complete design fidelity or protect every item of auth
 The benchmark and editor do not invoke it automatically. A host integrating it must
 still bind the intended input to the recorded hash and handle its own atomic application
 and undo. It does not discover or repair thermal geometry.
+
+## Proposed repair handoff
+
+A thermal repair must preserve connections achieved by routing as well as authored
+source connections. Comparing only to the original board can accept a repair that
+swaps one routed terminal for another with the same open count. To check an existing
+proposal and publish its exact snapshots:
+
+```bash
+bun tools/native-repair-bundle.ts original.kicad_pcb routed.kicad_pcb repaired.kicad_pcb accepted-repair.json
+```
+
+The source fidelity checks apply independently to routed and repaired boards. The
+repaired board must pass the original acceptance boundary and introduce no new errors,
+additional opens or lost connected terminal pairs relative to the routed board. Copper
+added during routing may be replaced during repair; original copper stays protected.
+All three rule sidecars must match. Each native process retains its own timeout.
+
+An accepted `fab-router-native-repair-v1` bundle contains `input`, `routed` and
+`candidate` snapshots. Its `validation.repair` records the routed native report,
+board hash, before/after open counts and terminal groups. `candidate` is the repaired
+board. Publication uses the same exclusive atomic file creation as candidate bundles;
+the output cannot overlap any of the three source boards or rule sidecars. Rejection
+publishes nothing. The exported `checkNativeRepair` checks without publication, and
+`publishNativeRepair` performs this handoff.
+
+This command checks a supplied proposal. It does not generate detours, invoke the
+bounded search, update the engine or apply a board to an editor. An unchanged routed
+board may pass; acceptance is a safety check rather than proof of repair progress.

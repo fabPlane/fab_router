@@ -107,7 +107,7 @@ async function snapshot(board: string, directory: string) {
   if (rules) await writeFile(join(directory, `${name}.kicad_dru`), rules);
   return { target, bytes, project, rules };
 }
-async function inspectNativeBoards(input: string, candidate: string, timeoutMs: number) {
+async function inspectNativeBoards(input: string, candidate: string, timeoutMs: number, routed?: string) {
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new Error("Invalid native check timeout");
   const directory = await mkdtemp(join(tmpdir(), "fab-router-native-gate-"));
   try {
@@ -119,8 +119,13 @@ async function inspectNativeBoards(input: string, candidate: string, timeoutMs: 
     assertSourceCopper(before.bytes.toString("utf8"), after.bytes.toString("utf8"));
     assertSourcePads(before.bytes.toString("utf8"), after.bytes.toString("utf8"));
     assertBoardZones(before.bytes.toString("utf8"), after.bytes.toString("utf8"));
+    const routedSnapshot = routed === undefined ? undefined : await snapshot(resolve(routed), join(directory, "routed"));
+    if (routedSnapshot) {
+      if (!before.project.equals(routedSnapshot.project) || !((!before.rules && !routedSnapshot.rules) || (before.rules && routedSnapshot.rules && before.rules.equals(routedSnapshot.rules)))) throw new Error("Routed project rules differ from input");
+      for (const assert of [assertEmbeddedBoardRules, assertBoardNets, assertSourceCopper, assertSourcePads, assertBoardZones]) assert(before.bytes.toString("utf8"), routedSnapshot.bytes.toString("utf8"));
+    }
     const reports: unknown[] = [];
-    for (const [index, board] of [before, after].entries()) {
+    for (const [index, board] of [before, after, ...(routedSnapshot ? [routedSnapshot] : [])].entries()) {
       const report = join(directory, `${index}.json`);
       // Save refilled copies only inside the disposable directory so the native
       // connectivity query sees exactly the filled geometry used by DRC.
@@ -132,14 +137,22 @@ async function inspectNativeBoards(input: string, candidate: string, timeoutMs: 
     await execute("python3", [fileURLToPath(new URL("./native-terminal-groups.py", import.meta.url)), before.target, after.target, connectivityOutput], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
     const connectivity = compareTerminalGroups(JSON.parse(await readFile(connectivityOutput, "utf8")), parseReport(reports[0]).kicad_version);
     const hash = (data: Buffer) => new Bun.CryptoHasher("sha256").update(data).digest("hex");
-    const validation = { ...result, ...connectivity, accepted: result.accepted && connectivity.lostTerminalPairs === 0, inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
+    let repair;
+    if (routedSnapshot) {
+      const output = join(directory, "repair-terminal-groups.json");
+      await execute("python3", [fileURLToPath(new URL("./native-terminal-groups.py", import.meta.url)), routedSnapshot.target, after.target, output], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
+      const reportsResult = compareNativeReports(reports[2], reports[1]);
+      const groups = compareTerminalGroups(JSON.parse(await readFile(output, "utf8")), parseReport(reports[2]).kicad_version);
+      repair = { ...reportsResult, ...groups, accepted: reportsResult.accepted && groups.lostTerminalPairs === 0, routedSha256: hash(routedSnapshot.bytes), routedReport: reports[2] };
+    }
+    const validation = { ...result, ...connectivity, ...(repair ? { repair } : {}), accepted: result.accepted && connectivity.lostTerminalPairs === 0 && (!repair || repair.accepted), inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
     const files = (snapshot: typeof before) => [
       { name: "board.kicad_pcb", bytes: snapshot.bytes },
       { name: "board.kicad_pro", bytes: snapshot.project },
       ...(snapshot.rules === undefined ? [] : [{ name: "board.kicad_dru", bytes: snapshot.rules }]),
     ].map(({ name, bytes }) => ({ name, sha256: hash(bytes), base64: bytes.toString("base64") }));
     // Capture the already checked buffers, never reopen mutable caller paths.
-    return { validation, input: files(before), candidate: files(after) };
+    return { validation, input: files(before), candidate: files(after), ...(routedSnapshot ? { routed: files(routedSnapshot) } : {}) };
   } finally { await rm(directory, { recursive: true, force: true }); }
 }
 
@@ -147,25 +160,35 @@ export async function checkNativeBoards(input: string, candidate: string, timeou
   return (await inspectNativeBoards(input, candidate, timeoutMs)).validation;
 }
 
+/** Validate a repair against authored copper/rules AND the connections achieved by
+ * routing. Generated copper may change, but routed terminal groups cannot split. */
+export async function checkNativeRepair(input: string, routed: string, repaired: string, timeoutMs = 120_000) {
+  return (await inspectNativeBoards(input, repaired, timeoutMs, routed)).validation;
+}
+
+export async function publishNativeRepair(input: string, routed: string, repaired: string, output: string, timeoutMs = 120_000) {
+  return publishNativeCandidate(input, repaired, output, timeoutMs, routed);
+}
+
 /** Publish a self-contained accepted snapshot. The complete file becomes visible in
  * one exclusive hard-link operation on the destination filesystem. Source files and
  * pre-existing destinations (including symlinks) are never overwritten. This is an
  * offline artifact, not an editor transaction or a durability guarantee across power loss.
  */
-export async function publishNativeCandidate(input: string, candidate: string, output: string, timeoutMs = 120_000) {
+export async function publishNativeCandidate(input: string, candidate: string, output: string, timeoutMs = 120_000, routed?: string) {
   // Resolve existing parent directories as well, so a directory symlink cannot
   // redirect an absent output onto an absent source rule sidecar.
   const canonical = async (path: string) => join(await realpath(dirname(resolve(path))), basename(path));
   const destination = await canonical(output);
-  const protectedPaths = await Promise.all([input, candidate].flatMap(board =>
+  const protectedPaths = await Promise.all([input, candidate, ...(routed ? [routed] : [])].flatMap(board =>
     [".kicad_pcb", ".kicad_pro", ".kicad_dru"].map(ext => canonical(board.replace(/\.kicad_pcb$/, ext)))));
   if (protectedPaths.includes(destination)) throw new Error("Bundle output overlaps a source board or rules file");
-  const inspected = await inspectNativeBoards(input, candidate, timeoutMs);
+  const inspected = await inspectNativeBoards(input, candidate, timeoutMs, routed);
   if (!inspected.validation.accepted) return { ...inspected.validation, published: false };
   const staging = await mkdtemp(join(dirname(destination), ".native-candidate-"));
   try {
     const temporary = join(staging, "candidate.json");
-    await writeFile(temporary, `${JSON.stringify({ format: "fab-router-native-candidate-v1", ...inspected }, null, 2)}\n`, { flag: "wx", mode: 0o600 });
+    await writeFile(temporary, `${JSON.stringify({ format: routed ? "fab-router-native-repair-v1" : "fab-router-native-candidate-v1", ...inspected }, null, 2)}\n`, { flag: "wx", mode: 0o600 });
     // Same filesystem; link fails with EEXIST for every existing destination.
     await link(temporary, destination);
   } finally { await rm(staging, { recursive: true, force: true }); }
