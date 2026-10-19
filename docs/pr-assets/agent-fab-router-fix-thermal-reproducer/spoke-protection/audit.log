@@ -1,0 +1,104 @@
+[
+  {
+    "repeat": 1,
+    "mode": "baseline",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "b5a098daa2cc072e708fd3cc26a405b9beb9bff18170182c4f7c1492bdcf89f8"
+      },
+      "after": {
+        "errors": {
+          "starved_thermal": 1
+        },
+        "opens": 1,
+        "report_sha256": "d27dba4d6cccc3a78211b48153fdc19ad4dec411bdfea4090ce74617710486c0"
+      }
+    }
+  },
+  {
+    "repeat": 1,
+    "mode": "protected",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "71bc7d94723561a962f8cadff2d1e5202fe5aa6dbb68cd4912a6893b583bf0ce"
+      },
+      "after": {
+        "errors": {},
+        "opens": 1,
+        "report_sha256": "31ad107119338629777dce515b49e094920841e4f831d859310ff11fce7f904e"
+      }
+    }
+  },
+  {
+    "repeat": 2,
+    "mode": "baseline",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "7d850d8033ec27bfa3fa9ee3d2dc64cc110205e88228a04d7c2471f7dd58170c"
+      },
+      "after": {
+        "errors": {
+          "starved_thermal": 1
+        },
+        "opens": 1,
+        "report_sha256": "8f4180f41ac47835d8a793634fe88df769c82b895c7248f772284e74040039b1"
+      }
+    }
+  },
+  {
+    "repeat": 2,
+    "mode": "protected",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "0355f65552bed155b0049590ef8057bfe382c3f42d593aaf2b7d4affe20b30b4"
+      },
+      "after": {
+        "errors": {},
+        "opens": 1,
+        "report_sha256": "c5149193b4ecf043ab5c8a2630ad1077944f520eacb614e5401aa3955cc616bb"
+      }
+    }
+  },
+  {
+    "repeat": 3,
+    "mode": "baseline",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "c999c80a22f30d2d7cfbbb0a220756acc11e702cbdd1453de15c41ae596b5356"
+      },
+      "after": {
+        "errors": {
+          "starved_thermal": 1
+        },
+        "opens": 1,
+        "report_sha256": "d21a4d859159ed46a0754d6ca1d677e025a55942fe1c8a130e46703a6565614d"
+      }
+    }
+  },
+  {
+    "repeat": 3,
+    "mode": "protected",
+    "native": {
+      "before": {
+        "errors": {},
+        "opens": 2,
+        "report_sha256": "57084c7a521ba1171ba5c13d8f02001484e564746313e23af2709b7cc32fbb8e"
+      },
+      "after": {
+        "errors": {},
+        "opens": 1,
+        "report_sha256": "27dbf3e0a912444bf8d270ccee40eace91e84ccb2ebc36a2b82300b7b3934635"
+      }
+    }
+  }
+]
