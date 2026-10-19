@@ -1,0 +1,22 @@
+[
+  {
+    "control": "unchanged",
+    "exit_code": 0,
+    "expected_accept": true
+  },
+  {
+    "control": "missing-target",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "duplicate-repeat",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "truncated-rejection",
+    "exit_code": 1,
+    "expected_accept": false
+  }
+]

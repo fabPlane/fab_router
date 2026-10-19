@@ -18,7 +18,7 @@ sha = lambda data: hashlib.sha256(data).hexdigest()
 for name, expected in json.loads((a.results/'manifest.json').read_text()).items():
     assert sha((a.results/name).read_bytes()) == expected
 for name, expected in s['input_sha256'].items():
-    assert sha(Path(name).read_bytes()) == expected
+    assert sha(a.source.with_suffix(Path(name).suffix).read_bytes()) == expected
 nodes = native.parse(a.source.read_text())
 count = 0
 

@@ -1,0 +1,1848 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "all_targets": true,
+  "input_sha256": {
+    "docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/repair-reduction-results/minimal.kicad_pcb": "97d26ce56be9cd05c732cfef694942e8d51c221a3539067a22cf9451d08e9b04",
+    "docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/repair-reduction-results/minimal.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    "docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/repair-reduction-results/minimal.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "rows": [
+    {
+      "repeat": 1,
+      "target_index": 0,
+      "pad_uuid": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "nearby": [
+        {
+          "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f",
+          "distance_nm": 873652.8090547421,
+          "normal": [
+            0.5547001962252291,
+            -0.8320502943378436
+          ],
+          "layer": "B.Cu"
+        }
+      ],
+      "stored_gap_nm": 508000,
+      "baseline": {
+        "name": "baseline-1",
+        "counts": {
+          "footprint": 4,
+          "segment": 1,
+          "via": 1,
+          "zone": 1
+        },
+        "target": [],
+        "errors": [
+          {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+              {
+                "description": "Zone [GNDD] on B.Cu, priority 0",
+                "pos": {
+                  "x": 189.23,
+                  "y": 153.67
+                },
+                "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+              },
+              {
+                "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                "pos": {
+                  "x": 175.082,
+                  "y": 58.3565
+                },
+                "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+              }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+          }
+        ],
+        "opens": 1,
+        "groups": {
+          "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+          ],
+          "d08e3b61-3df5-445c-b296-30da61a459f9": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+          ],
+          "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "d145de36-3889-4a3d-8c61-71242d4e107c": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+          ]
+        }
+      },
+      "attempts": [
+        {
+          "name": "candidate-1-0-0",
+          "scale": -0.2,
+          "delta_nm": [
+            -56358,
+            84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "b2394840ec36131f7a903a96039f68ec68c48006b0883ca3effe710cf4871113",
+          "row": {
+            "name": "candidate-1-0-0",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1171 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.600642,
+                      "y": 58.441036
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-1-0-1",
+          "scale": 0.2,
+          "delta_nm": [
+            56358,
+            -84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "e8ddd711aaed747df09ff5ea2f3dcc6e0ddd498b3dc5896e51986f945cea23ca",
+          "row": {
+            "name": "candidate-1-0-1",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-1-0-2",
+          "scale": -0.4,
+          "delta_nm": [
+            -112715,
+            169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "8b3993f9689cf361514ea4d7eb821e6e19be158c3aa26a28e93b1c597c49b8f7",
+          "row": {
+            "name": "candidate-1-0-2",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0155 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-1-0-3",
+          "scale": 0.4,
+          "delta_nm": [
+            112715,
+            -169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "1aee2c561e118dfcc3f10f4ffe8bf938238cd2d7ffd06f568ab4892167db232a",
+          "row": {
+            "name": "candidate-1-0-3",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-1-0-4",
+          "scale": -0.6,
+          "delta_nm": [
+            -169073,
+            253609
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "6e87b87a5140d686e9f5ce964f715b058c7c2d869236e28779a9501303867b83",
+          "row": {
+            "name": "candidate-1-0-4",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Items shorting two nets (nets GNDA and GNDD)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "shorting_items"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-1-0-5",
+          "scale": 0.6,
+          "delta_nm": [
+            169073,
+            -253609
+          ],
+          "accepted": true,
+          "exception": null,
+          "candidate_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8",
+          "row": {
+            "name": "candidate-1-0-5",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        }
+      ],
+      "accepted": true,
+      "selected_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8"
+    },
+    {
+      "repeat": 2,
+      "target_index": 0,
+      "pad_uuid": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "nearby": [
+        {
+          "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f",
+          "distance_nm": 873652.8090547421,
+          "normal": [
+            0.5547001962252291,
+            -0.8320502943378436
+          ],
+          "layer": "B.Cu"
+        }
+      ],
+      "stored_gap_nm": 508000,
+      "baseline": {
+        "name": "baseline-2",
+        "counts": {
+          "footprint": 4,
+          "segment": 1,
+          "via": 1,
+          "zone": 1
+        },
+        "target": [],
+        "errors": [
+          {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+              {
+                "description": "Zone [GNDD] on B.Cu, priority 0",
+                "pos": {
+                  "x": 189.23,
+                  "y": 153.67
+                },
+                "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+              },
+              {
+                "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                "pos": {
+                  "x": 175.082,
+                  "y": 58.3565
+                },
+                "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+              }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+          }
+        ],
+        "opens": 1,
+        "groups": {
+          "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+          ],
+          "d08e3b61-3df5-445c-b296-30da61a459f9": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+          ],
+          "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "d145de36-3889-4a3d-8c61-71242d4e107c": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+          ]
+        }
+      },
+      "attempts": [
+        {
+          "name": "candidate-2-0-0",
+          "scale": -0.2,
+          "delta_nm": [
+            -56358,
+            84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "b2394840ec36131f7a903a96039f68ec68c48006b0883ca3effe710cf4871113",
+          "row": {
+            "name": "candidate-2-0-0",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1171 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.600642,
+                      "y": 58.441036
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-2-0-1",
+          "scale": 0.2,
+          "delta_nm": [
+            56358,
+            -84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "e8ddd711aaed747df09ff5ea2f3dcc6e0ddd498b3dc5896e51986f945cea23ca",
+          "row": {
+            "name": "candidate-2-0-1",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-2-0-2",
+          "scale": -0.4,
+          "delta_nm": [
+            -112715,
+            169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "8b3993f9689cf361514ea4d7eb821e6e19be158c3aa26a28e93b1c597c49b8f7",
+          "row": {
+            "name": "candidate-2-0-2",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0155 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-2-0-3",
+          "scale": 0.4,
+          "delta_nm": [
+            112715,
+            -169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "1aee2c561e118dfcc3f10f4ffe8bf938238cd2d7ffd06f568ab4892167db232a",
+          "row": {
+            "name": "candidate-2-0-3",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-2-0-4",
+          "scale": -0.6,
+          "delta_nm": [
+            -169073,
+            253609
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "6e87b87a5140d686e9f5ce964f715b058c7c2d869236e28779a9501303867b83",
+          "row": {
+            "name": "candidate-2-0-4",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Items shorting two nets (nets GNDA and GNDD)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "shorting_items"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-2-0-5",
+          "scale": 0.6,
+          "delta_nm": [
+            169073,
+            -253609
+          ],
+          "accepted": true,
+          "exception": null,
+          "candidate_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8",
+          "row": {
+            "name": "candidate-2-0-5",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        }
+      ],
+      "accepted": true,
+      "selected_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8"
+    },
+    {
+      "repeat": 3,
+      "target_index": 0,
+      "pad_uuid": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "nearby": [
+        {
+          "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f",
+          "distance_nm": 873652.8090547421,
+          "normal": [
+            0.5547001962252291,
+            -0.8320502943378436
+          ],
+          "layer": "B.Cu"
+        }
+      ],
+      "stored_gap_nm": 508000,
+      "baseline": {
+        "name": "baseline-3",
+        "counts": {
+          "footprint": 4,
+          "segment": 1,
+          "via": 1,
+          "zone": 1
+        },
+        "target": [],
+        "errors": [
+          {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+              {
+                "description": "Zone [GNDD] on B.Cu, priority 0",
+                "pos": {
+                  "x": 189.23,
+                  "y": 153.67
+                },
+                "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+              },
+              {
+                "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                "pos": {
+                  "x": 175.082,
+                  "y": 58.3565
+                },
+                "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+              }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+          }
+        ],
+        "opens": 1,
+        "groups": {
+          "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+          ],
+          "d08e3b61-3df5-445c-b296-30da61a459f9": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+          ],
+          "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "d145de36-3889-4a3d-8c61-71242d4e107c": [
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+            "d08e3b61-3df5-445c-b296-30da61a459f9",
+            "d145de36-3889-4a3d-8c61-71242d4e107c"
+          ],
+          "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+          ]
+        }
+      },
+      "attempts": [
+        {
+          "name": "candidate-3-0-0",
+          "scale": -0.2,
+          "delta_nm": [
+            -56358,
+            84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "b2394840ec36131f7a903a96039f68ec68c48006b0883ca3effe710cf4871113",
+          "row": {
+            "name": "candidate-3-0-0",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1171 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.600642,
+                      "y": 58.441036
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-3-0-1",
+          "scale": 0.2,
+          "delta_nm": [
+            56358,
+            -84536
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "e8ddd711aaed747df09ff5ea2f3dcc6e0ddd498b3dc5896e51986f945cea23ca",
+          "row": {
+            "name": "candidate-3-0-1",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-3-0-2",
+          "scale": -0.4,
+          "delta_nm": [
+            -112715,
+            169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "8b3993f9689cf361514ea4d7eb821e6e19be158c3aa26a28e93b1c597c49b8f7",
+          "row": {
+            "name": "candidate-3-0-2",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0155 mm)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.544285,
+                      "y": 58.525573
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "clearance"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-3-0-3",
+          "scale": 0.4,
+          "delta_nm": [
+            112715,
+            -169073
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "1aee2c561e118dfcc3f10f4ffe8bf938238cd2d7ffd06f568ab4892167db232a",
+          "row": {
+            "name": "candidate-3-0-3",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-3-0-4",
+          "scale": -0.6,
+          "delta_nm": [
+            -169073,
+            253609
+          ],
+          "accepted": false,
+          "exception": null,
+          "candidate_sha256": "6e87b87a5140d686e9f5ce964f715b058c7c2d869236e28779a9501303867b83",
+          "row": {
+            "name": "candidate-3-0-4",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [
+              {
+                "description": "Rear solder mask aperture bridges items with different nets",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "solder_mask_bridge"
+              },
+              {
+                "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+                "items": [
+                  {
+                    "description": "Zone [GNDD] on B.Cu, priority 0",
+                    "pos": {
+                      "x": 189.23,
+                      "y": 153.67
+                    },
+                    "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "starved_thermal"
+              },
+              {
+                "description": "Items shorting two nets (nets GNDA and GNDD)",
+                "items": [
+                  {
+                    "description": "Track [GNDA] on B.Cu, length 2.5354 mm",
+                    "pos": {
+                      "x": 176.487927,
+                      "y": 58.610109
+                    },
+                    "uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f"
+                  },
+                  {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                      "x": 175.082,
+                      "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                  }
+                ],
+                "severity": "error",
+                "type": "shorting_items"
+              }
+            ],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        },
+        {
+          "name": "candidate-3-0-5",
+          "scale": 0.6,
+          "delta_nm": [
+            169073,
+            -253609
+          ],
+          "accepted": true,
+          "exception": null,
+          "candidate_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8",
+          "row": {
+            "name": "candidate-3-0-5",
+            "counts": {
+              "footprint": 4,
+              "segment": 3,
+              "via": 1,
+              "zone": 1
+            },
+            "target": [],
+            "errors": [],
+            "opens": 1,
+            "groups": {
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+                "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+              ],
+              "d08e3b61-3df5-445c-b296-30da61a459f9": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+                "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+              ],
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "d145de36-3889-4a3d-8c61-71242d4e107c": [
+                "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+                "d08e3b61-3df5-445c-b296-30da61a459f9",
+                "d145de36-3889-4a3d-8c61-71242d4e107c"
+              ],
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+                "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+              ]
+            }
+          }
+        }
+      ],
+      "accepted": true,
+      "selected_sha256": "1e301bbb89948f03eee1d7c94efa58c3f1a9d92c334b17a395bcac00d3e14cb8"
+    }
+  ]
+}
