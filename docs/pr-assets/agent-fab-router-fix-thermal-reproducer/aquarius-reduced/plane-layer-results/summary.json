@@ -1,0 +1,37 @@
+{
+  "before_commit": "4090f74ed89f3336848a964aa0f466643a1dd589",
+  "cases_per_completed_run": 16,
+  "rows": [
+    {
+      "variant": "before",
+      "repeat": 1,
+      "returncode": -11
+    },
+    {
+      "variant": "before",
+      "repeat": 2,
+      "returncode": -11
+    },
+    {
+      "variant": "before",
+      "repeat": 3,
+      "returncode": -11
+    },
+    {
+      "variant": "after",
+      "repeat": 1,
+      "returncode": 0
+    },
+    {
+      "variant": "after",
+      "repeat": 2,
+      "returncode": 0
+    },
+    {
+      "variant": "after",
+      "repeat": 3,
+      "returncode": 0
+    }
+  ],
+  "routing_benchmark": false
+}

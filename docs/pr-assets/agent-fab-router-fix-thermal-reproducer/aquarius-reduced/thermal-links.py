@@ -11,8 +11,10 @@ import transaction
 TARGET='12cbe2ed-3861-4e0e-89f1-6c66f25e5228'
 
 def plane_layer(board,pad):
-    layers={z.GetLayer() for z in board.Zones()
-            if z.GetNetCode()==pad.GetNetCode() and pad.IsOnLayer(z.GetLayer())}
+    # Multilayer zones return UNDEFINED_LAYER from GetLayer(); passing that
+    # sentinel to the native pad.IsOnLayer() binding can segfault.
+    layers={layer for z in board.Zones() if z.GetNetCode()==pad.GetNetCode()
+            for layer in z.GetLayerSet().Seq() if pad.IsOnLayer(layer)}
     if len(layers)!=1:raise ValueError('one pad-connected plane layer required')
     return '"'+board.GetLayerName(layers.pop())+'"'
 
