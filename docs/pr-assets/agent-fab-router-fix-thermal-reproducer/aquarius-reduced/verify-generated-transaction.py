@@ -29,6 +29,7 @@ for name, expected in s['input_sha256'].items():
     assert sha(a.source.with_suffix(Path(name).suffix).read_bytes()) == expected
 nodes = native.parse(a.source.read_text())
 count = 0
+rejected_designs = 0
 
 def verify(row):
     global count
@@ -77,7 +78,25 @@ for repeat in s['rows']:
         assert attempt.get('track_rank', 1) == rank
         assert (attempt['scale'], attempt['delta_nm']) == (scale, delta)
         assert sha(candidate) == attempt['candidate_sha256']
-        assert attempt['exception'] is None
+        if attempt['exception'] is not None:
+            # The guarded diagnostic rejects native save drift before partition
+            # evidence can reach acceptance. Independently establish that drift;
+            # an arbitrary checker failure is not replayable native evidence.
+            assert attempt['exception'] == 'ValueError'
+            assert attempt['row'] is None and attempt['accepted'] is False
+            folder = a.results/attempt['name']
+            path = folder/'board.kicad_pcb'
+            data = path.read_bytes() if path.exists() else gzip.decompress(
+                path.with_suffix('.kicad_pcb.gz').read_bytes())
+            design_changed = transaction.identity.design_signature(data) != transaction.identity.design_signature(candidate)
+            rules_changed = any((folder/('board'+ext)).read_bytes() != a.source.with_suffix(ext).read_bytes()
+                                for ext in ('.kicad_pro', '.kicad_dru'))
+            assert design_changed or rules_changed, 'unexplained native design rejection'
+            report = read_json(folder/'drc.json')
+            assert isinstance(report['violations'], list) and isinstance(report['unconnected_items'], list)
+            count += 1
+            rejected_designs += 1
+            continue
         row = attempt['row']
         verify(row)
         expected = (transaction.errors(row) < transaction.errors(baseline)
@@ -98,4 +117,4 @@ for target in {r['pad_uuid'] for r in s['rows']}:
     group = [r for r in s['rows'] if r['pad_uuid'] == target]
     assert sorted(r['repeat'] for r in group) == [1, 2, 3]
     assert len({r['selected_sha256'] for r in group}) == 1
-print(f'PASS: {count} native reports/partitions; generated geometry, target coverage and selected boards replayed')
+print(f'PASS: {count} native checks ({count-rejected_designs} reports/partitions, {rejected_designs} design/rule rejections); generated geometry, target coverage and selected boards replayed')

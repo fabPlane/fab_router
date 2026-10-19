@@ -57,9 +57,7 @@ def main():
         witnesses.append((row, attempt, row['nearby'][attempt.get('track_rank', 1)-1]))
     sha = lambda data: hashlib.sha256(data).hexdigest()
     def check(data, name):
-        row = native.check(native.parse(data.decode()), name)
-        row['groups'] = transaction.terminals.partition(native.pcbnew.LoadBoard(str(a.out/name/'board.kicad_pcb')))
-        return row
+        return transaction.checked_native(data, name)
     results = []
     for repeat in range(1, 4):
         baseline = check(original, f'baseline-{repeat}')

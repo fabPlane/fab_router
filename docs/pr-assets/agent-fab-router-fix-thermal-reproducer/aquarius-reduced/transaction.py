@@ -23,6 +23,7 @@ def module(name, filename):
 
 reducer = module('reducer', 'reduce-repair.py')
 terminals = module('terminals', 'terminal-partitions.py')
+identity = module('design_identity', 'design-identity.py')
 
 def errors(row):
     return Counter(json.dumps(error, sort_keys=True) for error in row['errors'])
@@ -39,6 +40,23 @@ def transact(original, candidate, baseline, check):
     except Exception as exc:
         return original, False, None, type(exc).__name__
 
+def checked_native(data, name):
+    """Bind native evidence to the proposal before exposing it to acceptance.
+
+    Native save can reassign existing copper nets after shorts. Such evidence
+    describes a different design and must never authorize the original bytes.
+    """
+    row = native.check(native.parse(data.decode()), name)
+    board = native.D/name/'board.kicad_pcb'
+    if identity.design_signature(board.read_bytes()) != identity.design_signature(data):
+        raise ValueError('checked board differs from proposed design')
+    for ext in ('.kicad_pro', '.kicad_dru'):
+        if board.with_suffix(ext).read_bytes() != native.SRC.with_suffix(ext).read_bytes():
+            raise ValueError('native rule sidecar differs from source')
+    row['groups'] = terminals.partition(native.pcbnew.LoadBoard(str(board)))
+    return row
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source', type=Path, required=True)
@@ -53,9 +71,7 @@ def main():
     original = a.source.read_bytes()
     nodes = native.parse(original.decode())
     def check(data, name):
-        row = native.check(native.parse(data.decode()), name)
-        row['groups'] = terminals.partition(native.pcbnew.LoadBoard(str(a.out/name/'board.kicad_pcb')))
-        return row
+        return checked_native(data, name)
     baseline = check(original, 'baseline')
     assert len(baseline['errors']) == len(baseline['target']) == 1
     repaired = (native.dump(reducer.repair(nodes))+'\n').encode()

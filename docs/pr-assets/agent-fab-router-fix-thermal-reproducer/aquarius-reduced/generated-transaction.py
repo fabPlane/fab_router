@@ -60,10 +60,7 @@ def main():
     original = a.source.read_bytes()
     nodes = native.parse(original.decode())
     def check(data, name):
-        row = native.check(native.parse(data.decode()), name)
-        row['groups'] = transaction.terminals.partition(
-            native.pcbnew.LoadBoard(str(a.out/name/'board.kicad_pcb')))
-        return row
+        return transaction.checked_native(data, name)
     rows = []
     for repeat in range(1, 4):
         baseline = check(original, f'baseline-{repeat}')
