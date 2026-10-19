@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="880"><rect width="1400" height="880" fill="#f4f7fb"/>
+<text x="50" y="62" font-family="sans-serif" font-size="34" fill="#162d43">Preserve connected pads, even when the open count improves</text>
+<text x="50" y="110" font-family="sans-serif" font-size="22" fill="#162d43">Native zone-split regression: same pads, rules and source copper; only tracks added</text>
+<text x="110" y="167" font-family="sans-serif" font-size="27" fill="#162d43">Before: {A, B, C} + {D}</text>
+<text x="765" y="167" font-family="sans-serif" font-size="27" fill="#162d43">After: {A, C} + {B, D}</text>
+<line x1="160" y1="235" x2="400" y2="235" stroke="#167d71" stroke-width="9"/>
+<line x1="160" y1="235" x2="160" y2="355" stroke="#167d71" stroke-width="9"/>
+<circle cx="160" cy="235" r="23" fill="#167d71"/>
+<text x="147" y="244" font-family="sans-serif" font-size="25" fill="white">A</text>
+<circle cx="400" cy="235" r="23" fill="#167d71"/>
+<text x="387" y="244" font-family="sans-serif" font-size="25" fill="white">B</text>
+<circle cx="160" cy="355" r="23" fill="#167d71"/>
+<text x="147" y="364" font-family="sans-serif" font-size="25" fill="white">C</text>
+<circle cx="400" cy="355" r="23" fill="#167d71"/>
+<text x="387" y="364" font-family="sans-serif" font-size="25" fill="white">D</text>
+<line x1="820" y1="235" x2="820" y2="355" stroke="#167d71" stroke-width="9"/>
+<line x1="1060" y1="235" x2="1060" y2="355" stroke="#167d71" stroke-width="9"/>
+<circle cx="820" cy="235" r="23" fill="#167d71"/>
+<text x="807" y="244" font-family="sans-serif" font-size="25" fill="white">A</text>
+<circle cx="1060" cy="235" r="23" fill="#167d71"/>
+<text x="1047" y="244" font-family="sans-serif" font-size="25" fill="white">B</text>
+<circle cx="820" cy="355" r="23" fill="#167d71"/>
+<text x="807" y="364" font-family="sans-serif" font-size="25" fill="white">C</text>
+<circle cx="1060" cy="355" r="23" fill="#167d71"/>
+<text x="1047" y="364" font-family="sans-serif" font-size="25" fill="white">D</text>
+<text x="100" y="420" font-family="sans-serif" font-size="24" fill="#162d43">1 open; 0 new native errors</text>
+<text x="760" y="420" font-family="sans-serif" font-size="24" fill="#162d43">1 open; 0 new native errors</text>
+<text x="50" y="483" font-family="sans-serif" font-size="27" fill="#b54440">Old gate: ACCEPTED 3/3</text>
+<text x="740" y="483" font-family="sans-serif" font-size="27" fill="#146d63">New gate: BLOCKED 3/3 (2 lost pairs)</text>
+<text x="50" y="552" font-family="sans-serif" font-size="26" fill="#162d43">26 retained benchmark cases × 3 seeds · paired fresh native checks</text>
+<text x="65" y="600" font-family="sans-serif" font-size="25" fill="#162d43">Eligible snapshots: 69 before → 66 after; 3 newly blocked</text>
+<text x="65" y="646" font-family="sans-serif" font-size="24" fill="#162d43">Connected-pair losses found: 1095; thermal errors still 27; opens still 120</text>
+<text x="65" y="693" font-family="sans-serif" font-size="24" fill="#162d43">Real case: U2 pad 8 loses 17 ground-pad connections as opens fall 14 → 1</text>
+<text x="50" y="761" font-family="sans-serif" font-size="23" fill="#162d43">Existing clean thermal witness still publishes 3/3; unsafe witness still blocked 3/3</text>
+<text x="50" y="817" font-family="sans-serif" font-size="21" fill="#596b7d">Optional offline boundary only · no routing rerun, score gain, or live-editor transaction</text>
+</svg>

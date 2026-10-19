@@ -1,0 +1,8 @@
+{'name': 'rewired', 'repeat': 0, 'before_accepted': True, 'after_accepted': False, 'lost_terminal_pairs': 2, 'new_errors': 0, 'opens': 1, 'directory': 'rewired-0'}
+{'name': 'unchanged', 'repeat': 0, 'before_accepted': True, 'after_accepted': True, 'lost_terminal_pairs': 0, 'new_errors': 0, 'opens': 1, 'directory': 'unchanged-0'}
+{'name': 'unsafe-thermal', 'repeat': 0, 'before_accepted': False, 'after_accepted': False, 'lost_terminal_pairs': 0, 'new_errors': 2, 'opens': 0, 'directory': 'unsafe-thermal-0'}
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c198/controls.py", line 22, in <module>
+    assert p.returncode in [0,1],(name,phase,p.stderr)
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('repaired-thermal', 'before', "ENOENT: no such file or directory, open '/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c198/controls/repaired-thermal-0/candidate/board.kicad_pro'\n")

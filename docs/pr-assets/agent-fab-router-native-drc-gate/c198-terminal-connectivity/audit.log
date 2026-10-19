@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c198/audit.py", line 16, in <module>
+    assert len(losses)==expected,(name,len(losses))
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('rewired', 0)

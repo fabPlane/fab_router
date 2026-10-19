@@ -1,0 +1,47 @@
+{
+  "implementation_commit": "7d6b779bc42ee0db219626b2ec8f5d266957f94f",
+  "before_gate_commit": "24aa80ca",
+  "router_output_source": "8fa7ead0c45b0e7ca33737ff418f6309d51d762c",
+  "router_output_cycle": 196,
+  "router_rerun": false,
+  "source_during_measurement": "Dirty parent24aa80ca; production tool bytes unchanged throughout measurement and match implementation commit",
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "nice": 10,
+  "per_phase_timeout_s": 400,
+  "full_pair_native_checks": 312,
+  "control_native_checks": 48,
+  "stopped_control_native_checks": 12,
+  "independent_native_audit_checks": 4,
+  "adjacency_exploration_checks": 2,
+  "source_hashes": {
+    "tools/native-drc-gate.ts": "7153b6ee522431f520b24c968c12f7d92819420a934fcf18a4b77a9e22298663",
+    "tools/native-terminal-groups.py": "11cc3b6f8566391589737087d05131612a69b904860370b68bc70a20d12a9355",
+    "tools/native-candidate-bundle.ts": "98f56d16f05b3f61759b6f8dd900362574dcfcff1b16ff7b50fe5d1435c67942",
+    "tools/kicad-board-rules.ts": "a7fc77852113b02cb3ab84a8164541a78c49bdcc5b5ce4ef1d1f4d5da584d76f",
+    "test/native-terminal-connectivity.test.ts": "95b53fd978e063cd8c23aef6c00309d45fbc1a53030ccad9213f94b775a14c42",
+    "test/native-candidate-bundle.test.ts": "a08ec68724ad211c46a5f5b68e4702d9c5d71bd446772c4fc7793db4ad61be06",
+    "test/fixtures/native-terminal-swap/input.kicad_pcb": "15941581e0d2f673d3242d19b4af040e2ecd7ff7a7772236ffc914a2600fde5b",
+    "test/fixtures/native-terminal-swap/candidate.kicad_pcb": "df38f9f564fee82eb61d69f5e7c654d0813ad5a4fb0ef8c434c3de3212af475a"
+  },
+  "setup_notes": [
+    "Synthetic fixture development first exposed an unrelated edge-clearance error; outline extended before the failing regression. Initial development report was overwritten; not a scored attempt.",
+    "First control attempt completed rewired/unchanged/unsafe pairs, then stopped before native execution because the selected repaired-board sidecar path did not exist. Raw attempt retained under controls/. Final attempt uses original source sidecars.",
+    "Exploratory GetConnectedPads audit returns direct pad neighbors, not transitive filled-zone connectivity; expected failure retained under audit/. Final audit independently reloads native saved boards and queries GetConnectedItems using a separate identity projection.",
+    "Initial complete check904pass was followed by final905pass after adding explicit connectivity-helper failure coverage; both logs retained."
+  ],
+  "required_checks": {
+    "typecheck": true,
+    "layer_files": 65,
+    "layer_violations": 0,
+    "tests": 905,
+    "failures": 0,
+    "assertions": 398637,
+    "seconds": 272.26,
+    "focused_tests": 11,
+    "focused_assertions": 63
+  },
+  "native_version": "10.0.6",
+  "recheck_smoke_native_checks": 8,
+  "recheck_smoke": "one real board and one synthetic control: exact groups, decisions and bindings reproduced"
+}
