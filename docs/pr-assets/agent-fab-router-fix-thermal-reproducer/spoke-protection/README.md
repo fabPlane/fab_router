@@ -187,3 +187,32 @@ filled-copper sample. `comparison.png` is generated from those measurements.
 `checks.log` records the required unchanged-engine checks;
 `diagnostic-typecheck.log` covers the diagnostic runner separately. No timing
 improvement or production safety claim is made.
+
+### Native settings and matching project sidecars
+
+`native-settings.py` checks nine metadata controls (three repeats each) using
+identical board bytes. With project minimum-spoke counts 2 and 3, native Python
+reads 2 and 3 respectively; native DRC reports zero and one thermal error
+respectively (actual spokes 2). Without the project file it falls back to 2 and
+reports zero thermal errors. Losing a non-default project requirement therefore
+changes acceptance without changing the board. These are diagnostic rule controls,
+not proposed repairs or benchmark results. Each input retains two native opens.
+
+On this inherited-gap fixture, `zone.GetThermalReliefGap()` returns 508000 nm,
+`pad.GetLocalThermalGapOverride()` returns `None`, and
+`zone.GetThermalReliefGap(pad)` returns 0. The pad-argument result must not be
+assumed to be the effective zone gap. The bridge width is also 508000 nm and the
+pad bridge override is absent. These observations do not define a general
+resolver: custom rules, footprint/pad overrides, shapes and plane connectivity
+remain unhandled. No production engine or adapter changes are made.
+
+Run from the repository root with native version 10.0.6 and a fresh directory:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/native-settings.py --out /tmp/thermal-native-settings
+rsvg-convert /tmp/thermal-native-settings/comparison.svg -o /tmp/thermal-native-settings/comparison.png
+```
+
+`native-settings-results/` retains all nine original boards, project/rule
+sidecars when present, raw native reports, API snapshots, subprocess logs, hashes
+and the measured chart. No routing was performed and no frozen score is changed.
