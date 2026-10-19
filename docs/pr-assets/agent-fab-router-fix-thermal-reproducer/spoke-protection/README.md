@@ -343,3 +343,41 @@ bun run typecheck && bun run check:layers && bun run test
 
 `component-results/` retains raw controls, polygon observations, source/input
 hashes, engine byte-identity audit, checks, and actual filled-copper rendering.
+
+### Erosion sensitivity (cycle 82)
+
+`necks.py` applies native rounded polygon offsets at radii 0, 0.10, 0.20,
+0.25 and 0.26 mm, with an explicit 1 um maximum offset error. It asks whether
+the midpoint of each earlier short strip lies in an eroded component extending
+outside the same pad bounding box + 1 mm. It distinguishes a surviving anchor
+from surviving access to remote copper. These are fixture diagnostics, not an
+exact minimum-width solver or native thermal acceptance rule.
+
+| Same retained boards, three outputs per guard | Down access at radius 0 | Down access at radius 0.25 mm | Down anchor at radius 0.25 mm |
+| --- | ---: | ---: | ---: |
+| Input (one retained board) | yes | yes | present |
+| Downward guard | 3/3 | 0/3 | present 3/3 |
+| Leftward guard | 0/3 | 0/3 | absent 3/3 |
+
+Leftward access survives through 0.25 mm in all seven boards. At 0.26 mm,
+both anchors disappear in every board. All input identities match the earlier
+component audit. The downward guard's down anchor remains at 0.25 mm but is
+separated from remote copper. Native DRC previously accepted these outputs:
+requiring this erosion radius would reject them. No production guard is adopted.
+No new routing, refill, DRC benchmark, or frozen-score improvement is claimed.
+
+Six controls pass in each of three repeats, covering wide and narrow paths,
+detached copper, hole-created narrow paths, eroded anchors, invalid parameters,
+and source immutability. A mutation that validates parameters but skips erosion
+passes only three controls. Initial test-first invocation failed for the absent
+helper; the explicit mutation is the behavioral comparison, not an engine bug.
+
+```bash
+/usr/bin/python3 -B docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/run_neck_controls.py --out /tmp/thermal-neck-controls
+taskset -c 20-25 nice -n 10 timeout 90 /usr/bin/python3 -B docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/necks.py --out /tmp/thermal-necks
+rsvg-convert /tmp/thermal-necks/comparison.svg -o /tmp/thermal-necks/comparison.png
+taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+```
+
+`neck-results/` retains measurements, native offset geometry, controls, source
+hashes and required checks. Frozen native thermal failures remain unresolved.
