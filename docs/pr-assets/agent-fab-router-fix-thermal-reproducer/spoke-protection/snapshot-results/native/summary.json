@@ -1,0 +1,305 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "repeats": 3,
+  "script_sha256": "8a88e41b97ae697220a9e41e134342fe098f32568a9e5177e6500cf329e5c166",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "project-two",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "fd1ed5f5e513ecc02d58ae43b2b52bd3d9e014f2168d502618c5bd90356c31c5"
+    },
+    {
+      "repeat": 1,
+      "variant": "project-three",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "55057225dd128dae8e1f3563e1b70b858592a7723fc0648c27ccbdba989965fc"
+    },
+    {
+      "repeat": 1,
+      "variant": "missing-project",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": null,
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "a4fd0cc62d02a5c1ec75113e35612790a40e05f1340e906dbd9433c962ef8dbf"
+    },
+    {
+      "repeat": 2,
+      "variant": "project-two",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "82f6cfbe6fe5c4b4fb916d63b86cd52385185acda6ec0b915ded9b229cc1e945"
+    },
+    {
+      "repeat": 2,
+      "variant": "project-three",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "f4184c65fa4411b9aaab6bbd9cbe38d6ad84906e6036d0918d78ea4fdcde4486"
+    },
+    {
+      "repeat": 2,
+      "variant": "missing-project",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": null,
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "e80300f84e04fba5839f9b309b7d9abc3c6cb782098053fa534b537380bc91f7"
+    },
+    {
+      "repeat": 3,
+      "variant": "project-two",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "89acf94c08036c964c131f6672bf06331dff13d69be1f924b224889efc6a0361"
+    },
+    {
+      "repeat": 3,
+      "variant": "project-three",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "58a8768ce558157b75a6f6e432bd52a6c5b0c1c1c76d082a8a4d7bbc390b7dfe"
+    },
+    {
+      "repeat": 3,
+      "variant": "missing-project",
+      "snapshot": {
+        "input_identity": {
+          "schema": 1,
+          "native_version": "10.0.6",
+          "board": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+          "project": null,
+          "rules": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+        },
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "2be971a39d6264123dd64de033d08c5f4f46ca4fe4159775547960f8a5cae2e5"
+    }
+  ]
+}

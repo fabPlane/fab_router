@@ -29,15 +29,19 @@ def snapshot(path):
     board = pcbnew.LoadBoard(str(path))
     pad, = [p for p in board.GetPads() if p.GetNetname() == 'GND']
     zone, = list(board.Zones())
-    validate(identity, path, pcbnew.Version())
-    return dict(input_identity=identity, board_sha256=digest(path), project_present=path.with_suffix('.kicad_pro').exists(),
-                project_sha256=digest(path.with_suffix('.kicad_pro')) if path.with_suffix('.kicad_pro').exists() else None,
+    result = dict(input_identity=identity, board_sha256=identity['board'],
+                project_present=identity['project'] is not None,
+                project_sha256=identity['project'],
                 board_min_resolved_spokes=board.GetDesignSettings().m_MinResolvedSpokes,
                 zone_gap_nm=zone.GetThermalReliefGap(),
                 zone_bridge_nm=zone.GetThermalReliefSpokeWidth(),
                 pad_local_gap_nm=pad.GetLocalThermalGapOverride(),
                 pad_local_bridge_nm=pad.GetLocalThermalSpokeWidthOverride(),
                 zone_gap_with_pad_argument_nm=zone.GetThermalReliefGap(pad))
+    # Validate after all native getters to reject persistent input changes.
+    # This remains an observation check, not an atomic filesystem transaction.
+    validate(identity, path, pcbnew.Version())
+    return result
 
 
 def invoke(argv, directory, name):

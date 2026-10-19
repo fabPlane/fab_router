@@ -216,3 +216,36 @@ rsvg-convert /tmp/thermal-native-settings/comparison.svg -o /tmp/thermal-native-
 `native-settings-results/` retains all nine original boards, project/rule
 sidecars when present, raw native reports, API snapshots, subprocess logs, hashes
 and the measured chart. No routing was performed and no frozen score is changed.
+
+### Snapshot validation covers native property extraction
+
+The diagnostic previously validated identity immediately after loading the board,
+before reading thermal properties. A change during a getter could therefore
+escape validation, returning stale metadata with an apparently valid identity.
+The snapshot now reads every property, then validates the complete input bundle.
+Board/project digest fields come from that validated identity rather than extra
+filesystem reads. Persistent changes during extraction reject the snapshot.
+This does not detect change-and-restore sequences or provide atomic transactions.
+
+| Same controls, same host, three repeats each | Before | After |
+| --- | ---: | ---: |
+| Four snapshot controls passing per repeat | 1/4 | 4/4 |
+| Existing identity controls passing per repeat | 9/9 | 9/9 |
+| Native thermal errors: project min 2 / min 3 / absent | 0 / 1 / 0 | 0 / 1 / 0 |
+| Native opens per input | 2 | 2 |
+
+The new tests mutate board/project/rule bytes during the final native getter;
+the unchanged-bundle control still succeeds. The native comparison uses the
+previous cycle's retained nine controls and nine fresh checks of identical input
+bytes. No routing benchmark was performed; engine code and frozen scores remain
+unchanged. General thermal protection is still unresolved.
+
+```bash
+python3 -B docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_snapshot_identity.py
+python3 -B docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_metadata_identity.py
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/native-settings.py --out /tmp/thermal-snapshot-controls
+```
+
+`snapshot-results/` retains three baseline/candidate regression logs, identity
+controls, all fresh native inputs/reports/snapshots, the summary and measured
+chart. Baseline snapshot source is available at commit `0c24d94`.
