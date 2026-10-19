@@ -1,0 +1,15 @@
+..F
+======================================================================
+FAIL: test_rejected_candidate_loses_previously_accepted_open_reduction (__main__.SummaryControls.test_rejected_candidate_loses_previously_accepted_open_reduction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/thermal-report-comparison-k0vw90xd/before/summarize-controls.py", line 33, in test_rejected_candidate_loses_previously_accepted_open_reduction
+    self.assertEqual(self.summarize(2, 1, 2), {'increased_opens':1})
+AssertionError: {} != {'increased_opens': 1}
+- {}
++ {'increased_opens': 1}
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.097s
+
+FAILED (failures=1)
