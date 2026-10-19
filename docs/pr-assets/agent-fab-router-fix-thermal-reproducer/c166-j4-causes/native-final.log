@@ -1,0 +1,40 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+22:23:29: Debug: Adding duplicate image handler for 'PNG file'
+22:23:29: Debug: Adding duplicate image handler for 'JPEG file'
+22:23:29: Debug: Adding duplicate image handler for 'TIFF file'
+22:23:29: Debug: Adding duplicate image handler for 'GIF file'
+22:23:29: Debug: Adding duplicate image handler for 'PNM file'
+22:23:29: Debug: Adding duplicate image handler for 'PCX file'
+22:23:29: Debug: Adding duplicate image handler for 'IFF file'
+22:23:29: Debug: Adding duplicate image handler for 'Windows icon file'
+22:23:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:23:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:23:29: Debug: Adding duplicate image handler for 'TGA file'
+22:23:29: Debug: Adding duplicate image handler for 'XPM file'
+{"name": "000-original", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "001-all", "counts": {"footprint": 33, "segment": 115, "via": 38, "zone": 2}, "target": 0, "errors": 1, "opens": 0}
+{"name": "002-segments-only", "counts": {"footprint": 33, "segment": 115, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 40}
+{"name": "003-chunk", "counts": {"footprint": 33, "segment": 57, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 47}
+{"name": "004-chunk", "counts": {"footprint": 33, "segment": 28, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 48}
+{"name": "005-chunk", "counts": {"footprint": 33, "segment": 14, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 53}
+{"name": "006-chunk", "counts": {"footprint": 33, "segment": 7, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 53}
+{"name": "007-chunk", "counts": {"footprint": 33, "segment": 3, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 54}
+{"name": "008-chunk", "counts": {"footprint": 33, "segment": 4, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 54}
+{"name": "009-chunk", "counts": {"footprint": 33, "segment": 2, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 55}
+{"name": "010-chunk", "counts": {"footprint": 33, "segment": 1, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "011-chunk", "counts": {"footprint": 33, "segment": 1, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 55}
+{"name": "012-control-original-0", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "013-control-all-0", "counts": {"footprint": 33, "segment": 115, "via": 38, "zone": 2}, "target": 0, "errors": 1, "opens": 0}
+{"name": "014-control-minimal-0", "counts": {"footprint": 33, "segment": 1, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 55}
+{"name": "015-control-remove-0", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "016-control-original-1", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "017-control-all-1", "counts": {"footprint": 33, "segment": 115, "via": 38, "zone": 2}, "target": 0, "errors": 1, "opens": 0}
+{"name": "018-control-minimal-1", "counts": {"footprint": 33, "segment": 1, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 55}
+{"name": "019-control-remove-1", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "020-control-original-2", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+{"name": "021-control-all-2", "counts": {"footprint": 33, "segment": 115, "via": 38, "zone": 2}, "target": 0, "errors": 1, "opens": 0}
+{"name": "022-control-minimal-2", "counts": {"footprint": 33, "segment": 1, "via": 0, "zone": 2}, "target": 0, "errors": 1, "opens": 55}
+{"name": "023-control-remove-2", "counts": {"footprint": 33, "segment": 0, "via": 0, "zone": 2}, "target": 0, "errors": 0, "opens": 55}
+PASS 24 checks; 1 minimal additions ['0798b683-fd93-4297-af4b-3f2365f20b8e']
