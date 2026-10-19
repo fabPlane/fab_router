@@ -478,3 +478,35 @@ bun run typecheck && bun run check:layers && bun run test
 
 `sentinel-results/` retains all fifteen native reports, rules, filled boards,
 projects, snapshots, logs, source hashes and the comparison chart.
+
+### Offline staged candidate acceptance (cycle 87)
+
+`offline-candidates.py` freshly refills private copies of the original input and
+previously generated bad/protected candidates. A separate disposable candidate
+copy carries the expected-error loading probe. The actual native report retains
+all errors and never contains an injected sentinel. Three repeats each reject
+the bad thermal route, accept the protected route, reject a protected route with
+invalid rules despite its empty error list, and reject a protected route lacking
+the required project despite its empty error list. Every source board and sidecar
+remains byte-identical after each check. Native opens remain 2 before / 1 after;
+acceptance here concerns new errors, not a completed board.
+
+This isolates a useful offline building block: rejection requires no live undo
+because only staged files were changed. It provides no supported live editor
+transaction, atomic publication, ownership protocol, general custom-rule validator,
+or effective-rule resolver. The fixture requires a project sidecar and an
+error-free baseline; those restrictions are explicit rather than a general policy.
+No candidates are installed, no new routes are computed, and the frozen thermal
+failures remain unresolved. The malformed-rule sentinel observes only the known
+failure mode and cannot establish that every supplied rule has taken effect.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 900 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/offline-candidates.py --out /tmp/thermal-offline-new
+python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/render-offline.py
+rsvg-convert docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/offline-results/comparison.svg -o /tmp/thermal-offline.png
+bun run typecheck && bun run check:layers && bun run test
+```
+
+`offline-results/` retains all 36 fresh native reports and logs, exact staged
+boards/projects/rules, source/report hashes and measured chart. This is a native
+validation diagnostic, not a router benchmark or production fix.
