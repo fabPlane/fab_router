@@ -60,4 +60,5 @@ From the router worktree (engine-only larger inputs and paired slow acceptance):
 ```bash
 taskset -c 12-19 nice -n 10 timeout 7200 bun run docs/pr-assets/agent-fab-router-perf-local-rescue/run-public-large.ts /tmp/unused-large.json /home/hyper/bench/boards/ladder/l2.dsn /home/hyper/bench/boards/ladder/l3-cycle18.dsn /home/hyper/bench/boards/dense/dense6-bga324.dsn
 taskset -c 12-19 nice -n 10 timeout 7200 bun run docs/pr-assets/agent-fab-router-perf-local-rescue/run-public-slow.ts /tmp/unused-slow.json
+taskset -c 12-19 nice -n 10 timeout 7200 python3 docs/pr-assets/agent-fab-router-perf-local-rescue/public-dense-native.py /home/hyper/bench/wt/fp-perf/benchmarks/autorouter /home/hyper/bench/wt/fr-perf /home/hyper/bench/wt/fr-perf /home/hyper/bench/boards/dense/fab_pcb-case-dense6-bga324-j1 /tmp/unused-dense-native
 ```

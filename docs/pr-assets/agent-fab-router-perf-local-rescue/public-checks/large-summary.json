@@ -1,5 +1,5 @@
 {
-  "complete": false,
+  "complete": true,
   "groups": [
     {
       "file": "/home/hyper/bench/boards/ladder/l2.dsn",
@@ -112,26 +112,111 @@
         ]
       },
       "candidate": {
-        "runs": 1,
+        "runs": 3,
         "incompletes": [
+          153,
+          153,
           153
         ],
         "errors": [
+          0,
+          0,
           0
         ],
         "timeouts": [
+          false,
+          false,
           false
         ],
-        "median_s": 209.52723781900002,
-        "p95_s": 209.52723781900002,
+        "median_s": 217.48409652100014,
+        "p95_s": 218.63862308000006,
         "vias": [
+          93,
+          93,
           93
         ],
         "length_mm": [
+          1688.6048962239895,
+          1688.6048962239895,
           1688.6048962239895
         ],
         "sessions": [
+          "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9",
+          "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9",
           "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9"
+        ]
+      }
+    },
+    {
+      "file": "/home/hyper/bench/boards/dense/dense6-bga324.dsn",
+      "normal": {
+        "runs": 3,
+        "incompletes": [
+          191,
+          191,
+          191
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 195.5507845389999,
+        "p95_s": 197.8632469159998,
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2027.648152410987,
+          2027.648152410987,
+          2027.648152410987
+        ],
+        "sessions": [
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0",
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0",
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0"
+        ]
+      },
+      "candidate": {
+        "runs": 3,
+        "incompletes": [
+          190,
+          190,
+          190
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 198.78124741100032,
+        "p95_s": 201.6512067259997,
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2032.3792678141454,
+          2032.3792678141454,
+          2032.3792678141454
+        ],
+        "sessions": [
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c",
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c",
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c"
         ]
       }
     }

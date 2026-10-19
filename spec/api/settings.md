@@ -11,8 +11,8 @@ times in milliseconds; costs are dimensionless multipliers.
 | `maxPasses` | 100 | Upper bound on router passes. A pass sweeps every incomplete connection once. The run stops early when nothing is incomplete or when `maxStagnantPasses` consecutive passes made no progress |
 | `maxStagnantPasses` | 3 | See above; 0 disables the stagnation stop |
 | `maxItems` | unset | If set, the router completes at most this many connections in the run (fanout and optimiser stages have their own `*MaxItems`); once reached it stops with `stoppedBy: "maxItems"`. A connection counts when its copper is inserted, however many Tracks and Barrels that takes. Used by the suites to freeze a partial result |
-| `timeBudgetMs` | unset | Wall-clock budget for the whole `route()` call (fanout + passes + optimiser). On expiry the best snapshot so far is returned with `report.timedOut = true` |
-| `connectionBudgetMs` | unset | Wall-clock budget per connection attempt |
+| `timeBudgetMs` | unset | Wall-clock budget for the whole `route()` call (fanout + passes + optimiser + optional local recovery). On expiry the best snapshot so far is returned with `report.timedOut = true` |
+| `connectionBudgetMs` | unset | Wall-clock budget per normal routing connection attempt. Experimental `localRecovery` uses its separate fixed 15-second target cap, bounded by the remaining `timeBudgetMs` |
 | `viaCost` | 50 | Cost of one Barrel between two signal Sheets, in units of one LU-length of track |
 | `planeViaCost` | 5 | Cost of one Barrel on a net that owns a plane Sheet (used instead of `viaCost` for that net; dropping into the plane is the cheap way to connect it) |
 | `bendCost` | 0 | Extra cost per direction change; `0` means length-only. Higher values yield fewer bends |

@@ -21,11 +21,15 @@ if (scratch/'large.json').exists():
  (out/'large-summary.json').write_text(json.dumps({'complete':len(rows)==18,'groups':groups},indent=2)+'\n')
 if (scratch/'slow.json').exists():
  data=json.loads((scratch/'slow.json').read_text());rows=data['rows'];old={x['result']['id']:x['result'] for x in rows if x['mode']=='normal'};new={x['result']['id']:x['result']for x in rows if x['mode']=='candidate'}
- regressions=[]
+ regressions=[];differences=[]
  for id,b in new.items():
   a=old[id]
+  changed={k:{'before':a['measured'].get(k),'after':b['measured'].get(k)}for k in set(a['measured'])|set(b['measured'])if k!='wallClockMs'and a['measured'].get(k)!=b['measured'].get(k)}
+  if changed:differences.append({'id':id,'changes':changed})
+  for key,value in a['measured'].items():
+   if (key.startswith('invariant:')and value is True and b['measured'].get(key)is not True)or(key=='aborted'and not value and b['measured'].get(key)):regressions.append({'id':id,'kind':key})
   if a['pass']and not b['pass']:regressions.append({'id':id,'kind':'pass-loss'})
   for key in ['incomplete','incompleteAfter','violationsAdded','violations']:
    if isinstance(a['measured'].get(key),(int,float))and isinstance(b['measured'].get(key),(int,float)) and b['measured'][key]>a['measured'][key]:regressions.append({'id':id,'kind':key,'before':a['measured'][key],'after':b['measured'][key]})
- result={'rows':len(rows),'normal':{'total':len(old),'passed':sum(x['pass']for x in old.values()),'stubbed':sum(x['stub']for x in old.values())},'candidate':{'total':len(new),'passed':sum(x['pass']for x in new.values()),'stubbed':sum(x['stub']for x in new.values())},'regressions':regressions}
+ result={'complete':len(rows)==126 and len(old)==len(new)==63,'expected_cases_per_mode':63,'rows':len(rows),'normal':{'total':len(old),'passed':sum(x['pass']for x in old.values()),'stubbed':sum(x['stub']for x in old.values())},'candidate':{'total':len(new),'passed':sum(x['pass']for x in new.values()),'stubbed':sum(x['stub']for x in new.values())},'regressions':regressions,'differences':differences}
  (out/'slow-summary.json').write_text(json.dumps(result,indent=2)+'\n')
