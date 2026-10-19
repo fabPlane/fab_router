@@ -1,0 +1,292 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "script_sha256": "a6540ff75353870cf5a0f77cb698d8d3dee838705f874175916d094a75753be4",
+  "step_nm": 1000,
+  "section_distance_nm": 254000,
+  "repeats": 3,
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "zone-default",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "edd74546c3a662048c2f81cace7014020026bf6586abc6b7333db7df5644bfc7",
+      "filled_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "variant": "custom-400",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "393ef28af0350ad124e60f7e918ea4c1d6a61dfbd7d38247a232d829f59bb2f9",
+      "filled_sha256": "992f3b134c5a89dbcdff1afa4452506f52c80aec57492100bbed3d580c45fc5f",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 1,
+      "variant": "custom-200",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "7d6a7597a0f5a0990950a87fab7b96dd377c622f5fba84d64d1cb92e371ae362",
+      "filled_sha256": "7e51d38a9b460b1c27742654d897ba6e5dbffcbe6399422e56f74b9e0180424a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling",
+        "isolated_copper"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          },
+          "left": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          }
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "zone-default",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "edd74546c3a662048c2f81cace7014020026bf6586abc6b7333db7df5644bfc7",
+      "filled_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "custom-400",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "393ef28af0350ad124e60f7e918ea4c1d6a61dfbd7d38247a232d829f59bb2f9",
+      "filled_sha256": "992f3b134c5a89dbcdff1afa4452506f52c80aec57492100bbed3d580c45fc5f",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 2,
+      "variant": "custom-200",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "7d6a7597a0f5a0990950a87fab7b96dd377c622f5fba84d64d1cb92e371ae362",
+      "filled_sha256": "7e51d38a9b460b1c27742654d897ba6e5dbffcbe6399422e56f74b9e0180424a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling",
+        "isolated_copper"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          },
+          "left": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          }
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "zone-default",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "edd74546c3a662048c2f81cace7014020026bf6586abc6b7333db7df5644bfc7",
+      "filled_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "custom-400",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "393ef28af0350ad124e60f7e918ea4c1d6a61dfbd7d38247a232d829f59bb2f9",
+      "filled_sha256": "992f3b134c5a89dbcdff1afa4452506f52c80aec57492100bbed3d580c45fc5f",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      }
+    },
+    {
+      "repeat": 3,
+      "variant": "custom-200",
+      "input_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+      "rules_sha256": "7d6a7597a0f5a0990950a87fab7b96dd377c622f5fba84d64d1cb92e371ae362",
+      "filled_sha256": "7e51d38a9b460b1c27742654d897ba6e5dbffcbe6399422e56f74b9e0180424a",
+      "errors": 0,
+      "warnings": [
+        "track_dangling",
+        "via_dangling",
+        "isolated_copper"
+      ],
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          },
+          "left": {
+            "count": 0,
+            "first_nm": null,
+            "last_nm": null
+          }
+        }
+      }
+    }
+  ]
+}

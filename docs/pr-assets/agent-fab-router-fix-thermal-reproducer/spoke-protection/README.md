@@ -381,3 +381,32 @@ taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run ch
 
 `neck-results/` retains measurements, native offset geometry, controls, source
 hashes and required checks. Frozen native thermal failures remain unresolved.
+
+### Custom thermal width rules (cycle 83)
+
+`custom-width.py` supplies the same board/project to the native CLI, changing only
+one GND thermal-width custom rule. Three fresh refills/checks per variant show
+that `GetThermalReliefSpokeWidth()` remains 508000 nm and the pad local override
+remains absent, while both measured cross sections contain 508, 400, or zero
+samples for the default, 400 um, and 200 um rules respectively. Sampling uses
+1 um steps, ±600 um from each axis, 254 um beyond the pad bounding box.
+The 200 um rule leaves no copper at those two cross sections; this does not
+establish its cause or prove absence everywhere. Native warnings are retained.
+All variants have zero native errors and two opens, which does not prove a
+usable thermal bridge (the fixture has only one GND pad). No route is attempted.
+
+This demonstrates a specific limitation of stored getters: zone width plus local
+pad override is insufficient to resolve an effective custom-rule width. It does
+not supply a general rule resolver or justify a production guard. The frozen
+suite remains 39/78 passes, 13/26 valid cases, 120 opens, 27 new thermal errors.
+
+Reproduce from the repository root on the same native 10.0.6 installation:
+
+```sh
+timeout 360 taskset -c 20-25 nice -n 10 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/custom-width.py --out /tmp/thermal-custom-width-new
+bun run typecheck && bun run check:layers && bun run test
+```
+
+`custom-width-results/` retains boards, projects, custom rules, native DRC reports,
+snapshots, logs, summary hashes and the measured chart. These native diagnostics
+are not router benchmark runs; no new benchmark score or full-suite rerun is claimed.
