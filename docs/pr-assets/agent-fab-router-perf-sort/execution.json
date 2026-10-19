@@ -1,0 +1,27 @@
+{
+  "host": "hyper-ms-lin",
+  "cpus": "12-19",
+  "bun": "1.4.0",
+  "effective_nice": 15,
+  "own_heavy_jobs": "sequential: candidate checks, native comparison, ladder, profiles, census, restored-source checks",
+  "light_work": "analysis and helper type checks overlap heavy jobs; shared-host other workloads uncontrolled",
+  "source_candidate": "c975b79df56dd8cf3b9fadbaccb6dd0860393462",
+  "source_baseline": "69cf598db98c136bff16bbe02bccdded95674b18",
+  "log_sha256": {
+    "cycle15-tests.log": "1bd44b760350e699713fd23aa7b69181a69a15d198a35aa1809eed6b432946af",
+    "cycle15-paired.log": "fd203c124cc6c25c88a481bda31a4d5e80f9f35f8c420464fcdc794ead1898a6",
+    "cycle15-ladder.log": "65f6e538dc5f84b047ab8f1e52238905929d72654663e41849782244a970a2af",
+    "cycle15-census.log": "71bc9f091579a3099edd15f987de599303b2316af3cac21510b40e9e0a1ae0d7",
+    "cycle15-profile-before-1.log": "44e1e09b839d91e7d1cc006d5762c1d55bc68f9fee6d622c975aa1141fb31502",
+    "cycle15-profile-before-2.log": "6d7b784ce15ba2c42ad3ca7570a6f64648e10fbb54f6b1836affeb6beb014796",
+    "cycle15-profile-before-3.log": "e33b28deb7b12ec389e4095d747b9eaf27f22bf1fe8eff3ff0b5d7ecc9216817",
+    "cycle15-profile-after-1.log": "4cf226380beca5952d3fc0401d00bdf5643a62de409e252b113c0ce227d93c9b",
+    "cycle15-profile-after-2.log": "15c5f3617f09e200b003ab0743b3b9e64012b9f83cfa8c5d223bf022d5f6b422",
+    "cycle15-profile-after-3.log": "bb9e44b09bb7610f4e1396d43c5be9cba015ce3fe7839630748d26faae37019a"
+  },
+  "cloud_runtime": "Skill read; environment_status tool and network policy snapshot unavailable. Existing authenticated Git CLI used; no credential files read.",
+  "native_analyzer": "All 52 invocation source hashes/controls/chronology verified; all 78 paired sessions and quality match.",
+  "slow_acceptance": "not run: candidate rejected at performance gate before adoption; prior failures remain",
+  "history_rows": 59,
+  "history_dedup_rerun_added": 0
+}
