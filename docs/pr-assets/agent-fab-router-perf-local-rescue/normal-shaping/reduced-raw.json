@@ -1,0 +1,342 @@
+{
+  "context": "reduced",
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "rows": [
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 1.340787862,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false
+    },
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 1.1728306789999998,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false
+    },
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 1.0431905969999997,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false
+    }
+  ]
+}

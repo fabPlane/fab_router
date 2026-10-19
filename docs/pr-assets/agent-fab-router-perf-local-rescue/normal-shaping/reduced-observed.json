@@ -1,0 +1,225 @@
+{
+  "context": "reduced",
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "rows": [
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 4.293135083999999,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false
+    },
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.4908838940000004,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false
+    },
+    {
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 3.3189503780000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false
+    }
+  ]
+}
