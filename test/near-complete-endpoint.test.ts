@@ -14,6 +14,7 @@ import {ignoreOf} from '../src/route/clear.ts';
 import {resolveSettings} from '../src/pipeline/index.ts';
 import type {Pt} from '../src/geom/index.ts';
 import type {RouteSettings} from '../spec/types/settings.ts';
+import {tryRecoveryTransaction} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts';
 const input=readFileSync(new URL('./data/near-complete-endpoint.dsn',import.meta.url),'utf8');
 const fixture=JSON.parse(readFileSync(new URL('./data/near-complete-endpoint.json',import.meta.url),'utf8')) as {
  input_sha256:string;kept:number[];terminalIds:number[];settings:Partial<RouteSettings>;
@@ -23,7 +24,7 @@ const sha=(s:string)=>createHash('sha256').update(s).digest('hex');
 test('near-complete endpoint context preserves legal progress and deterministic retained copper',()=>{
  expect(sha(input)).toBe(fixture.input_sha256);
  const fingerprints=[];
- for(let repeat=0;repeat<2;repeat++){
+ for(let repeat=0;repeat<3;repeat++){
   const read=readDsn(input);if(!read.ok)throw Error('Fixture parse failed');const l=read.layout;
   l.pads=l.pads.filter(p=>fixture.kept.includes(p.id));
   l.nets=l.nets.map(n=>({...n,pads:n.pads.filter(id=>fixture.kept.includes(id))}));
@@ -53,7 +54,41 @@ test('near-complete endpoint context preserves legal progress and deterministic 
    expect(leg.ok).toBe(true);
    expect(leg.widths.every(w=>w===profile.width)).toBe(true);
    const session=writeSes(l);
-   journal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+   const targetPair={net:target,from:10,to:62};
+   const addWitness=()=>journal.addTrack({net:witness.net,sheet:witness.sheet,pts:leg.pts,width:profile.width,kind:profile.trackKind,hold:'free'});
+   const assertRestored=()=>{
+    expect(writeSes(l)).toBe(session);
+    expect(requiredConnections(l).filter(c=>c.net===target)).toEqual(left);
+    expect(checkDrc(l).counts.violations).toBe(0);
+    expect(legaliseTrail(l,lattice,witness.sheet,witness.raw,profile,ignoreOf(witness.net),false).ok).toBe(true);
+    expect(journal.insertedSince(mark)).toEqual([]);
+   };
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{})).toBe('open');
+   assertRestored();
+   expect(()=>tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{addWitness();throw Error('proposal interrupted');})).toThrow('proposal interrupted');
+   assertRestored();
+   const blocker=l.pads.find(p=>p.net!==target&&p.sheets.includes(witness.sheet))!;
+   expect(blocker).toBeDefined();
+   let rejectedId=-1;
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{
+    addWitness();
+    rejectedId=journal.addTrack({net:target,sheet:witness.sheet,
+     pts:[blocker.at,{x:blocker.at.x+profile.width,y:blocker.at.y}],
+     width:profile.width,kind:profile.trackKind,hold:'free'}).id;
+    expect(checkDrc(l).counts.violations).toBeGreaterThan(0);
+   })).toBe('drc');
+   expect(lattice.itemOf(rejectedId)).toBeUndefined();
+   assertRestored();
+   // Close the longer connection while ripping up the short branch: aggregate
+   // incomplete count stays one, but a previously joined terminal pair is lost.
+   const short=l.tracks.find(t=>t.origin==='router'&&t.net===target)!;
+   expect(short).toBeDefined();
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{
+    journal.remove(short.id);addWitness();
+    expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(1);
+   })).toBe('terminals');
+   assertRestored();
+   expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{addWitness();})).toBe('kept');
    expect(checkDrc(l).counts.violations).toBe(0);
    expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
    journal.rewind(mark);
@@ -62,4 +97,5 @@ test('near-complete endpoint context preserves legal progress and deterministic 
   }
  }
  expect(fingerprints[0]).toBe(fingerprints[1]);
+ expect(fingerprints[0]).toBe(fingerprints[2]);
 },30_000);
