@@ -1,0 +1,481 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T13:28:12",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [+3V3] of C10 on B.Cu",
+                    "pos": {
+                        "x": 175.449947,
+                        "y": 52.727953
+                    },
+                    "uuid": "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+                },
+                {
+                    "description": "Pad 1 [+3V3] of C9 on B.Cu",
+                    "pos": {
+                        "x": 176.617347,
+                        "y": 53.895453
+                    },
+                    "uuid": "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                    "pos": {
+                        "x": 175.082,
+                        "y": 58.3565
+                    },
+                    "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                },
+                {
+                    "description": "Pad 2 [GNDD] of C9 on B.Cu",
+                    "pos": {
+                        "x": 175.503653,
+                        "y": 55.009147
+                    },
+                    "uuid": "d08e3b61-3df5-445c-b296-30da61a459f9"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GNDD] of C9 on B.Cu",
+                    "pos": {
+                        "x": 175.503653,
+                        "y": 55.009147
+                    },
+                    "uuid": "d08e3b61-3df5-445c-b296-30da61a459f9"
+                },
+                {
+                    "description": "Pad 2 [GNDD] of C10 on B.Cu",
+                    "pos": {
+                        "x": 174.336253,
+                        "y": 53.841647
+                    },
+                    "uuid": "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text '-' on B.Silkscreen",
+                    "pos": {
+                        "x": 175.895,
+                        "y": 96.901
+                    },
+                    "uuid": "a5abe449-0096-48ac-8e44-0506f10f1523"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Non-Mirrored text on back layer",
+            "items": [
+                {
+                    "description": "PCB text '+' on B.Silkscreen",
+                    "pos": {
+                        "x": 178.3715,
+                        "y": 96.901
+                    },
+                    "uuid": "fb9f57e0-ef68-4a2f-a143-4edec93d39b7"
+                }
+            ],
+            "severity": "warning",
+            "type": "nonmirrored_text_on_back_layer"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 170.774416,
+                        "y": 62.625458
+                    },
+                    "uuid": "c3ba78ae-82aa-4aa0-8416-457e4b035696"
+                },
+                {
+                    "description": "Pad 2 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 172.50664,
+                        "y": 72.93356
+                    },
+                    "uuid": "bbd22052-fd1c-4b1f-bd3d-44c2a576e863"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 169.775279,
+                        "y": 61.417579
+                    },
+                    "uuid": "cec92d48-488f-437f-bd9a-b8c5e29d510e"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 167.03802,
+                        "y": 65.278
+                    },
+                    "uuid": "21dc317a-cc5a-4e5e-ae5d-89bfa7f01c81"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 171.651283,
+                        "y": 62.140127
+                    },
+                    "uuid": "f70c300b-162b-46e5-8343-2461a6f29e8b"
+                },
+                {
+                    "description": "Pad 2 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 172.50664,
+                        "y": 72.93356
+                    },
+                    "uuid": "bbd22052-fd1c-4b1f-bd3d-44c2a576e863"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 178.125329,
+                        "y": 71.288566
+                    },
+                    "uuid": "66f57ea0-19db-4eba-8b95-5a748c5f087e"
+                },
+                {
+                    "description": "Pad 5 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 179.11064,
+                        "y": 74.92746
+                    },
+                    "uuid": "c9643108-aaa5-423c-8318-52b7972a8798"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 168.402574,
+                        "y": 70.684001
+                    },
+                    "uuid": "ba1a1030-6f25-4aff-a74e-4c5a89b1da08"
+                },
+                {
+                    "description": "Pad 4 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 165.36924,
+                        "y": 74.9173
+                    },
+                    "uuid": "771ef595-bcd3-4f80-a31e-bef7979ea457"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 165.920069,
+                        "y": 84.57692
+                    },
+                    "uuid": "d8a0c2d7-973a-4c53-915a-bc2c35830be0"
+                },
+                {
+                    "description": "Pad 6 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 166.8526,
+                        "y": 109.474
+                    },
+                    "uuid": "6aa7ac3d-90cf-40d0-86d5-8e89460c2d5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 166.257879,
+                        "y": 120.034161
+                    },
+                    "uuid": "ec287773-7ee6-4c3d-a7fd-f8d21512a3cc"
+                },
+                {
+                    "description": "Pad 6 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 166.8526,
+                        "y": 109.474
+                    },
+                    "uuid": "6aa7ac3d-90cf-40d0-86d5-8e89460c2d5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of X1 on F.Silkscreen",
+                    "pos": {
+                        "x": 170.434083,
+                        "y": 120.867796
+                    },
+                    "uuid": "1bbe5d42-e263-48af-a516-90812440ab1a"
+                },
+                {
+                    "description": "Pad 6 [<no net>] of X1 on F.Cu",
+                    "pos": {
+                        "x": 166.8526,
+                        "y": 109.474
+                    },
+                    "uuid": "6aa7ac3d-90cf-40d0-86d5-8e89460c2d5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'aquarius'",
+            "items": [
+                {
+                    "description": "Footprint X1",
+                    "pos": {
+                        "x": 155.1686,
+                        "y": 85.7504
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005e005256"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'Capacitor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C9",
+                    "pos": {
+                        "x": 176.0605,
+                        "y": 54.4523
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005d242095"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'Capacitor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C10",
+                    "pos": {
+                        "x": 174.8931,
+                        "y": 53.2848
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005d2420a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R20",
+                    "pos": {
+                        "x": 175.8695,
+                        "y": 58.3565
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005d2424c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 121.3,
+                        "y": 96.02
+                    },
+                    "uuid": "59737521-2102-4cba-b94c-33ecfbbd7ae5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 121.3,
+                        "y": 146.02
+                    },
+                    "uuid": "ac01526d-ab26-4a8c-a579-80560130dda2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 181.356,
+                        "y": 146.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-00005da2afe7"
+                },
+                {
+                    "description": "Segment on B.Silkscreen",
+                    "pos": {
+                        "x": 181.3,
+                        "y": 96.02
+                    },
+                    "uuid": "6b10b0a0-92aa-496f-a6c9-344b2eb0d38b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [Net-(J2-Pad4)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 175.22,
+                        "y": 59.8045
+                    },
+                    "uuid": "251aa062-35db-4d7b-8f18-d31fd05a1a08"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GNDA] on B.Cu, length 0.3048 mm",
+                    "pos": {
+                        "x": 174.5474,
+                        "y": 56.9501
+                    },
+                    "uuid": "0f5e7d4a-2363-5eaa-b9ff-bf5a899fa70e"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        }
+    ]
+}
