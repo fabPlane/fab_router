@@ -1,0 +1,29 @@
+{
+  "source_unchanged": true,
+  "production_code": "f1680db",
+  "initial_head": "de42286",
+  "disposable_changed_files": [
+    "src/route/recovery-endpoint.ts"
+  ],
+  "copied_files_per_source": 1492,
+  "source_generator_replay": true,
+  "native_attempts": 156,
+  "native_same_sessions": 78,
+  "dense_native_attempts": 6,
+  "dense_same_sessions": true,
+  "larger_attempts": 6,
+  "synthetic_trials": 90,
+  "final_synthetic_trials": 36,
+  "zero_exact_violations_synthetic": true,
+  "production_tests": {
+    "passed": 885,
+    "failed": 0,
+    "assertions": 399112
+  },
+  "driver_and_probe_typechecks": true,
+  "png_sha256": "abc37d1e74177e996db4d875d4a932ad8d578a4b0091ab9ff21d68da2ec44147",
+  "png_byte_replay": true,
+  "fresh_slow_acceptance": false,
+  "production_change": false,
+  "native_speed_gain_claim": false
+}
