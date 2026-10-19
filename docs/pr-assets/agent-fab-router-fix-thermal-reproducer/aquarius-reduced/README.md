@@ -211,3 +211,43 @@ output and the measured chart. These are static verifier controls, not router
 benchmark runs.
 
 ![Native artifact substitution controls](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/binding-results/comparison.png?raw=true)
+
+### Remaining composed-board thermal failures
+
+The latest experiment starts from the previously composed full board (six native errors reduced to four), and searches the two nearest foreign straight tracks around each remaining thermal pad. Each track receives ten signed normal translations with endpoint links. Candidates are accepted only if native errors strictly decrease, the positive-net terminal inventory remains exact, no connected terminal pair is lost, and opens do not increase. Every rejection returns the exact starting board bytes.
+
+Same board, rule sidecars, machine `hyper-ms-lin`, cores 20–25, native version 10.0.6; three repeats:
+
+| Remaining pad | Proposals per repeat | Target remains | Accepted repeats | Errors before / selected | Opens before / selected |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| C1.2 | 20 | 20/20 | 0/3 | 4 / 4 | 15 / 15 |
+| U1.53 | 20 | 13/20 | 0/3 | 4 / 4 | 15 / 15 |
+| U1.46 | 20 | 20/20 | 0/3 | 4 / 4 | 15 / 15 |
+| U1.48 | 20 | 20/20 | 0/3 | 4 / 4 | 15 / 15 |
+
+U1.53 loses its thermal error in seven proposals per repeat, but six introduce shorts and one clearance errors; all seven also add solder-mask bridge errors. Two U1.46 proposals and one U1.48 proposal lose connected terminal pairs. All 243 native checks are retained.
+
+These are static native diagnostics, not router benchmark runs. The full frozen reference remains **39/78 passing runs, 13/26 valid cases, 120 opens and 27 new thermal errors**. No routing score or speed gain is claimed. No engine, adapter, frozen input, checker or scoring code changed.
+
+Independent replay verifies native reports, rebuilt terminal partitions, target coverage, proposal ranking/geometry, selected bytes and manifests. The new audit compares every checked design and both native rule sidecars to its proposed input. Nine rejected boards (three proposals, repeated three times) show native net reassignment after save; exact differences are retained. Baselines match their proposed designs. No candidate is accepted. Identical compressed artifacts use relative symlinks within the evidence directory. Its rejection table distinguishes target removal from added clearance errors, shorts and connectivity loss.
+
+Required checks: typecheck PASS; layer checks 65 files / zero violations; 859 tests / zero failures / 398454 assertions.
+
+Reproduce from repository root:
+
+```sh
+asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+results=$asset/remaining-composed-results
+mkdir -p /tmp/remaining-source
+gzip -dc "$results/source.kicad_pcb.gz" > /tmp/remaining-source/source.kicad_pcb
+cp "$results/source.kicad_pro" "$results/source.kicad_dru" /tmp/remaining-source/
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 2400 /usr/bin/python3 "$asset/generated-transaction.py" --all-targets --track-limit 2 --source /tmp/remaining-source/source.kicad_pcb --out /tmp/remaining-native
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 900 /usr/bin/python3 "$asset/audit-remaining.py" --results /tmp/remaining-native --source /tmp/remaining-source/source.kicad_pcb
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 900 /usr/bin/python3 "$asset/audit-remaining.py" --results "$results" --source /tmp/remaining-source/source.kicad_pcb
+/usr/bin/python3 "$asset/render-remaining.py" "$results"
+taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+```
+
+![Remaining thermal proposal rejection counts](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/remaining-composed-results/comparison.png?raw=true)
+
+Earlier minimized boards, composed native repair evidence, exact reproduction commands and images remain in the [diagnostic README](https://github.com/fabPlane/fab_router/blob/agent/fab-router-fix-thermal-reproducer/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/README.md). Native transaction ownership and production integration remain open work.
