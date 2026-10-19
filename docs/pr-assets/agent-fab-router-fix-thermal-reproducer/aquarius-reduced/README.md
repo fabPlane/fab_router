@@ -63,3 +63,46 @@ taskset -c 20-25 nice -n 10 timeout 900 bash -c 'bun run typecheck && bun run ch
 Production source and engine tests remain unchanged. No frozen cases, checker,
 scoring or shared runtime were edited. No full sweep or history row is added
 because these are static native checks without a router run.
+
+## Local-axis corridor audit
+
+`local-corridors.py` reads the fifteen retained native outputs without routing
+or refilling. It verifies their board/report hashes against `results/summary.json`
+and measures positive-area polygon subtraction on B.Cu. Rectangles start at
+local pad edges, rotate with the 315-degree pad, and extend 0.508 mm. These are
+candidate geometric corridors, not resolved native thermal spokes. Rounded
+corners and a strip wider than the pad make the stored-width test especially
+unsuitable as a universal criterion.
+
+All three repeats have identical areas for each configuration:
+
+| Static native control | Native errors before → after | Fully covered 0.100 mm local corridors | Fully covered 0.508 mm local corridors |
+| --- | --- | --- | --- |
+| All tracks retained | 1 → 1 | −x | none |
+| Track 1 removed | 1 → 0 | −x, −y | none |
+| Track 2 removed | 1 → 0 | +x, −x | none |
+| Track 3 removed | 1 → 0 | −x, +y | none |
+| All tracks removed | 1 → 0 | +x, −x, +y, −y | none |
+
+Before refers to the same previously measured all-track configuration;
+this audit adds no native runs. The native checker accepts every deletion
+control even though no full stored-width rectangle is covered. This rejects
+that rectangle criterion as a general safety test. The narrow rectangles
+explain which direction each obstacle blocks in this fixture, but their
+agreement with the native findings is not a general spoke-count algorithm,
+effective-rule resolution, connectivity proof, or routing remedy.
+
+For every board, direction and width, controls require full self-coverage,
+no empty-copper coverage, and partial coverage with a half-length strip.
+A long-axis point hits the actual native pad under the chosen rotation;
+the opposite rotation convention fails that control. Two independent audit
+invocations produce byte-identical JSON. `local-results/` contains the
+measurements and chart; the existing `results/` retains the source boards
+and reports. Native imports emit existing library diagnostic messages, kept
+in the raw log. Engine source/tests remain unchanged.
+
+```bash
+asset=docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/python3 "$asset/local-corridors.py" --out /tmp/aquarius-local-corridors
+rsvg-convert /tmp/aquarius-local-corridors/comparison.svg -o /tmp/aquarius-local-corridors/comparison.png
+```
