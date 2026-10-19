@@ -1,0 +1,1095 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "rows": [
+    {
+      "repeat": 1,
+      "accepted": true,
+      "blockers": {
+        "tracks_crossing": 2,
+        "solder_mask_bridge": 2,
+        "shorting_items": 2,
+        "clearance": 1
+      },
+      "attempts": [
+        {
+          "name": "candidate-1-0",
+          "errors": 12,
+          "opens": 15,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 50 [/Inputs/TDI] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.942666,
+                    "y": 51.242828
+                  },
+                  "uuid": "768616f9-8a4b-434e-93ef-7a2fe9c853dc"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.3730 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "84acc6ac-ca8e-4cbb-b5f1-6633fb45d375"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TMS] on B.Cu, length 0.9945 mm",
+                  "pos": {
+                    "x": 166.5891,
+                    "y": 50.8893
+                  },
+                  "uuid": "9ede97dd-9522-4fce-a0e3-eea0f62b39e1"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-1-1",
+          "errors": 10,
+          "opens": 14,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1006 mm)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TDI)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Via [/Inputs/TDI] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 165.8879,
+                    "y": 52.1218
+                  },
+                  "uuid": "9c7013b0-0ce1-4e24-a9f5-29bd2165c445"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-1-2",
+          "errors": 3,
+          "opens": 15,
+          "retains_target": false,
+          "new_errors": [],
+          "lost_pairs": [],
+          "exception": null
+        }
+      ]
+    },
+    {
+      "repeat": 2,
+      "accepted": true,
+      "blockers": {
+        "tracks_crossing": 2,
+        "solder_mask_bridge": 2,
+        "shorting_items": 2,
+        "clearance": 1
+      },
+      "attempts": [
+        {
+          "name": "candidate-2-0",
+          "errors": 12,
+          "opens": 15,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 50 [/Inputs/TDI] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.942666,
+                    "y": 51.242828
+                  },
+                  "uuid": "768616f9-8a4b-434e-93ef-7a2fe9c853dc"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.3730 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "84acc6ac-ca8e-4cbb-b5f1-6633fb45d375"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TMS] on B.Cu, length 0.9945 mm",
+                  "pos": {
+                    "x": 166.5891,
+                    "y": 50.8893
+                  },
+                  "uuid": "9ede97dd-9522-4fce-a0e3-eea0f62b39e1"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-2-1",
+          "errors": 10,
+          "opens": 14,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TDI)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Via [/Inputs/TDI] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 165.8879,
+                    "y": 52.1218
+                  },
+                  "uuid": "9c7013b0-0ce1-4e24-a9f5-29bd2165c445"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            },
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1006 mm)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-2-2",
+          "errors": 3,
+          "opens": 15,
+          "retains_target": false,
+          "new_errors": [],
+          "lost_pairs": [],
+          "exception": null
+        }
+      ]
+    },
+    {
+      "repeat": 3,
+      "accepted": true,
+      "blockers": {
+        "tracks_crossing": 2,
+        "solder_mask_bridge": 2,
+        "shorting_items": 2,
+        "clearance": 1
+      },
+      "attempts": [
+        {
+          "name": "candidate-3-0",
+          "errors": 12,
+          "opens": 15,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 50 [/Inputs/TDI] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.942666,
+                    "y": 51.242828
+                  },
+                  "uuid": "768616f9-8a4b-434e-93ef-7a2fe9c853dc"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TMS] on B.Cu, length 0.9945 mm",
+                  "pos": {
+                    "x": 166.5891,
+                    "y": 50.8893
+                  },
+                  "uuid": "9ede97dd-9522-4fce-a0e3-eea0f62b39e1"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.3730 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "84acc6ac-ca8e-4cbb-b5f1-6633fb45d375"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "329d086f-e26f-53c4-9331-4b62e5af4db0"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-3-1",
+          "errors": 10,
+          "opens": 14,
+          "retains_target": true,
+          "new_errors": [
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 51 [/Inputs/TMS] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.589113,
+                    "y": 50.889275
+                  },
+                  "uuid": "e932901c-3223-491a-8f25-1e1561ea0c95"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TCK)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Pad 52 [/Inputs/TCK] of U1 on B.Cu",
+                  "pos": {
+                    "x": 166.235559,
+                    "y": 50.535721
+                  },
+                  "uuid": "6d529b5e-db9e-4110-bfb1-b2523dedf5c2"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            },
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1006 mm)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TDI] on B.Cu, length 1.7580 mm",
+                  "pos": {
+                    "x": 166.9427,
+                    "y": 51.2428
+                  },
+                  "uuid": "dc76a858-bb5c-403a-9c85-f0f78786d026"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Items shorting two nets (nets GNDD and /Inputs/TDI)",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Via [/Inputs/TDI] on F.Cu - B.Cu",
+                  "pos": {
+                    "x": 165.8879,
+                    "y": 52.1218
+                  },
+                  "uuid": "9c7013b0-0ce1-4e24-a9f5-29bd2165c445"
+                }
+              ],
+              "severity": "error",
+              "type": "shorting_items"
+            },
+            {
+              "description": "Tracks crossing",
+              "items": [
+                {
+                  "description": "Track [GNDD] on B.Cu, length 1.5240 mm",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "1a731498-6a88-5522-84fd-e02a34f829e2"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.5257 mm",
+                  "pos": {
+                    "x": 165.1035,
+                    "y": 51.5585
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "tracks_crossing"
+            }
+          ],
+          "lost_pairs": [],
+          "exception": null
+        },
+        {
+          "name": "candidate-3-2",
+          "errors": 3,
+          "opens": 15,
+          "retains_target": false,
+          "new_errors": [],
+          "lost_pairs": [],
+          "exception": null
+        }
+      ]
+    }
+  ]
+}
