@@ -1,0 +1,8 @@
+Production (unchanged) checks, cores 12-19, nice 10, outer timeout 1800s; supervisor exit 0.
+Command: bun run typecheck && bun run check:layers && bun run test
+Typecheck PASS; layers 71 files, 0 violations; tests 912 pass, 0 fail, 399733 assertions, 349.01s.
+Isolated candidate is rejected; no full candidate-test pass is claimed.
+Archive report PASS; six mutations rejected; chart/table/summary replay byte-identical.
+Separate prefix observer: 16/16 original prefixes preserved, 16 enriched, unchanged session/exact0.
+All 1488 tracked source/spec hashes verified; exactly one candidate file differs.
+Prefix driver build (one module) and Python helper compilation PASS.
