@@ -1,0 +1,929 @@
+{
+  "candidate": "7556a39f",
+  "runs": 78,
+  "identical_sessions": 78,
+  "native_outcomes_unchanged": true,
+  "changed_snapshots": 54,
+  "changed_runs": 27,
+  "drifts": [
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 14
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 14
+          }
+        }
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 14
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 14
+          }
+        }
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 19
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 19
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 19
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 19
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 19
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 19
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 57,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 3
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 3
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 47
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 47
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 7
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 7
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 2
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 1
+          },
+          "rejected": {
+            "maximum": 1,
+            "incomplete": 1
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 7
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 7
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 47
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 47
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 2
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 47
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 47
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 47,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 2
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 2,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 7
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 7
+          }
+        }
+      }
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 94,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 7,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 3
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 3
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 3
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 3
+          }
+        }
+      }
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 77,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 3,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 4
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 4
+          }
+        }
+      }
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 122,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 4,
+            "incomplete": 0
+          }
+        }
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "snapshot": "statsBefore",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 14
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 14
+          }
+        }
+      }
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "snapshot": "statsAfter",
+      "differences": {
+        "connections": {
+          "before": {
+            "maximum": 95,
+            "incomplete": 0
+          },
+          "rejected": {
+            "maximum": 32,
+            "incomplete": 0
+          }
+        }
+      }
+    }
+  ],
+  "note": "Rejected: routing ignore groups must not change whole-board statistics (N-07)."
+}

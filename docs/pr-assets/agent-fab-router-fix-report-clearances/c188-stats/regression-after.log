@@ -1,0 +1,12 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-stats-clearances.test.ts:
+(pass) route statistics use effective clearance rules > routeDsn: stricter edge rule [6.13ms]
+(pass) route statistics use effective clearance rules > CLI route JSON: stricter edge rule [20.75ms]
+(pass) route statistics use effective clearance rules > routeDsn: explicit zero override [0.99ms]
+(pass) route statistics use effective clearance rules > CLI route JSON: explicit zero override [19.11ms]
+
+ 4 pass
+ 0 fail
+ 18 expect() calls
+Ran 4 tests across 1 file. [104.00ms]

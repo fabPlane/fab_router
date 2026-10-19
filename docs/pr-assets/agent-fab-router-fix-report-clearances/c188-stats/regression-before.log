@@ -1,0 +1,64 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-stats-clearances.test.ts:
+25 |       if (!read.ok) throw new Error(read.error.message);
+26 |       expect(checkDrc(read.layout, { copperToEdgeClearanceUm: clearance }).counts.violations).toBe(expected);
+27 |       const result = routeDsn(text, { ...settings, copperToEdgeClearanceUm: clearance });
+28 |       if (!result.ok) throw new Error(result.error.message);
+29 |       expect(result.report.violationsBefore).toBe(expected);
+30 |       expect(result.statsBefore.violations.total).toBe(expected);
+                                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:30:51)
+(fail) route statistics use effective clearance rules > routeDsn: stricter edge rule [8.54ms]
+41 |           ...Object.entries({ ...settings, copperToEdgeClearanceUm: clearance }).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+42 |         { cwd: join(import.meta.dir, "..") });
+43 |         expect(proc.exitCode).toBe(0);
+44 |         const result = JSON.parse(readFileSync(json, "utf8"));
+45 |         expect(result.report.violationsBefore).toBe(expected);
+46 |         expect(result.statsBefore.violations.total).toBe(expected);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:46:53)
+(fail) route statistics use effective clearance rules > CLI route JSON: stricter edge rule [19.33ms]
+25 |       if (!read.ok) throw new Error(read.error.message);
+26 |       expect(checkDrc(read.layout, { copperToEdgeClearanceUm: clearance }).counts.violations).toBe(expected);
+27 |       const result = routeDsn(text, { ...settings, copperToEdgeClearanceUm: clearance });
+28 |       if (!result.ok) throw new Error(result.error.message);
+29 |       expect(result.report.violationsBefore).toBe(expected);
+30 |       expect(result.statsBefore.violations.total).toBe(expected);
+                                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:30:51)
+(fail) route statistics use effective clearance rules > routeDsn: explicit zero override [1.08ms]
+41 |           ...Object.entries({ ...settings, copperToEdgeClearanceUm: clearance }).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+42 |         { cwd: join(import.meta.dir, "..") });
+43 |         expect(proc.exitCode).toBe(0);
+44 |         const result = JSON.parse(readFileSync(json, "utf8"));
+45 |         expect(result.report.violationsBefore).toBe(expected);
+46 |         expect(result.statsBefore.violations.total).toBe(expected);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:46:53)
+(fail) route statistics use effective clearance rules > CLI route JSON: explicit zero override [18.11ms]
+
+ 0 pass
+ 4 fail
+ 12 expect() calls
+Ran 4 tests across 1 file. [117.00ms]

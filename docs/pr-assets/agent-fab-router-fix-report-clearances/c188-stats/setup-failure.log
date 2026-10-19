@@ -1,0 +1,18 @@
+fatal: not a git repository (or any parent up to mount point /)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fp-bugs/benchmarks/autorouter/benchmark.py", line 188, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/hyper/bench/wt/fp-bugs/benchmarks/autorouter/benchmark.py", line 183, in main
+    return run(args)
+           ^^^^^^^^^
+  File "/home/hyper/bench/wt/fp-bugs/benchmarks/autorouter/benchmark.py", line 105, in run
+    commit=subprocess.check_output(['git', '-C', str(args.fab_router_source), 'rev-parse', 'HEAD'], text=True).strip(),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['git', '-C', '/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c188/before-source', 'rev-parse', 'HEAD']' returned non-zero exit status 128.

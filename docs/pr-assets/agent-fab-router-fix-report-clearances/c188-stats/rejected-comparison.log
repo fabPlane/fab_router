@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-report-clearances/c188-stats/compare.py", line 50, in <module>
+    assert old_stats==new_stats,(k,stage)
+           ^^^^^^^^^^^^^^^^^^^^
+AssertionError: (('fan-controller-fan-controller-j2-large', 1), 'statsBefore')

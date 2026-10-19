@@ -1,0 +1,54 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-stats-clearances.test.ts:
+(pass) route statistics use effective clearance rules > routeDsn: stricter edge rule [5.80ms]
+(pass) route statistics use effective clearance rules > CLI route JSON: stricter edge rule [18.76ms]
+(pass) route statistics use effective clearance rules > routeDsn: explicit zero override [0.92ms]
+(pass) route statistics use effective clearance rules > CLI route JSON: explicit zero override [17.52ms]
+61 | 
+62 | test("routeDsn statistics retain connections in ignored routing groups", () => {
+63 |   const result = routeDsn(ignoredDsn, { ...settings, ignoreNetGroups: ["skip"] });
+64 |   if (!result.ok) throw new Error(result.error.message);
+65 |   expect(result.report.incompleteBefore).toBe(0);
+66 |   expect(result.statsBefore.connections).toEqual({ maximum: 1, incomplete: 1 });
+                                              ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "incomplete": 1,
+-   "maximum": 1,
++   "incomplete": 0,
++   "maximum": 0,
+  }
+
+- Expected  - 2
++ Received  + 2
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:66:42)
+(fail) routeDsn statistics retain connections in ignored routing groups [2.41ms]
+77 |       ...Object.entries(settings).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+78 |     { cwd: join(import.meta.dir, "..") });
+79 |     expect(proc.exitCode).toBe(0);
+80 |     const result = JSON.parse(readFileSync(json, "utf8"));
+81 |     expect(result.report.incompleteBefore).toBe(0);
+82 |     expect(result.statsBefore.connections).toEqual({ maximum: 1, incomplete: 1 });
+                                                ^
+error: expect(received).toEqual(expected)
+
+  {
+-   "incomplete": 1,
+-   "maximum": 1,
++   "incomplete": 0,
++   "maximum": 0,
+  }
+
+- Expected  - 2
++ Received  + 2
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-stats-clearances.test.ts:82:44)
+(fail) CLI route statistics retain connections in ignored routing groups [19.34ms]
+
+ 4 pass
+ 2 fail
+ 23 expect() calls
+Ran 6 tests across 1 file. [133.00ms]
