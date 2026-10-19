@@ -1,0 +1,28 @@
+{
+  "control_commit": "69cf598",
+  "production_src_spec_tools_test_identical_to_control": true,
+  "typecheck": "pass",
+  "layers": {
+    "files": 65,
+    "violations": 0
+  },
+  "unit": {
+    "pass": 859,
+    "fail": 0,
+    "assertions": 398454,
+    "seconds": 223.0
+  },
+  "instrumented_typecheck": "pass",
+  "residual_helper_strict_typecheck": "pass",
+  "python_ast": "pass",
+  "shell_syntax": "pass",
+  "diagnostic_commit": "43d5231bf462347525fbffccbe8ef357679904b0",
+  "log_sha256": {
+    "type-layers.log": "5898761b91863902b228e9c07b427cdb4b1f64f9021ee8961cc012d46349224c",
+    "tests.log": "a2d9ee32890feb2e819ec1265cd3ceed966f115b0546397b3a8cda56ce9058ca",
+    "native-complete.log": "102c42468b145d832b544cfb38dec759a498f8f5c4da74071ea3531273630604"
+  },
+  "native_scope": "Full26x3 diagnostic; all78SES and native quality/vias/length match prior control; not a speedup or repair",
+  "prior_control": "cycle17-paired/before",
+  "setup_failures": "Initial source lacked Git metadata; no routing attempt started. Initial audit fixed null-delimited paths and accounted for copied ignored CSV reports."
+}

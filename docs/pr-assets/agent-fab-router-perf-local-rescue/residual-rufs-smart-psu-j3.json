@@ -1,0 +1,157 @@
+{
+  "scope": "Final engine residuals from exact native-session replay; no rescue or new native check",
+  "input_sha256": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd",
+  "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb",
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": false,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "report": {
+    "passes": 6,
+    "attempted": 61,
+    "completed": 54,
+    "incompleteBefore": 53,
+    "incompleteAfter": 1,
+    "added": {
+      "tracks": 80,
+      "barrels": 26
+    },
+    "ripped": 2,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "stagnant",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": false,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeBudgetMs": 3600000,
+      "copperToEdgeClearanceUm": 500,
+      "holeClearanceUm": 250,
+      "neckWidthUm": 0,
+      "angleMode": "45"
+    },
+    "wallClockMs": 1102,
+    "perNet": [
+      {
+        "net": "GND",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(C1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(C2-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "+BATT",
+        "incomplete": 1
+      },
+      {
+        "net": "VCC",
+        "incomplete": 0
+      },
+      {
+        "net": "GNDA",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(C6-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(C6-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(D1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(D1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(D2-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(D2-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(IC1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(IC1-Pad5)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(IC1-Pad6)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(IC1-Pad7)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(P1-Pad6)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(P4-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(Q1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R6-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(SW3-Pad2)",
+        "incomplete": 0
+      }
+    ]
+  },
+  "connections": [
+    {
+      "net": 3,
+      "from": 9,
+      "to": 66,
+      "airlineLu": 62202.92034944983,
+      "key": "3:9:66",
+      "netName": "+BATT"
+    }
+  ]
+}

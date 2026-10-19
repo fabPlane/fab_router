@@ -38,3 +38,29 @@ The exact measured candidate and the restored source both pass typecheck, layer 
 Next work should investigate a distinct legal search/lattice lever on genuine residual native connections. This unit-stage fixture is not the requested full-pipeline stall regression. Dense and L3 budgets also need sufficient room to reach post-pass rescue before drawing conclusions about rescue on those inputs. Do not lower any physical rule, infer board minima from class defaults, or adopt this patch on the strength of the unit illustration.
 
 Required commands `bun run typecheck && bun run check:layers && bun run test` passed on the exact candidate (868 tests / 398481 assertions, 237.20s; 66 layered files / 0 violations) and restored source (859 tests / 398454 assertions, 245.46s; 65 layered files / 0 violations). Three TypeScript route helpers and the dense session-normalization helper also pass strict standalone typechecking; Python AST and shell syntax checks pass.
+
+Cycle 18 adds a control-only search-grid census, not a new rescue candidate. The diagnostic tree instruments `routeConnection`, `gridRegion`, and the two existing A* return sites. All physical rules, search budgets, grid choices and copper decisions remain unchanged. No production files are changed in this PR's final tree. `grid-source-audit.json` checks all 1,482 tracked src/spec files against `69cf598`; only the injected counters differ. Five copied ignored acceptance CSV reports are explicitly listed and are not runtime source. The disposable diagnostic snapshot is used only to satisfy the benchmark source-identity requirement.
+
+The fresh native sweep covers all 26 cases and three seeds on the same host/cores as the prior cycle-17 control. All 78 SES hashes, input/settings/manifest hashes, native outcomes, vias and lengths match the control. Both have 39/78 passing attempts, 13/26 cases passing all three seeds, 120 opens and 27 native errors. Existing thermal errors remain unresolved. `grid-tables.md` includes per-case before/diagnostic median and p95 times (p95 is max of three); timing includes instrumentation overhead and shared-host variation, so this is not a performance improvement measurement. The prior control is historical, not a fresh alternating timing control.
+
+There are 14,802 observed searches, 153,112,152 pops and 9,234 pop-limit exits (62.38%). None of the 14,802 requested regions is coarsened by the 220,000-cell cap. These counters cover searches invoked inside `routeConnection`; they do not imply every search site or larger board behaves the same. This rules out cap-induced coarsening in these observed calls, not a need for finer local geometry. Increasing a requested grid divisor alone does not address the already frequent pop-limit exits.
+
+![Observed search limits across all native cases](grid-census.png)
+
+Independent seed-1 replays reproduce the exact native session on Paperino J4, Rufs J3 and Photon J3. All nine final engine residual keys match the census. `residual-grid-tables.md` contains their counts. Paperino's six residuals have 62–100 searches each, 56–84 pop-limit exits, but also 6–13 graph-goal hits each and zero successful insertions. Rufs' single residual has 294 searches, 18 pop-limit exits and 44 graph-goal hits; Photon's two have 609 searches, 591 pop-limit exits and 15 graph-goal hits in total. A graph goal does not establish successful exact legalisation/insertion. These results justify investigating rejection stages alongside any locally increased search budget; they do not establish that either change will close a connection. The replays are engine diagnostics, not additional native benchmark attempts or a minimized regression fixture.
+
+Reproduce with an installed benchmark checkout, own control source and the prior control evidence:
+
+```bash
+CONTROL_SOURCE=/path/to/own/control-source \
+BENCHMARK_CHECKOUT=/path/to/own/benchmark-checkout \
+PRIOR_CONTROL=/path/to/cycle17-paired/before \
+RUN_ROOT=/path/to/unused/census-run \
+bash docs/pr-assets/agent-fab-router-perf-local-rescue/reproduce-grid-census.sh
+```
+
+The script records the diagnostic source in a disposable local Git repository, runs the unchanged full native checker under a 5,400-second outer timeout, verifies all paired results before writing its report, plots the counters, and replays the three real stalls. Matplotlib must be available for the plot. `grid-helper-validation.json` records overwrite guards, report preservation, rejection of an instrumented tree as control, and wrong-source rejection before report writes. The diagnostic source passes typecheck. No dense/ladder or slow-acceptance rerun is claimed for this diagnostic-only addition; their prior cap limitations still apply. No relaxed rules, smaller copper or new routing setting is adopted. P1's opt-in legal relaxation and small full-pipeline regression fixture remain unfinished.
+
+An initial benchmark setup attempt stopped before routing because the disposable source lacked Git metadata; its log is retained in scratch. Initial source-audit setup used quoted Git paths and then encountered copied ignored report CSVs; null-delimited paths and explicit artifact accounting fixed both before evidence publication. No routing attempt was omitted or overwritten. Full unit checks follow the native sweep; the final residual replay briefly overlapped the start of unit tests. No timing claim is based on those diagnostic replays.
+
+Cycle-18 final required checks PASS: typecheck; layers 65 files / 0 violations; 859 tests / 0 failures / 398454 assertions, 223.00 seconds. Log hashes and diagnostic source identity are in `grid-checks.json`.
