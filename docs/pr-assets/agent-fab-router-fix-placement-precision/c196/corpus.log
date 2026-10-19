@@ -1,0 +1,15 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/ses-placement-precision.test.ts:
+(pass) session preserves source placement finer than the routing lattice [3.14ms]
+(pass) source placement preserves both off-lattice axes [0.28ms]
+(pass) on-lattice placement keeps the existing session resolution [0.23ms]
+(pass) explicitly moved parts use their current lattice placement [0.12ms]
+(pass) source placement respects a distinct coordinate unit [0.13ms]
+(pass) fine placement resolution also scales newly added parts [0.17ms]
+(pass) every corpus session preserves authored placement to native nanometres [734.73ms]
+
+ 7 pass
+ 0 fail
+ 16860 expect() calls
+Ran 7 tests across 1 file. [796.00ms]

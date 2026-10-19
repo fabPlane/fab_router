@@ -34,7 +34,11 @@ freshly read board with that file.
   LibrePCB board (`mm`, 1000000) writes `21.59` as `21590000`.
 - **F-S21 Resolution scopes.** `(resolution U N)` is written twice — inside `placement` and
   inside `routes` — with the document's `resolution.unit` and `perUnit` (`dsn.md` F-40; the
-  default `inch 2540000` when the design file had none).
+  default `inch 2540000` when the design file had none). Exception: when an unchanged
+  imported Part has authored coordinates finer than the routing lattice, placement uses
+  `um 1000` and preserves those source coordinates to the nearest nanometre. Parts whose
+  current location differs from their imported lattice location use their current location.
+  This exception changes only placement; routes retain the document resolution.
 - **F-S22 Rotation.** `(place …)` writes the Part's rotation reduced into `[0, 360)`: as an
   integer when it is integral, otherwise with at most three decimals and no trailing zeros
   (`-90` → `270`, `338.5` → `338.5`, `180.0` → `180`).

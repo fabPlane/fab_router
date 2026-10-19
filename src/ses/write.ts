@@ -29,7 +29,7 @@
 import type { Barrel, Layout, PadForm, Pour, Pt, ShapeOnSheet, Track } from "../../spec/types/layout.ts";
 import type { DimensionUnit, DsnDocument } from "../../spec/types/dsn.ts";
 import type { SesWriteOptions } from "../../spec/types/results.ts";
-import { UM_PER_UNIT } from "../layout/units.ts";
+import { toLu, UM_PER_UNIT } from "../layout/units.ts";
 
 const DOCUMENT_KEY = "document";
 
@@ -120,7 +120,34 @@ export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
 
   // ---- placement (F-S32) ----
   open("(placement");
-  line(`(resolution ${res.unit} ${res.perUnit})`);
+  // Routing uses an integer lattice, which can be coarser than authored placement.
+  // Recover source coordinates only for Parts still at their imported position; an
+  // explicitly moved Part must keep its current position. Native board coordinates
+  // are nanometres, so a separate placement resolution can retain them without
+  // changing route widths, paths, or their resolution.
+  const sourcePositions = new Map<string, { x: number; y: number }>();
+  if (doc) for (const c of doc.placement.components) for (const p of c.places) {
+    if (p.x !== undefined && p.y !== undefined) sourcePositions.set(p.ref, { x: p.x, y: p.y });
+  }
+  const authored = new Map<number, { x: number; y: number }>();
+  let finePlacement = false;
+  for (const p of layout.parts) {
+    const source = sourcePositions.get(p.ref);
+    if (!source || toLu(layout.frame, source.x) !== p.at.x || toLu(layout.frame, source.y) !== p.at.y) continue;
+    const nmPerCoordinate = UM_PER_UNIT[layout.frame.fileUnit as DimensionUnit] * 1000;
+    const x = Math.round(source.x * nmPerCoordinate), y = Math.round(source.y * nmPerCoordinate);
+    if (!Number.isSafeInteger(x) || !Number.isSafeInteger(y)) continue;
+    authored.set(p.id, { x, y });
+    const nmPerResolution = UM_PER_UNIT[res.unit] * 1000 / res.perUnit;
+    if (Math.round(p.at.x * res.perLu) * nmPerResolution !== x || Math.round(p.at.y * res.perLu) * nmPerResolution !== y) finePlacement = true;
+  }
+  line(finePlacement ? "(resolution um 1000)" : `(resolution ${res.unit} ${res.perUnit})`);
+  const place = (p: typeof layout.parts[number]): { x: string; y: string } => {
+    if (!finePlacement) return { x: num(p.at.x), y: num(p.at.y) };
+    const source = authored.get(p.id);
+    const nmPerLu = 1000 / layout.frame.luPerUm;
+    return { x: String(source?.x ?? Math.round(p.at.x * nmPerLu)), y: String(source?.y ?? Math.round(p.at.y * nmPerLu)) };
+  };
   // A Part is written `(lock_type position)` when the builder recorded `part.locked` (Q-I2-47);
   // the DsnDocument is the fallback when the Layout carries no such flag.
   const lockedFromDoc = new Set<string>();
@@ -136,7 +163,8 @@ export function writeSes(layout: Layout, opts: SesWriteOptions = {}): string {
     open(`(component ${name(image)}`);
     for (const p of parts) {
       const lock = isLocked(p) ? " (lock_type position)" : "";
-      line(`(place ${name(p.ref)} ${num(p.at.x)} ${num(p.at.y)} ${p.side} ${formatRotation(p.rotationDeg)}${lock})`);
+      const at = place(p);
+      line(`(place ${name(p.ref)} ${at.x} ${at.y} ${p.side} ${formatRotation(p.rotationDeg)}${lock})`);
     }
     close();
   }
