@@ -1,0 +1,2411 @@
+[
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 3,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 1,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 1,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 3,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 3,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 2,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 2,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 3,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 3,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 2,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 2,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 2,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 1,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 3,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 2,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 3,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 1,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 1,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 2,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 195,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 3,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 1,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 3,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 311,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 1,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 1162533,
+          "y": -1074634
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 36,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 1162533,
+          "y": -1051891
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 1,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 2,
+    "reported": 3,
+    "expected": 3,
+    "violations": [
+      {
+        "a": 31,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -952500
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 32,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -927100
+        },
+        "rule": "spacing"
+      },
+      {
+        "a": 33,
+        "b": 313,
+        "sheet": 1,
+        "required": 2500,
+        "actual": 2500,
+        "at": {
+          "x": 1306930,
+          "y": -901700
+        },
+        "rule": "spacing"
+      }
+    ]
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 1,
+    "reported": 10,
+    "expected": 10,
+    "violations": [
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 17,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1650480,
+          "y": -737020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 23,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1520480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 29,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1440480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 35,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1360480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 41,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 3860,
+        "at": {
+          "x": 1280480,
+          "y": -632020
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 2,
+    "reported": 4,
+    "expected": 4,
+    "violations": [
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 50,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2745,
+        "at": {
+          "x": 445287,
+          "y": -1041185
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 0,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      },
+      {
+        "a": 51,
+        "b": "fence",
+        "sheet": 1,
+        "required": 5000,
+        "actual": 2770,
+        "at": {
+          "x": 445287,
+          "y": -1063929
+        },
+        "rule": "fence"
+      }
+    ]
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 1,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 2,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 3,
+    "reported": 0,
+    "expected": 0,
+    "violations": []
+  }
+]
