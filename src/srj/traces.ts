@@ -32,9 +32,9 @@ function netTrackLengthLu(layout: Layout, netId: number): number {
 }
 
 /**
- * One `pcb_trace` per connection with router-added copper: its Tracks become `wire` runs, its
- * Barrels `via` steps. Tracks ordered by id, Barrels appended (this milestone routes one Track and
- * no vias per connection, so the ordering never fragments a run).
+ * One `pcb_trace` per router-added Track or Barrel, retaining the connection owner.
+ * Separate Tracks need not be contiguous or even on the same Sheet. Concatenating their
+ * points would invent copper between runs; a standalone Barrel adds no planar segment.
  */
 export function extractTraces(
   layout: Layout,
@@ -57,17 +57,18 @@ export function extractTraces(
   for (const netId of nets) {
     const name = connectionByNet.get(netId);
     if (name === undefined) continue;
-    const route: SrjRouteStep[] = [];
     const tracks = (tracksByNet.get(netId) ?? []).slice().sort((a, b) => a.id - b.id);
     for (const t of tracks) {
+      const route: SrjRouteStep[] = [];
       const widthMm = toMm(layout.frame, t.width);
       const layer = layerOf(t.sheet);
       for (const p of t.pts) route.push({ route_type: "wire", x: toMm(layout.frame, p.x), y: toMm(layout.frame, p.y), width: widthMm, layer });
+      out.push({ type: "pcb_trace", pcb_trace_id: `pcb_trace_${name}_track_${t.id}`, connection_name: name, route });
     }
     for (const b of (barrelsByNet.get(netId) ?? []).slice().sort((x, y) => x.id - y.id)) {
-      route.push({ route_type: "via", x: toMm(layout.frame, b.at.x), y: toMm(layout.frame, b.at.y), from_layer: layerOf(b.fromSheet), to_layer: layerOf(b.toSheet) });
+      const route: SrjRouteStep[] = [{ route_type: "via", x: toMm(layout.frame, b.at.x), y: toMm(layout.frame, b.at.y), from_layer: layerOf(b.fromSheet), to_layer: layerOf(b.toSheet) }];
+      out.push({ type: "pcb_trace", pcb_trace_id: `pcb_trace_${name}_barrel_${b.id}`, connection_name: name, route });
     }
-    if (route.length > 0) out.push({ type: "pcb_trace", pcb_trace_id: `pcb_trace_${name}`, connection_name: name, route });
   }
   return out;
 }
