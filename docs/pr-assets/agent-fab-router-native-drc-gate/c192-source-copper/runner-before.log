@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+ 99 |     const before = join(directory, "before.kicad_pcb"), after = join(directory, "after.kicad_pcb");
+100 |     const shell = (items: string) => `(kicad_pcb (layers (0 "F.Cu" signal)) (setup) ${items})`;
+101 |     await writeFile(before, shell('(segment (start 1 2) (end 3 4) (width 0.25) (layer "F.Cu") (net 1))'));
+102 |     await writeFile(after, shell(''));
+103 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+104 |     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate source copper differs");
+                                                                 ^
+error: expect(received).toThrow(expected)
+
+Expected substring: "Candidate source copper differs"
+Received message: "Command failed: kicad-cli pcb drc --severity-all --format json --units mm --refill-zones --output /tmp/fab-router-native-gate-O1j8Ca/0.json /tmp/fab-router-native-gate-O1j8Ca/before/before.kicad_pcb\nFailed to load board: Unknown token '0' in '/tmp/fab-router-native-gate-O1j8Ca/before/before.kicad_pcb', line 1, offset 21.\n"
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:104:60)
+(fail) native gate blocks deletion of original copper before native execution [122.90ms]
+
+ 0 pass
+ 12 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [199.00ms]

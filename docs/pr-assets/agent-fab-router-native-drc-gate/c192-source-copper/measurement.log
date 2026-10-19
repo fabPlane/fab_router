@@ -1,0 +1,9 @@
+1 rufs-smart-psu-j1 2 True 0 0
+2 qrpcard-qrpcard-j4 3 False 1 0
+3 paperino-hw-paperino-shield-j4 2 True 0 6
+4 kitspace-aquarius-j4 1 False 6 15
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-native-drc-gate/measure.py", line 18, in <module>
+    assert result.returncode in (0,1),(row['case'],result.returncode,result.stderr)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ('hellscribe-hellscribe-j2-large', 2, 'Candidate source copper differs from input\n')
