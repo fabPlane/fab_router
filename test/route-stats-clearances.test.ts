@@ -49,3 +49,37 @@ describe("route statistics use effective clearance rules", () => {
     });
   }
 });
+
+// N-07: skipping a route group does not remove it from whole-board statistics.
+const ignoredDsn = `(pcb ignored
+  (resolution um 1) (unit um)
+  (structure (layer F.Cu (type signal)) (boundary (rect pcb 0 0 10000 10000))
+    (rule (width 200) (clearance 100)))
+  (placement (component P (place A 2000 5000 front 0) (place B 8000 5000 front 0)))
+  (library (image P (pin p 1 0 0)) (padstack p (shape (circle F.Cu 500))))
+  (network (net N (pins A-1 B-1)) (class skip N (rule (width 200) (clearance 100)))))`;
+
+test("routeDsn statistics retain connections in ignored routing groups", () => {
+  const result = routeDsn(ignoredDsn, { ...settings, ignoreNetGroups: ["skip"] });
+  if (!result.ok) throw new Error(result.error.message);
+  expect(result.report.incompleteBefore).toBe(0);
+  expect(result.statsBefore.connections).toEqual({ maximum: 1, incomplete: 1 });
+  expect(result.statsAfter.connections).toEqual({ maximum: 1, incomplete: 1 });
+});
+
+test("CLI route statistics retain connections in ignored routing groups", () => {
+  const dir = mkdtempSync(join(tmpdir(), "route-stats-ignore-"));
+  try {
+    const input = join(dir, "board.dsn"), json = join(dir, "report.json");
+    writeFileSync(input, ignoredDsn);
+    const proc = Bun.spawnSync([process.execPath, "src/cli.ts", "route", input, "--json", json,
+      "--set", "ignoreNetGroups=skip",
+      ...Object.entries(settings).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+    { cwd: join(import.meta.dir, "..") });
+    expect(proc.exitCode).toBe(0);
+    const result = JSON.parse(readFileSync(json, "utf8"));
+    expect(result.report.incompleteBefore).toBe(0);
+    expect(result.statsBefore.connections).toEqual({ maximum: 1, incomplete: 1 });
+    expect(result.statsAfter.connections).toEqual({ maximum: 1, incomplete: 1 });
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});

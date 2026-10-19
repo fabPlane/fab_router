@@ -87,11 +87,13 @@ export function main(argv: string[]): number {
     return 0;
   }
   const effective = resolveSettings(settingsFromSets(args.sets), layout.settingsFromFile, layout.angleMode);
-  const before = layoutStats(layout, effective);
+  // N-07: route filtering does not change the scope of whole-board statistics.
+  const statsOptions = { ...effective, ignoreNetGroups: [] };
+  const before = layoutStats(layout, statsOptions);
   const report = route(layout, effective, {
     onLog: (level, message) => console.error(`${level}: ${message}`),
   });
-  const after = layoutStats(layout, effective);
+  const after = layoutStats(layout, statsOptions);
   if (args.out) writeFileSync(args.out, writeSes(layout));
   if (args.json) writeFileSync(args.json, JSON.stringify({ report, statsBefore: before, statsAfter: after }, null, 2));
   console.log(`passes ${report.passes}, incomplete ${report.incompleteBefore} -> ${report.incompleteAfter}, added ${report.added.tracks} tracks / ${report.added.barrels} barrels, violations added ${report.violationsAdded}, stopped by ${report.stoppedBy}`);
