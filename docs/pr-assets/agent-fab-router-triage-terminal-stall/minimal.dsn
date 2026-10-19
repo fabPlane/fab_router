@@ -1,0 +1,140 @@
+(pcb "terminal-search-budget"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property (index 0))
+    )
+    (layer B.Cu
+      (type signal)
+      (property (index 1))
+    )
+    (boundary
+      (path pcb 0 205352 -98046.3 205588 -98083.8 205816 -98157.8 206030 -98266.6 206223 -98407.3 206393 -98576.7 206533 -98770.5 206642 -98983.9 206716 -99211.7 206754 -99448.2 206756 -99568 206756 -124968 206754 -125088 206716 -125324 206642 -125552 206533 -125766 206393 -125959 206223 -126129 206030 -126269 205816 -126378 205588 -126452 205352 -126490 205232 -126492 34544 -126492 34424.2 -126490 34187.7 -126452 33959.9 -126378 33746.5 -126269 33552.7 -126129 33383.3 -125959 33242.6 -125766 33133.8 -125552 33059.8 -125324 33022.3 -125088 33020 -124968 33020 -99568 33022.3 -99448.2 33059.8 -99211.7 33133.8 -98983.9 33242.6 -98770.5 33383.3 -98576.7 33552.7 -98407.3 33746.5 -98266.6 33959.9 -98157.8 34187.7 -98083.8 34424.2 -98046.3 34544 -98044 205232 -98044 205352 -98046.3)
+    )
+    (via "Via[0-1]_600:400_um")
+    (rule
+      (width 250)
+      (clearance 200)
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "TO_SOT_Packages_SMD:SOT-23"
+      (place Q7 127000 -100838 front 0
+        (PN FDV304P)
+      )
+    )
+    (component "SMD_Packages:SO-16-N"
+      (place U2 78486 -105664 front 90
+        (PN CD4022)
+      )
+    )
+  )
+  (library
+    (image "TO_SOT_Packages_SMD:SOT-23"
+      (pin "Rect[T]Pad_800.100000x800.100000_um" "1" -950 -1000.76)
+    )
+    (image "SMD_Packages:SO-16-N"
+      (pin "Rect[T]Pad_508.000000x1143.000000_um" "4" -635 -3175)
+    )
+    (padstack "Rect[T]Pad_508.000000x1143.000000_um"
+      (shape (rect F.Cu -254 -571.5 254 571.5))
+      (attach off)
+    )
+    (padstack "Rect[T]Pad_800.100000x800.100000_um"
+      (shape (rect F.Cu -400.05 -400.05 400.05 400.05))
+      (attach off)
+    )
+    (padstack "Via[0-1]_600:400_um"
+      (shape (circle F.Cu 600 0 0))
+      (shape (circle B.Cu 600 0 0))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(Q2-Pad1)"
+      (pins)
+    )
+    (net +12V
+      (pins)
+    )
+    (net "Net-(Q3-Pad1)"
+      (pins)
+    )
+    (net "Net-(Q4-Pad1)"
+      (pins)
+    )
+    (net "Net-(Q5-Pad1)"
+      (pins)
+    )
+    (net "Net-(Q7-Pad1)"
+      (pins Q7-"1" U2-"4")
+    )
+    (class "kicad_default" "Net-(Q2-Pad1)" +12V "Net-(Q3-Pad1)" "Net-(Q4-Pad1)" "Net-(Q5-Pad1)" "Net-(Q7-Pad1)"
+      (circuit
+        (use_via "Via[0-1]_600:400_um")
+      )
+      (rule
+        (width 250)
+        (clearance 200)
+      )
+    )
+  )
+  (wiring
+    (wire
+      (path F.Cu 250 87696 -101839 87696 -108839)
+      (net "Net-(Q2-Pad1)")
+      (type route)
+    )
+    (wire
+      (path F.Cu 250 97470 -101839 101970 -101839)
+      (net +12V)
+      (type route)
+    )
+    (wire
+      (path F.Cu 250 89596 -101839 94096 -101839)
+      (net +12V)
+      (type route)
+    )
+    (wire
+      (path B.Cu 250 89596 -102589 87346 -110089)
+      (net +12V)
+      (type route)
+    )
+    (wire
+      (path B.Cu 250 92669.1 -103564 89669.1 -101314 82628 -109534)
+      (net "Net-(Q3-Pad1)")
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 94096 -101839
+      (net +12V)
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 109590 -101839
+      (net +12V)
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 97846 -101089
+      (net +12V)
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 99928.5 -102707
+      (net "Net-(Q4-Pad1)")
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 107060 -99588.8
+      (net "Net-(Q5-Pad1)")
+      (type route)
+    )
+    (via "Via[0-1]_600:400_um" 107060 -101089
+      (net "Net-(Q5-Pad1)")
+      (type route)
+    )
+  )
+)
