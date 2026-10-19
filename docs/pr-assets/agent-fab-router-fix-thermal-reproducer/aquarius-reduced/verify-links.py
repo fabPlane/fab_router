@@ -61,7 +61,7 @@ for r in summary['rows']:
     angle=pad.GetOrientationDegrees(); assert angle==summary['angle']
     gap=min(z.GetThermalReliefGap() for z in board.Zones() if z.GetNetCode()==pad.GetNetCode() and any(z.IsOnLayer(l) for l in pad.GetLayerSet().Seq()))
     assert gap==summary['gap_nm']
-    net='"'+pad.GetNetname()+'"'; layer=local.plane_layer(board,pad)
+    net=json.dumps(str(pad.GetNetname()),ensure_ascii=False); layer=local.plane_layer(board,pad)
     assert net==summary['net'] and layer==summary['layer']
     assert layer.strip(chr(34)) in {board.GetLayerName(l) for l in pad.GetLayerSet().Seq()}
     candidates=list(local.proposals(nodes,centre,angle,net,layer,gap,summary.get("width_scales",[0.5,1.])))

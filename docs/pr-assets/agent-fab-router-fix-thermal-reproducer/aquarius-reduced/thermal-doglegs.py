@@ -53,7 +53,8 @@ def main():
     board=native.pcbnew.LoadBoard(str(args.source));pad=next(p for p in board.GetPads() if p.m_Uuid.AsString()==TARGET)
     centre=tuple(pad.GetPosition());angle=pad.GetOrientationDegrees()
     gap=min(z.GetThermalReliefGap() for z in board.Zones() if z.GetNetCode()==pad.GetNetCode() and any(z.IsOnLayer(l) for l in pad.GetLayerSet().Seq()))
-    net='"'+pad.GetNetname()+'"';layer=plane_layer(board,pad)
+    # Encode a string atom; native net names may contain quotes or backslashes.
+    net=json.dumps(str(pad.GetNetname()),ensure_ascii=False);layer=plane_layer(board,pad)
     rows=[]
     for repeat in range(1,4):
         baseline=transaction.checked_native(original,f'baseline-{repeat}');assert baseline['target']
