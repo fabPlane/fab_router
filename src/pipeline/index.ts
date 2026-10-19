@@ -68,16 +68,18 @@ export function resolveSettings(
 
 /**
  * Run the routing stage on a Layout with fully resolved settings and return the RouteReport
- * (docs/DESIGN.md §7). The Layout is mutated in place through the router's Journal. Fanout and the
- * optimiser (settings `fanoutEnabled` / `optimizerEnabled`) are task I5 and are not run here.
+ * (docs/DESIGN.md §7). The Layout is mutated in place through the router's Journal. Fanout and
+ * optimisation are controlled by `fanoutEnabled` and `optimizerEnabled`.
  *
- * `report.violationsAdded` is the difference in DRC violation counts across the run; the router
- * only inserts copper that passed the exact clearance predicate, so it is 0 by construction
- * (contract R-1). `added` is measured as the item-count difference (contract R-3).
+ * `report.violationsAdded` is the nonnegative difference in DRC violation counts across the
+ * run, using the resolved clearance settings for both snapshots. This checker measures the
+ * imported geometry; native zone-refill thermal checks require separate validation.
+ * `added` is measured as the item-count difference (contract R-3).
  */
 export function runRoute(layout: Layout, effective: RouteSettings, hooks?: RouteHooks): RouteReport {
   const startMs = Date.now();
-  const violationsBefore = checkDrc(layout).counts.violations;
+  // Measure both snapshots with the same resolved rules used by route clearance checks.
+  const violationsBefore = checkDrc(layout, effective).counts.violations;
   const tracksBefore = layout.tracks.length;
   const barrelsBefore = layout.barrels.length;
 
@@ -99,7 +101,7 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
   if (!outcome.aborted) runOptimise(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored, ctx.deadline);
 
   const incompleteAfter = totalIncomplete(ctx);
-  const violationsAfter = checkDrc(layout).counts.violations;
+  const violationsAfter = checkDrc(layout, effective).counts.violations;
   const addedTracks = layout.tracks.length - tracksBefore;
   const addedBarrels = layout.barrels.length - barrelsBefore;
 

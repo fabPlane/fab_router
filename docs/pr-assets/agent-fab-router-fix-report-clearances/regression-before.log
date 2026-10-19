@@ -1,0 +1,65 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-core.test.ts:
+238 |   test("counts pre-existing edge errors under the caller's stricter rule", () => {
+239 |     const L = edgeBoard();
+240 |     expect(checkDrc(L).counts.violations).toBe(0);
+241 |     expect(checkDrc(L, { copperToEdgeClearanceUm: 300 }).counts.violations).toBe(1);
+242 |     const report = route(L, { ...settings, copperToEdgeClearanceUm: 300 });
+243 |     expect(report.violationsBefore).toBe(1);
+                                          ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-core.test.ts:243:37)
+(fail) route report clearance settings > counts pre-existing edge errors under the caller's stricter rule [4.35ms]
+247 |   test("does not count edge errors excluded by the caller's explicit zero rule", () => {
+248 |     const L = edgeBoard();
+249 |     L.tracks[0]!.pts = [{ x: -50000, y: 197000 }, { x: 50000, y: 197000 }];
+250 |     expect(checkDrc(L).counts.violations).toBe(1);
+251 |     const report = route(L, { ...settings, copperToEdgeClearanceUm: 0 });
+252 |     expect(report.violationsBefore).toBe(0);
+                                          ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-core.test.ts:252:37)
+(fail) route report clearance settings > does not count edge errors excluded by the caller's explicit zero rule [0.62ms]
+261 |         L.tracks = [...L.tracks, edgeBoard().tracks[0]!];
+262 |       },
+263 |     });
+264 |     expect(report.violationsBefore).toBe(0);
+265 |     expect(checkDrc(L, { copperToEdgeClearanceUm: 300 }).counts.violations).toBe(1);
+266 |     expect(report.violationsAdded).toBe(1);
+                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-core.test.ts:266:36)
+(fail) route report clearance settings > checks the final snapshot with the same edge rule [1.74ms]
+275 |       return L;
+276 |     }
+277 |     // Pad edge is 220 µm from the part-owned hole; default copper spacing is 200 µm.
+278 |     expect(checkDrc(holeBoard()).counts.violations).toBe(0);
+279 |     expect(checkDrc(holeBoard(), { holeClearanceUm: 250 }).counts.violations).toBe(1);
+280 |     expect(route(holeBoard(), { ...settings, useFileSettings: true }).violationsBefore).toBe(1);
+                                                                                              ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/route-core.test.ts:280:89)
+(fail) route report clearance settings > uses resolved file hole clearance and caller precedence [0.59ms]
+
+ 0 pass
+ 15 filtered out
+ 4 fail
+ 11 expect() calls
+Ran 4 tests across 1 file. [73.00ms]

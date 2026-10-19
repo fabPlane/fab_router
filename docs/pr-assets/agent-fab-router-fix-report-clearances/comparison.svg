@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680">
+<rect width="1200" height="680" fill="#f4f7fb"/>
+<g font-family="sans-serif" fill="#16243a">
+<text x="60" y="65" font-size="31" font-weight="bold">Measure DRC with the resolved clearance rules</text>
+<text x="60" y="105" font-size="20">26 frozen cases × 3 seeds · same host and cores · identical returned sessions</text>
+<text x="760" y="164" font-size="22" font-weight="bold">Before</text>
+<text x="980" y="164" font-size="22" font-weight="bold">After</text>
+<rect x="45" y="184" width="1110" height="49" rx="8" fill="#ffffff"/>
+<text x="65" y="218" font-size="23">Input report mismatches</text>
+<text x="790" y="218" text-anchor="middle" font-size="26">18</text>
+<text x="1015" y="218" text-anchor="middle" font-size="26" fill="#146c43">0</text>
+<rect x="45" y="241" width="1110" height="49" rx="8" fill="#e8eef6"/>
+<text x="65" y="275" font-size="23">Regression tests passing</text>
+<text x="790" y="275" text-anchor="middle" font-size="26">0</text>
+<text x="1015" y="275" text-anchor="middle" font-size="26" fill="#146c43">4</text>
+<rect x="45" y="298" width="1110" height="49" rx="8" fill="#ffffff"/>
+<text x="65" y="332" font-size="23">Native passing runs</text>
+<text x="790" y="332" text-anchor="middle" font-size="26">39</text>
+<text x="1015" y="332" text-anchor="middle" font-size="26" fill="#16243a">39</text>
+<rect x="45" y="355" width="1110" height="49" rx="8" fill="#e8eef6"/>
+<text x="65" y="389" font-size="23">Cases passing 3/3</text>
+<text x="790" y="389" text-anchor="middle" font-size="26">13</text>
+<text x="1015" y="389" text-anchor="middle" font-size="26" fill="#16243a">13</text>
+<rect x="45" y="412" width="1110" height="49" rx="8" fill="#ffffff"/>
+<text x="65" y="446" font-size="23">Native opens</text>
+<text x="790" y="446" text-anchor="middle" font-size="26">120</text>
+<text x="1015" y="446" text-anchor="middle" font-size="26" fill="#16243a">120</text>
+<rect x="45" y="469" width="1110" height="49" rx="8" fill="#e8eef6"/>
+<text x="65" y="503" font-size="23">New native DRC errors</text>
+<text x="790" y="503" text-anchor="middle" font-size="26">27</text>
+<text x="1015" y="503" text-anchor="middle" font-size="26" fill="#16243a">27</text>
+<text x="60" y="605" font-size="21">Reporting correction only: native thermal failures remain unresolved.</text>
+<text x="60" y="640" font-size="18">Input reports checked against direct DRC with each run’s effective settings. No speed claim.</text>
+</g></svg>

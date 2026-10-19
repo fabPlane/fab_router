@@ -1,0 +1,66 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-stats-clearances.test.ts:
+25 |       if (!read.ok) throw new Error(read.error.message);
+26 |       expect(checkDrc(read.layout, { copperToEdgeClearanceUm: clearance }).counts.violations).toBe(expected);
+27 |       const result = routeDsn(text, { ...settings, copperToEdgeClearanceUm: clearance });
+28 |       if (!result.ok) throw new Error(result.error.message);
+29 |       expect(result.report.violationsBefore).toBe(expected);
+30 |       expect(result.statsBefore.violations.total).toBe(expected);
+                                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c188/control-source/test/route-stats-clearances.test.ts:30:51)
+(fail) route statistics use effective clearance rules > routeDsn: stricter edge rule [6.37ms]
+41 |           ...Object.entries({ ...settings, copperToEdgeClearanceUm: clearance }).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+42 |         { cwd: join(import.meta.dir, "..") });
+43 |         expect(proc.exitCode).toBe(0);
+44 |         const result = JSON.parse(readFileSync(json, "utf8"));
+45 |         expect(result.report.violationsBefore).toBe(expected);
+46 |         expect(result.statsBefore.violations.total).toBe(expected);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 1
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c188/control-source/test/route-stats-clearances.test.ts:46:53)
+(fail) route statistics use effective clearance rules > CLI route JSON: stricter edge rule [19.95ms]
+25 |       if (!read.ok) throw new Error(read.error.message);
+26 |       expect(checkDrc(read.layout, { copperToEdgeClearanceUm: clearance }).counts.violations).toBe(expected);
+27 |       const result = routeDsn(text, { ...settings, copperToEdgeClearanceUm: clearance });
+28 |       if (!result.ok) throw new Error(result.error.message);
+29 |       expect(result.report.violationsBefore).toBe(expected);
+30 |       expect(result.statsBefore.violations.total).toBe(expected);
+                                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c188/control-source/test/route-stats-clearances.test.ts:30:51)
+(fail) route statistics use effective clearance rules > routeDsn: explicit zero override [1.15ms]
+41 |           ...Object.entries({ ...settings, copperToEdgeClearanceUm: clearance }).flatMap(([k, v]) => ["--set", `${k}=${v}`])],
+42 |         { cwd: join(import.meta.dir, "..") });
+43 |         expect(proc.exitCode).toBe(0);
+44 |         const result = JSON.parse(readFileSync(json, "utf8"));
+45 |         expect(result.report.violationsBefore).toBe(expected);
+46 |         expect(result.statsBefore.violations.total).toBe(expected);
+                                                         ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c188/control-source/test/route-stats-clearances.test.ts:46:53)
+(fail) route statistics use effective clearance rules > CLI route JSON: explicit zero override [19.09ms]
+(pass) routeDsn statistics retain connections in ignored routing groups [2.51ms]
+(pass) CLI route statistics retain connections in ignored routing groups [20.62ms]
+
+ 2 pass
+ 4 fail
+ 19 expect() calls
+Ran 6 tests across 1 file. [82.00ms]

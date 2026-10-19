@@ -92,9 +92,12 @@ export function route(layout: Layout, settings?: Partial<RouteSettings>, hooks?:
 export function routeDsn(dsnText: string, settings?: Partial<RouteSettings>, hooks?: RouteHooks): RouteDsnResult {
   const read = readDsn(dsnText);
   if (!read.ok) return { ok: false, error: read.error, diagnostics: read.diagnostics };
-  const statsBefore = layoutStats(read.layout);
-  const report = route(read.layout, settings, hooks);
-  const statsAfter = layoutStats(read.layout);
+  const effective = resolveSettings(settings, read.layout.settingsFromFile, read.layout.angleMode);
+  // N-07: statistics describe the whole board, including groups skipped by routing.
+  const statsOptions = { ...effective, ignoreNetGroups: [] };
+  const statsBefore = layoutStats(read.layout, statsOptions);
+  const report = route(read.layout, effective, hooks);
+  const statsAfter = layoutStats(read.layout, statsOptions);
   return { ok: true, ses: writeSes(read.layout), report, statsBefore, statsAfter, diagnostics: read.diagnostics };
 }
 

@@ -1,0 +1,13 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-core.test.ts:
+(pass) route report clearance settings > counts pre-existing edge errors under the caller's stricter rule [4.04ms]
+(pass) route report clearance settings > does not count edge errors excluded by the caller's explicit zero rule [0.52ms]
+(pass) route report clearance settings > checks the final snapshot with the same edge rule [1.47ms]
+(pass) route report clearance settings > uses resolved file hole clearance and caller precedence [0.87ms]
+
+ 4 pass
+ 15 filtered out
+ 0 fail
+ 15 expect() calls
+Ran 4 tests across 1 file. [50.00ms]

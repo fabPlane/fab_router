@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import type { RouteSettings, SheetOverride } from "../spec/types/settings.ts";
 import { applyRules, checkDrc, layoutStats, readDsn, readRules, route, writeSes } from "./api.ts";
+import { resolveSettings } from "./pipeline/index.ts";
 
 interface Args { command: string; input?: string; out?: string | undefined; rules?: string | undefined; json?: string | undefined; sets: string[] }
 
@@ -85,11 +86,14 @@ export function main(argv: string[]): number {
     console.log(JSON.stringify(layoutStats(layout), null, 2));
     return 0;
   }
-  const before = layoutStats(layout);
-  const report = route(layout, settingsFromSets(args.sets), {
+  const effective = resolveSettings(settingsFromSets(args.sets), layout.settingsFromFile, layout.angleMode);
+  // N-07: route filtering does not change the scope of whole-board statistics.
+  const statsOptions = { ...effective, ignoreNetGroups: [] };
+  const before = layoutStats(layout, statsOptions);
+  const report = route(layout, effective, {
     onLog: (level, message) => console.error(`${level}: ${message}`),
   });
-  const after = layoutStats(layout);
+  const after = layoutStats(layout, statsOptions);
   if (args.out) writeFileSync(args.out, writeSes(layout));
   if (args.json) writeFileSync(args.json, JSON.stringify({ report, statsBefore: before, statsAfter: after }, null, 2));
   console.log(`passes ${report.passes}, incomplete ${report.incompleteBefore} -> ${report.incompleteAfter}, added ${report.added.tracks} tracks / ${report.added.barrels} barrels, violations added ${report.violationsAdded}, stopped by ${report.stoppedBy}`);

@@ -11,6 +11,8 @@ heap ties, `Date.now` only for budgets.
 `resolveSettings` implements the settings precedence and per-Sheet merge. `runRoute` (task I4) is
 the routing driver: it measures the DRC and item counts before the run, builds a `RouteCtx` with a
 live Lattice and Journal, runs `src/route` `runPasses`, and assembles the `RouteReport` — `added`
-as the item-count difference (contract R-3) and `violationsAdded` as the DRC-count difference
-(0 by construction, R-1). Fanout and the optimiser (`fanoutEnabled` / `optimizerEnabled`) are
-task I5 and are not run here; `routeSrj` remains the `not-implemented` envelope until I6.
+as the item-count difference (contract R-3) and `violationsAdded` as the nonnegative DRC-count
+difference. Both DRC snapshots use the resolved hole and copper-to-edge clearance settings,
+including file settings when enabled and explicit caller overrides. These checks cover imported
+geometry; they do not replace native zone-refill thermal validation. Fanout and optimisation
+run according to `fanoutEnabled` and `optimizerEnabled`.
