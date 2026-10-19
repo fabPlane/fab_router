@@ -1,0 +1,31 @@
+{
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "kept": [
+    9,
+    10,
+    27,
+    29,
+    31,
+    33,
+    35,
+    37,
+    39,
+    62
+  ],
+  "terminalIds": [
+    9,
+    10,
+    62
+  ],
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  }
+}
