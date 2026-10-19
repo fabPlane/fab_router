@@ -73,7 +73,7 @@ export interface SearchOptions {
   /** Smallest per-LU step cost (for an admissible heuristic). */
   minCost: number;
   bendCost: number;
-  /** Upper bound on node pops before the search gives up. */
+  /** Upper bound on current-best state expansions; obsolete heap entries do not count. */
   maxPops: number;
   deadline?: number;
   signal?: AbortSignal;
@@ -335,6 +335,7 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
   HEAP.push(h0, h0, seq++, startState);
 
   let pops = 0;
+  let expansions = 0;
   let aborted = false;
 
   const reconstruct = (endState: number): Pt[] => {
@@ -355,7 +356,11 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
     HEAP.pop();
     const nodeF = HEAP.popF, nodeH = HEAP.popH, nodeState = HEAP.popState;
     pops++;
-    if (pops > o.maxPops) break;
+    const gCur = VIS.gOr(nodeState, Infinity);
+    // Obsolete entries do no graph work. Keep raw pops for polling and diagnostics,
+    // but reserve the expansion budget for current-best states.
+    if (nodeF - nodeH > gCur + 1e-6) continue;
+    if (++expansions > o.maxPops) break;
     const cell = cellOfState(nodeState);
     const cgx = gxOf(cell), cgy = gyOf(cell);
     if (cgx === goal.gx && cgy === goal.gy) {
@@ -364,9 +369,6 @@ export function aStar(space: SearchSpace, o: SearchOptions): SearchResult {
       const rip = collectRip(space, path);
       return { ok: true, path, rip, pops, aborted };
     }
-    const gCur = VIS.gOr(nodeState, Infinity);
-    // Skip a stale heap entry (a cheaper path to this state was found after it was queued).
-    if (nodeF - nodeH > gCur + 1e-6) continue;
     const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
     const bias = o.corridorBias;
@@ -439,6 +441,7 @@ export interface LayeredOptions {
   bendCost: number;
   /** Smallest possible Barrel cost, for the heuristic (admissible when ≤ every `viaMove.extra`). */
   viaFloor: number;
+  /** Upper bound on current-best state expansions; obsolete heap entries do not count. */
   maxPops: number;
   deadline?: number;
   signal?: AbortSignal;
@@ -496,6 +499,7 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
   }
 
   let pops = 0;
+  let expansions = 0;
   let aborted = false;
 
   const reconstruct = (endState: number): LayeredStep[] => {
@@ -522,7 +526,11 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
     HEAP.pop();
     const nodeF = HEAP.popF, nodeH = HEAP.popH, nodeState = HEAP.popState;
     pops++;
-    if (pops > o.maxPops) break;
+    const gCur = VIS.gOr(nodeState, Infinity);
+    // Obsolete entries do no graph work. Keep raw pops for polling and diagnostics,
+    // but reserve the expansion budget for current-best states.
+    if (nodeF - nodeH > gCur + 1e-6) continue;
+    if (++expansions > o.maxPops) break;
     const cell = cellOfState(nodeState);
     const layer = layerOfState(nodeState);
     const cgx = gxOf(cell), cgy = gyOf(cell);
@@ -534,8 +542,6 @@ export function aStarLayered(space: LayeredSpace, o: LayeredOptions): LayeredRes
       const rip = collectLayeredRip(space, path);
       return { ok: true, path, rip, pops, aborted };
     }
-    const gCur = VIS.gOr(nodeState, Infinity);
-    if (nodeF - nodeH > gCur + 1e-6) continue;
     const inDir = dirOfState(nodeState);
     const from = space.pointOf(cgx, cgy);
     const bias = o.corridorBias;

@@ -1,0 +1,285 @@
+{
+  "report": {
+    "passes": 7,
+    "attempted": 113,
+    "completed": 45,
+    "incompleteBefore": 33,
+    "incompleteAfter": 12,
+    "added": {
+      "tracks": 21,
+      "barrels": 0
+    },
+    "ripped": 25,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "stagnant",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": false,
+      "layers": {},
+      "viasAllowed": false,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeoutSeconds": 60,
+      "angleMode": "45"
+    },
+    "wallClockMs": 4021,
+    "perNet": [
+      {
+        "net": "GND",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_D0_N",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_CLK_N",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_D0_P",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_CLK_P",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_D1_N",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_D1_P",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_MCLK",
+        "incomplete": 1
+      },
+      {
+        "net": "/I2C_SDA",
+        "incomplete": 1
+      },
+      {
+        "net": "/I2C_SCL",
+        "incomplete": 1
+      },
+      {
+        "net": "/MIPI_CSI_CAM_PWDN",
+        "incomplete": 1
+      },
+      {
+        "net": "+3V3",
+        "incomplete": 1
+      }
+    ]
+  },
+  "pairs": [
+    {
+      "net": 0,
+      "from": 29,
+      "to": 30,
+      "airlineLu": 25416.726775885207
+    },
+    {
+      "net": 1,
+      "from": 9,
+      "to": 48,
+      "airlineLu": 216650.14424181674
+    },
+    {
+      "net": 2,
+      "from": 10,
+      "to": 54,
+      "airlineLu": 201879.82811563913
+    },
+    {
+      "net": 3,
+      "from": 11,
+      "to": 49,
+      "airlineLu": 216657.06773608841
+    },
+    {
+      "net": 4,
+      "from": 12,
+      "to": 55,
+      "airlineLu": 202520.28293482112
+    },
+    {
+      "net": 5,
+      "from": 15,
+      "to": 51,
+      "airlineLu": 216726.29051409522
+    },
+    {
+      "net": 7,
+      "from": 17,
+      "to": 52,
+      "airlineLu": 216788.57211578288
+    },
+    {
+      "net": 9,
+      "from": 21,
+      "to": 58,
+      "airlineLu": 222744.88770788882
+    },
+    {
+      "net": 13,
+      "from": 25,
+      "to": 60,
+      "airlineLu": 223708.03517084496
+    },
+    {
+      "net": 15,
+      "from": 27,
+      "to": 59,
+      "airlineLu": 219914.2673861794
+    },
+    {
+      "net": 16,
+      "from": 28,
+      "to": 57,
+      "airlineLu": 192780.8730138963
+    },
+    {
+      "net": 18,
+      "from": 34,
+      "to": 61,
+      "airlineLu": 195234.3847789113
+    }
+  ],
+  "attempts": [
+    {
+      "pair": {
+        "net": 2,
+        "from": 10,
+        "to": 54,
+        "airlineLu": 201879.82811563913
+      },
+      "ok": false,
+      "connected": false,
+      "addedDrc": [],
+      "retainedUnchanged": true,
+      "from": {
+        "ok": true,
+        "blocking": []
+      },
+      "to": {
+        "ok": true,
+        "blocking": []
+      },
+      "width": 2500,
+      "spacing": 2002,
+      "tracks": 0
+    },
+    {
+      "pair": {
+        "net": 4,
+        "from": 12,
+        "to": 55,
+        "airlineLu": 202520.28293482112
+      },
+      "ok": false,
+      "connected": false,
+      "addedDrc": [],
+      "retainedUnchanged": true,
+      "from": {
+        "ok": true,
+        "blocking": []
+      },
+      "to": {
+        "ok": true,
+        "blocking": []
+      },
+      "width": 2500,
+      "spacing": 2002,
+      "tracks": 0
+    },
+    {
+      "pair": {
+        "net": 5,
+        "from": 15,
+        "to": 51,
+        "airlineLu": 216726.29051409522
+      },
+      "ok": false,
+      "connected": false,
+      "addedDrc": [],
+      "retainedUnchanged": true,
+      "from": {
+        "ok": true,
+        "blocking": []
+      },
+      "to": {
+        "ok": true,
+        "blocking": []
+      },
+      "width": 2500,
+      "spacing": 2002,
+      "tracks": 0
+    },
+    {
+      "pair": {
+        "net": 7,
+        "from": 17,
+        "to": 52,
+        "airlineLu": 216788.57211578288
+      },
+      "ok": false,
+      "connected": false,
+      "addedDrc": [],
+      "retainedUnchanged": true,
+      "from": {
+        "ok": true,
+        "blocking": []
+      },
+      "to": {
+        "ok": true,
+        "blocking": []
+      },
+      "width": 2500,
+      "spacing": 2002,
+      "tracks": 0
+    },
+    {
+      "pair": {
+        "net": 9,
+        "from": 21,
+        "to": 58,
+        "airlineLu": 222744.88770788882
+      },
+      "ok": false,
+      "connected": false,
+      "addedDrc": [],
+      "retainedUnchanged": true,
+      "from": {
+        "ok": true,
+        "blocking": []
+      },
+      "to": {
+        "ok": true,
+        "blocking": []
+      },
+      "width": 2500,
+      "spacing": 2002,
+      "tracks": 0
+    }
+  ]
+}
