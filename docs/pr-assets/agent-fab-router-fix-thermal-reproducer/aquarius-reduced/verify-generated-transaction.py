@@ -2,6 +2,7 @@
 """Replay generated proposals and independently audit native acceptance evidence."""
 import argparse
 import hashlib
+import gzip
 import json
 from pathlib import Path
 import native
@@ -27,7 +28,15 @@ def verify(row):
     report = json.loads((folder/'drc.json').read_text())
     assert row['errors'] == [v for v in report['violations'] if v['severity'] == 'error']
     assert row['opens'] == len(report['unconnected_items'])
-    board = native.pcbnew.LoadBoard(str(folder/'board.kicad_pcb'))
+    path = folder/'board.kicad_pcb'
+    if not path.exists():
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            expanded = Path(tmp)/'board.kicad_pcb'
+            expanded.write_bytes(gzip.decompress(path.with_suffix('.kicad_pcb.gz').read_bytes()))
+            board = native.pcbnew.LoadBoard(str(expanded))
+    else:
+        board = native.pcbnew.LoadBoard(str(path))
     assert row['groups'] == transaction.terminals.partition(board)
     count += 1
     return board
@@ -35,7 +44,15 @@ def verify(row):
 for repeat in s['rows']:
     baseline = repeat['baseline']
     board = verify(baseline)
-    pad = next(p for p in board.GetPads() if p.m_Uuid.AsString() == repeat['pad_uuid'])
+    pads = {p.m_Uuid.AsString(): p for p in board.GetPads()}
+    targets = sorted({item['uuid'] for error in baseline['errors']
+                      if error['type'] == 'starved_thermal' for item in error['items']
+                      if item['uuid'] in pads})
+    assert repeat['pad_uuid'] in targets
+    if s.get('all_targets'):
+        assert repeat['pad_uuid'] == targets[repeat['target_index']]
+        assert sorted(r['pad_uuid'] for r in s['rows'] if r['repeat'] == repeat['repeat']) == targets
+    pad = pads[repeat['pad_uuid']]
     nearby = generated.geometry.nearby(board, pad, 1)
     assert nearby == repeat['nearby']
     gap = min(z.GetThermalReliefGap() for z in board.Zones()
@@ -57,8 +74,15 @@ for repeat in s['rows']:
         assert expected == attempt['accepted']
         if expected:
             accepted.append(candidate)
-    assert len(accepted) == 1 and repeat['attempts'][-1]['accepted']
-    output = (a.results/f'selected-{repeat["repeat"]}.kicad_pcb').read_bytes()
-    assert output == accepted[0] and sha(output) == repeat['selected_sha256']
-assert len(s['rows']) == 3
-print(f'PASS: {count} native reports/partitions; generated geometry and three selected boards replayed')
+    assert len(repeat['attempts']) == (len(candidates) if not accepted else next(i+1 for i, a in enumerate(repeat['attempts']) if a['accepted']))
+    assert len(accepted) == int(repeat['accepted'])
+    name = f'selected-{repeat["repeat"]}-{repeat["target_index"]}.kicad_pcb' if s.get('all_targets') else f'selected-{repeat["repeat"]}.kicad_pcb'
+    path = a.results/name
+    output = path.read_bytes() if path.exists() else gzip.decompress(path.with_suffix('.kicad_pcb.gz').read_bytes())
+    assert output == (accepted[0] if accepted else a.source.read_bytes())
+    assert sha(output) == repeat['selected_sha256']
+for target in {r['pad_uuid'] for r in s['rows']}:
+    group = [r for r in s['rows'] if r['pad_uuid'] == target]
+    assert sorted(r['repeat'] for r in group) == [1, 2, 3]
+    assert len({r['selected_sha256'] for r in group}) == 1
+print(f'PASS: {count} native reports/partitions; generated geometry, target coverage and selected boards replayed')

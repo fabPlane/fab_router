@@ -38,6 +38,8 @@ def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--source', type=Path, required=True)
     p.add_argument('--out', type=Path, required=True)
+    p.add_argument('--all-targets', action='store_true',
+                   help='Measure each failing pad independently; allow no safe candidate')
     a = p.parse_args()
     a.out.mkdir(parents=True, exist_ok=False)
     assert native.pcbnew.Version() == '10.0.6'
@@ -60,40 +62,47 @@ def main():
         targets = sorted({item['uuid'] for error in baseline['errors']
                           if error['type'] == 'starved_thermal' for item in error['items']
                           if item['uuid'] in pad_ids})
-        assert len(targets) == 1, 'This bounded diagnostic requires one failing pad'
-        pad = pad_ids[targets[0]]
-        zones = [z for z in board.Zones() if z.GetNetCode() == pad.GetNetCode()
-                 and any(z.IsOnLayer(layer) for layer in pad.GetLayerSet().Seq())]
-        gap = min(z.GetThermalReliefGap() for z in zones)
-        assert gap > 0
-        nearby = geometry.nearby(board, pad, 1)
-        assert nearby
-        attempts = []
-        selected = original
-        for index, (scale, delta, candidate) in enumerate(proposals(nodes, nearby[0], gap)):
-            name = f'candidate-{repeat}-{index}'
-            output, accepted, row, exception = transaction.transact(original, candidate, baseline,
-                lambda data: check(data, name))
-            assert output == (candidate if accepted else original)
-            attempts.append(dict(name=name, scale=scale, delta_nm=delta, accepted=accepted,
-                exception=exception, candidate_sha256=sha(candidate), row=row))
-            if accepted:
-                selected = output
-                break
-        (a.out/f'selected-{repeat}.kicad_pcb').write_bytes(selected)
-        rows.append(dict(repeat=repeat, pad_uuid=targets[0], nearby=nearby,
-            stored_gap_nm=gap, baseline=baseline, attempts=attempts,
-            accepted=selected != original, selected_sha256=sha(selected)))
+        assert targets
+        assert a.all_targets or len(targets) == 1, 'Use --all-targets for multiple failing pads'
+        for target_index, target in enumerate(targets):
+            pad = pad_ids[target]
+            zones = [z for z in board.Zones() if z.GetNetCode() == pad.GetNetCode()
+                     and any(z.IsOnLayer(layer) for layer in pad.GetLayerSet().Seq())]
+            gap = min(z.GetThermalReliefGap() for z in zones)
+            assert gap > 0
+            nearby = geometry.nearby(board, pad, 1)
+            assert nearby
+            attempts = []
+            selected = original
+            for index, (scale, delta, candidate) in enumerate(proposals(nodes, nearby[0], gap)):
+                name = f'candidate-{repeat}-{target_index}-{index}' if a.all_targets else f'candidate-{repeat}-{index}'
+                output, accepted, row, exception = transaction.transact(original, candidate, baseline,
+                    lambda data: check(data, name))
+                assert output == (candidate if accepted else original)
+                attempts.append(dict(name=name, scale=scale, delta_nm=delta, accepted=accepted,
+                    exception=exception, candidate_sha256=sha(candidate), row=row))
+                if accepted:
+                    selected = output
+                    break
+            selected_name = (f'selected-{repeat}-{target_index}.kicad_pcb' if a.all_targets
+                             else f'selected-{repeat}.kicad_pcb')
+            (a.out/selected_name).write_bytes(selected)
+            rows.append(dict(repeat=repeat, target_index=target_index, pad_uuid=target, nearby=nearby,
+                stored_gap_nm=gap, baseline=baseline, attempts=attempts,
+                accepted=selected != original, selected_sha256=sha(selected)))
     assert inputs == {name: sha(Path(name).read_bytes()) for name in inputs}
-    assert all(r['accepted'] for r in rows), 'No safe candidate found'
-    assert len({r['selected_sha256'] for r in rows}) == 1
+    if not a.all_targets:
+        assert all(r['accepted'] for r in rows), 'No safe candidate found'
+    for target in {r['pad_uuid'] for r in rows}:
+        group = [r for r in rows if r['pad_uuid'] == target]
+        assert len(group) == 3 and len({r['selected_sha256'] for r in group}) == 1
     (a.out/'summary.json').write_text(json.dumps(dict(production_fix=False,
-        routing_benchmark=False, input_sha256=inputs, rows=rows), indent=2)+'\n')
+        routing_benchmark=False, all_targets=a.all_targets, input_sha256=inputs, rows=rows), indent=2)+'\n')
     (a.out/'manifest.json').write_text(json.dumps({
         str(path.relative_to(a.out)): sha(path.read_bytes())
         for path in sorted(a.out.rglob('*')) if path.is_file()
         and path.suffix != '.kicad_prl'}, indent=2)+'\n')
-    print('PASS: geometry-generated proposal accepted in all three repeats')
+    print(f'PASS: {sum(r["accepted"] for r in rows)}/{len(rows)} independent target transactions accepted')
 
 
 if __name__ == '__main__':
