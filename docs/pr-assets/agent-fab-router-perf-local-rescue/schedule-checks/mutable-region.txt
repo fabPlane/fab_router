@@ -1,0 +1,25 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/scheduler/mutable-region/test/recovery-schedule.test.ts:
+25 |    expect(journal.insertedSince(0)).toEqual([]);
+26 |    trial.expand();add();calls++;
+27 |    // Mutating the callback's box cannot enlarge the acceptance region.
+28 |    trial.region.x0=-10000;trial.region.y0=-10000;trial.region.x1=10000;trial.region.y1=10000;
+29 |   });
+30 |   expect(result.status).toBe('kept');expect(calls).toBe(2);expect(result.expansions).toBe(2);
+                                                        ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/scheduler/mutable-region/test/recovery-schedule.test.ts:30:52)
+(fail) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [3.61ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [1.07ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.93ms]
+(pass) late legal proposals are rewound and do not start another region [0.29ms]
+
+ 3 pass
+ 1 fail
+ 37 expect() calls
+Ran 4 tests across 1 file. [36.00ms]

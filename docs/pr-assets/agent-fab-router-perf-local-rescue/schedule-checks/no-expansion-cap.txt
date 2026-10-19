@@ -1,0 +1,25 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/scheduler/no-expansion-cap/test/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [5.91ms]
+38 | test('shared expansion cap interrupts and rewinds partially inserted copper across attempts',()=>{
+39 |  const {l,lattice,journal,add}=fixture(),ses=writeSes(l);let calls=0;
+40 |  const result=scheduleRecovery(l,lattice,journal,target,{...plan,maxExpansions:3},trial=>{
+41 |   calls++;trial.expand();add();trial.expand();
+42 |  });
+43 |  expect(result.status).toBe('budget');expect(result.expansions).toBe(3);expect(calls).toBe(2);
+                            ^
+error: expect(received).toBe(expected)
+
+Expected: "budget"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/scheduler/no-expansion-cap/test/recovery-schedule.test.ts:43:24)
+(fail) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.55ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.51ms]
+(pass) late legal proposals are rewound and do not start another region [0.26ms]
+
+ 3 pass
+ 1 fail
+ 68 expect() calls
+Ran 4 tests across 1 file. [29.00ms]

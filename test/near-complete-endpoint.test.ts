@@ -14,6 +14,7 @@ import {ignoreOf} from '../src/route/clear.ts';
 import {resolveSettings} from '../src/pipeline/index.ts';
 import type {Pt} from '../src/geom/index.ts';
 import type {RouteSettings} from '../spec/types/settings.ts';
+import {scheduleRecovery} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts';
 import {tryRecoveryTransaction} from '../docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts';
 const input=readFileSync(new URL('./data/near-complete-endpoint.dsn',import.meta.url),'utf8');
 const fixture=JSON.parse(readFileSync(new URL('./data/near-complete-endpoint.json',import.meta.url),'utf8')) as {
@@ -63,6 +64,17 @@ test('near-complete endpoint context preserves legal progress and deterministic 
     expect(legaliseTrail(l,lattice,witness.sheet,witness.raw,profile,ignoreOf(witness.net),false).ok).toBe(true);
     expect(journal.insertedSince(mark)).toEqual([]);
    };
+   const scheduled=scheduleRecovery(l,lattice,journal,targetPair,{
+    enabled:true,pitch:profile.width+profile.maxSpacing,margins:[0,4,8],
+    maxAttempts:3,maxExpansions:3,maxMilliseconds:1000,
+   },trial=>{trial.expand();addWitness();});
+   expect(scheduled.status).toBe('kept');
+   expect(scheduled.trials[0]!.outcome).toBe('region');
+   expect(scheduled.trials.at(-1)!.outcome).toBe('kept');
+   expect(scheduled.expansions).toBe(scheduled.trials.length);
+   expect(checkDrc(l).counts.violations).toBe(0);
+   expect(requiredConnections(l).filter(c=>c.net===target)).toHaveLength(0);
+   journal.rewind(mark);assertRestored();
    expect(tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{})).toBe('open');
    assertRestored();
    expect(()=>tryRecoveryTransaction(l,lattice,journal,targetPair,()=>{addWitness();throw Error('proposal interrupted');})).toThrow('proposal interrupted');

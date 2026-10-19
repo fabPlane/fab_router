@@ -15,12 +15,13 @@ output.mkdir()  # Refuse to overwrite prior evidence.
 helper = pathlib.Path('docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts')
 test = pathlib.Path('test/near-complete-endpoint.test.ts')
 region_test = pathlib.Path('test/recovery-region.test.ts')
-captured = {p: (source / p).read_bytes() for p in [test, region_test, helper]}
+schedule = pathlib.Path('docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts')
+captured = {p: (source / p).read_bytes() for p in [test, region_test, helper, schedule]}
 mutations = [
     ('control', None, None, None),
     ('no-drc', "if(checkDrc(layout).counts.violations)return 'drc';", "if(false)return 'drc';", 'Expected: "drc"'),
     ('no-terminals', "if(groups.some(g=>g.some(id=>!same(after,g[0]!,id))))return 'terminals';", "if(false)return 'terminals';", 'Expected: "terminals"'),
-    ('no-rewind', 'if(!kept)journal.rewind(mark);', 'if(!kept)void mark;', 'expect(received).toBe(expected)'),
+    ('no-rewind', 'if(!kept)journal.rewind(mark);', 'if(!kept)void mark;', 'Recovery target is already joined'),
     ('no-retained', "if(retained()!==retainedBefore)return 'retained';", "if(false)return 'retained';", 'Expected: "retained"'),
     ('no-region', 'if(region&&copperBefore){', 'if(false&&region&&copperBefore){', 'Expected: "region"'),
 ]
@@ -40,12 +41,13 @@ for name, old, new, diagnostic in mutations:
         gate = gate.replace(old, new)
     (dest / helper).parent.mkdir(parents=True)
     (dest / helper).write_text(gate)
+    (dest / schedule).write_bytes(captured[schedule])
     command = ['taskset', '-c', '12-19', 'nice', '-n', '10', 'timeout', '120', 'bun', 'test', str(dest / test)]
     result = subprocess.run(command, capture_output=True, text=True, timeout=150)
     log = result.stdout + result.stderr
     (output / f'{name}.txt').write_text(log)
     if name == 'control':
-        assert result.returncode == 0 and '1 pass' in log and '267 expect() calls' in log, log
+        assert result.returncode == 0 and '1 pass' in log and '300 expect() calls' in log, log
     else:
         assert result.returncode == 1 and '1 fail' in log and diagnostic in log, log
     rows.append({'variant': name, 'exit': result.returncode, 'expected_outcome_observed': True})

@@ -1,4 +1,4 @@
-Latest: [local recovery experiment and legal reduced-fixture witness](recovery.md). The original context remains open; no production recovery adopted.
+Latest: [gradual endpoint-region scheduler and cooperative budgets](schedule-checks.md). Research-only recorded-path replay; production routing is unchanged and original-board recovery remains pending.
 
 The bounded local track rescue experiment did not improve any frozen native task. This change retains its exact patch, controls, measurements, diagnostic tools and plots; the final production source is restored to the control. No speedup or native DRC fix is claimed.
 

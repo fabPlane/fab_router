@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-region/test/near-complete-endpoint.test.ts:
+67 |    const scheduled=scheduleRecovery(l,lattice,journal,targetPair,{
+68 |     enabled:true,pitch:profile.width+profile.maxSpacing,margins:[0,4,8],
+69 |     maxAttempts:3,maxExpansions:3,maxMilliseconds:1000,
+70 |    },trial=>{trial.expand();addWitness();});
+71 |    expect(scheduled.status).toBe('kept');
+72 |    expect(scheduled.trials[0]!.outcome).toBe('region');
+                                             ^
+error: expect(received).toBe(expected)
+
+Expected: "region"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-region/test/near-complete-endpoint.test.ts:72:41)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [4958.09ms]
+
+ 0 pass
+ 1 fail
+ 14 expect() calls
+Ran 1 test across 1 file. [5.00s]

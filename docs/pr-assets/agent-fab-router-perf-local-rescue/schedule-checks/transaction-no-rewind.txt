@@ -1,0 +1,19 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-rewind/test/near-complete-endpoint.test.ts:
+56 |     check();
+57 |     propose({region:{...region},expand(){check();if(expansions>=plan.maxExpansions)throw budget;expansions++;}});
+58 |     check(); // Reject and rewind even a legal closure returned after its deadline.
+59 |    },region);
+60 |   }catch(error){
+61 |    if(error!==budget)throw error;
+                                ^
+error: Recovery target is already joined
+      at scheduleRecovery (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-rewind/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts:61:28)
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-rewind/test/near-complete-endpoint.test.ts:67:20)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [5062.81ms]
+
+ 0 pass
+ 1 fail
+ 12 expect() calls
+Ran 1 test across 1 file. [5.10s]

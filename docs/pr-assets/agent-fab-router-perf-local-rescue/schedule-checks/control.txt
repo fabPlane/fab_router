@@ -1,0 +1,12 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/scheduler/control/test/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [6.18ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.42ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.34ms]
+(pass) late legal proposals are rewound and do not start another region [0.24ms]
+
+ 4 pass
+ 0 fail
+ 77 expect() calls
+Ran 4 tests across 1 file. [33.00ms]

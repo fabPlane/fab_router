@@ -1,0 +1,35 @@
+{
+  "scope": "Scheduler regressions, not routing benchmarks",
+  "sha256": {
+    "docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts": "02ff203ccf40fc0e29e246f2c17015e2253c168f5f82397c86ebce10f484015e",
+    "docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts": "4206877f22105d7b5ce2727cadf82916b2841b60a92ca9bd508f6f98b1d02aae",
+    "test/recovery-schedule.test.ts": "8132e06a7fe41d15a9ee8db7c94448541f1aa8a34dbe9439906f87699adb33fe"
+  },
+  "rows": [
+    {
+      "variant": "control",
+      "exit": 0,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-expansion-cap",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-attempt-cap",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-deadline",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "mutable-region",
+      "exit": 1,
+      "expected_outcome_observed": true
+    }
+  ]
+}
