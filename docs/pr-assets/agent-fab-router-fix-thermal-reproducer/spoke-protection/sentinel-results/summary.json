@@ -1,0 +1,413 @@
+{
+  "repeats": 3,
+  "routing_benchmark": false,
+  "production_fix": false,
+  "script_sha256": "db1782493839099408b39d44b967ba0af697004ccc47cda5852a70f46a37513d",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 1,
+      "variant": "valid-sentinel",
+      "exit_code": 0,
+      "errors": 1,
+      "sentinel_errors": 1,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "b6df0fde5619e941ee1cd487496b10b5ca9c22dacaccf834678e2f799fa4417e"
+    },
+    {
+      "repeat": 1,
+      "variant": "sentinel-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "628dee225b9eff508f8617db69e3a1bd78516f27ff375a45bc7cd2a685b189bb"
+    },
+    {
+      "repeat": 1,
+      "variant": "sentinel-after-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "c72a4cf4b537d9c3546aec9bd3163c052f36a45425772564678954f42fbb2168"
+    },
+    {
+      "repeat": 1,
+      "variant": "sentinel-before-unclosed",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "0bbe8b161d684da0509cc74fd88a8394ae32f744c694ea3a6f248497a882372c"
+    },
+    {
+      "repeat": 2,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 2,
+      "variant": "valid-sentinel",
+      "exit_code": 0,
+      "errors": 1,
+      "sentinel_errors": 1,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "b6df0fde5619e941ee1cd487496b10b5ca9c22dacaccf834678e2f799fa4417e"
+    },
+    {
+      "repeat": 2,
+      "variant": "sentinel-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "628dee225b9eff508f8617db69e3a1bd78516f27ff375a45bc7cd2a685b189bb"
+    },
+    {
+      "repeat": 2,
+      "variant": "sentinel-after-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "c72a4cf4b537d9c3546aec9bd3163c052f36a45425772564678954f42fbb2168"
+    },
+    {
+      "repeat": 2,
+      "variant": "sentinel-before-unclosed",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "0bbe8b161d684da0509cc74fd88a8394ae32f744c694ea3a6f248497a882372c"
+    },
+    {
+      "repeat": 3,
+      "variant": "valid-only",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "26a76df73717d2991d0f9c19f2144ea65d7909910d15f9959f5d0ec1185aa858"
+    },
+    {
+      "repeat": 3,
+      "variant": "valid-sentinel",
+      "exit_code": 0,
+      "errors": 1,
+      "sentinel_errors": 1,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 400,
+            "first_nm": -200000,
+            "last_nm": 199000
+          },
+          "left": {
+            "count": 400,
+            "first_nm": -199000,
+            "last_nm": 200000
+          }
+        }
+      },
+      "rules_sha256": "b6df0fde5619e941ee1cd487496b10b5ca9c22dacaccf834678e2f799fa4417e"
+    },
+    {
+      "repeat": 3,
+      "variant": "sentinel-before-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "628dee225b9eff508f8617db69e3a1bd78516f27ff375a45bc7cd2a685b189bb"
+    },
+    {
+      "repeat": 3,
+      "variant": "sentinel-after-invalid",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "c72a4cf4b537d9c3546aec9bd3163c052f36a45425772564678954f42fbb2168"
+    },
+    {
+      "repeat": 3,
+      "variant": "sentinel-before-unclosed",
+      "exit_code": 0,
+      "errors": 0,
+      "sentinel_errors": 0,
+      "opens": 2,
+      "snapshot": {
+        "zone_width_nm": 508000,
+        "local_width_nm": null,
+        "zone_gap_nm": 508000,
+        "pad_argument_gap_nm": 0,
+        "sections": {
+          "down": {
+            "count": 508,
+            "first_nm": -254000,
+            "last_nm": 253000
+          },
+          "left": {
+            "count": 508,
+            "first_nm": -253000,
+            "last_nm": 254000
+          }
+        }
+      },
+      "rules_sha256": "0bbe8b161d684da0509cc74fd88a8394ae32f744c694ea3a6f248497a882372c"
+    }
+  ]
+}

@@ -450,3 +450,31 @@ benchmark is claimed; the frozen thermal failures remain unresolved.
 PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/mixed-rules.py --out /tmp/thermal-mixed-rules-new
 bun run typecheck && bun run check:layers && bun run test
 ```
+
+### Expected-error rule-loading sentinel (cycle 86)
+
+`loading-sentinel.py` adds a diagnostic `disallow track` rule on a disposable
+board copy. With valid rules it reports exactly one `items_not_allowed` error
+on retained track `bae32f60-b8a3-4ddc-a6ce-ac2cd8c410c0`, while the custom width
+still produces 400 samples in each section. With an unknown constraint before
+or after the sentinel, or an unclosed rule after it, the expected error disappears
+and both sections revert to 508 samples. All five variants were checked three
+times on the same host/board/project; every CLI exit is zero and two opens persist.
+Raw reports preserve the deliberately induced error; no errors are suppressed.
+
+This supplies an observable loading probe for these malformed files. It is not
+a general syntax validator, an effective-rule resolver, or a native thermal
+acceptance guard. Valid syntax with ineffective conditions or unsupported
+semantics remains outside this experiment. No production code or router benchmark
+changed; the frozen thermal failures remain unresolved. Use only disposable copies:
+the sentinel intentionally makes a valid board fail the native error check.
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/loading-sentinel.py --out /tmp/thermal-sentinel-new
+python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/render-sentinel.py
+rsvg-convert docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/sentinel-results/comparison.svg -o /tmp/thermal-sentinel.png
+bun run typecheck && bun run check:layers && bun run test
+```
+
+`sentinel-results/` retains all fifteen native reports, rules, filled boards,
+projects, snapshots, logs, source hashes and the comparison chart.
