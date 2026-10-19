@@ -1,0 +1,21 @@
+import json,pathlib,subprocess,sys
+root=pathlib.Path(sys.argv[1]);out=pathlib.Path(sys.argv[2]);out.mkdir(parents=True,exist_ok=True)
+rows=json.loads((root/'measurement.json').read_text());assert len(rows)==3
+before=sum(r['before_errors'] for r in rows);after=sum(r['after_errors'] for r in rows)
+assert before==6 and after==0
+svg=f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="650" viewBox="0 0 1200 650">
+<rect width="1200" height="650" fill="#f7f9fc"/>
+<g font-family="DejaVu Sans,sans-serif" fill="#17283b">
+<text x="60" y="65" font-size="31">Complete-board thermal repair</text>
+<text x="60" y="106" font-size="21">J2-small · three repeats · native checker 10.0.6</text>
+<line x1="170" y1="475" x2="1040" y2="475" stroke="#708198" stroke-width="2"/>
+<rect x="300" y="175" width="200" height="300" rx="5" fill="#ba493b"/>
+<text x="400" y="157" text-anchor="middle" font-size="45">{before}</text>
+<text x="800" y="455" text-anchor="middle" font-size="45" fill="#18715a">{after}</text>
+<text x="400" y="515" text-anchor="middle" font-size="23">Routed snapshot</text>
+<text x="800" y="515" text-anchor="middle" font-size="23">Offline bounded search</text>
+<text x="600" y="553" text-anchor="middle" font-size="20">Introduced native thermal errors across all three repeats</text>
+<text x="60" y="605" font-size="19">Zero opens; zero lost source/routed terminal pairs. Scored router does not invoke this command.</text>
+</g></svg>'''
+(out/'comparison.svg').write_text(svg+'\n')
+subprocess.run(['rsvg-convert','-w','1600',str(out/'comparison.svg'),'-o',str(out/'comparison.png')],check=True)
