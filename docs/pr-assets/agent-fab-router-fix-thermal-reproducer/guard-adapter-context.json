@@ -1,0 +1,11 @@
+{
+  "repo": "fabPlane/fab_pcb",
+  "revision": "12b7edb2047e7c4e2710167419f5781899281303",
+  "path": "packages/router/src/bridge-job.ts",
+  "sha256": "a4353d5276ebf33c1f14593474ab8fdb0709302c8060d4387cc86b729a3d779e",
+  "observations": [
+    "Tentative route DRC uses refillZones: false and filters dangling tracks/vias.",
+    "After acceptance, zone refill is attempted; a refill exception is logged and the applied route is saved.",
+    "No adapter change or adapter regression is included in this disposable-file diagnostic."
+  ]
+}

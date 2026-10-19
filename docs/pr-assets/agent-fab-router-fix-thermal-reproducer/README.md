@@ -146,3 +146,40 @@ Exploratory bridge widths 0.254/0.3/0.4/0.508 mm all retained the error;
 thermal gaps 0.127/0.254 mm and solid connection removed it, while 0.8 mm retained
 it. Those single-run probes motivated the paired repeated audit and are not
 scored benchmarks or repairs. The original native rules remain the safety target.
+
+## Native guard ordering and restoration diagnostic
+
+`guard-audit.py` measures the same returned route before and after zone refill,
+then restores the complete saved original board. Each condition is checked in
+three independent routing repeats with unchanged thermal settings. Every retained
+track/via record survives SES import. This is a disposable-file prototype;
+it does not implement adapter transactions, undo, cancellation, or retry routing.
+
+| Same synthetic input/host, 3 repeats | Original filled | Imported, stale fill | Imported, refilled | Original restored |
+| --- | ---: | ---: | ---: | ---: |
+| Clearance errors, each | 0 | 4 | 0 | 0 |
+| Hole clearance errors, each | 0 | 2 | 0 | 0 |
+| Thermal starvation errors, each | 0 | 0 | 1 | 0 |
+| Native opens, each | 2 | 1 | 1 | 2 |
+
+Stale fill intersects the new copper and reports clearance findings absent after
+refill, while missing the eventual thermal failure. A future guard needs the
+post-refill native findings before accepting a route. The current adapter's
+pre-refill dangling-copper check is not a thermal check; its later refill changes
+the evidence. Full original-board restoration recovers identical native finding counts
+and byte-identical saved board content, but also restores the input opens. This
+establishes neither a completed routing fix nor a working production rollback.
+Other native errors and warnings remain in the raw reports. No frozen benchmark
+is run or scored by this diagnostic; historical full-suite results above remain
+context only. Engine source, rules, tests and scoring are unchanged.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/guard-audit.py --out /tmp/thermal-guard
+python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/render-guard.py /tmp/thermal-guard/summary.json /tmp/thermal-guard.svg
+rsvg-convert /tmp/thermal-guard.svg -o /tmp/thermal-guard.png
+```
+
+`guard-results.json` records all states, engine reports and source/input hashes;
+`guard-reports/` retains the twelve complete native DRC reports. `guard.png` plots
+measured error counts. Raw boards, DSN, SES and subprocess logs remain in the
+requested output directory.

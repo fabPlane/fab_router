@@ -1,0 +1,230 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T07:19:25",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "stale.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "27f6b1f9-0f47-4fad-8d56-54c79d0497bc"
+                },
+                {
+                    "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Clearance violation (zone clearance 0.2540 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-Pad12)] on F.Cu, length 0.4500 mm",
+                    "pos": {
+                        "x": 83.0,
+                        "y": 132.588
+                    },
+                    "uuid": "25fd0740-06d1-4ac3-91a8-3f6c04e2ea75"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (zone clearance 0.2540 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Via [Net-(U1-Pad12)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 132.588
+                    },
+                    "uuid": "042d31aa-561a-4b18-b626-f6ea4b0a11d3"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Via [Net-(U1-Pad12)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 132.588
+                    },
+                    "uuid": "042d31aa-561a-4b18-b626-f6ea4b0a11d3"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation (zone clearance 0.2540 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Via [Net-(U1-Pad12)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 82.55,
+                        "y": 132.588
+                    },
+                    "uuid": "d3c3b8ee-a711-4445-8dfb-4dc45e2699eb"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Via [Net-(U1-Pad12)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 82.55,
+                        "y": 132.588
+                    },
+                    "uuid": "d3c3b8ee-a711-4445-8dfb-4dc45e2699eb"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Clearance violation (zone clearance 0.2540 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-Pad12)] on F.Cu, length 3.7500 mm",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 132.588
+                    },
+                    "uuid": "83c8125c-540a-4d90-9f2f-397565d5d37b"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu, priority 0",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 126.0
+                    },
+                    "uuid": "00000000-0000-0000-0000-000057c65453"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "27f6b1f9-0f47-4fad-8d56-54c79d0497bc"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "5aadc98d-84c4-4e16-a191-16808e6caf40"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        }
+    ]
+}
