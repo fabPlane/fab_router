@@ -1,0 +1,1953 @@
+{
+  "case": "kitspace-aquarius-j4",
+  "router": "fab-router",
+  "seed": 1,
+  "status": "checked",
+  "passed": false,
+  "seconds": 47.064832442000004,
+  "vias": 130,
+  "length_mm": 1731.1131265365616,
+  "opens": 15,
+  "new_errors": 6,
+  "new_error_types": {
+    "starved_thermal": 6
+  },
+  "failed_fidelity": [],
+  "evidence": "runs/run-20261019T113122.388234Z-004/fab-router",
+  "check": {
+    "native_version": "10.0.6",
+    "board_sha256": "5b1de44070f9ee4a8017c8e019cc847f29797ee1e2986468115c33c3d6e266d5",
+    "integrity_checks": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "integrity_pass": true,
+    "native_opens": 15,
+    "native_total_errors_excluding_opens": 6,
+    "inherited_errors": 0,
+    "new_errors": 6,
+    "new_error_details": [
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 2 [GNDD] of C1 on B.Cu",
+            "pos": {
+              "x": 178.659647,
+              "y": 49.297447
+            },
+            "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 1 [GNDD] of R20 on B.Cu",
+            "pos": {
+              "x": 175.082,
+              "y": 58.3565
+            },
+            "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 39 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 173.200561,
+              "y": 48.414401
+            },
+            "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 46 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 170.725687,
+              "y": 50.889275
+            },
+            "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 48 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 170.018581,
+              "y": 51.596381
+            },
+            "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 53 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 165.882006,
+              "y": 50.182168
+            },
+            "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      }
+    ],
+    "new_warning_details": [
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C1",
+            "pos": {
+              "x": 178.1028,
+              "y": 48.7406
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24200d"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C2",
+            "pos": {
+              "x": 178.1282,
+              "y": 51.0012
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24201e"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C5",
+            "pos": {
+              "x": 176.5788,
+              "y": 39.1942
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242051"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C8",
+            "pos": {
+              "x": 181.9275,
+              "y": 79.083
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242084"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C9",
+            "pos": {
+              "x": 176.0605,
+              "y": 54.4523
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242095"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C10",
+            "pos": {
+              "x": 174.8931,
+              "y": 53.2848
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2420a6"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C11",
+            "pos": {
+              "x": 173.7257,
+              "y": 52.1174
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2420b7"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C12",
+            "pos": {
+              "x": 185.077,
+              "y": 69.1515
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2420c8"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C13",
+            "pos": {
+              "x": 185.077,
+              "y": 70.8025
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2420d9"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C14",
+            "pos": {
+              "x": 185.077,
+              "y": 72.517
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2420ea"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q1",
+            "pos": {
+              "x": 153.289,
+              "y": 70.509
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242274"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q2",
+            "pos": {
+              "x": 139.446,
+              "y": 80.669
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242289"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q4",
+            "pos": {
+              "x": 143.994,
+              "y": 85.725
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2422b3"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q5",
+            "pos": {
+              "x": 147.447,
+              "y": 92.353
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2422c8"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q6",
+            "pos": {
+              "x": 126.111,
+              "y": 80.669
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2422dd"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q8",
+            "pos": {
+              "x": 130.81,
+              "y": 64.286
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242307"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q9",
+            "pos": {
+              "x": 120.65,
+              "y": 64.286
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24231c"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q10",
+            "pos": {
+              "x": 125.73,
+              "y": 64.286
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242331"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q11",
+            "pos": {
+              "x": 130.683,
+              "y": 55.65
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242346"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q12",
+            "pos": {
+              "x": 125.603,
+              "y": 55.65
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24235b"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q13",
+            "pos": {
+              "x": 120.65,
+              "y": 55.65
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242370"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R4",
+            "pos": {
+              "x": 136.5885,
+              "y": 82.0675
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2423b4"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R5",
+            "pos": {
+              "x": 127.6605,
+              "y": 87.5665
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2423c5"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R7",
+            "pos": {
+              "x": 144.653,
+              "y": 93.434
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2423e7"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R8",
+            "pos": {
+              "x": 127.508,
+              "y": 94.1705
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2423f8"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R9",
+            "pos": {
+              "x": 124.168,
+              "y": 96.7105
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242409"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R10",
+            "pos": {
+              "x": 118.4655,
+              "y": 98.425
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24241a"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R11",
+            "pos": {
+              "x": 118.4655,
+              "y": 110.871
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24242b"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R12",
+            "pos": {
+              "x": 118.4655,
+              "y": 105.029
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24243c"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R13",
+            "pos": {
+              "x": 118.4655,
+              "y": 113.665
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24244d"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R14",
+            "pos": {
+              "x": 118.4655,
+              "y": 116.459
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24245e"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R15",
+            "pos": {
+              "x": 118.4655,
+              "y": 119.253
+            },
+            "uuid": "00000000-0000-0000-0000-00005d24246f"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R20",
+            "pos": {
+              "x": 175.8695,
+              "y": 58.3565
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2424c4"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R21",
+            "pos": {
+              "x": 185.077,
+              "y": 74.2315
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2424d5"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R23",
+            "pos": {
+              "x": 159.8295,
+              "y": 56.045
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2424f7"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Button_Switch_SMD'",
+        "items": [
+          {
+            "description": "Footprint SW2",
+            "pos": {
+              "x": 183.6145,
+              "y": 59.9695
+            },
+            "uuid": "00000000-0000-0000-0000-00005d242557"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_QFP'",
+        "items": [
+          {
+            "description": "Footprint U1",
+            "pos": {
+              "x": 168.6574,
+              "y": 44.9319
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2ab95e"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q3",
+            "pos": {
+              "x": 131.572,
+              "y": 80.669
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2ad180"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R19",
+            "pos": {
+              "x": 181.9275,
+              "y": 82.258
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2fc675"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C7",
+            "pos": {
+              "x": 185.077,
+              "y": 81.3435
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2fd306"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint U2",
+            "pos": {
+              "x": 184.9145,
+              "y": 77.8305
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2fdd01"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R24",
+            "pos": {
+              "x": 181.9275,
+              "y": 75.9205
+            },
+            "uuid": "00000000-0000-0000-0000-00005d2fecc7"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R16",
+            "pos": {
+              "x": 183.2355,
+              "y": 96.647
+            },
+            "uuid": "00000000-0000-0000-0000-00005d33d7cc"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R22",
+            "pos": {
+              "x": 185.8645,
+              "y": 66.6495
+            },
+            "uuid": "00000000-0000-0000-0000-00005d33e733"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C6",
+            "pos": {
+              "x": 175.4358,
+              "y": 38.0512
+            },
+            "uuid": "00000000-0000-0000-0000-00005d33f11e"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R1",
+            "pos": {
+              "x": 175.895,
+              "y": 51.0032
+            },
+            "uuid": "00000000-0000-0000-0000-00005d33f556"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Crystal'",
+        "items": [
+          {
+            "description": "Footprint Y1",
+            "pos": {
+              "x": 181.737,
+              "y": 47.861
+            },
+            "uuid": "00000000-0000-0000-0000-00005d34b50c"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C15",
+            "pos": {
+              "x": 185.077,
+              "y": 54.0385
+            },
+            "uuid": "00000000-0000-0000-0000-00005d34b9f0"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R6",
+            "pos": {
+              "x": 138.4555,
+              "y": 93.1545
+            },
+            "uuid": "00000000-0000-0000-0000-00005d3947d1"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Package_TO_SOT_SMD'",
+        "items": [
+          {
+            "description": "Footprint Q7",
+            "pos": {
+              "x": 121.666,
+              "y": 87.908
+            },
+            "uuid": "00000000-0000-0000-0000-00005d395a72"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R17",
+            "pos": {
+              "x": 171.704,
+              "y": 59.017
+            },
+            "uuid": "00000000-0000-0000-0000-00005d3e08cd"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C3",
+            "pos": {
+              "x": 174.2674,
+              "y": 36.8701
+            },
+            "uuid": "00000000-0000-0000-0000-00005da2b41d"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Capacitor_SMD'",
+        "items": [
+          {
+            "description": "Footprint C4",
+            "pos": {
+              "x": 177.6964,
+              "y": 40.3245
+            },
+            "uuid": "00000000-0000-0000-0000-00005da37a67"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Symbol'",
+        "items": [
+          {
+            "description": "Footprint X3",
+            "pos": {
+              "x": 141.224,
+              "y": 134.112
+            },
+            "uuid": "00000000-0000-0000-0000-00005e00302f"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Symbol'",
+        "items": [
+          {
+            "description": "Footprint X4",
+            "pos": {
+              "x": 164.592,
+              "y": 135.128
+            },
+            "uuid": "00000000-0000-0000-0000-00005e003045"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "The current configuration does not include the footprint library 'Resistor_SMD'",
+        "items": [
+          {
+            "description": "Footprint R3",
+            "pos": {
+              "x": 150.622,
+              "y": 71.5265
+            },
+            "uuid": "00000000-0000-0000-0000-00005e00623b"
+          }
+        ],
+        "severity": "warning",
+        "type": "lib_footprint_issues"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [Net-(C1-Pad1)] on F.Cu, length 1.4064 mm",
+            "pos": {
+              "x": 176.1396,
+              "y": 48.1838
+            },
+            "uuid": "823fbdc6-b9db-4a77-b018-a70d0b91f0e4"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [Net-(C1-Pad1)] on B.Cu, length 2.1096 mm",
+            "pos": {
+              "x": 176.1396,
+              "y": 49.5902
+            },
+            "uuid": "828c4f30-8546-4893-a313-daf2d734006c"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [+3V3] on F.Cu, length 4.9224 mm",
+            "pos": {
+              "x": 164.4561,
+              "y": 43.9204
+            },
+            "uuid": "33a31e5b-a0a9-4b75-8d5e-4187f7fbc31e"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [/Leds/Stars/LED1] on F.Cu, length 32.2772 mm",
+            "pos": {
+              "x": 161.2924,
+              "y": 77.4163
+            },
+            "uuid": "a6270995-9a57-4977-968b-4a9a40818d73"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [/Leds/Stars/LED8] on F.Cu, length 1.4064 mm",
+            "pos": {
+              "x": 156.2664,
+              "y": 54.3476
+            },
+            "uuid": "71a58791-9526-4163-9045-6c64bfc2135f"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Track has unconnected end",
+        "items": [
+          {
+            "description": "Track [/Leds/Stars/LED11] on F.Cu, length 7.7352 mm",
+            "pos": {
+              "x": 134.4978,
+              "y": 52.7436
+            },
+            "uuid": "fe337322-bdbb-471c-b307-1bae1b3e0b56"
+          }
+        ],
+        "severity": "warning",
+        "type": "track_dangling"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      },
+      {
+        "description": "Isolated copper fill",
+        "items": [
+          {
+            "description": "Zone [GNDD] on F.Cu, priority 0",
+            "pos": {
+              "x": 190.5,
+              "y": 154.94
+            },
+            "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+          }
+        ],
+        "severity": "warning",
+        "type": "isolated_copper"
+      }
+    ],
+    "new_error_types": {
+      "starved_thermal": 6
+    },
+    "new_warnings": 82,
+    "new_warning_types": {
+      "lib_footprint_issues": 56,
+      "track_dangling": 6,
+      "isolated_copper": 20
+    },
+    "via_count": 130,
+    "track_count": 336,
+    "track_length_mm": 1731.1131265365616,
+    "per_net_length_mm": {
+      "+3V3": 119.5602728468308,
+      "/Inputs/D+": 71.85868101486385,
+      "/Inputs/LED_PWR": 125.19854320014353,
+      "/Inputs/PB0": 12.330703459929609,
+      "/Inputs/POT00": 56.502699683107764,
+      "/Inputs/RST": 26.608804671418785,
+      "/Inputs/TCK": 17.829933077116745,
+      "/Inputs/TDI": 18.99086060694989,
+      "/Inputs/TDO": 15.418551368242218,
+      "/Inputs/TMS": 16.370425118124462,
+      "/Inputs/USB_PWR": 12.087446867896956,
+      "/Leds/Stars/LED0": 30.614332007193315,
+      "/Leds/Stars/LED1": 117.93998232028693,
+      "/Leds/Stars/LED11": 7.7352,
+      "/Leds/Stars/LED12": 62.25845771027663,
+      "/Leds/Stars/LED3": 51.83887248347369,
+      "/Leds/Stars/LED4": 59.259952243492286,
+      "/Leds/Stars/LED8": 61.43969280660042,
+      "/Leds/Stars/LED9": 44.37178570881577,
+      "GNDA": 61.72298487049635,
+      "GNDPWR": 32.63875666473952,
+      "Net-(C1-Pad1)": 14.907478723436892,
+      "Net-(C2-Pad1)": 7.646416132199669,
+      "Net-(C3-Pad1)": 23.136918733369154,
+      "Net-(C8-Pad1)": 6.144669100703856,
+      "Net-(D1-Pad1)": 1.981,
+      "Net-(D10-Pad1)": 14.264823369915925,
+      "Net-(D11-Pad1)": 24.39694830871542,
+      "Net-(D12-Pad1)": 26.923242662106706,
+      "Net-(D13-Pad1)": 33.12876345005599,
+      "Net-(D2-Pad1)": 2.2985,
+      "Net-(D3-Pad1)": 12.103716397553953,
+      "Net-(D4-Pad1)": 2.300944210057891,
+      "Net-(D5-Pad1)": 2.108,
+      "Net-(D6-Pad1)": 6.433890071335165,
+      "Net-(D7-Pad1)": 5.970363700508765,
+      "Net-(D8-Pad1)": 6.7920450529938,
+      "Net-(D9-Pad1)": 11.557841894567106,
+      "Net-(J2-Pad4)": 55.612248622201136,
+      "Net-(J2-Pad5)": 11.446252118457025,
+      "Net-(J3-Pad1)": 12.954884314250954,
+      "Net-(Q1-Pad3)": 2.684383355633096,
+      "Net-(Q10-Pad3)": 44.542155694959604,
+      "Net-(Q11-Pad3)": 66.38286431628158,
+      "Net-(Q12-Pad3)": 63.5632969162269,
+      "Net-(Q13-Pad3)": 67.73374551507392,
+      "Net-(Q2-Pad3)": 2.938690567242492,
+      "Net-(Q3-Pad3)": 6.691503168853549,
+      "Net-(Q4-Pad3)": 8.109652967297675,
+      "Net-(Q5-Pad3)": 2.8181959211523955,
+      "Net-(Q6-Pad3)": 14.158897012823202,
+      "Net-(Q7-Pad3)": 10.592,
+      "Net-(Q8-Pad3)": 38.07845250108348,
+      "Net-(Q9-Pad3)": 47.24883863657026,
+      "Net-(R1-Pad1)": 14.863116309296483,
+      "VBUS": 36.02144806163798
+    },
+    "native_acceptance": false,
+    "manufacturing_clean": false,
+    "ignored_checks": [
+      {
+        "description": "Footprint has no courtyard defined",
+        "key": "missing_courtyard"
+      },
+      {
+        "description": "Track endpoint not centered on via",
+        "key": "track_not_centered_on_via"
+      },
+      {
+        "description": "Tuning profile track geometries",
+        "key": "tuning_profile_track_geometries"
+      },
+      {
+        "description": "Footprint doesn't match symbol's footprint filters",
+        "key": "footprint_filters_mismatch"
+      },
+      {
+        "description": "Footprint component type doesn't match footprint pads",
+        "key": "footprint_type_mismatch"
+      }
+    ],
+    "drc_command": [
+      "/usr/bin/kicad-cli",
+      "pcb",
+      "drc",
+      "--severity-all",
+      "--format",
+      "json",
+      "-o",
+      "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c133/native-full/runs/run-20261019T113122.388234Z-004/fab-router/drc.json",
+      "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c133/native-full/runs/run-20261019T113122.388234Z-004/fab-router/refilled.kicad_pcb"
+    ],
+    "zone_preserved": true,
+    "ground_connected": false,
+    "island_findings": {
+      "filled_islands": [],
+      "orphan_copper": [],
+      "native_findings": [
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        },
+        {
+          "description": "Isolated copper fill",
+          "items": [
+            {
+              "description": "Zone [GNDD] on F.Cu, priority 0",
+              "pos": {
+                "x": 190.5,
+                "y": 154.94
+              },
+              "uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+            }
+          ],
+          "severity": "warning",
+          "type": "isolated_copper"
+        }
+      ],
+      "ground_opens": [
+        {
+          "description": "Missing connection between items",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 55 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.174899,
+                "y": 49.475061
+              },
+              "uuid": "57ce983e-ec4e-48a5-9547-b23514d0d6a4"
+            }
+          ],
+          "severity": "error",
+          "type": "unconnected_items"
+        },
+        {
+          "description": "Missing connection between items",
+          "items": [
+            {
+              "description": "Pad 55 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.174899,
+                "y": 49.475061
+              },
+              "uuid": "57ce983e-ec4e-48a5-9547-b23514d0d6a4"
+            },
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            }
+          ],
+          "severity": "error",
+          "type": "unconnected_items"
+        },
+        {
+          "description": "Missing connection between items",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            }
+          ],
+          "severity": "error",
+          "type": "unconnected_items"
+        },
+        {
+          "description": "Missing connection between items",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "unconnected_items"
+        }
+      ]
+    },
+    "refilled_board_sha256": "5b1de44070f9ee4a8017c8e019cc847f29797ee1e2986468115c33c3d6e266d5",
+    "pass": false,
+    "opens": 15,
+    "fidelity": {
+      "footprints": true,
+      "pads": true,
+      "outline": true,
+      "layers": true,
+      "zones": true,
+      "kicad_pro_preserved": true,
+      "kicad_dru_preserved": true,
+      "checker_policy_preserved": true,
+      "nets": true,
+      "zone_definition": true,
+      "board_setup": true
+    },
+    "vias": 130,
+    "length_mm": 1731.1131265365616,
+    "job": "J4",
+    "raw_output_sha256": "5b1de44070f9ee4a8017c8e019cc847f29797ee1e2986468115c33c3d6e266d5"
+  }
+}

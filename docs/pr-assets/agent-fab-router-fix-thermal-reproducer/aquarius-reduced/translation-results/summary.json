@@ -1,0 +1,3759 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "connectivity_preserved": false,
+  "native_version": "10.0.6",
+  "repeats": 3,
+  "input_sha256": {
+    "board.kicad_pcb": "ab30db069ca30e2cb5962b62a771a040c7cf09b3316fe5bc6df26c4aa7252d61",
+    "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "script_sha256": "ead51ba2c2a86c08ed0120a6d204995fe68a7c6a922c380ce810151c51b20329",
+  "rows": [
+    {
+      "name": "all-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": null,
+      "translation_um": 0,
+      "displacement_nm": [
+        0,
+        0
+      ],
+      "local_direction": null,
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "d232e31415562f91ba5bfa9ba3e44a860ef956c8e11b869e01afffaf1457e48d",
+        "native.log": "46a006e33234600af2196e3b93107734177e0df27bf1c2f169248e04ab9af57a",
+        "board.kicad_pcb": "d45e343f279e73cd6dff70f1d3f44c11030fb95f69a88de72123ae75cf4f1cf9",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-25um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        -17678
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 36207871221.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "b872b3ecc17433db17ad911dba3651959a073601fbf4d2ccf88ca561e3924b42",
+        "native.log": "48812b2ead10606454941bcad6e3ddb42ab2a544a52c48e881ed162c3ea82072",
+        "board.kicad_pcb": "1e7e1c5fe1e2392fc060196fc6f44c71e7cffdcbac6be7cfaca3ae98035ea8e7",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-50um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        -35355
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "be0c01b1b846d364649b72a5d44ba5947736b22e4c1bccdb3c69d6f8d7725c20",
+        "native.log": "cad1d3bc18e3b8253deaed34b76669197856ee0d646500145b03fc6bac97f971",
+        "board.kicad_pcb": "2b192d38c6d588fd18e349b2f67e2149ed54035e24a95082f2009002b01b13ca",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-100um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        -70711
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "9a03b16e867525f4700e5ad8e0b45e5958f57cb37c7b024d194e5824580ac757",
+        "native.log": "466d97d372bfb1ffc376b5d6c4f1081ed49c97935786ad349760c6e6e95c7144",
+        "board.kicad_pcb": "63e84d0b833bb87d79ac09ca09485da963c6dc218320992d2f0a84d8490e09cc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-200um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        -141421
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "151c63b5ea65e536fa59110844cf808130c5078be61afe5649aa80e1c81d5ceb",
+        "native.log": "15c3a7823a09dee294656d72b869e2687cbec53cb99584f9ed14927faeac3a27",
+        "board.kicad_pcb": "7d6bbddeea7bf8cedffcefec6b265ae7c1229ea73912361d54d3eaf9c7e33392",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-400um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        -282843
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "1704d973147e6d583d132cb4721bfb07978fe440c6bd3db4f18176d67db7e26e",
+        "native.log": "605d0ebc328bd804f61b6378407b5514731972b8f7c33040c29c4c643592e572",
+        "board.kicad_pcb": "76764bc55ef4f9c81a0ab5e395b1d5bfe85e510d190601cb2063133d6b6f010c",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-25um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        17678
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "b47163101f71aadb363fcab883a4f1d0ba8cd50e653bde41112e05495035e801",
+        "native.log": "19dacce1bad97ae58b5c93dc9fd7491b80e2b0568ddc6f1392028e96761808bb",
+        "board.kicad_pcb": "463ef4ca5e9a445a1990687a6c216af73cae45e0270ce089313f6079d5b329a5",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-50um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        35355
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "50c324dbebf3408b66432693ccf237ac304446470e7fb9811eb2e51a7dfd6768",
+        "native.log": "f2e6e318165ff0ec126e2e9ec74e3c36241b45c60eebd3e1f1272ea342d048ed",
+        "board.kicad_pcb": "aa498ad0b792196f37870b564e6e46ec154fa3f1fad10a1d67fde4b747bd1900",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-100um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        70711
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "3d143f4e7a0bded924882fb40fb9ce14f12eca3a8d83ef2084a92e7cf5ec85c5",
+        "native.log": "054f8051666d8ac39e52663ccd0ba414749ce349ecbd2def727dba87ee3e556e",
+        "board.kicad_pcb": "44c52bdac93a566342298151777586ebae953708c7592aad8b6918ea67359d59",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-200um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        141421
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "cd435566f0b74685f332518f1a15aa1a2193ff4d89c73b2b501bbaff835a72f4",
+        "native.log": "66294a369e67f05f076a3b728544803cf8790cddfdfe32bc881a56fd12a90378",
+        "board.kicad_pcb": "3cd17c3be93836568332bc61be5da899096af16cb3681b3d3041fb209b7238f3",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-400um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        282843
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "4dbb0ab6e2461f58d7df677c06f29e522f94f98cfd103c2c9b2a6be6ed7cc908",
+        "native.log": "1d7314f49854536c19d08eecfb7a2137849c04000d16c0f110fca2f18ece196d",
+        "board.kicad_pcb": "08112d1a912598a2099f51727d710f6a4ac2211b42d1bed92fd13f76a8b89e76",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-25um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 25,
+      "displacement_nm": [
+        -17678,
+        17678
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707920498.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "19a2c0a4be7d8218c8dc05c01087f594ff845fa34d4af9015752a38b666adce2",
+        "native.log": "66abc6895a7bcfce5068d7ef89b1d5b69be63f3137e328ee7d0a3c1234ef3230",
+        "board.kicad_pcb": "5ef47f7dc3270a38da399487c8677085830602782387b15b72ae4ecdce33f770",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-50um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 50,
+      "displacement_nm": [
+        -35355,
+        35355
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "e456b5e5d8201116a7c8bf052a136992364d769c3a1b4bf7e963f0174c075af9",
+        "native.log": "05f7e79b24eb3f536f21969bb2fe1ab844d1d506267460f78f48a2e9f9c693da",
+        "board.kicad_pcb": "f9542392826b01d4dd8a5bb13af61ac7b173c2b08b4745e3f3ec513ec637bb63",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-100um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 100,
+      "displacement_nm": [
+        -70711,
+        70711
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707779087.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "d3cb37cef1cdd366f52b313592468ddee92c01c6d4d483a338a9851cb045c7b6",
+        "native.log": "74a9f533652209b6187cccf02bd28d4fa5f03708eae981030d8d16d7f8f57f7c",
+        "board.kicad_pcb": "2eab0802bb913ba0805c5c2fd8562bcb052f57f167523b935e5b3f0155625dbc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-200um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 200,
+      "displacement_nm": [
+        -141421,
+        141421
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "6296b3565133fad3a9a2bd06dcd6acd40b803b3e1052cc1052f9fbd7216faa71",
+        "native.log": "f7d51e19ad720726f522775909371d162c49f7223ba82f9c61447b6dc28c3805",
+        "board.kicad_pcb": "c4c445527bfeba1638c3c80c0dd117469c33992c66f1e15e2e0ee739f3514aa1",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-400um-1",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 400,
+      "displacement_nm": [
+        -282843,
+        282843
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "bee98e61ede64b7c1848332d8174528f18b8243f788dad68ba9fb9bab7f6a815",
+        "native.log": "68234c0993e008b1120e9be04ee573f3f75e2234eedd93d7f1d1a86acdbdac60",
+        "board.kicad_pcb": "4431a58f2f8a23cc4dba601452c914f6861c6f0f75eb7406cedc3b91e3e74165",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "all-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": null,
+      "translation_um": 0,
+      "displacement_nm": [
+        0,
+        0
+      ],
+      "local_direction": null,
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "3d4dd0db14df22d78a7b1dbd6f06ec6a78788d9dcb3ee0d8333eaec269dc8cdc",
+        "native.log": "0843ac6c0113bff63ac0df634c04e371c9aab9165142412573bf0cd0c463ae06",
+        "board.kicad_pcb": "d45e343f279e73cd6dff70f1d3f44c11030fb95f69a88de72123ae75cf4f1cf9",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-25um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        -17678
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 36207871221.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "5d18b53d7bea6fe8372ca8712550a8c4784d7aac0eb5d6735dbcab14578b37f1",
+        "native.log": "6037085a25f084b48112b287a76b812b1a7a0281b62175360f60105452603783",
+        "board.kicad_pcb": "1e7e1c5fe1e2392fc060196fc6f44c71e7cffdcbac6be7cfaca3ae98035ea8e7",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-50um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        -35355
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "9638e45cf8f25517e97b16ad57f0931c0221fb4c2487e1fcdcf8e8819363896f",
+        "native.log": "b171eca127bfa4a9763b825b0e991d3cf497444713190838d009f25662fa89eb",
+        "board.kicad_pcb": "2b192d38c6d588fd18e349b2f67e2149ed54035e24a95082f2009002b01b13ca",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-100um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        -70711
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "285c05e87b3cadca968045b31ecf08bf5e5110f84375784d11264f723c3ac969",
+        "native.log": "56b28c6e12b26a34fa9825dbe256e396b5d56925544a2e1fd0e7bec60e3900c4",
+        "board.kicad_pcb": "63e84d0b833bb87d79ac09ca09485da963c6dc218320992d2f0a84d8490e09cc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-200um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        -141421
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "4631b91a9cabb1b5b884b0c7877748a0e45a0dc1f101b0bacc8a455938216f04",
+        "native.log": "529fcb91513d74cea4ed83951b483723e62c4b404bca53a02c7850ad1a4fc07a",
+        "board.kicad_pcb": "7d6bbddeea7bf8cedffcefec6b265ae7c1229ea73912361d54d3eaf9c7e33392",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-400um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        -282843
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "2e5601f031fb9491f8ad78e5c5b06bef4fe56f8ede343d5bfd515c0abe14a41c",
+        "native.log": "64926841970311c036586454a1406cf8c1122c1890f261a87f8ae373e1446bb9",
+        "board.kicad_pcb": "76764bc55ef4f9c81a0ab5e395b1d5bfe85e510d190601cb2063133d6b6f010c",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-25um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        17678
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "c037d8bd3af5d0e17800797fafd43a3f698ab5cecd911bea74645cc7bf9b20d7",
+        "native.log": "70981fd8dd3d11cac3073aa843493e4e7170866d2a1fbae988045efe85e4220c",
+        "board.kicad_pcb": "463ef4ca5e9a445a1990687a6c216af73cae45e0270ce089313f6079d5b329a5",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-50um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        35355
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "4466b5bde4949417a9e9214ba3868688b1f11465cfe0b07e1645fab92d7bbe7c",
+        "native.log": "00c293cd48fc29390b7751af9345932d7c40998fa3141d1d85bb9df5312a9fb4",
+        "board.kicad_pcb": "aa498ad0b792196f37870b564e6e46ec154fa3f1fad10a1d67fde4b747bd1900",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-100um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        70711
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "e052dacb1284c5949b3241d989d50920c113cf5f6a29bf6c578efac1176a526c",
+        "native.log": "9907820a3e36d7e2780f1820f900893d9f2d4e2990aad784d525d047dc6f825c",
+        "board.kicad_pcb": "44c52bdac93a566342298151777586ebae953708c7592aad8b6918ea67359d59",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-200um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        141421
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "c7176b5ac57275d65eeafa8c964667ccfff88bf90a0553e0ba130e042eaf7802",
+        "native.log": "a6c44ecacf35df25afbe2f8da9ccafe7a1eb31e40d296e88bdab11d50c268d8f",
+        "board.kicad_pcb": "3cd17c3be93836568332bc61be5da899096af16cb3681b3d3041fb209b7238f3",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-400um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        282843
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "8dea5b02cfd342597f44aa1e6a954241c20df168b195a316710f191e8a5e71aa",
+        "native.log": "7f28d7c59c9163fb121a185cc510b5effc52c17775781bc6d2a901d498090c55",
+        "board.kicad_pcb": "08112d1a912598a2099f51727d710f6a4ac2211b42d1bed92fd13f76a8b89e76",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-25um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 25,
+      "displacement_nm": [
+        -17678,
+        17678
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707920498.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "0d65ad8731e55dc8e2c019bd095cd2c66c6ec0fb5c4bed78ce55e63a4da2dab5",
+        "native.log": "e54ef438e54de4f2ddf88ea4eee0ec7794a4173706b9421cbb386a3b1585fd78",
+        "board.kicad_pcb": "5ef47f7dc3270a38da399487c8677085830602782387b15b72ae4ecdce33f770",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-50um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 50,
+      "displacement_nm": [
+        -35355,
+        35355
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "f5bc8fbe2d81d8e8c3eb8fb626238600556a6d161564b9c78c98a78e989b218e",
+        "native.log": "7f043f9d276d3f9bfdc2d162563879e8e52f874610e75872abcf493e72604f42",
+        "board.kicad_pcb": "f9542392826b01d4dd8a5bb13af61ac7b173c2b08b4745e3f3ec513ec637bb63",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-100um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 100,
+      "displacement_nm": [
+        -70711,
+        70711
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707779087.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "e3dcfa6982a18ac2b497015c0502cf4ba6f698452dfd066a47d9043b7509eecb",
+        "native.log": "cc8702f99fc7b1b859e27a4976b6db0455858390e7bbe1c1e3c7e721e31cbbd4",
+        "board.kicad_pcb": "2eab0802bb913ba0805c5c2fd8562bcb052f57f167523b935e5b3f0155625dbc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-200um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 200,
+      "displacement_nm": [
+        -141421,
+        141421
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "1a1d4f7a5c09933243c1314ebc9ddde35d89b4f3733b1ec2009029540f62df75",
+        "native.log": "a98951e7bae2ec19abd7ba6a3a2a66fcf89f2149173bdfcf1ece9ba7b5a2d1e6",
+        "board.kicad_pcb": "c4c445527bfeba1638c3c80c0dd117469c33992c66f1e15e2e0ee739f3514aa1",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-400um-2",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 400,
+      "displacement_nm": [
+        -282843,
+        282843
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "b8b3a558fb25a5bcb1002766011127ecb6c1d7a9acb67bbf35c18ee9a4d608e5",
+        "native.log": "416b8e814a77f260f5aeeae5a0508c38259325987092d107cf15543569418fd9",
+        "board.kicad_pcb": "4431a58f2f8a23cc4dba601452c914f6861c6f0f75eb7406cedc3b91e3e74165",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "all-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": null,
+      "translation_um": 0,
+      "displacement_nm": [
+        0,
+        0
+      ],
+      "local_direction": null,
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "0193a6eed3df773889b40dfd13ebe665c0bdd204095df5e50b96ced60d973e7c",
+        "native.log": "fdb4bfe67a140de7adcf2e7faa853b23abf2de9fe391ef4aad9217049045cfb5",
+        "board.kicad_pcb": "d45e343f279e73cd6dff70f1d3f44c11030fb95f69a88de72123ae75cf4f1cf9",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-25um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        -17678
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 36207871221.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "521180cdf2ed8e9549ef11fe496bab11d92cea0845efacd62fd87469def9aaa9",
+        "native.log": "8f074e147a3df42fac976413efc4aea7cd5bb00981b0918e083383549dc07362",
+        "board.kicad_pcb": "1e7e1c5fe1e2392fc060196fc6f44c71e7cffdcbac6be7cfaca3ae98035ea8e7",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-50um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        -35355
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "58d077db3b8ac1325352f02adf148ff5ad00bf97101cdbf94876f8d9b68ef21f",
+        "native.log": "2063f399525e7b4af504366fc00a851ee1aa8438b598edd6e2bd02f0c8278dc1",
+        "board.kicad_pcb": "2b192d38c6d588fd18e349b2f67e2149ed54035e24a95082f2009002b01b13ca",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-100um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        -70711
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "a7c42179da0992d9e8e20cb41896a337777e84d0f07c22727b8b5c66473c659f",
+        "native.log": "9ba0becdcb3422072482fa0c8ce3d2b9551c4aea93928c1ba2107523da238134",
+        "board.kicad_pcb": "63e84d0b833bb87d79ac09ca09485da963c6dc218320992d2f0a84d8490e09cc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-200um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        -141421
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "ff9fec1b3beceeafa0ca194021c2f53a97118efb9eb79d1fe04fe475afab0dc8",
+        "native.log": "91c00e097548a79df3bbb609ec6dc30eb47d9b0f6c5cf3dcbdab8d42a8d23251",
+        "board.kicad_pcb": "7d6bbddeea7bf8cedffcefec6b265ae7c1229ea73912361d54d3eaf9c7e33392",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-1-400um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 1,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        -282843
+      ],
+      "local_direction": "-y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "297ee3b5f4d6e60af20e6fda5db8c507cfb459061f80cfebd676aa0913fe5868",
+        "native.log": "15b549b0b62928ab8d48fe8a09edcbdbe93598a28ce5a0e7c83215226ad5682c",
+        "board.kicad_pcb": "76764bc55ef4f9c81a0ab5e395b1d5bfe85e510d190601cb2063133d6b6f010c",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-25um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 25,
+      "displacement_nm": [
+        17678,
+        17678
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "97e2a8c7d163c325d78c164a4fba64dbe6ec823f535900ee3cece4700d27cab9",
+        "native.log": "6257e19147a839a04ed4f8fe450149e6a1fdee5c69c2c6324a7480ce6e4a76ec",
+        "board.kicad_pcb": "463ef4ca5e9a445a1990687a6c216af73cae45e0270ce089313f6079d5b329a5",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-50um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 50,
+      "displacement_nm": [
+        35355,
+        35355
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "5cffa06a5d070a3888989cfa934909944906b75c088061705ad92bab334415e8",
+        "native.log": "33757e6d6d8578bc198e39b92fb3bbdad135b9386aed2c007682a286cfed253a",
+        "board.kicad_pcb": "aa498ad0b792196f37870b564e6e46ec154fa3f1fad10a1d67fde4b747bd1900",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-100um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 100,
+      "displacement_nm": [
+        70711,
+        70711
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "c2a44bb6215868bd837d41c6d13fdd1f14ce7e26dca1287ba00bd6df9bc33b75",
+        "native.log": "1e6f04232b8022f8438eb70373b04058af083ef0d1cbcc61e0070e10f264d2e0",
+        "board.kicad_pcb": "44c52bdac93a566342298151777586ebae953708c7592aad8b6918ea67359d59",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-200um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 200,
+      "displacement_nm": [
+        141421,
+        141421
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "cfcf95dede624134d15212bc3bec36ef81238de19d1c3ee7235c7d1ed981b36c",
+        "native.log": "796b870cd7a9d55b0c841953c796e783882c97f1008bcfe862fe1925a0e27b70",
+        "board.kicad_pcb": "3cd17c3be93836568332bc61be5da899096af16cb3681b3d3041fb209b7238f3",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-2-400um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 2,
+      "translation_um": 400,
+      "displacement_nm": [
+        282843,
+        282843
+      ],
+      "local_direction": "+x",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38708040363.5,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "1dcfa7f8218ac5e94f0182ca666c7b436972278e95491bd391982bf60cdb4d23",
+        "native.log": "a82f270570e1605d807be89a355c94d9681354d5d0c2748d9ed1f3f0c6b0845f",
+        "board.kicad_pcb": "08112d1a912598a2099f51727d710f6a4ac2211b42d1bed92fd13f76a8b89e76",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-25um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 25,
+      "displacement_nm": [
+        -17678,
+        17678
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707920498.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "9c891e1f1fd1ccb3cbf4b75e4c5f66f31e7a5dc970fc81559eb89bd50168a94c",
+        "native.log": "b33e609dd84ae8cceddef26d2d891953a526ae44d6b9f33bbc17878c15dab3b2",
+        "board.kicad_pcb": "5ef47f7dc3270a38da399487c8677085830602782387b15b72ae4ecdce33f770",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-50um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 50,
+      "displacement_nm": [
+        -35355,
+        35355
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707903878.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "fed18c64beba5cd950a63554555bc3bc30e7deb5612839e1f81d7c04716dec3c",
+        "native.log": "19c2185a439607b2adf37bb072d0b15e2072a8145402deb2ec3d2505cdf64ef0",
+        "board.kicad_pcb": "f9542392826b01d4dd8a5bb13af61ac7b173c2b08b4745e3f3ec513ec637bb63",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-100um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 100,
+      "displacement_nm": [
+        -70711,
+        70711
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707779087.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "1637c2c549c9ac95d458f3efa5ec4336b2d014b7833e0d31655cce3ed2916c13",
+        "native.log": "71465299eb21a75b638ae1c79c4f4b8d8487c32f808043e86073a62c17d35b53",
+        "board.kicad_pcb": "2eab0802bb913ba0805c5c2fd8562bcb052f57f167523b935e5b3f0155625dbc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-200um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 200,
+      "displacement_nm": [
+        -141421,
+        141421
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "f215825641aa0a409dac05ff2396bd61fcf32f540174da5075b47ee21f0005a5",
+        "native.log": "f39563151a91608ca2427dc94c0a092c94797cbeb82f4c87052946fff2eca0b6",
+        "board.kicad_pcb": "c4c445527bfeba1638c3c80c0dd117469c33992c66f1e15e2e0ee739f3514aa1",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "track-3-400um-3",
+      "counts": {
+        "footprint": 1,
+        "segment": 3,
+        "via": 0,
+        "zone": 1
+      },
+      "target": [],
+      "errors": [],
+      "opens": 0,
+      "track_index": 3,
+      "translation_um": 400,
+      "displacement_nm": [
+        -282843,
+        282843
+      ],
+      "local_direction": "+y",
+      "corridors": {
+        "+x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 50799908120.5,
+          "covered": false
+        },
+        "-x": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "+y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 0.0,
+          "covered": true
+        },
+        "-y": {
+          "requested_nm2": 50799908120.5,
+          "missing_nm2": 38707762467.0,
+          "covered": false
+        }
+      },
+      "sha256": {
+        "drc.json": "7b74730f977e2650faca65074f565f523826779633dc4a0bd48be4ce3f7e1bb5",
+        "native.log": "137c69d1bbac6fa2bb5fe1d5d3ee843128ed63ee8f0ef0636e8890246e94593d",
+        "board.kicad_pcb": "4431a58f2f8a23cc4dba601452c914f6861c6f0f75eb7406cedc3b91e3e74165",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    }
+  ]
+}

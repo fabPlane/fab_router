@@ -1,0 +1,24 @@
+{
+  "candidate": "candidate-10",
+  "candidate_sha256": "38be67b8a79c780418f69f61afe596d5fafaed8eab9e6feb7754673e8c991300",
+  "saved_sha256": "a7eac49b0b39523438fab89b915e8fe1081efc5f39c576d597184f173af616af",
+  "removed_node_kinds": [
+    "segment"
+  ],
+  "added_node_kinds": [
+    "segment"
+  ],
+  "net_changes": [
+    {
+      "uuid": "828c4f30-8546-4893-a313-daf2d734006c",
+      "before": [
+        "net",
+        "\"Net-(C1-Pad1)\""
+      ],
+      "after": [
+        "net",
+        "\"GNDD\""
+      ]
+    }
+  ]
+}

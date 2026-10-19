@@ -1,0 +1,8 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/verify-generated-transaction.py", line 85, in <module>
+    assert attempt['exception'] == 'ValueError'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

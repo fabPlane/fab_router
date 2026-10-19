@@ -1,0 +1,2303 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "native_version": "10.0.6",
+  "input_sha256": {
+    "/home/hyper/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+    "/home/hyper/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    "/home/hyper/bench/repos/fab_pcb/benchmarks/autorouter/results/baseline-20261018/runs/run-20261018T135444.397318Z-062/fab-router/final.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "script_sha256": "1aa80d866494495b59029d16fc1c182eab06b33d1b3fef105fbcf5101d90a792",
+  "pad_uuid": "d145de36-3889-4a3d-8c61-71242d4e107c",
+  "track_uuid": "ba81d7fd-c368-4776-b597-cea64fcdd37f",
+  "delta_nm": [
+    169073,
+    -253609
+  ],
+  "crop_radius_nm": 2000000,
+  "terminal_inventory_scope": "cropped footprints only; not full original board",
+  "reference_groups": {
+    "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+      "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+    ],
+    "d08e3b61-3df5-445c-b296-30da61a459f9": [
+      "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+      "d08e3b61-3df5-445c-b296-30da61a459f9",
+      "d145de36-3889-4a3d-8c61-71242d4e107c"
+    ],
+    "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+      "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+    ],
+    "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+      "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+      "d08e3b61-3df5-445c-b296-30da61a459f9",
+      "d145de36-3889-4a3d-8c61-71242d4e107c"
+    ],
+    "d145de36-3889-4a3d-8c61-71242d4e107c": [
+      "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+      "d08e3b61-3df5-445c-b296-30da61a459f9",
+      "d145de36-3889-4a3d-8c61-71242d4e107c"
+    ],
+    "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+      "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+    ]
+  },
+  "removed_uuids": [
+    "b808bb66-9081-4eab-8ba0-a06857e88407",
+    "29ea8376-5f5e-4141-8234-f860189ddff0",
+    "a72c3fb4-ab66-41aa-ac67-9b615c915c07",
+    "ed63c2f0-71d3-439b-9b90-be994d07ba1f",
+    "74369459-f184-479f-bee1-8d0f8341d0e9",
+    "ac8ecfb9-4b06-4ff8-98ac-4bcd66ea8ad2",
+    "b654d9d1-2377-42fc-bace-749a34d21fec",
+    "b45885a9-cc6b-4cfe-9e61-8fb1820adf75",
+    "ab307fee-6354-5d70-9c3e-11cef3665255"
+  ],
+  "rows": [
+    {
+      "name": "crop",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "crop-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 8,
+            "via": 2,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "1dafb5620266c2ae5fdb48a95cfcfc266fbc308772702b15b6986e6ebe6f66a1",
+            "native.log": "1e3f43db9ba6a837eed6ccaf9195dcf2d2bc00308e54dda555c19b982b48662b",
+            "board.kicad_pcb": "97ce2d6e2d9e8ec72791ca8ea615834d893954d98bc549026c52932003dd1877",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "crop-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 10,
+            "via": 2,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "07a286e1bf2b7646f47a5d1a6e5369807b7af2a5fd1207169d7f8c0ca777764d",
+            "native.log": "ebc891eed5c566d030fa2813c5d296671d29729728d90170592b21c8b4afeefc",
+            "board.kicad_pcb": "452e6cd96b42a9abf139cb36fdd3039037efe9dd0eba3189acf29db98c99c0d9",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ]
+    },
+    {
+      "name": "delete-001",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-001-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 7,
+            "via": 2,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "599bfe6fefe34ee33f7dc1bb3a6df27a48bd4a6b9092d90740b58828552986f3",
+            "native.log": "7a526bfef82d042394a25785f8921239b612d61d6a4957001cbd472b48906d68",
+            "board.kicad_pcb": "56075fec49e23581b230cb1a13de6aca7a83a30544ae5e8c3bd362f86ffdd237",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-001-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 9,
+            "via": 2,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "3a8d5277ba64d5c9fc403613bf24f1067c1aeb639ea33d4f02aa9e7f4b6628cb",
+            "native.log": "870427ad7a079d106b73ebe8ad3484a9a638ff171ed1866da8d16bc54e309572",
+            "board.kicad_pcb": "de44dca8d7a74eb8ac518f16eaa5172b40e8a69a6607d459c36c2a1c81fc6f17",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "b808bb66-9081-4eab-8ba0-a06857e88407"
+    },
+    {
+      "name": "delete-002",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-002-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 7,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "d16c7797b6e8b889eacbbdbb8930607b1fba21e1fe8cd88a0e33be54ebb811f0",
+            "native.log": "c07bb3beef179fd98cb7b1aac023c26f9c84af09d3ca4304cd1122c70017084b",
+            "board.kicad_pcb": "05099dccd76940d047526233bdcfb13785bdfeb3624568cca230f7cc4ba45c05",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-002-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 9,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "58f6dc5e1e9ce6f5fab8514a36033d1e5a81890047aaaca5f8c0de96d506f742",
+            "native.log": "13f4648a408b95712063e593f452531af0b122d3e3f57216f47078f0abc918a5",
+            "board.kicad_pcb": "64473610b9d9cb54c6e096ebfb6d7a19cf1b3fdfe9e8cdb21ff6ca720102f3c0",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "29ea8376-5f5e-4141-8234-f860189ddff0"
+    },
+    {
+      "name": "delete-003",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-003-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 6,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "08ae7d60b86c00e7d74c8f796698fe0a9e6af4727832124d36f32b0714b7a50e",
+            "native.log": "a50212f7915bfff0f3cc604f5a15d3ac828e3f3e14738afbe4de45a0d969e241",
+            "board.kicad_pcb": "430d223422b24cf64e59c6916426d84ce0ed9f2d18de1751b745ee77b7086af3",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-003-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 8,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "eff0aa6532a05f0c2806ec605f43308518e3ab3a033ca75d0b976f770893ddd0",
+            "native.log": "d0f179cd87f40e8b4a9a2005ebffad360f842f94d35bb38ffc1658db62c987ac",
+            "board.kicad_pcb": "6451930f7d9290b2f7d49a8bef107b868613d7f8884138d7a7c7bfafe7e09727",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "a72c3fb4-ab66-41aa-ac67-9b615c915c07"
+    },
+    {
+      "name": "delete-004",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-004-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 5,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "2255db4129f784ec490c7cdb40e4ce9f630e1e5b6b03dabf3b782bee3085cbf9",
+            "native.log": "d86326627fbec21ac97a77e070c60a6be57fa29d66122f3cf89cb0974d38cf96",
+            "board.kicad_pcb": "dfbb78f6b78973b2f49800e5c388f750db59ed24c99909f448bc077f5636aa90",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-004-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 7,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "e2f2d0ca04e9cb74b7cfdace4c9d8db5fd1691e76eaa54c745aec4d174be601a",
+            "native.log": "c4a6561b794defec899e1b84eabedbf41cc28f81240a6d611e95525a0f0d05ec",
+            "board.kicad_pcb": "be6c59b7579e34f9227f5c365774814503e8de9e0917908dcd07066d16b5ee60",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "ed63c2f0-71d3-439b-9b90-be994d07ba1f"
+    },
+    {
+      "name": "delete-005",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-005-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 4,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "c6b227ae4a9ca882c159c698fb9c36ab934d3fa8f8c47855e4c50f0a26cca83c",
+            "native.log": "204d1adc5de063afbc4b8a40419b234f03fb0d2be580489e4f393dd79ed936e0",
+            "board.kicad_pcb": "81205a0c30fab4eef4da58e6e33e677d250ee47fd3470f2aac51d9b0940bcb12",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-005-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 6,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "2c2743910d140fe87ff715e5c17b8df3a9618689a82e288d9f19873906ca87cc",
+            "native.log": "57b8f86d9bec3406791b8ca0b6e4b81a5c08bf8c09b0e2d29106e27f8b21abc1",
+            "board.kicad_pcb": "1854bc1730ef69f2782f2cd13fcff684ce14bc63c15b4eaa11198a16ee41c0eb",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "74369459-f184-479f-bee1-8d0f8341d0e9"
+    },
+    {
+      "name": "delete-006",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-006-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "c0ed636fce2c46d8c0eda76c6dd5b185d81d6caa73d9e3e940f7ad866c203eb5",
+            "native.log": "760eff65f5503b710f333ca33abea9a6fdbbf4066fd8da2441cd7932392369b6",
+            "board.kicad_pcb": "9d7fec84442c36ef6682e8505e2a7d44e51d9d2ca1515b812ef6fb3e2ca3e2b3",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-006-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 5,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "289551bb44150e86a062724ec07cd318afd9c5de21af6cbd15f9adf091062369",
+            "native.log": "96aa035d488d3aa2b4e16cc46ef20ff024c494eebc59f328132d6addf372fa05",
+            "board.kicad_pcb": "64beed0d447c0f5e42681b2ef7cc99fa205034c1639022b259a5ebcb6e5d2d5c",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "ac8ecfb9-4b06-4ff8-98ac-4bcd66ea8ad2"
+    },
+    {
+      "name": "delete-007",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-007-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 2,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "f932df668e9adebb547e46548a53299fabe93e87b8f0098fc4be97f55eeee1fd",
+            "native.log": "01a83339bb0cea777dbd138d20c28d86c02adb5fb272bc30aec6b96dbeb12118",
+            "board.kicad_pcb": "59fe966fbd7906060d2db161d9b9a009ad8a6fcd7b77b6cd9dc5b9679b5409cf",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-007-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 4,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "5780f8914763a4c3b14c408e7e69c36d33db9453307931901c5a3768ebbce143",
+            "native.log": "64b16be96d8712ab36bd79c6449a3cac675b89cb854730b9a570bce913f84b7e",
+            "board.kicad_pcb": "f3c7500938b03f7fb1ec3e11e541a0b6588ed698b5a372fce0a92b0a83aaf5b8",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "b654d9d1-2377-42fc-bace-749a34d21fec"
+    },
+    {
+      "name": "delete-008",
+      "accepted": false,
+      "rows": [
+        {
+          "name": "delete-008-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 2,
+            "via": 0,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "4f388517578dd7f64ebe26f664c73a353a9ea4e4480c905b0342af7ec1edc23d",
+            "native.log": "9d6c11f1cd4d12853c8b6fdf8bb8600c9d26c261fa8f6cdd7cefe672913468eb",
+            "board.kicad_pcb": "1ad0210c06ee3d0c44923e510aef46d427f65ab44319ad37221d323e07ec1688",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-008-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 4,
+            "via": 0,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "577d30a8964540873f9adaf35da8bf4adeb85502e41bd43e77f868935d6941a8",
+            "native.log": "4bc287a55576217e5722c83e41cd8df221ba41199955abca4b22bf7a772f403b",
+            "board.kicad_pcb": "de027c56f5dfec53d0219982836421b625fa3cff5f9fc5ac6b2504fdce2b2188",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "251aa062-35db-4d7b-8f18-d31fd05a1a08"
+    },
+    {
+      "name": "delete-009",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-009-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "ef3db3e0cec40e3e7a017090169d08383a78195b55f1e2fdae9383f341ff4ce1",
+            "native.log": "93e37163c221ea07a3f2723e8300a303b5ffb8b233c0a97471079214543aaa2b",
+            "board.kicad_pcb": "0fd4161935c058c4bdd31b41383b7ffe1c195962b97086a564daaf2a47e017e7",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-009-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 2
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "98ba097bdea358f3f6572e8aabe2e0345ce12e9f6d458fbd0ba4d6c7799d1b3b",
+            "native.log": "326a92c45244333f8215283d72db60b6e6e42fe9b8f06aad557bf377602ad294",
+            "board.kicad_pcb": "799b72ae2d5573fda5f16bf2cd3e53ecb2abed102424b9eeb17d0f888acb7868",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "b45885a9-cc6b-4cfe-9e61-8fb1820adf75"
+    },
+    {
+      "name": "delete-010",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "delete-010-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "f1402791761be7955ffb6c321f0cbb628ee2eab479665860d5d6fe700b4a5e0d",
+            "native.log": "a96d5e0a667cefbf4750a99c605c410ddcfc64e15d9034c19d275bbbf2ddb4da",
+            "board.kicad_pcb": "9e0bb6f8761386fe10d033e54d84380d4e822af9dfc056c4bb8905b11e9f40ee",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-010-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "8914677907d5ced9c03ae7e1b909df62a4b0dc9274f11bf4c28719b2828d2ff1",
+            "native.log": "bc834ad38a1b61c5f62cd8e5ae64fa26361d67f395ab0488a3764cb219d25351",
+            "board.kicad_pcb": "613d9af0e1340d3b61c9bb623ca671c809b2ecf8d2d44f9a7f65f4ce12ce3e71",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "ab307fee-6354-5d70-9c3e-11cef3665255"
+    },
+    {
+      "name": "delete-011",
+      "accepted": false,
+      "rows": [
+        {
+          "name": "delete-011-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 0
+          },
+          "target": [],
+          "errors": [],
+          "opens": 3,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "d08e3b61-3df5-445c-b296-30da61a459f9"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "c80c4e0afe586a72f07a09e86755e02debc97e7f679650df60218f930da3bed7",
+            "native.log": "689fd7a486307101ee22f51adae0c5e73bdbc7fa878a4da16194ebe2dfe468ad",
+            "board.kicad_pcb": "25600862a2b0a391be278b43ad46324d4f392f158ee945c6c4382ddba9a9e8fe",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-011-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 0
+          },
+          "target": [],
+          "errors": [],
+          "opens": 3,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "d08e3b61-3df5-445c-b296-30da61a459f9"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "c124606880833e38650c8428f5ebd9747ea67a66e154d976e9f4805bff9c095a",
+            "native.log": "d2ac4a61aee6c5992d8ce4229d75dfc4f2acd73f3473f7a41bfc5869fd98684a",
+            "board.kicad_pcb": "bafc2cb8946e084418b86b9d36a603e3e0bba38c4a70639b1665fa08904de119",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+    },
+    {
+      "name": "delete-012",
+      "accepted": false,
+      "rows": [
+        {
+          "name": "delete-012-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 0,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "b6df5d3e4a308e18b8bd678ce194f764d61d7e34e525a12cbd02edd24f2a2d5e",
+            "native.log": "da6938904444bf7cdc242fe5ab7adbc4390d6f3aa83792c9fb271dc16de3b2f3",
+            "board.kicad_pcb": "23fe4af145ae11db2294e15c116349067a9a281a379816baa9c45ea89699363b",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-012-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 0,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "54e651b200983c4d488a732fc991c289c9eb9f7177ce36f625e0ed94184c8440",
+            "native.log": "f26cc248b7f29aa8058f36a6a3464a41eaffa858b45ecb025c0199709d122d35",
+            "board.kicad_pcb": "e2151705397e205c3f06f30b1afd895b019fdded4edbce8b651bb879ea6e3677",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "251aa062-35db-4d7b-8f18-d31fd05a1a08"
+    },
+    {
+      "name": "delete-013",
+      "accepted": false,
+      "rows": [
+        {
+          "name": "delete-013-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 0
+          },
+          "target": [],
+          "errors": [],
+          "opens": 3,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "d08e3b61-3df5-445c-b296-30da61a459f9"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "103df7e3a691950fcc1a55559a19c1af299b0fc93c61e6fed2f185735f8de93b",
+            "native.log": "46517b07f8fc2e6d632df4a4fda1edbba9400437cf89ddc334465a5c4d88b545",
+            "board.kicad_pcb": "25600862a2b0a391be278b43ad46324d4f392f158ee945c6c4382ddba9a9e8fe",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "delete-013-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 0
+          },
+          "target": [],
+          "errors": [],
+          "opens": 3,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "d08e3b61-3df5-445c-b296-30da61a459f9"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "938bc94932f41c5d7d94e3f0840fb7d64ca794659149e91fd4758f263ed19f25",
+            "native.log": "b5c9ef463f61754f88c978cec73089d93dc96c364feee33f95eea806d7714143",
+            "board.kicad_pcb": "bafc2cb8946e084418b86b9d36a603e3e0bba38c4a70639b1665fa08904de119",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ],
+      "removed_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+    },
+    {
+      "name": "final-1",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "final-1-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "b4fdd3d34a534daf34acd5bd97dc439d7485f366f0abeeaea4c17f7912bc9eaf",
+            "native.log": "9b051cc844e96b4e424e881db22f2692d8ce2823b1d5343ab9d538bd10f569a0",
+            "board.kicad_pcb": "9e0bb6f8761386fe10d033e54d84380d4e822af9dfc056c4bb8905b11e9f40ee",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "final-1-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "8d23ba1547809eb49a30819acad0499f83b23fb9c1ac0f53ff8b0e93edb8e983",
+            "native.log": "1c6221821359ce688b21693a63141c9ef389a31a4c0b2e126104554856b1bd98",
+            "board.kicad_pcb": "613d9af0e1340d3b61c9bb623ca671c809b2ecf8d2d44f9a7f65f4ce12ce3e71",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ]
+    },
+    {
+      "name": "final-2",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "final-2-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "b4321d3a3e4c797e136df3b015e86680bc313210ef1c8f84000b290fb7545a40",
+            "native.log": "5c7e3b6163883af9bcc4c7ad509ff54cde9187751a8cac7842a1c9ede44e62d0",
+            "board.kicad_pcb": "9e0bb6f8761386fe10d033e54d84380d4e822af9dfc056c4bb8905b11e9f40ee",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "final-2-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "cd00f60cb575e2c09607f0dd39fcaf4e8894c6f7ac7c90be61d8fcceaf5281ba",
+            "native.log": "eb899b653696fc951c047d2d18a0782bc5a823bdc875281c2ae1a69b91ba4d7a",
+            "board.kicad_pcb": "613d9af0e1340d3b61c9bb623ca671c809b2ecf8d2d44f9a7f65f4ce12ce3e71",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ]
+    },
+    {
+      "name": "final-3",
+      "accepted": true,
+      "rows": [
+        {
+          "name": "final-3-before",
+          "counts": {
+            "footprint": 4,
+            "segment": 1,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "errors": [
+            {
+              "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+              "items": [
+                {
+                  "description": "Zone [GNDD] on B.Cu, priority 0",
+                  "pos": {
+                    "x": 189.23,
+                    "y": 153.67
+                  },
+                  "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+                },
+                {
+                  "description": "Pad 1 [GNDD] of R20 on B.Cu",
+                  "pos": {
+                    "x": 175.082,
+                    "y": 58.3565
+                  },
+                  "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+                }
+              ],
+              "severity": "error",
+              "type": "starved_thermal"
+            }
+          ],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "4c0475630b4bc8f1c330b8097109b45770cdde72abea8de63be3fadf6d8ca766",
+            "native.log": "58b9c5bda94c5cb9e961bbbb5ce7f3aca734b8e86bf82b880d2ea62198537fa9",
+            "board.kicad_pcb": "9e0bb6f8761386fe10d033e54d84380d4e822af9dfc056c4bb8905b11e9f40ee",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        },
+        {
+          "name": "final-3-after",
+          "counts": {
+            "footprint": 4,
+            "segment": 3,
+            "via": 1,
+            "zone": 1
+          },
+          "target": [],
+          "errors": [],
+          "opens": 1,
+          "groups": {
+            "e765aeb0-b74d-4193-a27f-db1131bbf63e": [
+              "e765aeb0-b74d-4193-a27f-db1131bbf63e"
+            ],
+            "d08e3b61-3df5-445c-b296-30da61a459f9": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "8d6b4259-3630-45b6-9370-22f88f4e0a7d": [
+              "8d6b4259-3630-45b6-9370-22f88f4e0a7d"
+            ],
+            "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "d145de36-3889-4a3d-8c61-71242d4e107c": [
+              "4fdef0fc-b31d-4673-bab9-4d9d5d8ccb30",
+              "d08e3b61-3df5-445c-b296-30da61a459f9",
+              "d145de36-3889-4a3d-8c61-71242d4e107c"
+            ],
+            "3fcf74ff-a8aa-48e2-8aad-d89513b058b6": [
+              "3fcf74ff-a8aa-48e2-8aad-d89513b058b6"
+            ]
+          },
+          "sha256": {
+            "drc.json": "c566f4f1a738065370f75ef7b391ffaff2c20c2b57fc8916be85ec4e058e2519",
+            "native.log": "f5cddfb95afbc6674f354a8d1c5acf5f754773439a718e815cdad6ebc1825ed4",
+            "board.kicad_pcb": "613d9af0e1340d3b61c9bb623ca671c809b2ecf8d2d44f9a7f65f4ce12ce3e71",
+            "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+            "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,656 @@
+{
+  "routing_benchmark": false,
+  "production_fix": false,
+  "repeats_in_existing_run": 3,
+  "native_version": "10.0.6",
+  "results_sha256": "902de22beb8fd6c22d6695f9b365c39b339bfd5940054639bbda97a5a63f3272",
+  "script_sha256": "b121504fe49ad8d3d4259fc121b74aad1c0bae143134660af9c145a186c0c1c2",
+  "runs": 78,
+  "passed": 39,
+  "opens": 120,
+  "new_error_types": {
+    "starved_thermal": 27
+  },
+  "unique_case_pad_zone_targets": 9,
+  "targets": [
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 2 [GNDD] of C1 on B.Cu",
+            "pos": {
+              "x": 178.659647,
+              "y": 49.297447
+            },
+            "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "C1",
+      "number": "2",
+      "input_pad_position_nm": [
+        178659694,
+        49297494
+      ],
+      "report_minus_input_position_nm": [
+        -47,
+        -47
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 315.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 218750.0,
+      "pad_size_nm": [
+        875000,
+        950000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 1 [GNDD] of R20 on B.Cu",
+            "pos": {
+              "x": 175.082,
+              "y": 58.3565
+            },
+            "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "d145de36-3889-4a3d-8c61-71242d4e107c",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "R20",
+      "number": "1",
+      "input_pad_position_nm": [
+        175082000,
+        58356500
+      ],
+      "report_minus_input_position_nm": [
+        0,
+        0
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 0.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 218750.0,
+      "pad_size_nm": [
+        875000,
+        950000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 39 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 173.200561,
+              "y": 48.414401
+            },
+            "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "40448888-06d6-474b-a038-09dfd03ed49c",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "U1",
+      "number": "39",
+      "input_pad_position_nm": [
+        173200553,
+        48414447
+      ],
+      "report_minus_input_position_nm": [
+        8,
+        -46
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 315.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 75000.0,
+      "pad_size_nm": [
+        1550000,
+        300000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 46 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 170.725687,
+              "y": 50.889275
+            },
+            "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "8a9de701-0636-4fb8-8016-870d25898f6d",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "U1",
+      "number": "46",
+      "input_pad_position_nm": [
+        170725679,
+        50889321
+      ],
+      "report_minus_input_position_nm": [
+        8,
+        -46
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 315.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 75000.0,
+      "pad_size_nm": [
+        1550000,
+        300000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 48 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 170.018581,
+              "y": 51.596381
+            },
+            "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "af425661-704d-45af-ac80-3e8e4d16dab8",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "U1",
+      "number": "48",
+      "input_pad_position_nm": [
+        170018573,
+        51596427
+      ],
+      "report_minus_input_position_nm": [
+        8,
+        -46
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 315.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 75000.0,
+      "pad_size_nm": [
+        1550000,
+        300000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GNDD] on B.Cu, priority 0",
+            "pos": {
+              "x": 189.23,
+              "y": 153.67
+            },
+            "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+          },
+          {
+            "description": "Pad 53 [GNDD] of U1 on B.Cu",
+            "pos": {
+              "x": 165.882006,
+              "y": 50.182168
+            },
+            "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228",
+      "zone_uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6",
+      "reference": "U1",
+      "number": "53",
+      "input_pad_position_nm": [
+        165881998,
+        50182214
+      ],
+      "report_minus_input_position_nm": [
+        8,
+        -46
+      ],
+      "net": "GNDD",
+      "pad_orientation_degrees": 315.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 4,
+      "pad_shape_name": "rounded rectangle",
+      "pad_corner_radius_nm": 75000.0,
+      "pad_size_nm": [
+        300000,
+        1550000
+      ],
+      "pad_layers": [
+        "B.Cu",
+        "B.Mask",
+        "B.Paste"
+      ],
+      "zone_layers": [
+        "B.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 128.27,
+              "y": 171.45
+            },
+            "uuid": "00000000-0000-0000-0000-000057c65453"
+          },
+          {
+            "description": "Pad 7 [GND] of U1 on F.Cu",
+            "pos": {
+              "x": 80.264,
+              "y": 131.318
+            },
+            "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "fdc33cc77473daa9b1f801337a163fce9472de8daa23066d5de1bbaf3aece977",
+        "board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "b3f02100-400b-4899-9892-82a97b074b91",
+      "zone_uuid": "00000000-0000-0000-0000-000057c65453",
+      "reference": "U1",
+      "number": "7",
+      "input_pad_position_nm": [
+        80264000,
+        131318000
+      ],
+      "report_minus_input_position_nm": [
+        0,
+        0
+      ],
+      "net": "GND",
+      "pad_orientation_degrees": 90.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 1,
+      "pad_shape_name": "rectangle",
+      "pad_corner_radius_nm": 127000.0,
+      "pad_size_nm": [
+        508000,
+        1143000
+      ],
+      "pad_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "zone_layers": [
+        "F.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 128.27,
+              "y": 171.45
+            },
+            "uuid": "00000000-0000-0000-0000-000057c65453"
+          },
+          {
+            "description": "Pad 15 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 76.073,
+              "y": 111.125
+            },
+            "uuid": "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "fdc33cc77473daa9b1f801337a163fce9472de8daa23066d5de1bbaf3aece977",
+        "board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+      "zone_uuid": "00000000-0000-0000-0000-000057c65453",
+      "reference": "U2",
+      "number": "15",
+      "input_pad_position_nm": [
+        76073000,
+        111125000
+      ],
+      "report_minus_input_position_nm": [
+        0,
+        0
+      ],
+      "net": "GND",
+      "pad_orientation_degrees": 90.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 1,
+      "pad_shape_name": "rectangle",
+      "pad_corner_radius_nm": 127000.0,
+      "pad_size_nm": [
+        508000,
+        1143000
+      ],
+      "pad_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "zone_layers": [
+        "F.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seeds": [
+        1,
+        2,
+        3
+      ],
+      "native_finding": {
+        "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+        "items": [
+          {
+            "description": "Zone [GND] on F.Cu, priority 0",
+            "pos": {
+              "x": 128.27,
+              "y": 171.45
+            },
+            "uuid": "00000000-0000-0000-0000-000057c65453"
+          },
+          {
+            "description": "Pad 15 [GND] of U2 on F.Cu",
+            "pos": {
+              "x": 76.073,
+              "y": 111.125
+            },
+            "uuid": "d77f2098-e7f4-4d9b-a0ff-0f4972d0cb00"
+          }
+        ],
+        "severity": "error",
+        "type": "starved_thermal"
+      },
+      "input_sha256": {
+        "board.kicad_pcb": "d40810c8ab2c8e9743a6f9e8301913f2d6c167ad0c2b2adcc642f51b816fae0a",
+        "board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      },
+      "pad_uuid": "d77f2098-e7f4-4d9b-a0ff-0f4972d0cb00",
+      "zone_uuid": "00000000-0000-0000-0000-000057c65453",
+      "reference": "U2",
+      "number": "15",
+      "input_pad_position_nm": [
+        76073000,
+        111125000
+      ],
+      "report_minus_input_position_nm": [
+        0,
+        0
+      ],
+      "net": "GND",
+      "pad_orientation_degrees": 90.0,
+      "pad_spoke_angle_degrees": 90.0,
+      "pad_shape_code": 1,
+      "pad_shape_name": "rectangle",
+      "pad_corner_radius_nm": 127000.0,
+      "pad_size_nm": [
+        508000,
+        1143000
+      ],
+      "pad_layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "zone_layers": [
+        "F.Cu"
+      ],
+      "zone_gap_nm": 508000,
+      "zone_bridge_nm": 508000,
+      "pad_local_gap_nm": null,
+      "pad_local_bridge_nm": null,
+      "board_minimum_spokes": 2
+    }
+  ]
+}

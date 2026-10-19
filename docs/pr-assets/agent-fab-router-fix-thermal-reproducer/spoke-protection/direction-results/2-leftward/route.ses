@@ -1,0 +1,63 @@
+(session "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c73/final-directions/2-leftward/before.ses"
+  (base_design "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c73/final-directions/2-leftward/before.dsn")
+  (placement
+    (resolution um 10)
+    (component "thermal-pad"
+      (place U1 769620 -1351280 front 90)
+    )
+    (component terminal
+      (place T1 830000 -1325880 front 0)
+      (place T0 770000 -1325880 front 0)
+      (place T2 802640 -1301080 front 0)
+    )
+  )
+  (was_is)
+  (routes
+    (resolution um 10)
+    (parser
+      (host_cad "KiCad's Pcbnew")
+      (host_version "10.0.6-10.0.6~ubuntu24.04.1")
+    )
+    (library_out
+      (padstack "Via[0-1]_600:400_um"
+        (shape (circle F.Cu 6000 0 0))
+        (shape (circle B.Cu 6000 0 0))
+        (attach off)
+      )
+    )
+    (network_out
+      (net "Net-(LO(Q)1-Pad1)"
+        (wire
+          (path F.Cu 2500
+            817640 -1331080
+            810140 -1301080
+          )
+          (type protect)
+        )
+        (via "Via[0-1]_600:400_um" 802640 -1301080 (type protect))
+      )
+      (net "Net-(U1-Pad12)"
+        (wire
+          (path F.Cu 2500
+            830000 -1325880
+            825500 -1325880
+          )
+        )
+        (wire
+          (path B.Cu 2500
+            825500 -1325880
+            807500 -1325880
+          )
+        )
+        (wire
+          (path F.Cu 2500
+            807500 -1325880
+            770000 -1325880
+          )
+        )
+        (via "Via[0-1]_600:400_um" 825500 -1325880)
+        (via "Via[0-1]_600:400_um" 807500 -1325880)
+      )
+    )
+  )
+)

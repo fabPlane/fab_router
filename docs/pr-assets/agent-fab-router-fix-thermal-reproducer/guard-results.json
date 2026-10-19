@@ -1,0 +1,297 @@
+{
+  "fixed": false,
+  "benchmark_score": false,
+  "repeats": 3,
+  "rows": [
+    {
+      "repeat": 1,
+      "states": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "stale": {
+          "errors": {
+            "clearance": 4,
+            "hole_clearance": 2
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "refilled": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "restored": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        }
+      },
+      "original_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "restored_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 6,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 2,
+      "states": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "stale": {
+          "errors": {
+            "clearance": 4,
+            "hole_clearance": 2
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "refilled": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "restored": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        }
+      },
+      "original_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "restored_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 7,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    },
+    {
+      "repeat": 3,
+      "states": {
+        "before": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "stale": {
+          "errors": {
+            "clearance": 4,
+            "hole_clearance": 2
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "refilled": {
+          "errors": {
+            "starved_thermal": 1
+          },
+          "unconnected": 1,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        },
+        "restored": {
+          "errors": {},
+          "unconnected": 2,
+          "warnings": {
+            "track_dangling": 1,
+            "via_dangling": 1
+          }
+        }
+      },
+      "original_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "restored_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "engine": {
+        "report": {
+          "passes": 1,
+          "attempted": 1,
+          "completed": 1,
+          "incompleteBefore": 1,
+          "incompleteAfter": 0,
+          "added": {
+            "tracks": 3,
+            "barrels": 2
+          },
+          "ripped": 0,
+          "violationsBefore": 0,
+          "violationsAdded": 0,
+          "timedOut": false,
+          "aborted": false,
+          "stoppedBy": "complete",
+          "effectiveSettings": {
+            "maxPasses": 100,
+            "maxStagnantPasses": 3,
+            "viaCost": 50,
+            "planeViaCost": 5,
+            "bendCost": 0,
+            "preferredDirectionCost": 1.5,
+            "startRipupCost": 100,
+            "ripupEnabled": true,
+            "fanoutEnabled": false,
+            "routerEnabled": true,
+            "optimizerEnabled": true,
+            "strictDrc": false,
+            "layers": {},
+            "viasAllowed": true,
+            "ignoreNetGroups": [],
+            "seed": 1,
+            "shoveEnabled": true,
+            "orderByDifficulty": true,
+            "detailedRouter": "off",
+            "globalPlan": "off",
+            "angleMode": "45"
+          },
+          "wallClockMs": 7,
+          "perNet": [
+            {
+              "net": "Net-(U1-Pad12)",
+              "incomplete": 0
+            }
+          ]
+        },
+        "diagnostics": []
+      }
+    }
+  ],
+  "source_sha256": {
+    "guard-audit.py": "babf665c9d3a10126db6a3e3295c1e22efd187915497084eacba404b179de7b0",
+    "audit.py": "fd5281217f625d90bb49a52a55dd4a438c34205ef416aab0f74861e78234543d",
+    "route-input.ts": "38631815146af187b1cfa163aa8ee6ca52318967256264d8d75e9c1656498378",
+    "route-input.kicad_pcb": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+    "thermal.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+    "thermal.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  }
+}

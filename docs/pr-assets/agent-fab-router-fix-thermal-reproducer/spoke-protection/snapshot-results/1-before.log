@@ -1,0 +1,33 @@
+test_board_changes_during_extraction (__main__.SnapshotTests.test_board_changes_during_extraction) ... FAIL
+test_project_changes_during_extraction (__main__.SnapshotTests.test_project_changes_during_extraction) ... FAIL
+test_rules_change_during_extraction (__main__.SnapshotTests.test_rules_change_during_extraction) ... FAIL
+test_unchanged (__main__.SnapshotTests.test_unchanged) ... ok
+
+======================================================================
+FAIL: test_board_changes_during_extraction (__main__.SnapshotTests.test_board_changes_during_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<baseline-source>/test_snapshot_identity.py", line 46, in test_board_changes_during_extraction
+    with self.assertRaisesRegex(ValueError, 'board'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_project_changes_during_extraction (__main__.SnapshotTests.test_project_changes_during_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<baseline-source>/test_snapshot_identity.py", line 50, in test_project_changes_during_extraction
+    with self.assertRaisesRegex(ValueError, 'project'):
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_rules_change_during_extraction (__main__.SnapshotTests.test_rules_change_during_extraction)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<baseline-source>/test_snapshot_identity.py", line 54, in test_rules_change_during_extraction
+    with self.assertRaisesRegex(ValueError, 'rules'):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+
+FAILED (failures=3)

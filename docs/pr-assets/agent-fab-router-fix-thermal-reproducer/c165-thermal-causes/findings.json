@@ -1,0 +1,767 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "checks": 174,
+  "distinct_schedules": 56,
+  "saved_design_drifts": 39,
+  "findings": [
+    {
+      "pad": "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+      "minimum_admissible_added_items": 1,
+      "witnesses": [
+        {
+          "label": "only-6",
+          "repeat": 1,
+          "selected": [
+            "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+          ],
+          "thermal_pads": [
+            "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+          ],
+          "opens": 2,
+          "errors": 1,
+          "design_preserved": true,
+          "directory": "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c165/native-final/1-only-6"
+        }
+      ],
+      "scope": "intact original input plus subsets of nine generated items"
+    },
+    {
+      "pad": "b3f02100-400b-4899-9892-82a97b074b91",
+      "minimum_admissible_added_items": 2,
+      "witnesses": [
+        {
+          "label": "pair-2-7",
+          "repeat": 1,
+          "selected": [
+            "3837e144-04ed-4677-a7ac-4e5609108771",
+            "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+          ],
+          "thermal_pads": [
+            "b3f02100-400b-4899-9892-82a97b074b91"
+          ],
+          "opens": 3,
+          "errors": 1,
+          "design_preserved": true,
+          "directory": "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c165/pairs-final/1-pair-2-7"
+        }
+      ],
+      "scope": "intact original input plus subsets of nine generated items"
+    }
+  ],
+  "schedules": [
+    {
+      "label": "all-added",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 0,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-0",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-1",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-2",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 1,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "except-3",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-4",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-5",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-6",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "except-7",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "except-8",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa",
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 1,
+      "errors": 2,
+      "design_preserved": true
+    },
+    {
+      "label": "only-0",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "only-1",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "only-2",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "only-3",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "only-4",
+      "selected": [
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "only-5",
+      "selected": [
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "only-6",
+      "selected": [
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "only-7",
+      "selected": [
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "only-8",
+      "selected": [
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "original",
+      "selected": [],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-0-1",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-2",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "3837e144-04ed-4677-a7ac-4e5609108771"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-3",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-4",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-5",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-6",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-0-7",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-0-8",
+      "selected": [
+        "01c76557-d9a1-40dc-a399-2aa5a1f6d848",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-1-2",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3837e144-04ed-4677-a7ac-4e5609108771"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-1-3",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-1-4",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-1-5",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-1-6",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-1-7",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": false
+    },
+    {
+      "label": "pair-1-8",
+      "selected": [
+        "1f6f00ee-3c34-4eb9-a7ba-d1764aca1afa",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-3",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3d802c79-7281-4bcc-9078-29b75cd325fb"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-4",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-5",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-6",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 3,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-7",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [
+        "b3f02100-400b-4899-9892-82a97b074b91"
+      ],
+      "opens": 3,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-2-8",
+      "selected": [
+        "3837e144-04ed-4677-a7ac-4e5609108771",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 4,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-3-4",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-3-5",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 1,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-3-6",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-3-7",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-3-8",
+      "selected": [
+        "3d802c79-7281-4bcc-9078-29b75cd325fb",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-4-5",
+      "selected": [
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c"
+      ],
+      "thermal_pads": [],
+      "opens": 2,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-4-6",
+      "selected": [
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-4-7",
+      "selected": [
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-4-8",
+      "selected": [
+        "3f160ee1-1873-4fa5-a988-6a9e3a4b6254",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-5-6",
+      "selected": [
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 2,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-5-7",
+      "selected": [
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-5-8",
+      "selected": [
+        "b7c59951-37ef-42af-8be7-4ac85cc1408c",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 3,
+      "errors": 0,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-6-7",
+      "selected": [
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 3,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-6-8",
+      "selected": [
+        "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [
+        "8384d0cb-a9eb-4cd0-9fed-a2e4e224b8fa"
+      ],
+      "opens": 3,
+      "errors": 1,
+      "design_preserved": true
+    },
+    {
+      "label": "pair-7-8",
+      "selected": [
+        "debd372e-2f77-4d2d-aa40-6dd5243a7732",
+        "f4323333-9e18-4ec3-a52c-30fb8f1a0c1b"
+      ],
+      "thermal_pads": [],
+      "opens": 4,
+      "errors": 0,
+      "design_preserved": true
+    }
+  ]
+}

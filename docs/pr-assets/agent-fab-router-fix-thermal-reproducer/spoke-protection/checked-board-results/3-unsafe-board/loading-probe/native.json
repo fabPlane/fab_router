@@ -1,0 +1,152 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T11:26:12",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "board.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "bb353ab1-5e5e-4dee-9333-23daf549f050"
+                },
+                {
+                    "description": "Pad 1 [Net-(LO(Q)1-Pad1)] of T2 on F.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "80ea0124-83fa-47ae-81fc-f5ea25a7e552"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items not allowed (rule 'loading sentinel')",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-Pad12)] on F.Cu, length 0.4500 mm",
+                    "pos": {
+                        "x": 83.0,
+                        "y": 132.588
+                    },
+                    "uuid": "93549d6b-da06-477f-b460-13b9cf87d3d3"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed (rule 'loading sentinel')",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-Pad12)] on F.Cu, length 3.7769 mm",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 133.038
+                    },
+                    "uuid": "adea2566-9f33-4a95-b7f0-8d12fb6a2ffd"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed (rule 'loading sentinel')",
+            "items": [
+                {
+                    "description": "Track [Net-(U1-Pad12)] on B.Cu, length 1.8554 mm",
+                    "pos": {
+                        "x": 82.55,
+                        "y": 132.588
+                    },
+                    "uuid": "ee96fd1a-6839-437c-b850-21bd05e61b49"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Items not allowed (rule 'loading sentinel')",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "bb353ab1-5e5e-4dee-9333-23daf549f050"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "bb353ab1-5e5e-4dee-9333-23daf549f050"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "f715dc2e-9982-49b6-9aed-f70253a22044"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        }
+    ]
+}

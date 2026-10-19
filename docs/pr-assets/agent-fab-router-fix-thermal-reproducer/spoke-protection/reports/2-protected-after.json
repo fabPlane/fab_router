@@ -1,0 +1,92 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T09:34:55",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "after.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "87a5fe70-2d97-4704-b28c-d864a6d3eb0d"
+                },
+                {
+                    "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "830dba32-3a0a-4a23-8b3c-dcac8d763d01"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [Net-(LO(Q)1-Pad1)] on F.Cu, length 3.0923 mm",
+                    "pos": {
+                        "x": 81.764,
+                        "y": 133.108
+                    },
+                    "uuid": "87a5fe70-2d97-4704-b28c-d864a6d3eb0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [Net-(LO(Q)1-Pad1)] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.264,
+                        "y": 130.108
+                    },
+                    "uuid": "830dba32-3a0a-4a23-8b3c-dcac8d763d01"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        }
+    ]
+}

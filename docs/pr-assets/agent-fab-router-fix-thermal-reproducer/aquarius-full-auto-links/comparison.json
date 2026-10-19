@@ -1,0 +1,72 @@
+{
+  "routing_benchmark": false,
+  "production_fix": false,
+  "input_sha256": {
+    ".kicad_pcb": "5b1de44070f9ee4a8017c8e019cc847f29797ee1e2986468115c33c3d6e266d5",
+    ".kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    ".kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "budget": 128,
+  "repeats": [
+    {
+      "before_errors": 6,
+      "after_errors": 0,
+      "before_opens": 15,
+      "after_opens": 15,
+      "checked_candidates": 93,
+      "accepted_candidates": 5,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "4cd120ea0ef6190e122202f9b7b40aeb5a2fa60b98042c6c54cc072589bf1de1",
+      "rejected_reasons": {
+        "checker_exception:ValueError": 1,
+        "new_clearance": 33,
+        "new_shorting_items": 104,
+        "new_solder_mask_bridge": 35,
+        "new_tracks_crossing": 49,
+        "not_strict_error_subset": 87
+      },
+      "lost_connected_pairs": 0
+    },
+    {
+      "before_errors": 6,
+      "after_errors": 0,
+      "before_opens": 15,
+      "after_opens": 15,
+      "checked_candidates": 93,
+      "accepted_candidates": 5,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "4cd120ea0ef6190e122202f9b7b40aeb5a2fa60b98042c6c54cc072589bf1de1",
+      "rejected_reasons": {
+        "checker_exception:ValueError": 1,
+        "new_clearance": 33,
+        "new_shorting_items": 104,
+        "new_solder_mask_bridge": 35,
+        "new_tracks_crossing": 49,
+        "not_strict_error_subset": 87
+      },
+      "lost_connected_pairs": 0
+    },
+    {
+      "before_errors": 6,
+      "after_errors": 0,
+      "before_opens": 15,
+      "after_opens": 15,
+      "checked_candidates": 93,
+      "accepted_candidates": 5,
+      "stop": "no-thermal-targets",
+      "skipped": [],
+      "selected_sha256": "4cd120ea0ef6190e122202f9b7b40aeb5a2fa60b98042c6c54cc072589bf1de1",
+      "rejected_reasons": {
+        "checker_exception:ValueError": 1,
+        "new_clearance": 33,
+        "new_shorting_items": 104,
+        "new_solder_mask_bridge": 35,
+        "new_tracks_crossing": 49,
+        "not_strict_error_subset": 87
+      },
+      "lost_connected_pairs": 0
+    }
+  ]
+}

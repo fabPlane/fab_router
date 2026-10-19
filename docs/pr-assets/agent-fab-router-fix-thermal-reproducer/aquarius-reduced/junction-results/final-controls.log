@@ -1,0 +1,7 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+{"repeat": 1, "moved": ["a", "b", "c"], "invalid_rejected": 4, "input_unchanged": true}
+{"repeat": 2, "moved": ["a", "b", "c"], "invalid_rejected": 4, "input_unchanged": true}
+{"repeat": 3, "moved": ["a", "b", "c"], "invalid_rejected": 4, "input_unchanged": true}
+PASS: three-way/reversed endpoint, foreign-net/layer, metadata, immutability and invalid controls

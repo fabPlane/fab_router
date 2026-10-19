@@ -1,0 +1,52 @@
+[
+  {
+    "control": "unchanged",
+    "exit_code": 0,
+    "expected_accept": true
+  },
+  {
+    "control": "missing-target",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "duplicate-repeat",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "truncated-rejection",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "wrong-track-rank",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "wrong-track-limit",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "unknown-target",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "selected-target",
+    "exit_code": 0,
+    "expected_accept": true
+  },
+  {
+    "control": "invalid-target-scope",
+    "exit_code": 1,
+    "expected_accept": false
+  },
+  {
+    "control": "boolean-target",
+    "exit_code": 1,
+    "expected_accept": false
+  }
+]

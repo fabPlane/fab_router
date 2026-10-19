@@ -24,8 +24,10 @@ Milestones M0–M10 complete (tags `M0`…`M10`). The router reads SPECCTRA DSN,
 connectivity, routes multilayer boards with vias, rip-up, fanout, push-and-shove, a gridless
 detailed router (line-search + corner-stitch tiles) and a monotone optimiser, writes and applies
 SES, drives the tscircuit SimpleRouteJson adapter, and carries an off-by-default two-phase
-global-planning subsystem. **It never adds a DRC violation (invariant R-1) on any board at any
-setting.**
+global-planning subsystem. Invariant R-1 checks router changes against the rules represented
+in the engine model. **Native zone refill and thermal-spoke requirements are not represented
+by that model and require a separate native DRC check.** A clearance-clean DSN can still
+produce native `starved_thermal` errors; see the [minimal native reproducer](docs/pr-assets/agent-fab-router-fix-thermal-reproducer/README.md).
 
 Acceptance: 401 non-routing cases pass; all feature routing cases (4-/6-layer, plane layers,
 strict-DRC, item caps, DAC bm08) pass to their bounds; the tscircuit SRJ boards pass their hard

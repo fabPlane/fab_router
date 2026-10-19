@@ -1,0 +1,74 @@
+{
+  "checks": 27,
+  "saved_design_drifts": 0,
+  "production_fix": false,
+  "routing_benchmark": false,
+  "outcomes": {
+    "original-input": {
+      "errors": 0,
+      "opens": 55,
+      "rules": {}
+    },
+    "original-segment": {
+      "errors": 1,
+      "opens": 0,
+      "rules": {
+        "starved_thermal": 1
+      }
+    },
+    "removed": {
+      "errors": 0,
+      "opens": 1,
+      "rules": {}
+    },
+    "upper-right": {
+      "errors": 0,
+      "opens": 0,
+      "rules": {}
+    },
+    "lower-left": {
+      "errors": 6,
+      "opens": 0,
+      "rules": {
+        "solder_mask_bridge": 3,
+        "clearance": 1,
+        "shorting_items": 2
+      }
+    },
+    "upper-offset-0.5": {
+      "errors": 1,
+      "opens": 0,
+      "rules": {
+        "clearance": 1
+      }
+    },
+    "upper-offset-1.0": {
+      "errors": 7,
+      "opens": 0,
+      "rules": {
+        "solder_mask_bridge": 2,
+        "shorting_items": 4,
+        "clearance": 1
+      }
+    },
+    "upper-offset-1.5": {
+      "errors": 7,
+      "opens": 0,
+      "rules": {
+        "solder_mask_bridge": 2,
+        "shorting_items": 4,
+        "clearance": 1
+      }
+    },
+    "upper-offset-2.0": {
+      "errors": 9,
+      "opens": 0,
+      "rules": {
+        "solder_mask_bridge": 3,
+        "tracks_crossing": 2,
+        "clearance": 3,
+        "shorting_items": 1
+      }
+    }
+  }
+}

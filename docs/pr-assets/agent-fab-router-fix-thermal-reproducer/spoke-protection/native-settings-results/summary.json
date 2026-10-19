@@ -1,0 +1,242 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "repeats": 3,
+  "script_sha256": "aac58df4d67fe4ba66f381b18842bc1e26751d4b0fc3f1c268d7e259daa960a7",
+  "rows": [
+    {
+      "repeat": 1,
+      "variant": "project-two",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "72609d268ff0819743561a361a8ddfd703e25a697243937e6d3b1f2588db2ad8"
+    },
+    {
+      "repeat": 1,
+      "variant": "project-three",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "7df59a629c4ee290428973c85947170131813ec535b7560dc6e433a54da3ca27"
+    },
+    {
+      "repeat": 1,
+      "variant": "missing-project",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "275ce1d2393a25042bc66f78731d561800bc4f3bfbe46a89c0258ebc0e57f3d1"
+    },
+    {
+      "repeat": 2,
+      "variant": "project-two",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "bc48b9183d4ca6dc0e04d17673dc22fce04f91d2578f7e3c959a9221f4146705"
+    },
+    {
+      "repeat": 2,
+      "variant": "project-three",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "073e62f00e1e7486a3fe985cd765d4fd1d32d1e081c75235d91c1dda5ae25e7a"
+    },
+    {
+      "repeat": 2,
+      "variant": "missing-project",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "64e174396fc19412ab67ef4d6a983f5be8adadf6cfdee4af966081a2defe07b4"
+    },
+    {
+      "repeat": 3,
+      "variant": "project-two",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "e75d8fa924253f166d3b34a17e6762e1b723e2d9afeb7fd8641145d0f1eefa82"
+    },
+    {
+      "repeat": 3,
+      "variant": "project-three",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": true,
+        "project_sha256": "b050d252a7446fff4342c17fc6e37edd02b740041f35b6ae9c152f8e4144366c",
+        "board_min_resolved_spokes": 3,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 3; actual 2)",
+          "items": [
+            {
+              "description": "Zone [GND] on F.Cu, priority 0",
+              "pos": {
+                "x": 75.0,
+                "y": 126.0
+              },
+              "uuid": "00000000-0000-0000-0000-000057c65453"
+            },
+            {
+              "description": "Pad 7 [GND] of U1 on F.Cu",
+              "pos": {
+                "x": 80.264,
+                "y": 131.318
+              },
+              "uuid": "b3f02100-400b-4899-9892-82a97b074b91"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 2,
+      "native_sha256": "ee679fbfeaca5a6535f8978bf4355292fc5182166d747f35914ad9bba59cff9e"
+    },
+    {
+      "repeat": 3,
+      "variant": "missing-project",
+      "snapshot": {
+        "board_sha256": "2929e9e88c7b65f254cae2a1ef96f8798732ae21e432929698c35941cea40aad",
+        "project_present": false,
+        "project_sha256": null,
+        "board_min_resolved_spokes": 2,
+        "zone_gap_nm": 508000,
+        "zone_bridge_nm": 508000,
+        "pad_local_gap_nm": null,
+        "pad_local_bridge_nm": null,
+        "zone_gap_with_pad_argument_nm": 0
+      },
+      "errors": [],
+      "opens": 2,
+      "native_sha256": "dabc53e56b29edfb37fe7e0f6046e3a5d15ff91d3829ab3c73ca12d483683dc8"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="440"><rect width="1300" height="440" fill="#f4f6f8"/>
+<text xml:space="preserve" x="25" y="45" font-family="monospace" font-size="25" fill="#182534">Stored zone width does not resolve custom thermal rules</text>
+<text xml:space="preserve" x="25" y="94" font-family="monospace" font-size="21" fill="#182534">Same board and project; native refill + DRC; 3 repeats per rule</text>
+<text xml:space="preserve" x="25" y="143" font-family="monospace" font-size="21" fill="#182534">Rule                Getter       Down section       Left section</text>
+<text xml:space="preserve" x="25" y="192" font-family="monospace" font-size="21" fill="#182534">Zone default        508 um       508 samples        508 samples</text>
+<text xml:space="preserve" x="25" y="241" font-family="monospace" font-size="21" fill="#182534">Custom 400 um       508 um       400 samples        400 samples</text>
+<text xml:space="preserve" x="25" y="290" font-family="monospace" font-size="21" fill="#182534">Custom 200 um       508 um         0 samples          0 samples</text>
+<text xml:space="preserve" x="25" y="339" font-family="monospace" font-size="21" fill="#182534">1 um spacing; sections 254 um beyond pad bounds; finite sampling only.</text>
+<text xml:space="preserve" x="25" y="388" font-family="monospace" font-size="21" fill="#182534">All variants: 0 native errors, 2 opens. No routing or general safety claim.</text>
+</svg>

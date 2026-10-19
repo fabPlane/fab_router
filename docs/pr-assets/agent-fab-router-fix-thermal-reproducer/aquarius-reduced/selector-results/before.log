@@ -1,0 +1,85 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+[
+  {
+    "repeat": 1,
+    "control": "unchanged",
+    "result": "accepted"
+  },
+  {
+    "repeat": 1,
+    "control": "removed",
+    "result": "aborted"
+  },
+  {
+    "repeat": 1,
+    "control": "added",
+    "result": "aborted"
+  },
+  {
+    "repeat": 1,
+    "control": "replaced",
+    "result": "aborted"
+  },
+  {
+    "repeat": 1,
+    "control": "continue",
+    "result": "aborted"
+  },
+  {
+    "repeat": 2,
+    "control": "unchanged",
+    "result": "accepted"
+  },
+  {
+    "repeat": 2,
+    "control": "removed",
+    "result": "aborted"
+  },
+  {
+    "repeat": 2,
+    "control": "added",
+    "result": "aborted"
+  },
+  {
+    "repeat": 2,
+    "control": "replaced",
+    "result": "aborted"
+  },
+  {
+    "repeat": 2,
+    "control": "continue",
+    "result": "aborted"
+  },
+  {
+    "repeat": 3,
+    "control": "unchanged",
+    "result": "accepted"
+  },
+  {
+    "repeat": 3,
+    "control": "removed",
+    "result": "aborted"
+  },
+  {
+    "repeat": 3,
+    "control": "added",
+    "result": "aborted"
+  },
+  {
+    "repeat": 3,
+    "control": "replaced",
+    "result": "aborted"
+  },
+  {
+    "repeat": 3,
+    "control": "continue",
+    "result": "aborted"
+  }
+]
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/selector-controls.py", line 43, in <module>
+    assert all(row['result'] == ('accepted' if row['control'] in ('unchanged', 'continue') else 'rejected')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: inventory changes must reject candidates without aborting

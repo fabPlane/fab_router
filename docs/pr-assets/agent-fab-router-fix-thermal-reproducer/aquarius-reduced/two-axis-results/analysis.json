@@ -1,0 +1,1956 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "rows": [
+    {
+      "repeat": 1,
+      "attempts": 24,
+      "accepted": false,
+      "blockers": {
+        "clearance": 12,
+        "retained_target": 12,
+        "shorting_items": 12,
+        "solder_mask_bridge": 16
+      },
+      "target_removals": [
+        {
+          "name": "candidate-1-0",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -19498,
+            -324694
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0695 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3467 mm",
+                  "pos": {
+                    "x": 165.084002,
+                    "y": 51.233806
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-1",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -94887,
+            -256583
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0798 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4466 mm",
+                  "pos": {
+                    "x": 165.008613,
+                    "y": 51.301917
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-2",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -245665,
+            -120362
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0966 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6470 mm",
+                  "pos": {
+                    "x": 164.857835,
+                    "y": 51.438138
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-3",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -321055,
+            -52252
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1035 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7475 mm",
+                  "pos": {
+                    "x": 164.782445,
+                    "y": 51.506248
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-4",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -53553,
+            -362388
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0406 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-5",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -128943,
+            -294278
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0530 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4564 mm",
+                  "pos": {
+                    "x": 164.974557,
+                    "y": 51.264222
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-6",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -279721,
+            -158057
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0731 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6556 mm",
+                  "pos": {
+                    "x": 164.823779,
+                    "y": 51.400443
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-7",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -355110,
+            -89946
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0814 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7556 mm",
+                  "pos": {
+                    "x": 164.74839,
+                    "y": 51.468554
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-8",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -87609,
+            -400083
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0119 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-9",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -162998,
+            -331972
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0262 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-10",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -313776,
+            -195751
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0496 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-1-11",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -389165,
+            -127641
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0592 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7651 mm",
+                  "pos": {
+                    "x": 164.714335,
+                    "y": 51.430859
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    },
+    {
+      "repeat": 2,
+      "attempts": 24,
+      "accepted": false,
+      "blockers": {
+        "clearance": 12,
+        "retained_target": 12,
+        "shorting_items": 12,
+        "solder_mask_bridge": 16
+      },
+      "target_removals": [
+        {
+          "name": "candidate-2-0",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -19498,
+            -324694
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0695 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3467 mm",
+                  "pos": {
+                    "x": 165.084002,
+                    "y": 51.233806
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-1",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -94887,
+            -256583
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0798 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4466 mm",
+                  "pos": {
+                    "x": 165.008613,
+                    "y": 51.301917
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-2",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -245665,
+            -120362
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0966 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6470 mm",
+                  "pos": {
+                    "x": 164.857835,
+                    "y": 51.438138
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-3",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -321055,
+            -52252
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1035 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7475 mm",
+                  "pos": {
+                    "x": 164.782445,
+                    "y": 51.506248
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-4",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -53553,
+            -362388
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0406 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-5",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -128943,
+            -294278
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0530 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4564 mm",
+                  "pos": {
+                    "x": 164.974557,
+                    "y": 51.264222
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-6",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -279721,
+            -158057
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0731 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6556 mm",
+                  "pos": {
+                    "x": 164.823779,
+                    "y": 51.400443
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-7",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -355110,
+            -89946
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0814 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7556 mm",
+                  "pos": {
+                    "x": 164.74839,
+                    "y": 51.468554
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-8",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -87609,
+            -400083
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0119 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-9",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -162998,
+            -331972
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0262 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-10",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -313776,
+            -195751
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0496 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-2-11",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -389165,
+            -127641
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0592 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7651 mm",
+                  "pos": {
+                    "x": 164.714335,
+                    "y": 51.430859
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    },
+    {
+      "repeat": 3,
+      "attempts": 24,
+      "accepted": false,
+      "blockers": {
+        "clearance": 12,
+        "retained_target": 12,
+        "shorting_items": 12,
+        "solder_mask_bridge": 16
+      },
+      "target_removals": [
+        {
+          "name": "candidate-3-0",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -19498,
+            -324694
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0695 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3467 mm",
+                  "pos": {
+                    "x": 165.084002,
+                    "y": 51.233806
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-1",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -94887,
+            -256583
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0798 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4466 mm",
+                  "pos": {
+                    "x": 165.008613,
+                    "y": 51.301917
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-2",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -245665,
+            -120362
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0966 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6470 mm",
+                  "pos": {
+                    "x": 164.857835,
+                    "y": 51.438138
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-3",
+          "rank": 1,
+          "scale": -0.5,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -321055,
+            -52252
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.1035 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7475 mm",
+                  "pos": {
+                    "x": 164.782445,
+                    "y": 51.506248
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-4",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -53553,
+            -362388
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0406 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3572 mm",
+                  "pos": {
+                    "x": 165.049947,
+                    "y": 51.196112
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-5",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -128943,
+            -294278
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0530 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4564 mm",
+                  "pos": {
+                    "x": 164.974557,
+                    "y": 51.264222
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-6",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -279721,
+            -158057
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0731 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6556 mm",
+                  "pos": {
+                    "x": 164.823779,
+                    "y": 51.400443
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-7",
+          "rank": 1,
+          "scale": -0.6,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -355110,
+            -89946
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0814 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7556 mm",
+                  "pos": {
+                    "x": 164.74839,
+                    "y": 51.468554
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-8",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -87609,
+            -400083
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0119 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.3695 mm",
+                  "pos": {
+                    "x": 165.015891,
+                    "y": 51.158417
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-9",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": -0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -162998,
+            -331972
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0262 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.4678 mm",
+                  "pos": {
+                    "x": 164.940502,
+                    "y": 51.226528
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-10",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.2,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -313776,
+            -195751
+          ],
+          "errors": 5,
+          "opens": 15,
+          "new_error_types": [
+            "clearance",
+            "solder_mask_bridge"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0496 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            },
+            {
+              "description": "Rear solder mask aperture bridges items with different nets",
+              "items": [
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.6657 mm",
+                  "pos": {
+                    "x": 164.789724,
+                    "y": 51.362749
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                },
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                }
+              ],
+              "severity": "error",
+              "type": "solder_mask_bridge"
+            }
+          ],
+          "lost_pairs": []
+        },
+        {
+          "name": "candidate-3-11",
+          "rank": 1,
+          "scale": -0.7,
+          "tangent_scale": 0.4,
+          "moved": [
+            "8eb8d491-19e8-4eed-bc7b-03693b673699",
+            "9ec8b353-4e41-40b5-9afc-9acbb83d07fa"
+          ],
+          "delta_nm": [
+            -389165,
+            -127641
+          ],
+          "errors": 4,
+          "opens": 15,
+          "new_error_types": [
+            "clearance"
+          ],
+          "new_errors": [
+            {
+              "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0592 mm)",
+              "items": [
+                {
+                  "description": "Pad 53 [GNDD] of U1 on B.Cu",
+                  "pos": {
+                    "x": 165.882006,
+                    "y": 50.182168
+                  },
+                  "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+                },
+                {
+                  "description": "Track [/Inputs/TCK] on B.Cu, length 1.7651 mm",
+                  "pos": {
+                    "x": 164.714335,
+                    "y": 51.430859
+                  },
+                  "uuid": "8eb8d491-19e8-4eed-bc7b-03693b673699"
+                }
+              ],
+              "severity": "error",
+              "type": "clearance"
+            }
+          ],
+          "lost_pairs": []
+        }
+      ],
+      "selected_sha256": "7ba2a347163aff2ac020804a506bb889dee234bc8d46fbff1886211cf1322ebb"
+    }
+  ]
+}

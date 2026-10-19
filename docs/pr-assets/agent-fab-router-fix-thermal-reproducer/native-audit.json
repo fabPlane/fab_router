@@ -1,0 +1,129 @@
+{
+  "native_version": "10.0.6",
+  "repeats": 3,
+  "rows": [
+    {
+      "variant": "all-copper",
+      "repeat": 1,
+      "native_types": {
+        "starved_thermal": 1,
+        "track_dangling": 2,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "b4c991276d0b40dd34ea7e2bd1bdd04479b6d4b80442f559bf31eb068f99b200"
+    },
+    {
+      "variant": "all-copper",
+      "repeat": 2,
+      "native_types": {
+        "starved_thermal": 1,
+        "track_dangling": 2,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "b4c991276d0b40dd34ea7e2bd1bdd04479b6d4b80442f559bf31eb068f99b200"
+    },
+    {
+      "variant": "all-copper",
+      "repeat": 3,
+      "native_types": {
+        "starved_thermal": 1,
+        "track_dangling": 2,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "b4c991276d0b40dd34ea7e2bd1bdd04479b6d4b80442f559bf31eb068f99b200"
+    },
+    {
+      "variant": "without-0-segment",
+      "repeat": 1,
+      "native_types": {
+        "via_dangling": 1,
+        "track_dangling": 1
+      },
+      "native_unconnected": 0,
+      "board_sha256": "ceb15c7f3a59c9f4a3ec34f34f03f1aaa29df5c6153a079df63ecdf4c6ffb32c"
+    },
+    {
+      "variant": "without-0-segment",
+      "repeat": 2,
+      "native_types": {
+        "via_dangling": 1,
+        "track_dangling": 1
+      },
+      "native_unconnected": 0,
+      "board_sha256": "ceb15c7f3a59c9f4a3ec34f34f03f1aaa29df5c6153a079df63ecdf4c6ffb32c"
+    },
+    {
+      "variant": "without-0-segment",
+      "repeat": 3,
+      "native_types": {
+        "via_dangling": 1,
+        "track_dangling": 1
+      },
+      "native_unconnected": 0,
+      "board_sha256": "ceb15c7f3a59c9f4a3ec34f34f03f1aaa29df5c6153a079df63ecdf4c6ffb32c"
+    },
+    {
+      "variant": "without-1-via",
+      "repeat": 1,
+      "native_types": {
+        "track_dangling": 2
+      },
+      "native_unconnected": 0,
+      "board_sha256": "6b22ecb074346b9e54752ac84bbdb6d05f6fd49ce8ac907beb7daee66bf817f5"
+    },
+    {
+      "variant": "without-1-via",
+      "repeat": 2,
+      "native_types": {
+        "track_dangling": 2
+      },
+      "native_unconnected": 0,
+      "board_sha256": "6b22ecb074346b9e54752ac84bbdb6d05f6fd49ce8ac907beb7daee66bf817f5"
+    },
+    {
+      "variant": "without-1-via",
+      "repeat": 3,
+      "native_types": {
+        "track_dangling": 2
+      },
+      "native_unconnected": 0,
+      "board_sha256": "6b22ecb074346b9e54752ac84bbdb6d05f6fd49ce8ac907beb7daee66bf817f5"
+    },
+    {
+      "variant": "without-2-segment",
+      "repeat": 1,
+      "native_types": {
+        "track_dangling": 1,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "ec8d0fd4ed08b545ee06ac53469a78efe9b71435963e440fe488b490d5026a4e"
+    },
+    {
+      "variant": "without-2-segment",
+      "repeat": 2,
+      "native_types": {
+        "track_dangling": 1,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "ec8d0fd4ed08b545ee06ac53469a78efe9b71435963e440fe488b490d5026a4e"
+    },
+    {
+      "variant": "without-2-segment",
+      "repeat": 3,
+      "native_types": {
+        "track_dangling": 1,
+        "via_dangling": 1
+      },
+      "native_unconnected": 1,
+      "board_sha256": "ec8d0fd4ed08b545ee06ac53469a78efe9b71435963e440fe488b490d5026a4e"
+    }
+  ],
+  "fixed": false,
+  "benchmark_score": false,
+  "note": "Dangling copper and opens are retained in native reports; diagnostic controls are not routed-board passes."
+}

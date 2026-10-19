@@ -1,0 +1,46 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+test_connected (test_components.ComponentTests.test_connected) ... ok
+test_detached_strip_and_remote_island (test_components.ComponentTests.test_detached_strip_and_remote_island) ... FAIL
+test_hole_and_input_preserved (test_components.ComponentTests.test_hole_and_input_preserved) ... ok
+test_slit_separates_remote_copper (test_components.ComponentTests.test_slit_separates_remote_copper) ... FAIL
+
+======================================================================
+FAIL: test_detached_strip_and_remote_island (test_components.ComponentTests.test_detached_strip_and_remote_island)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_components.py", line 16, in test_detached_strip_and_remote_island
+    self.assertEqual(result['remote_covering_components'], [])
+AssertionError: Lists differ: [0] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+0
+
+- [0]
+?  -
+
++ []
+
+======================================================================
+FAIL: test_slit_separates_remote_copper (test_components.ComponentTests.test_slit_separates_remote_copper)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/test_components.py", line 21, in test_slit_separates_remote_copper
+    self.assertEqual(inspect_components(p, (0,0,100,100), (-10,-10,500,110))['remote_covering_components'], [])
+AssertionError: Lists differ: [0] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+0
+
+- [0]
+?  -
+
++ []
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+FAILED (failures=2)

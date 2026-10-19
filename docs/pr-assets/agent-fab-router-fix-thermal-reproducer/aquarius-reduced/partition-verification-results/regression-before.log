@@ -1,0 +1,16 @@
+[
+  {
+    "repeat": 1,
+    "mutation": "unchanged",
+    "accepted": true
+  },
+  {
+    "repeat": 1,
+    "mutation": "empty-partitions",
+    "accepted": true
+  }
+]
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/aquarius-reduced/partition-controls.py", line 35, in <module>
+    raise AssertionError((mutation, result.stdout, result.stderr))
+AssertionError: ('empty-partitions', 'Verified 51 native reports, all artifact hashes, geometric offsets and repeat consistency.\n', '')

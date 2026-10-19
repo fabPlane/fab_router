@@ -1,0 +1,33 @@
+[
+  {
+    "case": "unchanged",
+    "returncode": 0,
+    "expected_accept": true,
+    "accepted": true
+  },
+  {
+    "case": "baseline-board",
+    "returncode": 1,
+    "expected_accept": false,
+    "accepted": false
+  },
+  {
+    "case": "candidate-board",
+    "returncode": 1,
+    "expected_accept": false,
+    "accepted": false
+  },
+  {
+    "case": "replay-board",
+    "returncode": 1,
+    "expected_accept": false,
+    "accepted": false
+  },
+  {
+    "case": "native-rules",
+    "returncode": 1,
+    "expected_accept": false,
+    "accepted": false
+  }
+]
+PASS: original evidence accepted; substituted boards and rule sidecar rejected

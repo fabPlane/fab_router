@@ -1,0 +1,54 @@
+{
+  "native_drc": false,
+  "routing_benchmark": false,
+  "before_commit": "e0e2058",
+  "controls_sha256": "8869e5f2cc2b01bd7166e25aa2bf13de156631aa95319bd648947f65bba6af13",
+  "reporter_sha256": {
+    "before": "61f76e129674069cf073adc6836008f947548b6ad3828a708d5ba40f38b42ba5",
+    "after": "02bcf3c48e2b8b0871f681d501c5b0cc6b9dd047ded10eb5549cab93aeb3f435"
+  },
+  "rows": [
+    {
+      "source": "before",
+      "repeat": 1,
+      "returncode": 1,
+      "passed": 2,
+      "failed": 1
+    },
+    {
+      "source": "before",
+      "repeat": 2,
+      "returncode": 1,
+      "passed": 2,
+      "failed": 1
+    },
+    {
+      "source": "before",
+      "repeat": 3,
+      "returncode": 1,
+      "passed": 2,
+      "failed": 1
+    },
+    {
+      "source": "after",
+      "repeat": 1,
+      "returncode": 0,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "source": "after",
+      "repeat": 2,
+      "returncode": 0,
+      "passed": 3,
+      "failed": 0
+    },
+    {
+      "source": "after",
+      "repeat": 3,
+      "returncode": 0,
+      "passed": 3,
+      "failed": 0
+    }
+  ]
+}

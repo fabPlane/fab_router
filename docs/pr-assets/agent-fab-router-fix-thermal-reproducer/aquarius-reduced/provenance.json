@@ -1,0 +1,101 @@
+{
+  "source_sha256": {
+    "final.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+    "board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc"
+  },
+  "fixture_sha256": "ab30db069ca30e2cb5962b62a771a040c7cf09b3316fe5bc6df26c4aa7252d61",
+  "retained_pad": {
+    "uuid": "40448888-06d6-474b-a038-09dfd03ed49c",
+    "position_nm": [
+      173200561,
+      48414401
+    ],
+    "size_nm": [
+      1550000,
+      300000
+    ],
+    "shape": 4,
+    "radius_nm": 75000.0,
+    "orientation_degrees": 315.0,
+    "layers": [
+      2,
+      3,
+      15
+    ],
+    "net": "GNDD",
+    "local_gap_nm": null,
+    "local_width_nm": null,
+    "spoke_angle": 90.0
+  },
+  "original_pad": {
+    "uuid": "40448888-06d6-474b-a038-09dfd03ed49c",
+    "position_nm": [
+      173200553,
+      48414447
+    ],
+    "size_nm": [
+      1550000,
+      300000
+    ],
+    "shape": 4,
+    "radius_nm": 75000.0,
+    "orientation_degrees": 315.0,
+    "layers": [
+      2,
+      3,
+      15
+    ],
+    "net": "GNDD",
+    "local_gap_nm": null,
+    "local_width_nm": null,
+    "spoke_angle": 90.0
+  },
+  "retained_tracks": [
+    {
+      "uuid": "6dbcde1f-ccf3-47bd-92d0-f3935a38c796",
+      "start_nm": [
+        174613300,
+        49116100
+      ],
+      "end_nm": [
+        173554100,
+        48060800
+      ],
+      "width_nm": 203200,
+      "layer": 2,
+      "net": "/Inputs/RST"
+    },
+    {
+      "uuid": "21768f94-189f-4a8a-9f22-7e54b38c1a6d",
+      "start_nm": [
+        176139600,
+        49590200
+      ],
+      "end_nm": [
+        174030000,
+        49590200
+      ],
+      "width_nm": 203200,
+      "layer": 2,
+      "net": "Net-(C1-Pad1)"
+    },
+    {
+      "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8",
+      "start_nm": [
+        171822200,
+        48336800
+      ],
+      "end_nm": [
+        172493500,
+        49121500
+      ],
+      "width_nm": 203200,
+      "layer": 2,
+      "net": "Net-(R1-Pad1)"
+    }
+  ],
+  "zone_definition_unchanged": true,
+  "sidecars_unchanged": true,
+  "dsn_sha256": "7ae952746ac90c0eb1f207989dc370b8067213fbfc438743ae70f7f0f0d7e4c3",
+  "dsn_is_native_thermal_model": false
+}

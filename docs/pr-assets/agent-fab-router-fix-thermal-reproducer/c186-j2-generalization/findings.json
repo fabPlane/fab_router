@@ -1,0 +1,102 @@
+{
+  "scope": "Offline complete-board native discovery, not scored routing",
+  "repeats": 3,
+  "native_checks": 57,
+  "faithful_checks": 57,
+  "identity_rejected": 0,
+  "aggregate_errors": 111,
+  "aggregate_opens": 30,
+  "accepted": 6,
+  "candidates_per_repeat": 8,
+  "causes": [
+    {
+      "uid": "3837e144-04ed-4677-a7ac-4e5609108771",
+      "kind": "segment",
+      "markers": [
+        "U1.7"
+      ],
+      "geometry": {
+        "start": [
+          "81.764",
+          "133.108"
+        ],
+        "end": [
+          "81.014",
+          "130.108"
+        ],
+        "width": [
+          "0.25"
+        ],
+        "layer": [
+          "\"F.Cu\""
+        ]
+      },
+      "lost_pairs": [
+        [
+          "25db20e8-42ad-49a1-9aed-8d2882c36e80",
+          "6a330c25-94b0-4a8e-b03c-6c18562f8a50"
+        ],
+        [
+          "6a330c25-94b0-4a8e-b03c-6c18562f8a50",
+          "cc6fc959-1a16-4ae1-8a4b-f0dd65fe3efc"
+        ]
+      ],
+      "accepted_variants": [
+        "detour-4"
+      ]
+    },
+    {
+      "uid": "d90d6c34-6e49-4507-a99e-bcd4d92a25b7",
+      "kind": "segment",
+      "markers": [
+        "U2.15"
+      ],
+      "geometry": {
+        "start": [
+          "80.264",
+          "113.608"
+        ],
+        "end": [
+          "76.073",
+          "109.855"
+        ],
+        "width": [
+          "0.25"
+        ],
+        "layer": [
+          "\"F.Cu\""
+        ]
+      },
+      "lost_pairs": [
+        [
+          "25db20e8-42ad-49a1-9aed-8d2882c36e80",
+          "6a330c25-94b0-4a8e-b03c-6c18562f8a50"
+        ],
+        [
+          "6a330c25-94b0-4a8e-b03c-6c18562f8a50",
+          "cc6fc959-1a16-4ae1-8a4b-f0dd65fe3efc"
+        ]
+      ],
+      "accepted_variants": [
+        "detour-2"
+      ]
+    }
+  ],
+  "final": [
+    {
+      "errors": 0,
+      "opens": 0,
+      "complete": true
+    },
+    {
+      "errors": 0,
+      "opens": 0,
+      "complete": true
+    },
+    {
+      "errors": 0,
+      "opens": 0,
+      "complete": true
+    }
+  ]
+}

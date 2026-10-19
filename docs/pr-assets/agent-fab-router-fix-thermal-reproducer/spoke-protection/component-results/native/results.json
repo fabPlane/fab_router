@@ -1,0 +1,431 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "native_spoke_counter": false,
+  "source_sha256": "fbcda59daf7dff8718733d7bab1e335da98d436fe798a6fa81cefc186ca4ecf7",
+  "helper_sha256": "926568e1ea1e623d9f10fbd730a0b911962aaa9c97a08e5c4028b5e7687bd8db",
+  "prior_sha256": "13467944577732367d194277ff5e7a370da7b85bd5a2d9f6b38cd42d82c75170",
+  "rows": [
+    {
+      "variant": "input",
+      "repeat": 0,
+      "board_sha256": "ff03b93842d7938982dfe197db0f8db1bce7e51dcadb34bcd1f7276b52b25e7a",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 74699753646818.0,
+              "outside_local_box_area_nm2": 70849972336362.0,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 74699753646818.0,
+              "outside_local_box_area_nm2": 70849972336362.0,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "leftward",
+      "repeat": 1,
+      "board_sha256": "816f11471fe0bb85a048ea8692607b398b27c3b663ef941f3a686c021f4c5f9b",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": false,
+          "remote_covering_components": [],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 258064000000.0,
+              "positive_area_covered": false
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "downward",
+      "repeat": 1,
+      "board_sha256": "82c2ff01c8e760ee9eb5396eb2e35fad9734a4b48062720a8c97367bce8945ee",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "leftward",
+      "repeat": 2,
+      "board_sha256": "bf9bed9a9195b9491d04d18dcd608aea12e79901961fe7145aad9a88b37f5c1a",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": false,
+          "remote_covering_components": [],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 258064000000.0,
+              "positive_area_covered": false
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "downward",
+      "repeat": 2,
+      "board_sha256": "6829e085b454e3a09a881868f317dc3d58b5d76ac44f0acf254b3627d96fca02",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "leftward",
+      "repeat": 3,
+      "board_sha256": "d67ea9f04d205f4ed34157c68e1ccc99f6d0a3e88534f99a7790a176f7d66739",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": false,
+          "remote_covering_components": [],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 258064000000.0,
+              "positive_area_covered": false
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70340331790979.5,
+              "outside_local_box_area_nm2": 67950189819277.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "variant": "downward",
+      "repeat": 3,
+      "board_sha256": "f805a605f33a727b3bdd11efde1e1d81e435683f8f94beb4d99f818e931237da",
+      "local_box_nm": [
+        78692500,
+        130064000,
+        81835500,
+        132572000
+      ],
+      "strips_nm": {
+        "downward": [
+          80010000,
+          131572000,
+          80518000,
+          132080000
+        ],
+        "leftward": [
+          79184500,
+          131064000,
+          79692500,
+          131572000
+        ]
+      },
+      "directions": {
+        "downward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        },
+        "leftward": {
+          "union_strip_covered": true,
+          "remote_covering_components": [
+            0
+          ],
+          "components": [
+            {
+              "index": 0,
+              "holes": 0,
+              "area_nm2": 70694832908334.5,
+              "outside_local_box_area_nm2": 67000973426096.5,
+              "requested_area_nm2": 258064000000.0,
+              "missing_area_nm2": 0.0,
+              "positive_area_covered": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

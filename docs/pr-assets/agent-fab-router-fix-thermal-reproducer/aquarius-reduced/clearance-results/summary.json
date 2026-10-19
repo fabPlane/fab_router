@@ -1,0 +1,1815 @@
+{
+  "production_fix": false,
+  "routing_benchmark": false,
+  "native_version": "10.0.6",
+  "repeats": 3,
+  "track_uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8",
+  "pad_uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724",
+  "input_sha256": {
+    "selection-results/baseline-1/board.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+    "selection-results/baseline-1/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    "selection-results/baseline-1/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+    "selection-results/track-3-offset--1-1/board.kicad_pcb": "4500d2308cd5fdfa5e49f15115caf47eaa1f022b0da3cbdd9ac94107ab2effbd",
+    "selection-results/track-3-offset--1-1/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+    "selection-results/track-3-offset--1-1/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "rows": [
+    {
+      "name": "baseline-1",
+      "counts": {
+        "footprint": 79,
+        "segment": 336,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "baseline",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "a774baf7659f7a0671b1793e3f935b34e4643b14fdd836c89eac564bf0dce83b",
+        "native.log": "37a62fb1bf70462abb6275b132a172db037df34c2e2b8a0423d6eb41b5dbee85",
+        "board.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "adverse-1",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "opens": 15,
+      "label": "adverse",
+      "pair_errors": [
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "sha256": {
+        "drc.json": "3f6a10a2e8353d8fef007842eb9f4af3a071e88916d4271a794dd0a170c02123",
+        "native.log": "879245dbf740098eea1e0af3edefe859c5d9a03dfd8bb5ba40ab125be9f2c554",
+        "board.kicad_pcb": "4500d2308cd5fdfa5e49f15115caf47eaa1f022b0da3cbdd9ac94107ab2effbd",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "restore-segment-keep-links-1",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "restore-segment-keep-links",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "31f874f8e06921321f62e10872d3e71b4faf941e1ff97fdc260441c49b81d2e4",
+        "native.log": "2204fbb49f436a0337dd9c65413d0122800632b919d68a2609dc55081318fe31",
+        "board.kicad_pcb": "0fc93278051cfdab6cf39f4aa0e530a4f9c0cdb3c0ce6f4a589dc6198e6adbef",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "baseline-2",
+      "counts": {
+        "footprint": 79,
+        "segment": 336,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "baseline",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "6cc098851c8b61fbf49e3c75c5b871748e0ddf95accdbdcf75d853ea6bb24098",
+        "native.log": "b097f037a4d3fcad0fddb6281be2968c0f5532611f6cbf9b902fe721e6354224",
+        "board.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "adverse-2",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "opens": 15,
+      "label": "adverse",
+      "pair_errors": [
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "sha256": {
+        "drc.json": "4ff953baf1885811d45af752dca2df44e3fae2aedc1137034ed69203aa1241db",
+        "native.log": "f379356869d3674d9cdee01988d9146d7625667241f98c75926c817fc5c08692",
+        "board.kicad_pcb": "4500d2308cd5fdfa5e49f15115caf47eaa1f022b0da3cbdd9ac94107ab2effbd",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "restore-segment-keep-links-2",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "restore-segment-keep-links",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "8cc79f273be05ed65fc980aef443aeaa7df9a985d6e9b6f3621d13e89df364aa",
+        "native.log": "afc16c2afdfc6f0d91a9481fac3ee3eb4c60b921c094030bc30cbcddb7fd7677",
+        "board.kicad_pcb": "0fc93278051cfdab6cf39f4aa0e530a4f9c0cdb3c0ce6f4a589dc6198e6adbef",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "baseline-3",
+      "counts": {
+        "footprint": 79,
+        "segment": 336,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "baseline",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "aafc46ab00a9c852d21c23bdecfc9b4d6e3a9ca3b606363c50f50f83d798693f",
+        "native.log": "bb656d60d23cfed0201183d22f0cee5121d28859b74406ca58eb3bc541db8471",
+        "board.kicad_pcb": "6f18a34265a5c610dfb12fbaa3c7757a7c9296c18bfde4d02878f16965fd3acc",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "adverse-3",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "opens": 15,
+      "label": "adverse",
+      "pair_errors": [
+        {
+          "description": "Clearance violation ( clearance 0.1270 mm; actual 0.0930 mm)",
+          "items": [
+            {
+              "description": "Track [Net-(R1-Pad1)] on B.Cu, length 1.0327 mm",
+              "pos": {
+                "x": 171.892911,
+                "y": 48.266089
+              },
+              "uuid": "917bc58f-bf38-4e94-917f-0fa6c8a519d8"
+            },
+            {
+              "description": "Pad 40 [Net-(C1-Pad1)] of U1 on B.Cu",
+              "pos": {
+                "x": 172.847008,
+                "y": 48.767954
+              },
+              "uuid": "9ed9deec-e5aa-43e2-8257-ea9e272f0724"
+            }
+          ],
+          "severity": "error",
+          "type": "clearance"
+        }
+      ],
+      "sha256": {
+        "drc.json": "48a1646d1b921d8dbf91bbc698f1be24f57c1e14f75dec14d03bdf5ffcee99c9",
+        "native.log": "02b45dbe2d11a50713395414125fbcf066b17618ff5b03ae4d000951c2056b36",
+        "board.kicad_pcb": "4500d2308cd5fdfa5e49f15115caf47eaa1f022b0da3cbdd9ac94107ab2effbd",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    },
+    {
+      "name": "restore-segment-keep-links-3",
+      "counts": {
+        "footprint": 79,
+        "segment": 338,
+        "via": 130,
+        "zone": 2
+      },
+      "target": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "errors": [
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 2 [GNDD] of C1 on B.Cu",
+              "pos": {
+                "x": 178.659647,
+                "y": 49.297447
+              },
+              "uuid": "0058b9c6-73af-4ba8-a061-fb00a457a84f"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 1 [GNDD] of R20 on B.Cu",
+              "pos": {
+                "x": 175.082,
+                "y": 58.3565
+              },
+              "uuid": "d145de36-3889-4a3d-8c61-71242d4e107c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 39 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 173.200561,
+                "y": 48.414401
+              },
+              "uuid": "40448888-06d6-474b-a038-09dfd03ed49c"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 46 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.725687,
+                "y": 50.889275
+              },
+              "uuid": "8a9de701-0636-4fb8-8016-870d25898f6d"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 48 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 170.018581,
+                "y": 51.596381
+              },
+              "uuid": "af425661-704d-45af-ac80-3e8e4d16dab8"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        },
+        {
+          "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+          "items": [
+            {
+              "description": "Zone [GNDD] on B.Cu, priority 0",
+              "pos": {
+                "x": 189.23,
+                "y": 153.67
+              },
+              "uuid": "cbaef996-a5ad-5073-a292-fe94da38fab6"
+            },
+            {
+              "description": "Pad 53 [GNDD] of U1 on B.Cu",
+              "pos": {
+                "x": 165.882006,
+                "y": 50.182168
+              },
+              "uuid": "12cbe2ed-3861-4e0e-89f1-6c66f25e5228"
+            }
+          ],
+          "severity": "error",
+          "type": "starved_thermal"
+        }
+      ],
+      "opens": 15,
+      "label": "restore-segment-keep-links",
+      "pair_errors": [],
+      "sha256": {
+        "drc.json": "fa522d0f46942f08b711c7c6a879ef4f0b327dd573478e2b317c1ac1e90980ee",
+        "native.log": "34cdd794ef3f383122e321cfecdd9b132157b83f5af4e858546a014bee8d2f30",
+        "board.kicad_pcb": "0fc93278051cfdab6cf39f4aa0e530a4f9c0cdb3c0ce6f4a589dc6198e6adbef",
+        "board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+      }
+    }
+  ]
+}

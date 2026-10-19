@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="480"><rect width="1000" height="480" fill="white"/>
+<text x="30" y="40" font-family="sans-serif" font-size="26">Compact native thermal witness: diagnostic transaction</text>
+<text x="30" y="104" font-family="sans-serif" font-size="20">Repair</text>
+<rect x="260" y="80" width="135" height="34" fill="#27845c"/>
+<rect x="405" y="80" width="135" height="34" fill="#27845c"/>
+<rect x="550" y="80" width="135" height="34" fill="#27845c"/>
+<text x="720" y="104" font-family="sans-serif" font-size="20">3 accepted / 0 rejected</text>
+<text x="30" y="156" font-family="sans-serif" font-size="20">Unchanged</text>
+<rect x="260" y="132" width="135" height="34" fill="#c5ced8"/>
+<rect x="405" y="132" width="135" height="34" fill="#c5ced8"/>
+<rect x="550" y="132" width="135" height="34" fill="#c5ced8"/>
+<text x="720" y="156" font-family="sans-serif" font-size="20">0 accepted / 3 rejected</text>
+<text x="30" y="208" font-family="sans-serif" font-size="20">Disconnected pad</text>
+<rect x="260" y="184" width="135" height="34" fill="#c5ced8"/>
+<rect x="405" y="184" width="135" height="34" fill="#c5ced8"/>
+<rect x="550" y="184" width="135" height="34" fill="#c5ced8"/>
+<text x="720" y="208" font-family="sans-serif" font-size="20">0 accepted / 3 rejected</text>
+<text x="30" y="260" font-family="sans-serif" font-size="20">Removed pad</text>
+<rect x="260" y="236" width="135" height="34" fill="#c5ced8"/>
+<rect x="405" y="236" width="135" height="34" fill="#c5ced8"/>
+<rect x="550" y="236" width="135" height="34" fill="#c5ced8"/>
+<text x="720" y="260" font-family="sans-serif" font-size="20">0 accepted / 3 rejected</text>
+<text x="30" y="312" font-family="sans-serif" font-size="20">Timeout</text>
+<rect x="260" y="288" width="135" height="34" fill="#c5ced8"/>
+<rect x="405" y="288" width="135" height="34" fill="#c5ced8"/>
+<rect x="550" y="288" width="135" height="34" fill="#c5ced8"/>
+<text x="720" y="312" font-family="sans-serif" font-size="20">0 accepted / 3 rejected</text>
+<text x="30" y="364" font-family="sans-serif" font-size="20">Checker failure</text>
+<rect x="260" y="340" width="135" height="34" fill="#c5ced8"/>
+<rect x="405" y="340" width="135" height="34" fill="#c5ced8"/>
+<rect x="550" y="340" width="135" height="34" fill="#c5ced8"/>
+<text x="720" y="364" font-family="sans-serif" font-size="20">0 accepted / 3 rejected</text>
+<text x="30" y="425" font-family="sans-serif" font-size="20">Green: accepted. Gray: rejected, exact input bytes returned.</text>
+<text x="30" y="460" font-family="sans-serif" font-size="18">Three repeats per candidate; no production router integration.</text>
+</svg>
