@@ -61,3 +61,28 @@ export function embeddedBoardRules(text: string): string {
 export function assertEmbeddedBoardRules(input: string, candidate: string): void {
   if (embeddedBoardRules(input) !== embeddedBoardRules(candidate)) throw new Error("Candidate embedded board rules differ from input");
 }
+
+/** Preserve the multiset of original board-level tracks and vias. Additional routes
+ * are permitted. This deliberately does not certify pads, zones or other metadata. */
+export function assertSourceCopper(input: string, candidate: string): void {
+  const inventory = (text: string) => {
+    const counts = new Map<string, number>();
+    for (const node of parseBoard(text)) {
+      if (!Array.isArray(node) || !["segment", "arc", "via"].includes(String(node[0]))) continue;
+      // Named fields may be reordered by a native save; keep each field's internal
+      // order (notably via layer span and arc geometry) intact.
+      const fields = node.slice(1).filter(field => !(Array.isArray(field) && field[0] === "uuid"));
+      const key = JSON.stringify([node[0], ...fields.map(field => {
+        // Tracks and arcs are physically undirected; native save may reverse them.
+        if (Array.isArray(field) && ["segment", "arc"].includes(String(node[0])) && ["start", "end"].includes(String(field[0]))) return JSON.stringify(["endpoint", ...field.slice(1)]);
+        return JSON.stringify(field);
+      }).sort()]);
+      counts.set(key, (counts.get(key) ?? 0) + 1);
+    }
+    return counts;
+  };
+  const available = inventory(candidate);
+  for (const [key, count] of inventory(input)) {
+    if ((available.get(key) ?? 0) < count) throw new Error("Candidate source copper differs from input");
+  }
+}

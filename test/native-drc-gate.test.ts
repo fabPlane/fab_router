@@ -92,3 +92,19 @@ test("rejects malformed connectivity findings in either report", () => {
     expect(() => compareNativeReports(report([], 1), { ...report(), unconnected_items: [malformed] })).toThrow();
   }
 });
+
+ test("native gate blocks deletion of original copper before native execution", async () => {
+  const directory = await mkdtemp(join(tmpdir(), "native-source-copper-"));
+  try {
+    const before = join(directory, "before.kicad_pcb"), after = join(directory, "after.kicad_pcb");
+    const shell = (items: string) => `(kicad_pcb (version 20260206) (generator "pcbnew")
+      (general (thickness 1.6)) (paper "A4")
+      (layers (0 "F.Cu" signal) (2 "B.Cu" signal) (25 "Edge.Cuts" user)) (setup)
+      (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+        (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")) ${items})`;
+    await writeFile(before, shell('(segment (start 2 2) (end 4 2) (width 0.25) (layer "F.Cu") (net 0) (uuid "00000000-0000-0000-0000-000000000002"))'));
+    await writeFile(after, shell(''));
+    for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+    await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate source copper differs");
+  } finally { await rm(directory, { recursive: true, force: true }); }
+});

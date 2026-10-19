@@ -40,8 +40,13 @@ are normalized; optional layer display aliases are ignored because native save m
 them. Setup child order and plot settings are compared conservatively, so unrelated setup
 edits may also block acceptance. Malformed boards or duplicate/missing sections fail closed.
 
-This is a DRC/connectivity gate, not a design-fidelity validator or a repair command. It does
-not require zero opens, remove inherited violations, verify preserved source copper/metadata,
+Original board-level segments, arcs and vias must also remain present as a multiset,
+including geometry, width, net and other physical fields. Additional routing items
+are allowed. Named field order and numeric formatting are normalized. Equivalent
+track splitting or deliberate edits to original copper conservatively block acceptance.
+
+This is a DRC/connectivity gate, not a complete design-fidelity validator or a repair command. It does
+not require zero opens, remove inherited violations, verify preserved pads/zones/metadata,
 or apply/undo anything in an editor. The host must separately verify design fidelity,
 per-item rules, external dependencies and the exact checked bytes before committing a
 candidate. No live-editor transaction or benchmark scoring path calls this optional command

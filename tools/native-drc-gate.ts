@@ -7,7 +7,7 @@ import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { basename, join, resolve } from "node:path";
 import { promisify } from "node:util";
-import { assertEmbeddedBoardRules } from "./kicad-board-rules.ts";
+import { assertEmbeddedBoardRules, assertSourceCopper } from "./kicad-board-rules.ts";
 const execute = promisify(execFile);
 
 type Finding = { type: string; severity: string; description: string; items: Array<{ description: string; pos: { x: number; y: number }; uuid?: string }> };
@@ -82,6 +82,7 @@ export async function checkNativeBoards(input: string, candidate: string, timeou
     const after = await snapshot(resolve(candidate), join(directory, "after"));
     if (!before.project.equals(after.project) || !((!before.rules && !after.rules) || (before.rules && after.rules && before.rules.equals(after.rules)))) throw new Error("Candidate project rules differ from input");
     assertEmbeddedBoardRules(before.bytes.toString("utf8"), after.bytes.toString("utf8"));
+    assertSourceCopper(before.bytes.toString("utf8"), after.bytes.toString("utf8"));
     const reports: unknown[] = [];
     for (const [index, board] of [before, after].entries()) {
       const report = join(directory, `${index}.json`);
