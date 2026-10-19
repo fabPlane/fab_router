@@ -147,3 +147,43 @@ rsvg-convert /tmp/thermal-filled-spokes/comparison.svg -o /tmp/thermal-filled-sp
 The JSON retains every sample and SHA-256 hashes of the input, six routed
 boards and six native reports. The PNG is a chart of these measured samples;
 the actual native copper render remains `direction-comparison.png`.
+
+## Preserving both known spokes
+
+The next paired experiment explicitly supplies **both** known existing spokes,
+downward and leftward. It compares this pair against the leftward negative
+control on the same miniature, host, cores 20–25, seed 1 and default settings.
+Three fresh native import/refill runs per variant retain identical native rules,
+settings, original copper and normalized DSN. The guard rectangles are still
+selected manually; no production engine or adapter code changes.
+
+| Three repeats each; values per repeat | Left guard | Down + left guards |
+| --- | ---: | ---: |
+| Initial native errors | 0 | 0 |
+| Initial engine guard conflicts | 0 | 0 |
+| Intended route complete | Yes | Yes |
+| Native thermal errors after refill | 1 | 0 |
+| Native opens before → after | 2 → 1 | 2 → 1 |
+| Engine violations after routing | 0 | 0 |
+| Added tracks / vias | 3 / 2 | 3 / 2 |
+| Fully sampled filled corridors after refill | Left | Down + left |
+
+This supports minimum-spoke accounting on this fixture. It does not establish
+that two guards are necessary: the earlier downward-only variant also
+preserves both sampled corridors. Both new variants remain 0/3 complete native
+board passes because the unrelated retained-net open remains. The finite
+three-line samples do not prove full bridge width or general connectivity.
+The original frozen suite's 27 thermal errors remain unresolved.
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 600 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/directions.py --combined --out /tmp/thermal-combined --repeats 3
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 120 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/combined-spokes.py /tmp/thermal-combined
+rsvg-convert /tmp/thermal-combined/comparison.svg -o /tmp/thermal-combined/comparison.png
+```
+
+`combined-results/` retains all six native inputs/outputs, sessions, full native
+DRC reports, engine reports, metadata, subprocess logs, source hashes and every
+filled-copper sample. `comparison.png` is generated from those measurements.
+`checks.log` records the required unchanged-engine checks;
+`diagnostic-typecheck.log` covers the diagnostic runner separately. No timing
+improvement or production safety claim is made.

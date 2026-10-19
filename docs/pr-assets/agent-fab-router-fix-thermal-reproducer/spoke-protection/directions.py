@@ -17,7 +17,7 @@ invoke, metadata, sha = module.invoke, module.metadata, module.sha
 ROOT = HERE.parents[3]
 
 
-def run(out, repeats):
+def run(out, repeats, combined=False):
     out.mkdir(parents=True, exist_ok=False)
     rows = []
     reference = None
@@ -25,7 +25,7 @@ def run(out, repeats):
     diagnostic_hashes = {p.name: sha(p) for p in (pathlib.Path(__file__), HERE / 'route.ts')}
 
     for repeat in range(1, repeats + 1):
-        for direction in ('downward', 'upward', 'leftward', 'rightward'):
+        for direction in (('leftward', 'both') if combined else ('downward', 'upward', 'leftward', 'rightward')):
             directory = out / f'{repeat}-{direction}'
             directory.mkdir()
             before = directory / 'before.kicad_pcb'
@@ -50,6 +50,8 @@ def run(out, repeats):
             box = pad.GetBoundingBox()
             data = json.loads((directory / 'metadata.json').read_text())
             data.update(direction=direction, pad_box_nm=dict(x0=box.GetX(), y0=box.GetY(), x1=box.GetX()+box.GetWidth(), y1=box.GetY()+box.GetHeight()))
+            if direction == 'both':
+                data.update(direction='downward', directions=['downward', 'leftward'])
             (directory / 'metadata.json').write_text(json.dumps(data, indent=2)+'\n')
             route = subprocess.run(['bun', str(HERE / 'route.ts'), str(before.with_suffix('.dsn')), str(directory / 'metadata.json'), 'protected', str(directory / 'route.ses'), str(directory / 'engine.json')], capture_output=True, text=True, timeout=120)
             (directory / 'route.log').write_text(route.stdout + route.stderr)
@@ -76,7 +78,7 @@ def run(out, repeats):
                     return [n for n in child(tree, 'zone') if not isinstance(n, list) or n[0] not in ('filled_polygon', 'fill_segments')]
                 assert settings(a) == settings(b)
                 errors = dict(collections.Counter(v['type'] for v in drc['violations'] if v['severity']=='error'))
-                assert errors == ({} if direction == 'downward' else {'starved_thermal': 1})
+                assert errors == ({} if direction in ('downward', 'both') else {'starved_thermal': 1})
                 assert len(drc['unconnected_items']) == 1
                 assert all('[Net-(LO(Q)1-Pad1)]' in item['description'] for item in drc['unconnected_items'][0]['items'])
                 row.update(errors=dict(collections.Counter(v['type'] for v in drc['violations'] if v['severity']=='error')), opens=len(drc['unconnected_items']), engine=json.loads((directory / 'engine.json').read_text()))
@@ -90,5 +92,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--out', type=pathlib.Path, required=True)
     parser.add_argument('--repeats', type=int, default=3)
+    parser.add_argument('--combined', action='store_true', help='compare left-only against both known existing spokes')
     args = parser.parse_args()
-    run(args.out.resolve(), args.repeats)
+    run(args.out.resolve(), args.repeats, args.combined)

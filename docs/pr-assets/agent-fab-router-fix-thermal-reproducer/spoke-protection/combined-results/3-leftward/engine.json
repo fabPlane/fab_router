@@ -1,0 +1,119 @@
+{
+  "mode": "protected",
+  "metadata": {
+    "net": "GND",
+    "layer": "F.Cu",
+    "centre_x_nm": 80264000,
+    "pad_bottom_nm": 131572000,
+    "thermal_gap_nm": 508000,
+    "bridge_width_nm": 508000,
+    "min_thickness_nm": 254000,
+    "native_clearance_nm": 254000,
+    "manual_direction": "downward",
+    "fixture_specific": true,
+    "direction": "leftward",
+    "pad_box_nm": {
+      "x0": 79692500,
+      "y0": 131064000,
+      "x1": 80835500,
+      "y1": 131572000
+    }
+  },
+  "engineClearanceNm": 200000,
+  "nativeBoxes": [
+    {
+      "x0": 78876500,
+      "x1": 79746500,
+      "y0": 131010000,
+      "y1": 131626000
+    }
+  ],
+  "guards": [
+    {
+      "id": 8,
+      "sheet": 0,
+      "scope": "track",
+      "kind": 1,
+      "net": 0,
+      "shape": {
+        "kind": "box",
+        "box": {
+          "x0": 788765,
+          "x1": 797465,
+          "y0": -1316260,
+          "y1": -1310100
+        }
+      }
+    }
+  ],
+  "before": {
+    "violations": [],
+    "incompletes": [
+      {
+        "net": 1,
+        "from": 2,
+        "to": 3,
+        "airlineLu": 60000
+      }
+    ],
+    "counts": {
+      "violations": 0,
+      "incompletes": 1
+    }
+  },
+  "report": {
+    "passes": 1,
+    "attempted": 1,
+    "completed": 1,
+    "incompleteBefore": 1,
+    "incompleteAfter": 0,
+    "added": {
+      "tracks": 3,
+      "barrels": 2
+    },
+    "ripped": 0,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "complete",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": false,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "angleMode": "45"
+    },
+    "wallClockMs": 6,
+    "perNet": [
+      {
+        "net": "Net-(U1-Pad12)",
+        "incomplete": 0
+      }
+    ]
+  },
+  "after": {
+    "violations": [],
+    "incompletes": [],
+    "counts": {
+      "violations": 0,
+      "incompletes": 0
+    }
+  }
+}
