@@ -1,0 +1,43 @@
+{
+  "rows": [
+    {
+      "net": 4,
+      "before": 20,
+      "after": 30,
+      "checksBefore": 6165,
+      "checksAfter": 14499,
+      "paths": 0
+    },
+    {
+      "net": 9,
+      "before": 54,
+      "after": 78,
+      "checksBefore": 15018,
+      "checksAfter": 34355,
+      "paths": 0
+    },
+    {
+      "net": 10,
+      "before": 54,
+      "after": 78,
+      "checksBefore": 15010,
+      "checksAfter": 34341,
+      "paths": 0
+    },
+    {
+      "net": 11,
+      "before": 51,
+      "after": 72,
+      "checksBefore": 14198,
+      "checksAfter": 31850,
+      "paths": 0
+    }
+  ],
+  "repeatParity": true,
+  "controls": {
+    "missing-run": "rejected",
+    "changed-node": "rejected",
+    "false-path": "rejected",
+    "changed-work": "rejected"
+  }
+}
