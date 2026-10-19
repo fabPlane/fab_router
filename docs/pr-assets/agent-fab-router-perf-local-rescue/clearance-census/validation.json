@@ -1,0 +1,25 @@
+{
+  "replay_supervisors": [
+    0,
+    0,
+    0
+  ],
+  "checks_supervisor": 0,
+  "observer_checks_supervisor": 0,
+  "replays": 3,
+  "independent_prepare_byte_identical": true,
+  "replay_corruption_controls_rejected": 6,
+  "source_corruption_controls_rejected": 3,
+  "production_tests": {
+    "pass": 912,
+    "fail": 0,
+    "assertions": 399733,
+    "seconds": 335.48
+  },
+  "typecheck": "pass",
+  "layer_violations": 0,
+  "observer_typecheck": "pass",
+  "observer_layer_violations": 0,
+  "new_native_benchmark": false,
+  "speed_claim": false
+}
