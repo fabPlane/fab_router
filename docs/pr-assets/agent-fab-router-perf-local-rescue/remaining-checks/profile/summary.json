@@ -1,0 +1,834 @@
+{
+  "scope": "Sampled self time below all recoverRemaining calls; normal route excluded; twenty same-state replays, not twenty independent full routes; no speed/allocation claim",
+  "profile_sha256": "33a126f62ed52c066c1555a623003f269da6206f0b176b231f860a40314f975a",
+  "measurements_sha256": "c0557f48f326b796cf166f4d08561432b4cda2fd59b5e68e1dda5f216db6821c",
+  "total_samples": 26201,
+  "recovery_samples": 12730,
+  "recovery_sampled_us": 13881955,
+  "replay_median_s": 0.6978763425000006,
+  "replay_p95_s": 0.7454399980000016,
+  "rows": [
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/onboard.ts",
+      "function": "withinRim",
+      "sampled_us": 2906051,
+      "percent": 20.93401829929574
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "collect",
+      "sampled_us": 2286198,
+      "percent": 16.46884750742961
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "test",
+      "sampled_us": 1238992,
+      "percent": 8.925198215957336
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "sweepClear",
+      "sampled_us": 845843,
+      "percent": 6.09311152499774
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "coreOf",
+      "sampled_us": 740575,
+      "percent": 5.334803347223067
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "hitBlocks",
+      "sampled_us": 637377,
+      "percent": 4.591406613837893
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+      "function": "simplifyCollinear",
+      "sampled_us": 415150,
+      "percent": 2.9905730136713453
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+      "function": "dop8OfPts",
+      "sampled_us": 371738,
+      "percent": 2.677850490078667
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/legalise.ts",
+      "function": "legaliseShaped",
+      "sampled_us": 366060,
+      "percent": 2.63694847015424
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "closerConvex",
+      "sampled_us": 358648,
+      "percent": 2.5835554142049877
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "cross",
+      "sampled_us": 349843,
+      "percent": 2.5201277485772
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "shapesOf",
+      "sampled_us": 335487,
+      "percent": 2.41671291975806
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "dist2PtSeg",
+      "sampled_us": 326025,
+      "percent": 2.34855249134578
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "push",
+      "sampled_us": 283194,
+      "percent": 2.040015257217013
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/legalise.ts",
+      "function": "legaliseTrail",
+      "sampled_us": 253053,
+      "percent": 1.8228916604325542
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/legalise.ts",
+      "function": "shapeVariants",
+      "sampled_us": 217381,
+      "percent": 1.5659249723832127
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "segsIntersect",
+      "sampled_us": 176919,
+      "percent": 1.2744530579446482
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "dist2Pts",
+      "sampled_us": 173453,
+      "percent": 1.249485393087645
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts",
+      "function": "check",
+      "sampled_us": 156694,
+      "percent": 1.1287603223033067
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+      "function": "snap45",
+      "sampled_us": 146483,
+      "percent": 1.0552044002447782
+    },
+    {
+      "url": "",
+      "function": "filter",
+      "sampled_us": 105886,
+      "percent": 0.7627600003025511
+    },
+    {
+      "url": "",
+      "function": "fill",
+      "sampled_us": 105862,
+      "percent": 0.7625871139907887
+    },
+    {
+      "url": "",
+      "function": "Set",
+      "sampled_us": 87330,
+      "percent": 0.6290900669250117
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "onSeg",
+      "sampled_us": 80669,
+      "percent": 0.5811069118146543
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "dist2SegSeg",
+      "sampled_us": 73955,
+      "percent": 0.5327419660991553
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "bucket",
+      "sampled_us": 68595,
+      "percent": 0.49413068980557856
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/visibility-recovery.ts",
+      "function": "proposeVisibility",
+      "sampled_us": 53580,
+      "percent": 0.3859686910092995
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "itemOf",
+      "sampled_us": 49605,
+      "percent": 0.35733439562367114
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "dist2SegPoly",
+      "sampled_us": 45008,
+      "percent": 0.3242194633248703
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "connectivity",
+      "sampled_us": 40912,
+      "percent": 0.2947135327841071
+    },
+    {
+      "url": "",
+      "function": "sort",
+      "sampled_us": 38342,
+      "percent": 0.2762002902328959
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "ignoreOf",
+      "sampled_us": 36606,
+      "percent": 0.263694847015424
+    },
+    {
+      "url": "",
+      "function": "sign",
+      "sampled_us": 25230,
+      "percent": 0.18174673524010126
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "allocSlot",
+      "sampled_us": 24418,
+      "percent": 0.17589741502547732
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "add",
+      "sampled_us": 22087,
+      "percent": 0.15910583199556547
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "join",
+      "sampled_us": 21588,
+      "percent": 0.15551123743017464
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "pointInRing",
+      "sampled_us": 21365,
+      "percent": 0.1539048354500501
+    },
+    {
+      "url": "",
+      "function": "from",
+      "sampled_us": 17704,
+      "percent": 0.1275324693099783
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "pushBlocking",
+      "sampled_us": 17310,
+      "percent": 0.12469425235854749
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "drillOfPad",
+      "sampled_us": 14997,
+      "percent": 0.10803233406245735
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "",
+      "sampled_us": 14637,
+      "percent": 0.10543903938602307
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "anyCloser",
+      "sampled_us": 14579,
+      "percent": 0.10502123079926423
+    },
+    {
+      "url": "",
+      "function": "stringify",
+      "sampled_us": 12968,
+      "percent": 0.0934162371222209
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/visibility-recovery.ts",
+      "function": "add",
+      "sampled_us": 12657,
+      "percent": 0.09117591866563464
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "checkSpacing",
+      "sampled_us": 12356,
+      "percent": 0.08900763617228266
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "copperOn",
+      "sampled_us": 11900,
+      "percent": 0.08572279624879925
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "insertItem",
+      "sampled_us": 10924,
+      "percent": 0.07869208623713303
+    },
+    {
+      "url": "",
+      "function": "every",
+      "sampled_us": 10481,
+      "percent": 0.0755008930658542
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/clear.ts",
+      "function": "drillShape",
+      "sampled_us": 10383,
+      "percent": 0.0747949406261582
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "",
+      "sampled_us": 9207,
+      "percent": 0.06632351134980628
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts",
+      "function": "expand",
+      "sampled_us": 8925,
+      "percent": 0.06429209718659944
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "padBoundsOn",
+      "sampled_us": 8770,
+      "percent": 0.06317553975646802
+    },
+    {
+      "url": "",
+      "function": "map",
+      "sampled_us": 7741,
+      "percent": 0.05576303913966008
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "padShapesOn",
+      "sampled_us": 7551,
+      "percent": 0.05439435583820866
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "insertRaw",
+      "sampled_us": 7233,
+      "percent": 0.0521036122073584
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "subjectsOf",
+      "sampled_us": 6647,
+      "percent": 0.047882304761829295
+    },
+    {
+      "url": "",
+      "function": "cloneObject",
+      "sampled_us": 5580,
+      "percent": 0.04019606748473108
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "unitsOf",
+      "sampled_us": 5195,
+      "percent": 0.0374226829002111
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "find",
+      "sampled_us": 5091,
+      "percent": 0.036673508882574535
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "orient",
+      "sampled_us": 4768,
+      "percent": 0.03434674727010713
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "rimLegPoints",
+      "sampled_us": 4655,
+      "percent": 0.03353274088555971
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/pour.ts",
+      "function": "convexTouchesPour",
+      "sampled_us": 4259,
+      "percent": 0.03068011674148202
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "insertDrilled",
+      "sampled_us": 4228,
+      "percent": 0.030456805255455736
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/visibility-recovery.ts",
+      "function": "",
+      "sampled_us": 4217,
+      "percent": 0.030377565695898022
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "placedPoints",
+      "sampled_us": 4208,
+      "percent": 0.030312733328987165
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "createLattice",
+      "sampled_us": 4208,
+      "percent": 0.030312733328987165
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "transformShape",
+      "sampled_us": 4132,
+      "percent": 0.029765260008406597
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "tryRecoveryTransaction",
+      "sampled_us": 4130,
+      "percent": 0.02975085281575974
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+      "function": "boxOf",
+      "sampled_us": 4099,
+      "percent": 0.029527541329733457
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "",
+      "sampled_us": 4019,
+      "percent": 0.028951253623859176
+    },
+    {
+      "url": "",
+      "function": "push",
+      "sampled_us": 3978,
+      "percent": 0.028655906174598608
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "",
+      "sampled_us": 3780,
+      "percent": 0.02722959410255976
+    },
+    {
+      "url": "",
+      "function": "Map",
+      "sampled_us": 3659,
+      "percent": 0.026357958947424914
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "hits",
+      "sampled_us": 3409,
+      "percent": 0.02455705986656779
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "trackLegShape",
+      "sampled_us": 3371,
+      "percent": 0.0242833232062775
+    },
+    {
+      "url": "",
+      "function": "performIteration",
+      "sampled_us": 3369,
+      "percent": 0.024268916013630647
+    },
+    {
+      "url": "",
+      "function": "hypot",
+      "sampled_us": 3208,
+      "percent": 0.023109137005558653
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "rimLegCount",
+      "sampled_us": 3114,
+      "percent": 0.022431998951156374
+    },
+    {
+      "url": "",
+      "function": "includes",
+      "sampled_us": 3071,
+      "percent": 0.02212224430924895
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts",
+      "function": "scheduleRecovery",
+      "sampled_us": 3011,
+      "percent": 0.02169002852984324
+    },
+    {
+      "url": "",
+      "function": "some",
+      "sampled_us": 2983,
+      "percent": 0.02148832783278724
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "evaluateCopper",
+      "sampled_us": 2955,
+      "percent": 0.02128662713573124
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+      "function": "dop8Of",
+      "sampled_us": 2511,
+      "percent": 0.018088230368128986
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/visibility-recovery.ts",
+      "function": "boxCorners",
+      "sampled_us": 2305,
+      "percent": 0.016604289525502712
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "requiredConnectionsOf",
+      "sampled_us": 2301,
+      "percent": 0.016575475140209
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/exact.ts",
+      "function": "closer",
+      "sampled_us": 2292,
+      "percent": 0.016510642773298143
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "copperWithinRegion",
+      "sampled_us": 2249,
+      "percent": 0.016200888131390714
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/exact.ts",
+      "function": "anyCloser",
+      "sampled_us": 2240,
+      "percent": 0.01613605576447986
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/exact.ts",
+      "function": "touchingConvex",
+      "sampled_us": 2213,
+      "percent": 0.015941558663747288
+    },
+    {
+      "url": "",
+      "function": "flatIntoArrayWithCallback",
+      "sampled_us": 2147,
+      "percent": 0.015466121306401006
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "rotatePt",
+      "sampled_us": 2057,
+      "percent": 0.014817797637292442
+    },
+    {
+      "url": "",
+      "function": "Symbol",
+      "sampled_us": 2040,
+      "percent": 0.014695336499794157
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "inside",
+      "sampled_us": 2018,
+      "percent": 0.014536857380678728
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "has",
+      "sampled_us": 1983,
+      "percent": 0.014284731509358732
+    },
+    {
+      "url": "",
+      "function": "forEach",
+      "sampled_us": 1968,
+      "percent": 0.014176677564507306
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "medianDiagonal",
+      "sampled_us": 1897,
+      "percent": 0.013665222225543882
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "boundsOfShapes",
+      "sampled_us": 1894,
+      "percent": 0.013643611436573597
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/predicates.ts",
+      "function": "dot",
+      "sampled_us": 1843,
+      "percent": 0.013276228024078742
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "barrelShapesOn",
+      "sampled_us": 1633,
+      "percent": 0.011763472796158754
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "copper",
+      "sampled_us": 1275,
+      "percent": 0.009184585312371348
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "marginOf",
+      "sampled_us": 1228,
+      "percent": 0.008846016285170209
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "trackLegBounds",
+      "sampled_us": 1221,
+      "percent": 0.00879559111090621
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/distance.ts",
+      "function": "dist2PtPoly",
+      "sampled_us": 1203,
+      "percent": 0.008665926377084495
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "union",
+      "sampled_us": 1195,
+      "percent": 0.008608297606497067
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "maybeRebuild",
+      "sampled_us": 1187,
+      "percent": 0.00855066883590964
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "retained",
+      "sampled_us": 1186,
+      "percent": 0.008543465239586212
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/pour.ts",
+      "function": "shapeTouchesPour",
+      "sampled_us": 1176,
+      "percent": 0.008471429276351925
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "barrelSheets",
+      "sampled_us": 1167,
+      "percent": 0.00840659690944107
+    },
+    {
+      "url": "",
+      "function": "slice",
+      "sampled_us": 1166,
+      "percent": 0.008399393313117641
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "drilledSheets",
+      "sampled_us": 1164,
+      "percent": 0.008384986120470783
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts",
+      "function": "same",
+      "sampled_us": 1151,
+      "percent": 0.008291339368266214
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/journal.ts",
+      "function": "rewind",
+      "sampled_us": 1116,
+      "percent": 0.008039213496946217
+    },
+    {
+      "url": "",
+      "function": "reduce",
+      "sampled_us": 1107,
+      "percent": 0.007974381130035358
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/profile.ts",
+      "function": "",
+      "sampled_us": 1106,
+      "percent": 0.00796717753371193
+    },
+    {
+      "url": "",
+      "function": "find",
+      "sampled_us": 1096,
+      "percent": 0.007895141570477646
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/path.ts",
+      "function": "sign",
+      "sampled_us": 1087,
+      "percent": 0.007830309203566789
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recover-remaining.ts",
+      "function": "",
+      "sampled_us": 1053,
+      "percent": 0.00758538692857022
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "padPlacement",
+      "sampled_us": 1053,
+      "percent": 0.00758538692857022
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "gridOf",
+      "sampled_us": 1045,
+      "percent": 0.007527758157982791
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts",
+      "function": "",
+      "sampled_us": 1038,
+      "percent": 0.007477332983718791
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "place",
+      "sampled_us": 1037,
+      "percent": 0.007470129387395363
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/shapes.ts",
+      "function": "drillOfBarrel",
+      "sampled_us": 1033,
+      "percent": 0.007441315002101649
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/layout/spacing.ts",
+      "function": "get",
+      "sampled_us": 1022,
+      "percent": 0.007362075442543936
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/pieces.ts",
+      "function": "cleanRing",
+      "sampled_us": 1008,
+      "percent": 0.007261225094015936
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/index.ts",
+      "function": "analyse",
+      "sampled_us": 1008,
+      "percent": 0.007261225094015936
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/geom/bounds.ts",
+      "function": "boxExpand",
+      "sampled_us": 997,
+      "percent": 0.007181985534458223
+    },
+    {
+      "url": "",
+      "function": "has",
+      "sampled_us": 992,
+      "percent": 0.007145967552841081
+    },
+    {
+      "url": "",
+      "function": "min",
+      "sampled_us": 987,
+      "percent": 0.007109949571223938
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/journal.ts",
+      "function": "createJournal",
+      "sampled_us": 984,
+      "percent": 0.007088338782253653
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/connect.ts",
+      "function": "sheetsOf",
+      "sampled_us": 965,
+      "percent": 0.006951470452108511
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/route/profile.ts",
+      "function": "resolveProfile",
+      "sampled_us": 958,
+      "percent": 0.006901045277844511
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "keyOf",
+      "sampled_us": 944,
+      "percent": 0.006800194929316512
+    },
+    {
+      "url": "",
+      "function": "get",
+      "sampled_us": 941,
+      "percent": 0.006778584140346226
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/drc/spacing.ts",
+      "function": "list",
+      "sampled_us": 924,
+      "percent": 0.006656123002847942
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "rebuild",
+      "sampled_us": 923,
+      "percent": 0.006648919406524513
+    },
+    {
+      "url": "file:///home/hyper/bench/wt/fr-perf/src/lattice/grid.ts",
+      "function": "buildLattice",
+      "sampled_us": 880,
+      "percent": 0.006339164764617087
+    },
+    {
+      "url": "",
+      "function": "UnionFind",
+      "sampled_us": 872,
+      "percent": 0.006281535994029659
+    }
+  ]
+}

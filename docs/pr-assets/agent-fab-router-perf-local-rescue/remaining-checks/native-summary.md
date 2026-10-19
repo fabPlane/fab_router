@@ -33,8 +33,9 @@ has no production setting and is not enabled by a downstream engine pin bump.
 Required final checks pass: typecheck; 65 files / zero layer violations; 873 tests,
 zero failures, 398997 assertions in 276.31 seconds. A prior full check also passed
 872 tests before adding the real adapter regression; its targeted run passes.
-No executable TypeScript changes follow the final full check. Report scripts are
-separately syntax-checked and the comparison executed successfully. The inspected
+No routing implementation or regression-test edits follow the final full check.
+The later profiling runner is separately typechecked and its twenty replays
+verified against native-checked session hashes. Report scripts are separately syntax-checked and the comparison executed successfully. The inspected
 PNG regenerates byte-for-byte. Prior exploratory 3-repeat batches remain in cycle
 scratch and have identical corresponding session hashes; no routing measurements
 were discarded. Two candidate launch attempts encountered the benchmark's exclusive

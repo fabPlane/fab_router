@@ -152,8 +152,9 @@ has no production setting and is not enabled by a downstream engine pin bump.
 Required final checks pass: typecheck; 65 files / zero layer violations; 873 tests,
 zero failures, 398997 assertions in 276.31 seconds. A prior full check also passed
 872 tests before adding the real adapter regression; its targeted run passes.
-No executable TypeScript changes follow the final full check. Report scripts are
-separately syntax-checked and the comparison executed successfully. The inspected
+No routing implementation or regression-test edits follow the final full check.
+The later profiling runner is separately typechecked and its twenty replays
+verified against native-checked session hashes. Report scripts are separately syntax-checked and the comparison executed successfully. The inspected
 PNG regenerates byte-for-byte. Prior exploratory 3-repeat batches remain in cycle
 scratch and have identical corresponding session hashes; no routing measurements
 were discarded. Two candidate launch attempts encountered the benchmark's exclusive
@@ -169,3 +170,74 @@ The remaining work includes via transitions and pour/track attachment, plus full
 route-budget/abort propagation and avoiding recovery setup on completed boards.
 Full slow acceptance with recovery enabled is still required before production
 integration; the current public pipeline remains unchanged.
+
+## Sampled recovery CPU profile
+
+One fresh normal all-net route establishes the six-open control, followed by twenty
+post-pass replays from identical normal copper. All twenty after-session hashes
+match the native-checked four-open session; each replay restores the before-session
+exactly. The Journal's id allocator remains monotonic; only copper/session state is
+restored. Each call builds a fresh live index, and no recorded route is searched or
+inserted. These are not twenty independent normal routes or native checks.
+
+The profile has 26201 total samples; 12730 are below
+`recoverRemaining` and the summary weights those by `timeDeltas` (normal routing
+excluded). Recovery replay median/p95 is 0.697876/0.745440s under sampling.
+This is sampled self time, not a precise per-function timer, allocation count or
+speed comparison. Shared-host profiling overlaps a pinned large-input run.
+
+| Function / module | Recovery sampled self time share |
+| --- | ---: |
+| `withinRim` / `src/geom/onboard.ts` | 20.93% |
+| `collect` / `src/lattice/grid.ts` | 16.47% |
+| `test` / `src/lattice/grid.ts` | 8.93% |
+| `sweepClear` / `src/route/clear.ts` | 6.09% |
+| `coreOf` / `src/geom/distance.ts` | 5.33% |
+| `hitBlocks` / `src/route/clear.ts` | 4.59% |
+| `simplifyCollinear` / `src/geom/path.ts` | 2.99% |
+| `dop8OfPts` / `src/geom/bounds.ts` | 2.68% |
+| `legaliseShaped` / `src/route/legalise.ts` | 2.64% |
+| `closerConvex` / `src/route/clear.ts` | 2.58% |
+
+[Profile summary](remaining-checks/profile/summary.json),
+[raw profile, gzip](remaining-checks/profile/recovery.cpuprofile.gz),
+[replays](remaining-checks/profile/replays.json). The raw profile SHA-256 is in
+the summary. No geometry/index micro-optimisation is adopted here; production
+budget/cancellation integration remains the next priority.
+
+```bash
+mkdir -p /tmp/recovery-profile
+taskset -c 12-19 nice -n 10 timeout 300 bun --cpu-prof --cpu-prof-name=recovery.cpuprofile --cpu-prof-dir=/tmp/recovery-profile docs/pr-assets/agent-fab-router-perf-local-rescue/run-remaining-profile.ts /tmp/recovery-profile/replays.json
+python3 docs/pr-assets/agent-fab-router-perf-local-rescue/summarise-remaining-profile.py /tmp/recovery-profile/recovery.cpuprofile /tmp/recovery-profile/replays.json /tmp/recovery-profile/summary.json
+```
+
+## Larger input limits
+
+Three repeats per mode/input, same input hashes, settings, host and cores 12–19.
+Normal routing is limited to two passes / 120 seconds; optimisation and fanout
+are disabled. These are engine-only bounded runs, not native DRC or full slow
+acceptance. The candidate intentionally skips recovery after a normal timeout.
+
+| Input | Normal incomplete each | Candidate incomplete each | Median / p95 s normal → candidate | Added exact violations each | Vias median normal → candidate | Length mm median normal → candidate | Normal / candidate timeouts |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: |
+| Dense6 | [191, 191, 191] | [191, 191, 191] | 120.060 / 120.061 → 120.077 / 120.078 | 0 | 266 → 266 | 2027.648 → 2027.648 | 3 / 3 |
+| L2 | [29, 29, 29] | [24, 24, 24] | 22.410 / 22.723 → 26.977 / 31.036 | 0 | 51 → 51 | 744.762 → 992.605 | 0 / 0 |
+| L3 | [154, 154, 154] | [154, 154, 154] | 120.026 / 120.026 → 120.035 / 120.042 | 0 | 91 → 91 | 1624.333 → 1624.333 | 3 / 3 |
+
+L2 closes five more links after its two normal passes. L3 and Dense6 reach the
+normal deadline in every repeat, leaving 154 and 191 engine links respectively;
+recovery is skipped on all six candidate timeout runs. There is no recovery,
+completion or native-safety claim for those stress inputs. Thus this experiment
+does not satisfy the large-input/slow-acceptance gate for production integration.
+L2 sessions are deterministic within each mode and differ when recovery runs.
+All six L3 sessions match exactly. Dense6 has distinct session hashes within
+each mode despite the same incomplete/via counts and essentially identical
+lengths (floating sums vary around 1e-12 mm). No byte/geometry invariance claim
+is made for timed Dense6 runs; every observed session hash is retained.
+
+[Complete bounded-run records](remaining-checks/large-measurements.json),
+[grouped summary](remaining-checks/large-summary.json). No route attempts are
+dropped; all 18 records are retained. The initial report export stopped at an
+unsupported Dense6 session-determinism assertion; the report now records that
+variation. No routing measurements were discarded. Normal routing and source implementation
+remain unchanged, and no production or downstream pin change is adopted.
