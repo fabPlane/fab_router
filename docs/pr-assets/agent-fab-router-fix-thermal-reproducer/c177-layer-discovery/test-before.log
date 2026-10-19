@@ -1,0 +1,38 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+FF
+======================================================================
+FAIL: test_same_layer_budget_and_original_exclusion (__main__.Layers.test_same_layer_budget_and_original_exclusion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c177-layer-discovery/test_layers.py", line 10, in test_same_layer_budget_and_original_exclusion
+    self.assertEqual(m.single.rank_segments(n,{'original'},e,1),['back'])
+AssertionError: Lists differ: ['front'] != ['back']
+
+First differing element 0:
+'front'
+'back'
+
+- ['front']
++ ['back']
+
+======================================================================
+FAIL: test_unknown_zone_fails_closed (__main__.Layers.test_unknown_zone_fails_closed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/c177-layer-discovery/test_layers.py", line 13, in test_unknown_zone_fails_closed
+    self.assertEqual(m.single.rank_segments(n,set(),[dict(type='starved_thermal',items=[dict(uuid='p',pos=dict(x=0,y=0))])],8),[])
+AssertionError: Lists differ: ['t'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'t'
+
+- ['t']
++ []
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+FAILED (failures=2)
