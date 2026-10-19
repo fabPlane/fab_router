@@ -314,3 +314,32 @@ bun run typecheck && bun run check:layers && bun run test
 
 `length-results/` retains polygon vertices, measurements, source/input hashes,
 the actual missing-geometry image, area-control logs, and verification log.
+
+### Filled polygon components (cycle 81)
+
+`components.py` tests whether the entire 0.508 mm wide, 0.508 mm long
+strip lies in one stored filled polygon, including its holes, and whether that
+same polygon has positive area outside the pad bounding box expanded by 1 mm.
+It reuses seven hash-verified boards. Downward-guard outputs retain both down
+and left strips in the main filled polygon (three repeats); leftward-guard
+outputs retain only left (three repeats). The input retains both.
+This supplies component evidence beyond local coverage, without defining a
+native spoke criterion, required plane size, effective-rule resolver, or general
+thermal safety gate. No new route, refill, DRC run, or frozen benchmark ran.
+
+Four controls pass in each of three repeats. An aggregate-only mutation that
+combines strip coverage and remote copper from different polygons passes only
+two: it falsely accepts detached and slit-separated copper. Holes and input
+immutability are checked. The first test invocation failed because the new
+helper was absent; mutation results supply the behavioral comparison, not a
+historical engine regression.
+
+```bash
+python3 -B docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/run_component_controls.py --out /tmp/thermal-component-controls
+PYTHONDONTWRITEBYTECODE=1 taskset -c 20-25 nice -n 10 timeout 90 /usr/bin/python3 docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/components.py --out /tmp/thermal-components
+rsvg-convert /tmp/thermal-components/comparison.svg -o /tmp/thermal-components/comparison.png
+bun run typecheck && bun run check:layers && bun run test
+```
+
+`component-results/` retains raw controls, polygon observations, source/input
+hashes, engine byte-identity audit, checks, and actual filled-copper rendering.
