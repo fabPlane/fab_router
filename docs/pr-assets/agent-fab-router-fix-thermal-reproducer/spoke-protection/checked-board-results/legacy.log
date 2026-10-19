@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/checked-board.py", line 97, in <module>
+    run(args.out.resolve(), not args.legacy)
+  File "/home/hyper/bench/wt/fr-bugs/docs/pr-assets/agent-fab-router-fix-thermal-reproducer/spoke-protection/checked-board.py", line 88, in run
+    assert all(row['accepted'] == (row['variant'] == 'unchanged') for row in rows)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
