@@ -112,3 +112,17 @@ for mode in control raw; do
     "$source" "/tmp/normal-results-new/fingerprint-$mode.json"
 done
 ```
+
+Full **unchanged-production** native verification, same 26 cases × 3 repeats and machine/cores, against the prior cycle control. All 78 sessions, quality outcomes, via counts and lengths match exactly. Production source hashes, inputs, settings, runtime, checker and order match.
+
+| Native metric | Prior control | Current unchanged production |
+| --- | ---: | ---: |
+| Passed / valid 3-of-3 cases | 39/78 / 13/26 | 39/78 / 13/26 |
+| Opens | 120 | 120 |
+| New native errors | 27 | 27 |
+| Attempt median / p95 seconds | 1.118 / 20.078 | 1.106 / 16.966 |
+| Total route seconds | 372.761 | 382.816 |
+
+Existing thermal errors remain unresolved: **not native DRC clean**. No speed gain is claimed. [All per-case median/p95, quality, via and length results](https://github.com/fabPlane/fab_router/blob/agent/fab-router-perf-local-rescue/docs/pr-assets/agent-fab-router-perf-local-rescue/normal-shaping/native-tables.md).
+
+Native reproduction is the unchanged-production command in the PR body; comparison helper: `python3 docs/pr-assets/agent-fab-router-perf-local-rescue/compare-normal-native.py BEFORE AFTER SOURCE UNUSED_OUTPUT`.
