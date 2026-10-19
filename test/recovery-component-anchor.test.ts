@@ -1,7 +1,7 @@
 import {test,expect} from 'bun:test';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {readDsn,applySes,requiredConnections,checkDrc,writeSes} from '../src/api.ts';
+import {route,readDsn,applySes,requiredConnections,checkDrc,writeSes} from '../src/api.ts';
 import {buildLattice} from '../src/lattice/index.ts';
 import {connectivity} from '../src/drc/connect.ts';
 import {createJournal} from '../src/route/journal.ts';
@@ -55,4 +55,40 @@ test('public residual recovery closes through bounded alternate anchors',()=>{
  for(const t of tracks)expect(l.tracks.some(v=>JSON.stringify(v)===t)).toBe(true);
  if(requiredConnections(l).length)expect(writeSes(l)).toBe(before);
  else expect(requiredConnections(l)).toEqual([]);
+});
+
+
+test('public alternate-anchor recovery shares item capacity and reports one original connection',()=>{
+ const l=layout(),before=writeSes(l),tracks=l.tracks.length,barrels=l.barrels.length;
+ const events:{ok:boolean;from:string;to:string}[]=[],logs:string[]=[];
+ const result=route(l,{...fixture.settings,maxPasses:0,optimizerEnabled:false,fanoutEnabled:false,maxItems:1,localRecovery:true},
+  {onConnection:event=>events.push(event),onLog:(_level,message)=>logs.push(message)});
+ expect(result.incompleteBefore).toBe(1);expect(result.incompleteAfter).toBe(0);
+ expect(result.stoppedBy).toBe('complete');expect(result.attempted).toBe(1);expect(result.completed).toBe(1);
+ expect(result.added).toEqual({tracks:1,barrels:0});expect(l.tracks).toHaveLength(tracks+1);expect(l.barrels).toHaveLength(barrels);
+ expect(writeSes(l)).not.toBe(before);expect(checkDrc(l).counts.violations).toBe(0);
+ expect(events).toHaveLength(1);expect(events[0]).toMatchObject({ok:true,from:String(fixture.target.from),to:String(fixture.target.to)});
+ const target=JSON.parse(logs.find(message=>message.startsWith('local-recovery result '))!.slice('local-recovery result '.length));
+ expect(target.pointRecovery.enumeration).toBe(124);expect(target.pointRecovery.attempts).toHaveLength(2);
+});
+
+test('public alternate-anchor fixture respects opt-in, zero items, ignored nets, route deadline and hook cancellation',()=>{
+ for(const mode of ['disabled','zero-items','ignored','deadline','hook-abort']as const){
+  const l=layout(),before=writeSes(l),controller=new AbortController(),net=l.nets.find(n=>n.id===fixture.target.net)!;
+  const settings={...fixture.settings,maxPasses:0,optimizerEnabled:false,fanoutEnabled:false};
+  delete settings.localRecovery;
+  if(mode!=='disabled')settings.localRecovery=true;
+  if(mode==='zero-items')settings.maxItems=0;
+  if(mode==='ignored')settings.ignoreNetGroups=[l.netGroups.find(g=>g.id===net.group)!.name];
+  if(mode==='deadline')settings.timeBudgetMs=0;
+  let events=0,attempts=0;
+  const result=route(l,settings,{signal:controller.signal,onConnection:()=>events++,onLog:(_level,message)=>{
+   if(message.startsWith('local-recovery attempt ')){attempts++;if(mode==='hook-abort')controller.abort();}
+  }});
+  expect(writeSes(l)).toBe(before);expect(requiredConnections(l)).toHaveLength(1);
+  expect(checkDrc(l).counts.violations).toBe(0);expect(result.added).toEqual({tracks:0,barrels:0});expect(events).toBe(0);
+  expect(attempts).toBe(mode==='hook-abort'?1:0);
+  if(mode==='hook-abort'){expect(result.aborted).toBe(true);expect(result.stoppedBy).toBe('abort');}
+  if(mode==='deadline'){expect(result.timedOut).toBe(true);expect(result.stoppedBy).toBe('timeBudget');}
+ }
 });
