@@ -20,6 +20,8 @@ def read_json(path):
 s = read_json(a.results/'summary.json')
 track_limit = s.get('track_limit', 1)
 assert type(track_limit) is int and 1 <= track_limit <= 8
+target_pad_uuid = s.get('target_pad_uuid')
+assert target_pad_uuid is None or (type(target_pad_uuid) is str and s.get('all_targets') is True)
 sha = lambda data: hashlib.sha256(data).hexdigest()
 for name, expected in json.loads((a.results/'manifest.json').read_text()).items():
     assert sha((a.results/name).read_bytes()) == expected
@@ -57,7 +59,11 @@ for repeat in s['rows']:
     assert repeat['pad_uuid'] in targets
     if s.get('all_targets'):
         assert repeat['pad_uuid'] == targets[repeat['target_index']]
-        assert sorted(r['pad_uuid'] for r in s['rows'] if r['repeat'] == repeat['repeat']) == targets
+        expected_targets = targets
+        if target_pad_uuid is not None:
+            assert target_pad_uuid in targets
+            expected_targets = [target_pad_uuid]
+        assert sorted(r['pad_uuid'] for r in s['rows'] if r['repeat'] == repeat['repeat']) == expected_targets
     pad = pads[repeat['pad_uuid']]
     nearby = generated.geometry.nearby(board, pad, track_limit)
     assert nearby == repeat['nearby']

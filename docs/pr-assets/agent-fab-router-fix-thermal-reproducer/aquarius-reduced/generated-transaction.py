@@ -47,7 +47,10 @@ def main():
     p.add_argument('--all-targets', action='store_true',
                    help='Measure each failing pad independently; allow no safe candidate')
     p.add_argument('--track-limit', type=int, choices=range(1, 9), default=1)
+    p.add_argument('--target-pad-uuid', help='Measure one native-reported failing pad; requires --all-targets')
     a = p.parse_args()
+    if a.target_pad_uuid and not a.all_targets:
+        p.error('--target-pad-uuid requires --all-targets')
     a.out.mkdir(parents=True, exist_ok=False)
     assert native.pcbnew.Version() == '10.0.6'
     native.SRC, native.D, native.TARGET = a.source, a.out, ''
@@ -70,8 +73,12 @@ def main():
                           if error['type'] == 'starved_thermal' for item in error['items']
                           if item['uuid'] in pad_ids})
         assert targets
+        if a.target_pad_uuid:
+            assert a.target_pad_uuid in targets, 'Selected pad is not a native thermal target'
         assert a.all_targets or len(targets) == 1, 'Use --all-targets for multiple failing pads'
         for target_index, target in enumerate(targets):
+            if a.target_pad_uuid and target != a.target_pad_uuid:
+                continue
             pad = pad_ids[target]
             zones = [z for z in board.Zones() if z.GetNetCode() == pad.GetNetCode()
                      and any(z.IsOnLayer(layer) for layer in pad.GetLayerSet().Seq())]
@@ -104,7 +111,7 @@ def main():
         group = [r for r in rows if r['pad_uuid'] == target]
         assert len(group) == 3 and len({r['selected_sha256'] for r in group}) == 1
     (a.out/'summary.json').write_text(json.dumps(dict(production_fix=False,
-        routing_benchmark=False, all_targets=a.all_targets, track_limit=a.track_limit, input_sha256=inputs, rows=rows), indent=2)+'\n')
+        routing_benchmark=False, all_targets=a.all_targets, target_pad_uuid=a.target_pad_uuid, track_limit=a.track_limit, input_sha256=inputs, rows=rows), indent=2)+'\n')
     (a.out/'manifest.json').write_text(json.dumps({
         str(path.relative_to(a.out)): sha(path.read_bytes())
         for path in sorted(a.out.rglob('*')) if path.is_file()

@@ -13,11 +13,15 @@ fixture=json.loads((a.results/'summary.json').read_text())
 assert fixture['all_targets'] and len(fixture['rows'])==3
 assert all(r['accepted'] and r['target_index']==0 for r in fixture['rows'])
 rows=[]
-for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejection','wrong-track-rank','wrong-track-limit'):
+for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejection','wrong-track-rank','wrong-track-limit','unknown-target','selected-target','invalid-target-scope','boolean-target'):
  out=root/('verify-control-'+label)
  shutil.copytree(a.results,out)
  s=json.loads((out/'summary.json').read_text())
  if label=='wrong-track-rank':s['rows'][0]['attempts'][0]['track_rank']=2
+ if label in ('selected-target','invalid-target-scope'):s['target_pad_uuid']=s['rows'][0]['pad_uuid']
+ if label=='invalid-target-scope':s['all_targets']=False
+ if label=='boolean-target':s['target_pad_uuid']=True
+ if label=='unknown-target':s['target_pad_uuid']='not-a-pad'
  if label=='wrong-track-limit':s['track_limit']=True
  if label=='missing-target':s['rows'].pop()
  if label=='duplicate-repeat':s['rows'][1]['repeat']=1
@@ -30,7 +34,7 @@ for label in ('unchanged','missing-target','duplicate-repeat','truncated-rejecti
  (out/'manifest.json').write_text(json.dumps({str(p.relative_to(out)):hashlib.sha256(p.read_bytes()).hexdigest() for p in out.rglob('*') if p.is_file() and p.name!='manifest.json' and p.suffix!='.kicad_prl'}))
  p=subprocess.run(['/usr/bin/python3',str(asset/'verify-generated-transaction.py'),str(out),'--source',str(a.source)],env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'},capture_output=True,text=True,timeout=120)
  (root/f'verify-control-{label}.log').write_text(p.stdout+p.stderr)
- assert (p.returncode==0)==(label=='unchanged'),label
- rows.append(dict(control=label,exit_code=p.returncode,expected_accept=label=='unchanged'))
+ assert (p.returncode==0)==(label in ('unchanged','selected-target')),label
+ rows.append(dict(control=label,exit_code=p.returncode,expected_accept=label in ('unchanged','selected-target')))
 (root/'verify-controls.json').write_text(json.dumps(rows,indent=2)+'\n')
-print('PASS: unchanged accepted; missing target, duplicate repeat, truncated rejection, wrong rank and invalid limit rejected')
+print('PASS: unchanged and selected target accepted; eight forged coverage controls rejected')
