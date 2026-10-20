@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500"><rect width="1200" height="500" fill="#fafafa"/><g font-family="sans-serif" fill="#162235"><text x="40" y="42" font-size="26">Projection reuse: focused engine timings</text><text x="40" y="72" font-size="17">Three alternating pairs per case; seconds; p95 = maximum of three</text>
+<text x="40" y="145" font-size="18">kitspace-aquarius-j4</text>
+<rect x="440" y="158" width="528.8045251153732" height="19" fill="#2675b9"/><line x1="969.0706226056961" y1="156" x2="969.0706226056961" y2="179" stroke="#162235"/><text x="989.0706226056961" y="173" font-size="16">33.471 / 33.488</text>
+<rect x="440" y="184" width="530.0926505844812" height="19" fill="#d75c40"/><line x1="980.0" y1="182" x2="980.0" y2="205" stroke="#162235"/><text x="1000.0" y="199" font-size="16">33.553 / 34.180</text>
+<text x="40" y="250" font-size="18">photon-sprinkler-sprinkler-j3</text>
+<rect x="440" y="263" width="173.71426659071247" height="19" fill="#2675b9"/><line x1="617.3879638604799" y1="261" x2="617.3879638604799" y2="284" stroke="#162235"/><text x="637.3879638604799" y="278" font-size="16">10.995 / 11.228</text>
+<rect x="440" y="289" width="171.3875108063322" height="19" fill="#d75c40"/><line x1="615.3695870069841" y1="287" x2="615.3695870069841" y2="310" stroke="#162235"/><text x="635.3695870069841" y="304" font-size="16">10.848 / 11.100</text>
+<text x="40" y="355" font-size="18">paperino-hw-paperino-shield-j4</text>
+<rect x="440" y="368" width="152.7721348782482" height="19" fill="#2675b9"/><line x1="595.6200853798366" y1="366" x2="595.6200853798366" y2="389" stroke="#162235"/><text x="615.6200853798366" y="383" font-size="16">9.670 / 9.850</text>
+<rect x="440" y="394" width="152.66172368861095" height="19" fill="#d75c40"/><line x1="599.1160475727092" y1="392" x2="599.1160475727092" y2="415" stroke="#162235"/><text x="619.1160475727092" y="409" font-size="16">9.663 / 10.071</text>
+<text x="40" y="467" font-size="17">Blue: control · Orange: candidate · Engine replay excludes native scoring</text></g></svg>

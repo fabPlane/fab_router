@@ -1,0 +1,18 @@
+--- control/src/geom/distance.ts
++++ candidate/src/geom/distance.ts
+@@ -17,10 +17,12 @@
+ /** Squared distance from p to the closed segment a–b. */
+ export function dist2PtSeg(p: Pt, a: Pt, b: Pt): number {
+   if (a.x === b.x && a.y === b.y) return dist2PtPt(p, a);
+-  if (dot(a, b, p) <= 0) return dist2PtPt(p, a);
+-  if (dot(b, a, p) <= 0) return dist2PtPt(p, b);
++  const projection = dot(a, b, p);
++  if (projection <= 0) return dist2PtPt(p, a);
++  const length2 = dist2PtPt(a, b);
++  if (projection >= length2) return dist2PtPt(p, b);
+   const c = cross(a, b, p);
+-  return (c * c) / dist2PtPt(a, b);
++  return (c * c) / length2;
+ }
+ 
+ /** Squared distance between two closed segments (0 when they touch). */
