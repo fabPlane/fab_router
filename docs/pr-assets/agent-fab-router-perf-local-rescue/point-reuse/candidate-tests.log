@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle98/candidate/test/route-core.test.ts:
+(pass) Journal > insert then rewind restores the Layout and Lattice [1.29ms]
+(pass) Journal > remove is journaled and restored by rewind [0.14ms]
+(pass) Journal > freshId never collides with existing ids [0.18ms]
+(pass) pull (Theta*) > a clear staircase collapses to its endpoints [0.12ms]
+(pass) pull (Theta*) > with no line of sight the path is kept [0.01ms]
+(pass) A* search > finds a straight path across free space [0.63ms]
+(pass) A* search > routes around a blocked column [0.21ms]
+(pass) A* search > respects an abort signal [0.10ms]
+(pass) route() end to end > connects two same-net Pads on one Sheet with no added violation (R-1) [3.75ms]
+(pass) route() end to end > routes around an obstacle of another net, still clean (R-1) [4.27ms]
+(pass) route() end to end > adds no Barrel when vias are disabled (R-4) [0.33ms]
+(pass) route() end to end > never touches locked Pads (R-2) [0.34ms]
+(pass) route() end to end > maxItems caps completed connections and added items (R-5) [0.30ms]
+(pass) route() end to end > is deterministic: same input and settings give identical Tracks [0.55ms]
+(pass) route() end to end > an aborted run returns report.aborted and holds R-1 [0.19ms]
+
+../../agents/codex-fabpcb-perf/scratch/cycle98/candidate/test/perf-invariance.test.ts:
+(pass) perf-invariance (M9c) > dac2020-bm08 routes are byte-identical to the recorded fingerprint [49.16ms]
+(pass) perf-invariance (M9c) > issue026-j2 routes are byte-identical to the recorded fingerprint [7120.18ms]
+(pass) perf-invariance (M9c) > min-fr-test routes are byte-identical to the recorded fingerprint [5.21ms]
+(pass) perf-invariance (M9c) > ecc83 routes are byte-identical to the recorded fingerprint [11.30ms]
+
+ 19 pass
+ 0 fail
+ 74 expect() calls
+Ran 19 tests across 2 files. [7.21s]
