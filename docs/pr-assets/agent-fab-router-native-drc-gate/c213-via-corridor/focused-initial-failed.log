@@ -1,0 +1,30 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-connectivity.test.ts:
+148 |         await writeFile(paths[i]!.replace(/\.kicad_pcb$/, ext), await readFile(`${fixture}/board${ext}`));
+149 |     }
+150 |     const original = await checkNativeBoards(paths[0]!, paths[1]!);
+151 |     expect(original.lostTerminalPairs).toBe(61);
+152 |     const recovered = await checkNativeRepair(paths[0]!, paths[1]!, paths[2]!);
+153 |     expect(recovered.nativeCopperChecks).toEqual([true, true, true]);
+                                               ^
+error: expect(received).toEqual(expected)
+
+  [
+    true,
+-   true,
++   false,
+    true,
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-aquarius-connectivity.test.ts:153:42)
+(fail) moving a generated via pair restores source ground connectivity without hiding thermals [19251.85ms]
+
+ 0 pass
+ 2 filtered out
+ 1 fail
+ 6 expect() calls
+Ran 1 test across 1 file. [19.46s]
