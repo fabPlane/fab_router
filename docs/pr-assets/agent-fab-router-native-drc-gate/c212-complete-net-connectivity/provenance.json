@@ -1,0 +1,43 @@
+{
+  "parentCommit": "47f096aba5e6572eed52873e0c65cf09b4330fc4",
+  "host": "hyper-ms-lin",
+  "cores": "20-25",
+  "nativeVersion": "10.0.6",
+  "routerRerun": false,
+  "productionCodeChanged": false,
+  "discoveryNativeChecks": 36,
+  "repeatedGateDecisions": 9,
+  "nativeChecksInRepeatedDecisions": 18,
+  "initialFocusedFailure": "Wrong pad identity expectation U1.39, native evidence establishes U1.53; corrected.",
+  "testsFinalizedBeforeFullSuiteLoadedFile": true,
+  "plotting": "matplotlib unavailable; generated SVG and rsvg-convert PNG instead",
+  "minimizer": "initial run used existing c199 parse/dump helper; portable reproduction uses identical parse/dump from production proposal helper; all retained outputs independently replayed",
+  "fixtureCommit": "c28a5cd6ccff2761107cbcaf3ed96f4f2fc16ea8",
+  "parserEquivalence": "Old discovery helper and portable production parse/dump produce identical trees and serialized bytes for complete source and full generated fixture; parser-equivalence.json",
+  "newTestFullSuitePassMs": 19788.34,
+  "newTestFinalAssertionCount": 20,
+  "historyRows": 4,
+  "fullSuite": {
+    "passes": 926,
+    "failures": 0,
+    "assertions": 398879,
+    "seconds": 873.2,
+    "wrapperExit": 143,
+    "ownedChildCompletedAfterWrapper": true,
+    "ownedChildPidsAbsent": [
+      1072998,
+      1072999,
+      1073029
+    ]
+  },
+  "zoneTopology": "Retained filled GNDD B.Cu outlines source1, +3V3-only1, combined2; read-only pcbnew queries, no new refill/DRC attempts",
+  "finalFocusedStaticCommand": {
+    "exitCode": 0,
+    "testsPassed": 2,
+    "failed": 0,
+    "assertions": 45,
+    "testSeconds": 63.89,
+    "typecheck": "PASS",
+    "layerViolations": 0
+  }
+}
