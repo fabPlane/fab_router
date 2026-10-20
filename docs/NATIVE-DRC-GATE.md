@@ -180,8 +180,12 @@ boundary. It freezes the source and routed boards with their rules in an exclusi
 created search directory. It ranks at most eight generated segments near native
 thermal pad markers and tries the existing six single-segment detours, followed by
 at most sixteen connected segment pairs with sixteen corner displacements each.
-Authored copper is excluded from proposal generation and independently protected by
-the native gate. This is at most 304 proposals per stage and eight stages. Use an
+Authored copper is excluded by both source UUID and exact physical segment inventory,
+so native import can regenerate UUIDs without making retained tracks eligible. Segment
+matching ignores endpoint direction and numeric formatting, while preserving width,
+layer and net. All physical matches are excluded, including duplicate instances;
+source copper remains independently protected by the strict native gate. This is at
+most 304 proposals per stage and eight stages. Use an
 outer wall-clock timeout as shown; each native process also has a 120-second timeout.
 
 An intermediate stage must strictly reduce both total native errors and errors

@@ -5,6 +5,7 @@ Native acceptance is performed by native-thermal-search.ts, not this generator.
 """
 import argparse
 import copy
+from decimal import Decimal
 import json
 import re
 import sys
@@ -37,6 +38,28 @@ def uid(n):
  u=child(n,'uuid');return u[1].strip('"') if u else None
 
 native=sys.modules[__name__]
+
+def segment_geometry(n):
+    """Exact physical match independent of import UUIDs and endpoint direction.
+    Extra per-item metadata cannot make coincident source copper safe to edit;
+    conservatively exclude every physical match, including duplicate imports.
+    Decimal avoids floating-point tolerances when comparing authored geometry.
+    """
+    ends = [tuple(Decimal(v) for v in child(n, key)[1:])
+            for key in ('start', 'end')]
+    return (tuple(sorted(ends)), Decimal(child(n, 'width')[1]),
+            tuple(child(n, 'layer')[1:]), tuple(
+                v if v.startswith(chr(34)) else Decimal(v)
+                for v in child(n, 'net')[1:]))
+
+
+def protected_ids(source, current):
+    identities = {uid(n) for n in source if isinstance(n, list) and uid(n)}
+    geometry = {segment_geometry(n) for n in source
+                if isinstance(n, list) and n[0] == 'segment'}
+    return identities | {uid(n) for n in current if isinstance(n, list)
+                         and n[0] == 'segment' and segment_geometry(n) in geometry}
+
 
 def paths(start, end):
     dx, dy = end[0]-start[0], end[1]-start[1]
@@ -153,6 +176,7 @@ def main():
     current_ids=[uid(n) for n in nodes if isinstance(n,list) and uid(n)]
     if len(ids)!=len(set(ids)) or len(current_ids)!=len(set(current_ids)):
         raise ValueError('Ambiguous native item identities')
+    protected=protected_ids(source,nodes)
     errors=json.loads(x.report.read_text())['newErrors']
     x.out.mkdir(exist_ok=False)
     rows=[]
@@ -161,9 +185,9 @@ def main():
             name=f'{len(rows):03}.kicad_pcb'
             (x.out/name).write_bytes(data)
             rows.append(dict(name=name,label=label))
-    for ident in rank_segments(nodes,set(ids),errors,8):
+    for ident in rank_segments(nodes,protected,errors,8):
         add(['segment',ident],proposals(nodes,ident))
-    for idents in rank_pairs(nodes,set(ids),errors,16):
+    for idents in rank_pairs(nodes,protected,errors,16):
         add(['pair',list(idents)],pair_proposals(nodes,idents))
     assert len(rows)<=304
     (x.out/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
