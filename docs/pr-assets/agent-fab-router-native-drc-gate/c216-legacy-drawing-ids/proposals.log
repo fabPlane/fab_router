@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-thermal-proposals.test.ts:
+(pass) thermal proposals exclude reidentified authored tracks, including reversed numeric equivalents [174.81ms]
+(pass) axial thermal detours preserve endpoints, directions and the six-proposal bound [19.64ms]
+(pass) axial proposals follow the complete existing diagonal and pair prefix [24.58ms]
+(pass) short axial thermal paths scale with width and retain endpoints without degenerate segments [20.16ms]
+(pass) short axial proposals never displace a full 304-proposal prefix [50.62ms]
+(pass) legacy drawing identity duplicates do not abort track proposals, while segment collisions still reject [330.29ms]
+
+ 6 pass
+ 0 fail
+ 50 expect() calls
+Ran 6 tests across 1 file. [673.00ms]

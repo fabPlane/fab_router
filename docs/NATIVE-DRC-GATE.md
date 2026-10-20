@@ -192,6 +192,11 @@ layer and net. All physical matches are excluded, including duplicate instances;
 source copper remains independently protected by the strict native gate. This is at
 most 304 proposals per stage and eight stages. Use an
 outer wall-clock timeout as shown; each native process also has a 120-second timeout.
+Legacy board drawings may share UUIDs. Repeated identities are permitted only when
+all items using that identity are recognized board drawings; those nodes remain
+unchanged in every proposal. Any collision involving tracks, arcs, vias, footprints,
+zones or unknown item types still aborts before generating proposals. This changes
+proposal eligibility only; native acceptance and copper protection remain required.
 
 An intermediate stage must strictly reduce both total native errors and errors
 introduced relative to the source. Remaining introduced errors must be thermal
