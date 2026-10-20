@@ -178,8 +178,13 @@ timeout 2400 bun tools/native-thermal-search.ts original.kicad_pcb routed.kicad_
 This offline command connects generated-track proposals to the three-board repair
 boundary. It freezes the source and routed boards with their rules in an exclusively
 created search directory. It ranks at most eight generated segments near native
-thermal pad markers and tries the existing six single-segment detours, followed by
-at most sixteen connected segment pairs with sixteen corner displacements each.
+thermal pad markers and keeps the existing proposal order: diagonal single-track
+detours, at most sixteen connected segment pairs with sixteen corner displacements
+each, then length-scaled axial detours. Only after that complete prefix, remaining
+slots may contain short axial ramps with offsets of 0.30, 0.25 and 0.35 times the
+track width, in both directions. Each offset is capped at 0.375 times the track
+length to avoid a zero-length middle segment. These additional proposals do not
+displace an existing path or increase the 304-proposal stage limit.
 Authored copper is excluded by both source UUID and exact physical segment inventory,
 so native import can regenerate UUIDs without making retained tracks eligible. Segment
 matching ignores endpoint direction and numeric formatting, while preserving width,
@@ -230,3 +235,18 @@ boundary is unsafe: its three detour tracks change from the C1 net to the R1 net
 during native loading. Zero thermal errors, the source open budget and preserved
 terminal pairs do not make that detour legal. The ownership guard rejects it;
 the bounded axial regression now requires no progress and no publication.
+
+
+A complete nine-item signal-net control exposes a length-scale search gap: the
+existing 90 proposals cannot restore its thermal, while an appended width-scale
+axial ramp passes native acceptance at the unchanged 109 opens. This reduced
+control retains all source and routed terminal pairs and native copper ownership.
+It does not fix the full Aquarius benchmark, whose source connectivity losses
+remain an independent blocker. The isolated one-track control still exceeds the
+source open budget and must remain rejected, including with the short proposals.
+
+The complete-net standalone search can require checking the full old prefix before
+reaching a short path. The disposable-board adapter has its own 600-second outer
+search limit, which is unchanged. A successful standalone control with a longer
+outer timeout is not evidence that the adapter reaches that proposal within its
+budget; full benchmark outcomes must be measured separately.

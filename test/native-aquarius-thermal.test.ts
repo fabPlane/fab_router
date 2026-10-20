@@ -60,7 +60,7 @@ test.skipIf(!hasNative)("bounded axial search refuses report-clean detours that 
     const result = await searchNativeThermals(input, routed, join(root, "accepted.json"), join(root, "search"), 1);
     expect(result.published).toBe(false);
     expect(result.repaired).toBe(false);
-    expect(result.attempts).toHaveLength(6);
+    expect(result.attempts).toHaveLength(12);
     expect(result.attempts.every(attempt => !attempt.progress)).toBe(true);
     expect(await Bun.file(join(root, "accepted.json")).exists()).toBe(false);
     // This formerly published first detour has clean reports and connectivity,
@@ -79,7 +79,8 @@ test.skipIf(!hasNative)("bounded axial search refuses report-clean detours that 
     expect(await readFile(input)).toEqual(source);
     expect(await readFile(routed)).toEqual(routedBefore);
   } finally { await rm(root, { recursive: true, force: true }); }
-}, 180_000);
+// Twelve proposals now each require independent three-board native checks.
+}, 600_000);
 
 // A narrow offset restores the thermal without foreign-net pad contact, but
 // leaves one extra open. Clean DRC and ownership cannot replace the open budget.
@@ -148,3 +149,38 @@ test.skipIf(!hasNative)("complete signal backbone permits ownership-preserving n
     expect(await readFile(candidate, "utf8")).toBe(insert(added.replace(witness, detour)));
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 120_000);
+
+test.skipIf(!hasNative)("generated short axial proposal repairs the complete signal backbone with ownership preserved", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-generated-short-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/axial-input.kicad_pcb.gz`));
+    const text = source.toString(), end = text.lastIndexOf(")");
+    const added = await readFile(`${fixture}/backbone-added.sexpr`, "utf8");
+    const input = join(root, "input.kicad_pcb"), routed = join(root, "routed.kicad_pcb");
+    await writeFile(input, source); await writeFile(routed, text.slice(0,end)+added+text.slice(end));
+    const beforeBytes = await readFile(routed);
+    for (const name of ["input", "routed"]) for (const ext of [".kicad_pro", ".kicad_dru"]) await writeFile(join(root,name+ext), await readFile(`${fixture}/board${ext}`));
+    const before = await checkNativeRepair(input,routed,routed);
+    expect(before.newErrors.map(e=>e.type)).toEqual(["starved_thermal"]);
+    await writeFile(join(root,"report.json"),JSON.stringify(before));
+    const out = join(root,"proposals");
+    const process = Bun.spawn(["python3","tools/native-thermal-proposals.py","--source",input,"--current",routed,"--report",join(root,"report.json"),"--out",out],{stdout:"ignore",stderr:"pipe"});
+    expect(await process.exited).toBe(0);
+    const rows = JSON.parse(await readFile(join(out,"manifest.json"),"utf8")) as {name:string;label:string[]}[];
+    expect(rows.length).toBeLessThanOrEqual(304);
+    const proposal = rows.find(p=>p.label[0]==="short-axial" && p.label[1]==="9d2e32dc-507a-41da-b2b4-a62b38b96fca");
+    expect(proposal).toBeDefined();
+    const candidate = join(out,proposal!.name);
+    for(const ext of [".kicad_pro",".kicad_dru"]) await writeFile(candidate.replace(/\.kicad_pcb$/,ext),await readFile(`${fixture}/board${ext}`));
+    const checked = await checkNativeRepair(input,routed,candidate);
+    expect(checked.accepted).toBe(true);
+    expect(checked.newErrors).toEqual([]);
+    expect(checked.opensAfter).toBe(109);
+    expect(checked.lostTerminalPairs).toBe(0);
+    expect(checked.repair?.lostTerminalPairs).toBe(0);
+    expect(checked.nativeCopperChecks).toEqual([true,true,true]);
+    expect(await readFile(input)).toEqual(source);
+    expect(await readFile(routed)).toEqual(beforeBytes);
+  } finally { await rm(root,{recursive:true,force:true}); }
+},120_000);

@@ -7,6 +7,8 @@ import argparse
 import copy
 from decimal import Decimal
 import json
+import math
+from itertools import islice
 import re
 import sys
 import uuid
@@ -89,12 +91,38 @@ def paths(start, end):
                (end[0], start[1]+sy*radius), end]
 
 
-def proposals(nodes, segment_id):
+def short_paths(start, end, width):
+    """Width-scale axial ramps supplement length-scale paths in unused slots.
+    Keep the existing families and ordering intact; native acceptance decides
+    whether a local offset actually restores the thermal without other damage.
+    """
+    dx, dy = end[0]-start[0], end[1]-start[1]
+    if (not dx and not dy) or (dx and dy) or not math.isfinite(width) or width <= 0:
+        return
+    length = abs(dx or dy)
+    along = (1 if dx > 0 else -1, 0) if dx else (0, 1 if dy > 0 else -1)
+    normal = (0, 1) if dx else (1, 0)
+    seen = set()
+    for fraction in (.3, .25, .35):
+        radius = min(width*fraction, length*.375)
+        if radius < .000001 or radius in seen:
+            continue
+        seen.add(radius)
+        for side in (1, -1):
+            offset = (normal[0]*side*radius, normal[1]*side*radius)
+            yield [start, (start[0]+along[0]*radius+offset[0],
+                           start[1]+along[1]*radius+offset[1]),
+                   (end[0]-along[0]*radius+offset[0],
+                    end[1]-along[1]*radius+offset[1]), end]
+
+
+def proposals(nodes, segment_id, short=False):
     witness = next(n for n in nodes if isinstance(n, list)
                    and n[0] == 'segment' and native.uid(n) == segment_id)
     start, end = (tuple(float(v) for v in native.child(witness, key)[1:])
                   for key in ('start', 'end'))
-    for index, points in enumerate(paths(start, end)):
+    variants = short_paths(start, end, float(native.child(witness, 'width')[1])) if short else paths(start, end)
+    for index, points in enumerate(variants):
         candidate = copy.deepcopy(nodes)
         candidate.remove(next(n for n in candidate if isinstance(n, list)
                               and n[0] == 'segment' and native.uid(n) == segment_id))
@@ -103,7 +131,7 @@ def proposals(nodes, segment_id):
             for key, point in [('start', a), ('end', b)]:
                 native.child(track, key)[1:] = [f'{v:.6f}' for v in point]
             native.child(track, 'uuid')[1] = '"'+str(uuid.uuid5(uuid.NAMESPACE_URL,
-                f'full-board-detour-{segment_id}-{index}-{j}'))+'"'
+                f'full-board-{"short-" if short else ""}detour-{segment_id}-{index}-{j}'))+'"'
             candidate.append(track)
         yield (native.dump(candidate)+'\n').encode()
 
@@ -215,6 +243,11 @@ def main():
     for ident in ranked:
         if axial(ident):
             add(['segment',ident],proposals(nodes,ident))
+    # Append only after the complete prior prefix. Never exceed the existing
+    # 304-check budget or displace an already successful diagonal/pair/axial path.
+    for ident in ranked:
+        if axial(ident):
+            add(['short-axial',ident],islice(proposals(nodes,ident,short=True),304-len(rows)))
     assert len(rows)<=304
     (x.out/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
 if __name__=='__main__':main()

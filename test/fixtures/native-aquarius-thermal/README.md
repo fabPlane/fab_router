@@ -63,3 +63,12 @@ Three fresh paired checks and one exact checked bundle are retained in c210.
 Only the horizontal track changes; the other eight generated copper items and
 all source geometry/rules remain intact. This is a manually constructed safe
 local control, not automatic search recovery or a complete Aquarius fix.
+
+
+The width-scaled generator regression extends this control: its first short
+proposal for the offending track offsets by 0.30 × 0.2032 = 0.06096 mm. Native
+acceptance reports zero new errors, 109 opens, no lost source/routed pairs and
+unchanged copper ownership. The complete prior 90-proposal prefix cannot repair
+this control. Short proposals are appended only within unused stage-budget slots;
+the original isolated witness remains unpublishable. This is reduced-control
+search coverage, not a complete Aquarius benchmark repair.

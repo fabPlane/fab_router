@@ -71,6 +71,52 @@ test("axial proposals follow the complete existing diagonal and pair prefix", as
       ...Array.from({ length: 6 }, () => ["segment", "diagonal"]),
       ...Array.from({ length: 15 }, () => ["pair", ["axial", "diagonal"]]),
       ...Array.from({ length: 6 }, () => ["segment", "axial"]),
+      ...Array.from({ length: 6 }, () => ["short-axial", "axial"]),
     ]);
   } finally { await rm(root, { recursive: true, force: true }); }
+});
+
+test("short axial thermal paths scale with width and retain endpoints without degenerate segments", () => {
+  const script = String.raw`
+import importlib.util,sys
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('thermal','tools/native-thermal-proposals.py')
+m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+for start,end in [((0,0),(8,0)),((8,0),(0,0)),((0,0),(0,8)),((0,8),(0,0))]:
+ paths=list(m.short_paths(start,end,.2))
+ assert len(paths)==6
+ assert len(set(tuple(p) for p in paths))==6
+ assert abs(paths[0][1][0]-start[0])==.06 or abs(paths[0][1][1]-start[1])==.06
+ for points in paths:
+  assert points[0]==start and points[-1]==end
+  assert all(a!=b for a,b in zip(points,points[1:]))
+  for a,b in zip(points,points[1:]):
+   dx,dy=abs(b[0]-a[0]),abs(b[1]-a[1])
+   assert dx==0 or dy==0 or abs(dx-dy)<1e-12
+assert list(m.short_paths((0,0),(1,1),.2))==[]
+assert list(m.short_paths((0,0),(0,0),.2))==[]
+assert len(list(m.short_paths((0,0),(.01,0),.2)))==2
+`;
+  const result = Bun.spawnSync(["python3", "-c", script]);
+  expect(result.stderr.toString()).toBe("");
+  expect(result.exitCode).toBe(0);
+});
+
+test("short axial proposals never displace a full 304-proposal prefix", async () => {
+  const root = await mkdtemp(join(tmpdir(), "thermal-full-prefix-"));
+  const header = '(kicad_pcb (footprint (pad "1" smd circle (uuid "pad")))';
+  try {
+    await writeFile(join(root,"source"),header+")");
+    const tracks = Array.from({length:8},(_,i)=>`(segment (start 0 0) (end ${i+3} 0) (width 0.2) (layer "F.Cu") (net 1) (uuid "track-${i}"))`).join(" ");
+    await writeFile(join(root,"current"),header+tracks+")");
+    await writeFile(join(root,"report"),JSON.stringify({newErrors:[{type:"starved_thermal",items:[{uuid:"pad",pos:{x:0,y:0}}]}]}));
+    const out=join(root,"out");
+    const process=Bun.spawn(["python3","tools/native-thermal-proposals.py","--source",join(root,"source"),"--current",join(root,"current"),"--report",join(root,"report"),"--out",out],{stdout:"ignore",stderr:"pipe"});
+    expect(await process.exited).toBe(0);
+    const rows=JSON.parse(await readFile(join(out,"manifest.json"),"utf8")) as {label:string[]}[];
+    expect(rows).toHaveLength(304);
+    expect(rows.filter(r=>r.label[0]==="pair")).toHaveLength(256);
+    expect(rows.filter(r=>r.label[0]==="segment")).toHaveLength(48);
+    expect(rows.some(r=>r.label[0]==="short-axial")).toBe(false);
+  } finally {await rm(root,{recursive:true,force:true});}
 });
