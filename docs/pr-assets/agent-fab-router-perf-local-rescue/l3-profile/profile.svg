@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760"><rect width="1200" height="760" fill="white"/><g font-family="sans-serif" fill="#0f172a">
+<text x="35" y="45" font-size="27">L3 diagnostic CPU profiles: one route per source</text>
+<text x="35" y="78" font-size="17">Self-sampled CPU seconds; inlining changes attribution. No wall-time improvement claim.</text>
+<text x="35" y="145" font-size="18">collect</text>
+<rect x="235" y="125" width="697.7997" height="19" fill="#64748b"/><text x="942.7997" y="141" font-size="16">19.38</text>
+<rect x="235" y="148" width="703.988064" height="19" fill="#0891b2"/><text x="948.988064" y="164" font-size="16">19.56</text>
+<text x="35" y="207" font-size="18">aStarLayered</text>
+<rect x="235" y="187" width="529.323912" height="19" fill="#64748b"/><text x="774.323912" y="203" font-size="16">14.70</text>
+<rect x="235" y="210" width="550.695888" height="19" fill="#0891b2"/><text x="795.695888" y="226" font-size="16">15.30</text>
+<text x="35" y="269" font-size="18">test</text>
+<rect x="235" y="249" width="452.68394400000005" height="19" fill="#64748b"/><text x="697.6839440000001" y="265" font-size="16">12.57</text>
+<rect x="235" y="272" width="464.17226400000004" height="19" fill="#0891b2"/><text x="709.172264" y="288" font-size="16">12.89</text>
+<text x="35" y="331" font-size="18">withinRim</text>
+<rect x="235" y="311" width="490.97545199999996" height="19" fill="#64748b"/><text x="735.9754519999999" y="327" font-size="16">13.64</text>
+<rect x="235" y="334" width="42.91837199999999" height="19" fill="#0891b2"/><text x="287.918372" y="350" font-size="16">1.19</text>
+<text x="35" y="393" font-size="18">partWithinRim</text>
+<rect x="235" y="373" width="0.0" height="19" fill="#64748b"/><text x="245.0" y="389" font-size="16">0.00</text>
+<rect x="235" y="396" width="209.08227600000004" height="19" fill="#0891b2"/><text x="454.08227600000004" y="412" font-size="16">5.81</text>
+<text x="35" y="455" font-size="18">coreOf</text>
+<rect x="235" y="435" width="196.172244" height="19" fill="#64748b"/><text x="441.172244" y="451" font-size="16">5.45</text>
+<rect x="235" y="458" width="190.91156400000003" height="19" fill="#0891b2"/><text x="435.911564" y="474" font-size="16">5.30</text>
+<text x="35" y="517" font-size="18">barrelFits</text>
+<rect x="235" y="497" width="267.327972" height="19" fill="#64748b"/><text x="512.327972" y="513" font-size="16">7.43</text>
+<rect x="235" y="520" width="288.32112" height="19" fill="#0891b2"/><text x="533.3211200000001" y="536" font-size="16">8.01</text>
+<text x="35" y="579" font-size="18">sweepClear</text>
+<rect x="235" y="559" width="285.70845599999996" height="19" fill="#64748b"/><text x="530.708456" y="575" font-size="16">7.94</text>
+<rect x="235" y="582" width="280.80514800000003" height="19" fill="#0891b2"/><text x="525.805148" y="598" font-size="16">7.80</text>
+<text x="35" y="641" font-size="18">sort</text>
+<rect x="235" y="621" width="251.86751999999998" height="19" fill="#64748b"/><text x="496.86752" y="637" font-size="16">7.00</text>
+<rect x="235" y="644" width="263.762676" height="19" fill="#0891b2"/><text x="508.762676" y="660" font-size="16">7.33</text>
+<text x="35" y="710" font-size="18" fill="#64748b">Control (upper bars)</text>
+<text x="315" y="710" font-size="18" fill="#0891b2">Rim traversal (lower bars)</text>
+<text x="35" y="742" font-size="17">Identical sessions and non-timing reports; 153 engine incomplete each. No fresh native DRC.</text>
+</g></svg>
