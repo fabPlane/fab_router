@@ -72,3 +72,20 @@ unchanged copper ownership. The complete prior 90-proposal prefix cannot repair
 this control. Short proposals are appended only within unused stage-budget slots;
 the original isolated witness remains unpublishable. This is reduced-control
 search coverage, not a complete Aquarius benchmark repair.
+
+`connectivity-nets.sexpr` retains all 74 generated items on `+3V3` and
+`/Inputs/TCK` from the full routed output, with no within-net copper deletion.
+Native 10.0.6 refill reports two thermal errors, 94 opens and 61 lost source
+pairs: U1.53 is isolated from its original GNDD group. Removing either entire
+net restores all source pairs. Thus the connectivity failure survives complete
+signal-net context and is not an artifact of trimming individual tracks.
+This is one-net-deletion-minimal for the retained pair, not a globally minimal
+board or a repair. All source geometry and rules remain unchanged. The lower
+open count (source: 110) does not justify losing previously connected terminals;
+the native gate rejects it. Full discovery and repeated native checks are in
+c212 evidence. No production routing behavior changes.
+The `+3V3`-only control still has the same two thermal findings at U1.53 and
+U1.55, but no lost source pairs (95 opens). `/Inputs/TCK` alone has no thermal
+errors or lost pairs (108 opens). The unchanged thermal findings therefore do
+not explain whether the source group remains connected; check terminal pairs
+independently.

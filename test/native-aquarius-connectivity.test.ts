@@ -72,3 +72,50 @@ test.skipIf(!hasNative)("Aquarius signal copper disconnects a source ground pad 
     expect(await readFile(input)).toEqual(source);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 180_000);
+
+// Keep complete generated nets: an isolated track cut can introduce unrelated opens.
+test.skipIf(!hasNative)("Aquarius complete generated nets still disconnect source ground terminals", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-aquarius-complete-nets-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/input.kicad_pcb.gz`));
+    const text = source.toString("utf8"), end = text.lastIndexOf(")");
+    const full = gunzipSync(await readFile(`${fixture}/full-added.sexpr.gz`)).toString("utf8").trim().split("\n");
+    const selected = (await readFile(`${fixture}/connectivity-nets.sexpr`, "utf8")).trim().split("\n");
+    const net = (line: string) => line.match(/\(net ("(?:\\.|[^"\\])*"|[^\s()]+)\)/)![1]!;
+    const names = [...new Set(selected.map(net))].sort();
+    // Exact line inventory proves no generated copper was pruned within a net.
+    for (const name of names) expect(selected.filter(line => net(line) === name).sort())
+      .toEqual(full.filter(line => net(line) === name).sort());
+    const input = join(root, "input.kicad_pcb"), candidate = join(root, "candidate.kicad_pcb");
+    await writeFile(input, source);
+    for (const name of ["input", "candidate"]) for (const ext of [".kicad_pro", ".kicad_dru"])
+      await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+    const check = async (lines: string[]) => {
+      await writeFile(candidate, `${text.slice(0, end)}\n${lines.join("\n")}\n${text.slice(end)}`);
+      return checkNativeBoards(input, candidate);
+    };
+    const result = await check(selected);
+    expect(result.accepted).toBe(false);
+    expect(result.nativeCopperPreserved).toBe(true);
+    expect(names).toEqual(['"+3V3"', '"/Inputs/TCK"']);
+    expect(selected).toHaveLength(74);
+    expect(result.newErrors.map(error => error.type)).toEqual(["starved_thermal", "starved_thermal"]);
+    expect(result.opensBefore).toBe(110);
+    expect(result.opensAfter).toBe(94);
+    expect(result.lostTerminalPairs).toBe(61);
+    expect(result.lostPairWitnesses.every(pair => pair.some(identity => {
+      const pad = JSON.parse(identity) as unknown[];
+      return pad[1] === "U1" && pad[4] === "53";
+    }))).toBe(true);
+    for (const name of names) {
+      const deletion = await check(selected.filter(line => net(line) !== name));
+      expect(deletion.lostTerminalPairs).toBe(0);
+      expect(deletion.nativeCopperPreserved).toBe(true);
+      // +3V3 alone has the same thermal findings but does not split U1.53.
+      expect(deletion.newErrors.map(error => error.type)).toEqual(name === '"+3V3"' ? [] : ["starved_thermal", "starved_thermal"]);
+      expect(deletion.opensAfter).toBe(name === '"+3V3"' ? 108 : 95);
+    }
+    expect(await readFile(input)).toEqual(source);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 300_000);
