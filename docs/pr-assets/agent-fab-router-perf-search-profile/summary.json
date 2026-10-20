@@ -1,0 +1,89 @@
+{
+  "kitspace-aquarius-j4-profiled.cpuprofile.gz": {
+    "sha256": "3343bd6e89dc81250acd2e713d1e828a08933f1034f1e7b133a5a4e238af84bf",
+    "samples": 34712,
+    "sampled_us": 37064872,
+    "disjoint_us": {
+      "frontier heap": 1414870,
+      "geometry and clearance": 18889046,
+      "lattice": 8434074,
+      "outside search": 745557,
+      "quilt remainder": 1965201,
+      "search remainder": 5323449,
+      "visited table": 292675
+    },
+    "context_us": {
+      "aStar / frontier heap": 652212,
+      "aStar / geometry and clearance": 6874756,
+      "aStar / lattice": 3362851,
+      "aStar / quilt remainder": 966547,
+      "aStar / search remainder": 2028203,
+      "aStar / visited table": 143985,
+      "aStarLayered / frontier heap": 762658,
+      "aStarLayered / geometry and clearance": 12014290,
+      "aStarLayered / lattice": 5071223,
+      "aStarLayered / quilt remainder": 998654,
+      "aStarLayered / search remainder": 3295246,
+      "aStarLayered / visited table": 148690,
+      "outside search / outside search": 745557
+    }
+  },
+  "paperino-hw-paperino-shield-j4-profiled.cpuprofile.gz": {
+    "sha256": "761be6da72aa0a254f4f0a83d0a67db772ae78179905545879ca024d9465cd51",
+    "samples": 10507,
+    "sampled_us": 11278269,
+    "disjoint_us": {
+      "frontier heap": 526454,
+      "geometry and clearance": 4610547,
+      "lattice": 2880633,
+      "outside search": 112422,
+      "quilt remainder": 753493,
+      "search remainder": 2089148,
+      "visited table": 305572
+    },
+    "context_us": {
+      "aStar / frontier heap": 366381,
+      "aStar / geometry and clearance": 2742623,
+      "aStar / lattice": 1787359,
+      "aStar / quilt remainder": 536118,
+      "aStar / search remainder": 1227750,
+      "aStar / visited table": 206606,
+      "aStarLayered / frontier heap": 160073,
+      "aStarLayered / geometry and clearance": 1867924,
+      "aStarLayered / lattice": 1093274,
+      "aStarLayered / quilt remainder": 217375,
+      "aStarLayered / search remainder": 861398,
+      "aStarLayered / visited table": 98966,
+      "outside search / outside search": 112422
+    }
+  },
+  "photon-sprinkler-sprinkler-j3-profiled.cpuprofile.gz": {
+    "sha256": "fae7239e552c6bbcf3edf3bb05f234be74b89a3139af94d932f12d40389faae7",
+    "samples": 11991,
+    "sampled_us": 12802384,
+    "disjoint_us": {
+      "frontier heap": 944912,
+      "geometry and clearance": 3663159,
+      "lattice": 3009496,
+      "outside search": 130731,
+      "quilt remainder": 1776816,
+      "search remainder": 2895597,
+      "visited table": 381673
+    },
+    "context_us": {
+      "aStar / frontier heap": 851881,
+      "aStar / geometry and clearance": 2770733,
+      "aStar / lattice": 2386659,
+      "aStar / quilt remainder": 1643340,
+      "aStar / search remainder": 2317800,
+      "aStar / visited table": 275888,
+      "aStarLayered / frontier heap": 93031,
+      "aStarLayered / geometry and clearance": 892426,
+      "aStarLayered / lattice": 622837,
+      "aStarLayered / quilt remainder": 133476,
+      "aStarLayered / search remainder": 577797,
+      "aStarLayered / visited table": 105785,
+      "outside search / outside search": 130731
+    }
+  }
+}
