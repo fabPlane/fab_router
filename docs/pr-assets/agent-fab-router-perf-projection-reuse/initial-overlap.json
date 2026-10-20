@@ -1,0 +1,22 @@
+{
+  "reason": "own full tests inadvertently overlapped the initial pair; no valid comparison from this batch",
+  "processes": [
+    {
+      "pid": 2963229,
+      "cmd": "python3 /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle108/run.py "
+    },
+    {
+      "pid": 2963231,
+      "already_exited": true
+    },
+    {
+      "pid": 2963230,
+      "already_exited": true
+    },
+    {
+      "pid": 2963228,
+      "cmd": "timeout --kill-after=10 1800 python3 /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle108/run.py "
+    }
+  ],
+  "outcome": "runner stopped after first control; first candidate had already started and finished; both completed outputs retained as invalid overlap batch; process audit found no remaining routing jobs"
+}
