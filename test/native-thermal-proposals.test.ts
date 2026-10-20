@@ -155,3 +155,39 @@ test("legacy drawing identity duplicates do not abort track proposals, while seg
     }
   } finally { await rm(root, {recursive:true,force:true}); }
 });
+
+test("via thermal proposals move every incident generated endpoint and preserve protected copper", () => {
+  const script = String.raw`
+import importlib.util,sys,copy
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('thermal','tools/native-thermal-proposals.py')
+m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+via='(via (at 0 0) (size .6) (drill .3) (layers "F.Cu" "B.Cu") (net 1) (uuid "v"))'
+a='(segment (start 0 0) (end 2 0) (width .2) (layer "F.Cu") (net 1) (uuid "a"))'
+b='(segment (start 0 2) (end -0.0 0e0) (width .3) (layer "B.Cu") (net 1) (uuid "b"))'
+n=m.parse('(kicad_pcb '+via+a+b+')');frozen=copy.deepcopy(n)
+variants=list(m.via_proposals(n,'v',set()))
+assert len(variants)==8 and n==frozen
+for data in variants:
+ c=m.parse(data.decode());assert len(c)==len(n)
+ byid={m.uid(t):t for t in c if isinstance(t,list)}
+ p=m.child(byid['v'],'at')[1:];assert p!=['0','0']
+ assert m.child(byid['a'],'start')[1:]==p
+ assert m.child(byid['b'],'end')[1:]==p
+ assert m.child(byid['a'],'end')==m.child(n[2],'end')
+ assert m.child(byid['b'],'start')==m.child(n[3],'start')
+ for ident in ('v','a','b'):
+  old=next(t for t in n if isinstance(t,list) and m.uid(t)==ident)
+  assert [t for t in byid[ident] if not(isinstance(t,list) and t[0] in ('at','start','end'))]==[t for t in old if not(isinstance(t,list) and t[0] in ('at','start','end'))]
+assert len(set(variants))==8
+for protected in ({'v'},{'a'},{'b'}):assert list(m.via_proposals(n,'v',protected))==[]
+source=m.parse('(kicad_pcb '+via.replace('"v"','"authored"').replace('(at 0 0)','(at -0.000 0e0)').replace('(size .6)','(size .6000)')+')')
+assert 'v' in m.protected_ids(source,n)
+for extra in (a.replace('"a"','"foreign"').replace('(net 1)','(net 2)'),via.replace('"v"','"other"'),'(arc (start 0 0) (mid 1 1) (end 2 0) (net 1) (uuid "arc"))'):
+ assert list(m.via_proposals(n+[m.parse(extra)],'v',set()))==[]
+assert list(m.via_proposals(m.parse('(kicad_pcb '+via+')'),'v',set()))==[]
+`;
+  const result = Bun.spawnSync(["python3", "-c", script]);
+  expect(result.stderr.toString()).toBe("");
+  expect(result.exitCode).toBe(0);
+});

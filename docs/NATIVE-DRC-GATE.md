@@ -175,7 +175,7 @@ board may pass; acceptance is a safety check rather than proof of repair progres
 timeout 2400 bun tools/native-thermal-search.ts original.kicad_pcb routed.kicad_pcb accepted.json new-search-directory
 ```
 
-This offline command connects generated-track proposals to the three-board repair
+This offline command connects generated-copper proposals to the three-board repair
 boundary. It freezes the source and routed boards with their rules in an exclusively
 created search directory. It ranks at most eight generated segments near native
 thermal pad markers and keeps the existing proposal order: diagonal single-track
@@ -185,6 +185,15 @@ slots may contain short axial ramps with offsets of 0.30, 0.25 and 0.35 times th
 track width, in both directions. Each offset is capped at 0.375 times the track
 length to avoid a zero-length middle segment. These additional proposals do not
 displace an existing path or increase the 304-proposal stage limit.
+Any remaining slots then contain coordinated via moves: at most four generated
+vias ranked by distance to thermal pad markers, with eight 0.3 mm axial or
+diagonal offsets per via. A proposal moves the via and every coincident generated
+segment endpoint on its net. It refuses protected incident tracks, foreign-net
+contacts, stacked vias, arc contacts and vias without incident tracks. Exact
+decimal coordinate arithmetic preserves endpoint contact. Interior copper and
+zone contacts still require full native validation; a generated proposal is not
+an accepted repair. Authored vias are excluded by source identity and physical
+position, size, drill, layers and net, including reidentified numeric equivalents.
 Authored copper is excluded by both source UUID and exact physical segment inventory,
 so native import can regenerate UUIDs without making retained tracks eligible. Segment
 matching ignores endpoint direction and numeric formatting, while preserving width,

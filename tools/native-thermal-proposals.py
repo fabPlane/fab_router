@@ -55,12 +55,23 @@ def segment_geometry(n):
                 for v in child(n, 'net')[1:]))
 
 
+def via_geometry(n):
+    # Ignore identity and metadata: a reidentified authored via stays protected.
+    return (tuple(Decimal(v) for v in child(n, 'at')[1:3]),
+            Decimal(child(n, 'size')[1]), tuple(Decimal(v) if re.fullmatch(r'[+\-0-9.eE]+', v) else v
+                                              for v in child(n, 'drill')[1:]),
+            tuple(child(n, 'layers')[1:]), tuple(child(n, 'net')[1:]))
+
+
 def protected_ids(source, current):
     identities = {uid(n) for n in source if isinstance(n, list) and uid(n)}
     geometry = {segment_geometry(n) for n in source
                 if isinstance(n, list) and n[0] == 'segment'}
+    vias = {via_geometry(n) for n in source
+            if isinstance(n, list) and n[0] == 'via'}
     return identities | {uid(n) for n in current if isinstance(n, list)
-                         and n[0] == 'segment' and segment_geometry(n) in geometry}
+                         and ((n[0] == 'segment' and segment_geometry(n) in geometry)
+                              or (n[0] == 'via' and via_geometry(n) in vias))}
 
 
 def paths(start, end):
@@ -209,6 +220,62 @@ def rank_pairs(nodes, original_ids, errors, limit):
 
 
 
+def via_proposals(nodes, via_id, protected):
+    """Move a generated via and ALL coincident incident segment endpoints.
+
+    This only proposes geometry. Interior contacts, pads and zone connections
+    still require the full native ownership/connectivity/DRC acceptance gate.
+    Refuse authored contacts, ambiguous stacked vias and unsupported arcs.
+    """
+    via = next(n for n in nodes if isinstance(n, list)
+               and n[0] == 'via' and uid(n) == via_id)
+    if via_id in protected:
+        return
+    point = tuple(Decimal(v) for v in child(via, 'at')[1:3])
+    incident = []
+    for n in nodes:
+        if not isinstance(n, list) or n[0] not in ('segment', 'arc', 'via') or n is via:
+            continue
+        keys = [key for key in ('start', 'end', 'mid', 'at')
+                if child(n, key) and tuple(Decimal(v) for v in child(n, key)[1:3]) == point]
+        if not keys:
+            continue
+        if (n[0] != 'segment' or not uid(n) or uid(n) in protected
+                or child(n, 'net') != child(via, 'net')):
+            return
+        incident.append((uid(n), keys))
+    if not incident:
+        return
+    # Fixed small family, appended after all prior track proposals. Exact
+    # decimals preserve endpoint contact without imposing a rounding tolerance.
+    for dx, dy in ((-.3, .3), (.3, .3), (-.3, -.3), (.3, -.3),
+                   (-.3, 0), (.3, 0), (0, -.3), (0, .3)):
+        moved = [format(v + Decimal(str(d)), 'f') for v, d in zip(point, (dx, dy))]
+        candidate = copy.deepcopy(nodes)
+        edits = dict(incident)
+        edits[via_id] = ['at']
+        for n in candidate:
+            if isinstance(n, list) and uid(n) in edits:
+                for key in edits[uid(n)]:
+                    child(n, key)[1:3] = moved
+        yield (dump(candidate) + '\n').encode()
+
+
+def rank_vias(nodes, protected, errors, limit=4):
+    pads = {uid(c) for n in nodes if isinstance(n, list) and n[0] == 'footprint'
+            for c in n if isinstance(c, list) and c[0] == 'pad'}
+    points = [(i['pos']['x'], i['pos']['y']) for e in errors if e['type'] == 'starved_thermal'
+              for i in e['items'] if i['uuid'] in pads]
+    if not points:
+        return []
+    def distance(via):
+        x, y = map(float, child(via, 'at')[1:3])
+        return min((x-a)**2 + (y-b)**2 for a, b in points), uid(via)
+    vias = [n for n in nodes if isinstance(n, list) and n[0] == 'via'
+            and uid(n) and uid(n) not in protected]
+    return [uid(n) for n in sorted(vias, key=distance)[:limit]]
+
+
 def main():
     p=argparse.ArgumentParser(description=__doc__)
     for name in ('source','current','report','out'):p.add_argument('--'+name,type=Path,required=True)
@@ -257,6 +324,8 @@ def main():
     for ident in ranked:
         if axial(ident):
             add(['short-axial',ident],islice(proposals(nodes,ident,short=True),304-len(rows)))
+    for ident in rank_vias(nodes, protected, errors):
+        add(['via', ident], islice(via_proposals(nodes, ident, protected), 304-len(rows)))
     assert len(rows)<=304
     (x.out/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
 if __name__=='__main__':main()

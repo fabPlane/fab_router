@@ -133,8 +133,13 @@ Moving the generated power via from (164.1045, 50.6008) to
 (163.8045, 50.9008) mm together with all three incident track endpoints clears
 the second-spoke obstruction. Three fresh strict three-board checks retain all
 source and current terminal pairs, preserve native ownership and keep 95 opens.
-This is a manually constructed complete-net recovery control. The automatic
-search does not generate via moves; this does not change the scored benchmark.
+Cycle 217 constructed this complete-net recovery control manually. The
+proposal generator now appends coordinated moves of generated vias and their
+incident track endpoints after the existing track families, within the same
+304-proposal bound. The native regression uses the generated candidate and
+requires full three-board acceptance. The original source, rules, copper and
+source/current terminal pairs remain protected. This partial control still has
+95 opens and does not establish a scored benchmark improvement.
 The same move in the complete-board context and all exploratory trials are
 retained in cycle 217 evidence; full-board safety is evaluated independently.
 The complete-board transfer fails: U1.55 stays in the ground group, but U1.53

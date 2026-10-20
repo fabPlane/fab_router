@@ -3,11 +3,14 @@ import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+const execute = promisify(execFile);
 import { checkNativeRepair } from "../tools/native-drc-gate.ts";
 
 const hasNative = !!Bun.which("kicad-cli") && !!Bun.which("python3") && Bun.spawnSync(["python3", "-c", "import pcbnew"], { stdout: "ignore", stderr: "ignore" }).exitCode === 0;
 
-test.skipIf(!hasNative)("coordinated power-via move restores the second ground spoke without disconnecting terminals", async () => {
+test.skipIf(!hasNative)("generated coordinated power-via move restores the second ground spoke without disconnecting terminals", async () => {
   const root = await mkdtemp(join(tmpdir(), "native-power-via-"));
   const fixture = "test/fixtures/native-aquarius-thermal";
   try {
@@ -35,6 +38,17 @@ test.skipIf(!hasNative)("coordinated power-via move restores the second ground s
     expect(before.lostTerminalPairs).toBe(0);
     expect(before.nativeCopperChecks).toEqual([true, true, true]);
     expect(before.accepted).toBe(false);
+    // Exercise the real generator, rather than supplying the known repair by hand.
+    const report = join(root, "report.json"), out = join(root, "proposals");
+    await writeFile(report, JSON.stringify(before));
+    await execute("python3", ["tools/native-thermal-proposals.py", "--source", input,
+      "--current", routed, "--report", report, "--out", out]);
+    const manifest = JSON.parse(await readFile(join(out, "manifest.json"), "utf8")) as {name: string; label: string[]}[];
+    expect(manifest.length).toBeLessThanOrEqual(304);
+    const proposal = manifest.find(row => row.label[0] === "via" && row.label[1] === "e57c15b7-d609-442a-9cca-2c520d20bbab");
+    expect(proposal).toBeDefined();
+    const generated = await readFile(join(out, proposal!.name), "utf8");
+    await writeFile(candidate, generated);
     const after = await checkNativeRepair(input, routed, candidate);
     expect(after.newErrors).toEqual([]);
     expect(after.opensAfter).toBe(95);
@@ -45,6 +59,6 @@ test.skipIf(!hasNative)("coordinated power-via move restores the second ground s
     expect(after.accepted).toBe(true);
     expect(await readFile(input)).toEqual(source);
     expect(await readFile(routed, "utf8")).toBe(board(added));
-    expect(await readFile(candidate, "utf8")).toBe(board(moved));
+    expect(await readFile(candidate, "utf8")).toBe(generated);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 120_000);
