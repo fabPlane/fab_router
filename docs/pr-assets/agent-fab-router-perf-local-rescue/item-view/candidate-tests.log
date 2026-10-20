@@ -1,0 +1,38 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/route-core.test.ts:
+(pass) Journal > insert then rewind restores the Layout and Lattice [1.39ms]
+(pass) Journal > remove is journaled and restored by rewind [0.16ms]
+(pass) Journal > freshId never collides with existing ids [0.23ms]
+(pass) pull (Theta*) > a clear staircase collapses to its endpoints [0.12ms]
+(pass) pull (Theta*) > with no line of sight the path is kept [0.02ms]
+(pass) A* search > finds a straight path across free space [0.67ms]
+(pass) A* search > routes around a blocked column [0.24ms]
+(pass) A* search > respects an abort signal [0.10ms]
+(pass) route() end to end > connects two same-net Pads on one Sheet with no added violation (R-1) [4.10ms]
+(pass) route() end to end > routes around an obstacle of another net, still clean (R-1) [4.41ms]
+(pass) route() end to end > adds no Barrel when vias are disabled (R-4) [0.46ms]
+(pass) route() end to end > never touches locked Pads (R-2) [0.43ms]
+(pass) route() end to end > maxItems caps completed connections and added items (R-5) [0.23ms]
+(pass) route() end to end > is deterministic: same input and settings give identical Tracks [0.61ms]
+(pass) route() end to end > an aborted run returns report.aborted and holds R-1 [0.21ms]
+
+test/lattice.test.ts:
+(pass) Lattice property tests > hits / sweepHits equal a brute-force scan over 10 000 queries with interleaved inserts and removes [601.31ms]
+(pass) Lattice property tests > a shelf overflow triggers a rebuild that re-buckets the items, and queries still agree [18.86ms]
+(pass) Lattice property tests > filter is applied and results stay sorted [11.58ms]
+(pass) Lattice property tests > two insertion orders (and a remove/re-insert history) give identical query results [52.27ms]
+(pass) Lattice property tests > re-inserting an existing (ref, sheet) replaces its bounds; removing an unknown ref is a no-op [0.25ms]
+(pass) Lattice property tests > cell size comes from the median diagonal and is clamped to [0.5 mm, 5 mm]; big items go to the shelf [0.35ms]
+(pass) Lattice over a synthetic Layout > buildLattice indexes every item on every Sheet it has copper (or a drill) on; Track legs and Rim edges individually [6.59ms]
+
+test/perf-invariance.test.ts:
+(pass) perf-invariance (M9c) > dac2020-bm08 routes are byte-identical to the recorded fingerprint [59.22ms]
+(pass) perf-invariance (M9c) > issue026-j2 routes are byte-identical to the recorded fingerprint [8091.02ms]
+(pass) perf-invariance (M9c) > min-fr-test routes are byte-identical to the recorded fingerprint [6.13ms]
+(pass) perf-invariance (M9c) > ecc83 routes are byte-identical to the recorded fingerprint [12.52ms]
+
+ 26 pass
+ 0 fail
+ 39827 expect() calls
+Ran 26 tests across 3 files. [8.90s]
