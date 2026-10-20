@@ -1,0 +1,16 @@
+{
+  "intentional_fail_first": 1,
+  "required_engine_checks": 0,
+  "exploratory_search_600s_cap": 0,
+  "three_timed_searches": 0,
+  "candidate_bytes_verification": 0,
+  "adapter_600s_cap": 0,
+  "package_checks_before_pin": 0,
+  "package_checks_after_pin": 0,
+  "full_opt_in_corpus": 0,
+  "no_measured_attempts_stopped_or_omitted": true,
+  "before_corpus": "retained c218 optional-after, not fresh this cycle",
+  "before_standalone": "retained c218 2144.172484 seconds, one repeat",
+  "default_not_rerun": true,
+  "engine_implementation": "0cfcfce2d601561a731a7102317f490aa8c5bf73"
+}
