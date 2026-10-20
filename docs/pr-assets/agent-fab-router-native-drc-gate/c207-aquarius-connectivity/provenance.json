@@ -1,0 +1,27 @@
+{
+  "cycle": 207,
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "native_version": "10.0.6",
+  "case": "kitspace-aquarius-j4",
+  "seed": 1,
+  "retained_router_commit": "8fa7ead0c45b0e7ca33737ff418f6309d51d762c",
+  "gate_commit": "7888067691aa10afd3534f78fbac4ef3380a158c",
+  "router_rerun": false,
+  "production_fix": false,
+  "discovery_checks": 74,
+  "repeat_checks": 9,
+  "all_attempts_retained": true,
+  "source_sha256": {
+    "/home/hyper/bench/wt/fp-bugs/benchmarks/autorouter/cases/kitspace-aquarius-j4/board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+    "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c196/full-after/runs/run-20261019T211154.565516Z-004/fab-router/final.kicad_pcb": "e2c5cb9e74738c70b820ab528ce51ec8f2e5836f0766d0ef949599c0cce05c22"
+  },
+  "limits": [
+    "Three-track added-copper one-deletion minimum, not a globally minimal board.",
+    "Repeated retained seed-1 output; no new routing seeds or scored gain.",
+    "Deletion trials can add unrelated errors/opens; never proposed as repairs.",
+    "New regression reproduces existing failure/rejection; no behavioral fix/fail-first claim.",
+    "No source/rule/checker/scoring/route/perf/integration changes.",
+    "No new complete scored run. Latest optional full run is cycle206; default cycle203."
+  ]
+}

@@ -22,3 +22,15 @@ no copper, outline geometry, pads, zones or rules change. The original frozen
 input above is retained byte-for-byte. The axial search regression adds the same
 signal segment, then restores the thermal and 110-open source budget without
 losing either source-connected or routed-connected terminal pairs.
+
+`connectivity-added.sexpr` reduces the separate source-connectivity blocker to
+three added B.Cu signal segments (0.2032 mm, on three distinct nets). Together
+they isolate GNDD U1.39 from the other 61 pads in its source-connected group after
+native refill: one thermal error, 114 opens, 61 lost source pairs. Removing ANY
+one of these three segments restores all source pairs (112 opens; thermal
+errors vary). The full source geometry/rules remain unchanged; this is a
+one-deletion-minimal added-copper witness, not a globally minimized board or a
+route repair. The horizontal segment is also the earlier one-track thermal
+witness: thermal starvation alone does not imply this terminal partition.
+All 74 discovery/refill checks and three-repeat controls are retained in the
+c207 evidence assets. No production behavior or scored outcome changes.
