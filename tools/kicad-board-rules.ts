@@ -145,3 +145,44 @@ export function assertSourcePads(input: string, candidate: string): void {
   };
   if (inventory(input) !== inventory(candidate)) throw new Error("Candidate source pads differ from input");
 }
+
+/** Compare physical copper and its semantic electrical ownership across native
+ * load/save. Legacy numeric codes are local to each board; current files use
+ * quoted names. UUIDs and native-added display/manufacturing defaults are outside
+ * this check. Multiplicity and exact physical coordinates remain significant. */
+export function nativeCopperInventory(text: string): string[] {
+  const board = parseBoard(text), nets = new Map<string, string>([["0", '""']]);
+  const declared = new Set<string>(), names = new Set<string>();
+  const quoted = (value: Expression | undefined): value is string => typeof value === "string" && value.startsWith('"') && value.endsWith('"');
+  for (const node of board) {
+    if (!Array.isArray(node) || node[0] !== "net") continue;
+    const [, id, name] = node;
+    if (node.length !== 3 || typeof id !== "string" || !/^\d+$/.test(id) || !Number.isSafeInteger(Number(id)) || !quoted(name) || declared.has(id) || names.has(name)) throw new Error("Malformed native net table");
+    declared.add(id); names.add(name); nets.set(id, name);
+  }
+  return board.filter(node => Array.isArray(node) && ["segment", "arc", "via"].includes(String(node[0]))).map(node => {
+    const item = node as Expression[];
+    const fields = item.slice(1).filter(Array.isArray) as Expression[][];
+    const netFields = fields.filter(field => field[0] === "net");
+    if (netFields.length > 1) throw new Error("Ambiguous native copper ownership");
+    const field = netFields[0];
+    let net = '""';
+    if (field) {
+      const value = field[1];
+      if (field.length !== 2 || typeof value !== "string") throw new Error("Malformed native copper ownership");
+      if (quoted(value)) net = value;
+      else {
+        const name = nets.get(value);
+        if (name === undefined) throw new Error("Unknown native copper net code");
+        net = name;
+      }
+    }
+    const geometry = fields.filter(field => ["start", "end", "mid", "at", "width", "size", "drill", "layer", "layers"].includes(String(field[0])))
+      .map(field => JSON.stringify([(["segment", "arc"].includes(String(item[0])) && ["start", "end"].includes(String(field[0]))) ? "endpoint" : field[0], ...field.slice(1)])).sort();
+    return JSON.stringify([item[0], net, geometry]);
+  }).sort();
+}
+
+export function nativeCopperPreserved(submitted: string, saved: string): boolean {
+  return JSON.stringify(nativeCopperInventory(submitted)) === JSON.stringify(nativeCopperInventory(saved));
+}

@@ -52,6 +52,8 @@ test.skipIf(!hasNative)("Aquarius signal copper disconnects a source ground pad 
     expect(rerouted.opensAfter).toBe(112);
     expect(rerouted.opensBefore).toBe(110);
     expect(rerouted.accepted).toBe(false);
+    expect(rerouted.nativeCopperPreserved).toBe(false);
+    expect(rerouted.nativeCopperChecks).toEqual([true, false]);
     const submitted = await readFile(candidate, "utf8");
     await promisify(execFile)("kicad-cli", ["pcb", "drc", "--severity-all", "--format", "json",
       "--units", "mm", "--refill-zones", "--save-board", "--output", join(root, "refill.json"), candidate],

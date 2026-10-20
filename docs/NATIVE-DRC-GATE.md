@@ -206,3 +206,21 @@ work directory; those boards are not accepted output.
 The text routing API, benchmark adapter and editor do not invoke this command. It
 provides no automatic application or undo. Search outcomes on retained complete
 boards are offline native experiments, not scored benchmark routing outcomes.
+
+## Native load/save copper ownership
+
+The gate compares each submitted board's track, arc and via inventory with its
+native-saved, refilled counterpart. Numeric net codes resolve through that board's
+legacy net table; current quoted net names compare directly. Missing net fields
+represent unassigned copper. Ownership, item multiplicity and physical fields
+(endpoints, arc midpoint, position, width, size, drill and layers) must match.
+UUIDs and native-added manufacturing/display defaults are outside this comparison;
+it is not a complete native-save fidelity proof. Unknown numeric net codes and
+ambiguous net fields fail closed.
+
+`nativeCopperChecks` records input, candidate and optional routed comparisons in
+that order; `nativeCopperPreserved` is their conjunction. A mismatch rejects
+acceptance, intermediate thermal progress and bundle publication even when DRC
+reports are clean and all terminal pairs survive. This catches load-time track
+net reassignment that report and terminal comparisons alone cannot detect. Caller
+files remain unchanged.

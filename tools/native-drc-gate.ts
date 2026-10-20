@@ -8,7 +8,7 @@ import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { promisify } from "node:util";
 import { fileURLToPath } from "node:url";
-import { assertSourcePads, assertBoardZones, assertBoardNets, assertEmbeddedBoardRules, assertSourceCopper } from "./kicad-board-rules.ts";
+import { nativeCopperPreserved, assertSourcePads, assertBoardZones, assertBoardNets, assertEmbeddedBoardRules, assertSourceCopper } from "./kicad-board-rules.ts";
 const execute = promisify(execFile);
 
 type Finding = { type: string; severity: string; description: string; items: Array<{ description: string; pos: { x: number; y: number }; uuid?: string }> };
@@ -125,12 +125,14 @@ async function inspectNativeBoards(input: string, candidate: string, timeoutMs: 
       for (const assert of [assertEmbeddedBoardRules, assertBoardNets, assertSourceCopper, assertSourcePads, assertBoardZones]) assert(before.bytes.toString("utf8"), routedSnapshot.bytes.toString("utf8"));
     }
     const reports: unknown[] = [];
+    const nativeCopper: boolean[] = [];
     for (const [index, board] of [before, after, ...(routedSnapshot ? [routedSnapshot] : [])].entries()) {
       const report = join(directory, `${index}.json`);
       // Save refilled copies only inside the disposable directory so the native
       // connectivity query sees exactly the filled geometry used by DRC.
       await execute("kicad-cli", ["pcb", "drc", "--severity-all", "--format", "json", "--units", "mm", "--refill-zones", "--save-board", "--output", report, board.target], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
       reports.push(JSON.parse(await readFile(report, "utf8")));
+      nativeCopper.push(nativeCopperPreserved(board.bytes.toString("utf8"), await readFile(board.target, "utf8")));
     }
     const result = compareNativeReports(reports[0], reports[1]);
     const connectivityOutput = join(directory, "terminal-groups.json");
@@ -143,9 +145,10 @@ async function inspectNativeBoards(input: string, candidate: string, timeoutMs: 
       await execute("python3", [fileURLToPath(new URL("./native-terminal-groups.py", import.meta.url)), routedSnapshot.target, after.target, output], { timeout: timeoutMs, maxBuffer: 4 * 1024 * 1024 });
       const reportsResult = compareNativeReports(reports[2], reports[1]);
       const groups = compareTerminalGroups(JSON.parse(await readFile(output, "utf8")), parseReport(reports[2]).kicad_version);
-      repair = { ...reportsResult, ...groups, accepted: reportsResult.accepted && groups.lostTerminalPairs === 0, routedSha256: hash(routedSnapshot.bytes), routedReport: reports[2] };
+      repair = { ...reportsResult, ...groups, accepted: nativeCopper.every(Boolean) && reportsResult.accepted && groups.lostTerminalPairs === 0, routedSha256: hash(routedSnapshot.bytes), routedReport: reports[2] };
     }
-    const validation = { ...result, ...connectivity, ...(repair ? { repair } : {}), accepted: result.accepted && connectivity.lostTerminalPairs === 0 && (!repair || repair.accepted), inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
+    const copperPreserved = nativeCopper.every(Boolean);
+    const validation = { ...result, ...connectivity, nativeCopperPreserved: copperPreserved, nativeCopperChecks: nativeCopper, ...(repair ? { repair } : {}), accepted: copperPreserved && result.accepted && connectivity.lostTerminalPairs === 0 && (!repair || repair.accepted), inputSha256: hash(before.bytes), candidateSha256: hash(after.bytes), inputReport: reports[0], candidateReport: reports[1] };
     const files = (snapshot: typeof before) => [
       { name: "board.kicad_pcb", bytes: snapshot.bytes },
       { name: "board.kicad_pro", bytes: snapshot.project },

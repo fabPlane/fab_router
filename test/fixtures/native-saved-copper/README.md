@@ -1,0 +1,1 @@
+Original synthetic regression fixture, CC0-1.0. One outlined board, one pad, and one touching generated segment. Candidate declares SIGNAL_A, native load assigns SIGNAL_B. Control declares SIGNAL_B. No zones or routing needed.
