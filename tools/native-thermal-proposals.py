@@ -63,7 +63,22 @@ def protected_ids(source, current):
 
 def paths(start, end):
     dx, dy = end[0]-start[0], end[1]-start[1]
+    if not dx and not dy:
+        return
     if not dx or not dy:
+        # Six endpoint-preserving 45-degree detours, just as for diagonals.
+        # Keep bends short of the midpoint to avoid zero-length middle tracks.
+        length = abs(dx or dy)
+        along = (1 if dx > 0 else -1, 0) if dx else (0, 1 if dy > 0 else -1)
+        normal = (0, 1) if dx else (1, 0)
+        for fraction in (0.125, 0.25, 0.375):
+            radius = length * fraction
+            for side in (1, -1):
+                offset = (normal[0]*side*radius, normal[1]*side*radius)
+                yield [start, (start[0]+along[0]*radius+offset[0],
+                               start[1]+along[1]*radius+offset[1]),
+                       (end[0]-along[0]*radius+offset[0],
+                        end[1]-along[1]*radius+offset[1]), end]
         return
     sx, sy = (1 if dx > 0 else -1), (1 if dy > 0 else -1)
     for fraction in (0.125, 0.25, 0.5):
@@ -185,10 +200,21 @@ def main():
             name=f'{len(rows):03}.kicad_pcb'
             (x.out/name).write_bytes(data)
             rows.append(dict(name=name,label=label))
-    for ident in rank_segments(nodes,protected,errors,8):
-        add(['segment',ident],proposals(nodes,ident))
+    ranked = rank_segments(nodes,protected,errors,8)
+    tracks = {uid(n): n for n in nodes if isinstance(n,list) and n[0]=='segment'}
+    def axial(ident):
+        a, b = [tuple(map(float,child(tracks[ident],key)[1:])) for key in ('start','end')]
+        return a[0] == b[0] or a[1] == b[1]
+    # Preserve the complete prior proposal prefix so already-repairable boards
+    # incur no extra native checks. Axial candidates use only the unused slots.
+    for ident in ranked:
+        if not axial(ident):
+            add(['segment',ident],proposals(nodes,ident))
     for idents in rank_pairs(nodes,protected,errors,16):
         add(['pair',list(idents)],pair_proposals(nodes,idents))
+    for ident in ranked:
+        if axial(ident):
+            add(['segment',ident],proposals(nodes,ident))
     assert len(rows)<=304
     (x.out/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
 if __name__=='__main__':main()

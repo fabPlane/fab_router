@@ -30,3 +30,47 @@ test("thermal proposals exclude reidentified authored tracks, including reversed
     }
   } finally { await rm(root, { recursive: true, force: true }); }
 });
+
+test("axial thermal detours preserve endpoints, directions and the six-proposal bound", () => {
+  const script = String.raw`
+import importlib.util, sys
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('thermal', 'tools/native-thermal-proposals.py')
+m=importlib.util.module_from_spec(spec);sys.modules[spec.name]=m;spec.loader.exec_module(m)
+for start,end in [((0,0),(8,0)),((8,0),(0,0)),((0,0),(0,8)),((0,8),(0,0))]:
+ paths=list(m.paths(start,end))
+ assert len(paths)==6, (start,end,len(paths))
+ assert len(set(tuple(p) for p in paths))==6
+ for points in paths:
+  assert points[0]==start and points[-1]==end
+  assert len(points)==4 and all(a!=b for a,b in zip(points,points[1:]))
+  for a,b in zip(points,points[1:]):
+   dx,dy=abs(b[0]-a[0]),abs(b[1]-a[1])
+   assert dx==0 or dy==0 or dx==dy
+assert list(m.paths((1,1),(1,1)))==[]
+assert len(list(m.paths((0,0),(8,8))))==6
+`;
+  const result = Bun.spawnSync(["python3", "-c", script]);
+  expect(result.stderr.toString()).toBe("");
+  expect(result.exitCode).toBe(0);
+});
+
+test("axial proposals follow the complete existing diagonal and pair prefix", async () => {
+  const root = await mkdtemp(join(tmpdir(), "thermal-order-"));
+  const header = '(kicad_pcb (footprint (pad "1" smd circle (uuid "pad")))';
+  const track = (id: string, end: string) => `(segment (start 0 0) (end ${end}) (width 0.25) (layer "F.Cu") (net 1) (uuid "${id}"))`;
+  try {
+    await writeFile(join(root, "source"), header + ")");
+    await writeFile(join(root, "current"), header + track("axial", "1 0") + track("diagonal", "1 1") + ")");
+    await writeFile(join(root, "report"), JSON.stringify({ newErrors: [{ type: "starved_thermal", items: [{ uuid: "pad", pos: { x: 0, y: 0 } }] }] }));
+    const out = join(root, "out");
+    const result = Bun.spawnSync(["python3", "tools/native-thermal-proposals.py", "--source", join(root, "source"), "--current", join(root, "current"), "--report", join(root, "report"), "--out", out]);
+    expect(result.exitCode).toBe(0);
+    const rows = JSON.parse(await readFile(join(out, "manifest.json"), "utf8")) as {label: unknown}[];
+    expect(rows.map(row => row.label)).toEqual([
+      ...Array.from({ length: 6 }, () => ["segment", "diagonal"]),
+      ...Array.from({ length: 15 }, () => ["pair", ["axial", "diagonal"]]),
+      ...Array.from({ length: 6 }, () => ["segment", "axial"]),
+    ]);
+  } finally { await rm(root, { recursive: true, force: true }); }
+});

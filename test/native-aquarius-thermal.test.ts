@@ -43,3 +43,31 @@ test.skipIf(!hasNative)("one horizontal signal segment starves a preserved groun
     expect(await readFile(input)).toEqual(source);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 120_000);
+
+import { searchNativeThermals } from "../tools/native-thermal-search.ts";
+test.skipIf(!hasNative)("bounded axial search restores the reduced ground thermal with source and routed pairs intact", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-axial-search-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/axial-input.kicad_pcb.gz`));
+    const text = source.toString("utf8"), end = text.lastIndexOf(")");
+    const added = await readFile(`${fixture}/added.sexpr`, "utf8");
+    const input = join(root, "input.kicad_pcb"), routed = join(root, "routed.kicad_pcb");
+    await writeFile(input, source);
+    await writeFile(routed, `${text.slice(0, end)}\n${added}\n${text.slice(end)}`);
+    const routedBefore = await readFile(routed);
+    for (const name of ["input", "routed"]) for (const ext of [".kicad_pro", ".kicad_dru"]) await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+    const result = await searchNativeThermals(input, routed, join(root, "accepted.json"), join(root, "search"), 1);
+    expect(result.published).toBe(true);
+    expect(result.repaired).toBe(true);
+    expect(result.attempts).toHaveLength(1);
+    expect(result.validation.newErrors).toEqual([]);
+    expect(result.validation.opensBefore).toBe(110);
+    expect(result.validation.opensAfter).toBe(110);
+    expect(result.validation.lostTerminalPairs).toBe(0);
+    expect(result.validation.repair?.lostTerminalPairs).toBe(0);
+    expect(result.validation.repair?.accepted).toBe(true);
+    expect(await readFile(input)).toEqual(source);
+    expect(await readFile(routed)).toEqual(routedBefore);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 180_000);
