@@ -146,3 +146,15 @@ The complete-board transfer fails: U1.55 stays in the ground group, but U1.53
 becomes isolated, losing 57 current pairs, and three new clearance findings
 appear against the lower signal via. Eliminating those clearances alone does
 not restore U1.53. The strict gate rejects this full-board transfer.
+
+`full-power-stage0-added.sexpr.gz` retains all 468 generated copper items after
+cycle 216's U1.53 detour and the earlier corridor/capacitor-via changes. Native
+refill reports six thermal errors, 13 opens and 235 lost source pairs. The known
+power-via move alone clears U1.55 but disconnects U1.53 and adds three clearances.
+Coordinating that move with the lower TCK via, from (163.3455,51.5585) to
+(163.3455,52.0785) mm, and updating both incident track endpoints restores the
+57 current pairs and removes the new clearances. Five thermal errors remain,
+with the original 13 opens and 235 lost source pairs. Relative repair acceptance
+passes; final source-based acceptance remains false. This is a manually
+constructed full-context partial recovery, not an automatic or scored repair.
+The new native regression requires both decisions and unchanged native ownership.
