@@ -1,0 +1,25 @@
+{
+  "engineChecksExitCode": 0,
+  "focusedPureExitCode": 0,
+  "focusedNativeExitCode": 0,
+  "nativeMeasurementExitCode": 0,
+  "nativeSearchExitCode": 0,
+  "benchmarkBeforeExitCode": 0,
+  "benchmarkAfterExitCode": 0,
+  "benchmarkLaunchRefusals": [
+    {
+      "exitCode": 2,
+      "cause": "Exclusive harness run lock; before any attempt or output directory"
+    },
+    {
+      "exitCode": 2,
+      "cause": "Exclusive harness run lock; before any attempt or output directory"
+    }
+  ],
+  "comparisonExitCode": 0,
+  "triageInitialFailure": "Reader assumed search/result.json despite source-pad preflight failure; initial stderr retained; a scratch inspect.py also shadowed standard inspect in the exception hook and was renamed",
+  "triageFinalExitCode": 0,
+  "packageChecksExitCode": 0,
+  "allOwnNativeBenchmarkTestJobsCollected": true,
+  "failedFirstRegressions": "Old generator: pure test missing function and native CLI test missing via proposal; Bun failure logs retained; restore/tail outer commands returned zero"
+}

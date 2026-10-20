@@ -1,0 +1,179 @@
+[
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 1,
+    "passed": false,
+    "opens": 15,
+    "newErrors": 6,
+    "postprocessStatus": "search-failed",
+    "preflightFailure": "Candidate source pads differ from input"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 2,
+    "passed": false,
+    "opens": 15,
+    "newErrors": 6,
+    "postprocessStatus": "search-failed",
+    "preflightFailure": "Candidate source pads differ from input"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 3,
+    "passed": false,
+    "opens": 15,
+    "newErrors": 6,
+    "postprocessStatus": "search-failed",
+    "preflightFailure": "Candidate source pads differ from input"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 3,
+    "passed": false,
+    "opens": 1,
+    "newErrors": 0,
+    "initialLostSourcePairs": 17,
+    "initialNewErrors": [],
+    "stages": 0,
+    "attempts": 0,
+    "repaired": false,
+    "published": false,
+    "finalLostSourcePairs": 17,
+    "postprocessStatus": "rejected"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 1,
+    "passed": false,
+    "opens": 1,
+    "newErrors": 0,
+    "initialLostSourcePairs": 17,
+    "initialNewErrors": [],
+    "stages": 0,
+    "attempts": 0,
+    "repaired": false,
+    "published": false,
+    "finalLostSourcePairs": 17,
+    "postprocessStatus": "rejected"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 2,
+    "passed": false,
+    "opens": 1,
+    "newErrors": 0,
+    "initialLostSourcePairs": 17,
+    "initialNewErrors": [],
+    "stages": 0,
+    "attempts": 0,
+    "repaired": false,
+    "published": false,
+    "finalLostSourcePairs": 17,
+    "postprocessStatus": "rejected"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 2,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "stages": 2,
+    "attempts": 38,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 1,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "stages": 2,
+    "attempts": 38,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 3,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "stages": 2,
+    "attempts": 38,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 3,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal"
+    ],
+    "stages": 1,
+    "attempts": 1,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 1,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal"
+    ],
+    "stages": 1,
+    "attempts": 1,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 2,
+    "passed": true,
+    "opens": 0,
+    "newErrors": 0,
+    "initialLostSourcePairs": 0,
+    "initialNewErrors": [
+      "starved_thermal"
+    ],
+    "stages": 1,
+    "attempts": 1,
+    "repaired": true,
+    "published": true,
+    "finalLostSourcePairs": 0,
+    "postprocessStatus": "accepted"
+  }
+]
