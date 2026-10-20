@@ -1,4 +1,7 @@
 import { expect, test } from "bun:test";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import { assertSourceCopper } from "../tools/kicad-board-rules.ts";
 import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
 import { tmpdir } from "node:os";
@@ -39,6 +42,26 @@ test.skipIf(!hasNative)("Aquarius signal copper disconnects a source ground pad 
       const deletion = await check(segments.filter((_, index) => index !== remove));
       expect(deletion.lostTerminalPairs).toBe(0);
     }
+    // Native refill of a local detour can report restored connectivity while
+    // still failing the original open budget. The evidence also records unsafe
+    // native track-net reassignment; this fixture is not a legal repair.
+    const detour = (await readFile(`${fixture}/connectivity-detour.sexpr`, "utf8")).trim().split("\n");
+    const rerouted = await check(detour);
+    expect(rerouted.newErrors).toEqual([]);
+    expect(rerouted.lostTerminalPairs).toBe(0);
+    expect(rerouted.opensAfter).toBe(112);
+    expect(rerouted.opensBefore).toBe(110);
+    expect(rerouted.accepted).toBe(false);
+    const submitted = await readFile(candidate, "utf8");
+    await promisify(execFile)("kicad-cli", ["pcb", "drc", "--severity-all", "--format", "json",
+      "--units", "mm", "--refill-zones", "--save-board", "--output", join(root, "refill.json"), candidate],
+      { timeout: 120_000, maxBuffer: 4 * 1024 * 1024 });
+    const saved = await readFile(candidate, "utf8");
+    expect(() => assertSourceCopper(submitted, saved)).toThrow("Candidate source copper differs");
+    const reassigned = detour.map(segment => segment.replace('(net "Net-(C1-Pad1)")', '(net "Net-(R1-Pad1)")'));
+    const expected = `${text.slice(0, end)}\n${reassigned.join("\n")}\n${text.slice(end)}`;
+    expect(() => assertSourceCopper(expected, saved)).not.toThrow();
+    expect(() => assertSourceCopper(saved, expected)).not.toThrow();
     const control = await check([]);
     expect(control.newErrors).toEqual([]);
     expect(control.opensAfter).toBe(110);

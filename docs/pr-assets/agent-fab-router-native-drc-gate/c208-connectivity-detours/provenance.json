@@ -1,0 +1,25 @@
+{
+  "cycle": 208,
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "native_version": "10.0.6",
+  "parent_commit": "f2e7f2e765e5f08a685aa32863c8a04610180c97",
+  "case": "kitspace-aquarius-j4",
+  "retained_router_commit": "8fa7ead0c45b0e7ca33737ff418f6309d51d762c",
+  "scored_router_rerun": false,
+  "production_fix": false,
+  "sweep_checks": 20,
+  "repeated_checks": 9,
+  "all_native_attempts_retained": true,
+  "native_failed_or_stopped_attempts": 0,
+  "ownership_changes_in_sweep": 5,
+  "unsafe_zero_error_detours": 3,
+  "gate_rejects_fixture_due_to_open_budget": true,
+  "limits": [
+    "Diagnostic/regression only; no safe repair or scored gain.",
+    "Source/routed pair and report counts alone fail to identify unsafe reassignment.",
+    "Submitted files reconstructed from exact fixture/helper; native-saved files actually captured.",
+    "Current gate does not compare submitted candidate against native-saved ownership.",
+    "Historical full scores not rerun; no integration pin bump."
+  ]
+}

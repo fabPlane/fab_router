@@ -34,3 +34,13 @@ route repair. The horizontal segment is also the earlier one-track thermal
 witness: thermal starvation alone does not imply this terminal partition.
 All 74 discovery/refill checks and three-repeat controls are retained in the
 c207 evidence assets. No production behavior or scored outcome changes.
+
+`connectivity-detour.sexpr` replaces the first horizontal track with the current
+generator's first endpoint-preserving detour. Native 10.0.6 reports zero errors,
+112 opens and zero lost source/routed pairs, but reassigns all three detour tracks
+from `Net-(C1-Pad1)` to `Net-(R1-Pad1)` on refill. This is an UNSAFE diagnostic,
+not a repair. The gate still rejects it because the source budget is 110 opens.
+A separate load-only control isolates reassignment to native board loading,
+before explicit connectivity build, refill, DRC or save.
+The c208 evidence explicitly audits submitted versus native-saved ownership;
+report/terminal counts alone must not be interpreted as proof of route fidelity.
