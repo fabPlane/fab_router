@@ -47,6 +47,9 @@ test.skipIf(!hasNative)("generated coordinated power-via move restores the secon
     expect(manifest.length).toBeLessThanOrEqual(304);
     const proposal = manifest.find(row => row.label[0] === "via" && row.label[1] === "e57c15b7-d609-442a-9cca-2c520d20bbab");
     expect(proposal).toBeDefined();
+    // Probe one connected via move after the first six track detours.
+    // Native acceptance remains mandatory; candidate generation alone proves no safety.
+    expect(manifest.indexOf(proposal!)).toBe(6);
     const generated = await readFile(join(out, proposal!.name), "utf8");
     await writeFile(candidate, generated);
     const after = await checkNativeRepair(input, routed, candidate);

@@ -246,7 +246,7 @@ def via_proposals(nodes, via_id, protected):
         incident.append((uid(n), keys))
     if not incident:
         return
-    # Fixed small family, appended after all prior track proposals. Exact
+    # Fixed small family. Exact
     # decimals preserve endpoint contact without imposing a rounding tolerance.
     for dx, dy in ((-.3, .3), (.3, .3), (-.3, -.3), (.3, -.3),
                    (-.3, 0), (.3, 0), (0, -.3), (0, .3)):
@@ -309,8 +309,8 @@ def main():
     def axial(ident):
         a, b = [tuple(map(float,child(tracks[ident],key)[1:])) for key in ('start','end')]
         return a[0] == b[0] or a[1] == b[1]
-    # Preserve the complete prior proposal prefix so already-repairable boards
-    # incur no extra native checks. Axial candidates use only the unused slots.
+    # Generate the complete prior proposal set before filling unused slots.
+    # The bounded via probe below changes evaluation order, not geometry.
     for ident in ranked:
         if not axial(ident):
             add(['segment',ident],proposals(nodes,ident))
@@ -319,13 +319,21 @@ def main():
     for ident in ranked:
         if axial(ident):
             add(['segment',ident],proposals(nodes,ident))
-    # Append only after the complete prior prefix. Never exceed the existing
-    # 304-check budget or displace an already successful diagonal/pair/axial path.
+    # Append geometry only after the complete prior prefix. Never exceed the
+    # 304-check budget or displace any prior diagonal/pair/axial candidate.
     for ident in ranked:
         if axial(ident):
             add(['short-axial',ident],islice(proposals(nodes,ident,short=True),304-len(rows)))
     for ident in rank_vias(nodes, protected, errors):
         add(['via', ident], islice(via_proposals(nodes, ident, protected), 304-len(rows)))
     assert len(rows)<=304
+    # Probe one representative of the nearest connected-via family after the
+    # first six track detours, before spending the budget on track combinations.
+    # Keep every generated file and the relative order of all other proposals;
+    # only native validation may accept the probe. Boards without eligible vias
+    # retain their exact manifest order and candidate bytes.
+    first_via = next((i for i, row in enumerate(rows) if row['label'][0] == 'via'), None)
+    if first_via is not None and first_via > 6:
+        rows.insert(6, rows.pop(first_via))
     (x.out/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
 if __name__=='__main__':main()
