@@ -1,0 +1,225 @@
+{
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "result": {
+    "ok": true,
+    "ses": "(session board.ses\n  (base_design board.dsn)\n  (placement\n    (resolution um 10)\n    (component \"Paperino:photon_headers\"\n      (place A1 1088800 -999080 front 0)\n    )\n    (component \"Paperino:mounting_hole_1.5\"\n      (place M1 1025400 -974600 front 0)\n      (place M2 1674600 -656400 front 0)\n      (place M3 1025400 -656400 front 0)\n      (place M4 1674600 -974600 front 0)\n    )\n    (component \"Paperino:paperino_module\"\n      (place A2 1495700 -815500 back 270)\n    )\n    (component \"Symbols:OSHW-Symbol_6.7x6mm_SilkScreen\"\n      (place REF*** 1187860 -930500 back 90)\n    )\n  )\n  (was_is)\n  (routes\n    (resolution um 10)\n    (parser\n      (host_cad \"KiCad's Pcbnew\")\n      (host_version \"10.0.6-10.0.6~ubuntu24.04.1\")\n    )\n    (library_out\n      (padstack \"Via[0-1]_600:300_um\"\n        (shape (circle F.Cu 6000 0 0))\n        (shape (circle B.Cu 6000 0 0))\n        (attach off)\n      )\n    )\n    (network_out\n      (net \"Net-(A1-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            1076100 -676500\n            1101500 -676500\n          )\n        )\n      )\n      (net \"Net-(A1-Pad3)\"\n        (wire\n          (path F.Cu 2500\n            1076100 -727300\n            1101500 -727300\n          )\n        )\n      )\n      (net \"Net-(A1-Pad4)\"\n        (wire\n          (path F.Cu 2500\n            1076100 -752700\n            1101500 -752700\n          )\n        )\n      )\n      (net \"/INT1\"\n        (wire\n          (path F.Cu 2500\n            1076100 -778100\n            1101500 -778100\n          )\n        )\n      )\n      (net \"Net-(A1-Pad6)\"\n        (wire\n          (path F.Cu 2500\n            1076100 -803500\n            1101500 -803500\n          )\n        )\n      )\n      (net \"/SPI_MOSI\"\n        (wire\n          (path F.Cu 2500\n            1076100 -828900\n            1101500 -828900\n          )\n        )\n      )\n      (net \"/SPI_MISO\"\n        (wire\n          (path F.Cu 2500\n            1076100 -854300\n            1101500 -854300\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            1101500 -854300\n            1252100 -771400\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1252100 -771400\n            1252100 -681400\n            1274600 -658900\n            1372100 -658900\n            1402700 -688500\n          )\n        )\n        (via \"Via[0-1]_600:300_um\" 1252100 -771400)\n      )\n      (net \"/SPI_CLK\"\n        (wire\n          (path F.Cu 2500\n            1076100 -879700\n            1101500 -879700\n          )\n        )\n      )\n      (net \"/SPI_CS1\"\n        (wire\n          (path F.Cu 2500\n            1076100 -905100\n            1101500 -905100\n          )\n        )\n      )\n      (net \"/~{BUSY}\"\n        (wire\n          (path F.Cu 2500\n            1076100 -930500\n            1101500 -930500\n          )\n        )\n      )\n      (net \"/~{RST}\"\n        (wire\n          (path F.Cu 2500\n            1076100 -955900\n            1101500 -955900\n          )\n        )\n      )\n      (net \"Net-(A1-Pad13)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -955900\n            1304700 -955900\n          )\n        )\n      )\n      (net \"Net-(A1-Pad14)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -930500\n            1304700 -930500\n          )\n        )\n      )\n      (net \"Net-(A1-Pad15)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -905100\n            1304700 -905100\n          )\n        )\n      )\n      (net \"Net-(A1-Pad16)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -879700\n            1304700 -879700\n          )\n        )\n      )\n      (net \"Net-(A1-Pad17)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -854300\n            1304700 -854300\n          )\n        )\n      )\n      (net \"/INT2\"\n        (wire\n          (path F.Cu 2500\n            1279300 -828900\n            1304700 -828900\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1304700 -828900\n            1428100 -942500\n          )\n        )\n      )\n      (net \"/SPI_CS2\"\n        (wire\n          (path F.Cu 2500\n            1279300 -803500\n            1304700 -803500\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1304700 -803500\n            1453500 -942500\n          )\n        )\n      )\n      (net \"Net-(A1-Pad20)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -778100\n            1304700 -778100\n          )\n        )\n      )\n      (net \"Net-(A1-Pad22)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -727300\n            1304700 -727300\n          )\n        )\n      )\n      (net \"Net-(A1-Pad23)\"\n        (wire\n          (path F.Cu 2500\n            1279300 -701900\n            1304700 -701900\n          )\n        )\n      )\n      (net +3V3\n        (wire\n          (path F.Cu 2500\n            1279300 -676500\n            1304700 -676500\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1304700 -676500\n            1529700 -942500\n          )\n        )\n      )\n    )\n  )\n)\n",
+    "report": {
+      "passes": 4,
+      "attempted": 50,
+      "completed": 26,
+      "incompleteBefore": 32,
+      "incompleteAfter": 6,
+      "added": {
+        "tracks": 27,
+        "barrels": 1
+      },
+      "ripped": 3,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": true,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 3600000,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "neckWidthUm": 0,
+        "angleMode": "45"
+      },
+      "wallClockMs": 11847,
+      "perNet": [
+        {
+          "net": "Net-(A1-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad3)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad4)",
+          "incomplete": 0
+        },
+        {
+          "net": "/INT1",
+          "incomplete": 1
+        },
+        {
+          "net": "Net-(A1-Pad6)",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_MOSI",
+          "incomplete": 1
+        },
+        {
+          "net": "/SPI_MISO",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_CLK",
+          "incomplete": 1
+        },
+        {
+          "net": "/SPI_CS1",
+          "incomplete": 1
+        },
+        {
+          "net": "/~{BUSY}",
+          "incomplete": 1
+        },
+        {
+          "net": "/~{RST}",
+          "incomplete": 1
+        },
+        {
+          "net": "Net-(A1-Pad13)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad14)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad15)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad16)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad17)",
+          "incomplete": 0
+        },
+        {
+          "net": "/INT2",
+          "incomplete": 0
+        },
+        {
+          "net": "/SPI_CS2",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad20)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad22)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(A1-Pad23)",
+          "incomplete": 0
+        },
+        {
+          "net": "+3V3",
+          "incomplete": 0
+        }
+      ]
+    },
+    "statsBefore": {
+      "items": {
+        "pads": 60,
+        "barrels": 0,
+        "tracks": 0,
+        "pours": 2,
+        "fences": 13
+      },
+      "connections": {
+        "maximum": 38,
+        "incomplete": 32
+      },
+      "barrels": {
+        "total": 0,
+        "through": 0,
+        "blind": 0,
+        "buried": 0
+      },
+      "tracks": {
+        "totalLengthLu": 0,
+        "totalLengthMm": 0,
+        "legs": 0,
+        "bends90": 0,
+        "bends45": 0,
+        "bendsOther": 0
+      },
+      "violations": {
+        "total": 0,
+        "byRule": {}
+      },
+      "fanout": {
+        "smdPads": 12,
+        "escaped": 1,
+        "viaEscaped": 0
+      }
+    },
+    "statsAfter": {
+      "items": {
+        "pads": 60,
+        "barrels": 1,
+        "tracks": 27,
+        "pours": 2,
+        "fences": 13
+      },
+      "connections": {
+        "maximum": 38,
+        "incomplete": 6
+      },
+      "barrels": {
+        "total": 1,
+        "through": 1,
+        "blind": 0,
+        "buried": 0
+      },
+      "tracks": {
+        "totalLengthLu": 1712351.2550215109,
+        "totalLengthMm": 171.23512550215108,
+        "legs": 30,
+        "bends90": 0,
+        "bends45": 2,
+        "bendsOther": 1
+      },
+      "violations": {
+        "total": 0,
+        "byRule": {}
+      },
+      "fanout": {
+        "smdPads": 12,
+        "escaped": 5,
+        "viaEscaped": 1
+      }
+    },
+    "diagnostics": []
+  }
+}

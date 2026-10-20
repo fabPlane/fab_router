@@ -1,0 +1,221 @@
+{
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": false,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "result": {
+    "ok": true,
+    "ses": "(session board.ses\n  (base_design board.dsn)\n  (placement\n    (resolution um 10)\n    (component \"Connectors_JST:JST_XH_B04B-XH-A_04x2.50mm_Straight\"\n      (place \"hc-sr4\" 1473200 -850900 front 90)\n    )\n    (component \"Connectors_JST:JST_XH_B04B-XH-A_04x2.50mm_Straight::1\"\n      (place I2c1 1384300 -825500 front 270)\n    )\n    (component \"Socket_Strips:Socket_Strip_Straight_1x02\"\n      (place JP1 1409700 -635000 front 90)\n    )\n    (component \"Connectors_Phoenix:PhoenixContact_MC-G_02x3.81mm_Angled\"\n      (place P1 914400 -444500 front 270)\n    )\n    (component \"Resistors_SMD:R_0805\"\n      (place R1 939800 -749300 front 270)\n      (place R2 939800 -787400 front 270)\n      (place R6 977900 -787400 front 270)\n      (place R8 977900 -863600 front 270)\n    )\n    (component \"Resistors_SMD:R_0805::1\"\n      (place R3 939800 -825500 front 90)\n      (place R4 939800 -863600 front 90)\n      (place R5 977900 -749300 front 90)\n      (place R7 977900 -825500 front 90)\n    )\n    (component \"Resistors_SMD:R_0805::2\"\n      (place R9 1422400 -685800 front 0)\n    )\n    (component \"Resistors_SMD:R_0805::3\"\n      (place R10 1460500 -685800 front 180)\n    )\n    (component \"Connectors_JST:JST_XH_B06B-XH-A_06x2.50mm_Straight\"\n      (place Relays1 749300 -698500 front 90)\n      (place soil1 850900 -863600 front 90)\n    )\n    (component \"particle-boards:PHOTON\"\n      (place U1 1219200 -660400 front 0)\n    )\n  )\n  (was_is)\n  (routes\n    (resolution um 10)\n    (parser\n      (host_cad \"KiCad's Pcbnew\")\n      (host_version \"10.0.6-10.0.6~ubuntu24.04.1\")\n    )\n    (library_out\n      (padstack \"Via[0-1]_600:400_um\"\n        (shape (circle F.Cu 6000 0 0))\n        (shape (circle B.Cu 6000 0 0))\n        (attach off)\n      )\n    )\n    (network_out\n      (net +5V\n        (wire\n          (path F.Cu 5000\n            749300 -698500\n            749300 -762000\n            850900 -863600\n          )\n        )\n        (wire\n          (path F.Cu 5000\n            914400 -482600\n            914400 -533400\n            749300 -698500\n          )\n        )\n        (wire\n          (path F.Cu 5000\n            914400 -482600\n            1130300 -508000\n          )\n        )\n      )\n      (net GND\n        (wire\n          (path F.Cu 2500\n            977900 -777900\n            977900 -758800\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -854100\n            977900 -835000\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -777900\n            977900 -785400\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            977900 -785400\n            977900 -845400\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -845400\n            977900 -835000\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            749300 -573500\n            850900 -675100\n            850900 -738600\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            1473200 -775900\n            1412900 -685800\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -758800\n            955679 -755266\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            955679 -755266\n            850900 -738600\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            1473200 -775900\n            1488200 -798400\n            1480700 -813400\n            1447064 -812532\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1447064 -812532\n            1384300 -900500\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            914400 -444500\n            749300 -573500\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            914400 -444500\n            1130300 -533400\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 977900 -785400)\n        (via \"Via[0-1]_600:400_um\" 977900 -845400)\n        (via \"Via[0-1]_600:400_um\" 955679 -755266)\n        (via \"Via[0-1]_600:400_um\" 1447064 -812532)\n      )\n      (net +3V3\n        (wire\n          (path F.Cu 5000\n            1409700 -609600\n            1308100 -508000\n          )\n        )\n        (wire\n          (path B.Cu 5000\n            1384300 -825500\n            1384300 -609600\n            1409700 -609600\n          )\n        )\n      )\n      (net \"Net-(R1-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            939800 -739800\n            977900 -739800\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -739800\n            1130300 -711200\n          )\n        )\n      )\n      (net \"Net-(R2-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            977900 -796900\n            1038200 -736600\n            1130300 -736600\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            939800 -777900\n            977900 -796900\n          )\n        )\n      )\n      (net \"Net-(R3-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            977900 -816000\n            1031900 -762000\n            1130300 -762000\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            939800 -835000\n            977900 -816000\n          )\n        )\n      )\n      (net \"Net-(R4-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            977900 -873100\n            939800 -873100\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            977900 -873100\n            1130300 -787400\n          )\n        )\n      )\n      (net \"Net-(R10-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            1431900 -685800\n            1451000 -685800\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            1431900 -685800\n            1406500 -660400\n            1308100 -660400\n          )\n        )\n      )\n      (net \"Net-(Relays1-Pad3)\"\n        (wire\n          (path F.Cu 2500\n            749300 -648500\n            786800 -648500\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            786800 -648500\n            801800 -663500\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            801800 -663500\n            1130300 -660400\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 786800 -648500)\n        (via \"Via[0-1]_600:400_um\" 801800 -663500)\n      )\n      (net \"Net-(Relays1-Pad4)\"\n        (wire\n          (path F.Cu 2500\n            749300 -623500\n            809300 -623500\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            809300 -623500\n            824300 -638500\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            824300 -638500\n            1130300 -635000\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 809300 -623500)\n        (via \"Via[0-1]_600:400_um\" 824300 -638500)\n      )\n      (net \"Net-(R10-Pad1)\"\n        (wire\n          (path B.Cu 2500\n            1473200 -825900\n            1488200 -810900\n            1488200 -720900\n            1470514 -708294\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            1470514 -708294\n            1470000 -685800\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 1470514 -708294)\n      )\n      (net \"Net-(U1-Pad17)\"\n        (wire\n          (path F.Cu 2500\n            1473200 -800900\n            1308100 -685800\n          )\n        )\n      )\n      (net \"Net-(I2c1-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            1384300 -850500\n            1369619 -833449\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            1369619 -833449\n            1308100 -762000\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 1369619 -833449)\n      )\n      (net \"Net-(I2c1-Pad3)\"\n        (wire\n          (path F.Cu 2500\n            1384300 -875500\n            1308100 -787400\n          )\n        )\n      )\n      (net \"Net-(JP1-Pad1)\"\n        (wire\n          (path F.Cu 2500\n            1409700 -635000\n            1308100 -558800\n          )\n        )\n      )\n      (net \"Net-(R1-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            939800 -758800\n            850900 -763600\n          )\n        )\n      )\n      (net \"Net-(R2-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            939800 -796900\n            850900 -788600\n          )\n        )\n      )\n      (net \"Net-(R3-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            939800 -816000\n            850900 -813600\n          )\n        )\n      )\n      (net \"Net-(R4-Pad2)\"\n        (wire\n          (path F.Cu 2500\n            939800 -854100\n            850900 -838600\n          )\n        )\n      )\n      (net \"Net-(Relays1-Pad2)\"\n        (wire\n          (path B.Cu 2500\n            749300 -673500\n            794277 -674952\n          )\n        )\n        (wire\n          (path F.Cu 2500\n            794277 -674952\n            1130300 -685800\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 794277 -674952)\n      )\n      (net \"Net-(Relays1-Pad5)\"\n        (wire\n          (path F.Cu 2500\n            749300 -598500\n            794281 -599810\n          )\n        )\n        (wire\n          (path B.Cu 2500\n            794281 -599810\n            1130300 -609600\n          )\n        )\n        (via \"Via[0-1]_600:400_um\" 794281 -599810)\n      )\n    )\n  )\n)\n",
+    "report": {
+      "passes": 4,
+      "attempted": 45,
+      "completed": 37,
+      "incompleteBefore": 39,
+      "incompleteAfter": 2,
+      "added": {
+        "tracks": 49,
+        "barrels": 12
+      },
+      "ripped": 3,
+      "violationsBefore": 0,
+      "violationsAdded": 0,
+      "timedOut": false,
+      "aborted": false,
+      "stoppedBy": "stagnant",
+      "effectiveSettings": {
+        "maxPasses": 100,
+        "maxStagnantPasses": 3,
+        "viaCost": 50,
+        "planeViaCost": 5,
+        "bendCost": 0,
+        "preferredDirectionCost": 1.5,
+        "startRipupCost": 100,
+        "ripupEnabled": true,
+        "fanoutEnabled": false,
+        "routerEnabled": true,
+        "optimizerEnabled": true,
+        "strictDrc": false,
+        "layers": {},
+        "viasAllowed": true,
+        "ignoreNetGroups": [],
+        "seed": 1,
+        "shoveEnabled": true,
+        "orderByDifficulty": true,
+        "detailedRouter": "off",
+        "globalPlan": "off",
+        "timeBudgetMs": 3600000,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "neckWidthUm": 0,
+        "angleMode": "45"
+      },
+      "wallClockMs": 12779,
+      "perNet": [
+        {
+          "net": "+5V",
+          "incomplete": 1
+        },
+        {
+          "net": "Net-(R10-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(U1-Pad17)",
+          "incomplete": 0
+        },
+        {
+          "net": "GND",
+          "incomplete": 1
+        },
+        {
+          "net": "+3V3",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(I2c1-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(I2c1-Pad3)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(JP1-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R1-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R1-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R2-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R2-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R3-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R3-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R4-Pad1)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R4-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(R10-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(Relays1-Pad2)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(Relays1-Pad3)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(Relays1-Pad4)",
+          "incomplete": 0
+        },
+        {
+          "net": "Net-(Relays1-Pad5)",
+          "incomplete": 0
+        }
+      ]
+    },
+    "statsBefore": {
+      "items": {
+        "pads": 68,
+        "barrels": 0,
+        "tracks": 0,
+        "pours": 0,
+        "fences": 2
+      },
+      "connections": {
+        "maximum": 39,
+        "incomplete": 39
+      },
+      "barrels": {
+        "total": 0,
+        "through": 0,
+        "blind": 0,
+        "buried": 0
+      },
+      "tracks": {
+        "totalLengthLu": 0,
+        "totalLengthMm": 0,
+        "legs": 0,
+        "bends90": 0,
+        "bends45": 0,
+        "bendsOther": 0
+      },
+      "violations": {
+        "total": 0,
+        "byRule": {}
+      },
+      "fanout": {
+        "smdPads": 20,
+        "escaped": 0,
+        "viaEscaped": 0
+      }
+    },
+    "statsAfter": {
+      "items": {
+        "pads": 68,
+        "barrels": 12,
+        "tracks": 49,
+        "pours": 0,
+        "fences": 2
+      },
+      "connections": {
+        "maximum": 39,
+        "incomplete": 2
+      },
+      "barrels": {
+        "total": 12,
+        "through": 12,
+        "blind": 0,
+        "buried": 0
+      },
+      "tracks": {
+        "totalLengthLu": 5890760.50758597,
+        "totalLengthMm": 589.0760507585969,
+        "legs": 60,
+        "bends90": 1,
+        "bends45": 7,
+        "bendsOther": 3
+      },
+      "violations": {
+        "total": 0,
+        "byRule": {}
+      },
+      "fanout": {
+        "smdPads": 20,
+        "escaped": 20,
+        "viaEscaped": 5
+      }
+    },
+    "diagnostics": []
+  }
+}
