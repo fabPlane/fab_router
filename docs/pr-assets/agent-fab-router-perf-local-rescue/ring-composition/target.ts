@@ -1,0 +1,12 @@
+import {writeFileSync} from 'node:fs';
+import {pathToFileURL} from 'node:url';
+import {resolve} from 'node:path';
+const [source,out]=process.argv.slice(2);if(!source||!out)throw Error('SOURCE OUTPUT');
+const {loadCases}=await import(pathToFileURL(resolve(source,'tools/acceptance/cases.ts')).href);
+const {runCase}=await import(pathToFileURL(resolve(source,'tools/acceptance/run-case.ts')).href);
+const loaded=loadCases();if(loaded.invalid.length)throw Error('Invalid cases');
+const c=loaded.cases.find((x:any)=>x.id==='routing-slow-issue555-cnh-strict');if(!c)throw Error('Missing case');
+const settings={...c.settings,localRecovery:true};
+const start=new Date().toISOString();const result=runCase({...c,settings});
+writeFileSync(out,JSON.stringify({source,started_utc:start,finished_utc:new Date().toISOString(),settings,result},null,2)+'\n');
+console.log(JSON.stringify({pass:result.pass,ms:result.ms,measured:result.measured}));
