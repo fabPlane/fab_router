@@ -103,3 +103,11 @@ native copper ownership. Six thermal errors remain; strict final acceptance is
 false. The remaining disconnected source components include U1.39, U1.55 and
 U1.46–48. This is a manual partial recovery control, not automatic repair or a
 new full-suite routing score. Complete probes and checks are in c214 evidence.
+
+Cycle 215 moves only the generated capacitor via at (165.815,48.1278) up
+0.1 mm, together with its two attached tracks, after the coordinated corridor
+move above. Native refill restores the 57 source pairs involving U1.55 and
+reduces opens from 14 to 13. It exposes a seventh `starved_thermal` at U1.55
+(actual one spoke, required two); the relative repair gate must reject it
+despite unchanged copper ownership, preserved current pairs and no added
+clearance errors. This is a rejected diagnostic, not an automatic repair.

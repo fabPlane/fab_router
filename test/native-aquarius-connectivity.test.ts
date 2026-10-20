@@ -208,3 +208,45 @@ test.skipIf(!hasNative)("coordinated generated via moves reconnect the full-boar
     expect(await readFile(input)).toEqual(Buffer.from(`${text.slice(0, end)}\n\n${text.slice(end)}`));
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 180_000);
+
+// Reconnecting an isolated ground pad can expose a previously unreported
+// one-spoke thermal. Fewer opens and no added clearances do not make it safe.
+test.skipIf(!hasNative)("reconnecting U1.55 still rejects its newly exposed thermal failure", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-aquarius-pad55-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/input.kicad_pcb.gz`)).toString();
+    const end = source.lastIndexOf(")");
+    const full = gunzipSync(await readFile(`${fixture}/full-added.sexpr.gz`)).toString().trim().split("\n");
+    const routed = full.map(line => line
+      .replaceAll("162.9939 50.8553", "162.8939 50.9553")
+      .replaceAll("162.3543 48.764", "162.2343 48.764")
+      .replaceAll("162.3543 51.5768", "162.2343 51.5768"));
+    const candidate = routed.map(line => line.replaceAll("165.815 48.1278", "165.815 48.0278"));
+    const changed = routed.filter((line, i) => line !== candidate[i]);
+    expect(changed).toHaveLength(3);
+    expect(changed.filter(line => line.startsWith("(via "))).toHaveLength(1);
+    expect(candidate.map(line => line.replaceAll("165.815 48.0278", "165.815 48.1278"))).toEqual(routed);
+    for (const [name, lines] of [["input", []], ["routed", routed], ["candidate", candidate]] as const) {
+      await writeFile(join(root, `${name}.kicad_pcb`), `${source.slice(0, end)}\n${lines.join("\n")}\n${source.slice(end)}`);
+      for (const ext of [".kicad_pro", ".kicad_dru"])
+        await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+    }
+    const input = join(root, "input.kicad_pcb"), before = join(root, "routed.kicad_pcb");
+    const original = await checkNativeBoards(input, before);
+    expect(original.newErrors).toHaveLength(6);
+    expect(original.lostTerminalPairs).toBe(292);
+    expect(original.opensAfter).toBe(14);
+    const checked = await checkNativeRepair(input, before, join(root, "candidate.kicad_pcb"));
+    expect(checked.nativeCopperChecks).toEqual([true, true, true]);
+    expect(checked.newErrors.map(error => error.type)).toEqual(Array(7).fill("starved_thermal"));
+    expect(checked.lostTerminalPairs).toBe(235);
+    expect(checked.opensAfter).toBe(13);
+    expect(checked.repair?.lostTerminalPairs).toBe(0);
+    expect(checked.repair?.accepted).toBe(false);
+    expect(checked.accepted).toBe(false);
+    expect(checked.repair?.newErrors).toHaveLength(1);
+    expect(checked.repair?.newErrors[0]?.type).toBe("starved_thermal");
+    expect(checked.repair?.newErrors[0]?.items.some(item => item.uuid === "57ce983e-ec4e-48a5-9547-b23514d0d6a4")).toBe(true);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 120_000);
