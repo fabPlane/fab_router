@@ -1,0 +1,20 @@
+{
+  "fail_first_native_regression_exit": 1,
+  "initial_full_suite_exit": 1,
+  "initial_full_suite_reason": "Unsafe axial witness expected publication; native ownership guard correctly rejects it",
+  "final_full_suite_exit": 0,
+  "final_full_suite_tests": 920,
+  "final_full_suite_assertions": 398812,
+  "final_full_suite_seconds": 923.68,
+  "focused_corrected_axial_tests": 2,
+  "focused_corrected_axial_assertions": 32,
+  "final_integration_exit": 0,
+  "integration_pass": 109,
+  "integration_existing_availability_skips": 6,
+  "native_measurements_exit": 0,
+  "all_six_repair_rechecks_exit": 0,
+  "repair_candidate_and_checkpoint_bytes_unchanged": true,
+  "initial_pin_preparation_error": "Wrong repository used for revision lookup; corrected before any pin commit; stable-pin tests repeated",
+  "native_measurement_attempts_omitted": 0,
+  "new_router_run": false
+}
