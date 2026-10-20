@@ -1,0 +1,83 @@
+[
+  {
+    "case": "kitspace-aquarius-j4",
+    "calls": 112539936,
+    "repeated": 67974330,
+    "kinds": {
+      "hull": {
+        "calls": 11260278,
+        "repeated": 11258564,
+        "consecutive": 51872
+      },
+      "box": {
+        "calls": 1422350,
+        "repeated": 1421955,
+        "consecutive": 20768
+      },
+      "disk": {
+        "calls": 26446654,
+        "repeated": 16902893,
+        "consecutive": 879550
+      },
+      "capsule": {
+        "calls": 73410654,
+        "repeated": 38390918,
+        "consecutive": 11114
+      }
+    }
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "calls": 36808829,
+    "repeated": 16061419,
+    "kinds": {
+      "box": {
+        "calls": 348105,
+        "repeated": 347945,
+        "consecutive": 1360
+      },
+      "disk": {
+        "calls": 6484455,
+        "repeated": 2857428,
+        "consecutive": 120895
+      },
+      "capsule": {
+        "calls": 29972336,
+        "repeated": 12852115,
+        "consecutive": 12937
+      },
+      "hull": {
+        "calls": 3933,
+        "repeated": 3931,
+        "consecutive": 0
+      }
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "calls": 25863135,
+    "repeated": 5938272,
+    "kinds": {
+      "disk": {
+        "calls": 5125664,
+        "repeated": 2437919,
+        "consecutive": 105393
+      },
+      "box": {
+        "calls": 2843,
+        "repeated": 2783,
+        "consecutive": 128
+      },
+      "capsule": {
+        "calls": 20704578,
+        "repeated": 3467523,
+        "consecutive": 31
+      },
+      "hull": {
+        "calls": 30050,
+        "repeated": 30047,
+        "consecutive": 0
+      }
+    }
+  }
+]

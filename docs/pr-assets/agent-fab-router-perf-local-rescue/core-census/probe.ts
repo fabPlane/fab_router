@@ -1,0 +1,12 @@
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const {coreOf,coreCensus}=await import(pathToFileURL(resolve(process.argv[2]!, 'src/geom/distance.ts')).href);
+const a={kind:'disk',c:{x:1,y:2},r:3};
+const b={kind:'disk',c:{x:1,y:2},r:3};
+const x=coreOf(a); const y=coreOf(a); coreOf(b);
+if(x===y || x.pts===y.pts || x.pts[0]!==a.c) throw Error('ownership changed');
+a.r=4;a.c.x=5;
+const z=coreOf(a);
+if(z.r!==4 || z.pts[0].x!==5) throw Error('mutation hidden');
+if(JSON.stringify(coreCensus.disk)!==JSON.stringify({calls:4,repeated:2,consecutive:1})) throw Error('identity census');
+console.log('PASS distinct identity, consecutive identity, live mutation, fresh wrappers');
