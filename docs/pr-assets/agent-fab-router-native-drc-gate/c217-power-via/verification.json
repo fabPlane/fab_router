@@ -1,0 +1,556 @@
+{
+  "decisions": [
+    {
+      "family": "power",
+      "name": "routed",
+      "repeat": 0,
+      "opens": 95,
+      "errors": {
+        "starved_thermal": 1
+      },
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "power",
+      "name": "candidate",
+      "repeat": 0,
+      "opens": 95,
+      "errors": {},
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": true
+    },
+    {
+      "family": "power",
+      "name": "routed",
+      "repeat": 1,
+      "opens": 95,
+      "errors": {
+        "starved_thermal": 1
+      },
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "power",
+      "name": "candidate",
+      "repeat": 1,
+      "opens": 95,
+      "errors": {},
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": true
+    },
+    {
+      "family": "power",
+      "name": "routed",
+      "repeat": 2,
+      "opens": 95,
+      "errors": {
+        "starved_thermal": 1
+      },
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "power",
+      "name": "candidate",
+      "repeat": 2,
+      "opens": 95,
+      "errors": {},
+      "lostSource": 0,
+      "lostCurrent": 0,
+      "accepted": true
+    },
+    {
+      "family": "full",
+      "name": "routed",
+      "repeat": 0,
+      "opens": 13,
+      "errors": {
+        "starved_thermal": 6
+      },
+      "lostSource": 235,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "full",
+      "name": "candidate",
+      "repeat": 0,
+      "opens": 14,
+      "errors": {
+        "starved_thermal": 5,
+        "clearance": 3
+      },
+      "lostSource": 292,
+      "lostCurrent": 57,
+      "accepted": false
+    },
+    {
+      "family": "full",
+      "name": "routed",
+      "repeat": 1,
+      "opens": 13,
+      "errors": {
+        "starved_thermal": 6
+      },
+      "lostSource": 235,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "full",
+      "name": "candidate",
+      "repeat": 1,
+      "opens": 14,
+      "errors": {
+        "starved_thermal": 5,
+        "clearance": 3
+      },
+      "lostSource": 292,
+      "lostCurrent": 57,
+      "accepted": false
+    },
+    {
+      "family": "full",
+      "name": "routed",
+      "repeat": 2,
+      "opens": 13,
+      "errors": {
+        "starved_thermal": 6
+      },
+      "lostSource": 235,
+      "lostCurrent": 0,
+      "accepted": false
+    },
+    {
+      "family": "full",
+      "name": "candidate",
+      "repeat": 2,
+      "opens": 14,
+      "errors": {
+        "starved_thermal": 5,
+        "clearance": 3
+      },
+      "lostSource": 292,
+      "lostCurrent": 57,
+      "accepted": false
+    }
+  ],
+  "discovery": [
+    {
+      "name": "via-0-0",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.1-0",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.2-0",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.3-0",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via-0-0.1",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via-0-0.2",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via-0-0.3",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.1-0.1",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.2-0.2",
+      "opens": 95,
+      "errors": [
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.3-0.3",
+      "opens": 95,
+      "errors": [],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.4-0.4",
+      "opens": 95,
+      "errors": [],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "via--0.5-0.5",
+      "opens": 95,
+      "errors": [],
+      "lostSource": 0,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0-0.4",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0-0.5",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0-0.6",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.1-0.4",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.1-0.5",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "shorting_items"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.1-0.6",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "shorting_items"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.2-0.4",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.2-0.5",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "shorting_items"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via-0.2-0.6",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "shorting_items"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via--0.1-0.4",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via--0.1-0.5",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "full-via--0.2-0.4",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.1-0",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.2-0",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.2-0.1",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.25-0.1",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.2-0.2",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.15-0.1",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    },
+    {
+      "name": "joint-via--0.1-0.2",
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 292,
+      "exactPhysicalInventory": true,
+      "nativeNetInventoryMatches": true
+    }
+  ],
+  "exactFourItemMove": true,
+  "sourceCopperUnchanged": true
+}

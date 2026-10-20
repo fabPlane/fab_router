@@ -126,3 +126,18 @@ width-scaled detours of this segment in the complete 63-item power net also
 retain both U1.53/U1.55 thermal errors (95 opens). Do not infer a legal repair
 from the one-item deletion control. Cycle 216 retains the complete reduction
 trace, full-context controls and search outcome.
+
+`power-stage0-added.sexpr.gz` preserves the complete generated power net after
+cycle 216's U1.53 detour: 65 items, with one remaining U1.55 thermal and 95 opens.
+Moving the generated power via from (164.1045, 50.6008) to
+(163.8045, 50.9008) mm together with all three incident track endpoints clears
+the second-spoke obstruction. Three fresh strict three-board checks retain all
+source and current terminal pairs, preserve native ownership and keep 95 opens.
+This is a manually constructed complete-net recovery control. The automatic
+search does not generate via moves; this does not change the scored benchmark.
+The same move in the complete-board context and all exploratory trials are
+retained in cycle 217 evidence; full-board safety is evaluated independently.
+The complete-board transfer fails: U1.55 stays in the ground group, but U1.53
+becomes isolated, losing 57 current pairs, and three new clearance findings
+appear against the lower signal via. Eliminating those clearances alone does
+not restore U1.53. The strict gate rejects this full-board transfer.
