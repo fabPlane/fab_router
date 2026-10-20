@@ -6,7 +6,7 @@ import { mkdtemp, readFile, writeFile, rm } from "node:fs/promises";
 import { gunzipSync } from "node:zlib";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { checkNativeBoards } from "../tools/native-drc-gate.ts";
+import { checkNativeBoards, checkNativeRepair } from "../tools/native-drc-gate.ts";
 
 const hasNative = !!Bun.which("kicad-cli") && !!Bun.which("python3") && Bun.spawnSync(["python3", "-c", "import pcbnew"], { stdout: "ignore", stderr: "ignore" }).exitCode === 0;
 
@@ -119,3 +119,45 @@ test.skipIf(!hasNative)("Aquarius complete generated nets still disconnect sourc
     expect(await readFile(input)).toEqual(source);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 300_000);
+
+// A partial geometric recovery, not a clean route: keep both thermal failures
+// visible while proving that the source ground component can be reconnected.
+test.skipIf(!hasNative)("moving a generated via pair restores source ground connectivity without hiding thermals", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-aquarius-via-pair-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/input.kicad_pcb.gz`));
+    const text = source.toString(), end = text.lastIndexOf(")");
+    const before = (await readFile(`${fixture}/connectivity-nets.sexpr`, "utf8")).trim().split("\n");
+    const after = (await readFile(`${fixture}/connectivity-via-pair.sexpr`, "utf8")).trim().split("\n");
+    expect(after).toHaveLength(before.length);
+    // Only these generated vias and their three attached tracks move. The
+    // original source, every other generated item, net, width and drill remain.
+    const changed = before.filter((line, i) => line !== after[i]);
+    expect(changed).toHaveLength(5);
+    expect(changed.filter(line => line.startsWith("(via "))).toHaveLength(2);
+    const expected = before.map(line => line
+      .replaceAll("163.3455 51.5585", "163.2455 51.6585")
+      .replaceAll("162.9939 50.8553", "162.8939 50.9553"));
+    expect(after).toEqual(expected);
+    const paths = ["input", "routed", "candidate"].map(name => join(root, `${name}.kicad_pcb`));
+    for (let i = 0; i < paths.length; i++) {
+      const copper = i === 0 ? "" : (i === 1 ? before : after).join("\n");
+      await writeFile(paths[i]!, `${text.slice(0, end)}\n${copper}\n${text.slice(end)}`);
+      for (const ext of [".kicad_pro", ".kicad_dru"])
+        await writeFile(paths[i]!.replace(/\.kicad_pcb$/, ext), await readFile(`${fixture}/board${ext}`));
+    }
+    const original = await checkNativeBoards(paths[0]!, paths[1]!);
+    expect(original.lostTerminalPairs).toBe(61);
+    const recovered = await checkNativeRepair(paths[0]!, paths[1]!, paths[2]!);
+    expect(recovered.nativeCopperChecks).toEqual([true, true, true]);
+    expect(recovered.lostTerminalPairs).toBe(0);
+    expect(recovered.repair?.lostTerminalPairs).toBe(0);
+    expect(recovered.opensBefore).toBe(110);
+    expect(recovered.opensAfter).toBe(93);
+    expect(recovered.newErrors.map(error => error.type)).toEqual(["starved_thermal", "starved_thermal"]);
+    // Restored connections do not waive the two remaining thermal violations.
+    expect(recovered.accepted).toBe(false);
+    expect(recovered.repair?.accepted).toBe(true);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 120_000);

@@ -1,0 +1,44 @@
+{
+  "topology": [
+    {
+      "name": "source",
+      "outlines": 1,
+      "minThickness": 0.2032
+    },
+    {
+      "name": "before",
+      "outlines": 2,
+      "minThickness": 0.2032
+    },
+    {
+      "name": "via-0.1",
+      "outlines": 2,
+      "minThickness": 0.2032
+    },
+    {
+      "name": "upper-via-0.1",
+      "outlines": 1,
+      "minThickness": 0.2032
+    },
+    {
+      "name": "via-pair-0.1",
+      "outlines": 1,
+      "minThickness": 0.2032
+    }
+  ],
+  "viaClearanceEnvelope": [
+    {
+      "shift": 0,
+      "centerDistance": 1.1393869448084841,
+      "nominalCopperGap": 0.3773869448084841,
+      "nominalClearanceGap": 0.12338694480848411
+    },
+    {
+      "shift": 0.1,
+      "centerDistance": 1.2614367245327844,
+      "nominalCopperGap": 0.4994367245327844,
+      "nominalClearanceGap": 0.24543672453278442
+    }
+  ],
+  "note": "Nominal circular via clearance gap only; native topology is authoritative."
+}

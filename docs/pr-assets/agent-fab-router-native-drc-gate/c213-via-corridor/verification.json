@@ -1,0 +1,658 @@
+{
+  "targetedUpwardDecisions": [
+    {
+      "name": "routed",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 15,
+      "lostSource": 348,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 15,
+      "lostSource": 348,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    }
+  ],
+  "fullBoardDecisions": [
+    {
+      "name": "routed",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 15,
+      "lostSource": 348,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance",
+        "clearance"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    },
+    {
+      "name": "routed",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 15,
+      "lostSource": 348,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance",
+        "clearance"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    },
+    {
+      "name": "routed",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 15,
+      "lostSource": 348,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance",
+        "clearance"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    }
+  ],
+  "discovery": [
+    {
+      "name": "before",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "corridor-0.06",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "corridor-0.1",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "corridor-0.15",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "corridor-0.2",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "detour-0.06",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "detour-0.1",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "detour-0.15",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "detour-0.2",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "outward--0.6",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "hole_clearance",
+        "clearance",
+        "clearance",
+        "clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "outward--0.8",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "clearance",
+        "clearance",
+        "clearance",
+        "clearance",
+        "clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "outward--1.0",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "clearance",
+        "shorting_items",
+        "shorting_items",
+        "clearance",
+        "hole_clearance",
+        "clearance"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "source",
+      "opens": 110,
+      "errors": [],
+      "lostSource": 0,
+      "lostRouted": 139
+    },
+    {
+      "name": "source-outward",
+      "opens": 110,
+      "errors": [],
+      "lostSource": 0,
+      "lostRouted": 139
+    },
+    {
+      "name": "stitch-0.6",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "clearance",
+        "hole_clearance",
+        "clearance",
+        "clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "stitch-0.8",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "shorting_items",
+        "clearance",
+        "clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance",
+        "hole_clearance"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "stitch-1.0",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "shorting_items"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper--0.06",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper--0.1",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper-0.06",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper-0.1",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper-via-0.05",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper-via-0.1",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "upper-via-0.15",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-0.05",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-0.1",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-0.2",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-0.3",
+      "opens": 94,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 61,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-pair-0.1",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-pair-0.2",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-pair-0.3",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    },
+    {
+      "name": "via-pair-0.5",
+      "opens": 93,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSource": 0,
+      "lostRouted": 0
+    }
+  ],
+  "pairedDecisions": [
+    {
+      "name": "routed",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 94,
+      "lostSource": 61,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 93,
+      "lostSource": 0,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "routed",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 94,
+      "lostSource": 61,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 93,
+      "lostSource": 0,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "routed",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 94,
+      "lostSource": 61,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 93,
+      "lostSource": 0,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    }
+  ],
+  "initialFloatingPointCandidatesRejected": true,
+  "productionFix": false,
+  "routerRerun": false
+}
