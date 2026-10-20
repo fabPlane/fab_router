@@ -1,0 +1,217 @@
+[
+  {
+    "label": "r0.025-s1",
+    "radius": 0.025,
+    "side": 1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.025-s-1",
+    "radius": 0.025,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.05-s1",
+    "radius": 0.05,
+    "side": 1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.05-s-1",
+    "radius": 0.05,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.075-s1",
+    "radius": 0.075,
+    "side": 1,
+    "accepted": false,
+    "errors": [
+      "clearance"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": false
+  },
+  {
+    "label": "r0.075-s-1",
+    "radius": 0.075,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.1-s1",
+    "radius": 0.1,
+    "side": 1,
+    "accepted": false,
+    "errors": [
+      "clearance"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": false
+  },
+  {
+    "label": "r0.1-s-1",
+    "radius": 0.1,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.15-s1",
+    "radius": 0.15,
+    "side": 1,
+    "accepted": false,
+    "errors": [
+      "solder_mask_bridge",
+      "clearance"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": false
+  },
+  {
+    "label": "r0.15-s-1",
+    "radius": 0.15,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  },
+  {
+    "label": "r0.2-s1",
+    "radius": 0.2,
+    "side": 1,
+    "accepted": false,
+    "errors": [],
+    "opens": 110,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      false,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": false
+  },
+  {
+    "label": "r0.2-s-1",
+    "radius": 0.2,
+    "side": -1,
+    "accepted": false,
+    "errors": [
+      "starved_thermal"
+    ],
+    "opens": 111,
+    "lost": 0,
+    "nativeCopperChecks": [
+      true,
+      true,
+      true
+    ],
+    "lostRoutedPairs": 0,
+    "repairAccepted": true
+  }
+]

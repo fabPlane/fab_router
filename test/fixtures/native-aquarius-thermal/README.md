@@ -48,3 +48,18 @@ A separate load-only control isolates reassignment to native board loading,
 before explicit connectivity build, refill, DRC or save.
 The c208 evidence explicitly audits submitted versus native-saved ownership;
 report/terminal counts alone must not be interpreted as proof of route fidelity.
+
+The c210 narrow-offset diagnostic uses 0.060 mm endpoint-preserving 45-degree
+ramps. It removes the thermal error and preserves native copper ownership and
+source/routed terminal pairs, but retains 111 opens versus the source's 110.
+The gate rejects it on the source open budget. This is DRC-clean local thermal
+geometry, not a publishable repair or a complete-board routing improvement.
+
+`backbone-added.sexpr` retains all nine generated copper items on the same signal
+net from the full routed output. With this complete-net control, the same narrow
+detour changes one thermal error to zero at 109 opens, preserves all source and
+routed terminal pairs and native net ownership, and passes native acceptance.
+Three fresh paired checks and one exact checked bundle are retained in c210.
+Only the horizontal track changes; the other eight generated copper items and
+all source geometry/rules remain intact. This is a manually constructed safe
+local control, not automatic search recovery or a complete Aquarius fix.
