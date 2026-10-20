@@ -9,7 +9,7 @@ const hasNative = !!Bun.which("kicad-cli") && !!Bun.which("python3") && Bun.spaw
 
 // Full generated copper is necessary: the isolated power-net repair splits
 // ground at U1.53. A second connected via move opens that corridor again.
-// Five other thermal errors and source disconnections still forbid publication.
+// Remaining thermal errors and source disconnections still forbid publication.
 test.skipIf(!hasNative)("coordinated full-board power and signal via moves preserve routed terminals while clearing one thermal", async () => {
   const root = await mkdtemp(join(tmpdir(), "native-aquarius-joint-power-"));
   const fixture = "test/fixtures/native-aquarius-thermal";
@@ -44,6 +44,27 @@ test.skipIf(!hasNative)("coordinated full-board power and signal via moves prese
     expect(checked.nativeCopperChecks).toEqual([true, true, true]);
     expect(checked.repair?.accepted).toBe(true);
     expect(checked.accepted).toBe(false);
+    // Deleting this generated analog-ground track clears the R20 thermal but
+    // adds an open. Retain both endpoints and move only its middle run instead.
+    const blocker = joint.split("\n").find(line => line.includes("fa3f4b5e-8a05-43e8-aacb-933e02c54760"));
+    expect(blocker).toBeDefined();
+    const points = [[176.657, 58.3565], [176.657, 57.9065], [174.5474, 56.5001], [174.5474, 56.9501]];
+    const detour = points.slice(1).map((end, index) =>
+      `(segment (start ${points[index]!.join(" ")}) (end ${end.join(" ")}) (width 0.2032) (layer "B.Cu") (net "GNDA") (uuid "e59ec190-240a-4c8d-8df0-00000000000${index}"))`).join("\n");
+    const copper = joint.replace(blocker!, detour);
+    const candidate = join(root, "detour.kicad_pcb");
+    await writeFile(candidate, `${text.slice(0, end)}\n${copper}\n${text.slice(end)}`);
+    for (const ext of [".kicad_pro", ".kicad_dru"])
+      await writeFile(join(root, `detour${ext}`), await readFile(`${fixture}/board${ext}`));
+    const repaired = await checkNativeRepair(input, join(root, "joint.kicad_pcb"), candidate);
+    expect(repaired.newErrors.map(error => error.type)).toEqual(Array(4).fill("starved_thermal"));
+    expect(repaired.newErrors.some(error => error.items.some(item => item.uuid === "d145de36-3889-4a3d-8c61-71242d4e107c"))).toBe(false);
+    expect(repaired.opensAfter).toBe(13);
+    expect(repaired.lostTerminalPairs).toBe(235);
+    expect(repaired.repair?.lostTerminalPairs).toBe(0);
+    expect(repaired.nativeCopperChecks).toEqual([true, true, true]);
+    expect(repaired.repair?.accepted).toBe(true);
+    expect(repaired.accepted).toBe(false);
     expect(await readFile(input)).toEqual(source);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 180_000);

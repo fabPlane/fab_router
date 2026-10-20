@@ -1,0 +1,101 @@
+{
+  "before": "retained cycle217 full-router Aquarius rows",
+  "after": "fresh cycle221 subset",
+  "same_controls": {
+    "inputs_sha256": true,
+    "configs_sha256": true,
+    "harness_sha256": true,
+    "runtime_sha256": true,
+    "runtime_source_sha256": true,
+    "seeds": true,
+    "allowed_cpus": true,
+    "safety_stop_seconds": true
+  },
+  "pairs": [
+    {
+      "seed": 1,
+      "matching_fields": [
+        "case",
+        "router",
+        "seed",
+        "status",
+        "passed",
+        "vias",
+        "length_mm",
+        "opens",
+        "new_errors",
+        "new_error_types",
+        "failed_fidelity"
+      ],
+      "blobs": {
+        "board.dsn": [
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47",
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47"
+        ],
+        "board.ses": [
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60",
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "matching_fields": [
+        "case",
+        "router",
+        "seed",
+        "status",
+        "passed",
+        "vias",
+        "length_mm",
+        "opens",
+        "new_errors",
+        "new_error_types",
+        "failed_fidelity"
+      ],
+      "blobs": {
+        "board.dsn": [
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47",
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47"
+        ],
+        "board.ses": [
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60",
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+        ]
+      }
+    },
+    {
+      "seed": 3,
+      "matching_fields": [
+        "case",
+        "router",
+        "seed",
+        "status",
+        "passed",
+        "vias",
+        "length_mm",
+        "opens",
+        "new_errors",
+        "new_error_types",
+        "failed_fidelity"
+      ],
+      "blobs": {
+        "board.dsn": [
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47",
+          "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47"
+        ],
+        "board.ses": [
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60",
+          "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60"
+        ]
+      }
+    }
+  ],
+  "passed_before": 0,
+  "passed_after": 0,
+  "opens_before": 45,
+  "opens_after": 45,
+  "thermal_errors_before": 18,
+  "thermal_errors_after": 18,
+  "verified": true
+}
