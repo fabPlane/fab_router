@@ -26,6 +26,706 @@
       "aStarLayered / search remainder": 3295246,
       "aStarLayered / visited table": 148690,
       "outside search / outside search": 745557
+    },
+    "owner_us": {
+      "frontier heap": {
+        "route/search.ts:159 / less": {
+          "self_us": 1981,
+          "descendant_us": 0
+        },
+        "route/search.ts:183 / push": {
+          "self_us": 200771,
+          "descendant_us": 0
+        },
+        "route/search.ts:189 / pop": {
+          "self_us": 1212118,
+          "descendant_us": 0
+        }
+      },
+      "geometry and clearance": {
+        "geom/bounds.ts:48 / boxExpand": {
+          "self_us": 3143,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 1242626,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:70 / dop8Of": {
+          "self_us": 1086,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:18 / dist2PtSeg": {
+          "self_us": 4728,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:27 / dist2SegSeg": {
+          "self_us": 1325360,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:45 / dist2SegPoly": {
+          "self_us": 263550,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:75 / dist2Pts": {
+          "self_us": 612019,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 1246922,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:49 / withinRim": {
+          "self_us": 1042826,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:61 / partWithinRim": {
+          "self_us": 7846334,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:106 / mergeTriangles": {
+          "self_us": 3068,
+          "descendant_us": 1167
+        },
+        "geom/pieces.ts:113 / ": {
+          "self_us": 917,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:150 / mergeAcross": {
+          "self_us": 1013,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:45 / onSeg": {
+          "self_us": 11713,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:55 / segsIntersect": {
+          "self_us": 662133,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:70 / pointInConvex": {
+          "self_us": 8189,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:92 / pointInRing": {
+          "self_us": 1226,
+          "descendant_us": 0
+        },
+        "route/clear.ts:123 / hitBlocks": {
+          "self_us": 320507,
+          "descendant_us": 8158
+        },
+        "route/clear.ts:196 / margin": {
+          "self_us": 1114,
+          "descendant_us": 1163
+        },
+        "route/clear.ts:210 / sweepClear": {
+          "self_us": 1638773,
+          "descendant_us": 0
+        },
+        "route/clear.ts:225 / pointFree": {
+          "self_us": 95817,
+          "descendant_us": 0
+        },
+        "route/clear.ts:236 / barrelFits": {
+          "self_us": 369949,
+          "descendant_us": 536035
+        },
+        "route/clear.ts:61 / closerConvex": {
+          "self_us": 540760,
+          "descendant_us": 0
+        },
+        "route/clear.ts:79 / compare": {
+          "self_us": 68865,
+          "descendant_us": 1021478
+        },
+        "route/clear.ts:81 / ": {
+          "self_us": 914,
+          "descendant_us": 0
+        },
+        "route/clear.ts:91 / anyOverlap": {
+          "self_us": 2218,
+          "descendant_us": 0
+        },
+        "route/clear.ts:96 / drillShape": {
+          "self_us": 5275,
+          "descendant_us": 0
+        }
+      },
+      "lattice": {
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 4640531,
+          "descendant_us": 1056
+        },
+        "lattice/grid.ts:262 / test": {
+          "self_us": 2911913,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:267 / push": {
+          "self_us": 481645,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:363 / shapesOf": {
+          "self_us": 206880,
+          "descendant_us": 123557
+        },
+        "lattice/grid.ts:398 / hits": {
+          "self_us": 18453,
+          "descendant_us": 41429
+        },
+        "lattice/grid.ts:404 / itemOf": {
+          "self_us": 8610,
+          "descendant_us": 0
+        }
+      },
+      "outside search": {
+        ":0 / (unknown)": {
+          "self_us": 24674,
+          "descendant_us": 0
+        },
+        ":0 / Map": {
+          "self_us": 952,
+          "descendant_us": 0
+        },
+        ":0 / add": {
+          "self_us": 2202,
+          "descendant_us": 0
+        },
+        ":0 / anonymous": {
+          "self_us": 3754,
+          "descendant_us": 0
+        },
+        ":0 / cloneObject": {
+          "self_us": 5048,
+          "descendant_us": 0
+        },
+        ":0 / copyDataProperties": {
+          "self_us": 890,
+          "descendant_us": 0
+        },
+        ":0 / get": {
+          "self_us": 7484,
+          "descendant_us": 0
+        },
+        ":0 / hypot": {
+          "self_us": 1163,
+          "descendant_us": 0
+        },
+        ":0 / indexOf": {
+          "self_us": 3314,
+          "descendant_us": 0
+        },
+        ":0 / min": {
+          "self_us": 2021,
+          "descendant_us": 0
+        },
+        ":0 / now": {
+          "self_us": 1075,
+          "descendant_us": 0
+        },
+        ":0 / push": {
+          "self_us": 5422,
+          "descendant_us": 0
+        },
+        ":0 / set": {
+          "self_us": 1069,
+          "descendant_us": 0
+        },
+        ":0 / slice": {
+          "self_us": 1182,
+          "descendant_us": 0
+        },
+        ":0 / sort": {
+          "self_us": 31121,
+          "descendant_us": 0
+        },
+        ":0 / split": {
+          "self_us": 894,
+          "descendant_us": 0
+        },
+        ":1 / find": {
+          "self_us": 970,
+          "descendant_us": 0
+        },
+        ":1 / forEach": {
+          "self_us": 1213,
+          "descendant_us": 0
+        },
+        ":1 / map": {
+          "self_us": 8733,
+          "descendant_us": 0
+        },
+        ":1 / performIteration": {
+          "self_us": 4410,
+          "descendant_us": 0
+        },
+        ":1 / some": {
+          "self_us": 1881,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:104 / join": {
+          "self_us": 23619,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:114 / sheetsOf": {
+          "self_us": 4492,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:124 / copperOn": {
+          "self_us": 16123,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:134 / unitsOf": {
+          "self_us": 3498,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:173 / ": {
+          "self_us": 1194,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:201 / ": {
+          "self_us": 4828,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:209 / ": {
+          "self_us": 5319,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:228 / ": {
+          "self_us": 951,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:59 / add": {
+          "self_us": 10276,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:60 / find": {
+          "self_us": 1806,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:66 / union": {
+          "self_us": 4311,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:75 / pairKey": {
+          "self_us": 982,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:78 / connectivity": {
+          "self_us": 64579,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:81 / add": {
+          "self_us": 12807,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:95 / regionOf": {
+          "self_us": 961,
+          "descendant_us": 0
+        },
+        "drc/exact.ts:33 / touchingConvex": {
+          "self_us": 2923,
+          "descendant_us": 0
+        },
+        "drc/exact.ts:48 / touching": {
+          "self_us": 1227,
+          "descendant_us": 0
+        },
+        "drc/pour.ts:29 / pourRegion": {
+          "self_us": 1079,
+          "descendant_us": 0
+        },
+        "drc/pour.ts:55 / convexTouchesPour": {
+          "self_us": 1223,
+          "descendant_us": 0
+        },
+        "drc/stats.ts:39 / maximumConnections": {
+          "self_us": 1260,
+          "descendant_us": 0
+        },
+        "drc/stats.ts:52 / statsOf": {
+          "self_us": 899,
+          "descendant_us": 0
+        },
+        "dsn/lex.ts:109 / lex": {
+          "self_us": 9636,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:499 / readComponent": {
+          "self_us": 1242,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:845 / readWiring": {
+          "self_us": 1152,
+          "descendant_us": 0
+        },
+        "dsn/tree.ts:51 / buildTree": {
+          "self_us": 1208,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:25 / boxOfPts": {
+          "self_us": 988,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 18151,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:70 / dop8Of": {
+          "self_us": 4420,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:18 / dist2PtSeg": {
+          "self_us": 5063,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:27 / dist2SegSeg": {
+          "self_us": 59677,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:45 / dist2SegPoly": {
+          "self_us": 6048,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:59 / dist2PolyPoly": {
+          "self_us": 1073,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:75 / dist2Pts": {
+          "self_us": 6311,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 15366,
+          "descendant_us": 0
+        },
+        "geom/hull.ts:76 / isConvexCcw": {
+          "self_us": 1168,
+          "descendant_us": 0
+        },
+        "geom/path.ts:30 / simplifyCollinear": {
+          "self_us": 2238,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:106 / mergeTriangles": {
+          "self_us": 13110,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:127 / ": {
+          "self_us": 7475,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:134 / ": {
+          "self_us": 1152,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:150 / mergeAcross": {
+          "self_us": 1098,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:154 / walk": {
+          "self_us": 1033,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:18 / cross": {
+          "self_us": 948,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:34 / orient": {
+          "self_us": 3293,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:45 / onSeg": {
+          "self_us": 2189,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:55 / segsIntersect": {
+          "self_us": 34354,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:70 / pointInConvex": {
+          "self_us": 995,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:124 / gridOf": {
+          "self_us": 1200,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:133 / keyOf": {
+          "self_us": 1034,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:135 / bucket": {
+          "self_us": 2352,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:178 / findSlot": {
+          "self_us": 924,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:185 / allocSlot": {
+          "self_us": 2225,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:209 / insertRaw": {
+          "self_us": 960,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 64288,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:262 / test": {
+          "self_us": 58359,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:267 / push": {
+          "self_us": 21463,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:289 / ": {
+          "self_us": 2042,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:363 / shapesOf": {
+          "self_us": 33779,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:398 / hits": {
+          "self_us": 3083,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:404 / itemOf": {
+          "self_us": 1251,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:157 / padBoundsOn": {
+          "self_us": 1153,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:179 / barrelSheets": {
+          "self_us": 1097,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:302 / boundsOfShapes": {
+          "self_us": 3261,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:65 / placedPoints": {
+          "self_us": 1008,
+          "descendant_us": 0
+        },
+        "layout/build.ts:181 / placePart": {
+          "self_us": 1005,
+          "descendant_us": 0
+        },
+        "layout/build.ts:263 / assign": {
+          "self_us": 1037,
+          "descendant_us": 0
+        },
+        "layout/build.ts:396 / listForm": {
+          "self_us": 1098,
+          "descendant_us": 0
+        },
+        "route/clear.ts:123 / hitBlocks": {
+          "self_us": 1910,
+          "descendant_us": 0
+        },
+        "route/clear.ts:200 / pushBlocking": {
+          "self_us": 1029,
+          "descendant_us": 0
+        },
+        "route/clear.ts:61 / closerConvex": {
+          "self_us": 4030,
+          "descendant_us": 0
+        },
+        "route/clear.ts:79 / compare": {
+          "self_us": 4538,
+          "descendant_us": 0
+        },
+        "route/journal.ts:117 / ": {
+          "self_us": 893,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:46 / shapeVariants": {
+          "self_us": 2177,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:80 / legaliseTrail": {
+          "self_us": 1058,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:91 / legaliseShaped": {
+          "self_us": 1108,
+          "descendant_us": 0
+        },
+        "route/nudge.ts:32 / nudgeClear": {
+          "self_us": 2008,
+          "descendant_us": 0
+        },
+        "route/passes.ts:1030 / connectionsOf": {
+          "self_us": 1185,
+          "descendant_us": 0
+        },
+        "route/passes.ts:1053 / orderConnections": {
+          "self_us": 877,
+          "descendant_us": 0
+        },
+        "route/passes.ts:150 / findItem": {
+          "self_us": 1124,
+          "descendant_us": 0
+        },
+        "route/passes.ts:151 / ": {
+          "self_us": 1137,
+          "descendant_us": 0
+        },
+        "route/passes.ts:1589 / runLegacyPasses": {
+          "self_us": 3265,
+          "descendant_us": 0
+        },
+        "route/passes.ts:187 / resolveEndpoints": {
+          "self_us": 1035,
+          "descendant_us": 0
+        },
+        "route/passes.ts:203 / sheetCostOf": {
+          "self_us": 1839,
+          "descendant_us": 0
+        },
+        "route/passes.ts:233 / profileFor": {
+          "self_us": 1779,
+          "descendant_us": 0
+        },
+        "route/passes.ts:246 / routeConnection": {
+          "self_us": 1058,
+          "descendant_us": 0
+        },
+        "route/passes.ts:406 / tryAttachPrior": {
+          "self_us": 1206,
+          "descendant_us": 0
+        },
+        "route/passes.ts:490 / tryNudgeRoute": {
+          "self_us": 1096,
+          "descendant_us": 0
+        },
+        "route/passes.ts:536 / tryShoveTrail": {
+          "self_us": 1171,
+          "descendant_us": 0
+        },
+        "route/passes.ts:598 / tryRouteOnSheet": {
+          "self_us": 3218,
+          "descendant_us": 0
+        },
+        "route/passes.ts:722 / tryRouteViaPoints": {
+          "self_us": 1047,
+          "descendant_us": 0
+        },
+        "route/passes.ts:756 / tryRouteViaJog": {
+          "self_us": 2888,
+          "descendant_us": 0
+        },
+        "route/passes.ts:790 / endpointVias": {
+          "self_us": 1923,
+          "descendant_us": 0
+        },
+        "route/passes.ts:803 / viaPointCandidates": {
+          "self_us": 867,
+          "descendant_us": 0
+        },
+        "route/passes.ts:806 / push": {
+          "self_us": 960,
+          "descendant_us": 0
+        },
+        "route/passes.ts:823 / tryRouteLayered": {
+          "self_us": 1870,
+          "descendant_us": 0
+        },
+        "route/passes.ts:939 / insertLayeredTrail": {
+          "self_us": 1974,
+          "descendant_us": 0
+        },
+        "route/passes.ts:986 / gridStep": {
+          "self_us": 1005,
+          "descendant_us": 0
+        },
+        "route/passes.ts:995 / gridRegion": {
+          "self_us": 1975,
+          "descendant_us": 0
+        },
+        "route/profile.ts:84 / ": {
+          "self_us": 1023,
+          "descendant_us": 0
+        },
+        "route/profile.ts:96 / resolveProfile": {
+          "self_us": 1016,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:62 / createQuilt": {
+          "self_us": 8042,
+          "descendant_us": 0
+        },
+        "route/ripup.ts:56 / bumpCells": {
+          "self_us": 3244,
+          "descendant_us": 0
+        },
+        "route/shove.ts:56 / shoveClear": {
+          "self_us": 909,
+          "descendant_us": 0
+        },
+        "route/shove.ts:85 / resolveBlockers": {
+          "self_us": 927,
+          "descendant_us": 0
+        },
+        "ses/write.ts:99 / writeSes": {
+          "self_us": 1310,
+          "descendant_us": 0
+        }
+      },
+      "quilt remainder": {
+        "route/quilt.ts:70 / pointOf": {
+          "self_us": 111813,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:73 / state": {
+          "self_us": 1215172,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:89 / isFree": {
+          "self_us": 638216,
+          "descendant_us": 0
+        }
+      },
+      "search remainder": {
+        "route/search.ts:294 / aStar": {
+          "self_us": 1651525,
+          "descendant_us": 376678
+        },
+        "route/search.ts:456 / aStarLayered": {
+          "self_us": 2230232,
+          "descendant_us": 1065014
+        }
+      },
+      "visited table": {
+        "route/search.ts:228 / hash": {
+          "self_us": 2098,
+          "descendant_us": 0
+        },
+        "route/search.ts:234 / probe": {
+          "self_us": 96793,
+          "descendant_us": 0
+        },
+        "route/search.ts:261 / gOr": {
+          "self_us": 7793,
+          "descendant_us": 0
+        },
+        "route/search.ts:266 / leq": {
+          "self_us": 67461,
+          "descendant_us": 0
+        },
+        "route/search.ts:276 / put": {
+          "self_us": 116386,
+          "descendant_us": 2144
+        }
+      }
     }
   },
   "paperino-hw-paperino-shield-j4-profiled.cpuprofile.gz": {
@@ -55,6 +755,410 @@
       "aStarLayered / search remainder": 861398,
       "aStarLayered / visited table": 98966,
       "outside search / outside search": 112422
+    },
+    "owner_us": {
+      "frontier heap": {
+        "route/search.ts:183 / push": {
+          "self_us": 70102,
+          "descendant_us": 0
+        },
+        "route/search.ts:189 / pop": {
+          "self_us": 456352,
+          "descendant_us": 0
+        }
+      },
+      "geometry and clearance": {
+        "geom/bounds.ts:48 / boxExpand": {
+          "self_us": 2952,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 558691,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:70 / dop8Of": {
+          "self_us": 1231,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:18 / dist2PtSeg": {
+          "self_us": 45431,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:27 / dist2SegSeg": {
+          "self_us": 13421,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:33 / dist2PtPoly": {
+          "self_us": 983,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:75 / dist2Pts": {
+          "self_us": 37906,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 287842,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:49 / withinRim": {
+          "self_us": 425747,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:61 / partWithinRim": {
+          "self_us": 1913792,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:18 / cross": {
+          "self_us": 2198,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:23 / dot": {
+          "self_us": 1024,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:55 / segsIntersect": {
+          "self_us": 21397,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:70 / pointInConvex": {
+          "self_us": 921,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:92 / pointInRing": {
+          "self_us": 3469,
+          "descendant_us": 0
+        },
+        "route/clear.ts:123 / hitBlocks": {
+          "self_us": 401590,
+          "descendant_us": 8570
+        },
+        "route/clear.ts:196 / margin": {
+          "self_us": 1934,
+          "descendant_us": 0
+        },
+        "route/clear.ts:210 / sweepClear": {
+          "self_us": 531363,
+          "descendant_us": 0
+        },
+        "route/clear.ts:225 / pointFree": {
+          "self_us": 41232,
+          "descendant_us": 0
+        },
+        "route/clear.ts:236 / barrelFits": {
+          "self_us": 97659,
+          "descendant_us": 125103
+        },
+        "route/clear.ts:251 / ": {
+          "self_us": 995,
+          "descendant_us": 0
+        },
+        "route/clear.ts:61 / closerConvex": {
+          "self_us": 77955,
+          "descendant_us": 0
+        },
+        "route/clear.ts:85 / anyCloser": {
+          "self_us": 4359,
+          "descendant_us": 0
+        },
+        "route/clear.ts:91 / anyOverlap": {
+          "self_us": 891,
+          "descendant_us": 0
+        },
+        "route/clear.ts:96 / drillShape": {
+          "self_us": 1891,
+          "descendant_us": 0
+        }
+      },
+      "lattice": {
+        "lattice/grid.ts:133 / keyOf": {
+          "self_us": 1177,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 1974697,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:262 / test": {
+          "self_us": 618547,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:267 / push": {
+          "self_us": 237175,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:363 / shapesOf": {
+          "self_us": 31051,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:398 / hits": {
+          "self_us": 3380,
+          "descendant_us": 5084
+        },
+        "lattice/grid.ts:404 / itemOf": {
+          "self_us": 9522,
+          "descendant_us": 0
+        }
+      },
+      "outside search": {
+        ":0 / (unknown)": {
+          "self_us": 15609,
+          "descendant_us": 0
+        },
+        ":0 / Set": {
+          "self_us": 1082,
+          "descendant_us": 0
+        },
+        ":0 / anonymous": {
+          "self_us": 3941,
+          "descendant_us": 0
+        },
+        ":0 / copyDataProperties": {
+          "self_us": 1267,
+          "descendant_us": 0
+        },
+        ":0 / hypot": {
+          "self_us": 998,
+          "descendant_us": 0
+        },
+        ":0 / includes": {
+          "self_us": 983,
+          "descendant_us": 0
+        },
+        ":0 / join": {
+          "self_us": 919,
+          "descendant_us": 0
+        },
+        ":0 / max": {
+          "self_us": 1174,
+          "descendant_us": 0
+        },
+        ":0 / set": {
+          "self_us": 871,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:78 / connectivity": {
+          "self_us": 2103,
+          "descendant_us": 0
+        },
+        "drc/exact.ts:60 / anyTouching": {
+          "self_us": 1193,
+          "descendant_us": 0
+        },
+        "drc/pour.ts:29 / pourRegion": {
+          "self_us": 1042,
+          "descendant_us": 0
+        },
+        "drc/spacing.ts:83 / checkSpacing": {
+          "self_us": 4072,
+          "descendant_us": 0
+        },
+        "dsn/lex.ts:109 / lex": {
+          "self_us": 9783,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:589 / readImage": {
+          "self_us": 906,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:74 / readPcb": {
+          "self_us": 935,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:25 / boxOfPts": {
+          "self_us": 1240,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 975,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:45 / dist2SegPoly": {
+          "self_us": 942,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 2973,
+          "descendant_us": 0
+        },
+        "geom/path.ts:30 / simplifyCollinear": {
+          "self_us": 3504,
+          "descendant_us": 0
+        },
+        "geom/pieces.ts:150 / mergeAcross": {
+          "self_us": 1223,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:18 / cross": {
+          "self_us": 1010,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:70 / pointInConvex": {
+          "self_us": 1144,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:124 / gridOf": {
+          "self_us": 929,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:132 / cellOf": {
+          "self_us": 1054,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 1785,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:262 / test": {
+          "self_us": 3511,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:267 / push": {
+          "self_us": 1036,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:200 / barrelBoundsOn": {
+          "self_us": 880,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:52 / place": {
+          "self_us": 1244,
+          "descendant_us": 0
+        },
+        "layout/build.ts:142 / sheetsOf": {
+          "self_us": 972,
+          "descendant_us": 0
+        },
+        "layout/build.ts:308 / planes": {
+          "self_us": 1126,
+          "descendant_us": 0
+        },
+        "layout/build.ts:480 / wiring": {
+          "self_us": 1225,
+          "descendant_us": 0
+        },
+        "pipeline/index.ts:90 / ": {
+          "self_us": 915,
+          "descendant_us": 0
+        },
+        "route/clear.ts:210 / sweepClear": {
+          "self_us": 979,
+          "descendant_us": 0
+        },
+        "route/clear.ts:236 / barrelFits": {
+          "self_us": 3085,
+          "descendant_us": 0
+        },
+        "route/journal.ts:114 / undo": {
+          "self_us": 1114,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:70 / ": {
+          "self_us": 1012,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:80 / legaliseTrail": {
+          "self_us": 990,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:91 / legaliseShaped": {
+          "self_us": 1911,
+          "descendant_us": 0
+        },
+        "route/nudge.ts:32 / nudgeClear": {
+          "self_us": 2096,
+          "descendant_us": 0
+        },
+        "route/passes.ts:150 / findItem": {
+          "self_us": 975,
+          "descendant_us": 0
+        },
+        "route/passes.ts:203 / sheetCostOf": {
+          "self_us": 2079,
+          "descendant_us": 0
+        },
+        "route/passes.ts:286 / multilayer": {
+          "self_us": 1034,
+          "descendant_us": 0
+        },
+        "route/passes.ts:598 / tryRouteOnSheet": {
+          "self_us": 920,
+          "descendant_us": 0
+        },
+        "route/passes.ts:823 / tryRouteLayered": {
+          "self_us": 3354,
+          "descendant_us": 0
+        },
+        "route/passes.ts:851 / ": {
+          "self_us": 2380,
+          "descendant_us": 0
+        },
+        "route/passes.ts:995 / gridRegion": {
+          "self_us": 2334,
+          "descendant_us": 0
+        },
+        "route/pull.ts:22 / pullPath": {
+          "self_us": 1132,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:62 / createQuilt": {
+          "self_us": 7086,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:71 / cellOf": {
+          "self_us": 3126,
+          "descendant_us": 0
+        },
+        "route/shove.ts:124 / shoveTrack": {
+          "self_us": 1067,
+          "descendant_us": 0
+        },
+        "ses/write.ts:99 / writeSes": {
+          "self_us": 1182,
+          "descendant_us": 0
+        }
+      },
+      "quilt remainder": {
+        "route/quilt.ts:70 / pointOf": {
+          "self_us": 97577,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:73 / state": {
+          "self_us": 436421,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:89 / isFree": {
+          "self_us": 219495,
+          "descendant_us": 0
+        }
+      },
+      "search remainder": {
+        "route/search.ts:294 / aStar": {
+          "self_us": 1013338,
+          "descendant_us": 214412
+        },
+        "route/search.ts:456 / aStarLayered": {
+          "self_us": 588215,
+          "descendant_us": 273183
+        }
+      },
+      "visited table": {
+        "route/search.ts:234 / probe": {
+          "self_us": 147299,
+          "descendant_us": 0
+        },
+        "route/search.ts:261 / gOr": {
+          "self_us": 4540,
+          "descendant_us": 0
+        },
+        "route/search.ts:266 / leq": {
+          "self_us": 97530,
+          "descendant_us": 0
+        },
+        "route/search.ts:276 / put": {
+          "self_us": 55143,
+          "descendant_us": 1060
+        }
+      }
     }
   },
   "photon-sprinkler-sprinkler-j3-profiled.cpuprofile.gz": {
@@ -84,6 +1188,466 @@
       "aStarLayered / search remainder": 577797,
       "aStarLayered / visited table": 105785,
       "outside search / outside search": 130731
+    },
+    "owner_us": {
+      "frontier heap": {
+        "route/search.ts:183 / push": {
+          "self_us": 93645,
+          "descendant_us": 0
+        },
+        "route/search.ts:189 / pop": {
+          "self_us": 851267,
+          "descendant_us": 0
+        }
+      },
+      "geometry and clearance": {
+        "geom/bounds.ts:48 / boxExpand": {
+          "self_us": 2082,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 616093,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:70 / dop8Of": {
+          "self_us": 1256,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:18 / dist2PtSeg": {
+          "self_us": 953,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:27 / dist2SegSeg": {
+          "self_us": 145991,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:33 / dist2PtPoly": {
+          "self_us": 9873,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:45 / dist2SegPoly": {
+          "self_us": 19884,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:75 / dist2Pts": {
+          "self_us": 120378,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 463789,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:30 / crossesEdge": {
+          "self_us": 2877,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:49 / withinRim": {
+          "self_us": 504159,
+          "descendant_us": 0
+        },
+        "geom/onboard.ts:61 / partWithinRim": {
+          "self_us": 501641,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:18 / cross": {
+          "self_us": 3318,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:45 / onSeg": {
+          "self_us": 3933,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:55 / segsIntersect": {
+          "self_us": 141563,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:70 / pointInConvex": {
+          "self_us": 4706,
+          "descendant_us": 0
+        },
+        "geom/predicates.ts:92 / pointInRing": {
+          "self_us": 2223,
+          "descendant_us": 0
+        },
+        "route/clear.ts:123 / hitBlocks": {
+          "self_us": 250672,
+          "descendant_us": 15619
+        },
+        "route/clear.ts:210 / sweepClear": {
+          "self_us": 592107,
+          "descendant_us": 0
+        },
+        "route/clear.ts:225 / pointFree": {
+          "self_us": 22434,
+          "descendant_us": 0
+        },
+        "route/clear.ts:236 / barrelFits": {
+          "self_us": 59734,
+          "descendant_us": 78836
+        },
+        "route/clear.ts:61 / closerConvex": {
+          "self_us": 89779,
+          "descendant_us": 0
+        },
+        "route/clear.ts:79 / compare": {
+          "self_us": 2225,
+          "descendant_us": 0
+        },
+        "route/clear.ts:85 / anyCloser": {
+          "self_us": 1015,
+          "descendant_us": 0
+        },
+        "route/clear.ts:96 / drillShape": {
+          "self_us": 6019,
+          "descendant_us": 0
+        }
+      },
+      "lattice": {
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 1712407,
+          "descendant_us": 219783
+        },
+        "lattice/grid.ts:262 / test": {
+          "self_us": 857952,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:267 / push": {
+          "self_us": 101575,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:289 / ": {
+          "self_us": 2232,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:363 / shapesOf": {
+          "self_us": 98368,
+          "descendant_us": 1087
+        },
+        "lattice/grid.ts:398 / hits": {
+          "self_us": 4486,
+          "descendant_us": 8737
+        },
+        "lattice/grid.ts:404 / itemOf": {
+          "self_us": 2869,
+          "descendant_us": 0
+        }
+      },
+      "outside search": {
+        ":0 / (unknown)": {
+          "self_us": 13480,
+          "descendant_us": 0
+        },
+        ":0 / @lazy": {
+          "self_us": 1153,
+          "descendant_us": 0
+        },
+        ":0 / Float64Array": {
+          "self_us": 886,
+          "descendant_us": 0
+        },
+        ":0 / Map": {
+          "self_us": 2276,
+          "descendant_us": 0
+        },
+        ":0 / Set": {
+          "self_us": 2035,
+          "descendant_us": 0
+        },
+        ":0 / Uint8Array": {
+          "self_us": 1090,
+          "descendant_us": 0
+        },
+        ":0 / anonymous": {
+          "self_us": 2252,
+          "descendant_us": 0
+        },
+        ":0 / copyDataProperties": {
+          "self_us": 3173,
+          "descendant_us": 0
+        },
+        ":0 / floor": {
+          "self_us": 886,
+          "descendant_us": 0
+        },
+        ":0 / max": {
+          "self_us": 921,
+          "descendant_us": 0
+        },
+        ":0 / pop": {
+          "self_us": 1056,
+          "descendant_us": 0
+        },
+        ":0 / push": {
+          "self_us": 1074,
+          "descendant_us": 0
+        },
+        ":0 / set": {
+          "self_us": 2995,
+          "descendant_us": 0
+        },
+        ":0 / sort": {
+          "self_us": 2242,
+          "descendant_us": 0
+        },
+        ":1 / find": {
+          "self_us": 3296,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:158 / ": {
+          "self_us": 2134,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:59 / add": {
+          "self_us": 959,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:78 / connectivity": {
+          "self_us": 3358,
+          "descendant_us": 0
+        },
+        "drc/connect.ts:81 / add": {
+          "self_us": 1240,
+          "descendant_us": 0
+        },
+        "drc/exact.ts:54 / anyCloser": {
+          "self_us": 1262,
+          "descendant_us": 0
+        },
+        "drc/spacing.ts:83 / checkSpacing": {
+          "self_us": 906,
+          "descendant_us": 0
+        },
+        "drc/stats.ts:52 / statsOf": {
+          "self_us": 1064,
+          "descendant_us": 0
+        },
+        "dsn/lex.ts:41 / parseNumberText": {
+          "self_us": 9568,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:625 / readPin": {
+          "self_us": 921,
+          "descendant_us": 0
+        },
+        "dsn/read.ts:99 / visit": {
+          "self_us": 1259,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:25 / boxOfPts": {
+          "self_us": 898,
+          "descendant_us": 0
+        },
+        "geom/bounds.ts:54 / dop8OfPts": {
+          "self_us": 1082,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:45 / dist2SegPoly": {
+          "self_us": 916,
+          "descendant_us": 0
+        },
+        "geom/distance.ts:93 / coreOf": {
+          "self_us": 1078,
+          "descendant_us": 0
+        },
+        "geom/path.ts:20 / isOctilinear": {
+          "self_us": 932,
+          "descendant_us": 0
+        },
+        "geom/path.ts:30 / simplifyCollinear": {
+          "self_us": 2376,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:132 / cellOf": {
+          "self_us": 1217,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:135 / bucket": {
+          "self_us": 1206,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:156 / unbucket": {
+          "self_us": 1234,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:178 / findSlot": {
+          "self_us": 1158,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:185 / allocSlot": {
+          "self_us": 989,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:248 / rebuild": {
+          "self_us": 1064,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:257 / collect": {
+          "self_us": 4885,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:347 / insertDrilled": {
+          "self_us": 1076,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:357 / removeItem": {
+          "self_us": 1196,
+          "descendant_us": 0
+        },
+        "lattice/grid.ts:363 / shapesOf": {
+          "self_us": 2261,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:302 / boundsOfShapes": {
+          "self_us": 1189,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:38 / rotatePt": {
+          "self_us": 1162,
+          "descendant_us": 0
+        },
+        "lattice/shapes.ts:65 / placedPoints": {
+          "self_us": 922,
+          "descendant_us": 0
+        },
+        "layout/build.ts:614 / finish": {
+          "self_us": 912,
+          "descendant_us": 0
+        },
+        "layout/rules.ts:96 / onKindCreated": {
+          "self_us": 1209,
+          "descendant_us": 0
+        },
+        "layout/spacing.ts:22 / SpacingTableX": {
+          "self_us": 927,
+          "descendant_us": 0
+        },
+        "node:fs/promises:1 / node:fs/promises": {
+          "self_us": 1211,
+          "descendant_us": 0
+        },
+        "route/clear.ts:123 / hitBlocks": {
+          "self_us": 2506,
+          "descendant_us": 0
+        },
+        "route/journal.ts:114 / undo": {
+          "self_us": 869,
+          "descendant_us": 0
+        },
+        "route/journal.ts:117 / ": {
+          "self_us": 1238,
+          "descendant_us": 0
+        },
+        "route/journal.ts:145 / rewind": {
+          "self_us": 2098,
+          "descendant_us": 0
+        },
+        "route/legalise.ts:46 / shapeVariants": {
+          "self_us": 2480,
+          "descendant_us": 0
+        },
+        "route/nudge.ts:32 / nudgeClear": {
+          "self_us": 962,
+          "descendant_us": 0
+        },
+        "route/passes.ts:1034 / ": {
+          "self_us": 876,
+          "descendant_us": 0
+        },
+        "route/passes.ts:119 / now": {
+          "self_us": 887,
+          "descendant_us": 0
+        },
+        "route/passes.ts:286 / multilayer": {
+          "self_us": 1070,
+          "descendant_us": 0
+        },
+        "route/passes.ts:569 / insertTrail": {
+          "self_us": 1179,
+          "descendant_us": 0
+        },
+        "route/passes.ts:598 / tryRouteOnSheet": {
+          "self_us": 2425,
+          "descendant_us": 0
+        },
+        "route/passes.ts:722 / tryRouteViaPoints": {
+          "self_us": 2125,
+          "descendant_us": 0
+        },
+        "route/passes.ts:756 / tryRouteViaJog": {
+          "self_us": 881,
+          "descendant_us": 0
+        },
+        "route/passes.ts:823 / tryRouteLayered": {
+          "self_us": 3369,
+          "descendant_us": 0
+        },
+        "route/passes.ts:995 / gridRegion": {
+          "self_us": 7227,
+          "descendant_us": 0
+        },
+        "route/profile.ts:96 / resolveProfile": {
+          "self_us": 966,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:62 / createQuilt": {
+          "self_us": 3923,
+          "descendant_us": 0
+        },
+        "route/ripup.ts:56 / bumpCells": {
+          "self_us": 924,
+          "descendant_us": 0
+        },
+        "route/shove.ts:124 / shoveTrack": {
+          "self_us": 1225,
+          "descendant_us": 0
+        },
+        "ses/write.ts:89 / collapse": {
+          "self_us": 915,
+          "descendant_us": 0
+        }
+      },
+      "quilt remainder": {
+        "route/quilt.ts:70 / pointOf": {
+          "self_us": 119385,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:73 / state": {
+          "self_us": 864126,
+          "descendant_us": 0
+        },
+        "route/quilt.ts:89 / isFree": {
+          "self_us": 793305,
+          "descendant_us": 0
+        }
+      },
+      "search remainder": {
+        "route/search.ts:294 / aStar": {
+          "self_us": 1861378,
+          "descendant_us": 456422
+        },
+        "route/search.ts:456 / aStarLayered": {
+          "self_us": 380031,
+          "descendant_us": 197766
+        }
+      },
+      "visited table": {
+        "route/search.ts:234 / probe": {
+          "self_us": 187814,
+          "descendant_us": 0
+        },
+        "route/search.ts:261 / gOr": {
+          "self_us": 5488,
+          "descendant_us": 0
+        },
+        "route/search.ts:266 / leq": {
+          "self_us": 112846,
+          "descendant_us": 0
+        },
+        "route/search.ts:276 / put": {
+          "self_us": 73557,
+          "descendant_us": 1968
+        }
+      }
     }
   }
 }

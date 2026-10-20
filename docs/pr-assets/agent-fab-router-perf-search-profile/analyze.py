@@ -27,7 +27,7 @@ def partition(profile):
                 raise ValueError("cycle")
             seen.add(current)
             f = nodes[current]["callFrame"]
-            chain.append((f["functionName"], f["url"].replace("\\", "/").split("/src/")[-1]))
+            chain.append((f["functionName"], f["url"].replace("\\", "/").split("/src/")[-1], f.get("lineNumber", -1)))
             if current not in parents:
                 break
             current = parents[current]
@@ -36,17 +36,20 @@ def partition(profile):
         raise ValueError("sample count")
     groups = collections.Counter()
     contexts = collections.Counter()
+    owners = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
     for ident, delta in zip(profile["samples"], profile["timeDeltas"]):
         if ident not in stacks or not isinstance(delta, (int, float)) or not math.isfinite(delta) or delta < 0:
             raise ValueError("invalid sample")
         chain = stacks[ident]
-        search = next((i for i, (name, path) in enumerate(chain) if path == "route/search.ts" and name in ("aStar", "aStarLayered")), None)
+        search = next((i for i, (name, path, _) in enumerate(chain) if path == "route/search.ts" and name in ("aStar", "aStarLayered")), None)
         group = "outside search"
+        owner = 0
         if search is not None:
             group = "search remainder"
+            owner = search
             # The nearest recognized subsystem owns the sample, including
             # unrecognized descendants. This prevents inclusive double counting.
-            for name, path in chain[:search]:
+            for index, (name, path, _) in enumerate(chain[:search]):
                 if path.startswith("geom/") or path == "route/clear.ts":
                     group = "geometry and clearance"
                 elif path == "lattice/grid.ts":
@@ -59,10 +62,14 @@ def partition(profile):
                     group = "frontier heap"
                 else:
                     continue
+                owner = index
                 break
+        name, path, line = chain[owner]
+        label = f"{path}:{line + 1} / {name}"
+        owners[group][label]["self_us" if owner == 0 else "descendant_us"] += delta
         groups[group] += delta
         contexts[(chain[search][0] if search is not None else "outside search") + " / " + group] += delta
-    return {"samples": len(profile["samples"]), "sampled_us": sum(profile["timeDeltas"]), "disjoint_us": dict(sorted(groups.items())), "context_us": dict(sorted(contexts.items()))}
+    return {"samples": len(profile["samples"]), "sampled_us": sum(profile["timeDeltas"]), "disjoint_us": dict(sorted(groups.items())), "context_us": dict(sorted(contexts.items())), "owner_us": {group: {label: {mode: weights[mode] for mode in ("self_us", "descendant_us")} for label, weights in sorted(entries.items())} for group, entries in sorted(owners.items())}}
 
 
 def main():
