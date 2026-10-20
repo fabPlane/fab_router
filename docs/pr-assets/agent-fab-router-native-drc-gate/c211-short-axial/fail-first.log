@@ -1,0 +1,44 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-thermal.test.ts:
+167 |     const process = Bun.spawn(["python3","tools/native-thermal-proposals.py","--source",input,"--current",routed,"--report",join(root,"report.json"),"--out",out],{stdout:"ignore",stderr:"pipe"});
+168 |     expect(await process.exited).toBe(0);
+169 |     const rows = JSON.parse(await readFile(join(out,"manifest.json"),"utf8")) as {name:string;label:string[]}[];
+170 |     expect(rows.length).toBeLessThanOrEqual(304);
+171 |     const proposal = rows.find(p=>p.label[0]==="short-axial" && p.label[1]==="9d2e32dc-507a-41da-b2b4-a62b38b96fca");
+172 |     expect(proposal).toBeDefined();
+                           ^
+error: expect(received).toBeDefined()
+
+Received: undefined
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-aquarius-thermal.test.ts:172:22)
+(fail) generated short axial proposal repairs the complete signal backbone with ownership preserved [17807.44ms]
+
+test/native-thermal-proposals.test.ts:
+ 95 | assert list(m.short_paths((0,0),(1,1),.2))==[]
+ 96 | assert list(m.short_paths((0,0),(0,0),.2))==[]
+ 97 | assert len(list(m.short_paths((0,0),(.01,0),.2)))==2
+ 98 | `;
+ 99 |   const result = Bun.spawnSync(["python3", "-c", script]);
+100 |   expect(result.stderr.toString()).toBe("");
+                                         ^
+error: expect(received).toBe(expected)
+
+- ""
++ "Traceback (most recent call last):
++   File "<string>", line 7, in <module>
++ AttributeError: module 'thermal' has no attribute 'short_paths'. Did you mean: 'pair_paths'?
++ "
+
+- Expected  - 1
++ Received  + 4
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-thermal-proposals.test.ts:100:36)
+(fail) short axial thermal paths scale with width and retain endpoints without degenerate segments [61.78ms]
+
+ 0 pass
+ 7 filtered out
+ 2 fail
+ 5 expect() calls
+Ran 2 tests across 2 files. [18.10s]
