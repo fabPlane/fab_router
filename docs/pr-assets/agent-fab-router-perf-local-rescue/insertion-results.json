@@ -1,0 +1,206 @@
+[
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/INT1",
+    "key": "4:10:62",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 100,
+    "coarsened": 0,
+    "searches": 100,
+    "pops": 1266035,
+    "found": 12,
+    "exhausted": 84,
+    "stages": {
+      "trail-attempt": 84,
+      "trail-legalise-rejected": 66,
+      "trail-legalised": 18
+    },
+    "resolutions": {
+      "7500->7500": 44,
+      "3750->3750": 35,
+      "1875->1875": 21
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/SPI_MOSI",
+    "key": "6:14:64",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 72,
+    "coarsened": 0,
+    "searches": 72,
+    "pops": 787204,
+    "found": 13,
+    "exhausted": 59,
+    "stages": {
+      "trail-attempt": 73,
+      "trail-legalise-rejected": 58,
+      "trail-legalised": 15
+    },
+    "resolutions": {
+      "7500->7500": 35,
+      "3750->3750": 29,
+      "1875->1875": 8
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/SPI_CLK",
+    "key": "8:18:65",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 62,
+    "coarsened": 0,
+    "searches": 62,
+    "pops": 732984,
+    "found": 6,
+    "exhausted": 56,
+    "stages": {
+      "trail-attempt": 62,
+      "trail-legalise-rejected": 48,
+      "trail-legalised": 14
+    },
+    "resolutions": {
+      "7500->7500": 34,
+      "3750->3750": 28
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/SPI_CS1",
+    "key": "9:20:66",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 62,
+    "coarsened": 0,
+    "searches": 62,
+    "pops": 766472,
+    "found": 6,
+    "exhausted": 56,
+    "stages": {
+      "trail-attempt": 62,
+      "trail-legalise-rejected": 48,
+      "trail-legalised": 14
+    },
+    "resolutions": {
+      "7500->7500": 34,
+      "3750->3750": 28
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/~{BUSY}",
+    "key": "10:22:68",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 62,
+    "coarsened": 0,
+    "searches": 62,
+    "pops": 799631,
+    "found": 6,
+    "exhausted": 56,
+    "stages": {
+      "trail-attempt": 62,
+      "trail-legalise-rejected": 48,
+      "trail-legalised": 14
+    },
+    "resolutions": {
+      "7500->7500": 34,
+      "3750->3750": 28
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "net": "/~{RST}",
+    "key": "11:24:67",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 62,
+    "coarsened": 0,
+    "searches": 62,
+    "pops": 797136,
+    "found": 6,
+    "exhausted": 56,
+    "stages": {
+      "trail-attempt": 62,
+      "trail-legalise-rejected": 48,
+      "trail-legalised": 14
+    },
+    "resolutions": {
+      "7500->7500": 34,
+      "3750->3750": 28
+    }
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "net": "+5V",
+    "key": "0:1:45",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 351,
+    "coarsened": 0,
+    "searches": 351,
+    "pops": 5340111,
+    "found": 12,
+    "exhausted": 339,
+    "stages": {
+      "trail-attempt": 346,
+      "trail-legalise-rejected": 282,
+      "trail-legalised": 64
+    },
+    "resolutions": {
+      "10000->10000": 122,
+      "5000->5000": 116,
+      "2500->2500": 113
+    }
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "net": "GND",
+    "key": "3:29:46",
+    "calls": 4,
+    "inserted": 0,
+    "regions": 258,
+    "coarsened": 0,
+    "searches": 258,
+    "pops": 4110868,
+    "found": 3,
+    "exhausted": 252,
+    "stages": {
+      "trail-attempt": 251,
+      "trail-legalise-rejected": 201,
+      "trail-legalised": 50
+    },
+    "resolutions": {
+      "7500->7500": 88,
+      "3750->3750": 85,
+      "1875->1875": 85
+    }
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "net": "+BATT",
+    "key": "3:9:66",
+    "calls": 6,
+    "inserted": 0,
+    "regions": 294,
+    "coarsened": 0,
+    "searches": 294,
+    "pops": 479764,
+    "found": 44,
+    "exhausted": 18,
+    "stages": {
+      "trail-attempt": 472,
+      "trail-legalise-rejected": 308,
+      "trail-legalised": 164,
+      "layered-leg-rejected": 6
+    },
+    "resolutions": {
+      "10000->10000": 98,
+      "5000->5000": 98,
+      "2500->2500": 98
+    }
+  }
+]

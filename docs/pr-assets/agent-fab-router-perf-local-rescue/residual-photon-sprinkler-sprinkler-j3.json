@@ -1,0 +1,165 @@
+{
+  "scope": "Final engine residuals from exact native-session replay; no rescue or new native check",
+  "input_sha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+  "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768",
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": false,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "report": {
+    "passes": 4,
+    "attempted": 45,
+    "completed": 37,
+    "incompleteBefore": 39,
+    "incompleteAfter": 2,
+    "added": {
+      "tracks": 49,
+      "barrels": 12
+    },
+    "ripped": 3,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "stagnant",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": false,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeBudgetMs": 3600000,
+      "copperToEdgeClearanceUm": 500,
+      "holeClearanceUm": 250,
+      "neckWidthUm": 0,
+      "angleMode": "45"
+    },
+    "wallClockMs": 13762,
+    "perNet": [
+      {
+        "net": "+5V",
+        "incomplete": 1
+      },
+      {
+        "net": "Net-(R10-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(U1-Pad17)",
+        "incomplete": 0
+      },
+      {
+        "net": "GND",
+        "incomplete": 1
+      },
+      {
+        "net": "+3V3",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(I2c1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(I2c1-Pad3)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(JP1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R2-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R2-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R3-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R3-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R4-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R4-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(R10-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(Relays1-Pad2)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(Relays1-Pad3)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(Relays1-Pad4)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(Relays1-Pad5)",
+        "incomplete": 0
+      }
+    ]
+  },
+  "connections": [
+    {
+      "net": 0,
+      "from": 1,
+      "to": 45,
+      "airlineLu": 484933.8305377343,
+      "key": "0:1:45",
+      "netName": "+5V"
+    },
+    {
+      "net": 3,
+      "from": 29,
+      "to": 46,
+      "airlineLu": 321074.0101596515,
+      "key": "3:29:46",
+      "netName": "GND"
+    }
+  ]
+}

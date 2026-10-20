@@ -1,0 +1,5 @@
+Cores12–19 / nice10 / timeout1800; supervisor exit0
+bun run typecheck: PASS
+bun run check:layers: PASS (71 files, zero violations)
+bun run test: PASS (912 tests, zero failures, 399733 assertions, 344.02s)
+No production or test source changes.

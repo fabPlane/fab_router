@@ -1,0 +1,51 @@
+{
+  "scope": "Real-fixture transaction regression and deliberate bypass controls; not native routing benchmarks.",
+  "sha256": {
+    "test/near-complete-endpoint.test.ts": "6260932fe6246f2200b77b27a3327a0d6af0b2167de1e2c09d08f926de5d565c",
+    "test/recovery-region.test.ts": "c3efba14d257e8082c2f0c4b83b31cfe420db71aaa391c90f62e252de1aa0fa7",
+    "docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts": "4206877f22105d7b5ce2727cadf82916b2841b60a92ca9bd508f6f98b1d02aae"
+  },
+  "control_repeats": 3,
+  "rows": [
+    {
+      "variant": "control",
+      "exit": 0,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "control-region",
+      "exit": 0,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-drc",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-terminals",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-rewind",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-retained",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-region",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-region-region",
+      "exit": 1,
+      "expected_outcome_observed": true
+    }
+  ]
+}

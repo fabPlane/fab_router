@@ -1,0 +1,6 @@
+{"error": "[Errno 11] Resource temporarily unavailable"}
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/final-native.py", line 9, in <module>
+    assert p.returncode==0,p.returncode
+           ^^^^^^^^^^^^^^^
+AssertionError: 2

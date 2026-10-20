@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-region/test/recovery-region.test.ts:
+(pass) region includes track caps, all via sheets and drill radius [0.97ms]
+52 |    if(action==='replace')journal.addTrack({...track,id:2});
+53 |    if(action==='insert')journal.addTrack({...remote,id:4});
+54 |    add();
+55 |    expect(checkDrc(l).counts.violations).toBe(0);
+56 |    expect(requiredConnections(l)).toHaveLength(0);
+57 |   },region)).toBe('region');
+                  ^
+error: expect(received).toBe(expected)
+
+Expected: "region"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-region/test/recovery-region.test.ts:57:14)
+(fail) local transaction rejects remote removal, replacement and insertion while restoring live index [3.67ms]
+
+ 1 pass
+ 1 fail
+ 16 expect() calls
+Ran 2 tests across 1 file. [36.00ms]

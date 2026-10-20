@@ -1,0 +1,35 @@
+{
+  "final_engine": {
+    "command": "taskset -c 12-19 nice -n 10 timeout --kill-after=10 1800 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+    "exit": 0,
+    "typecheck": "PASS",
+    "layer_files": 71,
+    "layer_violations": 0,
+    "tests": 914,
+    "failures": 0,
+    "assertions": 649747,
+    "test_seconds": 318.33,
+    "production_and_test_trees_unchanged_from_base": true
+  },
+  "rejected_candidate": {
+    "lattice_property_tests": 7,
+    "assertions": 39753,
+    "typecheck": "PASS after archiving missing test support",
+    "layers": "PASS",
+    "full_candidate_suite": "not run; rejected at replay speed gate"
+  },
+  "measurement": {
+    "l2_replays": 6,
+    "aquarius_replays": 6,
+    "all_sessions_match_within_workload": true,
+    "reports_except_wall_match": true,
+    "fresh_native_checks": 0,
+    "adopted": false
+  },
+  "helpers": {
+    "three_corrupt_controls": "rejected",
+    "generator": "exact and overwrite refusal verified",
+    "reproduction_preparation": "all immutable source/test/support hashes verified",
+    "chart": "visually inspected"
+  }
+}

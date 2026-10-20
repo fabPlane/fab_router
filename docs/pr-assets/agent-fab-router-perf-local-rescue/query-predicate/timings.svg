@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850">
+<rect width="1600" height="850" fill="#fafafa"/>
+<g font-family="sans-serif" fill="#202020">
+<text x="70" y="65" font-size="34">Query predicate lift: rejected experiment</text>
+<text x="70" y="105" font-size="22">Three alternating pairs per input; all session hashes and non-timing reports match.</text>
+<text x="90" y="180" font-size="27">L2 fixed two passes</text>
+<text x="90" y="217" font-size="22">Median change: -0.79%</text>
+<rect x="110" y="289.64285714285717" width="66" height="330.35714285714283" fill="#586e85"/>
+<text x="143" y="277.64285714285717" text-anchor="middle" font-size="18">17.56</text>
+<rect x="189" y="293.8130017019494" width="66" height="326.1869982980506" fill="#c56228"/>
+<text x="222" y="281.8130017019494" text-anchor="middle" font-size="18">17.34</text>
+<text x="180" y="655" text-anchor="middle" font-size="20">Pair 1</text>
+<rect x="315" y="291.23060487274034" width="66" height="328.76939512725966" fill="#586e85"/>
+<text x="348" y="279.23060487274034" text-anchor="middle" font-size="18">17.48</text>
+<rect x="394" y="294.2115783697209" width="66" height="325.7884216302791" fill="#c56228"/>
+<text x="427" y="282.2115783697209" text-anchor="middle" font-size="18">17.32</text>
+<text x="385" y="655" text-anchor="middle" font-size="20">Pair 2</text>
+<rect x="520" y="301.9215682241471" width="66" height="318.0784317758529" fill="#586e85"/>
+<text x="553" y="289.9215682241471" text-anchor="middle" font-size="18">16.91</text>
+<rect x="599" y="290.1966963823993" width="66" height="329.8033036176007" fill="#c56228"/>
+<text x="632" y="278.1966963823993" text-anchor="middle" font-size="18">17.53</text>
+<text x="590" y="655" text-anchor="middle" font-size="20">Pair 3</text>
+<text x="90" y="704" font-size="20">Control median / max: 17.479 / 17.563 s</text>
+<text x="90" y="736" font-size="20">Candidate median / max: 17.341 / 17.534 s</text>
+<text x="870" y="180" font-size="27">Aquarius engine replay</text>
+<text x="870" y="217" font-size="22">Median change: +4.81%</text>
+<rect x="890" y="312.9799019025706" width="66" height="307.0200980974294" fill="#586e85"/>
+<text x="923" y="300.9799019025706" text-anchor="middle" font-size="18">42.73</text>
+<rect x="969" y="335.2441013550041" width="66" height="284.7558986449959" fill="#c56228"/>
+<text x="1002" y="323.2441013550041" text-anchor="middle" font-size="18">39.63</text>
+<text x="960" y="655" text-anchor="middle" font-size="20">Pair 1</text>
+<rect x="1095" y="313.112243487819" width="66" height="306.887756512181" fill="#586e85"/>
+<text x="1128" y="301.112243487819" text-anchor="middle" font-size="18">42.71</text>
+<rect x="1174" y="289.64285714285717" width="66" height="330.35714285714283" fill="#c56228"/>
+<text x="1207" y="277.64285714285717" text-anchor="middle" font-size="18">45.98</text>
+<text x="1165" y="655" text-anchor="middle" font-size="20">Pair 2</text>
+<rect x="1300" y="289.77528450529445" width="66" height="330.22471549470555" fill="#586e85"/>
+<text x="1333" y="277.77528450529445" text-anchor="middle" font-size="18">45.96</text>
+<rect x="1379" y="298.21748471466634" width="66" height="321.78251528533366" fill="#c56228"/>
+<text x="1412" y="286.21748471466634" text-anchor="middle" font-size="18">44.78</text>
+<text x="1370" y="655" text-anchor="middle" font-size="20">Pair 3</text>
+<text x="870" y="704" font-size="20">Control median / max: 42.729 / 45.959 s</text>
+<text x="870" y="736" font-size="20">Candidate median / max: 44.784 / 45.977 s</text>
+<text x="70" y="800" font-size="21">Gray: control. Orange: rejected candidate. Shared-host observations; no fresh native DRC or speed-gain claim.</text>
+</g></svg>

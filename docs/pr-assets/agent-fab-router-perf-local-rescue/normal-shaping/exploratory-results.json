@@ -1,0 +1,374 @@
+{
+  "scope": "Engine-only altered contexts, 3 repeats, cores 12\u201319; no native safety or speed gain claim",
+  "attempts": [
+    {
+      "context": "reduced",
+      "mode": "control",
+      "repeat": 0,
+      "seconds": 4.102393889,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "control",
+      "repeat": 1,
+      "seconds": 4.10195398,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "control",
+      "repeat": 2,
+      "seconds": 3.8621942450000004,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "repeat": 0,
+      "seconds": 4.274949829,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "repeat": 1,
+      "seconds": 3.0579396380000006,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "repeat": 2,
+      "seconds": 3.249906386999999,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "repeat": 0,
+      "seconds": 1.219231049,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "repeat": 1,
+      "seconds": 0.9274189270000002,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "repeat": 2,
+      "seconds": 0.8300544930000001,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "repeat": 0,
+      "seconds": 3.391183646,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "repeat": 1,
+      "seconds": 2.87676607,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "repeat": 2,
+      "seconds": 2.9685097670000005,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "repeat": 0,
+      "seconds": 3.425076915,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "repeat": 1,
+      "seconds": 3.4224716870000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "repeat": 2,
+      "seconds": 3.8868995730000004,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "repeat": 0,
+      "seconds": 3.3767854059999998,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "repeat": 1,
+      "seconds": 2.9764809800000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "repeat": 2,
+      "seconds": 3.0950073789999997,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "requiredChecks": {
+    "command": "taskset -c 12-19 nice -n 10 timeout 1500 bash -c 'bun run typecheck && bun run check:layers && bun run test'",
+    "exit": 0,
+    "typecheck": true,
+    "layers": {
+      "files": 70,
+      "violations": 0
+    },
+    "tests": 902,
+    "failed": 0,
+    "assertions": 399475,
+    "seconds": 332.6
+  },
+  "finalControls": {
+    "tests": 8,
+    "failed": 0,
+    "assertions": 188
+  },
+  "strictStandaloneTypecheckExit": 0,
+  "mutationsRejected": 4,
+  "freshResidualReplaysPerPolicy": 3,
+  "freshNativeChecks": 0,
+  "completedRouterBenchmarks": 0,
+  "productionReference": "c9f946d",
+  "productionByteIdenticalFiles": 98
+}

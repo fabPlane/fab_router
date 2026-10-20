@@ -1,0 +1,35 @@
+[
+  {
+    "case": "kitspace-aquarius-j4",
+    "control": {
+      "median": 34.694026828,
+      "p95": 35.453293511
+    },
+    "candidate": {
+      "median": 28.043134385,
+      "p95": 28.210579915000004
+    }
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "control": {
+      "median": 10.110973418,
+      "p95": 10.31265343
+    },
+    "candidate": {
+      "median": 8.808173532,
+      "p95": 9.084167158
+    }
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "control": {
+      "median": 11.334843133,
+      "p95": 11.770927894999998
+    },
+    "candidate": {
+      "median": 11.656906069,
+      "p95": 12.494420544999999
+    }
+  }
+]

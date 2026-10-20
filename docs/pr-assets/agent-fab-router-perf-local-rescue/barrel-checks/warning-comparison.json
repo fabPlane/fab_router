@@ -1,0 +1,11 @@
+{
+  "compared_runs": 78,
+  "canonicalisation": "Ignore random imported-item UUIDs only; sort item order; retain exact positions, descriptions, severity, type and multiplicity",
+  "controls_passed": [
+    "UUID/order equality",
+    "position mutation rejected",
+    "duplicate finding rejected"
+  ],
+  "per_type_counts_identical_all_pairs": true,
+  "changes": []
+}

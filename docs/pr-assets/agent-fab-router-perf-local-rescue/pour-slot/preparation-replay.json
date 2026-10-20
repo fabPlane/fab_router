@@ -1,0 +1,9 @@
+{
+  "exact": true,
+  "files": {
+    "source-audit.json": "4dd6f7ab787498c4034cba98bf33d34d19ee5d6f643b71763c6563ac36ddcacb",
+    "grid-candidate.ts.gz": "60cad7e00c473254ddba5b3d055d3618a7d1adb2649fcf480aa6d3b5a5a51dc2",
+    "clear-candidate.ts.gz": "15a5e8d8b1ef08320fe5af4ec7d0820dcfad1b019b620f23272744bcae014a2e"
+  },
+  "documentation_only_rename": "Both isolated sources rename the legacy opt-in policy.test.ts to policy.fixture.ts to prevent default Bun discovery; no src/spec/test bytes change."
+}

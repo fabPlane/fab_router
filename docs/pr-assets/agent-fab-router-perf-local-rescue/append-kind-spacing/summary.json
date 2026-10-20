@@ -1,0 +1,28 @@
+{
+  "decision": "Reject eager append-only enrichment under existing target budget",
+  "repeats": 3,
+  "prefixGraphs": 16,
+  "enrichedGraphs": 16,
+  "work": {
+    "before": 279946,
+    "after": 357440
+  },
+  "seconds": {
+    "before": {
+      "median": 0.963133711,
+      "max": 0.9787464199999999
+    },
+    "after": {
+      "median": 1.21160511,
+      "max": 1.213870095
+    }
+  },
+  "mutationControls": [
+    "missing-repeat",
+    "false-closure",
+    "false-exact",
+    "overbudget",
+    "broken-prefix",
+    "false-ledger"
+  ]
+}

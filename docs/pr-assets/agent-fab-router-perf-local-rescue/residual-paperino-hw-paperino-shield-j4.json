@@ -1,0 +1,201 @@
+{
+  "scope": "Final engine residuals from exact native-session replay; no rescue or new native check",
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "report": {
+    "passes": 4,
+    "attempted": 50,
+    "completed": 26,
+    "incompleteBefore": 32,
+    "incompleteAfter": 6,
+    "added": {
+      "tracks": 27,
+      "barrels": 1
+    },
+    "ripped": 3,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "stagnant",
+    "effectiveSettings": {
+      "maxPasses": 100,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": true,
+      "strictDrc": true,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeBudgetMs": 3600000,
+      "copperToEdgeClearanceUm": 500,
+      "holeClearanceUm": 250,
+      "neckWidthUm": 0,
+      "angleMode": "45"
+    },
+    "wallClockMs": 15936,
+    "perNet": [
+      {
+        "net": "Net-(A1-Pad1)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad3)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad4)",
+        "incomplete": 0
+      },
+      {
+        "net": "/INT1",
+        "incomplete": 1
+      },
+      {
+        "net": "Net-(A1-Pad6)",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_MOSI",
+        "incomplete": 1
+      },
+      {
+        "net": "/SPI_MISO",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_CLK",
+        "incomplete": 1
+      },
+      {
+        "net": "/SPI_CS1",
+        "incomplete": 1
+      },
+      {
+        "net": "/~{BUSY}",
+        "incomplete": 1
+      },
+      {
+        "net": "/~{RST}",
+        "incomplete": 1
+      },
+      {
+        "net": "Net-(A1-Pad13)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad14)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad15)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad16)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad17)",
+        "incomplete": 0
+      },
+      {
+        "net": "/INT2",
+        "incomplete": 0
+      },
+      {
+        "net": "/SPI_CS2",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad20)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad22)",
+        "incomplete": 0
+      },
+      {
+        "net": "Net-(A1-Pad23)",
+        "incomplete": 0
+      },
+      {
+        "net": "+3V3",
+        "incomplete": 0
+      }
+    ]
+  },
+  "connections": [
+    {
+      "net": 4,
+      "from": 10,
+      "to": 62,
+      "airlineLu": 343145.450210257,
+      "key": "4:10:62",
+      "netName": "/INT1"
+    },
+    {
+      "net": 6,
+      "from": 14,
+      "to": 64,
+      "airlineLu": 355499.2545702452,
+      "key": "6:14:64",
+      "netName": "/SPI_MOSI"
+    },
+    {
+      "net": 8,
+      "from": 18,
+      "to": 65,
+      "airlineLu": 400576.3847258098,
+      "key": "8:18:65",
+      "netName": "/SPI_CLK"
+    },
+    {
+      "net": 9,
+      "from": 20,
+      "to": 66,
+      "airlineLu": 435139.42593150534,
+      "key": "9:20:66",
+      "netName": "/SPI_CS1"
+    },
+    {
+      "net": 10,
+      "from": 22,
+      "to": 68,
+      "airlineLu": 491852.8641778962,
+      "key": "10:22:68",
+      "netName": "/~{BUSY}"
+    },
+    {
+      "net": 11,
+      "from": 24,
+      "to": 67,
+      "airlineLu": 483477.6106501727,
+      "key": "11:24:67",
+      "netName": "/~{RST}"
+    }
+  ]
+}

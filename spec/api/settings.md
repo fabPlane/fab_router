@@ -11,8 +11,8 @@ times in milliseconds; costs are dimensionless multipliers.
 | `maxPasses` | 100 | Upper bound on router passes. A pass sweeps every incomplete connection once. The run stops early when nothing is incomplete or when `maxStagnantPasses` consecutive passes made no progress |
 | `maxStagnantPasses` | 3 | See above; 0 disables the stagnation stop |
 | `maxItems` | unset | If set, the router completes at most this many connections in the run (fanout and optimiser stages have their own `*MaxItems`); once reached it stops with `stoppedBy: "maxItems"`. A connection counts when its copper is inserted, however many Tracks and Barrels that takes. Used by the suites to freeze a partial result |
-| `timeBudgetMs` | unset | Wall-clock budget for the whole `route()` call (fanout + passes + optimiser). On expiry the best snapshot so far is returned with `report.timedOut = true` |
-| `connectionBudgetMs` | unset | Wall-clock budget per connection attempt |
+| `timeBudgetMs` | unset | Wall-clock budget for the whole `route()` call (fanout + passes + optimiser + optional local recovery). On expiry the best snapshot so far is returned with `report.timedOut = true` |
+| `connectionBudgetMs` | unset | Wall-clock budget per normal routing connection attempt. Experimental `localRecovery` uses its separate fixed 15-second target cap, bounded by the remaining `timeBudgetMs` |
 | `viaCost` | 50 | Cost of one Barrel between two signal Sheets, in units of one LU-length of track |
 | `planeViaCost` | 5 | Cost of one Barrel on a net that owns a plane Sheet (used instead of `viaCost` for that net; dropping into the plane is the cheap way to connect it) |
 | `bendCost` | 0 | Extra cost per direction change; `0` means length-only. Higher values yield fewer bends |
@@ -21,6 +21,7 @@ times in milliseconds; costs are dimensionless multipliers.
 | `ripupEnabled` | true | If false, other-net items are hard obstacles |
 | `fanoutEnabled` | false | Run the fanout pre-pass |
 | `fanoutMaxPasses`, `fanoutMaxItems` | unset | Bound the fanout stage the way `maxPasses` / `maxItems` bound routing |
+| `localRecovery` | false (unset) | Experimental insertion-only local visibility post-pass after optimisation. Up to 16 remaining point-anchor links (pads or barrels); a pad-to-pour link may use the nearest compatible existing point in the pour’s live component. Original terminals must still join; direct pour contacts and pour-to-pour search remain unsupported. For point-to-point links, try the original pair first, then at most eight compatible live-component point pairs ordered by distance and ids, each with four growing local boxes. Enumeration and all pairs share one charged work ledger and absolute target deadline. Exact DRC, retained-copper and terminal-preservation gates. Shares remaining route time/item capacity and AbortSignal; cooperative 15-second / 100,000-work-unit cap per target. Full widths and real rules remain unchanged. Logs each target/trial through hooks. Unsupported endpoints stay open |
 | `routerEnabled` | true | Run the routing passes (false: fanout and/or optimiser only) |
 | `optimizerEnabled` | true | Run the optimiser after routing completes |
 | `optimizerPasses`, `optimizerMaxItems` | unset | Bound the optimiser stage the way `maxPasses` / `maxItems` bound routing |

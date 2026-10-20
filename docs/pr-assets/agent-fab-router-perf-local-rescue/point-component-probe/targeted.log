@@ -1,0 +1,10 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/recovery-component-anchor.test.ts:
+(pass) alternate live component anchors close the original full-board stall without changing retained copper [102.87ms]
+(pass) failed public residual recovery rewinds exactly; future legal closure remains permitted [64.34ms]
+
+ 2 pass
+ 0 fail
+ 96 expect() calls
+Ran 2 tests across 1 file. [193.00ms]

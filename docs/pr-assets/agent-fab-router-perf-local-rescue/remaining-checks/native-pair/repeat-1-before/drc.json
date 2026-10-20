@@ -1,0 +1,282 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-10-19T11:39:04",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.6",
+    "schematic_parity": [],
+    "source": "refilled.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 6 [/INT1] of A2 on B.Cu",
+                    "pos": {
+                        "x": 140.27,
+                        "y": 94.25
+                    },
+                    "uuid": "7c112744-a933-4add-a3f1-4ac3b0ffdcdc"
+                },
+                {
+                    "description": "Track [/INT1] on F.Cu, length 2.5400 mm",
+                    "pos": {
+                        "x": 107.61,
+                        "y": 77.81
+                    },
+                    "uuid": "cfb63604-4084-4ace-8e9b-22926fa03911"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 7 [/SPI_MOSI] of A1",
+                    "pos": {
+                        "x": 110.15,
+                        "y": 82.89
+                    },
+                    "uuid": "cefcdcec-c189-4b54-b853-b244785df153"
+                },
+                {
+                    "description": "Pad 8 [/SPI_MOSI] of A2 on B.Cu",
+                    "pos": {
+                        "x": 142.81,
+                        "y": 68.85
+                    },
+                    "uuid": "c9279662-e0e7-4d30-bc74-43ecc77679d6"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 9 [/SPI_CLK] of A1",
+                    "pos": {
+                        "x": 110.15,
+                        "y": 87.97
+                    },
+                    "uuid": "e3be1624-f46b-43e1-adf0-0be45cb6a651"
+                },
+                {
+                    "description": "Pad 9 [/SPI_CLK] of A2 on B.Cu",
+                    "pos": {
+                        "x": 145.35,
+                        "y": 68.85
+                    },
+                    "uuid": "2056e5c4-bfdf-4845-b886-427423050bee"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 10 [/SPI_CS1] of A1",
+                    "pos": {
+                        "x": 110.15,
+                        "y": 90.51
+                    },
+                    "uuid": "80bb24fe-5feb-4492-9276-64ee70e82196"
+                },
+                {
+                    "description": "Pad 10 [/SPI_CS1] of A2 on B.Cu",
+                    "pos": {
+                        "x": 147.89,
+                        "y": 68.85
+                    },
+                    "uuid": "d73c47dc-bf16-43e7-b55a-a72c261a4a6c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 11 [/~{BUSY}] of A1",
+                    "pos": {
+                        "x": 110.15,
+                        "y": 93.05
+                    },
+                    "uuid": "9ff56d57-bf81-425d-9887-d5db0823e741"
+                },
+                {
+                    "description": "Pad 12 [/~{BUSY}] of A2 on B.Cu",
+                    "pos": {
+                        "x": 152.97,
+                        "y": 68.85
+                    },
+                    "uuid": "2416a976-bfa4-4298-a9b1-cf603695469e"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 12 [/~{RST}] of A1",
+                    "pos": {
+                        "x": 110.15,
+                        "y": 95.59
+                    },
+                    "uuid": "0cbf42c0-a757-424e-8fcc-29af87b1834f"
+                },
+                {
+                    "description": "Pad 11 [/~{RST}] of A2 on B.Cu",
+                    "pos": {
+                        "x": 150.43,
+                        "y": 68.85
+                    },
+                    "uuid": "6fd8e219-4b2f-432b-b65b-eed70a3cba4b"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint A1",
+                    "pos": {
+                        "x": 108.88,
+                        "y": 99.908
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca4b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint M1",
+                    "pos": {
+                        "x": 102.54,
+                        "y": 97.46
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca64"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint M2",
+                    "pos": {
+                        "x": 167.46,
+                        "y": 65.64
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca69"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint M3",
+                    "pos": {
+                        "x": 102.54,
+                        "y": 65.64
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca6e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint M4",
+                    "pos": {
+                        "x": 167.46,
+                        "y": 97.46
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca73"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Paperino'",
+            "items": [
+                {
+                    "description": "Footprint A2",
+                    "pos": {
+                        "x": 149.57,
+                        "y": 81.55
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058d4ca5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Symbols'",
+            "items": [
+                {
+                    "description": "Footprint REF***",
+                    "pos": {
+                        "x": 118.786,
+                        "y": 93.05
+                    },
+                    "uuid": "00000000-0000-0000-0000-000058eb38ca"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        }
+    ]
+}

@@ -1,0 +1,53 @@
+{
+  "scope": "Static residual probes, not new full routes or native checks",
+  "rawSha256": "d50e0abc4ac045664b99766b10a3a1f108420e2dfe73eb6a932bd625e85186cf",
+  "targets": 11,
+  "cases": 6,
+  "skipped": [
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "skipped": "no engine residuals after session import",
+      "nativeOpens": 1,
+      "dsnSha256": "87f321f1bc67221739557069baaa9df693195e1bf260e10d42d84b8964248900",
+      "inputSesSha256": "1164acd18de5d59422615cb63344bbf80b7314ab532672b463ed661d5df7f479"
+    }
+  ],
+  "modes": {
+    "before": {
+      "runs": 33,
+      "closures": 0,
+      "statuses": {
+        "budget": 12,
+        "exhausted": 21
+      },
+      "exactViolations": 0,
+      "unchangedSessions": 33,
+      "medianSeconds": 0.18432165499999972,
+      "p95Seconds": 0.7689819539999999,
+      "totalSeconds": 11.698558507,
+      "totalWork": 2132427,
+      "largestAttemptedMargin": {
+        "16": 33
+      }
+    },
+    "after": {
+      "runs": 33,
+      "closures": 0,
+      "statuses": {
+        "budget": 21,
+        "exhausted": 12
+      },
+      "exactViolations": 0,
+      "unchangedSessions": 33,
+      "medianSeconds": 0.4254955319999972,
+      "p95Seconds": 0.6907456969999994,
+      "totalSeconds": 14.037379194999996,
+      "totalWork": 2843718,
+      "largestAttemptedMargin": {
+        "16": 12,
+        "64": 18,
+        "32": 3
+      }
+    }
+  }
+}

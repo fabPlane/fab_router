@@ -1,0 +1,20 @@
+/** Save measured before/after copper from the regression-stage fixture: SOURCE OUTPUT. */
+import { writeFileSync, existsSync } from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const args=process.argv.slice(2);
+const [source,output] = args.length===1 ? [process.cwd(),args[0]] : args;
+if (!source || !output || existsSync(output)) throw new Error('Expected SOURCE UNUSED_OUTPUT');
+const mod = (file:string) => import(pathToFileURL(resolve(source,file)).href);
+const {fixture}=await mod('test/fixtures/local-rescue.ts');
+const {DEFAULT_ROUTE_SETTINGS}=await mod('spec/types/settings.ts');
+const {checkDrc}=await mod('src/drc/index.ts');
+const {createCtx}=await mod('src/route/passes.ts');
+const {runLocalRescue}=await mod('src/route/local-rescue.ts');
+const layout = fixture();
+const before = {pads:structuredClone(layout.pads),tracks:structuredClone(layout.tracks)};
+const baselineDrc = checkDrc(layout);
+const logs: string[] = [];
+const start = performance.now();
+runLocalRescue(createCtx(layout, {...DEFAULT_ROUTE_SETTINGS, localRescue:true, optimizerEnabled:false, viasAllowed:false}, {onLog:(_:unknown,s:string)=>logs.push(s)}));
+writeFileSync(output, JSON.stringify({before,after:{pads:layout.pads,tracks:layout.tracks},baselineDrc,afterDrc:checkDrc(layout),logs,seconds:(performance.now()-start)/1000},null,2)+'\n');

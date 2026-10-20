@@ -1,0 +1,16 @@
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+./kicad/include/properties/property.h(607): assert "m_choices.GetCount() > 0" failed in PROPERTY_ENUM(): No enum choices defined
+18:51:45: Debug: Adding duplicate image handler for 'PNG file'
+18:51:45: Debug: Adding duplicate image handler for 'JPEG file'
+18:51:45: Debug: Adding duplicate image handler for 'TIFF file'
+18:51:45: Debug: Adding duplicate image handler for 'GIF file'
+18:51:45: Debug: Adding duplicate image handler for 'PNM file'
+18:51:45: Debug: Adding duplicate image handler for 'PCX file'
+18:51:45: Debug: Adding duplicate image handler for 'IFF file'
+18:51:45: Debug: Adding duplicate image handler for 'Windows icon file'
+18:51:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+18:51:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+18:51:45: Debug: Adding duplicate image handler for 'TGA file'
+18:51:45: Debug: Adding duplicate image handler for 'XPM file'
+{"scope": "Measured native copper on the new connection layer; all preexisting track segments retained; pad bounds are visual context only", "native_version": "10.0.6", "board_sha256": ["4040501543e72cb71448f100a93c0fc67038a7074e13d681d3cf1a5156ea4799", "9e81e40946ed249f93545ec114f204dc1dab0b5b05f92a1cc294119a7b9931b2"], "net": 4, "net_name": "GND", "layer": 0, "layer_name": "F.Cu", "added_segments": [[4, 0, 250000, 93229900, 88060100, 95219800, 90050000], [4, 0, 250000, 92704900, 86385100, 96814900, 86385100], [4, 0, 250000, 95219800, 90050000, 138430000, 90050000], [4, 0, 250000, 92704900, 86385100, 92704900, 87535100], [4, 0, 250000, 96814900, 86385100, 97790000, 85410000], [4, 0, 250000, 92704900, 87535100, 93229900, 88060100]], "removed_segments": [], "opens": [1, 0], "new_errors": [0, 0]}

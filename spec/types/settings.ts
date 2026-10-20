@@ -72,6 +72,8 @@ export interface RouteSettings {
    *  against escalating present+history cost. Experimental; default false. R-1 unchanged (exact
    *  predicate stays the sole gate). */
   detailedNegotiation?: boolean;
+  /** Experimental insertion-only local visibility recovery after normal routing. Default false. */
+  localRecovery?: boolean;
   /** Apply layout.settingsFromFile underneath the caller's settings. Default false. */
   useFileSettings?: boolean;
 }

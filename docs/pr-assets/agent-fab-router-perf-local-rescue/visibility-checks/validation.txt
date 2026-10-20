@@ -1,0 +1,12 @@
+Final helper/test/scheduler/transaction/runner/plot/input SHA-256 checks: PASS (source-hashes.json)
+All three six-run experiment batches have identical corresponding before/after SES hashes: PASS
+Each batch: two contexts x three repeats, zero target opens and exact violations after recovery.
+Mutation control: all three tests / 66 assertions PASS.
+No-corners / no-budget mutations each fail intended regression (logs retained).
+Required final checks: typecheck / layers65zero / 869tests0fail398965assertions PASS.
+Standalone research runner strict TypeScript check (exit 0):
+taskset -c 12-19 nice -n 10 timeout 120 bunx tsc --noEmit --strict --target ES2022 --module ESNext --moduleResolution bundler --types bun-types --allowImportingTsExtensions --skipLibCheck --noUncheckedIndexedAccess --exactOptionalPropertyTypes --verbatimModuleSyntax docs/pr-assets/agent-fab-router-perf-local-rescue/run-visibility.ts
+Plot exact regeneration and byte comparison: PASS.
+Python scripts AST parse / git diff whitespace checks: PASS.
+Full native26x3 source91/input/settings/runtime/checker/order/session/quality/vias/length comparison: PASS (native-verification.json).
+Native sweep is unchanged production, not a test of the research copper.

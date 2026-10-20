@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:
+(pass) one target budget includes original work, enumeration and alternate; exact boundary succeeds [100.61ms]
+(pass) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [330.89ms]
+(pass) enumeration checks cancellation and both absolute deadlines before every charged item/pair [173.81ms]
+61 |    return r;
+62 |   });
+63 |   try{
+64 |    const result=recoverPointComponent(l,settings,fixture.target,{signal:controller.signal,...(kind==='route'?{deadline:10}:{})},{maxMilliseconds:15});
+65 |    expect(inserted).toBe(true);expect(result.attempts).toHaveLength(2);
+66 |    expect(result.status).toBe(kind==='abort'?'aborted':kind==='local'?'budget':'deadline');unchanged(l,before);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: "budget"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle41/mutations-published/reset-deadline/docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:66:26)
+(fail) late or cancelled successful alternate insertion is rewound against original terminals [148.92ms]
+(pass) zero item allowance and entry stop perform no proposal work [6.89ms]
+(pass) ordinary successful point search retains charged trace without enumeration [18.49ms]
+(pass) exhausting all eight alternate pairs retains one ledger and leaves the original session [85.13ms]
+(pass) limits reject invalid configurations before mutation [13.72ms]
+
+ 7 pass
+ 1 fail
+ 178 expect() calls
+Ran 8 tests across 1 file. [906.00ms]

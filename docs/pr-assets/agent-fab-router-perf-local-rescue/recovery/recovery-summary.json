@@ -1,0 +1,102 @@
+[
+  {
+    "file": "reduced-exact-keep.json",
+    "context": "reduced",
+    "mode": "exact-keep",
+    "repeats": 3,
+    "closed": 3,
+    "before_opens": 3,
+    "after_opens": 0,
+    "normal_median_s": 3.541928704,
+    "normal_p95_s": 3.851255386,
+    "recovery_median_s": 0.04228168500000038,
+    "recovery_p95_s": 0.043217738999999714,
+    "length_mm": [
+      39.83003676467827,
+      39.83003676467827,
+      39.83003676467827
+    ],
+    "vias_added_by_recovery": 0,
+    "trials": 3
+  },
+  {
+    "file": "reduced-exact-pull.json",
+    "context": "reduced",
+    "mode": "exact-pull",
+    "repeats": 3,
+    "closed": 3,
+    "before_opens": 3,
+    "after_opens": 0,
+    "normal_median_s": 3.722366067,
+    "normal_p95_s": 3.980594801,
+    "recovery_median_s": 0.04515504899999996,
+    "recovery_p95_s": 0.04601711400000022,
+    "length_mm": [
+      39.830036764678276,
+      39.830036764678276,
+      39.830036764678276
+    ],
+    "vias_added_by_recovery": 0,
+    "trials": 3
+  },
+  {
+    "file": "reduced-node-keep.json",
+    "context": "reduced",
+    "mode": "node-keep",
+    "repeats": 3,
+    "closed": 3,
+    "before_opens": 3,
+    "after_opens": 0,
+    "normal_median_s": 3.5967990510000005,
+    "normal_p95_s": 3.9357641040000004,
+    "recovery_median_s": 0.009397116000000096,
+    "recovery_p95_s": 0.009969444000000294,
+    "length_mm": [
+      39.83003676467827,
+      39.83003676467827,
+      39.83003676467827
+    ],
+    "vias_added_by_recovery": 0,
+    "trials": 3
+  },
+  {
+    "file": "reduced-node-pull.json",
+    "context": "reduced",
+    "mode": "node-pull",
+    "repeats": 3,
+    "closed": 3,
+    "before_opens": 3,
+    "after_opens": 0,
+    "normal_median_s": 4.2016248109999985,
+    "normal_p95_s": 4.5219354670000005,
+    "recovery_median_s": 0.009232294999999795,
+    "recovery_p95_s": 0.009691289999999754,
+    "length_mm": [
+      39.830036764678276,
+      39.830036764678276,
+      39.830036764678276
+    ],
+    "vias_added_by_recovery": 0,
+    "trials": 3
+  },
+  {
+    "file": "original.json",
+    "context": "original",
+    "mode": "exact-keep",
+    "repeats": 3,
+    "closed": 0,
+    "before_opens": 3,
+    "after_opens": 3,
+    "normal_median_s": 4.071192731000001,
+    "normal_p95_s": 4.398562878000001,
+    "recovery_median_s": 6.371444269000003,
+    "recovery_p95_s": 6.378943643,
+    "length_mm": [
+      2.54,
+      2.54,
+      2.54
+    ],
+    "vias_added_by_recovery": 0,
+    "trials": 48
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "scope": "Real-fixture transaction regression and deliberate bypass controls; not native routing benchmarks.",
+  "sha256": {
+    "test/near-complete-endpoint.test.ts": "b24c66fb243629abebb393425634818a3b19cca99f8f6550956e5accbca06a68",
+    "docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts": "65bfa141bf3ecb1a5d28ac7b4dcc60e05dc4bb1dc271d2ae9eef052377b01edd"
+  },
+  "control_repeats": 3,
+  "rows": [
+    {
+      "variant": "control",
+      "exit": 0,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-drc",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-terminals",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-rewind",
+      "exit": 1,
+      "expected_outcome_observed": true
+    },
+    {
+      "variant": "no-retained",
+      "exit": 1,
+      "expected_outcome_observed": true
+    }
+  ]
+}

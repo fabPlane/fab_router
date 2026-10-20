@@ -1,0 +1,105 @@
+{
+  "adopted": false,
+  "failures": [],
+  "modes": [
+    {
+      "mode": "equal",
+      "pops": 13394,
+      "parity": true
+    },
+    {
+      "mode": "mixed",
+      "pops": 13276,
+      "parity": true
+    },
+    {
+      "mode": "growth",
+      "pops": 20000,
+      "parity": true
+    },
+    {
+      "mode": "reset",
+      "pops": 6673,
+      "parity": true
+    },
+    {
+      "mode": "exceptional",
+      "pops": 13208,
+      "parity": true
+    },
+    {
+      "mode": "exceptional-all-fields",
+      "pops": 13389,
+      "parity": true
+    }
+  ],
+  "sourceSha256": "f7c07d18765a6298e52a687b06257d9937efed1beadb077d3494ee793e97d5f0",
+  "heapSha256": "f400009554fc5282c6acb4e00cf86d0df803abb39de3f9e3c5995055b15824b8",
+  "pushes": 86610,
+  "pops": 79940,
+  "resets": 21,
+  "stateChecks": 23718744,
+  "digest": "15179e523bc2c8ac798d4f20a5ac380be808a3ac7021efdafe5000bc45ab5dd2",
+  "timings": [
+    {
+      "repeat": 0,
+      "name": "original",
+      "milliseconds": 25.803377999999952
+    },
+    {
+      "repeat": 0,
+      "name": "candidate",
+      "milliseconds": 25.782629000000043
+    },
+    {
+      "repeat": 1,
+      "name": "candidate",
+      "milliseconds": 23.70569499999999
+    },
+    {
+      "repeat": 1,
+      "name": "original",
+      "milliseconds": 29.598940999999968
+    },
+    {
+      "repeat": 2,
+      "name": "original",
+      "milliseconds": 29.114166999999952
+    },
+    {
+      "repeat": 2,
+      "name": "candidate",
+      "milliseconds": 23.517259999999965
+    },
+    {
+      "repeat": 3,
+      "name": "candidate",
+      "milliseconds": 23.30708400000003
+    },
+    {
+      "repeat": 3,
+      "name": "original",
+      "milliseconds": 29.046189000000027
+    },
+    {
+      "repeat": 4,
+      "name": "original",
+      "milliseconds": 25.99600099999998
+    },
+    {
+      "repeat": 4,
+      "name": "candidate",
+      "milliseconds": 25.376383000000033
+    },
+    {
+      "repeat": 5,
+      "name": "candidate",
+      "milliseconds": 25.608479999999986
+    },
+    {
+      "repeat": 5,
+      "name": "original",
+      "milliseconds": 27.257428000000004
+    }
+  ]
+}

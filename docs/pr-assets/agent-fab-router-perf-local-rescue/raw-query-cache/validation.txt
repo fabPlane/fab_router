@@ -1,0 +1,20 @@
+PASS 61078 differential checks; detached arrays/refs, callback order, mutation, mode/sheet/diagonals, numeric collisions
+PASS independent complete source reconstruction
+PASS all18 session/report comparisons
+PASS four semantic corruption controls
+$ tsc --noEmit
+bun test v1.4.0 (34cbb9a40)
+
+test/lattice.test.ts:
+(pass) Lattice property tests > hits / sweepHits equal a brute-force scan over 10 000 queries with interleaved inserts and removes [565.64ms]
+(pass) Lattice property tests > a shelf overflow triggers a rebuild that re-buckets the items, and queries still agree [18.22ms]
+(pass) Lattice property tests > filter is applied and results stay sorted [17.33ms]
+(pass) Lattice property tests > two insertion orders (and a remove/re-insert history) give identical query results [47.63ms]
+(pass) Lattice property tests > re-inserting an existing (ref, sheet) replaces its bounds; removing an unknown ref is a no-op [0.23ms]
+(pass) Lattice property tests > cell size comes from the median diagonal and is clamped to [0.5 mm, 5 mm]; big items go to the shelf [0.34ms]
+(pass) Lattice over a synthetic Layout > buildLattice indexes every item on every Sheet it has copper (or a drill) on; Track legs and Rim edges individually [4.86ms]
+
+ 7 pass
+ 0 fail
+ 39753 expect() calls
+Ran 7 tests across 1 file. [659.00ms]

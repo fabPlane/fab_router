@@ -1,0 +1,16 @@
+bun test v1.4.0 (34cbb9a40)
+
+docs/pr-assets/agent-fab-router-perf-local-rescue/bounded-point-probe/controls.test.ts:
+(pass) one target budget includes original work, enumeration and alternate; exact boundary succeeds [95.73ms]
+(pass) work exhaustion in original search, enumeration, and alternate never resets or leaks copper [319.87ms]
+(pass) enumeration checks cancellation and both absolute deadlines before every charged item/pair [171.20ms]
+(pass) late or cancelled successful alternate insertion is rewound against original terminals [252.71ms]
+(pass) zero item allowance and entry stop perform no proposal work [6.57ms]
+(pass) ordinary successful point search retains charged trace without enumeration [19.23ms]
+(pass) exhausting all eight alternate pairs retains one ledger and leaves the original session [68.35ms]
+(pass) limits reject invalid configurations before mutation [14.48ms]
+
+ 8 pass
+ 0 fail
+ 188 expect() calls
+Ran 8 tests across 1 file. [981.00ms]

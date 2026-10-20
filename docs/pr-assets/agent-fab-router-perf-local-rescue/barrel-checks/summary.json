@@ -1,0 +1,144 @@
+{
+  "scope": "Current fixture and larger-input verification; native evidence is separate",
+  "fixture": {
+    "before_incomplete": 1,
+    "after_incomplete": 0,
+    "repeats": 3,
+    "exact_violations": 0,
+    "retained_unchanged": true
+  },
+  "large": [
+    {
+      "file": "/home/hyper/bench/boards/dense/dense6-bga324.dsn",
+      "before": {
+        "incomplete": [
+          190,
+          190,
+          190
+        ],
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2032.3792678141454,
+          2032.3792678141454,
+          2032.3792678141454
+        ],
+        "median_s": 171.69012488800007,
+        "p95_s": 172.09726875699988
+      },
+      "after": {
+        "incomplete": [
+          190,
+          190,
+          190
+        ],
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2032.3792678141454,
+          2032.3792678141454,
+          2032.3792678141454
+        ],
+        "median_s": 190.28120354499993,
+        "p95_s": 215.45251372299995
+      }
+    },
+    {
+      "file": "/home/hyper/bench/boards/ladder/l2-cycle18.dsn",
+      "before": {
+        "incomplete": [
+          24,
+          24,
+          24
+        ],
+        "vias": [
+          51,
+          51,
+          51
+        ],
+        "length_mm": [
+          992.6045014768073,
+          992.6045014768073,
+          992.6045014768073
+        ],
+        "median_s": 25.642299683000005,
+        "p95_s": 33.57915828300001
+      },
+      "after": {
+        "incomplete": [
+          21,
+          21,
+          21
+        ],
+        "vias": [
+          51,
+          51,
+          51
+        ],
+        "length_mm": [
+          1094.3426013352703,
+          1094.3426013352703,
+          1094.3426013352703
+        ],
+        "median_s": 25.462620226000006,
+        "p95_s": 29.794141326000013
+      }
+    },
+    {
+      "file": "/home/hyper/bench/boards/ladder/l3-cycle18.dsn",
+      "before": {
+        "incomplete": [
+          153,
+          153,
+          153
+        ],
+        "vias": [
+          93,
+          93,
+          93
+        ],
+        "length_mm": [
+          1688.6048962239895,
+          1688.6048962239895,
+          1688.6048962239895
+        ],
+        "median_s": 220.83522340999997,
+        "p95_s": 224.60523754700003
+      },
+      "after": {
+        "incomplete": [
+          153,
+          153,
+          153
+        ],
+        "vias": [
+          93,
+          93,
+          93
+        ],
+        "length_mm": [
+          1688.6048962239895,
+          1688.6048962239895,
+          1688.6048962239895
+        ],
+        "median_s": 209.45907484900002,
+        "p95_s": 211.23198253300006
+      }
+    }
+  ],
+  "large_regressions": [],
+  "slow": {
+    "cases": 63,
+    "passed": 51,
+    "failed": 12,
+    "advisory": 14,
+    "stubbed": 0,
+    "total_s": 2482.057464386999
+  }
+}

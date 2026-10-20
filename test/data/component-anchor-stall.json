@@ -1,0 +1,45 @@
+{
+  "sourceCase": "photon-sprinkler-sprinkler-j3",
+  "settings": {
+    "maxPasses": 100,
+    "maxStagnantPasses": 3,
+    "viaCost": 50,
+    "planeViaCost": 5,
+    "bendCost": 0,
+    "preferredDirectionCost": 1.5,
+    "startRipupCost": 100,
+    "ripupEnabled": true,
+    "fanoutEnabled": false,
+    "routerEnabled": true,
+    "optimizerEnabled": true,
+    "strictDrc": false,
+    "layers": {},
+    "viasAllowed": true,
+    "ignoreNetGroups": [],
+    "seed": 1,
+    "shoveEnabled": true,
+    "orderByDifficulty": true,
+    "detailedRouter": "off",
+    "globalPlan": "off",
+    "timeBudgetMs": 3600000,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "neckWidthUm": 0,
+    "localRecovery": true,
+    "angleMode": "45"
+  },
+  "target": {
+    "net": 3,
+    "from": 29,
+    "to": 46,
+    "airlineLu": 321074.0101596515
+  },
+  "anchor": {
+    "from": 8,
+    "to": 19,
+    "net": 3,
+    "distance": 409040.24251899717
+  },
+  "dsnSha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+  "sesSha256": "fc0abf34fe8ac97ced1f08b29086384305196d0247f61961ca38e0b2b0d249e1"
+}

@@ -1,0 +1,230 @@
+{
+  "kicad": "10.0.6",
+  "job": "J3",
+  "net_rules": {
+    "+5V": {
+      "class": "power-+5V",
+      "width_mm": 0.5,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R10-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad17)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "GND": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "+3V3": {
+      "class": "power-+3V3",
+      "width_mm": 0.5,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(I2c1-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(I2c1-Pad3)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(JP1-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R1-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R1-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R2-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R2-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R3-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R3-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R4-Pad1)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R4-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(R10-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(Relays1-Pad2)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(Relays1-Pad3)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(Relays1-Pad4)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(Relays1-Pad5)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad3)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad4)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad15)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad16)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad19)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad20)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    },
+    "Net-(U1-Pad23)": {
+      "class": "kicad_default",
+      "width_mm": 0.25,
+      "clearance_mm": 0.2,
+      "via_diameter_mm": 0.6,
+      "via_drill_mm": 0.4
+    }
+  },
+  "ignore_classes": [],
+  "native_rules": {
+    "max_error": 0.005,
+    "min_clearance": 0.0,
+    "min_connection": 0.0,
+    "min_copper_edge_clearance": 0.5,
+    "min_groove_width": 0.0,
+    "min_hole_clearance": 0.25,
+    "min_hole_to_hole": 0.25,
+    "min_microvia_diameter": 0.2,
+    "min_microvia_drill": 0.1,
+    "min_resolved_spokes": 2,
+    "min_silk_clearance": 0.0,
+    "min_text_height": 0.8,
+    "min_text_thickness": 0.08,
+    "min_through_hole_diameter": 0.3,
+    "min_track_width": 0.2,
+    "min_via_annular_width": 0.1,
+    "min_via_diameter": 0.4,
+    "solder_mask_to_copper_clearance": 0.0,
+    "use_height_for_length_calcs": true
+  },
+  "dsn_sha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+  "fixed_items": 0,
+  "planes": 0,
+  "limits": [
+    "Conditional KiCad custom rules, zone priority/thermal semantics and pair constraints are not fully serialized; native files remain authoritative."
+  ]
+}

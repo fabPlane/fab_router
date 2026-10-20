@@ -1,0 +1,176 @@
+{
+  "targets": [
+    {
+      "pair": {
+        "net": 4,
+        "from": 10,
+        "to": 62,
+        "airlineLu": 343145.450210257
+      },
+      "status": "exhausted",
+      "work": 31278,
+      "edges": 29665,
+      "max_nodes_per_attempt": 248,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "open"
+        },
+        {
+          "margin": 16,
+          "outcome": "open"
+        }
+      ]
+    },
+    {
+      "pair": {
+        "net": 6,
+        "from": 14,
+        "to": 64,
+        "airlineLu": 355499.2545702452
+      },
+      "status": "kept",
+      "work": 14743,
+      "edges": 13561,
+      "max_nodes_per_attempt": 165,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "kept"
+        }
+      ]
+    },
+    {
+      "pair": {
+        "net": 8,
+        "from": 18,
+        "to": 65,
+        "airlineLu": 400576.3847258098
+      },
+      "status": "kept",
+      "work": 23939,
+      "edges": 22626,
+      "max_nodes_per_attempt": 242,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "kept"
+        }
+      ]
+    },
+    {
+      "pair": {
+        "net": 9,
+        "from": 20,
+        "to": 66,
+        "airlineLu": 435139.42593150534
+      },
+      "status": "exhausted",
+      "work": 40585,
+      "edges": 38668,
+      "max_nodes_per_attempt": 327,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "open"
+        },
+        {
+          "margin": 16,
+          "outcome": "open"
+        }
+      ]
+    },
+    {
+      "pair": {
+        "net": 10,
+        "from": 22,
+        "to": 68,
+        "airlineLu": 491852.8641778962
+      },
+      "status": "exhausted",
+      "work": 43942,
+      "edges": 42018,
+      "max_nodes_per_attempt": 327,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "open"
+        },
+        {
+          "margin": 16,
+          "outcome": "open"
+        }
+      ]
+    },
+    {
+      "pair": {
+        "net": 11,
+        "from": 24,
+        "to": 67,
+        "airlineLu": 483477.6106501727
+      },
+      "status": "exhausted",
+      "work": 42656,
+      "edges": 40739,
+      "max_nodes_per_attempt": 327,
+      "trials": [
+        {
+          "margin": 0,
+          "outcome": "open"
+        },
+        {
+          "margin": 4,
+          "outcome": "open"
+        },
+        {
+          "margin": 8,
+          "outcome": "open"
+        },
+        {
+          "margin": 16,
+          "outcome": "open"
+        }
+      ]
+    }
+  ]
+}

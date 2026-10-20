@@ -1,0 +1,1538 @@
+{
+  "scope": "Engine-only altered contexts, 3 repeats, cores 12\u201319; no native safety or speed gain claim",
+  "attempts": [
+    {
+      "context": "reduced",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 4.427580844,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.9855443480000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 3.6928393930000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 4.293135083999999,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.4908838940000004,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 0,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 3.3189503780000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 67,
+        "rawLegal": 3,
+        "perLegLegal": 3
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 1.340787862,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 1.1728306789999998,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "reduced",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 10,
+          "barrels": 1,
+          "tracks": 3,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 3,
+          "incomplete": 1
+        },
+        "barrels": {
+          "total": 1,
+          "through": 1,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 419790.6708942135,
+          "totalLengthMm": 41.97906708942135,
+          "legs": 5,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 2
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 1,
+          "escaped": 1,
+          "viaEscaped": 1
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1101500,
+              "y": -778100
+            },
+            {
+              "x": 1252100,
+              "y": -860300
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 96,
+          "origin": "router"
+        },
+        {
+          "net": 4,
+          "sheet": 1,
+          "pts": [
+            {
+              "x": 1252100,
+              "y": -860300
+            },
+            {
+              "x": 1267100,
+              "y": -942800
+            },
+            {
+              "x": 1394600,
+              "y": -950300
+            },
+            {
+              "x": 1402700,
+              "y": -942500
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 97,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 1.0431905969999997,
+      "left": [],
+      "violations": 0,
+      "session": "0c9601b42c3cb3e80e95710ff8a9f56369c6a4ed2811a01a1475a3320636aed8",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 32,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 3.689002103,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.1054502319999995,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "control",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 3.1736036100000002,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {}
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 3.791328283,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.742805381,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "observed",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 4.084949378,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 0,
+      "seconds": 3.577407143,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 1,
+      "seconds": 3.3073154060000003,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    },
+    {
+      "context": "original",
+      "mode": "raw",
+      "stats": {
+        "items": {
+          "pads": 60,
+          "barrels": 0,
+          "tracks": 1,
+          "pours": 2,
+          "fences": 13
+        },
+        "connections": {
+          "maximum": 38,
+          "incomplete": 31
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 25400,
+          "totalLengthMm": 2.54,
+          "legs": 1,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 12,
+          "escaped": 1,
+          "viaEscaped": 0
+        }
+      },
+      "routerTracks": [
+        {
+          "net": 4,
+          "sheet": 0,
+          "pts": [
+            {
+              "x": 1076100,
+              "y": -778100
+            },
+            {
+              "x": 1101500,
+              "y": -778100
+            }
+          ],
+          "width": 2500,
+          "kind": 1,
+          "hold": "free",
+          "id": 76,
+          "origin": "router"
+        }
+      ],
+      "repeat": 2,
+      "seconds": 3.4323631790000007,
+      "left": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "violations": 0,
+      "session": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "aborted": false,
+      "timedOut": false,
+      "observations": {
+        "rejectedPulled": 60,
+        "rawLegal": 0,
+        "perLegLegal": 0
+      }
+    }
+  ]
+}

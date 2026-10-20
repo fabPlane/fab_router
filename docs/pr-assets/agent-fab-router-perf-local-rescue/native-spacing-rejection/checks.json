@@ -1,0 +1,36 @@
+{
+  "candidate": {
+    "typecheck": "pass",
+    "layer_files": 71,
+    "layer_violations": 0,
+    "passed": 912,
+    "failed": 0,
+    "assertions": 399733,
+    "files": 42,
+    "test_seconds": 323.84,
+    "exit_code": 0
+  },
+  "production": {
+    "typecheck": "pass",
+    "layer_files": 71,
+    "layer_violations": 0,
+    "passed": 912,
+    "failed": 0,
+    "assertions": 399733,
+    "files": 42,
+    "test_seconds": 386.86,
+    "exit_code": 0
+  },
+  "initial_candidate": {
+    "passed": 902,
+    "failed": 10,
+    "test_seconds": 328.46,
+    "cause": "Exact graph/work/completion expectations from prior graph; all retained in initial log. No production tests changed."
+  },
+  "targeted_candidate": {
+    "passed": 24,
+    "failed": 0,
+    "assertions": 573,
+    "test_seconds": 36.34
+  }
+}

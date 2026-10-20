@@ -1,0 +1,42 @@
+{
+  "normalizer": "tools/acceptance/sexp.ts normaliseSession",
+  "rows": [
+    {
+      "version": "before",
+      "repeat": 1,
+      "raw_sha256": "e37115442ebef0fd7cf3121684c477cee1317bfac8ae154bf064f2cbbcf66ea6",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    },
+    {
+      "version": "after",
+      "repeat": 1,
+      "raw_sha256": "17b6a382db5fb26ac9d6a85c1ddec1a5153a63a90500751817655182eb1315d2",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    },
+    {
+      "version": "after",
+      "repeat": 2,
+      "raw_sha256": "0472329f1c8ae8c8e69af24d43f918c9afc683aba2c3c521b40d0335f088e4a9",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    },
+    {
+      "version": "before",
+      "repeat": 2,
+      "raw_sha256": "5a79313c1bcc449007db43ceb15491adaf596b6955a17ee8e0f3d050addb7991",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    },
+    {
+      "version": "before",
+      "repeat": 3,
+      "raw_sha256": "47283c4c22f2ebfe0bd96092ded243d4da2d57bcb997c0c39b4b178af5a9ba62",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    },
+    {
+      "version": "after",
+      "repeat": 3,
+      "raw_sha256": "116127986c85f6e7f299c32e01b549de66fd64e4f492313dc5cf2ff3b55b81cd",
+      "normalized_sha256": "a2af863a2246e90382e43f4dc671846e201f059757ec181042db7afdbf9940c0"
+    }
+  ],
+  "all_normalized_equal": true
+}

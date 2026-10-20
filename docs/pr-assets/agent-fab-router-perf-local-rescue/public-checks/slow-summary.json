@@ -1,0 +1,657 @@
+{
+  "complete": true,
+  "expected_cases_per_mode": 63,
+  "rows": 126,
+  "normal": {
+    "total": 63,
+    "passed": 51,
+    "stubbed": 0
+  },
+  "candidate": {
+    "total": 63,
+    "passed": 51,
+    "stubbed": 0
+  },
+  "regressions": [
+    {
+      "id": "routing-slow-issue555-cnh-strict",
+      "kind": "incomplete",
+      "before": 18,
+      "after": 19
+    }
+  ],
+  "differences": [
+    {
+      "id": "routing-slow-dac2020-bm01-p1",
+      "changes": {
+        "traceLengthMm": {
+          "before": 1555.6858402150972,
+          "after": 1593.8920115942553
+        },
+        "addedTracks": {
+          "before": 306,
+          "after": 308
+        },
+        "incomplete": {
+          "before": 72,
+          "after": 70
+        },
+        "completed": {
+          "before": 123,
+          "after": 125
+        }
+      }
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1-maxitems111",
+      "changes": {
+        "traceLengthMm": {
+          "before": 604.5195913070397,
+          "after": 673.6637913800652
+        },
+        "addedTracks": {
+          "before": 78,
+          "after": 85
+        },
+        "incomplete": {
+          "before": 117,
+          "after": 110
+        },
+        "completed": {
+          "before": 78,
+          "after": 85
+        }
+      }
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1-maxitems151",
+      "changes": {
+        "traceLengthMm": {
+          "before": 604.5195913070397,
+          "after": 673.6637913800652
+        },
+        "addedTracks": {
+          "before": 78,
+          "after": 85
+        },
+        "incomplete": {
+          "before": 117,
+          "after": 110
+        },
+        "completed": {
+          "before": 78,
+          "after": 85
+        }
+      }
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p2",
+      "changes": {
+        "traceLengthMm": {
+          "before": 1555.6858402150972,
+          "after": 1593.8920115942553
+        },
+        "addedTracks": {
+          "before": 306,
+          "after": 308
+        },
+        "incomplete": {
+          "before": 72,
+          "after": 70
+        },
+        "completed": {
+          "before": 148,
+          "after": 150
+        }
+      }
+    },
+    {
+      "id": "routing-slow-dac2020-bm05-maxpasses20",
+      "changes": {
+        "traceLengthMm": {
+          "before": 541.3190874876909,
+          "after": 584.3342847189517
+        },
+        "addedTracks": {
+          "before": 165,
+          "after": 169
+        },
+        "incomplete": {
+          "before": 28,
+          "after": 24
+        },
+        "completed": {
+          "before": 138,
+          "after": 142
+        }
+      }
+    },
+    {
+      "id": "routing-slow-dac2020-bm07-complete",
+      "changes": {
+        "traceLengthMm": {
+          "before": 805.3203158637695,
+          "after": 829.9053767606393
+        },
+        "addedTracks": {
+          "before": 222,
+          "after": 224
+        },
+        "incomplete": {
+          "before": 6,
+          "after": 4
+        },
+        "completed": {
+          "before": 136,
+          "after": 138
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue026-j2-novia",
+      "changes": {
+        "traceLengthMm": {
+          "before": 116.02223295671432,
+          "after": 163.9151144375775
+        },
+        "addedTracks": {
+          "before": 21,
+          "after": 24
+        },
+        "incomplete": {
+          "before": 12,
+          "after": 9
+        },
+        "completed": {
+          "before": 45,
+          "after": 48
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue026-j2-p1-optimizer-limits",
+      "changes": {
+        "traceLengthMm": {
+          "before": 302.89370996447013,
+          "after": 305.56939538941936
+        },
+        "addedTracks": {
+          "before": 72,
+          "after": 73
+        },
+        "incomplete": {
+          "before": 6,
+          "after": 5
+        },
+        "completed": {
+          "before": 27,
+          "after": 28
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue039-bug-design-default",
+      "changes": {
+        "completed": {
+          "before": 300,
+          "after": 306
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue229-display-anyangle-p1",
+      "changes": {
+        "traceLengthMm": {
+          "before": 2086.5897543405795,
+          "after": 2133.6659950409285
+        },
+        "addedTracks": {
+          "before": 25,
+          "after": 26
+        },
+        "incomplete": {
+          "before": 2,
+          "after": 1
+        },
+        "completed": {
+          "before": 6,
+          "after": 7
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue229-display-default",
+      "changes": {
+        "traceLengthMm": {
+          "before": 2118.7648840325387,
+          "after": 2168.0273523598526
+        },
+        "addedTracks": {
+          "before": 38,
+          "after": 39
+        },
+        "incomplete": {
+          "before": 1,
+          "after": 0
+        },
+        "stoppedBy": {
+          "before": "stagnant",
+          "after": "complete"
+        },
+        "completed": {
+          "before": 8,
+          "after": 9
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue229-display-p1-optimizer",
+      "changes": {
+        "traceLengthMm": {
+          "before": 2086.300315521302,
+          "after": 2135.5627838486157
+        },
+        "addedTracks": {
+          "before": 29,
+          "after": 30
+        },
+        "incomplete": {
+          "before": 2,
+          "after": 1
+        },
+        "completed": {
+          "before": 6,
+          "after": 7
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue230-cnh-plane-layers",
+      "changes": {
+        "vias": {
+          "before": 181,
+          "after": 185
+        },
+        "traceLengthMm": {
+          "before": 4657.97034534575,
+          "after": 4725.2444201444
+        },
+        "barrels": {
+          "before": 181,
+          "after": 185
+        },
+        "addedBarrels": {
+          "before": 181,
+          "after": 185
+        },
+        "passes": {
+          "before": 8,
+          "after": 9
+        },
+        "addedTracks": {
+          "before": 316,
+          "after": 324
+        },
+        "incomplete": {
+          "before": 19,
+          "after": 18
+        },
+        "completed": {
+          "before": 199,
+          "after": 207
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue555-bbd-mars64-default",
+      "changes": {
+        "traceLengthMm": {
+          "before": 1061.3549920962614,
+          "after": 1093.3433708610787
+        },
+        "addedTracks": {
+          "before": 114,
+          "after": 115
+        },
+        "incomplete": {
+          "before": 59,
+          "after": 58
+        },
+        "completed": {
+          "before": 206,
+          "after": 207
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue555-cnh-strict",
+      "changes": {
+        "vias": {
+          "before": 185,
+          "after": 181
+        },
+        "traceLengthMm": {
+          "before": 4725.2444201444,
+          "after": 4657.9703453457505
+        },
+        "barrels": {
+          "before": 185,
+          "after": 181
+        },
+        "addedBarrels": {
+          "before": 185,
+          "after": 181
+        },
+        "passes": {
+          "before": 9,
+          "after": 8
+        },
+        "addedTracks": {
+          "before": 324,
+          "after": 316
+        },
+        "incomplete": {
+          "before": 18,
+          "after": 19
+        },
+        "completed": {
+          "before": 207,
+          "after": 199
+        }
+      }
+    },
+    {
+      "id": "routing-slow-issue558-dev-board-edge650",
+      "changes": {
+        "traceLengthMm": {
+          "before": 1078.9006111037672,
+          "after": 1104.4321740111247
+        },
+        "addedTracks": {
+          "before": 294,
+          "after": 295
+        },
+        "incomplete": {
+          "before": 10,
+          "after": 9
+        },
+        "completed": {
+          "before": 230,
+          "after": 231
+        }
+      }
+    },
+    {
+      "id": "srj-j802-six-layer",
+      "changes": {
+        "passes": {
+          "before": 6,
+          "after": 5
+        }
+      }
+    },
+    {
+      "id": "srj-j802-six-layer-v2",
+      "changes": {
+        "passes": {
+          "before": 5,
+          "after": 6
+        }
+      }
+    }
+  ],
+  "case_aliases": [
+    {
+      "alias": "S01",
+      "id": "parse-dialect-kicad-wiring-polygons"
+    },
+    {
+      "alias": "S02",
+      "id": "parse-dialect-router-written-polyline-paths"
+    },
+    {
+      "alias": "S03",
+      "id": "parse-lex-issue187-brace-net-names"
+    },
+    {
+      "alias": "S04",
+      "id": "parse-summary-issue103-board-routed"
+    },
+    {
+      "alias": "S05",
+      "id": "parse-summary-issue178-keebmaker-sofle-choc"
+    },
+    {
+      "alias": "S06",
+      "id": "parse-summary-issue187-processor-z80"
+    },
+    {
+      "alias": "S07",
+      "id": "parse-summary-issue190-processor-z80"
+    },
+    {
+      "alias": "S08",
+      "id": "parse-summary-issue191-processor-z80-processor-z80"
+    },
+    {
+      "alias": "S09",
+      "id": "parse-summary-issue690-kit-dev-coldfire-xilinx-5213"
+    },
+    {
+      "alias": "S10",
+      "id": "parse-summary-issue756-tomu-fpga7"
+    },
+    {
+      "alias": "S11",
+      "id": "parse-summary-issue756-tomu-fpga8"
+    },
+    {
+      "alias": "S12",
+      "id": "parse-summary-issue756-tomu-fpga9"
+    },
+    {
+      "alias": "S13",
+      "id": "routing-slow-cm5-carrier-complete"
+    },
+    {
+      "alias": "S14",
+      "id": "routing-slow-cm5-carrier-floor"
+    },
+    {
+      "alias": "S15",
+      "id": "routing-slow-dac2020-bm01-maxpasses2-maxitems20"
+    },
+    {
+      "alias": "S16",
+      "id": "routing-slow-dac2020-bm01-maxpasses3-maxitems50"
+    },
+    {
+      "alias": "S17",
+      "id": "routing-slow-dac2020-bm01-p1"
+    },
+    {
+      "alias": "S18",
+      "id": "routing-slow-dac2020-bm01-p1-maxitems111"
+    },
+    {
+      "alias": "S19",
+      "id": "routing-slow-dac2020-bm01-p1-maxitems151"
+    },
+    {
+      "alias": "S20",
+      "id": "routing-slow-dac2020-bm01-p1-maxitems61"
+    },
+    {
+      "alias": "S21",
+      "id": "routing-slow-dac2020-bm01-p2"
+    },
+    {
+      "alias": "S22",
+      "id": "routing-slow-dac2020-bm05-maxpasses20"
+    },
+    {
+      "alias": "S23",
+      "id": "routing-slow-dac2020-bm05-p1"
+    },
+    {
+      "alias": "S24",
+      "id": "routing-slow-dac2020-bm05-p1-maxitems2"
+    },
+    {
+      "alias": "S25",
+      "id": "routing-slow-dac2020-bm05-p1-maxitems5"
+    },
+    {
+      "alias": "S26",
+      "id": "routing-slow-dac2020-bm06-fanout-route"
+    },
+    {
+      "alias": "S27",
+      "id": "routing-slow-dac2020-bm07-complete"
+    },
+    {
+      "alias": "S28",
+      "id": "routing-slow-dac2020-bm10-fanout-route"
+    },
+    {
+      "alias": "S29",
+      "id": "routing-slow-dac2020-bm11-fanout-only"
+    },
+    {
+      "alias": "S30",
+      "id": "routing-slow-issue026-j2-novia"
+    },
+    {
+      "alias": "S31",
+      "id": "routing-slow-issue026-j2-p1-optimizer-limits"
+    },
+    {
+      "alias": "S32",
+      "id": "routing-slow-issue034-green14seg-default"
+    },
+    {
+      "alias": "S33",
+      "id": "routing-slow-issue039-bug-design-default"
+    },
+    {
+      "alias": "S34",
+      "id": "routing-slow-issue066-gp8b-4layer"
+    },
+    {
+      "alias": "S35",
+      "id": "routing-slow-issue159-setonix-default"
+    },
+    {
+      "alias": "S36",
+      "id": "routing-slow-issue229-display-anyangle-p1"
+    },
+    {
+      "alias": "S37",
+      "id": "routing-slow-issue229-display-default"
+    },
+    {
+      "alias": "S38",
+      "id": "routing-slow-issue229-display-p1-optimizer"
+    },
+    {
+      "alias": "S39",
+      "id": "routing-slow-issue230-cnh-plane-layers"
+    },
+    {
+      "alias": "S40",
+      "id": "routing-slow-issue269-caniot-tiny-arm-planes"
+    },
+    {
+      "alias": "S41",
+      "id": "routing-slow-issue269-z10-module-planes"
+    },
+    {
+      "alias": "S42",
+      "id": "routing-slow-issue289-fht8086-6layer"
+    },
+    {
+      "alias": "S43",
+      "id": "routing-slow-issue420-contribution-p1-maxitems100"
+    },
+    {
+      "alias": "S44",
+      "id": "routing-slow-issue420-contribution-p1-maxitems150-optimizer1"
+    },
+    {
+      "alias": "S45",
+      "id": "routing-slow-issue555-bbd-mars64-default"
+    },
+    {
+      "alias": "S46",
+      "id": "routing-slow-issue555-bbd-mars64-timebudget"
+    },
+    {
+      "alias": "S47",
+      "id": "routing-slow-issue555-cnh-maxpasses40"
+    },
+    {
+      "alias": "S48",
+      "id": "routing-slow-issue555-cnh-strict"
+    },
+    {
+      "alias": "S49",
+      "id": "routing-slow-issue558-dev-board-edge650"
+    },
+    {
+      "alias": "S50",
+      "id": "routing-slow-issue558-dev-board-fanout-limits"
+    },
+    {
+      "alias": "S51",
+      "id": "routing-slow-issue558-dev-board-fanout-only"
+    },
+    {
+      "alias": "S52",
+      "id": "routing-slow-issue558-dev-board-fanout-route"
+    },
+    {
+      "alias": "S53",
+      "id": "routing-slow-issue676-ch32v-maxpasses3"
+    },
+    {
+      "alias": "S54",
+      "id": "routing-slow-issue684-pcb1-maxpasses3-maxitems50"
+    },
+    {
+      "alias": "S55",
+      "id": "routing-slow-issue690-kit-dev-coldfire-xilinx-5213-p1-maxitems50"
+    },
+    {
+      "alias": "S56",
+      "id": "ses-apply-issue191-processor-z80-processor"
+    },
+    {
+      "alias": "S57",
+      "id": "ses-roundtrip-issue103-board-routed"
+    },
+    {
+      "alias": "S58",
+      "id": "ses-roundtrip-issue187-processor-z80"
+    },
+    {
+      "alias": "S59",
+      "id": "ses-roundtrip-issue191-processor-z80-processor-z80"
+    },
+    {
+      "alias": "S60",
+      "id": "srj-j802-2layer"
+    },
+    {
+      "alias": "S61",
+      "id": "srj-j802-six-layer"
+    },
+    {
+      "alias": "S62",
+      "id": "srj-j802-six-layer-v2"
+    },
+    {
+      "alias": "S63",
+      "id": "srj-j802-six-layer-v3"
+    }
+  ]
+}

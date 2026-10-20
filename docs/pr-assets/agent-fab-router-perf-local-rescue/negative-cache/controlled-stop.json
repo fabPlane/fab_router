@@ -1,0 +1,19 @@
+{
+  "reason": "Reject suite-wide speed claim: median and total native route time regressed; stop own larger driver before further validation",
+  "parent": 1120450,
+  "child": 1221321,
+  "pgid": 1221321,
+  "args": [
+    "timeout",
+    "6500",
+    "bun",
+    "/home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/point-components/large.ts",
+    "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle55/final-source/before",
+    "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle55/final-source/after",
+    "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle55/large.json",
+    "/home/hyper/bench/boards/ladder/l2-cycle18.dsn",
+    "/home/hyper/bench/boards/ladder/l3-cycle18.dsn",
+    "/home/hyper/bench/boards/dense/dense6-bga324.dsn"
+  ],
+  "signal": "SIGTERM"
+}

@@ -1,0 +1,30 @@
+$ tsc --noEmit
+bun test v1.4.0 (34cbb9a40)
+
+test/route-core.test.ts:
+(pass) Journal > insert then rewind restores the Layout and Lattice [1.24ms]
+(pass) Journal > remove is journaled and restored by rewind [0.14ms]
+(pass) Journal > freshId never collides with existing ids [0.19ms]
+(pass) pull (Theta*) > a clear staircase collapses to its endpoints [0.11ms]
+(pass) pull (Theta*) > with no line of sight the path is kept [0.01ms]
+(pass) A* search > finds a straight path across free space [0.57ms]
+(pass) A* search > routes around a blocked column [0.19ms]
+(pass) A* search > respects an abort signal [0.10ms]
+(pass) route() end to end > connects two same-net Pads on one Sheet with no added violation (R-1) [3.54ms]
+(pass) route() end to end > routes around an obstacle of another net, still clean (R-1) [4.03ms]
+(pass) route() end to end > adds no Barrel when vias are disabled (R-4) [0.31ms]
+(pass) route() end to end > never touches locked Pads (R-2) [0.30ms]
+(pass) route() end to end > maxItems caps completed connections and added items (R-5) [0.21ms]
+(pass) route() end to end > is deterministic: same input and settings give identical Tracks [0.49ms]
+(pass) route() end to end > an aborted run returns report.aborted and holds R-1 [0.18ms]
+
+test/perf-invariance.test.ts:
+(pass) perf-invariance (M9c) > dac2020-bm08 routes are byte-identical to the recorded fingerprint [46.15ms]
+(pass) perf-invariance (M9c) > issue026-j2 routes are byte-identical to the recorded fingerprint [7284.62ms]
+(pass) perf-invariance (M9c) > min-fr-test routes are byte-identical to the recorded fingerprint [7.23ms]
+(pass) perf-invariance (M9c) > ecc83 routes are byte-identical to the recorded fingerprint [11.90ms]
+
+ 19 pass
+ 0 fail
+ 74 expect() calls
+Ran 19 tests across 2 files. [7.40s]

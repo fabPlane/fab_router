@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-drc/test/near-complete-endpoint.test.ts:
+86 |     addWitness();
+87 |     rejectedId=journal.addTrack({net:target,sheet:witness.sheet,
+88 |      pts:[blocker.at,{x:blocker.at.x+profile.width,y:blocker.at.y}],
+89 |      width:profile.width,kind:profile.trackKind,hold:'free'}).id;
+90 |     expect(checkDrc(l).counts.violations).toBeGreaterThan(0);
+91 |    })).toBe('drc');
+            ^
+error: expect(received).toBe(expected)
+
+Expected: "drc"
+Received: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle28/gates-final/no-drc/test/near-complete-endpoint.test.ts:91:8)
+(fail) near-complete endpoint context preserves legal progress and deterministic retained copper [5251.82ms]
+
+ 0 pass
+ 1 fail
+ 38 expect() calls
+Ran 1 test across 1 file. [5.28s]

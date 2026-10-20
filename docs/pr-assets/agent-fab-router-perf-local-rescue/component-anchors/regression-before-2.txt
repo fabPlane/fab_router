@@ -1,0 +1,87 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:
+24 |  const sessions=[];
+25 |  for(let i=0;i<3;i++){
+26 |   const l=fixture(reverse),saved=JSON.stringify([l.pads,l.pours]),settings=resolveSettings({},undefined,l.angleMode);
+27 |   expect(requiredConnections(l)).toHaveLength(1);expect(checkDrc(l).counts.violations).toBe(0);
+28 |   const result=recoverRemaining(l,settings,true);
+29 |   expect(result.targets.map(t=>t.status)).toEqual(['kept']);
+                                               ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "kept",
++   "unsupported-endpoints",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:29:43)
+(fail) pour component can be reached through an existing pad, reversed=false [4.23ms]
+24 |  const sessions=[];
+25 |  for(let i=0;i<3;i++){
+26 |   const l=fixture(reverse),saved=JSON.stringify([l.pads,l.pours]),settings=resolveSettings({},undefined,l.angleMode);
+27 |   expect(requiredConnections(l)).toHaveLength(1);expect(checkDrc(l).counts.violations).toBe(0);
+28 |   const result=recoverRemaining(l,settings,true);
+29 |   expect(result.targets.map(t=>t.status)).toEqual(['kept']);
+                                               ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "kept",
++   "unsupported-endpoints",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:29:43)
+(fail) pour component can be reached through an existing pad, reversed=true [0.86ms]
+(pass) an isolated same-net pad cannot stand in for the pour component [1.19ms]
+(pass) a component anchor needs a shared physical sheet [0.34ms]
+54 |  l.tracks=[{id:4,net:0,sheet:1,pts:[{x:10000,y:6000},{x:14000,y:0}],width:200,kind:1,hold:'free',origin:'router'}];
+55 |  return l;
+56 | }
+57 | test('a barrel in the live pour component is a legal point anchor',()=>{
+58 |  const l=barrelFixture(),before=JSON.stringify(l.tracks[0]),result=recoverRemaining(l,resolveSettings({},undefined,l.angleMode),true);
+59 |  expect(result.targets[0]!.status).toBe('kept');expect(result.targets[0]!.anchorPair).toMatchObject({net:0,from:0,to:3});
+                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "kept"
+Received: "unsupported-endpoints"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:59:36)
+(fail) a barrel in the live pour component is a legal point anchor [1.02ms]
+41 |  const integer=(n:number)=>Number.isSafeInteger(n)&&n>0;
+42 |  if(!Number.isFinite(plan.pitch)||plan.pitch<=0||!integer(plan.maxAttempts)||!integer(plan.maxExpansions)||
+43 |   !Number.isFinite(plan.maxMilliseconds)||plan.maxMilliseconds<=0||!plan.margins.length||
+44 |   plan.margins.some((n,i)=>!Number.isFinite(n)||n<0||(i>0&&n<=plan.margins[i-1]!)))throw Error('Invalid recovery plan');
+45 |  const from=recoveryEndpoint(layout,target.from,target.net),to=recoveryEndpoint(layout,target.to,target.net);
+46 |  if(!from||!to)throw Error('Recovery schedule requires point endpoints on target net');
+                                                                                          ^
+error: Recovery schedule requires point endpoints on target net
+      at scheduleRecovery (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/src/route/recovery-schedule.ts:46:86)
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:65:15)
+(fail) alternate anchors cannot replace the original terminal acceptance gate [0.55ms]
+72 | });
+73 | test('alternate anchors must belong to the requested terminal components',()=>{
+74 |  const l=fixture(),lattice=buildLattice(l),journal=createJournal(l,lattice),before=writeSes(l);
+75 |  expect(()=>scheduleRecovery(l,lattice,journal,{net:0,from:0,to:1},
+76 |   {enabled:true,pitch:300,margins:[16],maxAttempts:1,maxExpansions:100,maxMilliseconds:1000},()=>{throw Error('must not propose');},
+77 |   {},{net:0,from:2,to:0})).toThrow('Recovery anchors must belong to target components');
+                                ^
+error: expect(received).toThrow(expected)
+
+Expected substring: "Recovery anchors must belong to target components"
+Received message: "Recovery schedule requires point endpoints on target net"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle38/before/test/recovery-pour-component.test.ts:77:28)
+(fail) alternate anchors must belong to the requested terminal components [0.18ms]
+
+ 2 pass
+ 5 fail
+ 13 expect() calls
+Ran 7 tests across 1 file. [21.00ms]

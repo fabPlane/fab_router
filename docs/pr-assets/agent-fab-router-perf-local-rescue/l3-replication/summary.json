@@ -1,0 +1,66 @@
+{
+  "scope": "three L3 alternating pairs; engine replay only, not a native DRC score",
+  "same_sessions": 6,
+  "same_non_timing_results": 6,
+  "engine_incomplete": 153,
+  "represented_violations_added": 0,
+  "stats": {
+    "items": {
+      "pads": 400,
+      "barrels": 93,
+      "tracks": 140,
+      "pours": 0,
+      "fences": 0
+    },
+    "connections": {
+      "maximum": 200,
+      "incomplete": 153
+    },
+    "barrels": {
+      "total": 93,
+      "through": 93,
+      "blind": 0,
+      "buried": 0
+    },
+    "tracks": {
+      "totalLengthLu": 16886048.962239895,
+      "totalLengthMm": 1688.6048962239895,
+      "legs": 297,
+      "bends90": 18,
+      "bends45": 138,
+      "bendsOther": 0
+    },
+    "violations": {
+      "total": 0,
+      "byRule": {}
+    },
+    "fanout": {
+      "smdPads": 400,
+      "escaped": 95,
+      "viaEscaped": 91
+    }
+  },
+  "timing": {
+    "original": {
+      "median_s": 161.49233857299998,
+      "p95_max3_s": 163.181164429,
+      "sum_s": 485.73712579999994,
+      "times": [
+        161.06362279799998,
+        161.49233857299998,
+        163.181164429
+      ]
+    },
+    "candidate": {
+      "median_s": 161.23516926499997,
+      "p95_max3_s": 174.11970967899998,
+      "sum_s": 491.4988898099999,
+      "times": [
+        161.23516926499997,
+        156.144010866,
+        174.11970967899998
+      ]
+    }
+  },
+  "median_change_percent": -0.15924551608605952
+}

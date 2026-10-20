@@ -61,6 +61,8 @@ export interface QuiltOptions {
 /** Build a Quilt for `sheet` and `profile` on a fixed `(origin, step)` grid. */
 export function createQuilt(layout: Layout, lattice: Lattice, sheet: number, profile: Profile, origin: Pt, step: number, opts: QuiltOptions = {}): Quilt {
   const cache = new Map<number, PatchState>();
+  const keys = new Float64Array(1024);
+  const states = new Uint8Array(1024);
   const ignore = opts.ignore ?? ignoreOf(profile.net);
   const width = opts.width ?? profile.width;
   const st = Math.max(1, Math.round(step));
@@ -70,11 +72,17 @@ export function createQuilt(layout: Layout, lattice: Lattice, sheet: number, pro
 
   function state(gx: number, gy: number): PatchState {
     const key = mortonKey(gx, gy);
+    const slot = ((gx & 1023) ^ Math.imul(gy, 31)) & 1023;
+    if (states[slot] && keys[slot] === key) return states[slot] === 1 ? "free" : "blocked";
     const cached = cache.get(key);
-    if (cached !== undefined) return cached;
+    if (cached !== undefined) {
+      keys[slot] = key; states[slot] = cached === "free" ? 1 : 2;
+      return cached;
+    }
     const free = pointFree(layout, lattice, sheet, pointOf(gx, gy), profile, ignore, width).ok;
     const s: PatchState = free ? "free" : "blocked";
     cache.set(key, s);
+    keys[slot] = key; states[slot] = free ? 1 : 2;
     return s;
   }
 
@@ -83,6 +91,7 @@ export function createQuilt(layout: Layout, lattice: Lattice, sheet: number, pro
   }
 
   function invalidate(box: Box): void {
+    states.fill(0);
     if (cache.size === 0) return;
     const gx0 = Math.floor((box.x0 - origin.x) / st) - 1;
     const gx1 = Math.ceil((box.x1 - origin.x) / st) + 1;

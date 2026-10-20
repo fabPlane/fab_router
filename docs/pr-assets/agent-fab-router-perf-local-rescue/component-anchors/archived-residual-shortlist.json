@@ -1,0 +1,528 @@
+{
+  "scope": "Archived cycle37 seed1 native outputs; inspection only, not new router attempts",
+  "rows": [
+    {
+      "case": "kitspace-aquarius-j4",
+      "opens": 15,
+      "work": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle37/native/before/runs/run-20261019T093142.569268Z-004/fab-router/work",
+      "pours": [
+        {
+          "id": 250,
+          "net": 15,
+          "sheet": 0,
+          "vertices": 4,
+          "holes": 0
+        },
+        {
+          "id": 251,
+          "net": 15,
+          "sheet": 1,
+          "vertices": 4,
+          "holes": 0
+        }
+      ],
+      "pending": [
+        {
+          "net": 15,
+          "from": 250,
+          "to": 251,
+          "airlineLu": 17960.512242138306,
+          "fromCat": "pour",
+          "toCat": "pour",
+          "netName": "GNDD",
+          "fromComponent": [
+            {
+              "id": 250,
+              "cat": "pour"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 34,
+              "cat": "pad"
+            },
+            {
+              "id": 36,
+              "cat": "pad"
+            },
+            {
+              "id": 40,
+              "cat": "pad"
+            },
+            {
+              "id": 42,
+              "cat": "pad"
+            },
+            {
+              "id": 44,
+              "cat": "pad"
+            },
+            {
+              "id": 46,
+              "cat": "pad"
+            },
+            {
+              "id": 48,
+              "cat": "pad"
+            },
+            {
+              "id": 50,
+              "cat": "pad"
+            },
+            {
+              "id": 52,
+              "cat": "pad"
+            },
+            {
+              "id": 54,
+              "cat": "pad"
+            },
+            {
+              "id": 56,
+              "cat": "pad"
+            },
+            {
+              "id": 58,
+              "cat": "pad"
+            },
+            {
+              "id": 60,
+              "cat": "pad"
+            },
+            {
+              "id": 74,
+              "cat": "pad"
+            },
+            {
+              "id": 78,
+              "cat": "pad"
+            },
+            {
+              "id": 81,
+              "cat": "pad"
+            },
+            {
+              "id": 84,
+              "cat": "pad"
+            },
+            {
+              "id": 87,
+              "cat": "pad"
+            },
+            {
+              "id": 90,
+              "cat": "pad"
+            },
+            {
+              "id": 93,
+              "cat": "pad"
+            },
+            {
+              "id": 96,
+              "cat": "pad"
+            },
+            {
+              "id": 99,
+              "cat": "pad"
+            },
+            {
+              "id": 102,
+              "cat": "pad"
+            },
+            {
+              "id": 105,
+              "cat": "pad"
+            },
+            {
+              "id": 108,
+              "cat": "pad"
+            },
+            {
+              "id": 111,
+              "cat": "pad"
+            },
+            {
+              "id": 114,
+              "cat": "pad"
+            },
+            {
+              "id": 123,
+              "cat": "pad"
+            },
+            {
+              "id": 125,
+              "cat": "pad"
+            },
+            {
+              "id": 144,
+              "cat": "pad"
+            },
+            {
+              "id": 146,
+              "cat": "pad"
+            },
+            {
+              "id": 147,
+              "cat": "pad"
+            },
+            {
+              "id": 154,
+              "cat": "pad"
+            },
+            {
+              "id": 156,
+              "cat": "pad"
+            },
+            {
+              "id": 157,
+              "cat": "pad"
+            },
+            {
+              "id": 158,
+              "cat": "pad"
+            },
+            {
+              "id": 159,
+              "cat": "pad"
+            },
+            {
+              "id": 161,
+              "cat": "pad"
+            },
+            {
+              "id": 162,
+              "cat": "pad"
+            },
+            {
+              "id": 163,
+              "cat": "pad"
+            },
+            {
+              "id": 168,
+              "cat": "pad"
+            },
+            {
+              "id": 169,
+              "cat": "pad"
+            },
+            {
+              "id": 170,
+              "cat": "pad"
+            },
+            {
+              "id": 171,
+              "cat": "pad"
+            },
+            {
+              "id": 176,
+              "cat": "pad"
+            },
+            {
+              "id": 177,
+              "cat": "pad"
+            },
+            {
+              "id": 179,
+              "cat": "pad"
+            },
+            {
+              "id": 180,
+              "cat": "pad"
+            },
+            {
+              "id": 181,
+              "cat": "pad"
+            },
+            {
+              "id": 183,
+              "cat": "pad"
+            },
+            {
+              "id": 184,
+              "cat": "pad"
+            },
+            {
+              "id": 188,
+              "cat": "pad"
+            },
+            {
+              "id": 192,
+              "cat": "pad"
+            },
+            {
+              "id": 193,
+              "cat": "pad"
+            },
+            {
+              "id": 195,
+              "cat": "pad"
+            },
+            {
+              "id": 196,
+              "cat": "pad"
+            },
+            {
+              "id": 197,
+              "cat": "pad"
+            },
+            {
+              "id": 202,
+              "cat": "pad"
+            },
+            {
+              "id": 204,
+              "cat": "pad"
+            },
+            {
+              "id": 212,
+              "cat": "pad"
+            },
+            {
+              "id": 213,
+              "cat": "pad"
+            },
+            {
+              "id": 246,
+              "cat": "pad"
+            },
+            {
+              "id": 251,
+              "cat": "pour"
+            }
+          ]
+        },
+        {
+          "net": 28,
+          "from": 86,
+          "to": 209,
+          "airlineLu": 495237.5926865811,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED5",
+          "fromComponent": [
+            {
+              "id": 86,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 209,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 30,
+          "from": 89,
+          "to": 164,
+          "airlineLu": 442614.26369808736,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED7",
+          "fromComponent": [
+            {
+              "id": 89,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 164,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 36,
+          "from": 98,
+          "to": 172,
+          "airlineLu": 445838.3726531399,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED10",
+          "fromComponent": [
+            {
+              "id": 98,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 172,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 38,
+          "from": 101,
+          "to": 173,
+          "airlineLu": 496837.98763178324,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED11",
+          "fromComponent": [
+            {
+              "id": 101,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 173,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 48,
+          "from": 110,
+          "to": 165,
+          "airlineLu": 669868.0765941903,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED6",
+          "fromComponent": [
+            {
+              "id": 110,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 165,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 50,
+          "from": 167,
+          "to": 215,
+          "airlineLu": 656143.9047655629,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Inputs/D-",
+          "fromComponent": [
+            {
+              "id": 167,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 215,
+              "cat": "pad"
+            }
+          ]
+        },
+        {
+          "net": 56,
+          "from": 107,
+          "to": 207,
+          "airlineLu": 454705.71604060574,
+          "fromCat": "pad",
+          "toCat": "pad",
+          "netName": "/Leds/Stars/LED2",
+          "fromComponent": [
+            {
+              "id": 107,
+              "cat": "pad"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 207,
+              "cat": "pad"
+            }
+          ]
+        }
+      ],
+      "exact": {
+        "violations": 0,
+        "incompletes": 8
+      }
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "opens": 1,
+      "work": "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle37/native/before/runs/run-20261019T093142.569268Z-025/fab-router/work",
+      "pours": [
+        {
+          "id": 80,
+          "net": 0,
+          "sheet": 1,
+          "vertices": 6,
+          "holes": 0
+        },
+        {
+          "id": 81,
+          "net": 5,
+          "sheet": 1,
+          "vertices": 5,
+          "holes": 0
+        }
+      ],
+      "pending": [
+        {
+          "net": 5,
+          "from": 10,
+          "to": 81,
+          "airlineLu": 54123.7729653061,
+          "fromCat": "pad",
+          "toCat": "pour",
+          "netName": "GNDA",
+          "fromComponent": [
+            {
+              "id": 8,
+              "cat": "pad"
+            },
+            {
+              "id": 10,
+              "cat": "pad"
+            },
+            {
+              "id": 67,
+              "cat": "pad"
+            },
+            {
+              "id": 151,
+              "cat": "track"
+            },
+            {
+              "id": 152,
+              "cat": "track"
+            }
+          ],
+          "toComponent": [
+            {
+              "id": 38,
+              "cat": "pad"
+            },
+            {
+              "id": 58,
+              "cat": "pad"
+            },
+            {
+              "id": 75,
+              "cat": "pad"
+            },
+            {
+              "id": 81,
+              "cat": "pour"
+            },
+            {
+              "id": 153,
+              "cat": "track"
+            }
+          ]
+        }
+      ],
+      "exact": {
+        "violations": 0,
+        "incompletes": 1
+      }
+    }
+  ]
+}

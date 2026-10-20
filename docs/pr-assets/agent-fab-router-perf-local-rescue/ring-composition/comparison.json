@@ -1,0 +1,1983 @@
+{
+  "scope": "Fresh paired enabled recovery, bounded quilt cache versus cache plus exact ring containment; same host/cores; sequential sweeps; no overlapping own heavy jobs; shared-host timing remains observational",
+  "summary": {
+    "before": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.1205134710000002,
+      "p95_s": 17.4607922,
+      "total_s": 412.713730625,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 524.490916,
+      "valid_cases_3of3": 16
+    },
+    "after": {
+      "passed": 48,
+      "opens": 90,
+      "new_errors": 27,
+      "median_s": 1.121453528,
+      "p95_s": 15.183398914,
+      "total_s": 399.145318232,
+      "vias": 2826,
+      "length_mm": 60450.37820203086,
+      "wall_s": 511.169069,
+      "valid_cases_3of3": 16
+    }
+  },
+  "same_sessions": 78,
+  "regressions": [],
+  "attempts": [
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7371653819999999,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.725187261,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 0.98288665,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 0.960600554,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 17.168777032999998,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 12.839566318,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 54.254682455,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 46.029523772000005,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.979993499,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.990865993,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7747431,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.716762541,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 4.9460044750000005,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 4.873205508000001,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.975046911,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.999589082,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.39205556,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.142948959,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.244307605,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.353042626,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.720585344,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.714581233,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.266480387,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.995145354,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.8442460780000001,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.897319427,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 4.915685327,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 5.243171263,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.721936299,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7244252250000001,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.848387279,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.884293802,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 4.1210236270000005,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 3.719257741,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.005258865,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.084991534,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 1.1330913950000001,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 1.202463423,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 50.475148898,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 58.723972109,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.863390976,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.865522762,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 5.016244456,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 4.940805855,
+        "vias": 102,
+        "length_mm": 961.0042257397101,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-large",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.8711268299999999,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.8695714290000001,
+        "vias": 26,
+        "length_mm": 561.8597030625879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.735574394,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.730378245,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.27776309,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.118804338,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 3.069680882,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.911758055,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.726953817,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7215749810000001,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.862909917,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.842683426,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.871990853,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.850078986,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.727760873,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.737120932,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 3.933610207,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 3.9014684500000003,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 16.342940923,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 13.572014363,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.367948739,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.374927078,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.720710782,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.886855391,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.722213234,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.73074724,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 15.201072063,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 15.183398914,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-small",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 3.879761067,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 3.748380959,
+        "vias": 22,
+        "length_mm": 495.56669906548063,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 51.453196869,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 15,
+        "new_errors": 6,
+        "seconds": 47.964592034,
+        "vias": 130,
+        "length_mm": 1731.1131265365616,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.131522305,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.124102718,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j1",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7245344690000001,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.735808375,
+        "vias": 27,
+        "length_mm": 387.434261650624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.94232435,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.6897942,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 11.815798247,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 11.574112336,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 11.165100306,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 11.356783255,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.286467438,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.2592241250000002,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.8630849030000001,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.853121045,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.421404157,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.695898994,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.855958937,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.857970698,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 3.0562634969999998,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 3.064086961,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.7219973850000001,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.788161804,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j4",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 1.10824512,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 1,
+        "seconds": 1.012465985,
+        "vias": 38,
+        "length_mm": 523.1989115428624,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7261512160000001,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7212914669999999,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j3",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.730440065,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.715626264,
+        "vias": 12,
+        "length_mm": 354.1762670743417,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 14.132221259,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 14.516329105,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-large",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 3.16926059,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.8871218460000003,
+        "vias": 41,
+        "length_mm": 1522.0593137491246,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.883108055,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.654092184,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-small",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.720985628,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 0,
+        "new_errors": 2,
+        "seconds": 0.7209728080000001,
+        "vias": 17,
+        "length_mm": 480.4329510930379,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.986222453,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.973077826,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-medium",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.982167615,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.976768333,
+        "vias": 1,
+        "length_mm": 1484.1054119012779,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j2-medium",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.859717581,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.849395248,
+        "vias": 20,
+        "length_mm": 472.91450108747847,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7181891789999999,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.712951941,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.71946847,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.742118825,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j3",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.14763793,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 2.447011064,
+        "vias": 26,
+        "length_mm": 379.0178352540116,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j2-small",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.719447006,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7535971530000001,
+        "vias": 2,
+        "length_mm": 1498.272560544747,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "fan-controller-fan-controller-j2-medium",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.736950505,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7300765539999999,
+        "vias": 27,
+        "length_mm": 531.9971885900213,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "qrpcard-qrpcard-j1",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.379978839,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.366503005,
+        "vias": 59,
+        "length_mm": 828.2341957425565,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.1095046370000001,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 1.264377757,
+        "vias": 16,
+        "length_mm": 338.3839547948975,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 11.298898465,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 13.276874518,
+        "vias": 12,
+        "length_mm": 702.9840603039519,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 14.701154108999999,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 14.783168061,
+        "vias": 12,
+        "length_mm": 706.7583192700436,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j2-large",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.975715331,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 0.994529942,
+        "vias": 111,
+        "length_mm": 1369.2818387007,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 2,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.157976466,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.03493676,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 1,
+      "before": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 17.4607922,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 4,
+        "new_errors": 0,
+        "seconds": 13.975244236,
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 3,
+      "before": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.899564189,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.5187947040000003,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j1",
+      "seed": 1,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.7196654339999999,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.721078622,
+        "vias": 12,
+        "length_mm": 352.6905969311543,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-lcr-addon-j3",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.168700398,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 2.028603533,
+        "vias": 40,
+        "length_mm": 845.4859970828462,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "sv650sds-sds-tool-j4",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.855693421,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.860380639,
+        "vias": 14,
+        "length_mm": 224.0750550441052,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "hellscribe-hellscribe-j1",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.9687884849999997,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 3,
+        "new_errors": 0,
+        "seconds": 3.883577427,
+        "vias": 100,
+        "length_mm": 1315.7860560230656,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "nextbusclock-nextbusclockv1-j3",
+      "seed": 2,
+      "before": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.816102033,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": false,
+        "opens": 1,
+        "new_errors": 0,
+        "seconds": 8.525306856,
+        "vias": 65,
+        "length_mm": 1561.816402107182,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    },
+    {
+      "case": "kitspace-solenoid-driver-j4",
+      "seed": 3,
+      "before": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.724171811,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "after": {
+        "passed": true,
+        "opens": 0,
+        "new_errors": 0,
+        "seconds": 0.728383895,
+        "vias": 9,
+        "length_mm": 239.6847421348615,
+        "failed_fidelity": []
+      },
+      "added_findings": [],
+      "added_warning_geometry": [],
+      "same_ses": true
+    }
+  ]
+}

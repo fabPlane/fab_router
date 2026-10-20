@@ -1,0 +1,1181 @@
+{
+  "scope": "One frozen case; three same-seed engine repeats; before/after native checks; no full-suite gain claim",
+  "measurements_sha256": "243d3cd5170f30f9685c128ba37a71817b2c2005fb2101eb8495a351cb69db15",
+  "protected_sha256": {
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/job.json": "aae229271c3a19ad8b20c84af16cc43e0852418bea64fb30812da01c1a2ed9f7",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/board.kicad_prl": "17fd2530bde826c57486affa122d0a9446a8a4fe73175fb09efea655f55b1903",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/LICENSE": "a499580204c121fd1d39155c31317a45dfb74a0ec1af4d0dc5bce5554a7cea18",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4/baseline-drc.json": "5995f104e6db6e406705234cb130936be7716a6d9d412794892acc3ba5436668",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py": "0c03ef2edc81b6d806f59486d82a9be1531e74933e2009abbdb06629ddb6aee3",
+    "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py": "1ced7295253415bf7cc9d4d4c27c9bb4f0053d132e212fccbbc28a5a17f3e57e"
+  },
+  "rows": [
+    {
+      "repeat": 0,
+      "mode": "before",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before"
+          ],
+          "exit_code": 0,
+          "seconds": 0.1837150090141222
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.2868538120528683
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 3.6491757039912045
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "b3d37db13ce9b5f9edf698a1e41878120358979a87123f15f445d1fd74a09a1f",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 6,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 30,
+        "track_length_mm": 171.2351255021511,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 2.54,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 2.54,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-before/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "b3d37db13ce9b5f9edf698a1e41878120358979a87123f15f445d1fd74a09a1f",
+        "pass": false,
+        "opens": 6,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 171.2351255021511,
+        "job": "J4",
+        "raw_output_sha256": "b3d37db13ce9b5f9edf698a1e41878120358979a87123f15f445d1fd74a09a1f"
+      },
+      "session_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "artifacts": {
+        "metrics.json": "2a623fd6e2297137bd2990b8c0957358acc82e1c683a78193144cb2168d01319",
+        "board.ses": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+        "drc.json": "eb49b726b47ba56a47fd2d162c437bc7105ed5e789d4bb1cb11be3b2b2d969f2",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "7c09eeb54b1e035e9f01db028daf68c7911a83408e2e18cf928fb0050e31d12b",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "44b389333004950118fab90789822b6f6b3db8b49b3961f47d81228e799a6b62",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "116df32351e4f06652dbeb92fda9f150a89be8fadd179d0e580c20a430d4eb1e",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "2a623fd6e2297137bd2990b8c0957358acc82e1c683a78193144cb2168d01319",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "21502c10f929e1b723f1e43913a4ecb61aa09ca52573f3615db1c0851ef70963",
+        "refilled.kicad_pcb": "b3d37db13ce9b5f9edf698a1e41878120358979a87123f15f445d1fd74a09a1f",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "b3d37db13ce9b5f9edf698a1e41878120358979a87123f15f445d1fd74a09a1f",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "b629316f4a52f18b11a8f13c868ec3ed1a2fb3688dbcedec2faf383c7145bb81",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    },
+    {
+      "repeat": 0,
+      "mode": "after",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after"
+          ],
+          "exit_code": 0,
+          "seconds": 0.20323910401202738
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.3190237079979852
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 3.766343496972695
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "e5530072928ee865f30754cfcca865235a63a8da186e696ec00ad3dbd493bf39",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 4,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 47,
+        "track_length_mm": 281.7918923163879,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 70.48129529194166,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 45.15547152229511,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-0-after/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "e5530072928ee865f30754cfcca865235a63a8da186e696ec00ad3dbd493bf39",
+        "pass": false,
+        "opens": 4,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "job": "J4",
+        "raw_output_sha256": "d48c8dcd23bc314e92b1787ab9dcfa3364137369abf4f4772218fa4675954905"
+      },
+      "session_sha256": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+      "artifacts": {
+        "metrics.json": "ec9107eb0eeba4131551475092526ca50b06664977b1f77f1febc3ccd39c512a",
+        "board.ses": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+        "drc.json": "d56ae8db7a7d9ffb1a351f50ef9c8793d15e592499fc4aea40968e84c91b832b",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "6216182cd7dffd591b38ec852e2c015f60d3fa26fdaa33e8793c5ff90b1b16db",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "75bedf2561a479618ba7786ea1aaa5169f8996b6a92a0e69f9e824d579f03c34",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "c56815e9c78d60f581a4618143dd8c80870497d680d6a6862ac3b85b629965a3",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "ec9107eb0eeba4131551475092526ca50b06664977b1f77f1febc3ccd39c512a",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "cec9f9648cc02dabd6529095bd62b130894c1557ade9f003217a1299607488bf",
+        "refilled.kicad_pcb": "e5530072928ee865f30754cfcca865235a63a8da186e696ec00ad3dbd493bf39",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "d48c8dcd23bc314e92b1787ab9dcfa3364137369abf4f4772218fa4675954905",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "754e8d163971d98f52e1be2174963f86d46da61226d4273c2deb12dacc393285",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    },
+    {
+      "repeat": 1,
+      "mode": "before",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before"
+          ],
+          "exit_code": 0,
+          "seconds": 0.19403609505388886
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.27843956102151424
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 3.805186058045365
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "fa81d87b265b0b584999c2f14bbeb0352c4b31e0934cb7f36095d9c1444afb21",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 6,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 30,
+        "track_length_mm": 171.2351255021511,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 2.54,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 2.54,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-before/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "fa81d87b265b0b584999c2f14bbeb0352c4b31e0934cb7f36095d9c1444afb21",
+        "pass": false,
+        "opens": 6,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 171.2351255021511,
+        "job": "J4",
+        "raw_output_sha256": "fa81d87b265b0b584999c2f14bbeb0352c4b31e0934cb7f36095d9c1444afb21"
+      },
+      "session_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "artifacts": {
+        "metrics.json": "554761ca7fc99320e2a723513ffeaefe56e3d9d0ae3ca0920f79b594007b935c",
+        "board.ses": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+        "drc.json": "c6e1d9deb0ccc30a35ee71f98ac60f5e8b3a18496d2c87262500f31a4b99e275",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "bcb2a65e95c84c83f1883fb1c3ca1bd2f8926785345c15b8deda0503b2c4cf37",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "1e81918e350c4b4c225b5935ab69d3a8ba1f6e6141f1966c2a5781b5f156c819",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "1b2ba3b84c5fb265f69d1b4b06dca59ae9c097d2ef9be2ba28e3a163a135094e",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "554761ca7fc99320e2a723513ffeaefe56e3d9d0ae3ca0920f79b594007b935c",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "beb434d842dcde7dc5677f0eb2b9a86dc6aec766e04a7ee47a3bb8315f629b11",
+        "refilled.kicad_pcb": "fa81d87b265b0b584999c2f14bbeb0352c4b31e0934cb7f36095d9c1444afb21",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "fa81d87b265b0b584999c2f14bbeb0352c4b31e0934cb7f36095d9c1444afb21",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "9484001e37c937af8d91a9be6911bc356db29185854b7abfd74793e1e8ed02b8",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    },
+    {
+      "repeat": 1,
+      "mode": "after",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after"
+          ],
+          "exit_code": 0,
+          "seconds": 0.2098947170889005
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.3138430470135063
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 3.7211251478875056
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "065ff710e53856c1259b4aa89b08793461ecadd391ff9b52516dff2fd9f945ec",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 4,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 47,
+        "track_length_mm": 281.7918923163879,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 70.48129529194166,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 45.15547152229511,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-1-after/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "065ff710e53856c1259b4aa89b08793461ecadd391ff9b52516dff2fd9f945ec",
+        "pass": false,
+        "opens": 4,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "job": "J4",
+        "raw_output_sha256": "065ff710e53856c1259b4aa89b08793461ecadd391ff9b52516dff2fd9f945ec"
+      },
+      "session_sha256": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+      "artifacts": {
+        "metrics.json": "93ce5fc0645db9cbb1263e80d2c0a12d886e362a51d68ede6226d6d199a0c571",
+        "board.ses": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+        "drc.json": "1661e93da22300a3fde2856addf715fe21bd489063d8c7321a79c7d884cae6d9",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "90b4987c9a27139df550f9169154f5ec753f324447ace43e63c8cdb7d7bfb294",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "2139b66bc44ba4d74c8ffcaaec82a5a075895400542e33aab511d21d18bf1c16",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "fed576ee8509e303e80de489a46b79b1985bc585b0a41510104b6b68d966da0d",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "93ce5fc0645db9cbb1263e80d2c0a12d886e362a51d68ede6226d6d199a0c571",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "e9dbb4e4d6378deb857ee1054b024474f4cbaf0db027f1c472e541305c741fcf",
+        "refilled.kicad_pcb": "065ff710e53856c1259b4aa89b08793461ecadd391ff9b52516dff2fd9f945ec",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "065ff710e53856c1259b4aa89b08793461ecadd391ff9b52516dff2fd9f945ec",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "d4061ce95065e6139cf3cbf1bbc2f61a9a63c0b693de3bd1368b73ba85996344",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    },
+    {
+      "repeat": 2,
+      "mode": "before",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before"
+          ],
+          "exit_code": 0,
+          "seconds": 0.21073027304373682
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.3024503290653229
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 3.765598849975504
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "00caca4a96c26b2abcc452ca3ecb83ed418a0a106bacb8084838a1688c468ef7",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 6,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 30,
+        "track_length_mm": 171.2351255021511,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 2.54,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 2.54,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-before/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "00caca4a96c26b2abcc452ca3ecb83ed418a0a106bacb8084838a1688c468ef7",
+        "pass": false,
+        "opens": 6,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 171.2351255021511,
+        "job": "J4",
+        "raw_output_sha256": "00caca4a96c26b2abcc452ca3ecb83ed418a0a106bacb8084838a1688c468ef7"
+      },
+      "session_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "artifacts": {
+        "metrics.json": "792c6dae0e5127f7959e54afde08614b22fb4e9cbed99e20623372d33ba741cf",
+        "board.ses": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+        "drc.json": "9cd07cfdc8b680fe75690e0716b2b170f0ed53d2cf2eb78d3bad3ad782f833f6",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "664985185f6001946d3249fa699b9c14f93e98ec7beae411f175bf288a3f5765",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "5e63a916539e3eb5941477d8e40a472966502f7a2e05de7bf511ece1985f9ef0",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "3437b2ebeee3dbaf3f5f698d9183cd0164c99e25435cc54fbbc0272b9af0842b",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "792c6dae0e5127f7959e54afde08614b22fb4e9cbed99e20623372d33ba741cf",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "d636cdfebb700bef269b0997a2e69b57affac5705b5a75d6cd699e44df7830db",
+        "refilled.kicad_pcb": "00caca4a96c26b2abcc452ca3ecb83ed418a0a106bacb8084838a1688c468ef7",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "00caca4a96c26b2abcc452ca3ecb83ed418a0a106bacb8084838a1688c468ef7",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "574dc322578b4bbcdab9b796d4b23414fbd382e31e4d546dc436cc66e87945fa",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    },
+    {
+      "repeat": 2,
+      "mode": "after",
+      "steps": [
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "export",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after"
+          ],
+          "exit_code": 0,
+          "seconds": 0.2146810449194163
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/dsn-path.py",
+            "import",
+            "--input-dir",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--work-dir",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after",
+            "--output-pcb",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/output.kicad_pcb"
+          ],
+          "exit_code": 0,
+          "seconds": 0.29858582001179457
+        },
+        {
+          "args": [
+            "/usr/bin/python3",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/harness/native-check-v4.3.py",
+            "--fixture",
+            "/home/hyper/bench/wt/fp-perf/benchmarks/autorouter/cases/paperino-hw-paperino-shield-j4",
+            "--output",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/output.kicad_pcb",
+            "--out",
+            "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/check.json"
+          ],
+          "exit_code": 0,
+          "seconds": 4.030478866072372
+        }
+      ],
+      "check": {
+        "native_version": "10.0.6",
+        "board_sha256": "427b97c1bc6334f8fe6b5f84e235bbfb870d9640f84cce727c7a9f9fca7e9666",
+        "integrity_checks": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "integrity_pass": true,
+        "native_opens": 4,
+        "native_total_errors_excluding_opens": 0,
+        "inherited_errors": 0,
+        "new_errors": 0,
+        "new_error_details": [],
+        "new_warning_details": [],
+        "new_error_types": {},
+        "new_warnings": 0,
+        "new_warning_types": {},
+        "via_count": 1,
+        "track_count": 47,
+        "track_length_mm": 281.7918923163879,
+        "per_net_length_mm": {
+          "+3V3": 37.37977611868366,
+          "/INT1": 2.54,
+          "/INT2": 19.312751712226593,
+          "/SPI_CLK": 70.48129529194166,
+          "/SPI_CS1": 2.54,
+          "/SPI_CS2": 22.90232796121308,
+          "/SPI_MISO": 45.920269710027775,
+          "/SPI_MOSI": 45.15547152229511,
+          "/~{BUSY}": 2.54,
+          "/~{RST}": 2.54,
+          "Net-(A1-Pad1)": 2.54,
+          "Net-(A1-Pad13)": 2.54,
+          "Net-(A1-Pad14)": 2.54,
+          "Net-(A1-Pad15)": 2.54,
+          "Net-(A1-Pad16)": 2.54,
+          "Net-(A1-Pad17)": 2.54,
+          "Net-(A1-Pad20)": 2.54,
+          "Net-(A1-Pad22)": 2.54,
+          "Net-(A1-Pad23)": 2.54,
+          "Net-(A1-Pad3)": 2.54,
+          "Net-(A1-Pad4)": 2.54,
+          "Net-(A1-Pad6)": 2.54
+        },
+        "native_acceptance": false,
+        "manufacturing_clean": false,
+        "ignored_checks": [
+          {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+          },
+          {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+          },
+          {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+          },
+          {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+          },
+          {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+          }
+        ],
+        "drc_command": [
+          "/usr/bin/kicad-cli",
+          "pcb",
+          "drc",
+          "--severity-all",
+          "--format",
+          "json",
+          "-o",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/drc.json",
+          "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/refilled.kicad_pcb"
+        ],
+        "zone_preserved": true,
+        "ground_connected": true,
+        "island_findings": {
+          "filled_islands": [],
+          "orphan_copper": [],
+          "native_findings": [],
+          "ground_opens": []
+        },
+        "refilled_board_sha256": "427b97c1bc6334f8fe6b5f84e235bbfb870d9640f84cce727c7a9f9fca7e9666",
+        "pass": false,
+        "opens": 4,
+        "fidelity": {
+          "footprints": true,
+          "pads": true,
+          "outline": true,
+          "layers": true,
+          "zones": true,
+          "kicad_pro_preserved": true,
+          "kicad_dru_preserved": true,
+          "checker_policy_preserved": true,
+          "nets": true,
+          "zone_definition": true,
+          "board_setup": true
+        },
+        "vias": 1,
+        "length_mm": 281.7918923163879,
+        "job": "J4",
+        "raw_output_sha256": "95495580fbe2fd9ac8b0d67d83284953f61f786b5299628bbd64a9f7974395b1"
+      },
+      "session_sha256": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+      "artifacts": {
+        "metrics.json": "9c0083efd7ed85ac02e413b31473760cdc65acb99e024325cf0504730e629a0f",
+        "board.ses": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+        "drc.json": "59c9c3b18a2df82ca90d73b3706dd7f595a777b6117e27acd5329568ab513ead",
+        "refilled.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "drc.stdout.log": "18a1f074838ba0f4da3c11f0ffbfe4d881942ba58ff2c16cf48d156a34e09bee",
+        "output.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refilled.kicad_prl": "ebaa20525cd6bb72f31d4cc57d043f288acd57ffcc10318c211e73eb74f0c9f3",
+        "check.log": "3db796bef2ff3087ca9b966a54dedbf84c0507d8947fdc0cda42ee64cc282b48",
+        "pairs.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "import.log": "72d65951331fc8ef4d4394729d6d1c649c15f89efca4416001b23bc359fe223c",
+        "board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+        "refill.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "check.json": "9c0083efd7ed85ac02e413b31473760cdc65acb99e024325cf0504730e629a0f",
+        "board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+        "refill-drc.json": "e2ff825a68a29a96d887fb066e5cd5b1b521a4ce01aaedd24be930f9075c9eec",
+        "refilled.kicad_pcb": "427b97c1bc6334f8fe6b5f84e235bbfb870d9640f84cce727c7a9f9fca7e9666",
+        "drc.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output.kicad_pcb": "95495580fbe2fd9ac8b0d67d83284953f61f786b5299628bbd64a9f7974395b1",
+        "output.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refilled.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+        "refill.stdout.log": "d740cc1ffc98bbb835adb2c163543be981211e7a009c2788c473309db9db56e7",
+        "export.log": "ecfdabc9a488fbdbeb42728b58080ecf903a12f0cabcb48d0622d8aa9f2d1a1e",
+        "board.dsn": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+        "dsn-manifest.json": "cb688da01d36a87119c2cc3fbd5048554e238923ece7c755325fe7900be1d90c",
+        "import-manifest.json": "061a6bbe076da5d48a0c2feb56406bda70c7318ed51d8dc4c1448525cd0f4554"
+      }
+    }
+  ]
+}

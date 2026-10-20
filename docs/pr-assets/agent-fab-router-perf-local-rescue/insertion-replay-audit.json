@@ -1,0 +1,75 @@
+{
+  "scope": "three engine replays, unchanged native sessions, no fresh native check",
+  "replays": {
+    "residual-paperino-hw-paperino-shield-j4.json": {
+      "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+      "ses_sha256": "e21fb7b0631543945731b2fc3c33cf1ca1126399d673088ba0242ce728c56ff4",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": true,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "4:10:62",
+        "6:14:64",
+        "8:18:65",
+        "9:20:66",
+        "10:22:68",
+        "11:24:67"
+      ]
+    },
+    "residual-photon-sprinkler-sprinkler-j3.json": {
+      "input_sha256": "cab2d65c6a5c40289ec14a967eb8d4eaa1fc34cf38894de206a7c9656bfbdb0d",
+      "ses_sha256": "7ea44180f0a696936983879729a3ff8d11f06154798957cb103447d214091768",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "0:1:45",
+        "3:29:46"
+      ]
+    },
+    "residual-rufs-smart-psu-j3.json": {
+      "input_sha256": "7e0b6de2d0f0cecad8090b2daa3f878b004283b5500c288bf387273c1ce13cfd",
+      "ses_sha256": "638e24e5e1ce8a0b75c792af47a64829a37c6ecd1460062f374cd9788b1688fb",
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 1,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": false,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": []
+      },
+      "residual_keys": [
+        "3:9:66"
+      ]
+    }
+  },
+  "artifact_sha256": {
+    "insertion-census.md": "3f63f5e5a70610e99e50ecc8285206529ac51e649bce47e8bf4048e9b0d63815",
+    "plot-insertion.py": "93f6e7f6d477a91fa7ca90f88c917c0c691f1ad213d77eca23056ee105380fc9",
+    "insertion-census.png": "507906450ab26d79be7b74b0a570067bee539d8e494d1c6f28561db24f27b983",
+    "insertion-checks.txt": "923fc4ddcef806a462a3ea55c18f482fb3331cadc588490e200cfee2830a321d",
+    "insertion-census.py": "22b9790aa0291874e8e70c23ea03475fc6492ce40f5273ca51aa909294737cc4",
+    "insertion-results.json": "b3466a88a787801e32c478f675b87736d7fe582e29fc0014e279293936b3ffaf",
+    "replay-insertion.py": "ecca715c4624302f7ce50fe105d44f1105ee728bda4f2cce060daa39dbee447f",
+    "insertion-source-audit.json": "85a553524307ecf0ea380b9f6e642f89ac3e8178ce26db97677a93d7b52cb01e"
+  }
+}

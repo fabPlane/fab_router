@@ -1,0 +1,25 @@
+{
+  "source_sha256": {
+    "/home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-transaction.ts": "b92e7ccaa8a4b266076610dc1a38f092532bef8401b3bc5835506fd8445b8779",
+    "/home/hyper/bench/wt/fr-perf/docs/pr-assets/agent-fab-router-perf-local-rescue/recovery-schedule.ts": "6e26bcd4da83fe8ca5f1b4ad12e2ef24df1372b50a797ffc230871042e6b8f52",
+    "/home/hyper/bench/wt/fr-perf/test/recovery-cancellation.test.ts": "775daeca08ef09607c6e25c045fdbf90baea0371c842410a507272fecbca2039",
+    "/home/hyper/bench/wt/fr-perf/test/recovery-schedule.test.ts": "b7db8b3e1101bf80507fd92c1f19bf603ecb5aa9df994950175763615ba5029f"
+  },
+  "results": [
+    {
+      "variant": "control",
+      "exit_code": 0,
+      "log_sha256": "5e3759deaec5ca6d0a4dcf45dbd716e651a3806ffec6b44e2010b18e63415c5f"
+    },
+    {
+      "variant": "skip-final-checkpoint",
+      "exit_code": 1,
+      "log_sha256": "7986ed28957fdba387d7b00baae18faebf61c51d52dc93404ccca30ade228312"
+    },
+    {
+      "variant": "ignore-route-control",
+      "exit_code": 1,
+      "log_sha256": "25279771de5ec6b798acd9a27e22a2e0fd945656ad6452fb12570038ccc6fd6a"
+    }
+  ]
+}

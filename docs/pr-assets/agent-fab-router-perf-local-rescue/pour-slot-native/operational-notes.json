@@ -1,0 +1,10 @@
+{
+  "original_outer_supervisor_exit": 143,
+  "original_benchmark_exit": null,
+  "original_complete_controls": true,
+  "original_interrupted_controls": false,
+  "candidate_initial_setup_exit": 2,
+  "candidate_initial_setup_attempts": 0,
+  "candidate_completed_exit": 0,
+  "note": "The original benchmark survived its outer supervisor. Observer waited for complete controls, but the first candidate launch hit the exclusive run lock while the original finished reports; preserved setup failure. Original process then exited before the measured candidate began. Neither original attempts nor candidate attempts were rerun or discarded."
+}

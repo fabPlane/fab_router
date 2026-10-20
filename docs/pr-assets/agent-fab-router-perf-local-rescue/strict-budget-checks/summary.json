@@ -1,0 +1,190 @@
+{
+  "scope": "S48 targeted diagnostic, one fresh repeat per mode; no native DRC or new full-suite run",
+  "sourceUnchanged": true,
+  "normalRecoverySkipped": true,
+  "priorSourceHashesMatched": 75,
+  "candidateRecoverySkipped": true,
+  "skipEvidence": "runRoute requires !outcome.timedOut before recoverRemaining; both captures report timedOut/timeBudget",
+  "prior": [
+    {
+      "mode": "normal",
+      "result": {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 207,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 9,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300042,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300083.2172140004
+      }
+    },
+    {
+      "mode": "candidate",
+      "result": {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 19,
+          "incompleteBefore": 144,
+          "completed": 199,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 8,
+          "barrels": 181,
+          "vias": 181,
+          "traceLengthMm": 4657.9703453457505,
+          "addedTracks": 316,
+          "addedBarrels": 181,
+          "wallClockMs": 300063,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300102.18318099994
+      }
+    }
+  ],
+  "fresh": [
+    {
+      "mode": "candidate",
+      "startedUtc": "2026-10-19T07:07:17.995Z",
+      "finishedUtc": "2026-10-19T07:12:18.155Z",
+      "commit": "f3a5b6b1e78c98a53f14dbc84bbf63012723f2b5",
+      "result": {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 214,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 10,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300068,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300158.41965299996
+      }
+    },
+    {
+      "mode": "normal",
+      "startedUtc": "2026-10-19T07:12:18.252Z",
+      "finishedUtc": "2026-10-19T07:17:18.393Z",
+      "commit": "f3a5b6b1e78c98a53f14dbc84bbf63012723f2b5",
+      "result": {
+        "id": "routing-slow-issue555-cnh-strict",
+        "kind": "routing",
+        "tier": "slow",
+        "expected": {
+          "violations": {
+            "maxAdded": 0,
+            "preExisting": 16
+          },
+          "incomplete": {
+            "max": 30
+          }
+        },
+        "board": "Issue555-CNH_Functional_Tester_1.dsn",
+        "pass": true,
+        "stub": false,
+        "measured": {
+          "incomplete": 18,
+          "incompleteBefore": 144,
+          "completed": 214,
+          "violations": 16,
+          "violationsBefore": 16,
+          "violationsAdded": 0,
+          "passes": 10,
+          "barrels": 185,
+          "vias": 185,
+          "traceLengthMm": 4725.2444201444,
+          "addedTracks": 324,
+          "addedBarrels": 185,
+          "wallClockMs": 300064,
+          "stoppedBy": "timeBudget",
+          "timedOut": true,
+          "aborted": false,
+          "invariant:R-3": true,
+          "invariant:R-5": true
+        },
+        "mismatches": [],
+        "advisoryMismatches": [],
+        "ms": 300140.460113
+      }
+    }
+  ]
+}

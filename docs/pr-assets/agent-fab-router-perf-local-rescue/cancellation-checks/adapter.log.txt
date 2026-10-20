@@ -1,0 +1,11 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/recovery-candidate.test.ts:
+(pass) explicit research adapter closes two real all-net stall links with retained exact quality [32390.94ms]
+(pass) research adapter forwards an already-aborted signal to normal routing [11.09ms]
+(pass) research adapter spends only the remaining route-wide monotonic budget [37213.27ms]
+
+ 3 pass
+ 0 fail
+ 23 expect() calls
+Ran 3 tests across 1 file. [69.64s]

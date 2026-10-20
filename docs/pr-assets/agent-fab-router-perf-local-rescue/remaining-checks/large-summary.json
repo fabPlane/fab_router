@@ -1,0 +1,158 @@
+[
+  {
+    "input": "Dense6",
+    "file": "/home/hyper/bench/boards/dense/dense6-bga324.dsn",
+    "sha256": "1dbf3cd5a55dfd8c64f643ad06e136c87431ffa28447235bb9a84fbb3796eea7",
+    "settings": {
+      "maxPasses": 2,
+      "optimizerEnabled": false,
+      "fanoutEnabled": false,
+      "seed": 1,
+      "timeBudgetMs": 120000,
+      "strictDrc": true,
+      "neckWidthUm": 0
+    },
+    "measured": {
+      "normal": {
+        "incomplete": [
+          191,
+          191,
+          191
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 120.05980619399995,
+        "p95_s": 120.06071710400003,
+        "vias_median": 266,
+        "length_mm_median": 2027.6481524109863,
+        "timeouts": 3,
+        "session_variants": 3
+      },
+      "candidate": {
+        "incomplete": [
+          191,
+          191,
+          191
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 120.07673720299988,
+        "p95_s": 120.07845950000011,
+        "vias_median": 266,
+        "length_mm_median": 2027.6481524109865,
+        "timeouts": 3,
+        "session_variants": 3
+      }
+    }
+  },
+  {
+    "input": "L2",
+    "file": "/home/hyper/bench/boards/ladder/l2.dsn",
+    "sha256": "ca3a3aa58f2b3f29871f5e88c2a2a9e9b9e669036115ea81d73b32e09de4eea9",
+    "settings": {
+      "maxPasses": 2,
+      "optimizerEnabled": false,
+      "fanoutEnabled": false,
+      "seed": 1,
+      "timeBudgetMs": 120000,
+      "strictDrc": true,
+      "neckWidthUm": 0
+    },
+    "measured": {
+      "normal": {
+        "incomplete": [
+          29,
+          29,
+          29
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 22.40953784,
+        "p95_s": 22.723279611000006,
+        "vias_median": 51,
+        "length_mm_median": 744.7617283743872,
+        "timeouts": 0,
+        "session_variants": 1
+      },
+      "candidate": {
+        "incomplete": [
+          24,
+          24,
+          24
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 26.977068688,
+        "p95_s": 31.03630793299999,
+        "vias_median": 51,
+        "length_mm_median": 992.6045014768073,
+        "timeouts": 0,
+        "session_variants": 1
+      }
+    }
+  },
+  {
+    "input": "L3",
+    "file": "/home/hyper/bench/boards/ladder/l3-cycle18.dsn",
+    "sha256": "978e73ee0580e68a521531f157e7c691280e532d018350835f43386a6aceae4a",
+    "settings": {
+      "maxPasses": 2,
+      "optimizerEnabled": false,
+      "fanoutEnabled": false,
+      "seed": 1,
+      "timeBudgetMs": 120000,
+      "strictDrc": true,
+      "neckWidthUm": 0
+    },
+    "measured": {
+      "normal": {
+        "incomplete": [
+          154,
+          154,
+          154
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 120.02607419000002,
+        "p95_s": 120.02608120099997,
+        "vias_median": 91,
+        "length_mm_median": 1624.3327587342212,
+        "timeouts": 3,
+        "session_variants": 1
+      },
+      "candidate": {
+        "incomplete": [
+          154,
+          154,
+          154
+        ],
+        "added_exact_violations": [
+          0,
+          0,
+          0
+        ],
+        "median_s": 120.035259005,
+        "p95_s": 120.04165216000006,
+        "vias_median": 91,
+        "length_mm_median": 1624.3327587342212,
+        "timeouts": 3,
+        "session_variants": 1
+      }
+    }
+  }
+]

@@ -1,0 +1,15 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/recovery-pour-component.test.ts:
+(pass) pour component can be reached through an existing pad, reversed=false [11.12ms]
+(pass) pour component can be reached through an existing pad, reversed=true [7.19ms]
+(pass) an isolated same-net pad cannot stand in for the pour component [0.34ms]
+(pass) a component anchor needs a shared physical sheet [0.20ms]
+(pass) a barrel in the live pour component is a legal point anchor [1.44ms]
+(pass) alternate anchors cannot replace the original terminal acceptance gate [1.01ms]
+(pass) alternate anchors must belong to the requested terminal components [0.18ms]
+
+ 7 pass
+ 0 fail
+ 79 expect() calls
+Ran 7 tests across 1 file. [53.00ms]

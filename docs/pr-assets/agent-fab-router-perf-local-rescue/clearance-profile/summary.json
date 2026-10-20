@@ -1,0 +1,19 @@
+{
+  "sample_count": 44928,
+  "sampled_us": 47987329,
+  "disjoint_us": {
+    "boundary containment": 14380208,
+    "candidate exact checks": 7031097,
+    "lattice collection": 8579872,
+    "outside sweepClear": 14211502,
+    "sweepClear body / other descendants": 3784650
+  },
+  "collection_immediate_callers_us": {
+    "barrelFits route/clear.ts": 396372,
+    "checkSpacing drc/spacing.ts": 15725,
+    "connectivity drc/connect.ts": 209580,
+    "sweepClear route/clear.ts": 8579872
+  },
+  "source_gzip_sha256": "364f4079e18fe2f32ed3c50cb8030ca6317932a01afef85ff4a45a76cdf2bf02",
+  "corruption_controls_rejected": 3
+}

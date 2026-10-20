@@ -1,0 +1,17 @@
+{
+  "scope": "One complete board, three repeats; diagnostic counts, no timing prediction or native DRC claim",
+  "repeats": 3,
+  "comparisons": 14888532,
+  "stages": {
+    "intersection": 4357579,
+    "intersection-reject": 0,
+    "1": 1778061,
+    "2": 1366394,
+    "3": 393089,
+    "4": 343982,
+    "none": 6649427
+  },
+  "original_endpoint_evaluations": 42123812,
+  "hypothetical_endpoint_evaluations": 33663752,
+  "avoidable_endpoint_evaluations": 8460060
+}

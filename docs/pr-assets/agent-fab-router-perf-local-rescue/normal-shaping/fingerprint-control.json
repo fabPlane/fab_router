@@ -1,0 +1,411 @@
+{
+  "input_sha256": "878b19e25675ac618de3224ae82d252068def794e6ee8d226582ca3d41f0b6d2",
+  "settings": {
+    "maxPasses": 100,
+    "timeoutSeconds": 120
+  },
+  "rows": [
+    {
+      "repeat": 0,
+      "seconds": 4.6011115590000005,
+      "fingerprint": "599df5659ec39d3cb926c322a6957ad0fa7110a40c877615d8945f84683ab601",
+      "report": {
+        "passes": 9,
+        "attempted": 73,
+        "completed": 51,
+        "incompleteBefore": 33,
+        "incompleteAfter": 2,
+        "added": {
+          "tracks": 100,
+          "barrels": 34
+        },
+        "ripped": 30,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeoutSeconds": 120,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4589,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D0_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D0_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_P",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D1_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D1_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_MCLK",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SDA",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SCL",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CAM_PWDN",
+            "incomplete": 0
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 0
+          }
+        ]
+      },
+      "statsAfter": {
+        "items": {
+          "pads": 59,
+          "barrels": 34,
+          "tracks": 100,
+          "pours": 0,
+          "fences": 4
+        },
+        "connections": {
+          "maximum": 33,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 34,
+          "through": 34,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 4788670.295939385,
+          "totalLengthMm": 478.86702959393847,
+          "legs": 140,
+          "bends90": 0,
+          "bends45": 26,
+          "bendsOther": 14
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 51,
+          "escaped": 37,
+          "viaEscaped": 24
+        }
+      },
+      "session_sha256": "ef66f67eccc97cc3fc5e7b3a135745998e62bb18756d73d3a5b7097d1fa872d1"
+    },
+    {
+      "repeat": 1,
+      "seconds": 3.9726473060000007,
+      "fingerprint": "599df5659ec39d3cb926c322a6957ad0fa7110a40c877615d8945f84683ab601",
+      "report": {
+        "passes": 9,
+        "attempted": 73,
+        "completed": 51,
+        "incompleteBefore": 33,
+        "incompleteAfter": 2,
+        "added": {
+          "tracks": 100,
+          "barrels": 34
+        },
+        "ripped": 30,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeoutSeconds": 120,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3969,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D0_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D0_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_P",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D1_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D1_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_MCLK",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SDA",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SCL",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CAM_PWDN",
+            "incomplete": 0
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 0
+          }
+        ]
+      },
+      "statsAfter": {
+        "items": {
+          "pads": 59,
+          "barrels": 34,
+          "tracks": 100,
+          "pours": 0,
+          "fences": 4
+        },
+        "connections": {
+          "maximum": 33,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 34,
+          "through": 34,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 4788670.295939385,
+          "totalLengthMm": 478.86702959393847,
+          "legs": 140,
+          "bends90": 0,
+          "bends45": 26,
+          "bendsOther": 14
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 51,
+          "escaped": 37,
+          "viaEscaped": 24
+        }
+      },
+      "session_sha256": "ef66f67eccc97cc3fc5e7b3a135745998e62bb18756d73d3a5b7097d1fa872d1"
+    },
+    {
+      "repeat": 2,
+      "seconds": 4.270091868,
+      "fingerprint": "599df5659ec39d3cb926c322a6957ad0fa7110a40c877615d8945f84683ab601",
+      "report": {
+        "passes": 9,
+        "attempted": 73,
+        "completed": 51,
+        "incompleteBefore": 33,
+        "incompleteAfter": 2,
+        "added": {
+          "tracks": 100,
+          "barrels": 34
+        },
+        "ripped": 30,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": false,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeoutSeconds": 120,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4266,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D0_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D0_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CLK_P",
+            "incomplete": 1
+          },
+          {
+            "net": "/MIPI_CSI_D1_N",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_D1_P",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_MCLK",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SDA",
+            "incomplete": 0
+          },
+          {
+            "net": "/I2C_SCL",
+            "incomplete": 0
+          },
+          {
+            "net": "/MIPI_CSI_CAM_PWDN",
+            "incomplete": 0
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 0
+          }
+        ]
+      },
+      "statsAfter": {
+        "items": {
+          "pads": 59,
+          "barrels": 34,
+          "tracks": 100,
+          "pours": 0,
+          "fences": 4
+        },
+        "connections": {
+          "maximum": 33,
+          "incomplete": 2
+        },
+        "barrels": {
+          "total": 34,
+          "through": 34,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 4788670.295939385,
+          "totalLengthMm": 478.86702959393847,
+          "legs": 140,
+          "bends90": 0,
+          "bends45": 26,
+          "bendsOther": 14
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 51,
+          "escaped": 37,
+          "viaEscaped": 24
+        }
+      },
+      "session_sha256": "ef66f67eccc97cc3fc5e7b3a135745998e62bb18756d73d3a5b7097d1fa872d1"
+    }
+  ]
+}

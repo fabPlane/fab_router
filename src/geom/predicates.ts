@@ -95,12 +95,14 @@ export function pointInRing(pts: readonly Pt[], p: Pt): Containment {
   let inside = false;
   for (let i = 0, j = n - 1; i < n; j = i++) {
     const a = pts[j]!, b = pts[i]!;
-    if (onSeg(p, a, b)) return "boundary";
+    // An edge outside the closed y interval can neither contain p nor cross its ray.
+    if ((p.y < a.y && p.y < b.y) || (p.y > a.y && p.y > b.y)) continue;
+    const area = cross(a, b, p);
+    if (area === 0 && Math.min(a.x, b.x) <= p.x && p.x <= Math.max(a.x, b.x)) return "boundary";
     if ((a.y > p.y) !== (b.y > p.y)) {
       // The edge spans p.y. It crosses the +x ray iff the crossing lies right of p:
       // for an upward edge (b.y > a.y) that is "p left of a→b", for a downward edge the reverse.
-      const o = orient(a, b, p);
-      if (b.y > a.y ? o > 0 : o < 0) inside = !inside;
+      if (b.y > a.y ? area > 0 : area < 0) inside = !inside;
     }
   }
   return inside ? "inside" : "outside";

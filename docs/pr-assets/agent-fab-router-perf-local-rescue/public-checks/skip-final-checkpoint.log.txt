@@ -1,0 +1,31 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle32/mutations/skip-final-checkpoint/recovery-cancellation.test.ts:
+19 |  },undefined,()=>{
+20 |   if(++checkpoints===3){
+21 |    expect(requiredConnections(l)).toEqual([]);expect(checkDrc(l).counts.violations).toBe(0);
+22 |    throw stop;
+23 |   }
+24 |  })).toThrow(stop);
+          ^
+error: expect(received).toThrow(expected)
+
+Expected message: "cancel"
+
+Received function did not throw
+Received value: "kept"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle32/mutations/skip-final-checkpoint/recovery-cancellation.test.ts:24:6)
+(fail) cancellation detected after exact validation rolls back legal copper and its live index [3.22ms]
+
+../../agents/codex-fabpcb-perf/scratch/cycle32/mutations/skip-final-checkpoint/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [2.68ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.44ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.33ms]
+(pass) late legal proposals are rewound and do not start another region [0.33ms]
+(pass) route-wide cancellation stops immediately and rewinds a partly inserted proposal [0.58ms]
+
+ 5 pass
+ 1 fail
+ 102 expect() calls
+Ran 6 tests across 2 files. [19.00ms]

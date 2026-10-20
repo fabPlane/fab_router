@@ -1,0 +1,896 @@
+{
+  "scope": "ladder engine regression replay; no fresh native score",
+  "seconds": 159.128309018,
+  "settings": {
+    "maxPasses": 2,
+    "timeBudgetMs": 600000,
+    "optimizerEnabled": false,
+    "fanoutEnabled": false,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "localRecovery": true,
+    "seed": 1
+  },
+  "report": {
+    "passes": 2,
+    "attempted": 371,
+    "completed": 48,
+    "incompleteBefore": 200,
+    "incompleteAfter": 153,
+    "added": {
+      "tracks": 140,
+      "barrels": 93
+    },
+    "ripped": 1,
+    "violationsBefore": 0,
+    "violationsAdded": 0,
+    "timedOut": false,
+    "aborted": false,
+    "stoppedBy": "maxPasses",
+    "effectiveSettings": {
+      "maxPasses": 2,
+      "maxStagnantPasses": 3,
+      "viaCost": 50,
+      "planeViaCost": 5,
+      "bendCost": 0,
+      "preferredDirectionCost": 1.5,
+      "startRipupCost": 100,
+      "ripupEnabled": true,
+      "fanoutEnabled": false,
+      "routerEnabled": true,
+      "optimizerEnabled": false,
+      "strictDrc": true,
+      "layers": {},
+      "viasAllowed": true,
+      "ignoreNetGroups": [],
+      "seed": 1,
+      "shoveEnabled": true,
+      "orderByDifficulty": true,
+      "detailedRouter": "off",
+      "globalPlan": "off",
+      "timeBudgetMs": 600000,
+      "neckWidthUm": 0,
+      "localRecovery": true,
+      "angleMode": "45"
+    },
+    "wallClockMs": 159105,
+    "perNet": [
+      {
+        "net": "N1",
+        "incomplete": 1
+      },
+      {
+        "net": "N2",
+        "incomplete": 1
+      },
+      {
+        "net": "N3",
+        "incomplete": 1
+      },
+      {
+        "net": "N4",
+        "incomplete": 0
+      },
+      {
+        "net": "N5",
+        "incomplete": 1
+      },
+      {
+        "net": "N6",
+        "incomplete": 1
+      },
+      {
+        "net": "N7",
+        "incomplete": 0
+      },
+      {
+        "net": "N8",
+        "incomplete": 0
+      },
+      {
+        "net": "N9",
+        "incomplete": 1
+      },
+      {
+        "net": "N10",
+        "incomplete": 0
+      },
+      {
+        "net": "N11",
+        "incomplete": 1
+      },
+      {
+        "net": "N12",
+        "incomplete": 1
+      },
+      {
+        "net": "N13",
+        "incomplete": 1
+      },
+      {
+        "net": "N14",
+        "incomplete": 0
+      },
+      {
+        "net": "N15",
+        "incomplete": 1
+      },
+      {
+        "net": "N16",
+        "incomplete": 0
+      },
+      {
+        "net": "N17",
+        "incomplete": 1
+      },
+      {
+        "net": "N18",
+        "incomplete": 1
+      },
+      {
+        "net": "N19",
+        "incomplete": 1
+      },
+      {
+        "net": "N20",
+        "incomplete": 1
+      },
+      {
+        "net": "N21",
+        "incomplete": 1
+      },
+      {
+        "net": "N22",
+        "incomplete": 1
+      },
+      {
+        "net": "N23",
+        "incomplete": 1
+      },
+      {
+        "net": "N24",
+        "incomplete": 1
+      },
+      {
+        "net": "N25",
+        "incomplete": 0
+      },
+      {
+        "net": "N26",
+        "incomplete": 1
+      },
+      {
+        "net": "N27",
+        "incomplete": 1
+      },
+      {
+        "net": "N28",
+        "incomplete": 0
+      },
+      {
+        "net": "N29",
+        "incomplete": 0
+      },
+      {
+        "net": "N30",
+        "incomplete": 1
+      },
+      {
+        "net": "N31",
+        "incomplete": 1
+      },
+      {
+        "net": "N32",
+        "incomplete": 1
+      },
+      {
+        "net": "N33",
+        "incomplete": 0
+      },
+      {
+        "net": "N34",
+        "incomplete": 1
+      },
+      {
+        "net": "N35",
+        "incomplete": 1
+      },
+      {
+        "net": "N36",
+        "incomplete": 0
+      },
+      {
+        "net": "N37",
+        "incomplete": 1
+      },
+      {
+        "net": "N38",
+        "incomplete": 1
+      },
+      {
+        "net": "N39",
+        "incomplete": 0
+      },
+      {
+        "net": "N40",
+        "incomplete": 1
+      },
+      {
+        "net": "N41",
+        "incomplete": 0
+      },
+      {
+        "net": "N42",
+        "incomplete": 1
+      },
+      {
+        "net": "N43",
+        "incomplete": 1
+      },
+      {
+        "net": "N44",
+        "incomplete": 1
+      },
+      {
+        "net": "N45",
+        "incomplete": 1
+      },
+      {
+        "net": "N46",
+        "incomplete": 1
+      },
+      {
+        "net": "N47",
+        "incomplete": 1
+      },
+      {
+        "net": "N48",
+        "incomplete": 0
+      },
+      {
+        "net": "N49",
+        "incomplete": 1
+      },
+      {
+        "net": "N50",
+        "incomplete": 0
+      },
+      {
+        "net": "N51",
+        "incomplete": 1
+      },
+      {
+        "net": "N52",
+        "incomplete": 1
+      },
+      {
+        "net": "N53",
+        "incomplete": 1
+      },
+      {
+        "net": "N54",
+        "incomplete": 1
+      },
+      {
+        "net": "N55",
+        "incomplete": 1
+      },
+      {
+        "net": "N56",
+        "incomplete": 1
+      },
+      {
+        "net": "N57",
+        "incomplete": 1
+      },
+      {
+        "net": "N58",
+        "incomplete": 0
+      },
+      {
+        "net": "N59",
+        "incomplete": 0
+      },
+      {
+        "net": "N60",
+        "incomplete": 0
+      },
+      {
+        "net": "N61",
+        "incomplete": 1
+      },
+      {
+        "net": "N62",
+        "incomplete": 1
+      },
+      {
+        "net": "N63",
+        "incomplete": 1
+      },
+      {
+        "net": "N64",
+        "incomplete": 0
+      },
+      {
+        "net": "N65",
+        "incomplete": 1
+      },
+      {
+        "net": "N66",
+        "incomplete": 0
+      },
+      {
+        "net": "N67",
+        "incomplete": 1
+      },
+      {
+        "net": "N68",
+        "incomplete": 1
+      },
+      {
+        "net": "N69",
+        "incomplete": 1
+      },
+      {
+        "net": "N70",
+        "incomplete": 1
+      },
+      {
+        "net": "N71",
+        "incomplete": 1
+      },
+      {
+        "net": "N72",
+        "incomplete": 0
+      },
+      {
+        "net": "N73",
+        "incomplete": 1
+      },
+      {
+        "net": "N74",
+        "incomplete": 0
+      },
+      {
+        "net": "N75",
+        "incomplete": 1
+      },
+      {
+        "net": "N76",
+        "incomplete": 1
+      },
+      {
+        "net": "N77",
+        "incomplete": 1
+      },
+      {
+        "net": "N78",
+        "incomplete": 1
+      },
+      {
+        "net": "N79",
+        "incomplete": 0
+      },
+      {
+        "net": "N80",
+        "incomplete": 1
+      },
+      {
+        "net": "N81",
+        "incomplete": 1
+      },
+      {
+        "net": "N82",
+        "incomplete": 1
+      },
+      {
+        "net": "N83",
+        "incomplete": 0
+      },
+      {
+        "net": "N84",
+        "incomplete": 1
+      },
+      {
+        "net": "N85",
+        "incomplete": 1
+      },
+      {
+        "net": "N86",
+        "incomplete": 1
+      },
+      {
+        "net": "N87",
+        "incomplete": 0
+      },
+      {
+        "net": "N88",
+        "incomplete": 1
+      },
+      {
+        "net": "N89",
+        "incomplete": 1
+      },
+      {
+        "net": "N90",
+        "incomplete": 0
+      },
+      {
+        "net": "N91",
+        "incomplete": 0
+      },
+      {
+        "net": "N92",
+        "incomplete": 1
+      },
+      {
+        "net": "N93",
+        "incomplete": 1
+      },
+      {
+        "net": "N94",
+        "incomplete": 1
+      },
+      {
+        "net": "N95",
+        "incomplete": 1
+      },
+      {
+        "net": "N96",
+        "incomplete": 1
+      },
+      {
+        "net": "N97",
+        "incomplete": 1
+      },
+      {
+        "net": "N98",
+        "incomplete": 1
+      },
+      {
+        "net": "N99",
+        "incomplete": 0
+      },
+      {
+        "net": "N100",
+        "incomplete": 1
+      },
+      {
+        "net": "N101",
+        "incomplete": 1
+      },
+      {
+        "net": "N102",
+        "incomplete": 0
+      },
+      {
+        "net": "N103",
+        "incomplete": 1
+      },
+      {
+        "net": "N104",
+        "incomplete": 0
+      },
+      {
+        "net": "N105",
+        "incomplete": 1
+      },
+      {
+        "net": "N106",
+        "incomplete": 1
+      },
+      {
+        "net": "N107",
+        "incomplete": 1
+      },
+      {
+        "net": "N108",
+        "incomplete": 1
+      },
+      {
+        "net": "N109",
+        "incomplete": 1
+      },
+      {
+        "net": "N110",
+        "incomplete": 1
+      },
+      {
+        "net": "N111",
+        "incomplete": 1
+      },
+      {
+        "net": "N112",
+        "incomplete": 1
+      },
+      {
+        "net": "N113",
+        "incomplete": 1
+      },
+      {
+        "net": "N114",
+        "incomplete": 1
+      },
+      {
+        "net": "N115",
+        "incomplete": 1
+      },
+      {
+        "net": "N116",
+        "incomplete": 1
+      },
+      {
+        "net": "N117",
+        "incomplete": 0
+      },
+      {
+        "net": "N118",
+        "incomplete": 1
+      },
+      {
+        "net": "N119",
+        "incomplete": 1
+      },
+      {
+        "net": "N120",
+        "incomplete": 1
+      },
+      {
+        "net": "N121",
+        "incomplete": 1
+      },
+      {
+        "net": "N122",
+        "incomplete": 1
+      },
+      {
+        "net": "N123",
+        "incomplete": 1
+      },
+      {
+        "net": "N124",
+        "incomplete": 1
+      },
+      {
+        "net": "N125",
+        "incomplete": 1
+      },
+      {
+        "net": "N126",
+        "incomplete": 1
+      },
+      {
+        "net": "N127",
+        "incomplete": 1
+      },
+      {
+        "net": "N128",
+        "incomplete": 1
+      },
+      {
+        "net": "N129",
+        "incomplete": 0
+      },
+      {
+        "net": "N130",
+        "incomplete": 1
+      },
+      {
+        "net": "N131",
+        "incomplete": 1
+      },
+      {
+        "net": "N132",
+        "incomplete": 0
+      },
+      {
+        "net": "N133",
+        "incomplete": 1
+      },
+      {
+        "net": "N134",
+        "incomplete": 0
+      },
+      {
+        "net": "N135",
+        "incomplete": 1
+      },
+      {
+        "net": "N136",
+        "incomplete": 1
+      },
+      {
+        "net": "N137",
+        "incomplete": 0
+      },
+      {
+        "net": "N138",
+        "incomplete": 1
+      },
+      {
+        "net": "N139",
+        "incomplete": 1
+      },
+      {
+        "net": "N140",
+        "incomplete": 1
+      },
+      {
+        "net": "N141",
+        "incomplete": 1
+      },
+      {
+        "net": "N142",
+        "incomplete": 0
+      },
+      {
+        "net": "N143",
+        "incomplete": 1
+      },
+      {
+        "net": "N144",
+        "incomplete": 1
+      },
+      {
+        "net": "N145",
+        "incomplete": 1
+      },
+      {
+        "net": "N146",
+        "incomplete": 0
+      },
+      {
+        "net": "N147",
+        "incomplete": 1
+      },
+      {
+        "net": "N148",
+        "incomplete": 0
+      },
+      {
+        "net": "N149",
+        "incomplete": 1
+      },
+      {
+        "net": "N150",
+        "incomplete": 1
+      },
+      {
+        "net": "N151",
+        "incomplete": 1
+      },
+      {
+        "net": "N152",
+        "incomplete": 0
+      },
+      {
+        "net": "N153",
+        "incomplete": 1
+      },
+      {
+        "net": "N154",
+        "incomplete": 1
+      },
+      {
+        "net": "N155",
+        "incomplete": 0
+      },
+      {
+        "net": "N156",
+        "incomplete": 1
+      },
+      {
+        "net": "N157",
+        "incomplete": 1
+      },
+      {
+        "net": "N158",
+        "incomplete": 1
+      },
+      {
+        "net": "N159",
+        "incomplete": 1
+      },
+      {
+        "net": "N160",
+        "incomplete": 1
+      },
+      {
+        "net": "N161",
+        "incomplete": 0
+      },
+      {
+        "net": "N162",
+        "incomplete": 1
+      },
+      {
+        "net": "N163",
+        "incomplete": 0
+      },
+      {
+        "net": "N164",
+        "incomplete": 1
+      },
+      {
+        "net": "N165",
+        "incomplete": 1
+      },
+      {
+        "net": "N166",
+        "incomplete": 1
+      },
+      {
+        "net": "N167",
+        "incomplete": 1
+      },
+      {
+        "net": "N168",
+        "incomplete": 1
+      },
+      {
+        "net": "N169",
+        "incomplete": 1
+      },
+      {
+        "net": "N170",
+        "incomplete": 0
+      },
+      {
+        "net": "N171",
+        "incomplete": 1
+      },
+      {
+        "net": "N172",
+        "incomplete": 1
+      },
+      {
+        "net": "N173",
+        "incomplete": 1
+      },
+      {
+        "net": "N174",
+        "incomplete": 0
+      },
+      {
+        "net": "N175",
+        "incomplete": 1
+      },
+      {
+        "net": "N176",
+        "incomplete": 1
+      },
+      {
+        "net": "N177",
+        "incomplete": 0
+      },
+      {
+        "net": "N178",
+        "incomplete": 0
+      },
+      {
+        "net": "N179",
+        "incomplete": 1
+      },
+      {
+        "net": "N180",
+        "incomplete": 1
+      },
+      {
+        "net": "N181",
+        "incomplete": 1
+      },
+      {
+        "net": "N182",
+        "incomplete": 1
+      },
+      {
+        "net": "N183",
+        "incomplete": 1
+      },
+      {
+        "net": "N184",
+        "incomplete": 1
+      },
+      {
+        "net": "N185",
+        "incomplete": 1
+      },
+      {
+        "net": "N186",
+        "incomplete": 1
+      },
+      {
+        "net": "N187",
+        "incomplete": 1
+      },
+      {
+        "net": "N188",
+        "incomplete": 1
+      },
+      {
+        "net": "N189",
+        "incomplete": 1
+      },
+      {
+        "net": "N190",
+        "incomplete": 1
+      },
+      {
+        "net": "N191",
+        "incomplete": 1
+      },
+      {
+        "net": "N192",
+        "incomplete": 1
+      },
+      {
+        "net": "N193",
+        "incomplete": 1
+      },
+      {
+        "net": "N194",
+        "incomplete": 0
+      },
+      {
+        "net": "N195",
+        "incomplete": 1
+      },
+      {
+        "net": "N196",
+        "incomplete": 1
+      },
+      {
+        "net": "N197",
+        "incomplete": 1
+      },
+      {
+        "net": "N198",
+        "incomplete": 1
+      },
+      {
+        "net": "N199",
+        "incomplete": 1
+      },
+      {
+        "net": "N200",
+        "incomplete": 1
+      }
+    ]
+  },
+  "stats": {
+    "items": {
+      "pads": 400,
+      "barrels": 93,
+      "tracks": 140,
+      "pours": 0,
+      "fences": 0
+    },
+    "connections": {
+      "maximum": 200,
+      "incomplete": 153
+    },
+    "barrels": {
+      "total": 93,
+      "through": 93,
+      "blind": 0,
+      "buried": 0
+    },
+    "tracks": {
+      "totalLengthLu": 16886048.962239895,
+      "totalLengthMm": 1688.6048962239895,
+      "legs": 297,
+      "bends90": 18,
+      "bends45": 138,
+      "bendsOther": 0
+    },
+    "violations": {
+      "total": 0,
+      "byRule": {}
+    },
+    "fanout": {
+      "smdPads": 400,
+      "escaped": 95,
+      "viaEscaped": 91
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "parity": true,
+  "samples": 44928,
+  "sampled_ms": 47987.329,
+  "pointInRing_phase_self_ms": {
+    "outside_recovery": 10851.743,
+    "recovery": 439.25
+  },
+  "pointInRing_caller_self_ms": {
+    "withinRim": 11290.993
+  },
+  "top_self": [
+    {
+      "function": "pointInRing",
+      "file": "src/geom/predicates.ts",
+      "line": 92,
+      "ms": 11290.993
+    },
+    {
+      "function": "collect",
+      "file": "src/lattice/grid.ts",
+      "line": 257,
+      "ms": 5143.964
+    },
+    {
+      "function": "test",
+      "file": "src/lattice/grid.ts",
+      "line": 262,
+      "ms": 3181.398
+    },
+    {
+      "function": "withinRim",
+      "file": "src/geom/onboard.ts",
+      "line": 49,
+      "ms": 2732.374
+    },
+    {
+      "function": "sweepClear",
+      "file": "src/route/clear.ts",
+      "line": 210,
+      "ms": 2619.37
+    },
+    {
+      "function": "aStarLayered",
+      "file": "src/route/search.ts",
+      "line": 456,
+      "ms": 2245.557
+    },
+    {
+      "function": "dist2SegSeg",
+      "file": "src/geom/distance.ts",
+      "line": 27,
+      "ms": 2022.286
+    },
+    {
+      "function": "aStar",
+      "file": "src/route/search.ts",
+      "line": 294,
+      "ms": 1573.977
+    },
+    {
+      "function": "coreOf",
+      "file": "src/geom/distance.ts",
+      "line": 93,
+      "ms": 1478.51
+    },
+    {
+      "function": "state",
+      "file": "src/route/quilt.ts",
+      "line": 71,
+      "ms": 1476.312
+    },
+    {
+      "function": "dop8OfPts",
+      "file": "src/geom/bounds.ts",
+      "line": 54,
+      "ms": 1266.226
+    },
+    {
+      "function": "pop",
+      "file": "src/route/search.ts",
+      "line": 189,
+      "ms": 1099.25
+    },
+    {
+      "function": "some",
+      "file": "",
+      "line": 1,
+      "ms": 1065.24
+    },
+    {
+      "function": "segsIntersect",
+      "file": "src/geom/predicates.ts",
+      "line": 55,
+      "ms": 973.026
+    },
+    {
+      "function": "closerConvex",
+      "file": "src/route/clear.ts",
+      "line": 61,
+      "ms": 824.592
+    }
+  ]
+}

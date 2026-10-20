@@ -1,0 +1,224 @@
+{
+  "complete": true,
+  "groups": [
+    {
+      "file": "/home/hyper/bench/boards/ladder/l2.dsn",
+      "normal": {
+        "runs": 3,
+        "incompletes": [
+          29,
+          29,
+          29
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 23.065028400999996,
+        "p95_s": 25.016589834999998,
+        "vias": [
+          51,
+          51,
+          51
+        ],
+        "length_mm": [
+          744.7617283743872,
+          744.7617283743872,
+          744.7617283743872
+        ],
+        "sessions": [
+          "7212d5b89a888558f2caecba57436934ac4e42eecb31ebbc179b80786f9adfa5",
+          "7212d5b89a888558f2caecba57436934ac4e42eecb31ebbc179b80786f9adfa5",
+          "7212d5b89a888558f2caecba57436934ac4e42eecb31ebbc179b80786f9adfa5"
+        ]
+      },
+      "candidate": {
+        "runs": 3,
+        "incompletes": [
+          24,
+          24,
+          24
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 26.315273314000006,
+        "p95_s": 27.135177712000004,
+        "vias": [
+          51,
+          51,
+          51
+        ],
+        "length_mm": [
+          992.6045014768073,
+          992.6045014768073,
+          992.6045014768073
+        ],
+        "sessions": [
+          "f169a0fe26141f1e07c10b850b1ab42184058c5c9f92f02c25089364c6d32a42",
+          "f169a0fe26141f1e07c10b850b1ab42184058c5c9f92f02c25089364c6d32a42",
+          "f169a0fe26141f1e07c10b850b1ab42184058c5c9f92f02c25089364c6d32a42"
+        ]
+      }
+    },
+    {
+      "file": "/home/hyper/bench/boards/ladder/l3-cycle18.dsn",
+      "normal": {
+        "runs": 3,
+        "incompletes": [
+          154,
+          154,
+          154
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 218.62296564800002,
+        "p95_s": 236.97291953200002,
+        "vias": [
+          93,
+          93,
+          93
+        ],
+        "length_mm": [
+          1651.8234858589674,
+          1651.8234858589674,
+          1651.8234858589674
+        ],
+        "sessions": [
+          "b860cbbd1769a8e63b849ec3854a0123e6e0e30e62bbfdab4465e4e039807a01",
+          "b860cbbd1769a8e63b849ec3854a0123e6e0e30e62bbfdab4465e4e039807a01",
+          "b860cbbd1769a8e63b849ec3854a0123e6e0e30e62bbfdab4465e4e039807a01"
+        ]
+      },
+      "candidate": {
+        "runs": 3,
+        "incompletes": [
+          153,
+          153,
+          153
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 217.48409652100014,
+        "p95_s": 218.63862308000006,
+        "vias": [
+          93,
+          93,
+          93
+        ],
+        "length_mm": [
+          1688.6048962239895,
+          1688.6048962239895,
+          1688.6048962239895
+        ],
+        "sessions": [
+          "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9",
+          "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9",
+          "5f1a1dffb6fd993d136a6d7be40d005c1d6f2415989e258044cda34dca86e1f9"
+        ]
+      }
+    },
+    {
+      "file": "/home/hyper/bench/boards/dense/dense6-bga324.dsn",
+      "normal": {
+        "runs": 3,
+        "incompletes": [
+          191,
+          191,
+          191
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 195.5507845389999,
+        "p95_s": 197.8632469159998,
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2027.648152410987,
+          2027.648152410987,
+          2027.648152410987
+        ],
+        "sessions": [
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0",
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0",
+          "2db78719a3d32538b078d946802219c58dfb4563b6b907bf01faac084507fce0"
+        ]
+      },
+      "candidate": {
+        "runs": 3,
+        "incompletes": [
+          190,
+          190,
+          190
+        ],
+        "errors": [
+          0,
+          0,
+          0
+        ],
+        "timeouts": [
+          false,
+          false,
+          false
+        ],
+        "median_s": 198.78124741100032,
+        "p95_s": 201.6512067259997,
+        "vias": [
+          266,
+          266,
+          266
+        ],
+        "length_mm": [
+          2032.3792678141454,
+          2032.3792678141454,
+          2032.3792678141454
+        ],
+        "sessions": [
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c",
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c",
+          "e24dba6a83d190f7065462caa2806849d9a159092c28d8b5dd78607cea5e1c2c"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+/** Hand-counted observer accounting, using a deterministic clearance stub only here. */
+import {mock} from 'bun:test';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {strict as assert} from 'node:assert';
+const source=resolve(process.argv[2]!);
+let probes=0;
+mock.module(resolve(source,'src/route/clear.ts'),()=>({ignoreOf:()=>new Set(),pointFree:(_l:any,_g:any,_s:any,p:any)=>{probes++;return {ok:p.x>=0};}}));
+const {createQuilt}=await import(pathToFileURL(resolve(source,'src/route/quilt.ts')).href);
+const q=createQuilt({} as any,{} as any,0,{net:1,width:1} as any,{x:0,y:0},1);
+assert.equal(q.state(0,0),'free');assert.equal(q.isFree(0,0),true);
+assert.equal(q.state(-1,0),'blocked');assert.equal(q.isFree(-1,0),false);
+let c=(globalThis as any).__quiltCensus;
+assert.deepEqual([c.calls,c.hitsFree,c.hitsBlocked,c.missesFree,c.missesBlocked,probes],[4,1,1,1,1,2]);
+q.invalidate({x0:-100,y0:-100,x1:100,y1:100});assert.equal(q.decided(),0);
+assert.deepEqual([c.clears,c.clearedEntries],[1,2]);
+q.invalidate({x0:0,y0:0,x1:0,y1:0});assert.equal(c.emptyInvalidations,1);
+for(let x=0;x<10;x++)for(let y=0;y<10;y++)q.state(x,y);
+assert.equal(q.decided(),100);assert.equal(probes,102);
+q.invalidate({x0:0,y0:0,x1:0,y1:0});
+assert.deepEqual([q.decided(),c.deletes,c.removed,c.invalidations],[96,9,4,3]);
+q.invalidate({x0:-100,y0:-100,x1:100,y1:100});
+assert.deepEqual([q.decided(),c.clears,c.clearedEntries,c.calls,probes],[0,2,98,104,102]);
+console.log(JSON.stringify({scope:'stub clearance; observer accounting only',census:c,probes}));

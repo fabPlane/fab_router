@@ -1,0 +1,117 @@
+{
+  "native_version": "10.0.6",
+  "board_sha256": "427b97c1bc6334f8fe6b5f84e235bbfb870d9640f84cce727c7a9f9fca7e9666",
+  "integrity_checks": {
+    "footprints": true,
+    "pads": true,
+    "outline": true,
+    "layers": true,
+    "zones": true,
+    "kicad_pro_preserved": true,
+    "kicad_dru_preserved": true,
+    "checker_policy_preserved": true,
+    "nets": true,
+    "zone_definition": true,
+    "board_setup": true
+  },
+  "integrity_pass": true,
+  "native_opens": 4,
+  "native_total_errors_excluding_opens": 0,
+  "inherited_errors": 0,
+  "new_errors": 0,
+  "new_error_details": [],
+  "new_warning_details": [],
+  "new_error_types": {},
+  "new_warnings": 0,
+  "new_warning_types": {},
+  "via_count": 1,
+  "track_count": 47,
+  "track_length_mm": 281.7918923163879,
+  "per_net_length_mm": {
+    "+3V3": 37.37977611868366,
+    "/INT1": 2.54,
+    "/INT2": 19.312751712226593,
+    "/SPI_CLK": 70.48129529194166,
+    "/SPI_CS1": 2.54,
+    "/SPI_CS2": 22.90232796121308,
+    "/SPI_MISO": 45.920269710027775,
+    "/SPI_MOSI": 45.15547152229511,
+    "/~{BUSY}": 2.54,
+    "/~{RST}": 2.54,
+    "Net-(A1-Pad1)": 2.54,
+    "Net-(A1-Pad13)": 2.54,
+    "Net-(A1-Pad14)": 2.54,
+    "Net-(A1-Pad15)": 2.54,
+    "Net-(A1-Pad16)": 2.54,
+    "Net-(A1-Pad17)": 2.54,
+    "Net-(A1-Pad20)": 2.54,
+    "Net-(A1-Pad22)": 2.54,
+    "Net-(A1-Pad23)": 2.54,
+    "Net-(A1-Pad3)": 2.54,
+    "Net-(A1-Pad4)": 2.54,
+    "Net-(A1-Pad6)": 2.54
+  },
+  "native_acceptance": false,
+  "manufacturing_clean": false,
+  "ignored_checks": [
+    {
+      "description": "Footprint has no courtyard defined",
+      "key": "missing_courtyard"
+    },
+    {
+      "description": "Track endpoint not centered on via",
+      "key": "track_not_centered_on_via"
+    },
+    {
+      "description": "Tuning profile track geometries",
+      "key": "tuning_profile_track_geometries"
+    },
+    {
+      "description": "Footprint doesn't match symbol's footprint filters",
+      "key": "footprint_filters_mismatch"
+    },
+    {
+      "description": "Footprint component type doesn't match footprint pads",
+      "key": "footprint_type_mismatch"
+    }
+  ],
+  "drc_command": [
+    "/usr/bin/kicad-cli",
+    "pcb",
+    "drc",
+    "--severity-all",
+    "--format",
+    "json",
+    "-o",
+    "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/drc.json",
+    "/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle30/native-pair/repeat-2-after/refilled.kicad_pcb"
+  ],
+  "zone_preserved": true,
+  "ground_connected": true,
+  "island_findings": {
+    "filled_islands": [],
+    "orphan_copper": [],
+    "native_findings": [],
+    "ground_opens": []
+  },
+  "refilled_board_sha256": "427b97c1bc6334f8fe6b5f84e235bbfb870d9640f84cce727c7a9f9fca7e9666",
+  "pass": false,
+  "opens": 4,
+  "fidelity": {
+    "footprints": true,
+    "pads": true,
+    "outline": true,
+    "layers": true,
+    "zones": true,
+    "kicad_pro_preserved": true,
+    "kicad_dru_preserved": true,
+    "checker_policy_preserved": true,
+    "nets": true,
+    "zone_definition": true,
+    "board_setup": true
+  },
+  "vias": 1,
+  "length_mm": 281.7918923163879,
+  "job": "J4",
+  "raw_output_sha256": "95495580fbe2fd9ac8b0d67d83284953f61f786b5299628bbd64a9f7974395b1"
+}

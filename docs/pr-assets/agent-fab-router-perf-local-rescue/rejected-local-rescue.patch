@@ -1,0 +1,272 @@
+diff --git a/spec/api/settings.md b/spec/api/settings.md
+index 25f3cd8..7c05269 100644
+--- a/spec/api/settings.md
++++ b/spec/api/settings.md
+@@ -19,6 +19,7 @@ times in milliseconds; costs are dimensionless multipliers.
+ | `preferredDirectionCost` | 1.5 | Default `againstCost` for every Sheet (see `layers`). 1 disables the preference |
+ | `startRipupCost` | 100 | Cost charged for ripping up a `free` other-net item on the first attempt; grows with that item's rip history |
+ | `ripupEnabled` | true | If false, other-net items are hard obstacles |
++| `localRescue` | unset (off) | Experimental post-optimiser local rip-up/reroute at 4, 8 and 16 routing pitches. Track-only edits are retained only when exact DRC does not worsen, existing terminal joins survive and incomplete count decreases. Does not change rules; disabled with item caps, routing off or rip-up off. |
+ | `fanoutEnabled` | false | Run the fanout pre-pass |
+ | `fanoutMaxPasses`, `fanoutMaxItems` | unset | Bound the fanout stage the way `maxPasses` / `maxItems` bound routing |
+ | `routerEnabled` | true | Run the routing passes (false: fanout and/or optimiser only) |
+diff --git a/spec/types/settings.ts b/spec/types/settings.ts
+index e2919b8..a09e602 100644
+--- a/spec/types/settings.ts
++++ b/spec/types/settings.ts
+@@ -22,6 +22,8 @@ export interface RouteSettings {
+   preferredDirectionCost: number;
+   startRipupCost: number;
+   ripupEnabled: boolean;
++  /** Experimental post-pass local rip-up rescue; default off. No design-rule changes. */
++  localRescue?: boolean;
+   fanoutEnabled: boolean;
+   fanoutMaxPasses?: number;
+   fanoutMaxItems?: number;
+diff --git a/src/pipeline/index.ts b/src/pipeline/index.ts
+index 0137b86..4c2cddc 100644
+--- a/src/pipeline/index.ts
++++ b/src/pipeline/index.ts
+@@ -10,6 +10,7 @@ import type { Diagnostic, Layout } from "../../spec/types/layout.ts";
+ import type { AngleMode, RouteSettings, SheetOverride } from "../../spec/types/settings.ts";
+ import { DEFAULT_ROUTE_SETTINGS } from "../../spec/types/settings.ts";
+ import type { RouteHooks, RouteReport } from "../../spec/types/results.ts";
++import { runLocalRescue } from "../route/local-rescue.ts";
+ import { checkDrc } from "../drc/index.ts";
+ import { createCtx, runPasses, runFanout, runOptimise, totalIncomplete, perNetIncomplete } from "../route/index.ts";
+ 
+@@ -97,6 +98,9 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
+   runFanout(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored);
+   const outcome = runPasses(ctx);
+   if (!outcome.aborted) runOptimise(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored, ctx.deadline);
++  if (!outcome.aborted) runLocalRescue(ctx);
++  const rescueAborted = effective.localRescue === true && hooks?.signal?.aborted === true;
++  const rescueTimedOut = effective.localRescue === true && ctx.deadline !== undefined && Date.now() > ctx.deadline;
+ 
+   const incompleteAfter = totalIncomplete(ctx);
+   const violationsAfter = checkDrc(layout).counts.violations;
+@@ -113,9 +117,9 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
+     ripped: ctx.ripped,
+     violationsBefore,
+     violationsAdded: Math.max(0, violationsAfter - violationsBefore),
+-    timedOut: outcome.timedOut,
+-    aborted: outcome.aborted,
+-    stoppedBy: outcome.stoppedBy,
++    timedOut: outcome.timedOut || rescueTimedOut,
++    aborted: outcome.aborted || rescueAborted,
++    stoppedBy: rescueAborted ? "abort" : rescueTimedOut ? "timeBudget" : outcome.stoppedBy,
+     effectiveSettings: effective,
+     wallClockMs: Date.now() - startMs,
+     perNet: perNetIncomplete(ctx, seeded),
+diff --git a/src/route/local-rescue.ts b/src/route/local-rescue.ts
+new file mode 100644
+index 0000000..cac7087
+--- /dev/null
++++ b/src/route/local-rescue.ts
+@@ -0,0 +1,98 @@
++/** Experimental bounded rip-up rescue. No clearance/width/via rule is relaxed. */
++import type { Pt } from "../../spec/types/layout.ts";
++import type { Connection, Violation } from "../../spec/types/results.ts";
++import { checkDrc, connectivity, requiredConnectionsOf, type Connectivity } from "../drc/index.ts";
++import { createCtx, routeConnection, totalIncomplete, type RouteCtx } from "./passes.ts";
++import { resolveProfile } from "./profile.ts";
++
++const violationKey = (v: Violation): string => `${v.rule}:${v.sheet}:${v.a}:${v.b}`;
++const joined = (c: Connectivity, a: number, b: number): boolean =>
++  c.items.get(a)?.net === c.items.get(b)?.net && c.componentOf.has(a) && c.componentOf.get(a) === c.componentOf.get(b);
++
++/** One step is kept only if exact DRC and all pre-existing terminal joins survive. */
++export function runLocalRescue(ctx: RouteCtx): void {
++  if (!ctx.settings.localRescue || !ctx.settings.routerEnabled || !ctx.settings.ripupEnabled
++    || ctx.settings.maxItems !== undefined) return;
++  const stopped = (): boolean => ctx.hooks?.signal?.aborted === true
++    || (ctx.deadline !== undefined && Date.now() > ctx.deadline);
++  const start = connectivity(ctx.layout, ctx.lattice);
++  const pending = ctx.layout.nets.flatMap(n => ctx.ignored.has(n.id) ? [] : requiredConnectionsOf(start, n.id));
++  for (const target of pending) {
++    if (stopped()) break;
++    let closed = false;
++    for (const growth of [4, 8, 16]) {
++      if (stopped()) break;
++      const before = connectivity(ctx.layout, ctx.lattice);
++      if (joined(before, target.from, target.to)) { closed = true; break; }
++      const a = endpoint(before, target.from), b = endpoint(before, target.to);
++      if (!a || !b) break;
++      const profile = resolveProfile(ctx.layout, target.net, ctx.settings);
++      const margin = growth * Math.max(1, profile.width + profile.maxSpacing);
++      const box = { x0: Math.min(a.x, b.x) - margin, x1: Math.max(a.x, b.x) + margin,
++        y0: Math.min(a.y, b.y) - margin, y1: Math.max(a.y, b.y) + margin };
++      const inside = (p: Pt, radius = 0): boolean => p.x - radius >= box.x0 && p.x + radius <= box.x1
++        && p.y - radius >= box.y0 && p.y + radius <= box.y1;
++      // Whole tracks only. Retained input, ignored nets, held copper and vias are never removed.
++      const victims = ctx.layout.tracks.filter(t => t.origin === "router" && t.hold === "free"
++        && t.net !== null && t.net !== target.net && !ctx.ignored.has(t.net)
++        && t.pts.every(p => inside(p, t.width / 2)));
++      if (victims.length > 24) continue;
++      const terminalGroups = before.nets.flatMap(n => n.components.map(ids => ids.filter(id => {
++        const cat = before.items.get(id)?.cat;
++        return cat === "pad" || cat === "pour";
++      })).filter(ids => ids.length > 1));
++      const baselineDrc = checkDrc(ctx.layout, ctx.settings).violations;
++      const floor = new Map(baselineDrc.map(v => [violationKey(v), v.actual]));
++      const incomplete = totalIncomplete(ctx);
++      const priorTracks = [...ctx.layout.tracks];
++      const mark = ctx.journal.mark();
++      let keep = false;
++      try {
++        for (const t of victims) ctx.journal.remove(t.id);
++        // Share the Journal/Lattice; disable every soft rung to keep mutations within this trial.
++        const trial = createCtx(ctx.layout, { ...ctx.settings, ripupEnabled: false, localRescue: false }, ctx.hooks);
++        trial.journal = ctx.journal; trial.lattice = ctx.lattice; trial.deadline = ctx.deadline;
++        trial.baseItems = ctx.baseItems;
++        const nets = new Set([target.net, ...victims.map(t => t.net!)]);
++        for (let pass = 0; pass < 2 && !stopped(); pass++) {
++          trial.conn = connectivity(ctx.layout, ctx.lattice);
++          const work: Connection[] = [target, ...ctx.layout.nets.flatMap(n => nets.has(n.id)
++            ? requiredConnectionsOf(trial.conn!, n.id) : [])];
++          for (const conn of work) {
++            if (stopped()) break;
++            trial.conn = connectivity(ctx.layout, ctx.lattice);
++            if (!joined(trial.conn, conn.from, conn.to)) routeConnection(trial, conn);
++          }
++        }
++        const after = connectivity(ctx.layout, ctx.lattice);
++        const added = new Set(ctx.journal.insertedSince(mark));
++        // This first experiment accepts track-only local edits; via geometry needs a separate region gate.
++        const local = !ctx.layout.barrels.some(v => added.has(v.id))
++          && ctx.layout.tracks.filter(t => added.has(t.id)).every(t => t.pts.every(p => inside(p, t.width / 2)));
++        keep = !stopped() && local && joined(after, target.from, target.to)
++          && terminalGroups.every(ids => ids.every(id => joined(after, ids[0]!, id)))
++          && totalIncomplete(ctx) < incomplete
++          && checkDrc(ctx.layout, ctx.settings).violations.every(v => floor.has(violationKey(v))
++            && v.actual >= floor.get(violationKey(v))!);
++      } finally {
++        if (!keep) {
++          ctx.journal.rewind(mark);
++          // Journal restores objects but appends removals; preserve original traversal order too.
++          (ctx.layout.tracks as typeof priorTracks).splice(0, ctx.layout.tracks.length, ...priorTracks);
++        }
++        ctx.conn = connectivity(ctx.layout, ctx.lattice);
++      }
++      ctx.hooks?.onLog?.("info", `local-rescue ${target.net}:${target.from}:${target.to} radius=${growth}pitch ${keep ? "closed" : "reverted"} victims=${victims.length}`);
++      if (keep) { ctx.ripped += victims.length; closed = true; break; }
++    }
++    if (!closed) ctx.hooks?.onLog?.("info", `local-rescue ${target.net}:${target.from}:${target.to} stayed-open`);
++  }
++}
++
++function endpoint(c: Connectivity, id: number): Pt | undefined {
++  const item = c.items.get(id);
++  if (!item) return undefined;
++  if (item.cat === "pad" || item.cat === "barrel") return (item.ref as { at: Pt }).at;
++  if (item.cat === "pour") return (item.ref as { outline: readonly Pt[] }).outline[0];
++  return undefined;
++}
+diff --git a/test/fixtures/local-rescue.ts b/test/fixtures/local-rescue.ts
+new file mode 100644
+index 0000000..bf3edca
+--- /dev/null
++++ b/test/fixtures/local-rescue.ts
+@@ -0,0 +1,47 @@
++import type { Layout, Net, NetGroup, Pad, PadForm, Part, Pt, Rim, Sheet, Track } from "../../spec/types/layout.ts";
++import { makeSpacingTable } from "../../src/layout/index.ts";
++const LU = 10; // LU per µm
++
++interface Obstacle { net: number; pts: Pt[]; hold?: "free" | "held" | "locked" }
++
++/** A one-signal-Sheet board with two SIG Pads and any number of other-net obstacle Tracks. */
++export function board(obstacles: Obstacle[], sigPads: [Pt, Pt] = [{ x: -20_000, y: 0 }, { x: 20_000, y: 0 }]): Layout {
++  const stack: Sheet[] = [{ id: 0, name: "F.Cu", role: "signal", active: true, preferDir: null }];
++  const kinds = ["", "default"];
++  const spacing = makeSpacingTable(kinds, stack.length, [], (a, b) => (a === 0 || b === 0 ? 0 : 2000));
++  const padForms: PadForm[] = [
++    { id: 100, name: "smd", perSheet: new Map([[0, [{ kind: "box", box: { x0: -2000, y0: -2000, x1: 2000, y1: 2000 } }]]]), attachAllowed: false },
++  ];
++  const parts: Part[] = [{ id: 1, ref: "U1", package: "p", side: "front", at: { x: 0, y: 0 }, rotationDeg: 0 }];
++  const pads: Pad[] = [
++    { id: 10, part: 1, pinName: "A", net: 0, form: 100, at: sigPads[0], rotationDeg: 0, side: "front", sheets: [0], kind: 1, hold: "locked" },
++    { id: 11, part: 1, pinName: "B", net: 0, form: 100, at: sigPads[1], rotationDeg: 0, side: "front", sheets: [0], kind: 1, hold: "locked" },
++  ];
++  const nets: Net[] = [{ id: 0, name: "SIG", group: 0, pads: [10, 11] }];
++  const tracks: Track[] = [];
++  let tid = 200, pid = 20;
++  obstacles.forEach((o, i) => {
++    const netId = 1 + i;
++    // Pads at the obstacle endpoints so the obstacle net has a real, complete connection.
++    pads.push({ id: pid++, part: 1, pinName: `O${i}a`, net: netId, form: 100, at: o.pts[0]!, rotationDeg: 0, side: "front", sheets: [0], kind: 1, hold: "locked" });
++    pads.push({ id: pid++, part: 1, pinName: `O${i}b`, net: netId, form: 100, at: o.pts[o.pts.length - 1]!, rotationDeg: 0, side: "front", sheets: [0], kind: 1, hold: "locked" });
++    nets.push({ id: netId, name: `OBS${i}`, group: 0, pads: [pid - 2, pid - 1] });
++    tracks.push({ id: tid++, net: netId, sheet: 0, pts: o.pts, width: 4000, kind: 1, hold: o.hold ?? "free", origin: "file" });
++  });
++  const netGroups: NetGroup[] = [
++    { id: 0, name: "default", nets: nets.map((n) => n.id), trackWidth: 4000, kind: 1, categoryKinds: { track: 1, barrel: 1, pin: 1, smd: 1, area: 1 } },
++  ];
++  const rim: Rim = { outline: [{ x: -100_000, y: -100_000 }, { x: 100_000, y: -100_000 }, { x: 100_000, y: 100_000 }, { x: -100_000, y: 100_000 }], cutouts: [], kind: 1 };
++  return {
++    name: "t", frame: { luPerUnit: 1, offset: { x: 0, y: 0 }, fileUnit: "um", luPerUm: LU },
++    angleMode: "any", stack, padForms, parts, pads, barrels: [], tracks, pours: [], fences: [], rim,
++    nets, netGroups, spacing, viaRules: [], pinEdgeToTurnLu: 0, warnings: [],
++  };
++}
++
++
++export function fixture() {
++  const L = board([{ net: 1, pts: [{x:-10000,y:20000},{x:-10000,y:-20000},{x:10000,y:-20000},{x:10000,y:20000}] }]);
++  L.tracks[0]!.origin = "router";
++  return L;
++}
+diff --git a/test/local-rescue.test.ts b/test/local-rescue.test.ts
+new file mode 100644
+index 0000000..58ec974
+--- /dev/null
++++ b/test/local-rescue.test.ts
+@@ -0,0 +1,49 @@
++import { expect, test } from "bun:test";
++import { DEFAULT_ROUTE_SETTINGS } from "../spec/types/settings.ts";
++import { board, fixture } from "./fixtures/local-rescue.ts";
++import { checkDrc, connectivity } from "../src/drc/index.ts";
++import { buildLattice } from "../src/lattice/index.ts";
++import { createCtx } from "../src/route/passes.ts";
++import { runLocalRescue } from "../src/route/local-rescue.ts";
++const settings = { ...DEFAULT_ROUTE_SETTINGS, localRescue: true, optimizerEnabled: false, viasAllowed: false };
++test("local rescue repairs a partial board and preserves its rerouted neighbour", () => {
++  const L = fixture();
++  expect(checkDrc(L).counts).toEqual({violations:0,incompletes:1});
++  const logs: string[] = [];
++  runLocalRescue(createCtx(L, settings, {onLog: (_, message) => logs.push(message)}));
++  expect(checkDrc(L).counts).toEqual({violations:0,incompletes:0});
++  expect(logs.some(x => x.includes("closed"))).toBe(true);
++  expect(L.tracks.every(t => t.width === 4000)).toBe(true);
++});
++test("failed local trials restore all original copper and lattice connectivity", () => {
++  const L = board([{net:1,pts:[{x:0,y:-95000},{x:0,y:95000}]}]);
++  L.tracks[0]!.origin = "router";
++  const before = JSON.stringify(L.tracks);
++  const ctx = createCtx(L, settings);
++  const stats = ctx.journal.stats();
++  runLocalRescue(ctx);
++  expect(ctx.journal.stats()).toEqual(stats);
++  expect(connectivity(L, ctx.lattice).joins).toEqual(connectivity(L, buildLattice(L)).joins);
++  expect(JSON.stringify(L.tracks)).toBe(before);
++  expect(checkDrc(L).counts).toEqual({violations:0,incompletes:1});
++});
++for (const mode of ["off", "held", "file", "ignored", "abort", "deadline", "item-cap"] as const) {
++  test(`local rescue honours ${mode}`, () => {
++    const L = fixture();
++    if (mode === "held") L.tracks[0]!.hold = "held";
++    if (mode === "file") L.tracks[0]!.origin = "file";
++    // Ignoring the group also ignores the target, so no mutation is permitted.
++    const controller = new AbortController();
++    if (mode === "abort") controller.abort();
++    const ctx = createCtx(L, {...settings, ...(mode === "off" ? {localRescue:false} : {}),
++      ...(mode === "ignored" ? {ignoreNetGroups:["default"]} : {}),
++      ...(mode === "item-cap" ? {maxItems:1} : {})}, {signal:controller.signal});
++    if (mode === "deadline") ctx.deadline = Date.now() - 1;
++    const before = JSON.stringify(L.tracks);
++    runLocalRescue(ctx);
++    // A hard-only retry can route around protected copper; that copper itself must survive.
++    expect(L.tracks.find(t => t.id === 200)).toEqual(JSON.parse(before)[0]);
++    if (["off","ignored","abort","deadline","item-cap"].includes(mode)) expect(JSON.stringify(L.tracks)).toBe(before);
++    expect(checkDrc(L).counts.violations).toBe(0);
++  });
++}

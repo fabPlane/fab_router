@@ -1,0 +1,31 @@
+{
+  "scope": "one complete engine workload; three alternating repeats per source; no fresh native check or full-suite speed claim",
+  "parity": true,
+  "timings": {
+    "original": {
+      "seconds": [
+        49.781157449,
+        55.206308938,
+        54.226449413000005
+      ],
+      "median_s": 54.226449413000005,
+      "max_s": 55.206308938
+    },
+    "candidate": {
+      "seconds": [
+        50.609843461000004,
+        56.204692941000005,
+        52.286535101999995
+      ],
+      "median_s": 52.286535101999995,
+      "max_s": 56.204692941000005
+    }
+  },
+  "rejected_controls": [
+    "session",
+    "stats",
+    "settings",
+    "logs",
+    "repeat"
+  ]
+}

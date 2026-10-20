@@ -10,6 +10,7 @@ import type { Diagnostic, Layout } from "../../spec/types/layout.ts";
 import type { AngleMode, RouteSettings, SheetOverride } from "../../spec/types/settings.ts";
 import { DEFAULT_ROUTE_SETTINGS } from "../../spec/types/settings.ts";
 import type { RouteHooks, RouteReport } from "../../spec/types/results.ts";
+import { recoverRemaining } from "../route/recover-remaining.ts";
 import { checkDrc } from "../drc/index.ts";
 import { createCtx, runPasses, runFanout, runOptimise, totalIncomplete, perNetIncomplete } from "../route/index.ts";
 
@@ -76,6 +77,7 @@ export function resolveSettings(
  * (contract R-1). `added` is measured as the item-count difference (contract R-3).
  */
 export function runRoute(layout: Layout, effective: RouteSettings, hooks?: RouteHooks): RouteReport {
+  const monotonicStart = effective.localRecovery === true ? performance.now() : 0;
   const startMs = Date.now();
   const violationsBefore = checkDrc(layout).counts.violations;
   const tracksBefore = layout.tracks.length;
@@ -97,6 +99,30 @@ export function runRoute(layout: Layout, effective: RouteSettings, hooks?: Route
   runFanout(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored);
   const outcome = runPasses(ctx);
   if (!outcome.aborted) runOptimise(ctx.layout, ctx.lattice, ctx.journal, effective, ctx.ignored, ctx.deadline);
+
+  // Recovery is insertion-only (one Track per kept target). Share the route-wide
+  // budget and limit targets to the remaining R-5 item capacity. Optimisation has
+  // already finished, so accepted recovery copper goes straight to final reporting.
+  if (effective.localRecovery === true && effective.routerEnabled && !outcome.aborted && !outcome.timedOut) {
+    const available = effective.maxItems === undefined ? 16 : Math.max(0, Math.min(16,
+      Math.floor(effective.maxItems - (layout.tracks.length + layout.barrels.length - tracksBefore - barrelsBefore))));
+    if (available > 0) {
+      const recovery = recoverRemaining(layout, effective, true, available, true, {
+        ...(effective.timeBudgetMs === undefined ? {} : { deadline: monotonicStart + effective.timeBudgetMs }),
+        ...(hooks?.signal ? { signal: hooks.signal } : {}),
+      }, hooks, {lattice:ctx.lattice,journal:ctx.journal});
+      ctx.attempted += recovery.targets.filter(t => t.status !== "unsupported-endpoints" && t.status !== "joined").length;
+      ctx.completed += recovery.targets.filter(t => t.status === "kept").length;
+      if (recovery.status === "aborted" || hooks?.signal?.aborted) {
+        outcome.aborted = true; outcome.stoppedBy = "abort";
+      } else if (recovery.status === "deadline" || (effective.timeBudgetMs !== undefined && performance.now() >= monotonicStart + effective.timeBudgetMs)) {
+        outcome.timedOut = true; outcome.stoppedBy = "timeBudget";
+      } else if (totalIncomplete(ctx) === 0) outcome.stoppedBy = "complete";
+      else if (effective.maxItems !== undefined && layout.tracks.length + layout.barrels.length - tracksBefore - barrelsBefore >= effective.maxItems) outcome.stoppedBy = "maxItems";
+      hooks?.onProgress?.({done:ctx.completed,total:ctx.completed+totalIncomplete(ctx),elapsedMs:Date.now()-startMs});
+      hooks?.onLog?.("info", `local-recovery summary ${JSON.stringify({status:recovery.status,targets:recovery.targets.length})}`);
+    }
+  }
 
   const incompleteAfter = totalIncomplete(ctx);
   const violationsAfter = checkDrc(layout).counts.violations;

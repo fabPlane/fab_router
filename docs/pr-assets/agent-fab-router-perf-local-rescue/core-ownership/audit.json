@@ -1,0 +1,26 @@
+{
+  "source_revision": "f34ec789",
+  "source_spec_files": 1488,
+  "root_matches_recorded_source_hashes": true,
+  "independent_instrumented_reconstruction_matches": true,
+  "probe_checks": 19,
+  "probe_passes_original_and_reconstruction": true,
+  "replays": 3,
+  "sessions_byte_identical": true,
+  "reports_match_except_wallClockMs": true,
+  "total_core_calls_match_previous_identity_census": true,
+  "production_changes": false,
+  "native_check_performed": false,
+  "speed_comparison_performed": false,
+  "root_checks": {
+    "typecheck": "PASS",
+    "layer_files": 71,
+    "layer_violations": 0,
+    "tests_passed": 914,
+    "tests_failed": 0,
+    "assertions": 649747,
+    "test_seconds": 321.6
+  },
+  "reproduction_prelude_passed": true,
+  "ignored_historical_acceptance_outputs_excluded": 6
+}

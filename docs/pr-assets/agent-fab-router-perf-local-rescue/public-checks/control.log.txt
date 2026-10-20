@@ -1,0 +1,16 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle32/mutations/control/recovery-cancellation.test.ts:
+(pass) cancellation detected after exact validation rolls back legal copper and its live index [4.44ms]
+
+../../agents/codex-fabpcb-perf/scratch/cycle32/mutations/control/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [2.67ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.38ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.36ms]
+(pass) late legal proposals are rewound and do not start another region [0.45ms]
+(pass) route-wide cancellation stops immediately and rewinds a partly inserted proposal [0.60ms]
+
+ 6 pass
+ 0 fail
+ 109 expect() calls
+Ran 6 tests across 2 files. [19.00ms]

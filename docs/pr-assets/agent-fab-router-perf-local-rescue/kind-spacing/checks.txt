@@ -1,0 +1,9 @@
+Supervisor exit: 0
+Command: taskset -c 12-19 nice -n 10 timeout 1800 bash -c 'bun run typecheck && bun run check:layers && bun run test'
+Typecheck: PASS
+Layers: 71 modules, zero violations
+Tests: 912 pass, 0 fail, 399733 assertions, 323.32s
+Runtime/spec source hashes: all 77 unchanged
+Driver bundle: 72 modules
+Six repeated diagnostic supervisors: 0
+Archive replay PNG: byte-identical, visually inspected

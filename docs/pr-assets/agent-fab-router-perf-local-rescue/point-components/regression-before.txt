@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle42/before/test/recovery-component-anchor.test.ts:
+(pass) alternate live component anchors close the original full-board stall without changing retained copper [200.13ms]
+44 | 
+45 | test('public residual recovery closes through bounded alternate anchors',()=>{
+46 |  const l=layout(),before=writeSes(l),tracks=l.tracks.map(t=>JSON.stringify(t));
+47 |  const fixed=JSON.stringify([l.pads,l.pours,l.fences,l.barrels]);
+48 |  const result=recoverRemaining(l,resolveSettings(fixture.settings,undefined,l.angleMode),true,16,true);
+49 |  expect(result.targets[0]?.status).toBe('kept');
+                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "kept"
+Received: "exhausted"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle42/before/test/recovery-component-anchor.test.ts:49:36)
+(fail) public residual recovery closes through bounded alternate anchors [119.88ms]
+
+ 1 pass
+ 1 fail
+ 44 expect() calls
+Ran 2 tests across 1 file. [338.00ms]

@@ -1,0 +1,38 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle42/before/test/recovery-component-anchor.test.ts:
+(pass) alternate live component anchors close the original full-board stall without changing retained copper [174.94ms]
+44 | 
+45 | test('public residual recovery closes through bounded alternate anchors',()=>{
+46 |  const l=layout(),before=writeSes(l),tracks=l.tracks.map(t=>JSON.stringify(t));
+47 |  const fixed=JSON.stringify([l.pads,l.pours,l.fences,l.barrels]);
+48 |  const result=recoverRemaining(l,resolveSettings(fixture.settings,undefined,l.angleMode),true,16,true);
+49 |  expect(result.targets[0]?.status).toBe('kept');
+                                        ^
+error: expect(received).toBe(expected)
+
+Expected: "kept"
+Received: "exhausted"
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle42/before/test/recovery-component-anchor.test.ts:49:36)
+(fail) public residual recovery closes through bounded alternate anchors [87.80ms]
+61 | test('public alternate-anchor recovery shares item capacity and reports one original connection',()=>{
+62 |  const l=layout(),before=writeSes(l),tracks=l.tracks.length,barrels=l.barrels.length;
+63 |  const events:{ok:boolean;from:string;to:string}[]=[],logs:string[]=[];
+64 |  const result=route(l,{...fixture.settings,maxPasses:0,optimizerEnabled:false,fanoutEnabled:false,maxItems:1,localRecovery:true},
+65 |   {onConnection:event=>events.push(event),onLog:(_level,message)=>logs.push(message)});
+66 |  expect(result.incompleteBefore).toBe(1);expect(result.incompleteAfter).toBe(0);
+                                                                             ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle42/before/test/recovery-component-anchor.test.ts:66:73)
+(fail) public alternate-anchor recovery shares item capacity and reports one original connection [79.31ms]
+(pass) public alternate-anchor fixture respects opt-in, zero items, ignored nets, route deadline and hook cancellation [49.34ms]
+
+ 2 pass
+ 2 fail
+ 98 expect() calls
+Ran 4 tests across 1 file. [408.00ms]

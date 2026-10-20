@@ -1,0 +1,26 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/recovery-remaining.test.ts:
+(pass) remaining post-pass uses each actual net profile and preserves ignored obstacles [8.09ms]
+(pass) remaining post-pass target cap leaves unattempted nets unchanged [0.93ms]
+(pass) optional copper corners discover a detour around routed foreign copper [1.51ms]
+(pass) all-net recovery respects initial route deadline and abort without changing copper [0.18ms]
+(pass) completed boards return without building a recovery baseline [0.06ms]
+
+test/recovery-cancellation.test.ts:
+(pass) cancellation detected after exact validation rolls back legal copper and its live index [0.55ms]
+
+test/recovery-candidate.test.ts:
+(pass) explicit research adapter closes two real all-net stall links with retained exact quality [27894.96ms]
+
+test/recovery-schedule.test.ts:
+(pass) gradual endpoint region rejects narrow closure, restores index, then keeps legal full-width closure [2.90ms]
+(pass) shared expansion cap interrupts and rewinds partially inserted copper across attempts [0.28ms]
+(pass) attempt cap, opt-out, invalid plans and proposal exceptions do not leak copper [0.29ms]
+(pass) late legal proposals are rewound and do not start another region [0.20ms]
+(pass) route-wide cancellation stops immediately and rewinds a partly inserted proposal [0.33ms]
+
+ 12 pass
+ 0 fail
+ 153 expect() calls
+Ran 12 tests across 4 files. [27.95s]

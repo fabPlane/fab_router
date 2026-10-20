@@ -47,18 +47,24 @@ export function crossesEdge(s: Shape, a: Pt, b: Pt): boolean {
  * vertices constrain nothing.
  */
 export function withinRim(rim: Rim, shapes: readonly Shape[]): boolean {
-  const outline = rim.outline.length >= 3 ? rim.outline : undefined;
-  const cutouts = rim.cutouts.filter((c) => c.length >= 3);
-  if (!outline && cutouts.length === 0) return true;
-  const parts: ConvexShape[] = [];
-  for (const s of shapes) { if (s.kind === "pieces") parts.push(...s.parts); else parts.push(s); }
-  for (const part of parts) {
-    const core = coreOf(part);
-    const probes = core.r > 0 ? core.pts.slice(0, 1) : core.pts;
-    for (const p of probes) {
-      if (outline && pointInRing(outline, p) === "outside") return false;
-      for (const c of cutouts) if (pointInRing(c, p) === "inside") return false;
-    }
+  if (rim.outline.length < 3 && !rim.cutouts.some((c) => c.length >= 3)) return true;
+  // This runs for every clearance probe. Walk the existing parts and rings directly rather
+  // than allocating filtered cut-outs, a flattened parts array and a sliced probe array.
+  for (const s of shapes) {
+    if (s.kind === "pieces") {
+      for (const part of s.parts) if (!partWithinRim(rim, part)) return false;
+    } else if (!partWithinRim(rim, s)) return false;
+  }
+  return true;
+}
+
+function partWithinRim(rim: Rim, part: ConvexShape): boolean {
+  const core = coreOf(part);
+  const count = core.r > 0 ? Math.min(1, core.pts.length) : core.pts.length;
+  for (let i = 0; i < count; i++) {
+    const p = core.pts[i]!;
+    if (rim.outline.length >= 3 && pointInRing(rim.outline, p) === "outside") return false;
+    for (const c of rim.cutouts) if (c.length >= 3 && pointInRing(c, p) === "inside") return false;
   }
   return true;
 }

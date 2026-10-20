@@ -1,0 +1,745 @@
+{
+  "records": {
+    "original": {
+      "seconds": [
+        18.929418745,
+        19.33467715,
+        18.843661781999998
+      ],
+      "median_s": 18.929418745,
+      "p95_max3_s": 19.33467715,
+      "total_s": 57.107757676999995
+    },
+    "candidate": {
+      "seconds": [
+        18.828084345,
+        18.416753037,
+        19.210590381000003
+      ],
+      "median_s": 18.828084345,
+      "p95_max3_s": 19.210590381000003,
+      "total_s": 56.455427763
+    },
+    "parity": {
+      "scope": "ladder engine regression replay; no fresh native score",
+      "settings": {
+        "maxPasses": 2,
+        "timeBudgetMs": 600000,
+        "optimizerEnabled": false,
+        "fanoutEnabled": false,
+        "strictDrc": true,
+        "neckWidthUm": 0,
+        "localRecovery": true,
+        "seed": 1
+      },
+      "report": {
+        "passes": 2,
+        "attempted": 98,
+        "completed": 33,
+        "incompleteBefore": 50,
+        "incompleteAfter": 21,
+        "added": {
+          "tracks": 83,
+          "barrels": 51
+        },
+        "ripped": 7,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "maxPasses",
+        "effectiveSettings": {
+          "maxPasses": 2,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": false,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 600000,
+          "neckWidthUm": 0,
+          "localRecovery": true,
+          "angleMode": "45"
+        },
+        "perNet": [
+          {
+            "net": "N1",
+            "incomplete": 0
+          },
+          {
+            "net": "N2",
+            "incomplete": 0
+          },
+          {
+            "net": "N3",
+            "incomplete": 0
+          },
+          {
+            "net": "N4",
+            "incomplete": 0
+          },
+          {
+            "net": "N5",
+            "incomplete": 0
+          },
+          {
+            "net": "N6",
+            "incomplete": 0
+          },
+          {
+            "net": "N7",
+            "incomplete": 0
+          },
+          {
+            "net": "N8",
+            "incomplete": 1
+          },
+          {
+            "net": "N9",
+            "incomplete": 0
+          },
+          {
+            "net": "N10",
+            "incomplete": 0
+          },
+          {
+            "net": "N11",
+            "incomplete": 0
+          },
+          {
+            "net": "N12",
+            "incomplete": 0
+          },
+          {
+            "net": "N13",
+            "incomplete": 0
+          },
+          {
+            "net": "N14",
+            "incomplete": 0
+          },
+          {
+            "net": "N15",
+            "incomplete": 1
+          },
+          {
+            "net": "N16",
+            "incomplete": 0
+          },
+          {
+            "net": "N17",
+            "incomplete": 1
+          },
+          {
+            "net": "N18",
+            "incomplete": 0
+          },
+          {
+            "net": "N19",
+            "incomplete": 1
+          },
+          {
+            "net": "N20",
+            "incomplete": 1
+          },
+          {
+            "net": "N21",
+            "incomplete": 0
+          },
+          {
+            "net": "N22",
+            "incomplete": 1
+          },
+          {
+            "net": "N23",
+            "incomplete": 1
+          },
+          {
+            "net": "N24",
+            "incomplete": 1
+          },
+          {
+            "net": "N25",
+            "incomplete": 0
+          },
+          {
+            "net": "N26",
+            "incomplete": 0
+          },
+          {
+            "net": "N27",
+            "incomplete": 0
+          },
+          {
+            "net": "N28",
+            "incomplete": 0
+          },
+          {
+            "net": "N29",
+            "incomplete": 0
+          },
+          {
+            "net": "N30",
+            "incomplete": 0
+          },
+          {
+            "net": "N31",
+            "incomplete": 0
+          },
+          {
+            "net": "N32",
+            "incomplete": 0
+          },
+          {
+            "net": "N33",
+            "incomplete": 1
+          },
+          {
+            "net": "N34",
+            "incomplete": 0
+          },
+          {
+            "net": "N35",
+            "incomplete": 1
+          },
+          {
+            "net": "N36",
+            "incomplete": 0
+          },
+          {
+            "net": "N37",
+            "incomplete": 1
+          },
+          {
+            "net": "N38",
+            "incomplete": 1
+          },
+          {
+            "net": "N39",
+            "incomplete": 1
+          },
+          {
+            "net": "N40",
+            "incomplete": 1
+          },
+          {
+            "net": "N41",
+            "incomplete": 0
+          },
+          {
+            "net": "N42",
+            "incomplete": 1
+          },
+          {
+            "net": "N43",
+            "incomplete": 0
+          },
+          {
+            "net": "N44",
+            "incomplete": 0
+          },
+          {
+            "net": "N45",
+            "incomplete": 1
+          },
+          {
+            "net": "N46",
+            "incomplete": 1
+          },
+          {
+            "net": "N47",
+            "incomplete": 1
+          },
+          {
+            "net": "N48",
+            "incomplete": 1
+          },
+          {
+            "net": "N49",
+            "incomplete": 1
+          },
+          {
+            "net": "N50",
+            "incomplete": 1
+          }
+        ]
+      },
+      "stats": {
+        "items": {
+          "pads": 100,
+          "barrels": 51,
+          "tracks": 83,
+          "pours": 0,
+          "fences": 0
+        },
+        "connections": {
+          "maximum": 50,
+          "incomplete": 21
+        },
+        "barrels": {
+          "total": 51,
+          "through": 51,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 10943426.013352703,
+          "totalLengthMm": 1094.3426013352703,
+          "legs": 169,
+          "bends90": 7,
+          "bends45": 75,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 100,
+          "escaped": 58,
+          "viaEscaped": 38
+        }
+      }
+    }
+  },
+  "aquarius-records": {
+    "original": {
+      "seconds": [
+        44.72166724900001,
+        45.868943906,
+        46.474749225
+      ],
+      "median_s": 45.868943906,
+      "p95_max3_s": 46.474749225,
+      "total_s": 137.06536038000002
+    },
+    "candidate": {
+      "seconds": [
+        44.956043152999996,
+        45.376823931,
+        45.17297364
+      ],
+      "median_s": 45.17297364,
+      "p95_max3_s": 45.376823931,
+      "total_s": 135.505840724
+    },
+    "parity": {
+      "settings": {
+        "timeBudgetMs": 3600000,
+        "maxPasses": 100,
+        "seed": 2,
+        "copperToEdgeClearanceUm": 500,
+        "holeClearanceUm": 250,
+        "strictDrc": true,
+        "neckWidthUm": 0,
+        "fanoutEnabled": false,
+        "ignoreNetGroups": [],
+        "localRecovery": true
+      },
+      "logs": [
+        "local-recovery attempt net=15 from=250 to=251",
+        "local-recovery attempt net=28 from=86 to=209",
+        "local-recovery result {\"pair\": {\"airlineLu\": 495237.5926865811, \"from\": 86, \"net\": 28, \"to\": 209}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 495237.5926865811, \"from\": 86, \"net\": 28, \"to\": 209}, \"proposals\": [{\"edges\": 263, \"found\": false, \"nodes\": 264}, {\"edges\": 83190, \"found\": false, \"nodes\": 471}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1251610, \"x1\": 1634071, \"y0\": -791690, \"y1\": -477073}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1223482, \"x1\": 1662199, \"y0\": -819818, \"y1\": -448945}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1195354, \"x1\": 1690327, \"y0\": -847946, \"y1\": -420817}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 263, \"found\": false, \"nodes\": 264}, {\"edges\": 83190, \"found\": false, \"nodes\": 471}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1251610, \"x1\": 1634071, \"y0\": -791690, \"y1\": -477073}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1223482, \"x1\": 1662199, \"y0\": -819818, \"y1\": -448945}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1195354, \"x1\": 1690327, \"y0\": -847946, \"y1\": -420817}}]}, \"status\": \"budget\"}",
+        "local-recovery attempt net=30 from=89 to=164",
+        "local-recovery result {\"pair\": {\"airlineLu\": 442614.26369808736, \"from\": 89, \"net\": 30, \"to\": 164}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 442614.26369808736, \"from\": 89, \"net\": 30, \"to\": 164}, \"proposals\": [{\"edges\": 404, \"found\": false, \"nodes\": 405}, {\"edges\": 47788, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1298600, \"x1\": 1669427, \"y0\": -627860, \"y1\": -386210}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1270472, \"x1\": 1697555, \"y0\": -655988, \"y1\": -358082}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1242344, \"x1\": 1725683, \"y0\": -684116, \"y1\": -329954}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 404, \"found\": false, \"nodes\": 405}, {\"edges\": 47788, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1298600, \"x1\": 1669427, \"y0\": -627860, \"y1\": -386210}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1270472, \"x1\": 1697555, \"y0\": -655988, \"y1\": -358082}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1242344, \"x1\": 1725683, \"y0\": -684116, \"y1\": -329954}}]}, \"status\": \"budget\"}",
+        "local-recovery attempt net=36 from=98 to=172",
+        "local-recovery result {\"pair\": {\"airlineLu\": 445838.3726531399, \"from\": 98, \"net\": 36, \"to\": 172}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 445838.3726531399, \"from\": 98, \"net\": 36, \"to\": 172}, \"proposals\": [{\"edges\": 439, \"found\": false, \"nodes\": 440}, {\"edges\": 13930, \"found\": false, \"nodes\": 512}, {\"edges\": 22471, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1297330, \"x1\": 1721399, \"y0\": -541500, \"y1\": -403887}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1269202, \"x1\": 1749527, \"y0\": -569628, \"y1\": -375759}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1241074, \"x1\": 1777655, \"y0\": -597756, \"y1\": -347631}}, {\"margin\": 16, \"outcome\": \"budget\", \"region\": {\"x0\": 1184818, \"x1\": 1833911, \"y0\": -654012, \"y1\": -291375}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 439, \"found\": false, \"nodes\": 440}, {\"edges\": 13930, \"found\": false, \"nodes\": 512}, {\"edges\": 22471, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1297330, \"x1\": 1721399, \"y0\": -541500, \"y1\": -403887}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1269202, \"x1\": 1749527, \"y0\": -569628, \"y1\": -375759}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1241074, \"x1\": 1777655, \"y0\": -597756, \"y1\": -347631}}, {\"margin\": 16, \"outcome\": \"budget\", \"region\": {\"x0\": 1184818, \"x1\": 1833911, \"y0\": -654012, \"y1\": -291375}}]}, \"status\": \"budget\"}",
+        "local-recovery attempt net=38 from=101 to=173",
+        "local-recovery result {\"pair\": {\"airlineLu\": 496837.98763178324, \"from\": 101, \"net\": 38, \"to\": 173}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 496837.98763178324, \"from\": 101, \"net\": 38, \"to\": 173}, \"proposals\": [{\"edges\": 450, \"found\": false, \"nodes\": 451}, {\"edges\": 17766, \"found\": false, \"nodes\": 512}, {\"edges\": 25705, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1246530, \"x1\": 1724935, \"y0\": -541500, \"y1\": -407423}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1218402, \"x1\": 1753063, \"y0\": -569628, \"y1\": -379295}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1190274, \"x1\": 1781191, \"y0\": -597756, \"y1\": -351167}}, {\"margin\": 16, \"outcome\": \"budget\", \"region\": {\"x0\": 1134018, \"x1\": 1837447, \"y0\": -654012, \"y1\": -294911}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 450, \"found\": false, \"nodes\": 451}, {\"edges\": 17766, \"found\": false, \"nodes\": 512}, {\"edges\": 25705, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1246530, \"x1\": 1724935, \"y0\": -541500, \"y1\": -407423}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1218402, \"x1\": 1753063, \"y0\": -569628, \"y1\": -379295}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1190274, \"x1\": 1781191, \"y0\": -597756, \"y1\": -351167}}, {\"margin\": 16, \"outcome\": \"budget\", \"region\": {\"x0\": 1134018, \"x1\": 1837447, \"y0\": -654012, \"y1\": -294911}}]}, \"status\": \"budget\"}",
+        "local-recovery attempt net=48 from=110 to=165",
+        "local-recovery result {\"pair\": {\"airlineLu\": 669868.0765941903, \"from\": 110, \"net\": 48, \"to\": 165}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 669868.0765941903, \"from\": 110, \"net\": 48, \"to\": 165}, \"proposals\": [{\"edges\": 511, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1207160, \"x1\": 1672962, \"y0\": -864080, \"y1\": -382674}}, {\"margin\": 4, \"outcome\": \"budget\", \"region\": {\"x0\": 1179032, \"x1\": 1701090, \"y0\": -892208, \"y1\": -354546}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 511, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1207160, \"x1\": 1672962, \"y0\": -864080, \"y1\": -382674}}, {\"margin\": 4, \"outcome\": \"budget\", \"region\": {\"x0\": 1179032, \"x1\": 1701090, \"y0\": -892208, \"y1\": -354546}}]}, \"status\": \"budget\"}",
+        "local-recovery attempt net=50 from=167 to=215",
+        "local-recovery result {\"pair\": {\"airlineLu\": 656143.9047655629, \"from\": 167, \"net\": 50, \"to\": 215}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 656143.9047655629, \"from\": 167, \"net\": 50, \"to\": 215}, \"proposals\": [{\"edges\": 511, \"found\": false, \"nodes\": 512}, {\"edges\": 10030, \"found\": false, \"nodes\": 512}, {\"edges\": 16335, \"found\": false, \"nodes\": 512}, {\"edges\": 16813, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 55869, \"status\": \"exhausted\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1703721, \"x1\": 1830090, \"y0\": -1030070, \"y1\": -386210}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1675593, \"x1\": 1858218, \"y0\": -1058198, \"y1\": -358082}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1647465, \"x1\": 1886346, \"y0\": -1086326, \"y1\": -329954}}, {\"margin\": 16, \"outcome\": \"open\", \"region\": {\"x0\": 1591209, \"x1\": 1942602, \"y0\": -1142582, \"y1\": -273698}}]}}], \"enumeration\": 380, \"status\": \"exhausted\", \"work\": 56249}, \"proposals\": [{\"edges\": 511, \"found\": false, \"nodes\": 512}, {\"edges\": 10030, \"found\": false, \"nodes\": 512}, {\"edges\": 16335, \"found\": false, \"nodes\": 512}, {\"edges\": 16813, \"found\": false, \"nodes\": 512}], \"result\": {\"expansions\": 56249, \"status\": \"exhausted\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1703721, \"x1\": 1830090, \"y0\": -1030070, \"y1\": -386210}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1675593, \"x1\": 1858218, \"y0\": -1058198, \"y1\": -358082}}, {\"margin\": 8, \"outcome\": \"open\", \"region\": {\"x0\": 1647465, \"x1\": 1886346, \"y0\": -1086326, \"y1\": -329954}}, {\"margin\": 16, \"outcome\": \"open\", \"region\": {\"x0\": 1591209, \"x1\": 1942602, \"y0\": -1142582, \"y1\": -273698}}]}, \"status\": \"exhausted\"}",
+        "local-recovery attempt net=56 from=107 to=207",
+        "local-recovery result {\"pair\": {\"airlineLu\": 454705.71604060574, \"from\": 107, \"net\": 56, \"to\": 207}, \"pointRecovery\": {\"attempts\": [{\"anchor\": {\"airlineLu\": 454705.71604060574, \"from\": 107, \"net\": 56, \"to\": 207}, \"proposals\": [{\"edges\": 229, \"found\": false, \"nodes\": 230}, {\"edges\": 62880, \"found\": false, \"nodes\": 424}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1306220, \"x1\": 1641142, \"y0\": -791690, \"y1\": -484144}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1278092, \"x1\": 1669270, \"y0\": -819818, \"y1\": -456016}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1249964, \"x1\": 1697398, \"y0\": -847946, \"y1\": -427888}}]}}], \"enumeration\": 0, \"status\": \"budget\", \"work\": 100000}, \"proposals\": [{\"edges\": 229, \"found\": false, \"nodes\": 230}, {\"edges\": 62880, \"found\": false, \"nodes\": 424}], \"result\": {\"expansions\": 100000, \"status\": \"budget\", \"trials\": [{\"margin\": 0, \"outcome\": \"open\", \"region\": {\"x0\": 1306220, \"x1\": 1641142, \"y0\": -791690, \"y1\": -484144}}, {\"margin\": 4, \"outcome\": \"open\", \"region\": {\"x0\": 1278092, \"x1\": 1669270, \"y0\": -819818, \"y1\": -456016}}, {\"margin\": 8, \"outcome\": \"budget\", \"region\": {\"x0\": 1249964, \"x1\": 1697398, \"y0\": -847946, \"y1\": -427888}}]}, \"status\": \"budget\"}",
+        "local-recovery summary {\"status\":\"finished\",\"targets\":8}"
+      ],
+      "report": {
+        "passes": 8,
+        "attempted": 200,
+        "completed": 124,
+        "incompleteBefore": 111,
+        "incompleteAfter": 8,
+        "added": {
+          "tracks": 248,
+          "barrels": 130
+        },
+        "ripped": 27,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [],
+          "seed": 2,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "localRecovery": true,
+          "angleMode": "45"
+        },
+        "perNet": [
+          {
+            "net": "Net-(D2-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/LED_PWR",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D3-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D4-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D5-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D6-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D7-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D9-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D10-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D11-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D12-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D13-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D1-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(D8-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(C1-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "GNDD",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(C2-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(C3-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(C8-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED0",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q1-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q2-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED3",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q4-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED4",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q5-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED5",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(Q6-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED7",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(Q8-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED8",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q9-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED9",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q10-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED10",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(Q11-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED11",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(Q12-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED12",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q13-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q3-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(Q7-Pad3)",
+            "incomplete": 0
+          },
+          {
+            "net": "GNDA",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/TCK",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/RST",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/POT00",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED6",
+            "incomplete": 1
+          },
+          {
+            "net": "/Inputs/D+",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/D-",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(R1-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/PB0",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/TDO",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/TDI",
+            "incomplete": 0
+          },
+          {
+            "net": "/Inputs/TMS",
+            "incomplete": 0
+          },
+          {
+            "net": "/Leds/Stars/LED2",
+            "incomplete": 1
+          },
+          {
+            "net": "/Inputs/USB_PWR",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(J2-Pad4)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(J2-Pad5)",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(J3-Pad1)",
+            "incomplete": 0
+          },
+          {
+            "net": "VBUS",
+            "incomplete": 0
+          },
+          {
+            "net": "GNDPWR",
+            "incomplete": 0
+          }
+        ]
+      },
+      "statsBefore": {
+        "items": {
+          "pads": 249,
+          "barrels": 0,
+          "tracks": 0,
+          "pours": 2,
+          "fences": 8
+        },
+        "connections": {
+          "maximum": 173,
+          "incomplete": 111
+        },
+        "barrels": {
+          "total": 0,
+          "through": 0,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 0,
+          "totalLengthMm": 0,
+          "legs": 0,
+          "bends90": 0,
+          "bends45": 0,
+          "bendsOther": 0
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 234,
+          "escaped": 62,
+          "viaEscaped": 0
+        }
+      },
+      "statsAfter": {
+        "items": {
+          "pads": 249,
+          "barrels": 130,
+          "tracks": 248,
+          "pours": 2,
+          "fences": 8
+        },
+        "connections": {
+          "maximum": 173,
+          "incomplete": 8
+        },
+        "barrels": {
+          "total": 130,
+          "through": 130,
+          "blind": 0,
+          "buried": 0
+        },
+        "tracks": {
+          "totalLengthLu": 17311131.26536562,
+          "totalLengthMm": 1731.1131265365618,
+          "legs": 336,
+          "bends90": 4,
+          "bends45": 59,
+          "bendsOther": 25
+        },
+        "violations": {
+          "total": 0,
+          "byRule": {}
+        },
+        "fanout": {
+          "smdPads": 234,
+          "escaped": 220,
+          "viaEscaped": 107
+        }
+      },
+      "ses_sha256": "b46b27ef4bbca1ad81908f1932c3e2406aade979ebb4b7e7958c04d69ba6ad60",
+      "input_sha256": "04732bae8689c2d8c8112df99614b6aed02206863dcf518045ef6c486d812a47"
+    }
+  }
+}

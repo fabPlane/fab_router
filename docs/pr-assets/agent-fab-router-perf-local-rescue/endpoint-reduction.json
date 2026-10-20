@@ -1,0 +1,6884 @@
+{
+  "scope": "Engine-only deletion reduction. No native validation, global minimum or physical impossibility claim.",
+  "input_sha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+  "settings": {
+    "timeBudgetMs": 3600000,
+    "maxPasses": 100,
+    "seed": 1,
+    "copperToEdgeClearanceUm": 500,
+    "holeClearanceUm": 250,
+    "strictDrc": true,
+    "neckWidthUm": 0,
+    "fanoutEnabled": false,
+    "ignoreNetGroups": []
+  },
+  "terminalIds": [
+    9,
+    10,
+    62
+  ],
+  "kept": [
+    9,
+    10,
+    27,
+    29,
+    31,
+    33,
+    35,
+    37,
+    39,
+    62
+  ],
+  "trials": [
+    {
+      "ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.7307512490000003,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3731,
+        "perNet": [
+          {
+            "net": "Net-(A1-Pad1)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad3)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad4)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad6)",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_MOSI",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_MISO",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_CLK",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_CS1",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{BUSY}",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{RST}",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad13)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 0,
+            "from": 1,
+            "to": 2,
+            "airlineLu": 25400
+          },
+          {
+            "net": 2,
+            "from": 5,
+            "to": 6,
+            "airlineLu": 25400
+          },
+          {
+            "net": 3,
+            "from": 7,
+            "to": 8,
+            "airlineLu": 25400
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 5,
+            "from": 11,
+            "to": 12,
+            "airlineLu": 25400
+          },
+          {
+            "net": 6,
+            "from": 13,
+            "to": 14,
+            "airlineLu": 25400
+          },
+          {
+            "net": 6,
+            "from": 14,
+            "to": 64,
+            "airlineLu": 355499.2545702452
+          },
+          {
+            "net": 7,
+            "from": 15,
+            "to": 16,
+            "airlineLu": 25400
+          },
+          {
+            "net": 7,
+            "from": 16,
+            "to": 63,
+            "airlineLu": 343818.3822892546
+          },
+          {
+            "net": 8,
+            "from": 17,
+            "to": 18,
+            "airlineLu": 25400
+          },
+          {
+            "net": 8,
+            "from": 18,
+            "to": 65,
+            "airlineLu": 400576.3847258098
+          },
+          {
+            "net": 9,
+            "from": 19,
+            "to": 20,
+            "airlineLu": 25400
+          },
+          {
+            "net": 9,
+            "from": 20,
+            "to": 66,
+            "airlineLu": 435139.42593150534
+          },
+          {
+            "net": 10,
+            "from": 21,
+            "to": 22,
+            "airlineLu": 25400
+          },
+          {
+            "net": 10,
+            "from": 22,
+            "to": 68,
+            "airlineLu": 491852.8641778962
+          },
+          {
+            "net": 11,
+            "from": 23,
+            "to": 24,
+            "airlineLu": 25400
+          },
+          {
+            "net": 11,
+            "from": 24,
+            "to": 67,
+            "airlineLu": 483477.6106501727
+          },
+          {
+            "net": 12,
+            "from": 25,
+            "to": 26,
+            "airlineLu": 25400
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 36,
+            "to": 61,
+            "airlineLu": 167727.5171222659
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 38,
+            "to": 60,
+            "airlineLu": 203623.2796121308
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 31
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.3046703820000003,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3304,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS1",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{BUSY}",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{RST}",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad13)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 9,
+            "from": 19,
+            "to": 20,
+            "airlineLu": 25400
+          },
+          {
+            "net": 9,
+            "from": 20,
+            "to": 66,
+            "airlineLu": 435139.42593150534
+          },
+          {
+            "net": 10,
+            "from": 21,
+            "to": 22,
+            "airlineLu": 25400
+          },
+          {
+            "net": 10,
+            "from": 22,
+            "to": 68,
+            "airlineLu": 491852.8641778962
+          },
+          {
+            "net": 11,
+            "from": 23,
+            "to": 24,
+            "airlineLu": 25400
+          },
+          {
+            "net": 11,
+            "from": 24,
+            "to": 67,
+            "airlineLu": 483477.6106501727
+          },
+          {
+            "net": 12,
+            "from": 25,
+            "to": 26,
+            "airlineLu": 25400
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 36,
+            "to": 61,
+            "airlineLu": 167727.5171222659
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 38,
+            "to": 60,
+            "airlineLu": 203623.2796121308
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 21
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.003029529000000366,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 2
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 36,
+            "to": 61,
+            "airlineLu": 167727.5171222659
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 38,
+            "to": 60,
+            "airlineLu": 203623.2796121308
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 9
+        }
+      },
+      "ses_sha256": "bfb01f709e54b384c0c6a847d640b6a14caecc46fa6aedfe76cc95f1b83b015c",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.00199130200000036,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 2,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "/SPI_CS1",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{BUSY}",
+            "incomplete": 2
+          },
+          {
+            "net": "/~{RST}",
+            "incomplete": 2
+          },
+          {
+            "net": "Net-(A1-Pad13)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 9,
+            "from": 19,
+            "to": 20,
+            "airlineLu": 25400
+          },
+          {
+            "net": 9,
+            "from": 20,
+            "to": 66,
+            "airlineLu": 435139.42593150534
+          },
+          {
+            "net": 10,
+            "from": 21,
+            "to": 22,
+            "airlineLu": 25400
+          },
+          {
+            "net": 10,
+            "from": 22,
+            "to": 68,
+            "airlineLu": 491852.8641778962
+          },
+          {
+            "net": 11,
+            "from": 23,
+            "to": 24,
+            "airlineLu": 25400
+          },
+          {
+            "net": 11,
+            "from": 24,
+            "to": 67,
+            "airlineLu": 483477.6106501727
+          },
+          {
+            "net": 12,
+            "from": 25,
+            "to": 26,
+            "airlineLu": 25400
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 12
+        }
+      },
+      "ses_sha256": "129af53b9eba2de8c103b2f28287a101c3f58e01508e0c28cc8b5076a023578e",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.972827671000001,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3973,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS1",
+            "incomplete": 1
+          },
+          {
+            "net": "/~{BUSY}",
+            "incomplete": 1
+          },
+          {
+            "net": "/~{RST}",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad13)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 9,
+            "from": 19,
+            "to": 20,
+            "airlineLu": 25400
+          },
+          {
+            "net": 10,
+            "from": 21,
+            "to": 22,
+            "airlineLu": 25400
+          },
+          {
+            "net": 11,
+            "from": 23,
+            "to": 24,
+            "airlineLu": 25400
+          },
+          {
+            "net": 12,
+            "from": 25,
+            "to": 26,
+            "airlineLu": 25400
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 16
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.914502697,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3915,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 12
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0033628570000000762,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 7
+        }
+      },
+      "ses_sha256": "bfb01f709e54b384c0c6a847d640b6a14caecc46fa6aedfe76cc95f1b83b015c",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        57,
+        58,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0015905969999985246,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad22)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad23)",
+            "incomplete": 1
+          },
+          {
+            "net": "+3V3",
+            "incomplete": 2
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 20,
+            "from": 43,
+            "to": 44,
+            "airlineLu": 25400
+          },
+          {
+            "net": 21,
+            "from": 45,
+            "to": 46,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 47,
+            "to": 48,
+            "airlineLu": 25400
+          },
+          {
+            "net": 22,
+            "from": 48,
+            "to": 57,
+            "airlineLu": 348397.7611868366
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 9
+        }
+      },
+      "ses_sha256": "129af53b9eba2de8c103b2f28287a101c3f58e01508e0c28cc8b5076a023578e",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.114638109000001,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4115,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 8
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0011953219999995782,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 2,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 5
+        }
+      },
+      "ses_sha256": "58e168e6086b76eff118ecfa95ff9a924fc65d83ffbc187ed46d1af8ca1a5318",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.05730219300000317,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 57,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 5
+        }
+      },
+      "ses_sha256": "feed2046f767daafdb68ecb5dc8db80cdee01e966ca60226f41232dd7c490aa0",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.028962078000000474,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 29,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 5
+        }
+      },
+      "ses_sha256": "fcd793a334c45d14b257f2a3f30dad51da99193e9d471ccec9f36c9c085adbb9",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0011037199999991572,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 7
+        }
+      },
+      "ses_sha256": "129af53b9eba2de8c103b2f28287a101c3f58e01508e0c28cc8b5076a023578e",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.001150117000001046,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "58e168e6086b76eff118ecfa95ff9a924fc65d83ffbc187ed46d1af8ca1a5318",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.05983226099999956,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 59,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "92470e5f7884cad4544193abf7d5a918a61799c9eb77cc86048e34678807e0cc",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.11554031000000031,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 4,
+          "barrels": 2
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 116,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "9c158560ac006251c7ce07f4a78e8358cacee225e5589ee4b4003415c033c10c",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.07184926700000142,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 72,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "8c04d9bc0c74f993301d60921bf4a21f0e7fbe837ca995638e1e32f0686b5fde",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.10035576600000058,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 4,
+          "barrels": 2
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 100,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "e3aee49327c556c04cc4632e743f6fe3ea13c506361ec3a94e1fd6bd862f9297",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        39,
+        40,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.033456066999999166,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 33,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "fcd793a334c45d14b257f2a3f30dad51da99193e9d471ccec9f36c9c085adbb9",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        41,
+        42,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0011661869999988995,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 2,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 1,
+        "perNet": [
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "129af53b9eba2de8c103b2f28287a101c3f58e01508e0c28cc8b5076a023578e",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.428392498999997,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4428,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad14)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 13,
+            "from": 27,
+            "to": 28,
+            "airlineLu": 25400
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 9
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.06786516800000027,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 67,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 7
+        }
+      },
+      "ses_sha256": "ad900978fec272d0f8aa40f2af35ae756e3382d2729110b64b7b53009cd64b43",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.9514312540000027,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3952,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad15)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 14,
+            "from": 29,
+            "to": 30,
+            "airlineLu": 25400
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 8
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.06325806699999885,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 63,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "f78dc7c95d65350dac079e6e3317144b8d043ed6a52bbe40eacf9b2351af4e18",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.4484368509999985,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4448,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad16)",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 15,
+            "from": 31,
+            "to": 32,
+            "airlineLu": 25400
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 7
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.0604738099999995,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 61,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 5
+        }
+      },
+      "ses_sha256": "1863bb75fd0f5f9e01fcf58fa0abbd0eb9d91b9d820f6f869bf3e0c3723a872c",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.0076040909999975,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4008,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad17)",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 16,
+            "from": 33,
+            "to": 34,
+            "airlineLu": 25400
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 6
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.06752823299999727,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 3,
+          "barrels": 1
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 67,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 4
+        }
+      },
+      "ses_sha256": "970c257052c44b062e92e7af66ca87ff4e41739670667da423e9cc4ef73a2c16",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.225592643999996,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4225,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT2",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 17,
+            "from": 35,
+            "to": 36,
+            "airlineLu": 25400
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 5
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        36,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.08446152299999812,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 4,
+          "barrels": 2
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 84,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 3
+        }
+      },
+      "ses_sha256": "cd5237b33744b9fd0af4d950b23fd4f4f5cfcbc2e66e0db4baf8acda4b1bdc4e",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 4.385514020000002,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 4386,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "/SPI_CS2",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 18,
+            "from": 37,
+            "to": 38,
+            "airlineLu": 25400
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 4
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        38,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.08181749999999738,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 6,
+          "barrels": 4
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 82,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "44677e9418aaf29045617944cfb503d3fb700c771a483b4236e2310a37471d19",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.6983238829999974,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3699,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          },
+          {
+            "net": "Net-(A1-Pad20)",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          },
+          {
+            "net": 19,
+            "from": 39,
+            "to": 40,
+            "airlineLu": 25400
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 3
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        40,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [],
+      "seconds": 0.08062553399999887,
+      "report": {
+        "passes": 1,
+        "attempted": 2,
+        "completed": 2,
+        "incompleteBefore": 2,
+        "incompleteAfter": 0,
+        "added": {
+          "tracks": 5,
+          "barrels": 3
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "complete",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 81,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 0
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 1
+        }
+      },
+      "ses_sha256": "6e3541cf63802778e909699fc797cc968e7be1cd110018f250b9ed744c6d76d4",
+      "reproduces": false
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.702745855000001,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3702,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.743696763,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3743,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.843765793999999,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3844,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.9310859009999986,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3931,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    }
+  ],
+  "finals": [
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.743696763,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3743,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.843765793999999,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3844,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    },
+    {
+      "ids": [
+        9,
+        10,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39,
+        62
+      ],
+      "before": [
+        {
+          "net": 4,
+          "from": 9,
+          "to": 10,
+          "airlineLu": 25400
+        },
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "after": [
+        {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        }
+      ],
+      "seconds": 3.9310859009999986,
+      "report": {
+        "passes": 4,
+        "attempted": 5,
+        "completed": 1,
+        "incompleteBefore": 2,
+        "incompleteAfter": 1,
+        "added": {
+          "tracks": 1,
+          "barrels": 0
+        },
+        "ripped": 0,
+        "violationsBefore": 0,
+        "violationsAdded": 0,
+        "timedOut": false,
+        "aborted": false,
+        "stoppedBy": "stagnant",
+        "effectiveSettings": {
+          "maxPasses": 100,
+          "maxStagnantPasses": 3,
+          "viaCost": 50,
+          "planeViaCost": 5,
+          "bendCost": 0,
+          "preferredDirectionCost": 1.5,
+          "startRipupCost": 100,
+          "ripupEnabled": true,
+          "fanoutEnabled": false,
+          "routerEnabled": true,
+          "optimizerEnabled": true,
+          "strictDrc": true,
+          "layers": {},
+          "viasAllowed": true,
+          "ignoreNetGroups": [
+            "isolation-ignore-0"
+          ],
+          "seed": 1,
+          "shoveEnabled": true,
+          "orderByDifficulty": true,
+          "detailedRouter": "off",
+          "globalPlan": "off",
+          "timeBudgetMs": 3600000,
+          "copperToEdgeClearanceUm": 500,
+          "holeClearanceUm": 250,
+          "neckWidthUm": 0,
+          "angleMode": "45"
+        },
+        "wallClockMs": 3931,
+        "perNet": [
+          {
+            "net": "GND",
+            "incomplete": 1
+          },
+          {
+            "net": "/INT1",
+            "incomplete": 1
+          }
+        ]
+      },
+      "drc": {
+        "violations": [],
+        "incompletes": [
+          {
+            "net": 1,
+            "from": 69,
+            "to": 70,
+            "airlineLu": 0
+          },
+          {
+            "net": 4,
+            "from": 10,
+            "to": 62,
+            "airlineLu": 343145.450210257
+          }
+        ],
+        "counts": {
+          "violations": 0,
+          "incompletes": 2
+        }
+      },
+      "ses_sha256": "4f26b1ec356e9ed774af2e3ad295a387ba07edd25f0c6c87455584c9f474215c",
+      "reproduces": true
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "scope": "one complete-board observer, three repeats; no timing or native safety claim",
+  "parity": true,
+  "repeats": 3,
+  "census": {
+    "calls": {
+      "pour": 42363705,
+      "pad": 6516040,
+      "barrel": 6422850,
+      "track": 18923959,
+      "rim": 13953,
+      "fence": 11075
+    },
+    "blocked": {
+      "pad": 2379042,
+      "track": 10431931,
+      "barrel": 3233659,
+      "rim": 13781,
+      "fence": 5783
+    },
+    "pairs": {
+      "pad:disk:hull:touch": 8292,
+      "pad:disk:hull:spacing": 4573651,
+      "pad:capsule:hull:spacing": 8465080,
+      "barrel:capsule:disk:spacing": 7988843,
+      "pad:disk:box:spacing": 392815,
+      "pad:capsule:box:spacing": 2122205,
+      "track:disk:capsule:spacing": 4635894,
+      "track:capsule:capsule:spacing": 14888532,
+      "barrel:disk:disk:spacing": 1841220,
+      "pad:disk:box:touch": 18393,
+      "rim:disk:capsule:spacing": 13953,
+      "fence:disk:hull:spacing": 4432,
+      "fence:capsule:hull:spacing": 6643
+    }
+  },
+  "total_candidate_calls": 74251582,
+  "total_convex_comparisons": 44959953
+}

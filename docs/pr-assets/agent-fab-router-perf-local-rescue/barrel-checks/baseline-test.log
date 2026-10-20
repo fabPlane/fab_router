@@ -1,0 +1,46 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-perf/scratch/cycle35/baseline/test/recovery-barrel.test.ts:
+23 |  const sessions=[];
+24 |  for(let repeat=0;repeat<3;repeat++){
+25 |   const l=fixture(),retained=JSON.stringify(l.barrels),settings=resolveSettings({},undefined,l.angleMode);
+26 |   expect(requiredConnections(l).map(c=>[c.from,c.to])).toEqual([[0,1]]);
+27 |   const result=recoverRemaining(l,settings,true);
+28 |   expect(result.targets.map(t=>t.status)).toEqual(['kept']);
+                                               ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "kept",
++   "unsupported-endpoints",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle35/baseline/test/recovery-barrel.test.ts:28:43)
+(fail) remaining recovery closes a pad-to-barrel stall without changing retained copper [3.87ms]
+38 |  expect(recoveryEndpoint(l,1,0)?.sheets).toEqual([0,1]);
+39 |  expect(recoveryEndpoint(l,1,1)).toBeUndefined();expect(recoveryEndpoint(l,999,0)).toBeUndefined();
+40 |  // Pad is on sheet 2, outside the barrel span despite form copper on sheet 2.
+41 |  l.pads=l.pads.map(p=>p.id===0?{...p,sheets:[2]}:p);
+42 |  const before=writeSes(l),result=recoverRemaining(l,resolveSettings({},undefined,l.angleMode),true);
+43 |  expect(result.targets.map(t=>t.status)).toEqual(['exhausted']);expect(writeSes(l)).toBe(before);
+                                              ^
+error: expect(received).toEqual(expected)
+
+  [
+-   "exhausted",
++   "unsupported-endpoints",
+  ]
+
+- Expected  - 1
++ Received  + 1
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle35/baseline/test/recovery-barrel.test.ts:43:42)
+(fail) barrel point anchors respect net identity and physical copper span [0.92ms]
+
+ 0 pass
+ 2 fail
+ 6 expect() calls
+Ran 2 tests across 1 file. [14.00ms]

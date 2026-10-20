@@ -1,0 +1,940 @@
+{
+  "scope": "Historical matching-pin enabled control versus fresh bounded quilt front-cache enabled sweep; unchanged63 expectations;one evaluation/case;different run dates;no causal timing/all-input nonregression claim",
+  "summary": {
+    "before": {
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0,
+      "total_s": 2420.616543397999
+    },
+    "after": {
+      "passed": 51,
+      "failed": 12,
+      "advisory": 14,
+      "stubbed": 0,
+      "total_s": 2467.1914190289995
+    }
+  },
+  "adverse": [
+    {
+      "id": "routing-slow-issue555-cnh-strict",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 300091.22134199995,
+      "after_ms": 300076.75702400017,
+      "measured_differences": {
+        "completed": {
+          "before": 207,
+          "after": 199
+        },
+        "passes": {
+          "before": 9,
+          "after": 8
+        },
+        "incomplete": {
+          "before": 18,
+          "after": 19
+        },
+        "barrels": {
+          "before": 185,
+          "after": 181
+        },
+        "addedBarrels": {
+          "before": 185,
+          "after": 181
+        },
+        "addedTracks": {
+          "before": 324,
+          "after": 316
+        },
+        "wallClockMs": {
+          "before": 300040,
+          "after": 300042
+        },
+        "traceLengthMm": {
+          "before": 4725.2444201444,
+          "after": 4657.9703453457505
+        },
+        "vias": {
+          "before": 185,
+          "after": 181
+        }
+      },
+      "mismatches": []
+    }
+  ],
+  "cases": [
+    {
+      "id": "parse-dialect-kicad-wiring-polygons",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 16.793878999999997,
+      "after_ms": 33.360071000000005,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-dialect-router-written-polyline-paths",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 32.103112,
+      "after_ms": 35.395059999999994,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-lex-issue187-brace-net-names",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 53.060906,
+      "after_ms": 51.666364,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue103-board-routed",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 26.98943700000001,
+      "after_ms": 28.19417899999999,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue178-keebmaker-sofle-choc",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 14.145911000000012,
+      "after_ms": 10.910425000000004,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue187-processor-z80",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 42.911355000000015,
+      "after_ms": 45.84172000000001,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue190-processor-z80",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 21.766278,
+      "after_ms": 32.85624100000004,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue191-processor-z80-processor-z80",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 40.93483100000003,
+      "after_ms": 39.21249799999998,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue690-kit-dev-coldfire-xilinx-5213",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 14.416851000000008,
+      "after_ms": 19.267434999999978,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue756-tomu-fpga7",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 5.479492999999991,
+      "after_ms": 8.796779000000015,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue756-tomu-fpga8",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 6.009171000000038,
+      "after_ms": 7.319253000000003,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "parse-summary-issue756-tomu-fpga9",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 5.402548999999965,
+      "after_ms": 7.338158000000021,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-cm5-carrier-complete",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 600087.085803,
+      "after_ms": 600065.765191,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 600044,
+          "after": 600031
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 2, got 41"
+      ]
+    },
+    {
+      "id": "routing-slow-cm5-carrier-floor",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 120058.78743500006,
+      "after_ms": 120047.81576100003,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 120031,
+          "after": 120023
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-maxpasses2-maxitems20",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 96.34838800004218,
+      "after_ms": 87.43714900000487,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 89,
+          "after": 81
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-maxpasses3-maxitems50",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 257.2638380000135,
+      "after_ms": 205.22453000000678,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 250,
+          "after": 198
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 15414.587539000087,
+      "after_ms": 15106.004138999968,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 15403,
+          "after": 15095
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 56, got 70"
+      ]
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1-maxitems111",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 6262.634238000028,
+      "after_ms": 6003.5254929999355,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 6254,
+          "after": 5995
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1-maxitems151",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 5822.580244999961,
+      "after_ms": 5406.8834599999245,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 5813,
+          "after": 5399
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p1-maxitems61",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 546.3595309999073,
+      "after_ms": 383.20756999996956,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 537,
+          "after": 375
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm01-p2",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 67382.90422200004,
+      "after_ms": 63829.81854300003,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 67373,
+          "after": 63818
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 28, got 70"
+      ]
+    },
+    {
+      "id": "routing-slow-dac2020-bm05-maxpasses20",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 121131.14624600008,
+      "after_ms": 117007.27639400004,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 121123,
+          "after": 116998
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm05-p1",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 3770.0226350000594,
+      "after_ms": 4288.878453999991,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 3765,
+          "after": 4283
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm05-p1-maxitems2",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 6.971795000019483,
+      "after_ms": 8.342562000034377,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm05-p1-maxitems5",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 4.879065999994054,
+      "after_ms": 7.184718000004068,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 3,
+          "after": 4
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm06-fanout-route",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 3217.2116649999516,
+      "after_ms": 3597.4840489999624,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 3212,
+          "after": 3591
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-dac2020-bm07-complete",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 9886.034245999996,
+      "after_ms": 10734.737630999996,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 9880,
+          "after": 10728
+        }
+      },
+      "mismatches": [
+        "incomplete: expected exactly 0, got 4"
+      ]
+    },
+    {
+      "id": "routing-slow-dac2020-bm10-fanout-route",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 120042.97722400003,
+      "after_ms": 120044.16881300008,
+      "measured_differences": {},
+      "mismatches": [
+        "incomplete: expected exactly 0, got 27"
+      ]
+    },
+    {
+      "id": "routing-slow-dac2020-bm11-fanout-only",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 61.29923400003463,
+      "after_ms": 67.77171399979852,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 53,
+          "after": 57
+        }
+      },
+      "mismatches": [
+        "addedBarrels: expected \u2265 154, got 145"
+      ]
+    },
+    {
+      "id": "routing-slow-issue026-j2-novia",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 4696.527202999918,
+      "after_ms": 5077.51689999993,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 4694,
+          "after": 5076
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 6, got 9"
+      ]
+    },
+    {
+      "id": "routing-slow-issue026-j2-p1-optimizer-limits",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 1594.1399369998835,
+      "after_ms": 1518.8637289998587,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 1592,
+          "after": 1516
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue034-green14seg-default",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 30789.448375999928,
+      "after_ms": 33778.920025000116,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 30782,
+          "after": 33772
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 1, got 92"
+      ]
+    },
+    {
+      "id": "routing-slow-issue039-bug-design-default",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 60031.038589,
+      "after_ms": 60028.82817400014,
+      "measured_differences": {
+        "completed": {
+          "before": 334,
+          "after": 316
+        },
+        "wallClockMs": {
+          "before": 60020,
+          "after": 60017
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue066-gp8b-4layer",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 228.90322800003923,
+      "after_ms": 210.15753599978052,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 192,
+          "after": 171
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue159-setonix-default",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 198.78169299988076,
+      "after_ms": 194.65165699995123,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 197,
+          "after": 192
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue229-display-anyangle-p1",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 531.4356910001952,
+      "after_ms": 534.7837620000355,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 524,
+          "after": 528
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue229-display-default",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 4500.678369000088,
+      "after_ms": 5049.499608000042,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 4492,
+          "after": 5041
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue229-display-p1-optimizer",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 820.4327950000297,
+      "after_ms": 805.7217679999303,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 813,
+          "after": 798
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue230-cnh-plane-layers",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 300092.2561690002,
+      "after_ms": 300085.1037639999,
+      "measured_differences": {
+        "completed": {
+          "before": 207,
+          "after": 206
+        },
+        "incomplete": {
+          "before": 18,
+          "after": 17
+        },
+        "addedTracks": {
+          "before": 324,
+          "after": 325
+        },
+        "traceLengthMm": {
+          "before": 4725.2444201444,
+          "after": 4658.291082960436
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 5, got 17"
+      ]
+    },
+    {
+      "id": "routing-slow-issue269-caniot-tiny-arm-planes",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 32584.21446100017,
+      "after_ms": 41172.172244000016,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 32570,
+          "after": 41159
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue269-z10-module-planes",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 7056.556064999895,
+      "after_ms": 7883.665787999984,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 7017,
+          "after": 7834
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue289-fht8086-6layer",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 190.77003900008276,
+      "after_ms": 265.28050599992275,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 135,
+          "after": 197
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue420-contribution-p1-maxitems100",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 5624.225388000021,
+      "after_ms": 6701.070167999947,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 5583,
+          "after": 6647
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue420-contribution-p1-maxitems150-optimizer1",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 5580.428121000063,
+      "after_ms": 6464.980122999987,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 5540,
+          "after": 6416
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue555-bbd-mars64-default",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 117526.6455349999,
+      "after_ms": 153013.7715289998,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 117522,
+          "after": 153007
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 7, got 58"
+      ]
+    },
+    {
+      "id": "routing-slow-issue555-bbd-mars64-timebudget",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 2011.9380600000732,
+      "after_ms": 2011.5464410001878,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue555-cnh-maxpasses40",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 180104.43307299982,
+      "after_ms": 180080.97593800002,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 180049,
+          "after": 180042
+        }
+      },
+      "mismatches": [
+        "incomplete: expected \u2264 6, got 20"
+      ]
+    },
+    {
+      "id": "routing-slow-issue555-cnh-strict",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 300091.22134199995,
+      "after_ms": 300076.75702400017,
+      "measured_differences": {
+        "completed": {
+          "before": 207,
+          "after": 199
+        },
+        "passes": {
+          "before": 9,
+          "after": 8
+        },
+        "incomplete": {
+          "before": 18,
+          "after": 19
+        },
+        "barrels": {
+          "before": 185,
+          "after": 181
+        },
+        "addedBarrels": {
+          "before": 185,
+          "after": 181
+        },
+        "addedTracks": {
+          "before": 324,
+          "after": 316
+        },
+        "wallClockMs": {
+          "before": 300040,
+          "after": 300042
+        },
+        "traceLengthMm": {
+          "before": 4725.2444201444,
+          "after": 4657.9703453457505
+        },
+        "vias": {
+          "before": 185,
+          "after": 181
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue558-dev-board-edge650",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 31035.95246199984,
+      "after_ms": 31351.770471000113,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 31028,
+          "after": 31344
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue558-dev-board-fanout-limits",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 6.9322289996780455,
+      "after_ms": 6.668333999812603,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 2,
+          "after": 3
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue558-dev-board-fanout-only",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 33.34900899976492,
+      "after_ms": 24.911804999690503,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 28,
+          "after": 21
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue558-dev-board-fanout-route",
+      "before_pass": false,
+      "after_pass": false,
+      "before_ms": 19384.553743999917,
+      "after_ms": 21852.905381000135,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 19378,
+          "after": 21846
+        }
+      },
+      "mismatches": [
+        "incomplete: expected exactly 0, got 7"
+      ]
+    },
+    {
+      "id": "routing-slow-issue676-ch32v-maxpasses3",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 6.900688999798149,
+      "after_ms": 5.096309999935329,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 4,
+          "after": 2
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue684-pcb1-maxpasses3-maxitems50",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 577.2790979999118,
+      "after_ms": 680.1187950000167,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 573,
+          "after": 673
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "routing-slow-issue690-kit-dev-coldfire-xilinx-5213-p1-maxitems50",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 200.81416599964723,
+      "after_ms": 240.69086199998856,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 126,
+          "after": 154
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "ses-apply-issue191-processor-z80-processor",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 104.11760299978778,
+      "after_ms": 113.63179100025445,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "ses-roundtrip-issue103-board-routed",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 51.08583700004965,
+      "after_ms": 57.852019999641925,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "ses-roundtrip-issue187-processor-z80",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 59.017188999801874,
+      "after_ms": 69.1781370001845,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "ses-roundtrip-issue191-processor-z80-processor-z80",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 52.29098999965936,
+      "after_ms": 59.22142199985683,
+      "measured_differences": {},
+      "mismatches": []
+    },
+    {
+      "id": "srj-j802-2layer",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 60033.49226500001,
+      "after_ms": 60042.20955999987,
+      "measured_differences": {
+        "passes": {
+          "before": 3,
+          "after": 2
+        },
+        "wallClockMs": {
+          "before": 60026,
+          "after": 60033
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "srj-j802-six-layer",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 60170.37629600009,
+      "after_ms": 60173.690482000355,
+      "measured_differences": {
+        "passes": {
+          "before": 6,
+          "after": 5
+        },
+        "wallClockMs": {
+          "before": 60130,
+          "after": 60142
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "srj-j802-six-layer-v2",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 60165.55187600013,
+      "after_ms": 60163.57196300011,
+      "measured_differences": {
+        "passes": {
+          "before": 6,
+          "after": 5
+        },
+        "wallClockMs": {
+          "before": 60134,
+          "after": 60131
+        }
+      },
+      "mismatches": []
+    },
+    {
+      "id": "srj-j802-six-layer-v3",
+      "before_pass": true,
+      "after_pass": true,
+      "before_ms": 60151.64868800016,
+      "after_ms": 60183.950658000074,
+      "measured_differences": {
+        "wallClockMs": {
+          "before": 60123,
+          "after": 60147
+        }
+      },
+      "mismatches": []
+    }
+  ]
+}

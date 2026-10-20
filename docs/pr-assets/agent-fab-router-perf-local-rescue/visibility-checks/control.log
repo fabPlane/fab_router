@@ -1,0 +1,11 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/visibility-mutant.test.ts:
+(pass) visibility search discovers legal obstacle detour only after local region growth [10.47ms]
+(pass) visibility budget exhaustion and bounded graph miss preserve session and live index [0.73ms]
+(pass) visibility search discovers an original-context stall closure without a recorded path [11066.75ms]
+
+ 3 pass
+ 0 fail
+ 66 expect() calls
+Ran 3 tests across 1 file. [11.09s]

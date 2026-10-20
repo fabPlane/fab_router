@@ -1,0 +1,1328 @@
+{
+  "repeats": 3,
+  "before": {
+    "case": "paperino-hw-paperino-shield-j4",
+    "dsnSha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+    "inputSesSha256": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+    "copperBefore": {
+      "vias": 1,
+      "lengthLu": 2817918.923163879,
+      "tracks": 29
+    },
+    "copperAfter": {
+      "vias": 1,
+      "lengthLu": 2817918.923163879,
+      "tracks": 29
+    },
+    "before": 4,
+    "after": 4,
+    "changed": false,
+    "finalSesSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366",
+    "rewind": true,
+    "attempts": [
+      {
+        "target": {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        },
+        "result": {
+          "status": "exhausted",
+          "work": 17747,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 4,
+                "from": 10,
+                "to": 62,
+                "airlineLu": 343145.450210257
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 8767,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -942500,
+                      "x1": 1402700,
+                      "y1": -778100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -972500,
+                      "x1": 1432700,
+                      "y1": -748100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -1002500,
+                      "x1": 1462700,
+                      "y1": -718100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1062500,
+                      "x1": 1522700,
+                      "y1": -658100
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 75,
+                  "edges": 74
+                },
+                {
+                  "found": false,
+                  "nodes": 131,
+                  "edges": 889
+                },
+                {
+                  "found": false,
+                  "nodes": 180,
+                  "edges": 1575
+                },
+                {
+                  "found": false,
+                  "nodes": 285,
+                  "edges": 4424
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 4,
+                "from": 9,
+                "to": 62,
+                "distance": 365643.1593781019
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 8917,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -942500,
+                      "x1": 1402700,
+                      "y1": -778100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -972500,
+                      "x1": 1432700,
+                      "y1": -748100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -1002500,
+                      "x1": 1462700,
+                      "y1": -718100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1062500,
+                      "x1": 1522700,
+                      "y1": -658100
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 106,
+                  "edges": 105
+                },
+                {
+                  "found": false,
+                  "nodes": 148,
+                  "edges": 1008
+                },
+                {
+                  "found": false,
+                  "nodes": 180,
+                  "edges": 1575
+                },
+                {
+                  "found": false,
+                  "nodes": 285,
+                  "edges": 4424
+                }
+              ]
+            }
+          ],
+          "seconds": 0.112575753
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 4,
+        "exact": 0,
+        "sessionSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366"
+      },
+      {
+        "target": {
+          "net": 9,
+          "from": 20,
+          "to": 66,
+          "airlineLu": 435139.42593150534
+        },
+        "result": {
+          "status": "exhausted",
+          "work": 83159,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 9,
+                "from": 20,
+                "to": 66,
+                "airlineLu": 435139.42593150534
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 40585,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -905100,
+                      "x1": 1478900,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -935100,
+                      "x1": 1508900,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -965100,
+                      "x1": 1538900,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1025100,
+                      "x1": 1598900,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 113,
+                  "edges": 112
+                },
+                {
+                  "found": false,
+                  "nodes": 216,
+                  "edges": 7644
+                },
+                {
+                  "found": false,
+                  "nodes": 315,
+                  "edges": 14739
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 9,
+                "from": 19,
+                "to": 66,
+                "distance": 457343.8531345972
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 42511,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -905100,
+                      "x1": 1478900,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -935100,
+                      "x1": 1508900,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -965100,
+                      "x1": 1538900,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1025100,
+                      "x1": 1598900,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 152,
+                  "edges": 151
+                },
+                {
+                  "found": false,
+                  "nodes": 239,
+                  "edges": 9526
+                },
+                {
+                  "found": false,
+                  "nodes": 315,
+                  "edges": 14739
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                }
+              ]
+            }
+          ],
+          "seconds": 0.39499044
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 4,
+        "exact": 0,
+        "sessionSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366"
+      },
+      {
+        "target": {
+          "net": 10,
+          "from": 22,
+          "to": 68,
+          "airlineLu": 491852.8641778962
+        },
+        "result": {
+          "status": "exhausted",
+          "work": 90626,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 10,
+                "from": 22,
+                "to": 68,
+                "airlineLu": 491852.8641778962
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 43942,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -930500,
+                      "x1": 1529700,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -960500,
+                      "x1": 1559700,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -990500,
+                      "x1": 1589700,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1050500,
+                      "x1": 1649700,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 127,
+                  "edges": 126
+                },
+                {
+                  "found": false,
+                  "nodes": 244,
+                  "edges": 9546
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 10,
+                "from": 21,
+                "to": 68,
+                "distance": 514117.65190469776
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 46621,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -930500,
+                      "x1": 1529700,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -960500,
+                      "x1": 1559700,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -990500,
+                      "x1": 1589700,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1050500,
+                      "x1": 1649700,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 170,
+                  "edges": 169
+                },
+                {
+                  "found": false,
+                  "nodes": 269,
+                  "edges": 12175
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 16173
+                }
+              ]
+            }
+          ],
+          "seconds": 0.39477763800000004
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 4,
+        "exact": 0,
+        "sessionSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366"
+      },
+      {
+        "target": {
+          "net": 11,
+          "from": 24,
+          "to": 67,
+          "airlineLu": 483477.6106501727
+        },
+        "result": {
+          "status": "exhausted",
+          "work": 88414,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 11,
+                "from": 24,
+                "to": 67,
+                "airlineLu": 483477.6106501727
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 42656,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -955900,
+                      "x1": 1504300,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -985900,
+                      "x1": 1534300,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -1015900,
+                      "x1": 1564300,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1075900,
+                      "x1": 1624300,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 147,
+                  "edges": 146
+                },
+                {
+                  "found": false,
+                  "nodes": 257,
+                  "edges": 9891
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 15351
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 15351
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 11,
+                "from": 23,
+                "to": 67,
+                "distance": 504834.6263876914
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 45695,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -955900,
+                      "x1": 1504300,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -985900,
+                      "x1": 1534300,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -1015900,
+                      "x1": 1564300,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1075900,
+                      "x1": 1624300,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 194,
+                  "edges": 193
+                },
+                {
+                  "found": false,
+                  "nodes": 283,
+                  "edges": 12875
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 15351
+                },
+                {
+                  "found": false,
+                  "nodes": 327,
+                  "edges": 15351
+                }
+              ]
+            }
+          ],
+          "seconds": 0.32686155299999997
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 4,
+        "exact": 0,
+        "sessionSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366"
+      }
+    ]
+  },
+  "after": {
+    "case": "paperino-hw-paperino-shield-j4",
+    "dsnSha256": "5a91aed89ceebc6a40ed3d222afd7f6e1660d62209023d10c79c2efeff15d8c1",
+    "inputSesSha256": "7d890943b4930a31396d4f22730f3f7691ad4f922b34ba6776ff7acb7c38efd5",
+    "copperBefore": {
+      "vias": 1,
+      "lengthLu": 2817918.923163879,
+      "tracks": 29
+    },
+    "copperAfter": {
+      "vias": 1,
+      "lengthLu": 3554564.8365808516,
+      "tracks": 30
+    },
+    "before": 4,
+    "after": 3,
+    "changed": true,
+    "finalSesSha256": "07f039edd0dafc62810c8dd5d0f6fd5ecdb8af388c48f3ab0d0d53f2b5baf6ab",
+    "rewind": true,
+    "attempts": [
+      {
+        "target": {
+          "net": 4,
+          "from": 10,
+          "to": 62,
+          "airlineLu": 343145.450210257
+        },
+        "result": {
+          "status": "exhausted",
+          "work": 17836,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 4,
+                "from": 10,
+                "to": 62,
+                "airlineLu": 343145.450210257
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 8809,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -942500,
+                      "x1": 1402700,
+                      "y1": -778100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -972500,
+                      "x1": 1432700,
+                      "y1": -748100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -1002500,
+                      "x1": 1462700,
+                      "y1": -718100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1062500,
+                      "x1": 1522700,
+                      "y1": -658100
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 68,
+                  "edges": 67
+                },
+                {
+                  "found": false,
+                  "nodes": 138,
+                  "edges": 938
+                },
+                {
+                  "found": false,
+                  "nodes": 180,
+                  "edges": 1575
+                },
+                {
+                  "found": false,
+                  "nodes": 285,
+                  "edges": 4424
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 4,
+                "from": 9,
+                "to": 62,
+                "distance": 365643.1593781019
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 8964,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -942500,
+                      "x1": 1402700,
+                      "y1": -778100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -972500,
+                      "x1": 1432700,
+                      "y1": -748100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -1002500,
+                      "x1": 1462700,
+                      "y1": -718100
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1062500,
+                      "x1": 1522700,
+                      "y1": -658100
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 97,
+                  "edges": 96
+                },
+                {
+                  "found": false,
+                  "nodes": 156,
+                  "edges": 1064
+                },
+                {
+                  "found": false,
+                  "nodes": 180,
+                  "edges": 1575
+                },
+                {
+                  "found": false,
+                  "nodes": 285,
+                  "edges": 4424
+                }
+              ]
+            }
+          ],
+          "seconds": 0.09273653200000001
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 4,
+        "exact": 0,
+        "sessionSha256": "3b0790b3b3061b3442cffd186743763c4781d90930d44077242486ddebc79366"
+      },
+      {
+        "target": {
+          "net": 9,
+          "from": 20,
+          "to": 66,
+          "airlineLu": 435139.42593150534
+        },
+        "result": {
+          "status": "kept",
+          "work": 25806,
+          "enumeration": 0,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 9,
+                "from": 20,
+                "to": 66,
+                "airlineLu": 435139.42593150534
+              },
+              "result": {
+                "status": "kept",
+                "expansions": 25806,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -905100,
+                      "x1": 1478900,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -935100,
+                      "x1": 1508900,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -965100,
+                      "x1": 1538900,
+                      "y1": -628500
+                    },
+                    "outcome": "kept"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 108,
+                  "edges": 107
+                },
+                {
+                  "found": false,
+                  "nodes": 209,
+                  "edges": 7201
+                },
+                {
+                  "found": true,
+                  "nodes": 315,
+                  "edges": 17070
+                }
+              ]
+            }
+          ],
+          "seconds": 0.10279173799999998
+        },
+        "remainingBefore": 4,
+        "remainingAfter": 3,
+        "exact": 0,
+        "sessionSha256": "07f039edd0dafc62810c8dd5d0f6fd5ecdb8af388c48f3ab0d0d53f2b5baf6ab"
+      },
+      {
+        "target": {
+          "net": 10,
+          "from": 22,
+          "to": 68,
+          "airlineLu": 491852.8641778962
+        },
+        "result": {
+          "status": "budget",
+          "work": 100000,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 10,
+                "from": 22,
+                "to": 68,
+                "airlineLu": 491852.8641778962
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 50779,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -930500,
+                      "x1": 1529700,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -960500,
+                      "x1": 1559700,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -990500,
+                      "x1": 1589700,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1050500,
+                      "x1": 1649700,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 126,
+                  "edges": 125
+                },
+                {
+                  "found": false,
+                  "nodes": 263,
+                  "edges": 10143
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 19180
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 19180
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 10,
+                "from": 21,
+                "to": 68,
+                "distance": 514117.65190469776
+              },
+              "result": {
+                "status": "budget",
+                "expansions": 49158,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -930500,
+                      "x1": 1529700,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -960500,
+                      "x1": 1559700,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -990500,
+                      "x1": 1589700,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1050500,
+                      "x1": 1649700,
+                      "y1": -568500
+                    },
+                    "outcome": "budget"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 171,
+                  "edges": 170
+                },
+                {
+                  "found": false,
+                  "nodes": 301,
+                  "edges": 14025
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 19180
+                }
+              ]
+            }
+          ],
+          "seconds": 0.478606948
+        },
+        "remainingBefore": 3,
+        "remainingAfter": 3,
+        "exact": 0,
+        "sessionSha256": "07f039edd0dafc62810c8dd5d0f6fd5ecdb8af388c48f3ab0d0d53f2b5baf6ab"
+      },
+      {
+        "target": {
+          "net": 11,
+          "from": 24,
+          "to": 67,
+          "airlineLu": 483477.6106501727
+        },
+        "result": {
+          "status": "budget",
+          "work": 100000,
+          "enumeration": 63,
+          "attempts": [
+            {
+              "anchor": {
+                "net": 11,
+                "from": 24,
+                "to": 67,
+                "airlineLu": 483477.6106501727
+              },
+              "result": {
+                "status": "exhausted",
+                "expansions": 49208,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1101500,
+                      "y0": -955900,
+                      "x1": 1504300,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1071500,
+                      "y0": -985900,
+                      "x1": 1534300,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1041500,
+                      "y0": -1015900,
+                      "x1": 1564300,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 981500,
+                      "y0": -1075900,
+                      "x1": 1624300,
+                      "y1": -568500
+                    },
+                    "outcome": "open"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 146,
+                  "edges": 145
+                },
+                {
+                  "found": false,
+                  "nodes": 276,
+                  "edges": 10455
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 18232
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 18232
+                }
+              ]
+            },
+            {
+              "anchor": {
+                "net": 11,
+                "from": 23,
+                "to": 67,
+                "distance": 504834.6263876914
+              },
+              "result": {
+                "status": "budget",
+                "expansions": 50729,
+                "trials": [
+                  {
+                    "margin": 0,
+                    "region": {
+                      "x0": 1076100,
+                      "y0": -955900,
+                      "x1": 1504300,
+                      "y1": -688500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 4,
+                    "region": {
+                      "x0": 1046100,
+                      "y0": -985900,
+                      "x1": 1534300,
+                      "y1": -658500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 8,
+                    "region": {
+                      "x0": 1016100,
+                      "y0": -1015900,
+                      "x1": 1564300,
+                      "y1": -628500
+                    },
+                    "outcome": "open"
+                  },
+                  {
+                    "margin": 16,
+                    "region": {
+                      "x0": 956100,
+                      "y0": -1075900,
+                      "x1": 1624300,
+                      "y1": -568500
+                    },
+                    "outcome": "budget"
+                  }
+                ]
+              },
+              "proposals": [
+                {
+                  "found": false,
+                  "nodes": 195,
+                  "edges": 194
+                },
+                {
+                  "found": false,
+                  "nodes": 315,
+                  "edges": 14739
+                },
+                {
+                  "found": false,
+                  "nodes": 371,
+                  "edges": 18232
+                }
+              ]
+            }
+          ],
+          "seconds": 0.49597381499999993
+        },
+        "remainingBefore": 3,
+        "remainingAfter": 3,
+        "exact": 0,
+        "sessionSha256": "07f039edd0dafc62810c8dd5d0f6fd5ecdb8af388c48f3ab0d0d53f2b5baf6ab"
+      }
+    ]
+  },
+  "mutationControls": [
+    "missing-repeat",
+    "overbudget",
+    "false-exact",
+    "false-closure"
+  ]
+}
