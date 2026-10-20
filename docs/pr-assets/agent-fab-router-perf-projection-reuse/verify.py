@@ -6,7 +6,10 @@ def require(ok, message):
  if not ok:raise ValueError(message)
 def validate(p, check_manifest=True):
  if check_manifest:
-  for name,h in json.loads((p/'manifest.json').read_text()).items():
+  manifest=json.loads((p/'manifest.json').read_text())
+  members={str(f.relative_to(p))for f in p.rglob('*')if f.is_file()and f!=p/'manifest.json'and '__pycache__'not in f.relative_to(p).parts}
+  require(isinstance(manifest,dict)and set(manifest)==members,'manifest membership mismatch')
+  for name,h in manifest.items():
    require(hashlib.sha256((p/name).read_bytes()).hexdigest()==h,'checksum '+name)
  rows=json.loads((p/'timings.json').read_text())
  schedule=[(c,i,v)for c in CASES for i in range(3)for v in (['control','candidate']if i%2==0 else ['candidate','control'])]

@@ -12,6 +12,18 @@ class VerificationTests(unittest.TestCase):
  def test_checksum(self):
   with (self.p/'probe.log').open('a')as f:f.write('corrupt')
   with self.assertRaisesRegex(ValueError,'checksum'):verify.validate(self.p)
+ def test_omitted_manifest_member(self):
+  self.rewrite('manifest.json',lambda j:j.pop('probe.log'))
+  with self.assertRaisesRegex(ValueError,'manifest membership'):verify.validate(self.p)
+ def test_empty_manifest(self):
+  self.rewrite('manifest.json',lambda j:j.clear())
+  with self.assertRaisesRegex(ValueError,'manifest membership'):verify.validate(self.p)
+ def test_missing_file(self):
+  (self.p/'probe.log').unlink()
+  with self.assertRaisesRegex(ValueError,'manifest membership'):verify.validate(self.p)
+ def test_unlisted_file(self):
+  (self.p/'unlisted.txt').write_text('unlisted')
+  with self.assertRaisesRegex(ValueError,'manifest membership'):verify.validate(self.p)
  def test_schedule(self):
   self.rewrite('timings.json',lambda j:j.reverse())
   with self.assertRaisesRegex(ValueError,'schedule'):verify.validate(self.p,False)
