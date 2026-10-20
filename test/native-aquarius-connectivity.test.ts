@@ -250,3 +250,38 @@ test.skipIf(!hasNative)("reconnecting U1.55 still rejects its newly exposed ther
     expect(checked.repair?.newErrors[0]?.items.some(item => item.uuid === "57ce983e-ec4e-48a5-9547-b23514d0d6a4")).toBe(true);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 120_000);
+
+// One generated track is sufficient; deleting it is a diagnostic control only.
+test.skipIf(!hasNative)("one short generated power track starves U1.55 without splitting source ground", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-aquarius-single-power-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/input.kicad_pcb.gz`));
+    const text = source.toString(), end = text.lastIndexOf(")");
+    const added = (await readFile(`${fixture}/thermal55-added.sexpr`, "utf8")).trim();
+    const full = gunzipSync(await readFile(`${fixture}/full-added.sexpr.gz`)).toString().trim().split("\n");
+    expect(full.filter(line => line === added)).toHaveLength(1);
+    expect(added.split("\n")).toHaveLength(1);
+    const input = join(root, "input.kicad_pcb"), candidate = join(root, "candidate.kicad_pcb");
+    await writeFile(input, source);
+    await writeFile(candidate, `${text.slice(0, end)}\n${added}\n${text.slice(end)}`);
+    const submitted = await readFile(candidate);
+    for (const name of ["input", "candidate"]) for (const ext of [".kicad_pro", ".kicad_dru"])
+      await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+    const checked = await checkNativeBoards(input, candidate);
+    expect(checked.newErrors.map(error => error.type)).toEqual(["starved_thermal"]);
+    expect(checked.newErrors[0]?.items.some(item => item.uuid === "57ce983e-ec4e-48a5-9547-b23514d0d6a4")).toBe(true);
+    expect(checked.nativeCopperChecks).toEqual([true, true]);
+    expect(checked.lostTerminalPairs).toBe(0);
+    expect(checked.opensBefore).toBe(110);
+    expect(checked.opensAfter).toBe(111);
+    expect(checked.accepted).toBe(false);
+    const control = await checkNativeBoards(input, input);
+    expect(control.newErrors).toEqual([]);
+    expect(control.lostTerminalPairs).toBe(0);
+    expect(control.opensAfter).toBe(110);
+    expect(control.accepted).toBe(true);
+    expect(await readFile(input)).toEqual(source);
+    expect(await readFile(candidate)).toEqual(submitted);
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 120_000);

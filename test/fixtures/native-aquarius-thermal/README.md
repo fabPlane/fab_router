@@ -111,3 +111,18 @@ reduces opens from 14 to 13. It exposes a seventh `starved_thermal` at U1.55
 (actual one spoke, required two); the relative repair gate must reject it
 despite unchanged copper ownership, preserved current pairs and no added
 clearance errors. This is a rejected diagnostic, not an automatic repair.
+
+`thermal55-added.sexpr` is a one-segment reduction of the generated power
+copper. On the unchanged original source board it produces exactly one
+`starved_thermal` at U1.55, 111 opens and zero lost source terminal pairs.
+Deleting this sole added segment returns the clean source (110 opens).
+Thus the thermal failure does not require losing source ground connectivity.
+The segment is only 0.6518 mm long and is about 1.201 mm from the pad centre;
+nearest-track intuition alone misses its effect on the surrounding pour.
+This is minimal in added-item count, not a minimized source board or a repair.
+In the complete 466-item context, deleting this segment alone does not clear
+U1.55: other generated copper provides an alternative obstruction. Six existing
+width-scaled detours of this segment in the complete 63-item power net also
+retain both U1.53/U1.55 thermal errors (95 opens). Do not infer a legal repair
+from the one-item deletion control. Cycle 216 retains the complete reduction
+trace, full-context controls and search outcome.

@@ -120,3 +120,38 @@ test("short axial proposals never displace a full 304-proposal prefix", async ()
     expect(rows.some(r=>r.label[0]==="short-axial")).toBe(false);
   } finally {await rm(root,{recursive:true,force:true});}
 });
+
+test("legacy drawing identity duplicates do not abort track proposals, while segment collisions still reject", async () => {
+  const root = await mkdtemp(join(tmpdir(), "thermal-drawing-identities-"));
+  const drawing = '(gr_circle (center 9 9) (end 10 9) (uuid "legacy"))';
+  const segment = '(segment (start 0 0) (end 1 1) (width .25) (layer "F.Cu") (net 1) (uuid "generated"))';
+  const board = (items: string) => `(kicad_pcb ${items} (footprint (pad "1" smd circle (uuid "pad"))))`;
+  try {
+    await writeFile(join(root, "report"), JSON.stringify({newErrors:[{type:"starved_thermal",items:[{uuid:"pad",pos:{x:0,y:0}}]}]}));
+    for (const [index, source, current, accepted] of [
+      [0, drawing.repeat(3), drawing.repeat(3) + segment, true],
+      [1, "", segment.repeat(2), false],
+      [2, segment.repeat(2), segment, false],
+      [3, "", segment + drawing.replace('"legacy"', '"generated"'), false],
+      [4, segment + drawing.replace('"legacy"', '"generated"'), segment, false],
+      [5, "", '(via (at 0 0) (size .6) (drill .3) (layers "F.Cu" "B.Cu") (net 1) (uuid "legacy"))'.repeat(2), false],
+    ] as const) {
+      await writeFile(join(root, "source"), board(source));
+      await writeFile(join(root, "current"), board(current));
+      const out = join(root, `out${index}`);
+      const result = Bun.spawnSync(["python3", "tools/native-thermal-proposals.py", "--source", join(root,"source"), "--current", join(root,"current"), "--report", join(root,"report"), "--out", out]);
+      expect(result.exitCode === 0).toBe(accepted);
+      if (accepted) {
+        const rows = JSON.parse(await readFile(join(out,"manifest.json"),"utf8")) as {name:string}[];
+        expect(rows).toHaveLength(6);
+        for (const row of rows) {
+          const candidate = await readFile(join(out,row.name),"utf8");
+          expect(candidate.split(drawing)).toHaveLength(4);
+        }
+      } else {
+        expect(result.stderr.toString()).toContain("Ambiguous native item identities");
+        expect(await Bun.file(join(out,"manifest.json")).exists()).toBe(false);
+      }
+    }
+  } finally { await rm(root, {recursive:true,force:true}); }
+});

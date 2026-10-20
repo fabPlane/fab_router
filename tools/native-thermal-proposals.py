@@ -215,10 +215,19 @@ def main():
     x=p.parse_args()
     source=parse(x.source.read_text());nodes=parse(x.current.read_text())
     assert source[0]==nodes[0]=='kicad_pcb'
-    ids=[uid(n) for n in source if isinstance(n,list) and uid(n)]
-    current_ids=[uid(n) for n in nodes if isinstance(n,list) and uid(n)]
-    if len(ids)!=len(set(ids)) or len(current_ids)!=len(set(current_ids)):
-        raise ValueError('Ambiguous native item identities')
+    # Legacy drawings can share UUIDs; they are never selected or rewritten.
+    # Still reject any collision involving copper, footprints, zones or an
+    # unknown item: segment selection/removal must remain unambiguous.
+    drawings = {'gr_line', 'gr_circle', 'gr_arc', 'gr_rect', 'gr_poly',
+                'gr_text', 'gr_text_box', 'gr_curve'}
+    for board in (source, nodes):
+        identities = {}
+        for item in board:
+            if isinstance(item, list) and uid(item):
+                identities.setdefault(uid(item), []).append(item[0])
+        if any(len(kinds) > 1 and not all(kind in drawings for kind in kinds)
+               for kinds in identities.values()):
+            raise ValueError('Ambiguous native item identities')
     protected=protected_ids(source,nodes)
     errors=json.loads(x.report.read_text())['newErrors']
     x.out.mkdir(exist_ok=False)
