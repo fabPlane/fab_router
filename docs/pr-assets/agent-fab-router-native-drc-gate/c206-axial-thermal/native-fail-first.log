@@ -1,0 +1,38 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-thermal.test.ts:
+(pass) one horizontal signal segment starves a preserved ground-pad thermal [21587.19ms]
+1071 |   if (!isURLInstance(fileURLOrPath))
+1072 |     return fileURLOrPath;
+1073 |   return Bun.fileURLToPath(fileURLOrPath);
+1074 | }
+1075 | var { Error, TypeError } = globalThis;
+1076 |   let err = new Error(message);
+                   ^
+error: Command failed: python3 /home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py --source /tmp/native-axial-search-2XInlZ/search/input/board.kicad_pcb --current /tmp/native-axial-search-2XInlZ/search/routed/board.kicad_pcb --report /tmp/native-axial-search-2XInlZ/search/stage-0.json --out /tmp/native-axial-search-2XInlZ/search/stage-0
+Traceback (most recent call last):
+  File "/home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py", line 194, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py", line 178, in main
+    raise ValueError('Ambiguous native item identities')
+ValueError: Ambiguous native item identities
+
+   code: 1,
+ killed: false,
+ signal: null,
+    cmd: "python3 /home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py --source /tmp/native-axial-search-2XInlZ/search/input/board.kicad_pcb --current /tmp/native-axial-search-2XInlZ/search/routed/board.kicad_pcb --report /tmp/native-axial-search-2XInlZ/search/stage-0.json --out /tmp/native-axial-search-2XInlZ/search/stage-0",
+ stdout: "",
+ stderr: "Traceback (most recent call last):\n  File \"/home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py\", line 194, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/home/hyper/bench/wt/fr-bugs/tools/native-thermal-proposals.py\", line 178, in main\n    raise ValueError('Ambiguous native item identities')\nValueError: Ambiguous native item identities\n",
+
+      at genericNodeError (node:child_process:1076:13)
+      at exitHandler (node:child_process:111:28)
+      at emit (node:events:124:23)
+      at #maybeClose (node:child_process:822:16)
+      at #handleOnExit (node:child_process:565:72)
+(fail) bounded axial search restores the reduced ground thermal with source and routed pairs intact [11559.08ms]
+
+ 1 pass
+ 1 fail
+ 16 expect() calls
+Ran 2 tests across 1 file. [33.37s]

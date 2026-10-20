@@ -1,0 +1,31 @@
+{
+  "cycle": 199,
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "native_version": "10.0.6",
+  "case": "hellscribe-hellscribe-j2-large",
+  "seed": 1,
+  "engine_commit": "8fa7ead0c45b0e7ca33737ff418f6309d51d762c",
+  "gate_commit": "7d6b779b",
+  "router_rerun": false,
+  "production_fix": false,
+  "native_checks": 87,
+  "all_attempts_retained": true,
+  "source_sha256": {
+    "board.kicad_pcb": "49ad1819915d57020829ebb6900fdd94f1a133a0a26d849f450bc30a9d565913",
+    "board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+    "board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+  },
+  "notes": [
+    "Each deletion trial starts with the original source and appends a subset of generated copper.",
+    "Full generated copper reconstructed semantically; original UUIDs and serializer formatting differ.",
+    "One-minimal means deletion of any remaining single added item eliminates pair loss; not global minimum.",
+    "Deletion trials may increase opens and are not candidate repairs.",
+    "The initial parser helper imports native bindings and emitted nonfatal native property/debug diagnostics; retained in logs."
+  ],
+  "paired_native_checks": 12,
+  "portable_minimizer_native_checks": 11,
+  "gate_implementation_changed": false,
+  "initial_required_checks_exit_code": 143,
+  "final_required_checks_exit_code": 0
+}

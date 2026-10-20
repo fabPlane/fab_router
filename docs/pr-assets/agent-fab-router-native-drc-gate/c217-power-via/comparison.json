@@ -1,0 +1,85 @@
+{
+  "beforeAfter": [
+    {
+      "phase": "full-before",
+      "runs": 78,
+      "passed": 39,
+      "validCases": 13,
+      "opens": 120,
+      "newErrors": 27,
+      "medianRouteSeconds": 2.0727661065,
+      "aquarius": [
+        {
+          "seed": 1,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        },
+        {
+          "seed": 2,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        },
+        {
+          "seed": 3,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        }
+      ]
+    },
+    {
+      "phase": "full-router",
+      "runs": 78,
+      "passed": 39,
+      "validCases": 13,
+      "opens": 120,
+      "newErrors": 27,
+      "medianRouteSeconds": 1.6702514255,
+      "aquarius": [
+        {
+          "seed": 1,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        },
+        {
+          "seed": 2,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        },
+        {
+          "seed": 3,
+          "passed": false,
+          "opens": 15,
+          "new_errors": 6,
+          "new_error_types": {
+            "starved_thermal": 6
+          }
+        }
+      ]
+    }
+  ],
+  "sameCasesSeedsMachineControls": true,
+  "sameSourceHashes": true,
+  "all78PhysicalCopperOutcomesDsnSesMatch": true,
+  "productionChange": false,
+  "noSpeedClaim": true
+}

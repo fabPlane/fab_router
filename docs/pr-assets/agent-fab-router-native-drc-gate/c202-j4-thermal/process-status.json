@@ -1,0 +1,36 @@
+{
+  "full_required_checks": {
+    "session_id": 88507,
+    "exit_code": 0,
+    "tests": 910,
+    "failures": 0,
+    "assertions": 398704,
+    "seconds": 611.65,
+    "new_J4_test_included": true
+  },
+  "final_static_checks": {
+    "session_id": 81268,
+    "exit_code": 0
+  },
+  "initial_search": {
+    "session_id": 60205,
+    "exit_code": 0
+  },
+  "repeat_searches": {
+    "session_id": 61205,
+    "exit_code": 0
+  },
+  "extracted_recheck": {
+    "session_id": 41930,
+    "exit_code": 0
+  },
+  "early_replay": {
+    "exit_code": 1,
+    "reason": "repeat2 result.json absent while still running; final original replay passed after completion"
+  },
+  "all_own_sessions_collected": true,
+  "staged_diff_check": {
+    "exit_code": 2,
+    "reason": "Only original final blank line in exact custom-rule snapshot; rule bytes deliberately preserved"
+  }
+}

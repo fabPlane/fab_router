@@ -1,0 +1,26 @@
+{
+  "probe": 0,
+  "focused": 0,
+  "strict": 0,
+  "probeFull": 0,
+  "probeJoint": 0,
+  "comparison": 0,
+  "fullRouterExecSessionCollection": 143,
+  "fullRouterEvidence": {
+    "complete": true,
+    "interrupted": false,
+    "controls_preserved": true,
+    "completed_runs": 78,
+    "all_status_checked": true
+  },
+  "fullRouterExitNote": "Session collection unexpectedly returned 143 after the complete final report was written. All 78 scored attempts and preserved controls are retained. No cause or zero process exit is claimed.",
+  "benchmarkArchive": 0,
+  "nativeVerification": 0,
+  "requiredChecks": 0,
+  "testSummary": {
+    "pass": 932,
+    "fail": 0,
+    "assertions": 398979,
+    "seconds": 1038.82
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "initial_required_checks": {
+    "exit_code": 143,
+    "summary": "905 pass; 0 fail; 398637 assertions; 253.39s",
+    "note": "Passing summary retained, but initial session did not return clean completion."
+  },
+  "final_required_checks": {
+    "exit_code": 0,
+    "summary": "906 pass; 0 fail; 398656 assertions; 262.67s"
+  },
+  "old_gate_regression": {
+    "exit_code": 1,
+    "expected": true
+  },
+  "focused_regression": {
+    "exit_code": 0
+  },
+  "discovery": {
+    "exit_code": 0
+  },
+  "paired_recheck": {
+    "exit_code": 0
+  },
+  "portable_recheck": {
+    "exit_code": 0
+  }
+}

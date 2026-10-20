@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-thermal-proposals.test.ts:
+(pass) thermal proposals exclude reidentified authored tracks, including reversed numeric equivalents [179.34ms]
+48 |    assert dx==0 or dy==0 or dx==dy
+49 | assert list(m.paths((1,1),(1,1)))==[]
+50 | assert len(list(m.paths((0,0),(8,8))))==6
+51 | `;
+52 |   const result = Bun.spawnSync(["python3", "-c", script]);
+53 |   expect(result.stderr.toString()).toBe("");
+                                        ^
+error: expect(received).toBe(expected)
+
+- ""
++ "Traceback (most recent call last):
++   File "<string>", line 7, in <module>
++ AssertionError: ((0, 0), (8, 0), 0)
++ "
+
+- Expected  - 1
++ Received  + 4
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-thermal-proposals.test.ts:53:36)
+(fail) axial thermal detours preserve endpoints, directions and the six-proposal bound [59.24ms]
+
+ 1 pass
+ 1 fail
+ 17 expect() calls
+Ran 2 tests across 1 file. [297.00ms]

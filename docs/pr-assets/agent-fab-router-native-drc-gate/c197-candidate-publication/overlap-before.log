@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-candidate-bundle.test.ts:
+(pass) publication contains the exact checked snapshots even if source paths change during checking [43.85ms]
+(pass) rejection publishes no candidate [40.66ms]
+(pass) checker failure publishes no candidate [30.13ms]
+(pass) publication never replaces an existing destination or leaves staging files [43.63ms]
+(pass) publication cannot follow a dangling destination symlink [42.00ms]
+101 |  test("publication cannot create an absent source rule sidecar", async () => {
+102 |   await fixture("accept", async (root, invoke) => {
+103 |     for (const stem of ["input", "candidate"]) await rm(join(root, `${stem}.kicad_dru`));
+104 |     const output = join(root, "candidate.kicad_dru");
+105 |     const result = await invoke(output);
+106 |     expect(result.code).toBe(2);
+                              ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 0
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:106:25)
+      at async fixture (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:44:11)
+      at async <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:102:9)
+(fail) publication cannot create an absent source rule sidecar [41.18ms]
+
+ 5 pass
+ 1 fail
+ 32 expect() calls
+Ran 6 tests across 1 file. [316.00ms]

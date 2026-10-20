@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-copper-inventory.test.ts:
+(pass) native copper resolves legacy net codes and protects ownership, geometry and duplicates [1.72ms]
+(pass) native copper fails closed on unresolved or ambiguous electrical ownership [0.29ms]
+(pass) native copper also checks via and arc ownership [0.30ms]
+
+test/native-saved-copper.test.ts:
+(pass) native gate blocks clean load-time ownership reassignment and bundle publication [23816.90ms]
+
+ 4 pass
+ 0 fail
+ 31 expect() calls
+Ran 4 tests across 2 files. [24.65s]

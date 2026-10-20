@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-connectivity.test.ts:
+(pass) Aquarius signal copper disconnects a source ground pad after native refill [52355.23ms]
+105 |     expect(result.opensAfter).toBe(94);
+106 |     expect(result.lostTerminalPairs).toBe(61);
+107 |     expect(result.lostPairWitnesses.every(pair => pair.some(identity => {
+108 |       const pad = JSON.parse(identity) as unknown[];
+109 |       return pad[1] === "U1" && pad[4] === "39";
+110 |     }))).toBe(true);
+               ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-aquarius-connectivity.test.ts:110:10)
+(fail) Aquarius complete generated nets still disconnect source ground terminals [8451.34ms]
+
+ 1 pass
+ 1 fail
+ 36 expect() calls
+Ran 2 tests across 1 file. [61.02s]

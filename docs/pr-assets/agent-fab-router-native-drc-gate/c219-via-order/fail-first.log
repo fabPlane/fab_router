@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-power-via.test.ts:
+47 |     expect(manifest.length).toBeLessThanOrEqual(304);
+48 |     const proposal = manifest.find(row => row.label[0] === "via" && row.label[1] === "e57c15b7-d609-442a-9cca-2c520d20bbab");
+49 |     expect(proposal).toBeDefined();
+50 |     // Probe one connected via move after the first six track detours.
+51 |     // Native acceptance remains mandatory; candidate generation alone proves no safety.
+52 |     expect(manifest.indexOf(proposal!)).toBe(6);
+                                             ^
+error: expect(received).toBe(expected)
+
+Expected: 6
+Received: 168
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-aquarius-power-via.test.ts:52:41)
+(fail) generated coordinated power-via move restores the second ground spoke without disconnecting terminals [25413.49ms]
+
+ 0 pass
+ 1 fail
+ 11 expect() calls
+Ran 1 test across 1 file. [25.66s]

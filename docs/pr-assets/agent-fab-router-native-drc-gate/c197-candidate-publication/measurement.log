@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c197/measure.py", line 26, in <module>
+    assert data[0]=={k:v for k,v in data[1].items() if k!='published'}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

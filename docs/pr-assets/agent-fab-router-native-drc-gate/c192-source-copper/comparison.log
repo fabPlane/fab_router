@@ -1,0 +1,86 @@
+{
+  "nativeReports": 156,
+  "unchangedDecisions": 78,
+  "sourceHashesMatch": true,
+  "connectivityWitnessDifferences": [
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 2,
+      "report": "candidateReport",
+      "opens": 6
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 1,
+      "report": "candidateReport",
+      "opens": 15
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 1,
+      "report": "candidateReport",
+      "opens": 5
+    },
+    {
+      "case": "fan-controller-fan-controller-j1",
+      "seed": 2,
+      "report": "candidateReport",
+      "opens": 5
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 2,
+      "report": "candidateReport",
+      "opens": 15
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 1,
+      "report": "candidateReport",
+      "opens": 1
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 3,
+      "report": "candidateReport",
+      "opens": 6
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 2,
+      "report": "candidateReport",
+      "opens": 2
+    },
+    {
+      "case": "kitspace-aquarius-j4",
+      "seed": 3,
+      "report": "candidateReport",
+      "opens": 15
+    },
+    {
+      "case": "rufs-smart-psu-j4",
+      "seed": 2,
+      "report": "candidateReport",
+      "opens": 1
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j3",
+      "seed": 3,
+      "report": "candidateReport",
+      "opens": 2
+    },
+    {
+      "case": "photon-sprinkler-sprinkler-j1",
+      "seed": 3,
+      "report": "candidateReport",
+      "opens": 2
+    },
+    {
+      "case": "paperino-hw-paperino-shield-j4",
+      "seed": 1,
+      "report": "candidateReport",
+      "opens": 6
+    }
+  ]
+}
+PASS: native policy/error findings unchanged; open counts and source hashes identical; all real connectivity entries satisfy strict schema

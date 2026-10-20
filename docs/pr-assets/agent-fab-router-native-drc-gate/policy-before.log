@@ -1,0 +1,35 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.39ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.06ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.03ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.47ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.04ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.12ms]
+35 |   test("rejects changed ignored-check policy", () => {
+36 |     expect(() => compareNativeReports(report(), { ...report(), ignored_checks: [{ key: "clearance", description: "ignored" }] })).toThrow();
+37 |   });
+38 |   test("requires an error-inclusive check in matching native versions and units", () => {
+39 |     for (const patch of [{ included_severities: ["warning"] }, { kicad_version: "9.0.0" }, { coordinate_units: "mil" }]) {
+40 |       expect(() => compareNativeReports(report(), { ...report(), ...patch })).toThrow();
+                                                                                   ^
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: {
+  accepted: true,
+  newErrors: [],
+  opensBefore: 0,
+  opensAfter: 0,
+}
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:40:79)
+(fail) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.24ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.12ms]
+
+ 8 pass
+ 1 fail
+ 17 expect() calls
+Ran 9 tests across 1 file. [69.00ms]

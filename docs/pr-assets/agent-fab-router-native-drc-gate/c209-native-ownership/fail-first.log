@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-saved-copper.test.ts:
+26 |     const result = await checkNativeBoards(input, candidate);
+27 |     expect(result.newErrors).toEqual([]);
+28 |     expect(result.opensBefore).toBe(0);
+29 |     expect(result.opensAfter).toBe(0);
+30 |     expect(result.lostTerminalPairs).toBe(0);
+31 |     expect(result.accepted).toBe(false);
+                                 ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-saved-copper.test.ts:31:29)
+(fail) native gate blocks clean load-time ownership reassignment and bundle publication [2835.16ms]
+
+ 0 pass
+ 1 fail
+ 5 expect() calls
+Ran 1 test across 1 file. [3.06s]

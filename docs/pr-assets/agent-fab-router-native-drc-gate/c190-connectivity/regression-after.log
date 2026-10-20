@@ -1,0 +1,19 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.50ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.05ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.36ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.04ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.01ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.05ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.14ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.56ms]
+(pass) rejects malformed connectivity findings in either report [0.14ms]
+
+ 11 pass
+ 0 fail
+ 38 expect() calls
+Ran 11 tests across 1 file. [52.00ms]

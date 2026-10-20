@@ -1,0 +1,21 @@
+{
+  "cycle": 215,
+  "parent": "205bf5dc3e602299d5ebf5f490827498d7c8a073",
+  "host": "hyper-MS-lin",
+  "scoredRouterRerun": false,
+  "productionChanged": false,
+  "discoveryAttempts": 23,
+  "notes": "Manual full-context diagnostics only. No fail-first engine fix or routing gain. All attempts retained. Portable probe path selectors updated after measurements; geometry unchanged.",
+  "nativeVersion": "10.0.6",
+  "cpuCores": "20-25",
+  "retainedOutputSource": "cycle196 seed1; placement-corrected output; existing full-added.sexpr.gz fixture",
+  "newCandidateRelativeTo": "cycle214 coordinated TCK/LED4 corridor control",
+  "translatedGeneratedItems": 3,
+  "translatedGeneratedVias": 1,
+  "nativeMeasurementChecks": 41,
+  "unitTestNativeChecksExcludedFromMeasurement": true,
+  "strictPairedRepeats": 3,
+  "defaultAndOptionalRouterRerun": false,
+  "testCollectionFix": "Rename documentation evidence copy regression.test.ts to regression.ts without changing bytes; prevent Bun collecting archived imports. No production changes.",
+  "initialRequiredRun": "929 real tests passed, one archived evidence module import failed; complete log retained"
+}

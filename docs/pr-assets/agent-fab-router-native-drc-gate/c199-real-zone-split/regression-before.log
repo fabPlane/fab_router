@@ -1,0 +1,22 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-bugs/scratch/c199/before-regression.test.ts:
+25 |     }
+26 |     const full = await checkNativeBoards(boards[0]!, boards[1]!);
+27 |     expect(full.newErrors).toEqual([]);
+28 |     expect(full.opensBefore).toBe(14);
+29 |     expect(full.opensAfter).toBe(1);
+30 |     expect(full.accepted).toBe(false);
+                               ^
+error: expect(received).toBe(expected)
+
+Expected: false
+Received: true
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c199/before-regression.test.ts:30:27)
+(fail) real board ground-pad isolation survives reduction of generated copper [3882.97ms]
+
+ 0 pass
+ 1 fail
+ 4 expect() calls
+Ran 1 test across 1 file. [4.05s]

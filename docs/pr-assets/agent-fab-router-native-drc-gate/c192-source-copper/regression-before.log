@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-source-copper.test.ts:
+
+# Unhandled error between tests
+-------------------------------
+SyntaxError: Export named 'assertSourceCopper' not found in module '/home/hyper/bench/wt/fr-bugs/tools/kicad-board-rules.ts'.
+-------------------------------
+
+
+ 0 pass
+ 1 fail
+ 1 error
+Ran 1 test across 1 file. [43.00ms]

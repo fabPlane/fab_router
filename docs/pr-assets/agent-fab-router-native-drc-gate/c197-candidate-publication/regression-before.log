@@ -1,0 +1,73 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-candidate-bundle.test.ts:
+45 |   } finally { await rm(root, { recursive: true, force: true }); }
+46 | }
+47 | 
+48 | test("publication contains the exact checked snapshots even if source paths change during checking", async () => {
+49 |   await fixture("mutate", async (root, invoke) => {
+50 |     expect((await invoke()).code).toBe(0);
+                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 0
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:50:35)
+      at async fixture (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:44:11)
+      at async <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:49:9)
+(fail) publication contains the exact checked snapshots even if source paths change during checking [3.56ms]
+(pass) rejection publishes no candidate [1.45ms]
+73 |   });
+74 | });
+75 | 
+76 | test("checker failure publishes no candidate", async () => {
+77 |   await fixture("error", async (root, invoke) => {
+78 |     expect((await invoke()).code).toBe(2);
+                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:78:35)
+      at async fixture (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:44:11)
+      at async <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:77:9)
+(fail) checker failure publishes no candidate [1.26ms]
+81 | });
+82 | 
+83 | test("publication never replaces an existing destination or leaves staging files", async () => {
+84 |   await fixture("accept", async (root, invoke) => {
+85 |     await writeFile(join(root, "accepted.json"), "existing artifact");
+86 |     expect((await invoke()).code).toBe(2);
+                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:86:35)
+      at async fixture (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:44:11)
+      at async <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:84:9)
+(fail) publication never replaces an existing destination or leaves staging files [1.27ms]
+90 | });
+91 | 
+92 | test("publication cannot follow a dangling destination symlink", async () => {
+93 |   await fixture("accept", async (root, invoke) => {
+94 |     await symlink(join(root, "absent"), join(root, "accepted.json"));
+95 |     expect((await invoke()).code).toBe(2);
+                                       ^
+error: expect(received).toBe(expected)
+
+Expected: 2
+Received: 1
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:95:35)
+      at async fixture (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:44:11)
+      at async <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-candidate-bundle.test.ts:93:9)
+(fail) publication cannot follow a dangling destination symlink [1.35ms]
+
+ 1 pass
+ 4 fail
+ 6 expect() calls
+Ran 5 tests across 1 file. [78.00ms]

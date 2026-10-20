@@ -1,0 +1,34 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [2.12ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.43ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.06ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.37ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.06ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.03ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.06ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.14ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [0.77ms]
+(pass) rejects malformed connectivity findings in either report [0.13ms]
+(pass) native gate blocks deletion of original copper before native execution [0.73ms]
+(pass) native gate blocks renamed net ownership even when native reports are clean [0.70ms]
+
+test/native-source-copper.test.ts:
+(pass) retains original copper while permitting added routes [0.09ms]
+(pass) blocks deleted, moved, narrowed or reassigned original copper [0.11ms]
+(pass) preserves duplicate item multiplicity and accepts numeric formatting and field order [0.05ms]
+(pass) also preserves source vias and arcs [0.07ms]
+(pass) accepts regenerated UUIDs and reversed endpoints without losing geometry [0.03ms]
+
+test/native-board-nets.test.ts:
+(pass) preserves net ownership independently of formatting and table order [0.05ms]
+(pass) blocks renamed, exchanged, added and removed electrical nets [0.06ms]
+(pass) rejects ambiguous or malformed net tables on either side [0.14ms]
+
+ 22 pass
+ 0 fail
+ 72 expect() calls
+Ran 22 tests across 3 files. [86.00ms]

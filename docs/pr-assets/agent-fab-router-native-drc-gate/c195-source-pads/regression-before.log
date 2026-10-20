@@ -1,0 +1,37 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [1.86ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.49ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.05ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.35ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.05ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.03ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.05ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.13ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [0.86ms]
+(pass) rejects malformed connectivity findings in either report [0.11ms]
+(pass) native gate blocks deletion of original copper before native execution [0.75ms]
+(pass) native gate blocks renamed net ownership even when native reports are clean [0.57ms]
+(pass) native gate blocks changed zone thermal rules even with clean reports [0.89ms]
+164 |       (footprint "control" (layer "F.Cu") (at 5 5) ${pad})
+165 |       (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+166 |         (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")))`;
+167 |     await writeFile(before, board); await writeFile(after, board.replace(pad, ''));
+168 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+169 |     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate source pads differ");
+                                                                 ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:169:60)
+(fail) native gate blocks removed source pads even with clean reports [2475.35ms]
+
+ 15 pass
+ 1 fail
+ 43 expect() calls
+Ran 16 tests across 1 file. [2.55s]

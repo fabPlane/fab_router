@@ -1,0 +1,37 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.47ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.06ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.34ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.04ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.05ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.10ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.49ms]
+70 | 
+71 | // A bogus inherited open must not authorize a newly disconnected candidate.
+72 | test("rejects malformed connectivity findings in either report", () => {
+73 |   const valid = report([], 1).unconnected_items[0]!;
+74 |   for (const malformed of [null, {}, { ...valid, type: "clearance" }, { ...valid, severity: "warning" }, { ...valid, items: [] }, { ...valid, items: [item()] }, { ...valid, items: [item(), { description: "pad", pos: { x: NaN, y: 2 } }] }]) {
+75 |     expect(() => compareNativeReports({ ...report(), unconnected_items: [malformed] }, report([], 1))).toThrow();
+                                                                                                            ^
+error: expect(received).toThrow()
+
+Received function did not throw
+Received value: {
+  accepted: true,
+  newErrors: [],
+  opensBefore: 1,
+  opensAfter: 1,
+}
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:75:104)
+(fail) rejects malformed connectivity findings in either report [0.24ms]
+
+ 10 pass
+ 1 fail
+ 25 expect() calls
+Ran 11 tests across 1 file. [73.00ms]

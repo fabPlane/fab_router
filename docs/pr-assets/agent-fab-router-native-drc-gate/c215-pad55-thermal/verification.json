@@ -1,0 +1,559 @@
+{
+  "discovery": [
+    {
+      "name": "before",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "power-down-0.1",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "power-down-0.2",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "clearance",
+        "clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "power-down-0.3",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "clearance",
+        "clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "power-down-0.4",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 16,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 348
+    },
+    {
+      "name": "capacitor-detour-0.1",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "capacitor-detour-0.2",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "capacitor-detour-0.3",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "clearance",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "capacitor-detour-0.4",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "ground55-stitch-0.6",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance",
+        "hole_clearance",
+        "clearance",
+        "hole_clearance",
+        "hole_clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "ground55-stitch-0.7",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 14,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "hole_clearance",
+        "clearance"
+      ],
+      "lostSourcePairs": 292
+    },
+    {
+      "name": "ground55-stitch-0.8",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items",
+        "hole_clearance"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "ground55-stitch-1.0",
+      "items": 468,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "hole_clearance",
+        "hole_clearance",
+        "shorting_items",
+        "shorting_items",
+        "clearance"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "capacitor-via-up-0.1",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "capacitor-via-up-0.2",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "capacitor-via-up-0.3",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "capacitor-via-up-0.4",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "joint55-0.1",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "clearance",
+        "clearance"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "joint55-0.2",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "joint55-0.3",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "solder_mask_bridge",
+        "solder_mask_bridge",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "shorting_items",
+        "shorting_items"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "outer-elbow55-0.1",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "outer-elbow55-0.2",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    },
+    {
+      "name": "outer-elbow55-0.3",
+      "items": 466,
+      "ownershipPreserved": true,
+      "opens": 13,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "lostSourcePairs": 235
+    }
+  ],
+  "strictDecisions": [
+    {
+      "name": "routed",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 0,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 13,
+      "lostSource": 235,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    },
+    {
+      "name": "routed",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 1,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 13,
+      "lostSource": 235,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    },
+    {
+      "name": "routed",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 14,
+      "lostSource": 292,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": true
+    },
+    {
+      "name": "candidate",
+      "repeat": 2,
+      "errors": [
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal",
+        "starved_thermal"
+      ],
+      "opens": 13,
+      "lostSource": 235,
+      "lostRouted": 0,
+      "ownership": [
+        true,
+        true,
+        true
+      ],
+      "accepted": false,
+      "repairAccepted": false
+    }
+  ],
+  "restoredSourcePairs": 57,
+  "lostCurrentPairs": 0,
+  "allChecksPassed": true
+}

@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+../../agents/codex-fabpcb-bugs/scratch/c192/control/test/native-drc-gate.test.ts:
+103 |       (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+104 |         (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")) ${items})`;
+105 |     await writeFile(before, shell('(segment (start 2 2) (end 4 2) (width 0.25) (layer "F.Cu") (net 0) (uuid "00000000-0000-0000-0000-000000000002"))'));
+106 |     await writeFile(after, shell(''));
+107 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+108 |     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate source copper differs");
+                                                                 ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/agents/codex-fabpcb-bugs/scratch/c192/control/test/native-drc-gate.test.ts:108:60)
+(fail) native gate blocks deletion of original copper before native execution [2959.02ms]
+
+ 0 pass
+ 12 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [2.97s]

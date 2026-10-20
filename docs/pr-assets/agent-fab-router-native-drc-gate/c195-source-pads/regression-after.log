@@ -1,0 +1,29 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [2.29ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.51ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.06ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.36ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.06ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.04ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.15ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.19ms]
+(pass) rejects malformed connectivity findings in either report [0.14ms]
+(pass) native gate blocks deletion of original copper before native execution [0.88ms]
+(pass) native gate blocks renamed net ownership even when native reports are clean [0.82ms]
+(pass) native gate blocks changed zone thermal rules even with clean reports [0.95ms]
+(pass) native gate blocks removed source pads even with clean reports [0.60ms]
+
+test/native-source-pads.test.ts:
+(pass) protects pad geometry, ownership, rules, multiplicity and parent placement [0.44ms]
+(pass) permits regenerated pad IDs, numeric formatting and named-field order [0.43ms]
+(pass) protects custom pad primitives and footprint thermal overrides [0.09ms]
+
+ 19 pass
+ 0 fail
+ 60 expect() calls
+Ran 19 tests across 2 files. [67.00ms]

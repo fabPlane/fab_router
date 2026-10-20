@@ -1,0 +1,1484 @@
+[
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "06d722f1a4951fdf9ce902e14c8d321d9724eeed70f28e5ce5bd4efb5aa4c752",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "000"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 3,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 1,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d40810c8ab2c8e9743a6f9e8301913f2d6c167ad0c2b2adcc642f51b816fae0a",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "8bf64c2f03a3a7321289a0fef282570bd7d550797984220745d475f608977a03",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "001"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 6,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+      "input/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "33b672ba598330f165b30a262d41e9d0b7589196409539619d0669fdfde18a0b",
+      "candidate/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "002"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 1,
+    "accepted": false,
+    "lost_terminal_pairs": 348,
+    "published": false,
+    "new_errors": 6,
+    "opens": 15,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+      "input/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "e2c5cb9e74738c70b820ab528ce51ec8f2e5836f0766d0ef949599c0cce05c22",
+      "candidate/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "003"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 17,
+    "published": false,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "49ad1819915d57020829ebb6900fdd94f1a133a0a26d849f450bc30a9d565913",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "850f05047d2a119d6735c0bd073142301a090527b39393b1a49ebbfc44f280a0",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "004"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "e794614d2e65a1d149d01e805e6bba66a9f261fca9a36f36eb1e83f65113b810",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "833cb043426ec843776830ebc795299c1f5ef49dcf503a8ac04ce1ab586975d4",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "005"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 5,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c4e78eda74cae4e84526bd29971bc5f9134554080e49df7d3ead7eefb33e0ab1",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "2d8a346742fedcc3f0fa18ec37e5b570cdabad5cf77d3ea75fb914a0a6504646",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "006"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 17,
+    "published": false,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "49ad1819915d57020829ebb6900fdd94f1a133a0a26d849f450bc30a9d565913",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "33e41ec037882cbb1f7dee40b17d12047c818c6fb7aa026fe7339b1342300492",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "007"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "input/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005",
+      "candidate/board.kicad_pcb": "a37fe94cd2c0964573898f66ae28eaa7ef7e91b93708891f04118b7d3cb43a0c",
+      "candidate/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "candidate/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005"
+    },
+    "directory": "008"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7ff91375425c35d8ce9514076522deda764255eeef731a7e0c6abc170a03c31c",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "2a9731ce23608aae9a6df7f14e57ee61345c2664b60d808d7d83cb323b34c912",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "009"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "input/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a",
+      "candidate/board.kicad_pcb": "e6d5524ed5845e3ba7337bd52080489b6249d7de64169e721de8faf34b1a098d",
+      "candidate/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "candidate/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a"
+    },
+    "directory": "010"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "1052faf7718555f02af42c42bcdb8ce717c55575aeafc37a560781d9028bbdfb",
+      "input/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "input/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113",
+      "candidate/board.kicad_pcb": "f2f19a68f4ba901d0bc342cb2d2f86a8ec643e57421f023a2ac12766d397f21c",
+      "candidate/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "candidate/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113"
+    },
+    "directory": "011"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d1d1cc5b43d7cc83aba85f43e74ae62b4988bfd85a94f66d4407875e95caa7fa",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "b814aa8d5cdd2d50c1de9f3930e0367fafa30ccc0b6f2967236d6063cab2debe",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "012"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 5,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c4e78eda74cae4e84526bd29971bc5f9134554080e49df7d3ead7eefb33e0ab1",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "cb4ed0fc4be6b9e18a22147d9bbe6117586264d4be7fdbf0a0ce5deeee980f7e",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "013"
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "23b943126f8b811ed07b3877d04993bea0058f6892a2ed67bee413440be85247",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "014"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d1d1cc5b43d7cc83aba85f43e74ae62b4988bfd85a94f66d4407875e95caa7fa",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "76007e1397d007f376b1cc81399ac079ea76d758879d4b31e2d820ea7b7ecf33",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "015"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3ac7ba10c9fa0690c3048bc9b580a8ee63e689271b6b639bc82676a2ae4486e",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "f60c1993812919bd8d6e760681c359ee0ac56a1f077d20e58e38245d2001641e",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "016"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3e8bfe1c9d1e6b9e09972a3af51e66485ee18ce8049c854189290deb8f27c88",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "af3fe5a1de3960d6a432ec73d311235e109948a880f99ddbcd73f6cf8330f417",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "017"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 1,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 1,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d40810c8ab2c8e9743a6f9e8301913f2d6c167ad0c2b2adcc642f51b816fae0a",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "22209f1529df1911a3a4b4a341b899288432c162caaeda2a27c944d241c9dc2d",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "018"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 2,
+    "accepted": false,
+    "lost_terminal_pairs": 348,
+    "published": false,
+    "new_errors": 6,
+    "opens": 15,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+      "input/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "77065218db0375229376b856d93b923b03a10362eb053db4927e93fce2005bb4",
+      "candidate/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "019"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "1d9fb9bb14c47f46475d4ba2a93e2d01840b6abd04f81f534ea6ac37481edc1f",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "020"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 5,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c4e78eda74cae4e84526bd29971bc5f9134554080e49df7d3ead7eefb33e0ab1",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "418a4fbdd13f9008a35cb3c2ee55a70d086581c10d6af6e9794d2f3127b89703",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "021"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d1d1cc5b43d7cc83aba85f43e74ae62b4988bfd85a94f66d4407875e95caa7fa",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "e703f65d98d2de9204a987627a9d353878dba90f30de3ff00796da99a9f6e69b",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "022"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "8b151d32dac9f785fbbfbc472124cc03222f1111ca55c6d83b1454ab91ee3a96",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "ca1294f380d600e5c89c6fe8299f2a859a5bd47e935d9b067f5d38b31e7a5e25",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "023"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "6f101b9dc3234a483dc54b3699ff75a5f0d52a5c2d282a445654cdc4b0bdc439",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "a0d4fd9163959dbc28d53225cd2fb20924c4a6e44bb7adf0b6e4a0ac39bb989a",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "024"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7da62797b3b4c4cdb4e885151b6281a453ba313f214780d0b6204cf18479b497",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "beb1b69cacb90a586ae50e36caf0e0a16b5d20208a8716116697ae777d9b04db",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "025"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "b30f43ae72b23a070958af4884f7fe587e22390c6dc70484bd5eebb3bc21cde5",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "638e899373612c67db333a4b38d57e6e0bcb69fd384fa044482156721cd832cd",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "026"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "f17b9d0745a2fb1bc964f2db5a037cca28acc07a4e974218da08b9cd333b9f10",
+      "input/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "input/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02",
+      "candidate/board.kicad_pcb": "84ea09f12ad549b5f4e0f7e2bd158ad816b4b24a819a7c35b8b1f86c697fc60e",
+      "candidate/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "candidate/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02"
+    },
+    "directory": "027"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "5da00b9b95f0aa11a8ef335be0fe2a69d82257b3f9eb891c7277b2ee151c163b",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "faad7d3177ba151dbaa5d45febb6f28296ae8be00a4f153affb6e6852a3817ac",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "028"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 2,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 2,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "fdc33cc77473daa9b1f801337a163fce9472de8daa23066d5de1bbaf3aece977",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "2f7238209cfda8369b8b1513b2dabd63bd54eedcdb2a5cc727a86ba27542006e",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "029"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3ac7ba10c9fa0690c3048bc9b580a8ee63e689271b6b639bc82676a2ae4486e",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "6130fab6f5cfd18dab09a8ee03c0406ced65b66f8b1b0840a789e44b728318d7",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "030"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 6,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+      "input/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "eaf2ca4b65666422bf90fc3e9cc3eb30f1399f6442dd53c03d5d1867af70767b",
+      "candidate/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "031"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7ff91375425c35d8ce9514076522deda764255eeef731a7e0c6abc170a03c31c",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "27c07305d5188c231c533333bd2d8c76202b326f743c09a5413065702b77f803",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "032"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "input/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a",
+      "candidate/board.kicad_pcb": "345d23a5913c0f38bff2557c942efe8734110bd9c6ae03030396af07961c1083",
+      "candidate/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "candidate/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a"
+    },
+    "directory": "033"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "b30f43ae72b23a070958af4884f7fe587e22390c6dc70484bd5eebb3bc21cde5",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "bb69c80455cf5984aca6d27141d861b417ab55cc9e48ef2e94746d0b4a94ca1b",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "034"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "input/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd",
+      "candidate/board.kicad_pcb": "bd7da13cce91f3f06e09a9a3c4d31e3474bd419746a7a7701ee8e29811dea8b1",
+      "candidate/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "candidate/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd"
+    },
+    "directory": "035"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3ac7ba10c9fa0690c3048bc9b580a8ee63e689271b6b639bc82676a2ae4486e",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "574843972125aba6ade8f6f396c89afd626b2a4e2ab0bd50ca3d4552a276a2ac",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "036"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 3,
+    "accepted": false,
+    "lost_terminal_pairs": 348,
+    "published": false,
+    "new_errors": 6,
+    "opens": 15,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "18aa9f053078d6e1ed6d955c07597f790474d82ca6f22e2d2d80d02b6b2daadc",
+      "input/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "b8134423dbbba105893ac60863423c79521aa9a2becb195d7af1cc84c53bd39d",
+      "candidate/board.kicad_pro": "58729c9ab3ed262b908bb02eb8689ab76c5d128b44d32f63ff891e609e97a6a8",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "037"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "6f101b9dc3234a483dc54b3699ff75a5f0d52a5c2d282a445654cdc4b0bdc439",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "21819da6d0dc8ca566932fd5542cf0fdca74ae837fc3627e6360474de178bb88",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "038"
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "2dc37c2dbdc4d9455c59496515d57aede722129b51bed7b99b72601904abb119",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "039"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "9491fc0200c5f820dc798f909c17382a5dee07604b03ca3e602549ee8f2385c6",
+      "input/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "input/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407",
+      "candidate/board.kicad_pcb": "d7cb74a8eed2bb3223bca06f0b0ace92ba5579246d52121999ffb8a0cf4c8d23",
+      "candidate/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "candidate/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407"
+    },
+    "directory": "040"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "6204067a4a5d3a7c4fdf07ddf77f19f643aafb70cf4e3a050bdeb7a87e3e9346",
+      "candidate/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "041"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "6bd81ffa7563e03fc76d3ed09eb6e2e134752f753194728b2230f900c34acd93",
+      "candidate/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "042"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "input/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005",
+      "candidate/board.kicad_pcb": "cac97d6d8d820a93238a3afa6d120b68b99055f1a5f2b0601c187684d3acee9b",
+      "candidate/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "candidate/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005"
+    },
+    "directory": "043"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "5da00b9b95f0aa11a8ef335be0fe2a69d82257b3f9eb891c7277b2ee151c163b",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "ecec301a86473a32f393ea95b0201257195c1f899a6fa30046788db8317ab9cb",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "044"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "9491fc0200c5f820dc798f909c17382a5dee07604b03ca3e602549ee8f2385c6",
+      "input/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "input/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407",
+      "candidate/board.kicad_pcb": "40a026b2e0305095b36d1270c79db7e1ac571f58087ee27758acb77b3e62a67e",
+      "candidate/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "candidate/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407"
+    },
+    "directory": "045"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "f17b9d0745a2fb1bc964f2db5a037cca28acc07a4e974218da08b9cd333b9f10",
+      "input/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "input/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02",
+      "candidate/board.kicad_pcb": "729f8e7de5f45d242cd4d9401edd78fa0951d8d05013c894a208caa265e027bc",
+      "candidate/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "candidate/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02"
+    },
+    "directory": "046"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7da62797b3b4c4cdb4e885151b6281a453ba313f214780d0b6204cf18479b497",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "2a2126a82d5e69de44de7be1c25623d41a0cfbc14756b551ca6e0a3ee8908a7a",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "047"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 1,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 2,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "fdc33cc77473daa9b1f801337a163fce9472de8daa23066d5de1bbaf3aece977",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "e26d6b800b312ed8d6793139251c6fc369c46874fa8eb436a03d7c5ca131d2e8",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "048"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 2,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 1,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "d40810c8ab2c8e9743a6f9e8301913f2d6c167ad0c2b2adcc642f51b816fae0a",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "152d62575098c0ae7620eca06be6ebe7031f76d1c28ded92a9ed8bf257171903",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "049"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "eebe8da0030ed8e5865b6042a107e89be37a3a75bf31675199066647ee93e867",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "050"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "input/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a",
+      "candidate/board.kicad_pcb": "82417190caa9214867aff81f9b703a82f0a47ef25fae0c9834b9649d0f8d9466",
+      "candidate/board.kicad_pro": "b2b64602c9f08bc909408d7f091c0a32111c512154d07a4e3cc04fb75787efcf",
+      "candidate/board.kicad_dru": "0ad40e65033ac505c5998accb6ff48105931ff3de520a6b9435fe8e345338e1a"
+    },
+    "directory": "051"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "input/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd",
+      "candidate/board.kicad_pcb": "f8a63acd5c066399a22e82923526f5c3622d19887ae2e70e3579b75c3e81df73",
+      "candidate/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "candidate/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd"
+    },
+    "directory": "052"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7da62797b3b4c4cdb4e885151b6281a453ba313f214780d0b6204cf18479b497",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "991889adf29ef5ea9fd9483749c15c3386c9320c46d794eb5e2512e502dfd847",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "053"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "77cb1a47d7b7e7cd5605760f37e0e8d7a7fbc0e02ad75efac2d8630fae884838",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "87b961d0bb3404afc6a03ee23a9a946e865cefcb3e4aefcb0863994d0a65373f",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "054"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 3,
+    "accepted": false,
+    "lost_terminal_pairs": 0,
+    "published": false,
+    "new_errors": 2,
+    "opens": 0,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "fdc33cc77473daa9b1f801337a163fce9472de8daa23066d5de1bbaf3aece977",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "7f58eb629eb52ea104ccb9125de5b24b375be83fe68c1e6e220b5036058d1716",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "055"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3e8bfe1c9d1e6b9e09972a3af51e66485ee18ce8049c854189290deb8f27c88",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "e3bbbda8a33c8388c4b245a59cd973a70a002d32945126f52a53be2ed7552129",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "056"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "c3e8bfe1c9d1e6b9e09972a3af51e66485ee18ce8049c854189290deb8f27c88",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "3c7c9bc83f7246e73a4f8d34712b1da8458cb31ca268e7d9ac88da86deb85149",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "057"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "5da00b9b95f0aa11a8ef335be0fe2a69d82257b3f9eb891c7277b2ee151c163b",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "ec0542dbed662fc8a7969fa1e038cbadae78cf49356e67622de5c4c8b42fa47c",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "058"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "e794614d2e65a1d149d01e805e6bba66a9f261fca9a36f36eb1e83f65113b810",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "64528c9b9f427b064916817779cf2aaeb5539627d0ddd12eefb602768791bbb5",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "059"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "8b151d32dac9f785fbbfbc472124cc03222f1111ca55c6d83b1454ab91ee3a96",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "3008acdb8e464e8c6098821d320251a19017dbd15f38d7d4cc17293f57c64d13",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "060"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "2b95cd3d92475500300ada83431f0eef440fe5a5cb63f7822781d78560604d45",
+      "input/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "input/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005",
+      "candidate/board.kicad_pcb": "d8b0af90df3b77ba4332994bdaca8345c998d795b4f447aebf2aca5650bf7543",
+      "candidate/board.kicad_pro": "889e153f3c06557967c8f9cc663bddf84fa18cc4a56e49cb2ea3cbe5f6590b3f",
+      "candidate/board.kicad_dru": "c468bb99420848d48d720de6c325babe9142cd4f451b4b25b81172ca69486005"
+    },
+    "directory": "061"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "8b151d32dac9f785fbbfbc472124cc03222f1111ca55c6d83b1454ab91ee3a96",
+      "input/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "443c482703a45264809ea9c5bdbd6ca99ae70d3e1b266c11c1baacb176b4f494",
+      "candidate/board.kicad_pro": "f3f16aba932dc1ad773c9d2da913c9c33fa6090a434f894babeb3848241e1549",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "062"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "b30f43ae72b23a070958af4884f7fe587e22390c6dc70484bd5eebb3bc21cde5",
+      "input/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "072cb50a74de7ccbc64b608de10fa51abfdd57455a8871635c7e66838720ea89",
+      "candidate/board.kicad_pro": "b65a504ebcd06ba0068d044e224e0a8af23a9a4be128f4a5622369efc441652b",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "063"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7ff91375425c35d8ce9514076522deda764255eeef731a7e0c6abc170a03c31c",
+      "input/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "129ea691687a24dc4861643901a9e39f641f26dd460730d1b15a202cd68c1f5f",
+      "candidate/board.kicad_pro": "df297ef7d2b48897904264eed3b13cd6b3d9739ba3d3baa70e861ee449117e2f",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "064"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "6f101b9dc3234a483dc54b3699ff75a5f0d52a5c2d282a445654cdc4b0bdc439",
+      "input/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "00fd71472b1251852b62e6dc5b541c1289cb19e529d4515a945e9cee41419eb9",
+      "candidate/board.kicad_pro": "097af65f7f8014d7e4e7151a0ff73b9760a9dba11f196b42f0fafd9c9dc976ef",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "065"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "6e80700f1f24bfd20ec3d25a4b2f2a7ffc987f156cf85a06f4ee4822d5eed234",
+      "candidate/board.kicad_pro": "57d27367e67625af30477ea50655d9d5b88a6189b5e6e23e937b150deb292166",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "066"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 2,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "cc337702072c157e73401b4f8c18f8f82d17868874e064de54e54430c54ad966",
+      "input/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "input/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd",
+      "candidate/board.kicad_pcb": "d68d0b96c628c8a05912eedbeb686ba9759b246cd02221274cdbf5db3b32c5fd",
+      "candidate/board.kicad_pro": "d724a6c1f33808367c83037397247a12e741d5b279a22602908f38ba7ec6fd62",
+      "candidate/board.kicad_dru": "d2db920465b4a5a54a97e0e80cbf2be9f643344755855f62ed85dbe2b4e04fbd"
+    },
+    "directory": "067"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 17,
+    "published": false,
+    "new_errors": 0,
+    "opens": 1,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "49ad1819915d57020829ebb6900fdd94f1a133a0a26d849f450bc30a9d565913",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "0256b61e843cc082523605322f4ba2cbf6de18d7203b391c45e028bd4e1b6154",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "068"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "1052faf7718555f02af42c42bcdb8ce717c55575aeafc37a560781d9028bbdfb",
+      "input/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "input/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113",
+      "candidate/board.kicad_pcb": "e1f4a695e1987d543c9c42bf75c3ed87101b3fc7a65468dca718c327699b43e2",
+      "candidate/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "candidate/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113"
+    },
+    "directory": "069"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 6,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "26f1b9da1c2de0fab1b81be688b08304d59639052c362265e78edb23b7b0fbc0",
+      "input/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "22930bb5bcb7426da389e875e54ee1300eaeb7c56ae94984921d4e0d049fadd5",
+      "candidate/board.kicad_pro": "01aff616a6546552298fe9a764110ab8ac72b98dbef772c7302daa7223a2bde3",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "070"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "77cb1a47d7b7e7cd5605760f37e0e8d7a7fbc0e02ad75efac2d8630fae884838",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "4609976a65144968bedaa8e64e707a47d34919c2d0eed7331df41ef975ced2f3",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "071"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 1,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "7acd03344be7c5394c7bfe1af2a1a43c78acb0cb4483c5a13e47bd4e1d4d6276",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "b115f52d0273c35afa73098cd1c6ee304fef8559eaf0d679086fc21850b7855e",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "072"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "1052faf7718555f02af42c42bcdb8ce717c55575aeafc37a560781d9028bbdfb",
+      "input/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "input/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113",
+      "candidate/board.kicad_pcb": "d329efd6e161ecaf927cd0e81e1464bf8ea51552cbfb508e56ce48f9faf7b4ff",
+      "candidate/board.kicad_pro": "7dc00deaf73bacaecf7f755031f0045157c7d8cf8ef2de8c44669aebb4adc336",
+      "candidate/board.kicad_dru": "982b1d8be000c6c4e4a42ce81f4ee88b4ab0206670fef764a1c95a348179c113"
+    },
+    "directory": "073"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "f17b9d0745a2fb1bc964f2db5a037cca28acc07a4e974218da08b9cd333b9f10",
+      "input/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "input/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02",
+      "candidate/board.kicad_pcb": "3fca29e4249a8032634f4c7b71574af60262a8f59b6debf055195f1ec4206aee",
+      "candidate/board.kicad_pro": "38f2a80640738eb240ea1320e294658b43d31f8df9526996def33d0399dfa19e",
+      "candidate/board.kicad_dru": "75ef6e6f54016f0ba81c0fa8bf91453eb152a8f03692277ac808bb6561510b02"
+    },
+    "directory": "074"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "77cb1a47d7b7e7cd5605760f37e0e8d7a7fbc0e02ad75efac2d8630fae884838",
+      "input/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "89c9da78dafa6972e561d6dd13cf43a8e3ac8274eecd5a3b6273371f3d0131a3",
+      "candidate/board.kicad_pro": "ab1c79ea30f29d92047e094a526faaf2e0f335769e81667850f1ec9a63651950",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "075"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 2,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 3,
+    "prior_passed": false,
+    "source_hashes": {
+      "input/board.kicad_pcb": "9491fc0200c5f820dc798f909c17382a5dee07604b03ca3e602549ee8f2385c6",
+      "input/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "input/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407",
+      "candidate/board.kicad_pcb": "79ed8702a07d17f6776111e894c0a56a401e7c64590dbb7e5d9adf1338be6694",
+      "candidate/board.kicad_pro": "de4b2949148f7b9b3bcf3f9913ff3f1cb25b2a736c1f4bbf204d7187d59d62be",
+      "candidate/board.kicad_dru": "8810a7bf196b592e969c4822ec7847d34ea39b0ac9bc6be46d2a5ab71a1e3407"
+    },
+    "directory": "076"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 3,
+    "accepted": true,
+    "lost_terminal_pairs": 0,
+    "published": true,
+    "new_errors": 0,
+    "opens": 0,
+    "prior_passed": true,
+    "source_hashes": {
+      "input/board.kicad_pcb": "e794614d2e65a1d149d01e805e6bba66a9f261fca9a36f36eb1e83f65113b810",
+      "input/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "input/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b",
+      "candidate/board.kicad_pcb": "a6472935d94f04953aa23a300d51683b709e7809f33ee58d7de5a4d960539d15",
+      "candidate/board.kicad_pro": "581c4fe917db39d5215cd5c14175c1a28a36c3bf1496406040baed272ac93bb4",
+      "candidate/board.kicad_dru": "bbef6e119424cbf626d6fec0697069e203a9bde1d54f30517b179a0375f28b6b"
+    },
+    "directory": "077"
+  }
+]

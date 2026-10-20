@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+146 |         (fill yes (thermal_gap 0.3) (thermal_bridge_width 0.3))
+147 |         (polygon (pts (xy 1 1) (xy 9 1) (xy 9 9) (xy 1 9)))))`;
+148 |     await writeFile(before, board);
+149 |     await writeFile(after, board.replace('(thermal_gap 0.3)', '(thermal_gap 0.1)'));
+150 |     for (const path of [before, after]) await writeFile(path.replace(".kicad_pcb", ".kicad_pro"), "{}");
+151 |     await expect(checkNativeBoards(before, after)).rejects.toThrow("Candidate zone definitions differ");
+                                                                 ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:151:60)
+(fail) native gate blocks changed zone thermal rules even with clean reports [2372.32ms]
+
+ 0 pass
+ 14 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [2.45s]

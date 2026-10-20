@@ -1,0 +1,704 @@
+[
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "cf93472d6a2d636360c3b3a1c4f4d8566c44e895962914756589012114802a7c"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 1,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "7f791d75276e98dc2e1e037b4bc16b44becd2e471513ea8e8fd5f422d68bb1c7"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 6,
+    "passed": false,
+    "router_summary_sha256": "505f4e6fa9558c72f1d5d13697918921a1562dcce3b5caa963c3e889274d98cc"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 6,
+    "native_opens": 15,
+    "passed": false,
+    "router_summary_sha256": "a4e22a28864d3b9bd70fb24abf6f1cac99d851250901e24e7e928787244a1ccf"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "c4be5a0538c03787c05b330cd9c087ecab0b113fe68745681a17eef70d6daa75"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "aba6371c6ab6be8184d09ec48462ea5b7585377066ce645e3082048aa35d5662"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 5,
+    "passed": false,
+    "router_summary_sha256": "0ba9d867d44414d9091cdaa389f57c4b410eeefe94923965b8f253c8cea12d29"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "1ec030299576a4e150d1901b8e030a4d9b0896e2a6a30029612629a2d576bd60"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "ad592a51578de254d6aaca30263cb6b48b3076a65ced61ff5669494dcb46f5ab"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "9a55e427d7b818cb146250dae07bb33488e09ca14f04f99025719339a5af66ac"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "167d5684abbf31f0449429e02590fbc1e63adc6cf3aa2494a6c061df5e020118"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "ebaefef24e954c3f74b0450ae2aa42372105385919d77a541ac9a2fbe42f2f13"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "35704ad9cf108e1a8a25289a9b8b739b1bcef8ea8db70889fc392d53a840b2fe"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 5,
+    "passed": false,
+    "router_summary_sha256": "d5fa4f87953b5eef1b0849cfc6a90210b25f2c2e732a5627f4e361d2bf3345f1"
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "b4bcd2401cb462e3bf30cc0b8862e4e863acabe9a50cf3c9ca8970bd75ad6626"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "6d03c2d117ab55f3a76af6cdc8915d2c7c290a71bde75324cb330932c37322c3"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "30d950f65317176eb056bc4d2a5f28a841ead2fd46593b0bb8a6f861920df746"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "7a147b6aae296d1c11a2e2748031d79f54a4e648fdfedad01f9eec69dbf36268"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 1,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "7528a6e1761f2222a2dc34f504e8f9719035297c569bf4d11d02d2eb53cccb7a"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 6,
+    "native_opens": 15,
+    "passed": false,
+    "router_summary_sha256": "2e843d152a2a6df5dbcf59a707f3f254486b751fea7db906d89f09dd60a11db4"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "38eb9a7654b67e8ca89b9df32a5171f0a0bf1f0e233b7ec3d20481e2e51ecaa3"
+  },
+  {
+    "case": "fan-controller-fan-controller-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 5,
+    "passed": false,
+    "router_summary_sha256": "bc38f2b76e1d4d3adc8db8fe1f1fabdfc9184f0eba45cefce3a9ab3a05c49917"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-large",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "bd3766f6b70444a484e7ffbb8b14e6ebc35f7214cf209f1b14dfc04a6da836c0"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "cec8da3f4c5ec8361407fd421c655afffce40b2e3ef4629894348737e7fd0cc3"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "0f67959572390b2d59f748b509ab0befe6aa5fe4b9bea3b4fcfa239f2ce1a628"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "a70e14d67a517b124a3985c7eda0ee6cb014ff1857d5081177611768ce6750bb"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "9e9546879873285c184d0f0ccbc2fa54c798de706639580f0cf8eadbb110e027"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "d917efa2ddb6e619c1bc29fcbc8c12cf1c09659e2fb18823c21e5e2b401e37c4"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "6a5f11b60d7428c2bf55b57104f5ec73210f7841928c6aec477336dd322e1500"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 2,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "587058d10c35850d1d388dcc7f553422d11b9d33c2ed9de4d21789dbe72c261c"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "ee54514e1095ba1aa34f92c295cd7a882d7595e462f66ac73dd1b1fe8e6a9dd1"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 6,
+    "passed": false,
+    "router_summary_sha256": "536d14089a6fae7337cb33b1514a7daa81ff4dc56ab3faa016b63e24e6c20458"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "6b1723b420a83799c398dd137378b353304575d116ed96dd4939d1d8f8cc667a"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "428724058e19d6756654bb859c32009ec1397b6faed90517a4ae6db4f2575f03"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "2b9937028e5092fcfdcc614014902158263f176c3cd6298961bc0955ccc665ff"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "d004e7fb67a23a8472f3ffe5909f82b121f59c8aae4cf287e7874c260458dc82"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-small",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "bfe3741abcbf54f75e357bd75232f1d875d55e6787c890b4ca49410a06f565d4"
+  },
+  {
+    "case": "kitspace-aquarius-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 6,
+    "native_opens": 15,
+    "passed": false,
+    "router_summary_sha256": "b6850006f773405694b686e289c98b8b021e525f6bcf3e0936a3cfee908a42e6"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "45e66c61cc4e60e770f54b4883dadd6a493648247ccd1603c844bcc6db7fea59"
+  },
+  {
+    "case": "rufs-smart-psu-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "505aff2b57eceb7917d76bb43e8c29dca766a0835a508463c5f2b3baa70561af"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "64a07caecc39a67ab21cf839b97badbca31fcbbc974a641308f1c34d7a8baf0d"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "b0032a07c0d832646bd3dfbe38fe2777b5d93b43b1177f6e0834a52df28df644"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "fb3937abff1fbe594ee4819349ffba862415acf2f5a637e4c72e5d35a4d46c5f"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "0d7d4922dffc012e573801a99934b1f3d952484c814c3101779d3b9d75c62afc"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "d1152d4c5f9287b8adf3fa8af82a94b3f29771df87e48215cf1d82367a1a3f68"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "f066e30a4dc3b586d55bf4fc2161e2cc309daa03ee624192ecd2104bb25bcd0e"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "24dec7efb68cc69d8002039f30f6cfbcbd2c44dbcf206eff8a730d5306c1dce1"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "6013f61ac874454abe536155a7e9ca5e9b51d2c4506b4c30082b2a97c631117d"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 2,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "8890fea5b22a7fadd3c9cf78c4a2ea66529a56dee8414b42356e6f4edb4a4e35"
+  },
+  {
+    "case": "qrpcard-qrpcard-j4",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 1,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "050938656126a1b5a1e244a653ba82965bbb7a5ebd1ecada1d9cca73f3ede884"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "9f277d0e388380722abca6e187e3da7181d86a050b26dad4a172f751582dff15"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j3",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "831fa4b939b1668cc04e331a3ab24148793197e0f25721223f921d98a2f9702a"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "7a474f86e0cf0df5efdd8f4992d94ac7b505b8e115decc0cc2ebf7c04de60eb5"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-large",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "8c58833691253c7d1651e81bf2d88afefe2c2f1389a4e0d2ae6a1cb06428c115"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "fbb670c761ba7b85efe12bfad8a33f1a16eb681fcd78acd55cedc6587432badb"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-small",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 2,
+    "native_opens": 0,
+    "passed": false,
+    "router_summary_sha256": "a9de8fc1318b0127290a900bfe7bcb343976897aac36a9717ff8986e1e6a29ab"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "47b8881dfff7315413912828ba006a1773f3884c584a191a9cbc1510497a4746"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-medium",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "f72844b8bc8436b483c3c048b3bf96771da85c52777790e2736947ecce25df0d"
+  },
+  {
+    "case": "qrpcard-qrpcard-j2-medium",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "0068945811972757654feac72c7be2ed17c17d1f1e5cd9015f06d426672fc6ac"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "08877f63f126faf11ccc6b7ac7a6fd98b2b4974081d047c1c1921735f57c57a9"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "9b8ae537d237d5c69ee72d4e74c3cd0571c704fb35f3acdb4988fcdb577b02d0"
+  },
+  {
+    "case": "rufs-smart-psu-j3",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "451fb9a3468c1ef95ac57be64a08b0476a6af845ac3b9da15b02038549e5d0d3"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j2-small",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "e45ec40d7566e120b435a3888c2f3f2edcb73bf694ba1c802ac9551b35e05913"
+  },
+  {
+    "case": "fan-controller-fan-controller-j2-medium",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "53f231e95c007da98474c469899bf6585fe17dfd0d4fa74e97a10cb4629a8029"
+  },
+  {
+    "case": "qrpcard-qrpcard-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "8053f1e3d9af3835b3c68200fa2e51beddc01a76e722d2dc242c94965f2bd246"
+  },
+  {
+    "case": "rufs-smart-psu-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "d511b4ec6f9aaf5bef0fbee57c201504726e418969fb51765ebffeaf71d6f846"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "e273d726e7c0e91c21642ff88fb633d70fd974e9d06bc7501a86be74307de751"
+  },
+  {
+    "case": "photon-sprinkler-sprinkler-j3",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 2,
+    "passed": false,
+    "router_summary_sha256": "e4127ba36b3f55854bf81277fd73ed14faf2bf825f2ac70ff2af7b54766036eb"
+  },
+  {
+    "case": "hellscribe-hellscribe-j2-large",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 1,
+    "passed": false,
+    "router_summary_sha256": "7b4e887806825a966e40a88f2f50bf6d2e3d9f79d8a447b450de190f8f4d109d"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "63fd33605af88531cb37960fab8ac0a8b6ea61953f13a584bf479504c3d340ef"
+  },
+  {
+    "case": "paperino-hw-paperino-shield-j4",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 6,
+    "passed": false,
+    "router_summary_sha256": "b16631a65d7c6444b8bc19a0d339ed27b92626215ae458b0561a6e982c280ab4"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "879e1b5809ead339b6087c19905ae9b95275a9bac95441f47e8ba0b9aa3df01f"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j1",
+    "seed": 1,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "97ce1a373d9d1e8c305775c849d9e4fe519646108f42dd1a89f1960ed6a85ef9"
+  },
+  {
+    "case": "kitspace-lcr-addon-j3",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "89662e6e0761224dea7c5183a59079f841df58385ba0d348424da1b51eedfc87"
+  },
+  {
+    "case": "sv650sds-sds-tool-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "742a15f7a94ec4c27a28b621eb7bbb60a01da073b5f507c4aad18cfc2bd72b70"
+  },
+  {
+    "case": "hellscribe-hellscribe-j1",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "126495d36b06510a66b9b1b7cbeec814b5c08e7fa5fd0f9fd3f38653d991322b"
+  },
+  {
+    "case": "nextbusclock-nextbusclockv1-j3",
+    "seed": 2,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 3,
+    "passed": false,
+    "router_summary_sha256": "7f5d7983da7ca63b9d54a4c399865e507372bdcff30454cc1c43903eb1248ca2"
+  },
+  {
+    "case": "kitspace-solenoid-driver-j4",
+    "seed": 3,
+    "violations_added": 0,
+    "native_new_errors": 0,
+    "native_opens": 0,
+    "passed": true,
+    "router_summary_sha256": "b6b8ccc213fa5faacb5edb9b89a3c218a726b375673cb1738b089a6bcd553cdf"
+  }
+]

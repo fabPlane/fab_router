@@ -1,0 +1,156 @@
+{
+  family: "power",
+  name: "routed",
+  repeat: 0,
+  errors: [ "starved_thermal" ],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "power",
+  name: "candidate",
+  repeat: 0,
+  errors: [],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: true,
+  relativeAccepted: true,
+}
+{
+  family: "power",
+  name: "routed",
+  repeat: 1,
+  errors: [ "starved_thermal" ],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "power",
+  name: "candidate",
+  repeat: 1,
+  errors: [],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: true,
+  relativeAccepted: true,
+}
+{
+  family: "power",
+  name: "routed",
+  repeat: 2,
+  errors: [ "starved_thermal" ],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "power",
+  name: "candidate",
+  repeat: 2,
+  errors: [],
+  opens: 95,
+  lostSource: 0,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: true,
+  relativeAccepted: true,
+}
+{
+  family: "full",
+  name: "routed",
+  repeat: 0,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "starved_thermal"
+  ],
+  opens: 13,
+  lostSource: 235,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "full",
+  name: "candidate",
+  repeat: 0,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "clearance", "clearance", "clearance"
+  ],
+  opens: 14,
+  lostSource: 292,
+  lostCurrent: 57,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: false,
+}
+{
+  family: "full",
+  name: "routed",
+  repeat: 1,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "starved_thermal"
+  ],
+  opens: 13,
+  lostSource: 235,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "full",
+  name: "candidate",
+  repeat: 1,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "clearance", "clearance", "clearance"
+  ],
+  opens: 14,
+  lostSource: 292,
+  lostCurrent: 57,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: false,
+}
+{
+  family: "full",
+  name: "routed",
+  repeat: 2,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "starved_thermal"
+  ],
+  opens: 13,
+  lostSource: 235,
+  lostCurrent: 0,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: true,
+}
+{
+  family: "full",
+  name: "candidate",
+  repeat: 2,
+  errors: [ "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal", "starved_thermal",
+    "clearance", "clearance", "clearance"
+  ],
+  opens: 14,
+  lostSource: 292,
+  lostCurrent: 57,
+  ownership: [ true, true, true ],
+  accepted: false,
+  relativeAccepted: false,
+}

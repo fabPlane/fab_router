@@ -1,0 +1,14 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-candidate-bundle.test.ts:
+(pass) publication contains the exact checked snapshots even if source paths change during checking [43.64ms]
+(pass) rejection publishes no candidate [37.32ms]
+(pass) checker failure publishes no candidate [24.18ms]
+(pass) publication never replaces an existing destination or leaves staging files [38.80ms]
+(pass) publication cannot follow a dangling destination symlink [40.11ms]
+(pass) publication cannot create an absent source rule sidecar [20.11ms]
+
+ 6 pass
+ 0 fail
+ 36 expect() calls
+Ran 6 tests across 1 file. [261.00ms]

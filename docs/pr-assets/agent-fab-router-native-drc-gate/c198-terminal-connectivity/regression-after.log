@@ -1,0 +1,17 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-candidate-bundle.test.ts:
+(pass) publication contains the exact checked snapshots even if source paths change during checking [197.02ms]
+(pass) rejection publishes no candidate [199.30ms]
+(pass) checker failure publishes no candidate [28.29ms]
+(pass) publication never replaces an existing destination or leaves staging files [196.89ms]
+(pass) publication cannot follow a dangling destination symlink [194.32ms]
+(pass) publication cannot create an absent source rule sidecar [20.81ms]
+
+test/native-terminal-connectivity.test.ts:
+(pass) native gate blocks lost terminal pairs even when open totals and DRC remain unchanged [11182.37ms]
+
+ 7 pass
+ 0 fail
+ 44 expect() calls
+Ran 7 tests across 2 files. [12.09s]

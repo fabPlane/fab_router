@@ -1,0 +1,16 @@
+{
+  "parent": "2892c9e19da02b4e221a9cdf8f5708015541c02d",
+  "native": "10.0.6",
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "routerRerun": false,
+  "probes": 18,
+  "rechecks": 3,
+  "independentSavedNativeChecks": 1,
+  "source": "existing identity-only axial fixture; frozen production inputs unchanged",
+  "implementation": "existing native tools unchanged; added diagnostic regression only",
+  "exploratoryError": "initial static typecheck: optional repair field; corrected before full test suite",
+  "backbonePairedDecisions": 6,
+  "backbonePublications": 1,
+  "testEditDuringSuite": "Both final new regressions authored before their file loaded; final complete-suite log must explicitly show both names and 922 passing tests. Executable native tools stayed unchanged."
+}

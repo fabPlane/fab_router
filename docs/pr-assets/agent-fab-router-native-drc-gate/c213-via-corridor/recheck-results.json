@@ -1,0 +1,110 @@
+[
+  {
+    "name": "routed",
+    "repeat": 0,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostSource": 61,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      true,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": true
+  },
+  {
+    "name": "candidate",
+    "repeat": 0,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 93,
+    "lostSource": 0,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      false,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": false
+  },
+  {
+    "name": "routed",
+    "repeat": 1,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostSource": 61,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      true,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": true
+  },
+  {
+    "name": "candidate",
+    "repeat": 1,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 93,
+    "lostSource": 0,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      false,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": false
+  },
+  {
+    "name": "routed",
+    "repeat": 2,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostSource": 61,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      true,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": true
+  },
+  {
+    "name": "candidate",
+    "repeat": 2,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 93,
+    "lostSource": 0,
+    "lostRouted": 0,
+    "ownership": [
+      true,
+      false,
+      true
+    ],
+    "accepted": false,
+    "repairAccepted": false
+  }
+]

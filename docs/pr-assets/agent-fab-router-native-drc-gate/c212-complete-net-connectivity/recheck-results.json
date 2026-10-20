@@ -1,0 +1,113 @@
+[
+  {
+    "name": "source",
+    "repeat": 0,
+    "errors": [],
+    "opens": 110,
+    "lostPairs": 0,
+    "accepted": true,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "source",
+    "repeat": 1,
+    "errors": [],
+    "opens": 110,
+    "lostPairs": 0,
+    "accepted": true,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "source",
+    "repeat": 2,
+    "errors": [],
+    "opens": 110,
+    "lostPairs": 0,
+    "accepted": true,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "full",
+    "repeat": 0,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 15,
+    "lostPairs": 348,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "full",
+    "repeat": 1,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 15,
+    "lostPairs": 348,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "full",
+    "repeat": 2,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 15,
+    "lostPairs": 348,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "complete-net",
+    "repeat": 0,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostPairs": 61,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "complete-net",
+    "repeat": 1,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostPairs": 61,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  },
+  {
+    "name": "complete-net",
+    "repeat": 2,
+    "errors": [
+      "starved_thermal",
+      "starved_thermal"
+    ],
+    "opens": 94,
+    "lostPairs": 61,
+    "accepted": false,
+    "nativeCopperPreserved": true
+  }
+]

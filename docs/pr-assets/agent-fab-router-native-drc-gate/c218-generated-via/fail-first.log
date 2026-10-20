@@ -1,0 +1,34 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-thermal-proposals.test.ts:
+(pass) thermal proposals exclude reidentified authored tracks, including reversed numeric equivalents [162.79ms]
+(pass) axial thermal detours preserve endpoints, directions and the six-proposal bound [19.29ms]
+(pass) axial proposals follow the complete existing diagonal and pair prefix [24.41ms]
+(pass) short axial thermal paths scale with width and retain endpoints without degenerate segments [19.21ms]
+(pass) short axial proposals never displace a full 304-proposal prefix [50.65ms]
+(pass) legacy drawing identity duplicates do not abort track proposals, while segment collisions still reject [315.35ms]
+186 | for extra in (a.replace('"a"','"foreign"').replace('(net 1)','(net 2)'),via.replace('"v"','"other"'),'(arc (start 0 0) (mid 1 1) (end 2 0) (net 1) (uuid "arc"))'):
+187 |  assert list(m.via_proposals(n+[m.parse(extra)],'v',set()))==[]
+188 | assert list(m.via_proposals(m.parse('(kicad_pcb '+via+')'),'v',set()))==[]
+189 | `;
+190 |   const result = Bun.spawnSync(["python3", "-c", script]);
+191 |   expect(result.stderr.toString()).toBe("");
+                                         ^
+error: expect(received).toBe(expected)
+
+- ""
++ "Traceback (most recent call last):
++   File "<string>", line 10, in <module>
++ AttributeError: module 'thermal' has no attribute 'via_proposals'. Did you mean: 'pair_proposals'?
++ "
+
+- Expected  - 1
++ Received  + 4
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-thermal-proposals.test.ts:191:36)
+(fail) via thermal proposals move every incident generated endpoint and preserve protected copper [58.41ms]
+
+ 6 pass
+ 1 fail
+ 51 expect() calls
+Ran 7 tests across 1 file. [705.00ms]

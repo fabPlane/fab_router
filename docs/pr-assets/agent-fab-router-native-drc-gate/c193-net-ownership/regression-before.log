@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+120 |       (net 1 "${name}")
+121 |       (segment (start 2 2) (end 4 2) (width 0.25) (layer "F.Cu") (net 1)
+122 |         (uuid "00000000-0000-0000-0000-000000000002"))
+123 |       (gr_rect (start 0 0) (end 10 10) (stroke (width 0.05) (type default))
+124 |         (fill none) (layer "Edge.Cuts") (uuid "00000000-0000-0000-0000-000000000001")))`;
+125 |     await writeFile(before, board("GND")); await writeFile(after, board("VCC"));
+                                              ^
+error: expect(received).rejects.toThrow(expected)
+
+Expected promise that rejects
+Received promise that resolved: Promise { <resolved> }
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-drc-gate.test.ts:125:41)
+(fail) native gate blocks renamed net ownership even when native reports are clean [2855.74ms]
+
+ 0 pass
+ 13 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [2.93s]

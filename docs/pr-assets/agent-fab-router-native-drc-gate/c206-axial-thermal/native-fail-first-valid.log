@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-aquarius-thermal.test.ts:
+(pass) one horizontal signal segment starves a preserved ground-pad thermal [19369.77ms]
+56 |     await writeFile(input, source);
+57 |     await writeFile(routed, `${text.slice(0, end)}\n${added}\n${text.slice(end)}`);
+58 |     const routedBefore = await readFile(routed);
+59 |     for (const name of ["input", "routed"]) for (const ext of [".kicad_pro", ".kicad_dru"]) await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+60 |     const result = await searchNativeThermals(input, routed, join(root, "accepted.json"), join(root, "search"), 1);
+61 |     expect(result.published).toBe(true);
+                                  ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-aquarius-thermal.test.ts:61:30)
+(fail) bounded axial search restores the reduced ground thermal with source and routed pairs intact [21241.97ms]
+
+ 1 pass
+ 1 fail
+ 17 expect() calls
+Ran 2 tests across 1 file. [40.84s]

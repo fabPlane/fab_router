@@ -1,0 +1,160 @@
+# Single-segment native thermal regression
+
+Exact frozen Aquarius J4 source board, with its MIT license and unchanged native
+project/custom rules. Append `added.sexpr` before the board's final close.
+The segment comes from placement-corrected engine `8fa7ead0`, seed 1.
+
+Native 10.0.6 refill: source has zero errors and 110 opens; source plus the one
+horizontal B.Cu segment has one starved thermal at GNDD U1.39 and 111 opens.
+All source-connected terminal pairs remain connected. Removing the segment
+restores the source result. Source geometry and authored zone rules are retained.
+
+This is a reduction of the six-error benchmark failure, not a repaired route or
+a globally minimized board. `full-added.sexpr.gz` contains all 466 added copper items from the full output,
+six thermal errors, 15 opens and 348 lost source-connected terminal pairs.
+The original single-track detour generator emits no paths for axial segments.
+Complete deletion trials and repeat controls are under the c205 evidence assets.
+
+`axial-input.kicad_pcb.gz` is the same source with only the second and third
+occurrences of the duplicated Edge.Cuts graphical UUID replaced deterministically.
+This fixture-only identity repair lets the strict proposal identity guard run;
+no copper, outline geometry, pads, zones or rules change. The original frozen
+input above is retained byte-for-byte. The axial search regression adds the same
+signal segment. Its first detour reports zero errors and the 110-open source
+budget without lost source/routed terminal pairs, but native loading reassigns
+all three detour segments from `Net-(C1-Pad1)` to `Net-(R1-Pad1)`. It is UNSAFE.
+The native ownership guard rejects it and the bounded search publishes nothing;
+the prior report-only repair interpretation is withdrawn.
+
+`connectivity-added.sexpr` reduces the separate source-connectivity blocker to
+three added B.Cu signal segments (0.2032 mm, on three distinct nets). Together
+they isolate GNDD U1.39 from the other 61 pads in its source-connected group after
+native refill: one thermal error, 114 opens, 61 lost source pairs. Removing ANY
+one of these three segments restores all source pairs (112 opens; thermal
+errors vary). The full source geometry/rules remain unchanged; this is a
+one-deletion-minimal added-copper witness, not a globally minimized board or a
+route repair. The horizontal segment is also the earlier one-track thermal
+witness: thermal starvation alone does not imply this terminal partition.
+All 74 discovery/refill checks and three-repeat controls are retained in the
+c207 evidence assets. No production behavior or scored outcome changes.
+
+`connectivity-detour.sexpr` replaces the first horizontal track with the current
+generator's first endpoint-preserving detour. Native 10.0.6 reports zero errors,
+112 opens and zero lost source/routed pairs, but reassigns all three detour tracks
+from `Net-(C1-Pad1)` to `Net-(R1-Pad1)` on refill. This is an UNSAFE diagnostic,
+not a repair. The gate rejects both its native ownership change and its increase
+above the 110-open source budget.
+A separate load-only control isolates reassignment to native board loading,
+before explicit connectivity build, refill, DRC or save.
+The c208 evidence explicitly audits submitted versus native-saved ownership;
+report/terminal counts alone must not be interpreted as proof of route fidelity.
+
+The c210 narrow-offset diagnostic uses 0.060 mm endpoint-preserving 45-degree
+ramps. It removes the thermal error and preserves native copper ownership and
+source/routed terminal pairs, but retains 111 opens versus the source's 110.
+The gate rejects it on the source open budget. This is DRC-clean local thermal
+geometry, not a publishable repair or a complete-board routing improvement.
+
+`backbone-added.sexpr` retains all nine generated copper items on the same signal
+net from the full routed output. With this complete-net control, the same narrow
+detour changes one thermal error to zero at 109 opens, preserves all source and
+routed terminal pairs and native net ownership, and passes native acceptance.
+Three fresh paired checks and one exact checked bundle are retained in c210.
+Only the horizontal track changes; the other eight generated copper items and
+all source geometry/rules remain intact. This is a manually constructed safe
+local control, not automatic search recovery or a complete Aquarius fix.
+
+
+The width-scaled generator regression extends this control: its first short
+proposal for the offending track offsets by 0.30 × 0.2032 = 0.06096 mm. Native
+acceptance reports zero new errors, 109 opens, no lost source/routed pairs and
+unchanged copper ownership. The complete prior 90-proposal prefix cannot repair
+this control. Short proposals are appended only within unused stage-budget slots;
+the original isolated witness remains unpublishable. This is reduced-control
+search coverage, not a complete Aquarius benchmark repair.
+
+`connectivity-nets.sexpr` retains all 74 generated items on `+3V3` and
+`/Inputs/TCK` from the full routed output, with no within-net copper deletion.
+Native 10.0.6 refill reports two thermal errors, 94 opens and 61 lost source
+pairs: U1.53 is isolated from its original GNDD group. Removing either entire
+net restores all source pairs. Thus the connectivity failure survives complete
+signal-net context and is not an artifact of trimming individual tracks.
+This is one-net-deletion-minimal for the retained pair, not a globally minimal
+board or a repair. All source geometry and rules remain unchanged. The lower
+open count (source: 110) does not justify losing previously connected terminals;
+the native gate rejects it. Full discovery and repeated native checks are in
+c212 evidence. No production routing behavior changes.
+The `+3V3`-only control still has the same two thermal findings at U1.53 and
+U1.55, but no lost source pairs (95 opens). `/Inputs/TCK` alone has no thermal
+errors or lost pairs (108 opens). The unchanged thermal findings therefore do
+not explain whether the source group remains connected; check terminal pairs
+independently.
+
+The full-context coordinated-via regression uses all 466 items from
+`full-added.sexpr.gz`. Move the upper TCK via (162.9939, 50.8553) mm by
+(−0.1, +0.1) mm and update its incident generated track endpoints. That alone
+restores 56 source pairs but adds three clearance errors against LED4. Moving
+both adjacent generated LED4 vias from x=162.3543 to x=162.2343 mm, with their
+incident endpoints, removes those new clearances. Exactly eight generated items
+change: three vias and five tracks. All other generated/source copper, nets,
+widths, drills and rules remain. Three fresh paired native checks show 348→292
+lost source pairs and 15→14 opens, no lost current routed pairs, and unchanged
+native copper ownership. Six thermal errors remain; strict final acceptance is
+false. The remaining disconnected source components include U1.39, U1.55 and
+U1.46–48. This is a manual partial recovery control, not automatic repair or a
+new full-suite routing score. Complete probes and checks are in c214 evidence.
+
+Cycle 215 moves only the generated capacitor via at (165.815,48.1278) up
+0.1 mm, together with its two attached tracks, after the coordinated corridor
+move above. Native refill restores the 57 source pairs involving U1.55 and
+reduces opens from 14 to 13. It exposes a seventh `starved_thermal` at U1.55
+(actual one spoke, required two); the relative repair gate must reject it
+despite unchanged copper ownership, preserved current pairs and no added
+clearance errors. This is a rejected diagnostic, not an automatic repair.
+
+`thermal55-added.sexpr` is a one-segment reduction of the generated power
+copper. On the unchanged original source board it produces exactly one
+`starved_thermal` at U1.55, 111 opens and zero lost source terminal pairs.
+Deleting this sole added segment returns the clean source (110 opens).
+Thus the thermal failure does not require losing source ground connectivity.
+The segment is only 0.6518 mm long and is about 1.201 mm from the pad centre;
+nearest-track intuition alone misses its effect on the surrounding pour.
+This is minimal in added-item count, not a minimized source board or a repair.
+In the complete 466-item context, deleting this segment alone does not clear
+U1.55: other generated copper provides an alternative obstruction. Six existing
+width-scaled detours of this segment in the complete 63-item power net also
+retain both U1.53/U1.55 thermal errors (95 opens). Do not infer a legal repair
+from the one-item deletion control. Cycle 216 retains the complete reduction
+trace, full-context controls and search outcome.
+
+`power-stage0-added.sexpr.gz` preserves the complete generated power net after
+cycle 216's U1.53 detour: 65 items, with one remaining U1.55 thermal and 95 opens.
+Moving the generated power via from (164.1045, 50.6008) to
+(163.8045, 50.9008) mm together with all three incident track endpoints clears
+the second-spoke obstruction. Three fresh strict three-board checks retain all
+source and current terminal pairs, preserve native ownership and keep 95 opens.
+Cycle 217 constructed this complete-net recovery control manually. The
+proposal generator now appends coordinated moves of generated vias and their
+incident track endpoints after the existing track families, within the same
+304-proposal bound. The native regression uses the generated candidate and
+requires full three-board acceptance. The original source, rules, copper and
+source/current terminal pairs remain protected. This partial control still has
+95 opens and does not establish a scored benchmark improvement.
+The same move in the complete-board context and all exploratory trials are
+retained in cycle 217 evidence; full-board safety is evaluated independently.
+The complete-board transfer fails: U1.55 stays in the ground group, but U1.53
+becomes isolated, losing 57 current pairs, and three new clearance findings
+appear against the lower signal via. Eliminating those clearances alone does
+not restore U1.53. The strict gate rejects this full-board transfer.
+
+`full-power-stage0-added.sexpr.gz` retains all 468 generated copper items after
+cycle 216's U1.53 detour and the earlier corridor/capacitor-via changes. Native
+refill reports six thermal errors, 13 opens and 235 lost source pairs. The known
+power-via move alone clears U1.55 but disconnects U1.53 and adds three clearances.
+Coordinating that move with the lower TCK via, from (163.3455,51.5585) to
+(163.3455,52.0785) mm, and updating both incident track endpoints restores the
+57 current pairs and removes the new clearances. Five thermal errors remain,
+with the original 13 opens and 235 lost source pairs. Relative repair acceptance
+passes; final source-based acceptance remains false. This is a manually
+constructed full-context partial recovery, not an automatic or scored repair.
+The new native regression requires both decisions and unchanged native ownership.

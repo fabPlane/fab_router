@@ -1,0 +1,28 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-drc-gate.test.ts:
+(pass) native gate rejects a changed embedded board rule even with clean reports [2.09ms]
+(pass) native DRC acceptance gate > rejects the native thermal violation absent from text-router reports [0.40ms]
+(pass) native DRC acceptance gate > compares a multiset, rather than allowing a removed error to mask a new one [0.05ms]
+(pass) native DRC acceptance gate > retains inherited findings even when native item identifiers change [0.02ms]
+(pass) native DRC acceptance gate > a moved finding is new; item order is immaterial [0.33ms]
+(pass) native DRC acceptance gate > blocks increased opens but allows incomplete routes that preserve connectivity [0.04ms]
+(pass) native DRC acceptance gate > does not equate warnings with inherited errors [0.02ms]
+(pass) native DRC acceptance gate > rejects changed ignored-check policy [0.04ms]
+(pass) native DRC acceptance gate > requires an error-inclusive check in matching native versions and units [0.04ms]
+(pass) native DRC acceptance gate > fails closed on truncated or malformed native output [0.12ms]
+(pass) native runner rejects missing or changed project rules without modifying sources [1.09ms]
+(pass) rejects malformed connectivity findings in either report [0.21ms]
+(pass) native gate blocks deletion of original copper before native execution [2.45ms]
+
+test/native-source-copper.test.ts:
+(pass) retains original copper while permitting added routes [0.12ms]
+(pass) blocks deleted, moved, narrowed or reassigned original copper [0.12ms]
+(pass) preserves duplicate item multiplicity and accepts numeric formatting and field order [0.06ms]
+(pass) also preserves source vias and arcs [0.09ms]
+(pass) accepts regenerated UUIDs and reversed endpoints without losing geometry [0.02ms]
+
+ 18 pass
+ 0 fail
+ 52 expect() calls
+Ran 18 tests across 2 files. [77.00ms]

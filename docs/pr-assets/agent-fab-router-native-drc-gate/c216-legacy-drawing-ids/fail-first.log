@@ -1,0 +1,23 @@
+bun test v1.4.0 (34cbb9a40)
+
+test/native-thermal-proposals.test.ts:
+137 |     ] as const) {
+138 |       await writeFile(join(root, "source"), board(source));
+139 |       await writeFile(join(root, "current"), board(current));
+140 |       const out = join(root, `out${index}`);
+141 |       const result = Bun.spawnSync(["python3", "tools/native-thermal-proposals.py", "--source", join(root,"source"), "--current", join(root,"current"), "--report", join(root,"report"), "--out", out]);
+142 |       expect(result.exitCode === 0).toBe(accepted);
+                                          ^
+error: expect(received).toBe(expected)
+
+Expected: true
+Received: false
+
+      at <anonymous> (/home/hyper/bench/wt/fr-bugs/test/native-thermal-proposals.test.ts:142:37)
+(fail) legacy drawing identity duplicates do not abort track proposals, while segment collisions still reject [60.92ms]
+
+ 0 pass
+ 5 filtered out
+ 1 fail
+ 1 expect() calls
+Ran 1 test across 1 file. [132.00ms]

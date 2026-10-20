@@ -1,0 +1,17 @@
+{
+  "before": "80f1fb7f",
+  "after": "06c951f9fef8f8991ae62acecafc5af05d5c8f57",
+  "machine": "hyper-ms-lin",
+  "cores": "20-25",
+  "router_rerun": false,
+  "native_version": "10.0.6",
+  "required_checks_exit": 0,
+  "tests": 907,
+  "failures": 0,
+  "assertions": 398672,
+  "seconds": 311.1,
+  "regression_before": "One intentional failed expectation: source-only check accepted rewired repair. Shell command returned tail status 0; test log retains 0 pass / 1 fail.",
+  "after_measured_before_commit": true,
+  "source_hashes": "source-hashes.json",
+  "controls_exit": 0
+}
