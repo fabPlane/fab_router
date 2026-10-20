@@ -1,5 +1,7 @@
 # Bounded quilt front cache: fresh full native comparison
 
+**Later replication:** the [reverse-order pair](../quilt-front-reverse/README.md) retains identical output but does not reproduce this speedup: total route −0.66%, median +0.15%, p95 +4.07%, sweep wall +0.16%. Read both pairs before assessing runtime benefit.
+
 The candidate adds a 1,024-slot numeric front cache per quilt, preserving the original Map as the authoritative cache. Only `src/route/quilt.ts` differs in the isolated measured engines. Full candidate bytes, API controls, alternating replay measurements and source inversion are in [the prerequisite experiment](../quilt-front/README.md).
 
 Fresh original then candidate sweeps each use the same frozen 26 cases × three repeats, host, cores 12–19 and nice 10. Identical wrappers enable existing local recovery. Required gates finish before native routing; no own heavy job overlaps measured routing. Every attempt is retained. Both sweeps complete with preserved controls, no interruption and supervisor exit 0. Supervisor wall time is 598.114 / 538.049 seconds; benchmark sweep wall time below excludes final report generation.
