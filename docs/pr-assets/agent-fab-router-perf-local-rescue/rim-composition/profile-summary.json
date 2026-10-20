@@ -1,0 +1,369 @@
+{
+  "scope": "One separately profiled route per version; all profiled times excluded from timing comparisons; inlining can move function attribution",
+  "self_samples": {
+    "original": [
+      {
+        "function": "withinRim",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/onboard.ts",
+        "line": 49,
+        "sample_ms": 11551.401
+      },
+      {
+        "function": "collect",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/lattice/grid.ts",
+        "line": 257,
+        "sample_ms": 6435.465
+      },
+      {
+        "function": "test",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/lattice/grid.ts",
+        "line": 262,
+        "sample_ms": 3528.965
+      },
+      {
+        "function": "sweepClear",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/clear.ts",
+        "line": 210,
+        "sample_ms": 2991.283
+      },
+      {
+        "function": "aStarLayered",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/search.ts",
+        "line": 456,
+        "sample_ms": 2876.459
+      },
+      {
+        "function": "dist2SegSeg",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/distance.ts",
+        "line": 27,
+        "sample_ms": 2147.698
+      },
+      {
+        "function": "aStar",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/search.ts",
+        "line": 294,
+        "sample_ms": 1816.397
+      },
+      {
+        "function": "coreOf",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/distance.ts",
+        "line": 93,
+        "sample_ms": 1768.891
+      },
+      {
+        "function": "state",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/quilt.ts",
+        "line": 73,
+        "sample_ms": 1507.767
+      },
+      {
+        "function": "dop8OfPts",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/bounds.ts",
+        "line": 54,
+        "sample_ms": 1319.254
+      },
+      {
+        "function": "pop",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/search.ts",
+        "line": 189,
+        "sample_ms": 1182.614
+      },
+      {
+        "function": "some",
+        "file": "",
+        "line": 1,
+        "sample_ms": 1141.134
+      },
+      {
+        "function": "segsIntersect",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/predicates.ts",
+        "line": 55,
+        "sample_ms": 989.709
+      },
+      {
+        "function": "closerConvex",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/clear.ts",
+        "line": 61,
+        "sample_ms": 876.336
+      },
+      {
+        "function": "push",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/lattice/grid.ts",
+        "line": 267,
+        "sample_ms": 748.805
+      },
+      {
+        "function": "dist2Pts",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/distance.ts",
+        "line": 75,
+        "sample_ms": 652.347
+      },
+      {
+        "function": "isFree",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/quilt.ts",
+        "line": 89,
+        "sample_ms": 591.017
+      },
+      {
+        "function": "leq",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/search.ts",
+        "line": 266,
+        "sample_ms": 589.451
+      },
+      {
+        "function": "edgeCost",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/passes.ts",
+        "line": 865,
+        "sample_ms": 575.319
+      },
+      {
+        "function": "probe",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/search.ts",
+        "line": 234,
+        "sample_ms": 517.178
+      },
+      {
+        "function": "barrelFits",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/clear.ts",
+        "line": 236,
+        "sample_ms": 462.177
+      },
+      {
+        "function": "filter",
+        "file": "",
+        "line": 1,
+        "sample_ms": 434.27
+      },
+      {
+        "function": "hitBlocks",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/clear.ts",
+        "line": 123,
+        "sample_ms": 422.617
+      },
+      {
+        "function": "dist2SegPoly",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/geom/distance.ts",
+        "line": 45,
+        "sample_ms": 410.931
+      },
+      {
+        "function": "viaMove",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/passes.ts",
+        "line": 880,
+        "sample_ms": 354.066
+      },
+      {
+        "function": "shapesOf",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/lattice/grid.ts",
+        "line": 363,
+        "sample_ms": 292.637
+      },
+      {
+        "function": "sort",
+        "file": "",
+        "line": 0,
+        "sample_ms": 282.765
+      },
+      {
+        "function": "Set",
+        "file": "",
+        "line": 0,
+        "sample_ms": 263.914
+      },
+      {
+        "function": "edgeCost",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/route/passes.ts",
+        "line": 612,
+        "sample_ms": 263.674
+      },
+      {
+        "function": "trackLegShape",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/original/src/lattice/shapes.ts",
+        "line": 220,
+        "sample_ms": 243.741
+      }
+    ],
+    "candidate": [
+      {
+        "function": "partWithinRim",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/onboard.ts",
+        "line": 61,
+        "sample_ms": 9016.983
+      },
+      {
+        "function": "collect",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/lattice/grid.ts",
+        "line": 257,
+        "sample_ms": 6734.451
+      },
+      {
+        "function": "test",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/lattice/grid.ts",
+        "line": 262,
+        "sample_ms": 3659.468
+      },
+      {
+        "function": "aStarLayered",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 456,
+        "sample_ms": 2685.899
+      },
+      {
+        "function": "dist2SegSeg",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/distance.ts",
+        "line": 27,
+        "sample_ms": 2288.715
+      },
+      {
+        "function": "sweepClear",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/clear.ts",
+        "line": 210,
+        "sample_ms": 1953.489
+      },
+      {
+        "function": "aStar",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 294,
+        "sample_ms": 1893.438
+      },
+      {
+        "function": "coreOf",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/distance.ts",
+        "line": 93,
+        "sample_ms": 1635.41
+      },
+      {
+        "function": "dop8OfPts",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/bounds.ts",
+        "line": 54,
+        "sample_ms": 1553.558
+      },
+      {
+        "function": "state",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/quilt.ts",
+        "line": 73,
+        "sample_ms": 1423.463
+      },
+      {
+        "function": "withinRim",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/onboard.ts",
+        "line": 49,
+        "sample_ms": 1247.298
+      },
+      {
+        "function": "some",
+        "file": "",
+        "line": 1,
+        "sample_ms": 1231.705
+      },
+      {
+        "function": "pop",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 189,
+        "sample_ms": 1156.943
+      },
+      {
+        "function": "segsIntersect",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/predicates.ts",
+        "line": 55,
+        "sample_ms": 1035.562
+      },
+      {
+        "function": "closerConvex",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/clear.ts",
+        "line": 61,
+        "sample_ms": 935.545
+      },
+      {
+        "function": "push",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/lattice/grid.ts",
+        "line": 267,
+        "sample_ms": 749.226
+      },
+      {
+        "function": "dist2Pts",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/distance.ts",
+        "line": 75,
+        "sample_ms": 706.365
+      },
+      {
+        "function": "isFree",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/quilt.ts",
+        "line": 89,
+        "sample_ms": 665.682
+      },
+      {
+        "function": "edgeCost",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/passes.ts",
+        "line": 865,
+        "sample_ms": 581.31
+      },
+      {
+        "function": "shapesOf",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/lattice/grid.ts",
+        "line": 363,
+        "sample_ms": 576.031
+      },
+      {
+        "function": "probe",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 234,
+        "sample_ms": 520.712
+      },
+      {
+        "function": "dist2SegPoly",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/geom/distance.ts",
+        "line": 45,
+        "sample_ms": 446.595
+      },
+      {
+        "function": "hitBlocks",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/clear.ts",
+        "line": 123,
+        "sample_ms": 446.177
+      },
+      {
+        "function": "barrelFits",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/clear.ts",
+        "line": 236,
+        "sample_ms": 428.923
+      },
+      {
+        "function": "leq",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 266,
+        "sample_ms": 384.542
+      },
+      {
+        "function": "viaMove",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/passes.ts",
+        "line": 880,
+        "sample_ms": 348.494
+      },
+      {
+        "function": "Set",
+        "file": "",
+        "line": 0,
+        "sample_ms": 313.702
+      },
+      {
+        "function": "sort",
+        "file": "",
+        "line": 0,
+        "sample_ms": 289.435
+      },
+      {
+        "function": "edgeCost",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/passes.ts",
+        "line": 612,
+        "sample_ms": 281.469
+      },
+      {
+        "function": "push",
+        "file": "file:///home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle81/candidate/src/route/search.ts",
+        "line": 183,
+        "sample_ms": 257.97
+      }
+    ]
+  }
+}

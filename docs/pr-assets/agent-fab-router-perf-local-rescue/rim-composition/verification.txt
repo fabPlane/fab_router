@@ -1,0 +1,14 @@
+PASS rejected missing-repeat
+PASS rejected session-bytes
+PASS rejected new-error
+PASS rejected effective-settings
+PASS archived 78-pair full native comparison and four corruption controls
+PASS derived summary/per-case table/aggregate/chart byte replay
+PASS all12 unprofiled replay records, actual counterbalanced chronology, report/stat/session parity and derived timings
+PASS lossless26-case licensing/provenance hashes
+PASS unchanged documentation fixtures required by the full unit gate
+PASS separately profiled output/settings/statistics/report parity; times excluded
+PASS rejected missing-dense
+PASS rejected dense-check
+PASS archived three-pair dense native comparison and two corruption controls
+PASS ladder input hashes, paired settings, sessions, statistics and reports except wall
