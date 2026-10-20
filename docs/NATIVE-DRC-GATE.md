@@ -224,3 +224,9 @@ acceptance, intermediate thermal progress and bundle publication even when DRC
 reports are clean and all terminal pairs survive. This catches load-time track
 net reassignment that report and terminal comparisons alone cannot detect. Caller
 files remain unchanged.
+
+The reduced axial Aquarius diagnostic previously published by the report-only
+boundary is unsafe: its three detour tracks change from the C1 net to the R1 net
+during native loading. Zero thermal errors, the source open budget and preserved
+terminal pairs do not make that detour legal. The ownership guard rejects it;
+the bounded axial regression now requires no progress and no publication.

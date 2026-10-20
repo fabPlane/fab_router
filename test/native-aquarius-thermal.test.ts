@@ -45,7 +45,7 @@ test.skipIf(!hasNative)("one horizontal signal segment starves a preserved groun
 }, 120_000);
 
 import { searchNativeThermals } from "../tools/native-thermal-search.ts";
-test.skipIf(!hasNative)("bounded axial search restores the reduced ground thermal with source and routed pairs intact", async () => {
+test.skipIf(!hasNative)("bounded axial search refuses report-clean detours that change native copper ownership", async () => {
   const root = await mkdtemp(join(tmpdir(), "native-axial-search-"));
   const fixture = "test/fixtures/native-aquarius-thermal";
   try {
@@ -58,15 +58,24 @@ test.skipIf(!hasNative)("bounded axial search restores the reduced ground therma
     const routedBefore = await readFile(routed);
     for (const name of ["input", "routed"]) for (const ext of [".kicad_pro", ".kicad_dru"]) await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
     const result = await searchNativeThermals(input, routed, join(root, "accepted.json"), join(root, "search"), 1);
-    expect(result.published).toBe(true);
-    expect(result.repaired).toBe(true);
-    expect(result.attempts).toHaveLength(1);
-    expect(result.validation.newErrors).toEqual([]);
-    expect(result.validation.opensBefore).toBe(110);
-    expect(result.validation.opensAfter).toBe(110);
-    expect(result.validation.lostTerminalPairs).toBe(0);
-    expect(result.validation.repair?.lostTerminalPairs).toBe(0);
-    expect(result.validation.repair?.accepted).toBe(true);
+    expect(result.published).toBe(false);
+    expect(result.repaired).toBe(false);
+    expect(result.attempts).toHaveLength(6);
+    expect(result.attempts.every(attempt => !attempt.progress)).toBe(true);
+    expect(await Bun.file(join(root, "accepted.json")).exists()).toBe(false);
+    // This formerly published first detour has clean reports and connectivity,
+    // but native loading changes its net. These are independent safety checks.
+    const first = JSON.parse(await readFile(join(root, "search/stage-0/000.kicad_pcb.json"), "utf8"));
+    expect(first.newErrors).toEqual([]);
+    expect(first.opensAfter).toBe(110);
+    expect(first.lostTerminalPairs).toBe(0);
+    expect(first.repair.lostTerminalPairs).toBe(0);
+    expect(first.nativeCopperChecks).toEqual([true, false, true]);
+    expect(first.repair.accepted).toBe(false);
+    expect(first.accepted).toBe(false);
+    // Exhaustion retains the original unsafe-thermal board without publishing it.
+    expect(result.validation.newErrors.map(error => error.type)).toEqual(["starved_thermal"]);
+    expect(result.validation.opensAfter).toBe(111);
     expect(await readFile(input)).toEqual(source);
     expect(await readFile(routed)).toEqual(routedBefore);
   } finally { await rm(root, { recursive: true, force: true }); }

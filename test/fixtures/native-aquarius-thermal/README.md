@@ -20,8 +20,11 @@ occurrences of the duplicated Edge.Cuts graphical UUID replaced deterministicall
 This fixture-only identity repair lets the strict proposal identity guard run;
 no copper, outline geometry, pads, zones or rules change. The original frozen
 input above is retained byte-for-byte. The axial search regression adds the same
-signal segment, then restores the thermal and 110-open source budget without
-losing either source-connected or routed-connected terminal pairs.
+signal segment. Its first detour reports zero errors and the 110-open source
+budget without lost source/routed terminal pairs, but native loading reassigns
+all three detour segments from `Net-(C1-Pad1)` to `Net-(R1-Pad1)`. It is UNSAFE.
+The native ownership guard rejects it and the bounded search publishes nothing;
+the prior report-only repair interpretation is withdrawn.
 
 `connectivity-added.sexpr` reduces the separate source-connectivity blocker to
 three added B.Cu signal segments (0.2032 mm, on three distinct nets). Together
@@ -39,7 +42,8 @@ c207 evidence assets. No production behavior or scored outcome changes.
 generator's first endpoint-preserving detour. Native 10.0.6 reports zero errors,
 112 opens and zero lost source/routed pairs, but reassigns all three detour tracks
 from `Net-(C1-Pad1)` to `Net-(R1-Pad1)` on refill. This is an UNSAFE diagnostic,
-not a repair. The gate still rejects it because the source budget is 110 opens.
+not a repair. The gate rejects both its native ownership change and its increase
+above the 110-open source budget.
 A separate load-only control isolates reassignment to native board loading,
 before explicit connectivity build, refill, DRC or save.
 The c208 evidence explicitly audits submitted versus native-saved ownership;
