@@ -1,0 +1,40 @@
+--- /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle85/original/src/lattice/grid.ts	2026-10-20 12:14:19.000000000 +0700
++++ /home/hyper/bench/agents/codex-fabpcb-perf/scratch/cycle85/candidate/src/lattice/grid.ts	2026-10-20 12:16:34.769586003 +0700
+@@ -254,16 +254,17 @@
+     rebuilds++;
+   }
+ 
++  function intersectsSlot(s: number, q: Dop8, sweep: boolean): boolean {
++      if (q.x0 > sX1[s]! || sX0[s]! > q.x1 || q.y0 > sY1[s]! || sY0[s]! > q.y1) return false;
++      if (sweep && (q.s0 > sS1[s]! || sS0[s]! > q.s1 || q.d0 > sD1[s]! || sD0[s]! > q.d1)) return false;
++      return true;
++  }
++
+   function collect(sheet: number, q: Dop8, sweep: boolean, filter: LatticeFilter | undefined): LatticeItemRef[] {
+     const out: LatticeItemRef[] = [];
+     const g = sheets.get(sheet);
+     if (!g) return out;
+     gen++;
+-    const test = (s: number): boolean => {
+-      if (q.x0 > sX1[s]! || sX0[s]! > q.x1 || q.y0 > sY1[s]! || sY0[s]! > q.y1) return false;
+-      if (sweep && (q.s0 > sS1[s]! || sS0[s]! > q.s1 || q.d0 > sD1[s]! || sD0[s]! > q.d1)) return false;
+-      return true;
+-    };
+     const push = (s: number) => {
+       const leg = sLeg[s]!;
+       const ref: LatticeItemRef = leg === NO_LEG ? { id: sId[s]! } : { id: sId[s]!, leg };
+@@ -280,12 +281,12 @@
+           for (const s of list) {
+             if (sStamp[s] === gen) continue;
+             sStamp[s] = gen;
+-            if (test(s)) push(s);
++            if (intersectsSlot(s, q, sweep)) push(s);
+           }
+         }
+       }
+     }
+-    for (const s of g.shelf) if (test(s)) push(s);
++    for (const s of g.shelf) if (intersectsSlot(s, q, sweep)) push(s);
+     out.sort((a, b) => a.id - b.id || (a.leg ?? NO_LEG) - (b.leg ?? NO_LEG));
+     return out;
+   }
