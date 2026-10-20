@@ -161,3 +161,50 @@ test.skipIf(!hasNative)("moving a generated via pair restores source ground conn
     expect(recovered.repair?.accepted).toBe(true);
   } finally { await rm(root, { recursive: true, force: true }); }
 }, 120_000);
+
+// The reduced via-pair control omits LED4. Keep the complete scored copper here:
+// a TCK-only move adds clearances, while a coordinated LED4 move preserves the
+// existing routed pairs. This remains a partial recovery, with six thermals.
+test.skipIf(!hasNative)("coordinated generated via moves reconnect the full-board ground corridor without added clearances", async () => {
+  const root = await mkdtemp(join(tmpdir(), "native-aquarius-joint-vias-"));
+  const fixture = "test/fixtures/native-aquarius-thermal";
+  try {
+    const source = gunzipSync(await readFile(`${fixture}/input.kicad_pcb.gz`));
+    const text = source.toString(), end = text.lastIndexOf(")");
+    const full = gunzipSync(await readFile(`${fixture}/full-added.sexpr.gz`)).toString().trim().split("\n");
+    const upperOnly = full.map(line => line.replaceAll("162.9939 50.8553", "162.8939 50.9553"));
+    const joint = upperOnly.map(line => line
+      .replaceAll("162.3543 48.764", "162.2343 48.764")
+      .replaceAll("162.3543 51.5768", "162.2343 51.5768"));
+    expect(full).toHaveLength(466);
+    const changed = full.filter((line, i) => line !== joint[i]);
+    expect(changed).toHaveLength(8);
+    expect(changed.filter(line => line.startsWith("(via "))).toHaveLength(3);
+    // Undo coordinates byte-for-byte: no net, width, drill or other item edits.
+    expect(joint.map(line => line
+      .replaceAll("162.8939 50.9553", "162.9939 50.8553")
+      .replaceAll("162.2343 48.764", "162.3543 48.764")
+      .replaceAll("162.2343 51.5768", "162.3543 51.5768"))).toEqual(full);
+    for (const [name, lines] of [["input", []], ["routed", full], ["upper", upperOnly], ["joint", joint]] as const) {
+      const path = join(root, `${name}.kicad_pcb`);
+      await writeFile(path, `${text.slice(0, end)}\n${lines.join("\n")}\n${text.slice(end)}`);
+      for (const ext of [".kicad_pro", ".kicad_dru"])
+        await writeFile(join(root, `${name}${ext}`), await readFile(`${fixture}/board${ext}`));
+    }
+    const input = join(root, "input.kicad_pcb"), routed = join(root, "routed.kicad_pcb");
+    const blocked = await checkNativeRepair(input, routed, join(root, "upper.kicad_pcb"));
+    expect(blocked.newErrors.filter(error => error.type === "clearance")).toHaveLength(3);
+    expect(blocked.repair?.accepted).toBe(false);
+    const recovered = await checkNativeRepair(input, routed, join(root, "joint.kicad_pcb"));
+    expect(recovered.nativeCopperChecks).toEqual([true, true, true]);
+    expect(recovered.newErrors.map(error => error.type)).toEqual(Array(6).fill("starved_thermal"));
+    expect(recovered.opensBefore).toBe(110);
+    expect(recovered.opensAfter).toBe(14);
+    expect(recovered.lostTerminalPairs).toBe(292);
+    expect(recovered.repair?.lostTerminalPairs).toBe(0);
+    expect(recovered.repair?.accepted).toBe(true);
+    // Neither the remaining source disconnections nor thermal failures are waived.
+    expect(recovered.accepted).toBe(false);
+    expect(await readFile(input)).toEqual(Buffer.from(`${text.slice(0, end)}\n\n${text.slice(end)}`));
+  } finally { await rm(root, { recursive: true, force: true }); }
+}, 180_000);

@@ -89,3 +89,17 @@ U1.55, but no lost source pairs (95 opens). `/Inputs/TCK` alone has no thermal
 errors or lost pairs (108 opens). The unchanged thermal findings therefore do
 not explain whether the source group remains connected; check terminal pairs
 independently.
+
+The full-context coordinated-via regression uses all 466 items from
+`full-added.sexpr.gz`. Move the upper TCK via (162.9939, 50.8553) mm by
+(−0.1, +0.1) mm and update its incident generated track endpoints. That alone
+restores 56 source pairs but adds three clearance errors against LED4. Moving
+both adjacent generated LED4 vias from x=162.3543 to x=162.2343 mm, with their
+incident endpoints, removes those new clearances. Exactly eight generated items
+change: three vias and five tracks. All other generated/source copper, nets,
+widths, drills and rules remain. Three fresh paired native checks show 348→292
+lost source pairs and 15→14 opens, no lost current routed pairs, and unchanged
+native copper ownership. Six thermal errors remain; strict final acceptance is
+false. The remaining disconnected source components include U1.39, U1.55 and
+U1.46–48. This is a manual partial recovery control, not automatic repair or a
+new full-suite routing score. Complete probes and checks are in c214 evidence.
