@@ -1,0 +1,59 @@
+{
+  "kitspace-aquarius-j4": {
+    "lattices": 5,
+    "counts": {
+      "queries": 41156584,
+      "sweep": 39163758,
+      "box": 1992826,
+      "lruHits": 10491602,
+      "sweepHits": 9946408,
+      "boxHits": 545194,
+      "consecutive": 107995,
+      "filtered": 235068,
+      "filteredHits": 480,
+      "invalidations": 6388,
+      "evictions": 30565964
+    },
+    "raw_recurrence_percent": 25.491916433103388,
+    "engine_incomplete": 8,
+    "violations_added": 0
+  },
+  "photon-sprinkler-sprinkler-j3": {
+    "lattices": 5,
+    "counts": {
+      "queries": 19441039,
+      "sweep": 19187553,
+      "box": 253486,
+      "lruHits": 5900992,
+      "sweepHits": 5822638,
+      "boxHits": 78354,
+      "consecutive": 66390,
+      "filtered": 11622,
+      "filteredHits": 1082,
+      "invalidations": 2565,
+      "evictions": 13473931
+    },
+    "raw_recurrence_percent": 30.353274842975214,
+    "engine_incomplete": 2,
+    "violations_added": 0
+  },
+  "paperino-hw-paperino-shield-j4": {
+    "lattices": 5,
+    "counts": {
+      "queries": 18724856,
+      "sweep": 18300059,
+      "box": 424797,
+      "lruHits": 5679285,
+      "sweepHits": 5541091,
+      "boxHits": 138194,
+      "consecutive": 32453,
+      "filtered": 2865,
+      "filteredHits": 798,
+      "invalidations": 2564,
+      "evictions": 13002437
+    },
+    "raw_recurrence_percent": 30.330193193475026,
+    "engine_incomplete": 6,
+    "violations_added": 0
+  }
+}
